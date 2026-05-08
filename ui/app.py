@@ -12,17 +12,14 @@ import uuid
 from pathlib import Path
 from typing import Dict, List, Literal, Optional
 
-import aiofiles
-from dotenv import load_dotenv
-from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from pydantic import BaseModel
+import aiofiles # type: ignore
+from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile # type: ignore
+from fastapi.middleware.cors import CORSMiddleware # type: ignore
+from fastapi.responses import JSONResponse # type: ignore
+from pydantic import BaseModel # type: ignore
 
-# allow `from pipeline import ...` regardless of working directory
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-load_dotenv()
+from core.config import settings
+from core.logger import logger
 
 from pipeline.document_processor import extract_text
 from pipeline.graphrag_indexer import GraphRAGIndexer
@@ -33,20 +30,20 @@ from pipeline.raptor_runner import RaptorRunner
 
 # ── config ────────────────────────────────────────────────────────────────────
 
-UPLOAD_DIR = Path(os.getenv("UPLOAD_DIR", "./uploads"))
-MAX_FILE_MB = int(os.getenv("MAX_FILE_SIZE_MB", "50"))
-CORS_ORIGINS = os.getenv(
-    "CORS_ORIGINS", "http://localhost:4200,http://localhost:3000"
-).split(",")
+UPLOAD_DIR = Path(settings.UPLOAD_DIR) if settings.UPLOAD_DIR else Path("uploaded_docs")
+GEMINI_API_KEY = settings.GEMINI_API_KEY
+MAX_FILE_MB = int(settings.MAX_FILE_SIZE_MB) if settings.MAX_FILE_SIZE_MB else 50
+CORS_ORIGINS = settings.CORS_ORIGINS.split(",") if settings.CORS_ORIGINS else ["*"]
 
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── singleton pipeline objects ────────────────────────────────────────────────
 
-graphrag = GraphRAGIndexer()
-raptor = RaptorRunner()
-hippo = HippoRetriever()
+graphrag = GraphRAGIndexer(GEMINI_API_KEY)
+raptor = RaptorRunner(GEMINI_API_KEY)
+hippo = HippoRetriever(GEMINI_API_KEY)
 query_engine = QueryEngine(graphrag=graphrag, raptor=raptor, hippo=hippo)
+logger.info("Pipeline components initialized: GraphRAGIndexer, RaptorRunner, HippoRetriever, QueryEngine")
 
 # ── in-memory document registry ──────────────────────────────────────────────
 
@@ -98,6 +95,7 @@ class QueryResponse(BaseModel):
 # ── helpers ───────────────────────────────────────────────────────────────────
 
 async def _run_indexing(doc_id: str, file_path: str, content_type: str):
+    logger.info(f"Starting indexing for document {doc_id} at {file_path}")
     documents[doc_id].status = "indexing"
     try:
         text = await extract_text(file_path, content_type)
@@ -107,16 +105,20 @@ async def _run_indexing(doc_id: str, file_path: str, content_type: str):
         chunks = graphrag.chunk_text(text, doc_id)
         # Pass pre-computed chunks so index_document doesn't re-chunk the text.
         result = await graphrag.index_document(doc_id, text, chunks)
+        logger.debug(f"GraphRAG indexing result for {doc_id}: {result}")
         # RAPTOR and HiPPO are independent — run them concurrently.
         await asyncio.gather(
             raptor.build_tree(chunks),
             hippo.index_passages(chunks),
             return_exceptions=True,
         )
+        logger.debug(f"RAPTOR and HiPPO indexing completed for {doc_id}")
 
         documents[doc_id].status = "indexed"
         documents[doc_id].chunks = result["chunks"]
+        logger.info(f"Completed indexing for document {doc_id}: {result['chunks']} chunks, {result['entities_total']} entities extracted")
     except Exception as exc:
+        logger.error(f"Indexing failed for document {doc_id}: {exc}", exc_info=True)
         documents[doc_id].status = "error"
         documents[doc_id].error = str(exc)
 
@@ -136,6 +138,8 @@ async def upload_document(
     if not GEMINI_API_KEY:
         raise HTTPException(status_code=500, detail="GEMINI_API_KEY not configured.")
 
+    logger.info(f"Received upload request: filename={file.filename}, content_type={file.content_type}, size={file.spool_max_size} bytes")
+
     size = 0
     doc_id = str(uuid.uuid4())
     dest = UPLOAD_DIR / f"{doc_id}_{file.filename}"
@@ -150,6 +154,7 @@ async def upload_document(
                     status_code=413, detail=f"File exceeds {MAX_FILE_MB} MB limit."
                 )
             await out.write(chunk)
+    logger.info(f"File {file.filename} saved to {dest} ({size} bytes)")
 
     record = DocRecord(
         id=doc_id,
@@ -157,15 +162,18 @@ async def upload_document(
         content_type=file.content_type or "",
         size_bytes=size,
     )
+    logger.debug(f"Document record created: {record}")
     documents[doc_id] = record
     background_tasks.add_task(
         _run_indexing, doc_id, str(dest), file.content_type or ""
     )
+    logger.debug(f"Document {doc_id} saved to {dest}, indexing task scheduled")
     return record
 
 
 @app.get("/api/documents", response_model=List[DocRecord])
 async def list_documents():
+    logger.debug(f"Listing documents: {len(documents)} found")
     return list(documents.values())
 
 
@@ -180,10 +188,11 @@ async def get_document(doc_id: str):
 async def delete_document(doc_id: str):
     if doc_id not in documents:
         raise HTTPException(status_code=404, detail="Document not found.")
-    # remove uploaded file
+    logger.info(f"Deleting document {doc_id}")
     for f in UPLOAD_DIR.glob(f"{doc_id}_*"):
         f.unlink(missing_ok=True)
     del documents[doc_id]
+    logger.info(f"Document {doc_id} deleted successfully")
     return {"deleted": doc_id}
 
 
@@ -191,17 +200,20 @@ async def delete_document(doc_id: str):
 
 @app.get("/api/graph")
 async def get_graph():
+    logger.debug("Fetching graph data")
     return graphrag.get_graph_data()
 
 
 @app.get("/api/graph/stats")
 async def get_graph_stats():
+    logger.debug("Fetching graph statistics")
     stats = graphrag.get_stats()
     stats["raptor"] = raptor.get_stats()
     stats["hippo"] = hippo.get_stats()
     stats["indexed_documents"] = sum(
         1 for d in documents.values() if d.status == "indexed"
     )
+    logger.debug(f"Graph statistics: {stats}")
     return stats
 
 
@@ -232,7 +244,9 @@ async def get_entity(entity_id: str):
 async def query_documents(req: QueryRequest):
     if not documents:
         raise HTTPException(status_code=400, detail="No documents indexed yet.")
+    logger.info(f"Query received: method={req.method}, question={req.question[:80]!r}")
     result = await query_engine.query(req.question, req.method, req.top_k)
+    logger.info(f"Query answered: confidence={result.get('confidence')}, sources={result.get('sources')}")
     return QueryResponse(**result)
 
 

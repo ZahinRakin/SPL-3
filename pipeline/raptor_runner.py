@@ -14,6 +14,7 @@ import numpy as np
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import normalize
 
+from core.logger import logger
 from .llm_provider import embed, generate
 
 
@@ -40,7 +41,8 @@ class RaptorRunner:
     async def _embed(self, text: str) -> List[float]:
         try:
             return await embed(text)
-        except Exception:
+        except Exception as exc:
+            logger.warning(f"RaptorRunner._embed failed, using random fallback: {exc}", exc_info=True)
             rng = np.random.default_rng(abs(hash(text)) % (2**32))
             v = rng.standard_normal(768).astype(float)
             return (v / np.linalg.norm(v)).tolist()
@@ -57,7 +59,8 @@ class RaptorRunner:
         )
         try:
             return await generate(prompt, temperature=0.2)
-        except Exception:
+        except Exception as exc:
+            logger.warning(f"RaptorRunner._summarise failed at level={level}: {exc}", exc_info=True)
             return " ".join(texts[0].split()[:80]) + "…"
 
     # ── clustering ────────────────────────────────────────────────────────────
@@ -73,19 +76,27 @@ class RaptorRunner:
             )
             gmm.fit(X)
             return gmm.predict(X).tolist()
-        except Exception:
+        except Exception as exc:
+            logger.warning(
+                f"GaussianMixture clustering failed (n={n}, k={n_clusters}), "
+                f"falling back to round-robin: {exc}",
+                exc_info=True,
+            )
             return [i % n_clusters for i in range(n)]
 
     # ── tree construction ─────────────────────────────────────────────────────
 
     async def build_tree(self, chunks: List[Dict]) -> Dict:
         if not chunks:
+            logger.warning("RaptorRunner.build_tree called with empty chunks list")
             return {}
 
+        logger.info(f"RaptorRunner.build_tree: {len(chunks)} chunks, max_levels={self.max_levels}")
         embs = await asyncio.gather(*[self._embed(c["text"]) for c in chunks], return_exceptions=True)
         leaf_ids = []
         for chunk, emb in zip(chunks, embs):
             if isinstance(emb, Exception):
+                logger.warning(f"Embedding failed for chunk {chunk.get('id')!r}, using fallback: {emb}")
                 emb = await self._embed("")
             node = RaptorNode(
                 text=chunk["text"],
@@ -96,11 +107,14 @@ class RaptorRunner:
             self.nodes[node.id] = node
             leaf_ids.append(node.id)
 
+        logger.debug(f"RaptorRunner: {len(leaf_ids)} leaf nodes created")
         current = leaf_ids
         for level in range(1, self.max_levels + 1):
             if len(current) <= 1:
+                logger.debug(f"RaptorRunner: stopping at level={level}, only {len(current)} node(s) remain")
                 break
             n_clusters = max(2, len(current) // self.target_cluster_size)
+            logger.debug(f"RaptorRunner: level={level}, nodes={len(current)}, clusters={n_clusters}")
             cur_embs = [self.nodes[nid].embedding for nid in current]
             labels = self._cluster(cur_embs, n_clusters)
 
@@ -123,8 +137,10 @@ class RaptorRunner:
                 ((ids, None) for ids in clusters.values()), summaries, new_embs
             ):
                 if isinstance(summary, Exception):
+                    logger.warning(f"Summary exception at level={level}: {summary}")
                     summary = "Summary unavailable."
                 if isinstance(emb, Exception):
+                    logger.warning(f"Embedding exception at level={level}: {emb}")
                     emb = await self._embed("")
                 all_docs = list({d for nid in cluster_ids for d in self.nodes[nid].doc_ids})
                 parent = RaptorNode(
@@ -142,12 +158,15 @@ class RaptorRunner:
             current = new_level
 
         self.root_ids = current
-        return self.get_stats()
+        stats = self.get_stats()
+        logger.info(f"RaptorRunner.build_tree complete: {stats}")
+        return stats
 
     # ── retrieval ─────────────────────────────────────────────────────────────
 
     def retrieve(self, query_embedding: List[float], top_k: int = 6) -> List[Dict]:
         if not self.nodes:
+            logger.warning("RaptorRunner.retrieve called but no nodes in tree")
             return []
         qv = np.array(query_embedding)
         scored = []
@@ -158,7 +177,7 @@ class RaptorRunner:
                 sim = float(np.dot(qv, nv) / denom) if denom > 0 else 0.0
                 scored.append((sim - node.level * 0.03, nid, node.level))
         scored.sort(reverse=True)
-        return [
+        results = [
             {
                 "id": nid,
                 "text": self.nodes[nid].text,
@@ -168,6 +187,8 @@ class RaptorRunner:
             }
             for s, nid, lvl in scored[:top_k]
         ]
+        logger.debug(f"RaptorRunner.retrieve: top_k={top_k}, returned={len(results)}")
+        return results
 
     def get_stats(self) -> Dict:
         lvl_counts: Dict[int, int] = {}

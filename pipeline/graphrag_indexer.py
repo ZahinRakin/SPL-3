@@ -14,6 +14,7 @@ from typing import Dict, List, Optional, Tuple
 
 import networkx as nx
 
+from core.logger import logger
 from .llm_provider import generate
 
 
@@ -82,6 +83,7 @@ class GraphRAGIndexer:
             })
             i += self.chunk_size - self.overlap
             idx += 1
+        logger.debug(f"chunk_text: doc_id={doc_id!r}, words={len(words)}, chunks={len(chunks)}")
         return chunks
 
     # ── LLM extraction ────────────────────────────────────────────────────────
@@ -91,8 +93,17 @@ class GraphRAGIndexer:
         try:
             raw = await generate(prompt, json_mode=True, temperature=0.1)
             data = json.loads(raw)
-            return data.get("entities", []), data.get("relationships", [])
-        except Exception:
+            entities = data.get("entities", [])
+            rels = data.get("relationships", [])
+            logger.debug(
+                f"_extract chunk={chunk['id']!r}: {len(entities)} entities, {len(rels)} relationships"
+            )
+            return entities, rels
+        except json.JSONDecodeError as exc:
+            logger.warning(f"JSON decode failed for chunk {chunk['id']!r}: {exc}")
+            return [], []
+        except Exception as exc:
+            logger.error(f"Entity extraction failed for chunk {chunk['id']!r}: {exc}", exc_info=True)
             return [], []
 
     # ── entity deduplication ──────────────────────────────────────────────────
@@ -124,12 +135,19 @@ class GraphRAGIndexer:
     async def index_document(self, doc_id: str, text: str, chunks: Optional[List[Dict]] = None) -> Dict:
         if chunks is None:
             chunks = self.chunk_text(text, doc_id)
+        logger.info(f"index_document: doc_id={doc_id!r}, chunks={len(chunks)}")
         results = await asyncio.gather(
             *[self._extract(c) for c in chunks], return_exceptions=True
         )
 
+        new_entities = 0
+        new_rels = 0
         for chunk, result in zip(chunks, results):
             if isinstance(result, Exception):
+                logger.error(
+                    f"Extraction task raised exception for chunk {chunk['id']!r}: {result}",
+                    exc_info=result,
+                )
                 continue
             entities_raw, rels_raw = result
             local_map: Dict[str, str] = {}
@@ -145,6 +163,7 @@ class GraphRAGIndexer:
                 if not self.graph.has_node(eid):
                     ent = self.entities[eid]
                     self.graph.add_node(eid, name=ent.name, type=ent.type)
+                    new_entities += 1
 
             for r in rels_raw:
                 src_key = r.get("source", "").lower()
@@ -167,7 +186,12 @@ class GraphRAGIndexer:
                             weight=1,
                             relation=r.get("relation", "RELATED_TO"),
                         )
+                        new_rels += 1
 
+        logger.info(
+            f"index_document complete: doc_id={doc_id!r}, new_entities={new_entities}, "
+            f"new_relationships={new_rels}, graph_nodes={len(self.graph.nodes)}"
+        )
         await self._detect_communities()
         return {
             "doc_id": doc_id,
@@ -180,7 +204,9 @@ class GraphRAGIndexer:
 
     async def _detect_communities(self):
         if len(self.graph.nodes) < 3:
+            logger.debug("_detect_communities: skipping, fewer than 3 nodes in graph")
             return
+        logger.info(f"_detect_communities: running Louvain on {len(self.graph.nodes)} nodes")
         try:
             communities = await asyncio.to_thread(
                 nx.community.louvain_communities, self.graph, seed=42
@@ -194,15 +220,18 @@ class GraphRAGIndexer:
                 if len(comm) >= 3:
                     names = [self.entities[n].name for n in comm if n in self.entities]
                     tasks.append((cid, names))
+            logger.info(f"_detect_communities: {len(communities)} communities found, {len(tasks)} to summarise")
             summaries = await asyncio.gather(
                 *[self._summarise_community(cid, names) for cid, names in tasks],
                 return_exceptions=True,
             )
             for (cid, _), summary in zip(tasks, summaries):
-                if not isinstance(summary, Exception):
+                if isinstance(summary, Exception):
+                    logger.warning(f"Community summary failed for cid={cid}: {summary}")
+                else:
                     self.community_summaries[cid] = summary
-        except Exception:
-            pass
+        except Exception as exc:
+            logger.error(f"_detect_communities failed: {exc}", exc_info=True)
 
     async def _summarise_community(self, cid: int, names: List[str]) -> str:
         excerpt = ", ".join(names[:20])
@@ -212,7 +241,8 @@ class GraphRAGIndexer:
         )
         try:
             return await generate(prompt, temperature=0.3)
-        except Exception:
+        except Exception as exc:
+            logger.warning(f"_summarise_community failed for cid={cid}: {exc}", exc_info=True)
             return f"Cluster of {len(names)} entities including: {excerpt}"
 
     # ── serialisation helpers ─────────────────────────────────────────────────
@@ -266,6 +296,7 @@ class GraphRAGIndexer:
             if score:
                 matched.append((score, eid))
         matched.sort(reverse=True)
+        logger.debug(f"get_context_for_query: query={query[:60]!r}, matched_entities={len(matched)}")
         lines = []
         seen_comms = set()
         for _, eid in matched[:max_entities]:

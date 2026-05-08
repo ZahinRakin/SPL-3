@@ -9,6 +9,7 @@ from typing import Dict, List, Literal
 
 import numpy as np
 
+from core.logger import logger
 from .graphrag_indexer import GraphRAGIndexer
 from .hippo_retriever import HippoRetriever
 from .llm_provider import embed, generate
@@ -55,7 +56,8 @@ class QueryEngine:
     async def _embed_query(self, query: str) -> List[float]:
         try:
             return await embed(query, task_type="retrieval_query")
-        except Exception:
+        except Exception as exc:
+            logger.warning(f"QueryEngine._embed_query failed, using random fallback: {exc}", exc_info=True)
             rng = np.random.default_rng(abs(hash(query)) % (2**32))
             v = rng.standard_normal(768).astype(float)
             return (v / np.linalg.norm(v)).tolist()
@@ -71,19 +73,26 @@ class QueryEngine:
         if method in ("graphrag", "hybrid"):
             gctx = self.graphrag.get_context_for_query(question)
             blocks.append(f"[KNOWLEDGE GRAPH]\n{gctx}")
+            logger.debug(f"_build_context: graph context block length={len(gctx)}")
 
         if method in ("raptor", "hybrid"):
-            for r in self.raptor.retrieve(query_emb, top_k=top_k):
+            raptor_hits = self.raptor.retrieve(query_emb, top_k=top_k)
+            for r in raptor_hits:
                 blocks.append(f"[DOC TREE — level {r['level']}]\n{r['text']}")
                 sources.extend(r.get("doc_ids", []))
+            logger.debug(f"_build_context: raptor returned {len(raptor_hits)} hits")
 
         if method in ("hippo", "hybrid"):
-            for r in self.hippo.retrieve_multi_level(query_emb, top_k=max(2, top_k // 2)):
+            hippo_hits = self.hippo.retrieve_multi_level(query_emb, top_k=max(2, top_k // 2))
+            for r in hippo_hits:
                 blocks.append(f"[PASSAGE]\n{r['text'][:600]}")
                 if r.get("doc_id"):
                     sources.append(r["doc_id"])
+            logger.debug(f"_build_context: hippo returned {len(hippo_hits)} hits")
 
-        return "\n\n".join(blocks[:10]), list(dict.fromkeys(sources))
+        context = "\n\n".join(blocks[:10])
+        logger.debug(f"_build_context: total blocks={len(blocks)}, context_len={len(context)}, sources={sources}")
+        return context, list(dict.fromkeys(sources))
 
     # ── history ───────────────────────────────────────────────────────────────
 
@@ -101,6 +110,7 @@ class QueryEngine:
     async def query(
         self, question: str, method: Method = "hybrid", top_k: int = 6
     ) -> Dict:
+        logger.info(f"QueryEngine.query: method={method!r}, top_k={top_k}, question={question[:80]!r}")
         query_emb = await self._embed_query(question)
         context, sources = self._build_context(question, query_emb, method, top_k)
 
@@ -113,7 +123,17 @@ class QueryEngine:
         try:
             raw = await generate(prompt, json_mode=True, temperature=0.3)
             data = json.loads(raw)
+            logger.debug(f"QueryEngine.query: LLM response parsed, confidence={data.get('confidence')}")
+        except json.JSONDecodeError as exc:
+            logger.error(f"QueryEngine.query: JSON decode error from LLM response: {exc}", exc_info=True)
+            data = {
+                "answer": f"Error parsing LLM response: {exc}",
+                "key_entities": [],
+                "confidence": 0.0,
+                "reasoning": "",
+            }
         except Exception as exc:
+            logger.error(f"QueryEngine.query: LLM generate failed: {exc}", exc_info=True)
             data = {
                 "answer": f"Error generating answer: {exc}",
                 "key_entities": [],
@@ -138,6 +158,10 @@ class QueryEngine:
             "method": method,
         }
         self.history.append({"question": question, "answer": result["answer"]})
+        logger.info(
+            f"QueryEngine.query complete: confidence={result['confidence']}, "
+            f"entities={len(entities)}, sources={len(sources)}"
+        )
         return result
 
     # ── suggestions ───────────────────────────────────────────────────────────

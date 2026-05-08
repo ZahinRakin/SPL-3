@@ -23,19 +23,18 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any
 
-# allow imports from project root
-sys.path.insert(0, str(Path(__file__).parent.parent))
+from core.config import settings
+from core.logger import logger
 
-from dotenv import load_dotenv
-load_dotenv()
-
-from rouge_score import rouge_scorer as rs
-from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-import nltk
+from rouge_score import rouge_scorer as rs # type: ignore
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction # type: ignore
+import nltk # type: ignore
 
 try:
+    logger.info("Checking for NLTK 'punkt' tokenizer...")
     nltk.data.find("tokenizers/punkt")
 except LookupError:
+    logger.error("NLTK 'punkt' tokenizer not found. Downloading...")
     nltk.download("punkt", quiet=True)
 
 from pipeline.graphrag_indexer import GraphRAGIndexer
@@ -47,8 +46,10 @@ from pipeline.query_engine import QueryEngine, Method
 # ── metrics ───────────────────────────────────────────────────────────────────
 
 def rouge_scores(prediction: str, reference: str) -> Dict[str, float]:
+    logger.info("Calculating ROUGE scores...")
     scorer = rs.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=True)
     scores = scorer.score(reference, prediction)
+    logger.debug(f"ROUGE scores: {scores}")
     return {
         "rouge1": round(scores["rouge1"].fmeasure, 4),
         "rouge2": round(scores["rouge2"].fmeasure, 4),
@@ -57,13 +58,17 @@ def rouge_scores(prediction: str, reference: str) -> Dict[str, float]:
 
 
 def bleu1_score(prediction: str, reference: str) -> float:
+    logger.info("Calculating BLEU-1 score...")
     ref_tokens  = nltk.word_tokenize(reference.lower())
     pred_tokens = nltk.word_tokenize(prediction.lower())
     sf = SmoothingFunction().method1
+    logger.debug(f"Reference tokens: {ref_tokens}")
+    logger.debug(f"Prediction tokens: {pred_tokens}")
     return round(sentence_bleu([ref_tokens], pred_tokens, weights=(1,0,0,0), smoothing_function=sf), 4)
 
 
 def entity_recall(prediction: str, reference: str) -> float:
+    logger.info("Calculating entity recall...")
     try:
         import re
         # naive NER: capitalised words as a proxy for named entities
@@ -73,7 +78,8 @@ def entity_recall(prediction: str, reference: str) -> float:
         pred_lower = prediction.lower()
         hits = sum(1 for e in ref_ents if e.lower() in pred_lower)
         return round(hits / len(ref_ents), 4)
-    except Exception:
+    except Exception as e:
+        logger.error(f"Error calculating entity recall: {e}")
         return 0.0
 
 
@@ -86,13 +92,13 @@ async def evaluate(
     raptor: RaptorRunner,
     hippo: HippoRetriever,
 ) -> Dict[str, Any]:
-    engine = QueryEngine(os.getenv("GEMINI_API_KEY", ""), graphrag, raptor, hippo)
+    engine = QueryEngine(settings.GEMINI_API_KEY, graphrag, raptor, hippo)
     results = []
 
     for i, pair in enumerate(qa_pairs, 1):
         question  = pair["question"]
         reference = pair.get("reference", "")
-        print(f"[{i}/{len(qa_pairs)}] {question[:60]}…")
+        logger.info(f"[{i}/{len(qa_pairs)}] {question[:60]}…")
         t0 = time.perf_counter()
         resp = await engine.query(question, method=method)
         latency = round(time.perf_counter() - t0, 3)
@@ -129,7 +135,7 @@ async def _main(args: argparse.Namespace):
         qa_pairs = json.load(f)
 
     # bootstrap pipeline (no documents — just test query engine on pre-built state)
-    key = os.getenv("GEMINI_API_KEY", "")
+    key = settings.GEMINI_API_KEY
     graphrag = GraphRAGIndexer(key)
     raptor   = RaptorRunner(key)
     hippo    = HippoRetriever(key)
@@ -149,13 +155,14 @@ async def _main(args: argparse.Namespace):
     report = await evaluate(qa_pairs, args.method, graphrag, raptor, hippo)  # type: ignore[arg-type]
     out_path = Path(args.output)
     out_path.write_text(json.dumps(report, indent=2))
-    print(f"\nReport written to {out_path}")
-    print(f"Aggregate metrics for '{args.method}':")
+    logger.info(f"\nReport written to {out_path}")
+    logger.info(f"Aggregate metrics for '{args.method}':")
     for k, v in report["aggregate"].items():
-        print(f"  {k}: {v}")
+        logger.info(f"  {k}: {v}")
 
 
 if __name__ == "__main__":
+    logger.info("Starting evaluation...")
     parser = argparse.ArgumentParser(description="Evaluate GraphRAG pipeline")
     parser.add_argument("--qa_pairs",  required=True,          help="JSON file with [{question, reference}]")
     parser.add_argument("--method",    default="hybrid",       help="graphrag|raptor|hippo|hybrid")

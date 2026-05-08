@@ -3,13 +3,15 @@ fastapi>=0.111.0
 uvicorn[standard]>=0.29.0
 python-multipart>=0.0.9
 aiofiles>=23.2.1
-python-dotenv>=1.0.1
 pydantic>=2.7.0
+pydantic-settings>=2.14.0
 tenacity>=8.3.0
 aiohttp>=3.9.5
 
 # ── LLM (Gemini) ───────────────────────────────────────────────────────────
 google-generativeai>=0.8.0
+ollama>=0.6.2
+groq>=1.2.0
 
 # ── Graph / ML ─────────────────────────────────────────────────────────────
 networkx>=3.3
@@ -28,8 +30,8 @@ rouge-score>=0.1.2
 nltk>=3.8.1
 
 # ── Optional (heavier ML, kept for reference) ──────────────────────────────
-# torch==2.2.0
-# transformers==4.40.0
-# sentence-transformers==2.7.0
-# umap-learn==0.5.6
-# tiktoken==0.7.0
+torch==2.2.0
+transformers==4.40.0
+sentence-transformers==2.7.0
+umap-learn==0.5.6
+tiktoken==0.7.0

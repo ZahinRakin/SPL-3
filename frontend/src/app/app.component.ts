@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, ViewChild, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar.component';
 import { GraphViewComponent } from './components/graph-view.component';
@@ -199,10 +199,14 @@ export type ActiveTab = 'graph' | 'qa' | 'analytics';
   `],
 })
 export class AppComponent implements OnInit {
+  @ViewChild(GraphViewComponent) graphView?: GraphViewComponent;
+
   activeTab = signal<ActiveTab>('graph');
   showUpload = signal(false);
   apiOk = signal(false);
   stats = signal<GraphStats | null>(null);
+
+  private lastIndexedCount = 0;
 
   tabs = [
     { id: 'graph' as ActiveTab,     icon: '⬡', label: 'Knowledge Graph' },
@@ -218,12 +222,19 @@ export class AppComponent implements OnInit {
       error: () => this.apiOk.set(false),
     });
     this.refreshStats();
-    setInterval(() => this.refreshStats(), 10_000);
+    setInterval(() => this.refreshStats(), 5_000);
   }
 
   refreshStats() {
     this.api.getStats().subscribe({
-      next: s => this.stats.set(s),
+      next: s => {
+        this.stats.set(s);
+        const current = s.indexed_documents ?? 0;
+        if (current > this.lastIndexedCount) {
+          this.lastIndexedCount = current;
+          this.graphView?.loadGraph();
+        }
+      },
       error: () => {},
     });
   }

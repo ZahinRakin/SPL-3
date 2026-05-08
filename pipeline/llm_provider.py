@@ -1,8 +1,9 @@
 """
 Unified LLM + embedding provider.
 
-LLM:       Groq  (configure GROQ_API_KEY and GROQ_MODEL in .env)
+LLM:        Groq   (configure GROQ_API_KEY and GROQ_MODEL in .env)
 Embeddings: Ollama (configure OLLAMA_BASE_URL and OLLAMA_EMBED_MODEL in .env)
+            Run:  ollama pull nomic-embed-text && ollama serve
 """
 import asyncio
 import json as _json
@@ -12,7 +13,7 @@ from typing import List
 from core.config import settings
 from core.logger import logger
 
-# ── read config once at import time ──────────────────────────────────────────
+# ── config ────────────────────────────────────────────────────────────────────
 
 GROQ_API_KEY = settings.GROQ_API_KEY
 GROQ_MODEL   = settings.GROQ_MODEL
@@ -20,12 +21,12 @@ GROQ_MODEL   = settings.GROQ_MODEL
 OLLAMA_BASE_URL    = settings.OLLAMA_BASE_URL
 OLLAMA_EMBED_MODEL = settings.OLLAMA_EMBED_MODEL
 
-logger.info(f"LLM: Groq model={GROQ_MODEL!r} | Embeddings: Ollama model={OLLAMA_EMBED_MODEL!r}")
+logger.info(f"LLM: Groq model={GROQ_MODEL!r} | Embeddings: Ollama model={OLLAMA_EMBED_MODEL!r} at {OLLAMA_BASE_URL}")
 
 # ── concurrency + timeout ─────────────────────────────────────────────────────
 
-_LLM_SEM       = asyncio.Semaphore(3)   # max concurrent LLM calls
-_EMBED_SEM     = asyncio.Semaphore(5)   # max concurrent embedding calls
+_LLM_SEM       = asyncio.Semaphore(3)
+_EMBED_SEM     = asyncio.Semaphore(5)
 _LLM_TIMEOUT   = 45.0
 _EMBED_TIMEOUT = 30.0
 
@@ -102,10 +103,10 @@ async def embed(text: str, task_type: str = "retrieval_document") -> List[float]
             logger.debug(f"embed complete: vector_dim={len(result)}")
             return result
         except asyncio.TimeoutError:
-            logger.error(f"embed timed out after {_EMBED_TIMEOUT}s (Ollama at {OLLAMA_BASE_URL})")
+            logger.error(f"embed timed out after {_EMBED_TIMEOUT}s — is Ollama running? (ollama serve)")
             raise
         except Exception as exc:
-            logger.error(f"embed failed: {exc}", exc_info=True)
+            logger.error(f"embed failed — is Ollama running? (ollama serve): {exc}", exc_info=True)
             raise
 
 

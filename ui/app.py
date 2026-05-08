@@ -137,7 +137,7 @@ async def upload_document(
     if not settings.GROQ_API_KEY:
         raise HTTPException(status_code=500, detail="GROQ_API_KEY not configured.")
 
-    logger.info(f"Received upload request: filename={file.filename}, content_type={file.content_type}, size={file.spool_max_size} bytes")
+    logger.info(f"Received upload request: filename={file.filename}, content_type={file.content_type}")
 
     size = 0
     doc_id = str(uuid.uuid4())
@@ -257,5 +257,5 @@ async def get_suggestions():
 # ── entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    import uvicorn
+    import uvicorn # type: ignore
     uvicorn.run("ui.app:app", host="0.0.0.0", port=8000, reload=True)

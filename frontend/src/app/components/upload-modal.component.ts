@@ -227,6 +227,9 @@ export class UploadModalComponent {
       });
     }
     this.uploading.set(false);
+    if (this.queue().every(e => e.status === 'done')) {
+      setTimeout(() => this.close.emit(), 1200);
+    }
   }
 
   fileIcon(name: string): string {

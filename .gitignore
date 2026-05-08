@@ -1,0 +1,10 @@
+.env
+.graph_rag
+frontend/node_modules
+uploads
+documents
+*\__pycache__/
+*.pyc
+frontend/build
+frontend/dist
+frontend/.angular

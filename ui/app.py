@@ -31,7 +31,6 @@ from pipeline.raptor_runner import RaptorRunner
 # ── config ────────────────────────────────────────────────────────────────────
 
 UPLOAD_DIR = Path(settings.UPLOAD_DIR) if settings.UPLOAD_DIR else Path("uploaded_docs")
-GEMINI_API_KEY = settings.GEMINI_API_KEY
 MAX_FILE_MB = int(settings.MAX_FILE_SIZE_MB) if settings.MAX_FILE_SIZE_MB else 50
 CORS_ORIGINS = settings.CORS_ORIGINS.split(",") if settings.CORS_ORIGINS else ["*"]
 
@@ -39,9 +38,9 @@ UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── singleton pipeline objects ────────────────────────────────────────────────
 
-graphrag = GraphRAGIndexer(GEMINI_API_KEY)
-raptor = RaptorRunner(GEMINI_API_KEY)
-hippo = HippoRetriever(GEMINI_API_KEY)
+graphrag = GraphRAGIndexer()
+raptor = RaptorRunner()
+hippo = HippoRetriever()
 query_engine = QueryEngine(graphrag=graphrag, raptor=raptor, hippo=hippo)
 logger.info("Pipeline components initialized: GraphRAGIndexer, RaptorRunner, HippoRetriever, QueryEngine")
 
@@ -135,8 +134,8 @@ async def upload_document(
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
 ):
-    if not GEMINI_API_KEY:
-        raise HTTPException(status_code=500, detail="GEMINI_API_KEY not configured.")
+    if not settings.GROQ_API_KEY:
+        raise HTTPException(status_code=500, detail="GROQ_API_KEY not configured.")
 
     logger.info(f"Received upload request: filename={file.filename}, content_type={file.content_type}, size={file.spool_max_size} bytes")
 

@@ -23,7 +23,6 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any
 
-from core.config import settings
 from core.logger import logger
 
 from rouge_score import rouge_scorer as rs # type: ignore
@@ -92,7 +91,7 @@ async def evaluate(
     raptor: RaptorRunner,
     hippo: HippoRetriever,
 ) -> Dict[str, Any]:
-    engine = QueryEngine(settings.GEMINI_API_KEY, graphrag, raptor, hippo)
+    engine = QueryEngine(graphrag=graphrag, raptor=raptor, hippo=hippo)
     results = []
 
     for i, pair in enumerate(qa_pairs, 1):
@@ -135,10 +134,9 @@ async def _main(args: argparse.Namespace):
         qa_pairs = json.load(f)
 
     # bootstrap pipeline (no documents — just test query engine on pre-built state)
-    key = settings.GEMINI_API_KEY
-    graphrag = GraphRAGIndexer(key)
-    raptor   = RaptorRunner(key)
-    hippo    = HippoRetriever(key)
+    graphrag = GraphRAGIndexer()
+    raptor   = RaptorRunner()
+    hippo    = HippoRetriever()
 
     if args.docs_dir:
         from pipeline.document_processor import extract_text

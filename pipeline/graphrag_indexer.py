@@ -3,7 +3,7 @@ GraphRAG Indexer: extracts entities + relationships from document chunks,
 builds a NetworkX knowledge graph, detects communities with Louvain,
 and generates community summaries for global-context retrieval.
 
-LLM provider (Gemini / Groq) is selected via LLM_PROVIDER in .env.
+LLM provider: Groq (configured via GROQ_API_KEY / GROQ_MODEL in .env).
 """
 import asyncio
 import json

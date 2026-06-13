@@ -68,8 +68,9 @@ import { switchMap } from 'rxjs/operators';
     </aside>
   `,
   styles: [`
+    :host { display: block; height: 100%; }
     .sidebar {
-      width: 240px; flex-shrink: 0; display: flex; flex-direction: column;
+      width: 240px; height: 100%; flex-shrink: 0; display: flex; flex-direction: column;
       border-right: 1px solid var(--border-subtle); background: var(--bg-surface);
       overflow: hidden;
     }

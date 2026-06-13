@@ -14,7 +14,7 @@ import numpy as np
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import normalize
 
-from core.logger import logger
+from backend.core.logger import logger
 from .llm_provider import embed, generate
 
 

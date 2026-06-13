@@ -1,0 +1,200 @@
+CASE REPORT — CORPORATE FINANCE / BANKRUPTCY
+Case Reference: In re Cascade Retail Group, Inc. — Chapter 11 Bankruptcy
+Case Number: BK-2023-40017
+Court: U.S. Bankruptcy Court, District of Delaware
+Filed: March 15, 2023
+Status: Plan Confirmed — November 8, 2023; Emergence from Bankruptcy — January 15, 2024
+
+=============================================================================
+CASE OVERVIEW
+=============================================================================
+Cascade Retail Group, Inc. ("Cascade" or "Debtor") is a mid-size specialty retail chain operating 284 stores across 38 states, primarily selling home goods, kitchenware, and seasonal merchandise under the "Cascade Home" and "Seasons & More" banners. After experiencing severe financial distress driven by rising inventory costs, an e-commerce transformation failure, post-pandemic consumer spending normalization, and an over-leveraged balance sheet from a 2019 private equity acquisition, Cascade filed for Chapter 11 bankruptcy protection seeking to restructure $1.6 billion in funded debt.
+
+The case represents one of the more complex retail restructurings of 2023, involving 284 store leases, 4,800 employees, 1,200+ vendor relationships, and a contested reorganization plan.
+
+=============================================================================
+DEBTORS
+=============================================================================
+Cascade Retail Group, Inc. (parent; publicly traded OTC: CADE)
+Cascade Home, LLC (operating subsidiary)
+Seasons & More Retail, LLC (operating subsidiary)
+Cascade Supply Chain Solutions, Inc. (logistics subsidiary)
+CRG Finance Holdings, LLC (holding company for debt instruments)
+
+=============================================================================
+KEY STAKEHOLDERS
+=============================================================================
+
+Pre-Petition Capital Structure:
+  First Lien Term Loan: $850 million (Agent: Bridgewater Capital Partners)
+    Lenders: 23 institutional lenders including several hedge funds
+    Interest rate: SOFR + 450 bps; matured January 2023
+    Status: In DEFAULT as of filing date
+    Security: First priority lien on substantially all assets
+
+  First Lien Revolving Credit: $150 million (Agent: First National Bank)
+    Outstanding: $112 million at filing date
+    Security: First priority lien (pari passu with term loan)
+
+  Second Lien Notes: $350 million (outstanding at par)
+    Holders: Primarily distressed debt hedge funds (Centerpoint Capital, Vantage Point Asset Management)
+    Interest rate: 9.25% fixed; due 2025
+    Status: Not yet in default at filing but expected to be
+    Security: Second priority lien on substantially all assets
+
+  Unsecured Notes: $200 million
+    Status: Deeply out of the money; traded at 4 cents on the dollar pre-petition
+    Holders: Retail investors and institutional bondholders
+
+  Accounts Payable: $180 million to merchandise vendors and service providers
+  Real Estate Obligations: 284 store leases (approximately $420 million in remaining lease obligations)
+
+Pre-Petition Shareholders: Apollo Global Management (PE sponsor, 68% owner); management and public float (32%)
+
+=============================================================================
+CAUSES OF FINANCIAL DISTRESS
+=============================================================================
+
+1. Leveraged Buyout Debt Burden:
+   Apollo acquired Cascade in 2019 for $2.4 billion, using $1.3 billion in borrowed funds. The resulting debt service obligations consumed 35% of EBITDA in a normalized business environment — leaving virtually no cushion for economic disruption.
+
+2. Failed E-Commerce Initiative:
+   Cascade launched a $180 million technology investment program in 2020 to build direct-to-consumer e-commerce capabilities to compete with Amazon and Wayfair. The initiative launched 18 months late, over budget, and with significant customer experience failures. Online sales never exceeded 8% of total revenue vs. a target of 25%.
+
+3. Post-COVID Consumer Normalization:
+   The home goods category experienced extraordinary COVID-era demand (2020-2021) as consumers invested in their living spaces. Cascade dramatically increased inventory commitments based on this elevated demand. When consumer spending normalized and shifted toward experiences and services in 2022, Cascade was left with $320 million in excess inventory, driving margin compression and requiring deep discounting.
+
+4. Inflation and Supply Chain:
+   Rising freight costs (+42% YoY in 2022), inventory carrying costs, and store operating expense inflation compressed gross margins from 44% (2021) to 31% (2022) and EBITDA from $280 million (2021) to $48 million (2022).
+
+5. Lease Obligations:
+   284 stores under long-term leases signed in 2018-2019 at peak retail rents became significant fixed cost burdens as several locations underperformed. Lease rejection or renegotiation was a key restructuring tool.
+
+=============================================================================
+FINANCIAL PERFORMANCE (PRE-PETITION)
+=============================================================================
+
+                    FY2020      FY2021      FY2022
+Net Revenue:        $1.82B      $2.14B      $1.63B
+Gross Profit:       $800M       $943M       $506M
+Gross Margin:       43.9%       44.1%       31.0%
+EBITDA:             $195M       $280M       $48M
+Net Income/(Loss):  ($42M)      $18M        ($287M)
+Total Debt:         $1.38B      $1.36B      $1.62B
+Liquidity:          $210M       $185M       $22M
+
+=============================================================================
+CHAPTER 11 PROCEEDINGS
+=============================================================================
+
+First Day Motions (March 15-16, 2023):
+  Court approved on an emergency basis:
+  - DIP (Debtor-in-Possession) Financing: $300 million DIP facility (Agent: First National Bank; Senior Lenders participating)
+    Terms: SOFR + 600 bps; 12-month term; priming lien over pre-petition first lien debt
+    Purpose: Fund ongoing operations, vendor payments, employee wages during restructuring
+  - Critical Vendor Program: $45 million authorized to pay pre-petition claims of critical vendors (those providing unique merchandise or logistics services not readily replaceable)
+  - Customer Loyalty Program: Continuation of Cascade Rewards loyalty program to maintain customer relationships
+  - Employee Retention Plan: Retention bonuses for 340 key management and operational employees
+
+Lease Decisions:
+  Over the first 90 days, Cascade analyzed all 284 store leases using store-level profitability analysis. Results:
+  - 198 stores: profitable or breakeven — RETAIN (some with rent concessions from landlords)
+  - 62 stores: underperforming — CLOSE AND REJECT LEASE
+  - 24 stores: viable with rent reduction negotiated — ASSUME WITH MODIFICATION
+
+  Lease rejection resulted in landlord rejection damage claims of approximately $180 million (subject to the statutory cap under 11 U.S.C. Section 502(b)(6) — capped at 15% of remaining rent obligation, reduced total to approximately $42 million in allowable claims).
+
+  Store closure sale-on-premises: 62 closing stores' inventory liquidated through going-out-of-business sales generating $48 million in proceeds.
+
+Vendor Negotiations:
+  Cascade negotiated revised payment terms with key merchandise suppliers:
+  - Pre-petition arrears: 30-50 cents on the dollar
+  - Post-petition trade credit: Restored on 30-day terms after partial payment
+  - 18 vendors elected to provide trade credit in exchange for enhanced claim treatment in the plan
+
+Committee Formation (March 28, 2023):
+  U.S. Trustee appointed:
+  (1) Official Committee of Unsecured Creditors (UCC): 7 members including top merchandise vendors, commercial landlords, and a bondholder representative
+  (2) Retiree Committee: Not required (no formal retiree benefit obligations)
+
+  UCC retained Akin Gump Strauss Hauer & Feld as counsel and Ankura Consulting as financial advisor.
+
+Sale Process vs. Reorganization Decision:
+  First Lien Lenders initially pushed for a Section 363 asset sale process as the value-maximizing alternative. Debtor and Second Lien Noteholders advocated for a standalone reorganization. After 60 days of marketing by investment bank Lazard, the process yielded no qualified bids exceeding recovery values of a reorganization plan. Standalone reorganization pursued.
+
+=============================================================================
+PLAN OF REORGANIZATION
+=============================================================================
+
+Proposed Treatment of Claims:
+
+  Class 1 — DIP Financing ($300M): Paid in full in cash at emergence (first priority)
+  Class 2 — First Lien Secured Claims ($962M including fees and accrued interest):
+    Treatment: $500M in new first lien exit facility (5-year term, SOFR + 400 bps) + 72% of new common equity
+    Recovery: Approximately 78-84 cents on the dollar (blended)
+
+  Class 3 — Second Lien Secured Claims ($350M):
+    Treatment: $50M cash + 25% of new common equity + warrants for additional 8%
+    Recovery: Approximately 20-22 cents on the dollar
+
+  Class 4 — General Unsecured Claims ($380M including vendor claims and rejected lease claims):
+    Treatment: 3% of new common equity + rights offering participation (pro rata)
+    Recovery: Approximately 3-5 cents on the dollar
+
+  Class 5 — Existing Equity (Apollo, public shareholders):
+    Treatment: CANCELLED AND EXTINGUISHED
+    Recovery: Zero
+
+Valuation:
+  Reorganized enterprise value: $780-920 million (based on DCF and EBITDA multiples; 3.8-4.5x projected FY2025 EBITDA of $175M-$205M)
+
+Rights Offering:
+  $75 million equity rights offering backstopped by Second Lien Noteholders consortium; allows unsecured creditors to purchase new equity at plan value
+
+Plan Confirmation Objections:
+  - Apollo (equity holder): Challenged enterprise valuation as too low; argued equity has value
+  - Several landlords: Challenged lease rejection damage caps
+  - UCC: Objected to Second Lien treatment as too generous relative to unsecured creditors
+  - Judge overruled all objections; plan confirmed November 8, 2023
+
+=============================================================================
+POST-EMERGENCE CAPITAL STRUCTURE (January 15, 2024)
+=============================================================================
+Exit Facility (Term Loan): $500 million (SOFR + 400 bps; 5-year)
+Exit Revolving Credit: $150 million
+Total Funded Debt: $650 million (vs. $1.62 billion pre-petition)
+New Common Equity: Issued to creditors per plan treatment
+Total Enterprise Value at Emergence: ~$850 million
+
+Key Operational Changes:
+  - 222 stores in operation (vs. 284 pre-filing)
+  - New leadership: New CEO (Jennifer Hartley, retail industry veteran) and CFO appointed
+  - E-commerce platform partnership with third-party logistics provider (asset-light approach)
+  - 4,800 employees retained (vs. 5,400 pre-petition)
+  - Significantly reduced lease cost base
+
+=============================================================================
+ANALYSIS AND LESSONS LEARNED
+=============================================================================
+
+1. LBO Leverage Risk: The Apollo LBO placed a struggling retailer with intensifying competitive dynamics under an unsustainable debt load. Retail is a cyclical, margin-compressed industry ill-suited for high leverage ratios.
+
+2. Inventory Management Failure: Over-buying based on COVID-era demand signals was a catastrophic operational error. Supply chain conservatism is essential for retail businesses.
+
+3. E-Commerce Investment: The $180 million tech investment without adequate execution capability destroyed value rather than created it. Technology transformation requires realistic timelines and organizational capability assessment.
+
+4. Bankruptcy as Restructuring Tool: The Chapter 11 process effectively performed multiple functions simultaneously: financial restructuring (debt reduction), operational restructuring (store closures), and lease renegotiation — a combination impossible to achieve outside bankruptcy within a comparable timeframe.
+
+5. DIP Financing: Pre-arranged DIP financing from existing lenders provided liquidity certainty and accelerated the restructuring timeline.
+
+=============================================================================
+KEY LEGAL CITATIONS
+=============================================================================
+11 U.S.C. Section 363 (Sale of Assets)
+11 U.S.C. Section 365 (Executory Contracts and Unexpired Leases)
+11 U.S.C. Section 502(b)(6) (Landlord Rejection Damage Cap)
+11 U.S.C. Section 1129 (Confirmation of Plan)
+11 U.S.C. Section 1141 (Effect of Confirmation)
+Absolute Priority Rule: 11 U.S.C. Section 1129(b)
+In re Toys R Us, Inc., Case No. 17-34665 (Bankr. E.D. Va.) (comparable retail restructuring)
+In re Pier 1 Imports, Case No. 20-30805 (Bankr. E.D. Va.) (comparable retail restructuring)

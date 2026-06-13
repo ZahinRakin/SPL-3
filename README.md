@@ -43,10 +43,13 @@ Free at [https://aistudio.google.com](https://aistudio.google.com)
 cd graphrag-project
 cp .env.example .env
 # edit .env and set GEMINI_API_KEY=your-key
+download ollama from the website: https://ollama.com/download
+- open a terminal then run: 
+ollama pull nomic-embed-text
 
 pip install -r requirements.txt
 
-uvicorn ui.app:app --reload --port 8000
+uvicorn backend.app.main:app --reload --port 8000
 ```
 
 API docs available at http://localhost:8000/docs

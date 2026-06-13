@@ -23,7 +23,7 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any
 
-from core.logger import logger
+from backend.core.logger import logger
 
 from rouge_score import rouge_scorer as rs # type: ignore
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction # type: ignore
@@ -36,10 +36,10 @@ except LookupError:
     logger.error("NLTK 'punkt' tokenizer not found. Downloading...")
     nltk.download("punkt", quiet=True)
 
-from pipeline.graphrag_indexer import GraphRAGIndexer
-from pipeline.raptor_runner import RaptorRunner
-from pipeline.hippo_retriever import HippoRetriever
-from pipeline.query_engine import QueryEngine, Method
+from backend.pipeline.graphrag_indexer import GraphRAGIndexer
+from backend.pipeline.raptor_runner import RaptorRunner
+from backend.pipeline.hippo_retriever import HippoRetriever
+from backend.pipeline.query_engine import QueryEngine, Method
 
 
 # ── metrics ───────────────────────────────────────────────────────────────────
@@ -139,7 +139,7 @@ async def _main(args: argparse.Namespace):
     hippo    = HippoRetriever()
 
     if args.docs_dir:
-        from pipeline.document_processor import extract_text
+        from backend.pipeline.document_processor import extract_text
         docs_path = Path(args.docs_dir)
         for fp in docs_path.iterdir():
             if fp.is_file():

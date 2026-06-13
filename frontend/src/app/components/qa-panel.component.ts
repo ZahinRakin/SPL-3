@@ -153,6 +153,7 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
     </div>
   `,
   styles: [`
+    :host { display: block; flex: 1; height: 100%; overflow: hidden; }
     .qa-shell { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 
     /* messages */

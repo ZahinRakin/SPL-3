@@ -67,7 +67,7 @@ export interface QueryResponse {
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private base = '/api';
+  private base = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) {}
 

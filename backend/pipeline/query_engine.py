@@ -9,7 +9,7 @@ from typing import Dict, List, Literal
 
 import numpy as np
 
-from core.logger import logger
+from backend.core.logger import logger
 from .graphrag_indexer import GraphRAGIndexer
 from .hippo_retriever import HippoRetriever
 from .llm_provider import embed, generate

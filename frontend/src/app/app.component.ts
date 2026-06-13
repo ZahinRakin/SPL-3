@@ -110,8 +110,9 @@ export type ActiveTab = 'graph' | 'qa' | 'analytics';
     }
   `,
   styles: [`
+    :host { display: block; height: 100%; }
     .shell {
-      display: flex; flex-direction: column; height: 100vh;
+      display: flex; flex-direction: column; height: 100%;
       background: var(--bg-base); overflow: hidden;
     }
 

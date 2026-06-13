@@ -1,0 +1,175 @@
+CLINICAL CASE REPORT
+Case ID: MED-2024-0189
+Title: Community-Acquired Pneumonia Complicated by Septic Shock and ARDS in a 72-Year-Old Female
+Institution: Regional General Hospital, Department of Pulmonology and Critical Care
+Date of Admission: January 7, 2024
+
+=============================================================================
+PATIENT INFORMATION
+=============================================================================
+Age: 72 years
+Sex: Female
+Chief Complaint: Progressive shortness of breath, productive cough, and fever for 5 days
+
+=============================================================================
+HISTORY OF PRESENT ILLNESS
+=============================================================================
+Mrs. E.K. is a 72-year-old female with a significant past medical history who presented with a 5-day history of progressive dyspnea, productive cough with yellow-green sputum, fever up to 39.8 C, rigors, and malaise. She initially treated herself at home with OTC cold medications without improvement. On the day of presentation, her family noted she was increasingly confused and difficult to arouse, prompting emergency services activation.
+
+Per EMS: GCS on scene was 11 (E3V3M5). Blood pressure 82/50 mmHg, SpO2 78% on room air.
+
+=============================================================================
+PAST MEDICAL HISTORY
+=============================================================================
+1. COPD (GOLD Stage II) — on tiotropium inhaler and PRN albuterol
+2. Type 2 Diabetes Mellitus — managed with glipizide 10 mg daily
+3. Hypertension — on lisinopril 10 mg and hydrochlorothiazide 25 mg
+4. Atrial Fibrillation — on apixaban 5 mg twice daily and metoprolol 25 mg twice daily
+5. Chronic Kidney Disease Stage 3 (baseline Cr 1.6 mg/dL)
+6. Breast cancer, stage II — in remission (chemotherapy completed 2021)
+
+=============================================================================
+PHYSICAL EXAMINATION
+=============================================================================
+Vital Signs:
+  Blood Pressure: 78/48 mmHg
+  Heart Rate: 128 bpm (irregular)
+  Respiratory Rate: 34 breaths/min
+  Temperature: 39.4 C
+  SpO2: 82% on 15L non-rebreather mask
+  GCS: 11
+
+General: Elderly female, severely ill-appearing, obtunded, labored breathing
+Cardiovascular: Irregularly irregular rhythm; tachycardic
+Respiratory: Diffuse bilateral crackles and rhonchi; absent breath sounds at right base; use of accessory muscles
+Abdomen: Soft, mildly distended; decreased bowel sounds
+Extremities: Cool, mottled extremities; 2+ pitting edema bilateral lower extremities
+
+=============================================================================
+DIAGNOSTIC INVESTIGATIONS
+=============================================================================
+
+Chest X-Ray: Dense consolidation right lower and middle lobes; bilateral patchy infiltrates; no pneumothorax
+
+CT Chest (with contrast):
+  - Right lower lobe consolidation with air bronchograms (lobar pneumonia pattern)
+  - Bilateral ground-glass opacities (30-40% of lung fields)
+  - Small right pleural effusion
+  - No pulmonary embolism
+
+Laboratory Results:
+  WBC: 24,600/uL with 92% neutrophils and 12% bands (left shift)
+  Hemoglobin: 9.8 g/dL (baseline anemia)
+  Platelets: 68,000/uL (thrombocytopenia)
+  Lactate: 5.8 mmol/L (severe hyperlactatemia)
+  Procalcitonin: 48.6 ng/mL (markedly elevated, bacterial sepsis)
+  CRP: 312 mg/L
+  Creatinine: 3.2 mg/dL (acute-on-chronic kidney injury)
+  BUN: 68 mg/dL
+  Albumin: 2.1 g/dL (severe hypoalbuminemia)
+  ABG: pH 7.18, PaCO2 52, PaO2 48, HCO3 18 (combined respiratory and metabolic acidosis)
+  P/F ratio: 48/0.60 = 80 (severe ARDS criteria: P/F <100)
+  BNP: 890 pg/mL
+
+Blood Cultures: 2/2 bottles positive for Streptococcus pneumoniae (bacteremia confirmed)
+Sputum Culture: Heavy growth of Streptococcus pneumoniae, penicillin-susceptible
+Urine Pneumococcal Antigen: Positive
+
+SOFA Score: 14 (predicted mortality >80%)
+qSOFA: 3/3
+
+=============================================================================
+DIAGNOSIS
+=============================================================================
+1. Community-Acquired Pneumonia (CAP) — Streptococcus pneumoniae, bilateral
+2. Septic Shock (Sepsis-3 criteria met)
+3. Acute Respiratory Distress Syndrome (ARDS) — Severe (P/F ratio 80)
+4. Acute-on-Chronic Kidney Injury
+5. Disseminated Intravascular Coagulation (DIC) — evolving
+6. Type 2 Respiratory Failure
+
+=============================================================================
+TREATMENT AND MANAGEMENT
+=============================================================================
+
+Airway Management:
+  Patient intubated emergently in ED for hypoxic respiratory failure
+  Ventilator settings: Lung-protective strategy — VT 350 mL (6 mL/kg IBW), PEEP 12, FiO2 1.0
+  Prone positioning initiated within 2 hours per ARDS protocol
+
+Septic Shock Management (Surviving Sepsis Campaign Bundle):
+  - 30 mL/kg IV crystalloid bolus (1.5L) administered within first hour
+  - Norepinephrine infusion initiated; titrated to MAP >65 mmHg (max dose 0.3 mcg/kg/min)
+  - Vasopressin 0.03 units/min added for refractory shock
+  - Blood cultures drawn before antibiotics (3 sets)
+
+Antibiotic Therapy:
+  - Ceftriaxone 2g IV every 24 hours (S. pneumoniae — MIC confirmed <0.06, fully susceptible)
+  - Azithromycin 500 mg IV daily (atypical coverage per CAP guidelines)
+  - De-escalated to ceftriaxone monotherapy on Day 3 after culture sensitivity confirmed
+
+Adjunctive Therapies:
+  - Hydrocortisone 200 mg/day continuous infusion (refractory vasopressor dependence)
+  - Insulin infusion for glucose control (target 140-180 mg/dL)
+  - DVT prophylaxis: intermittent pneumatic compression (anticoagulation held due to DIC/thrombocytopenia)
+  - Stress ulcer prophylaxis: pantoprazole 40 mg IV daily
+  - Enteral nutrition via nasogastric tube initiated at 20 mL/hr on Day 1
+  - CRRT (Continuous Renal Replacement Therapy) initiated Day 2 for severe AKI with volume overload
+
+=============================================================================
+HOSPITAL COURSE
+=============================================================================
+
+ICU Days 1-3:
+  Extremely critical. Remained on high-dose vasopressors. Prone positioning for 16 hours/day. FiO2 gradually weaned from 1.0 to 0.70. Platelets declined to 42,000 with prolonged PT/INR, consistent with DIC. FFP and cryoprecipitate administered. Creatinine peaked at 4.8 mg/dL; CRRT continued.
+
+ICU Days 4-7:
+  Gradual hemodynamic improvement. Vasopressin successfully weaned and stopped Day 5. Norepinephrine gradually reduced. Prone positioning discontinued as P/F ratio improved to 180. Platelets recovering to 95,000. Hydrocortisone tapered over 3 days.
+
+ICU Days 8-12:
+  Norepinephrine successfully weaned off Day 8. Spontaneous breathing trials began Day 10. Ventilator weaning initiated. CRRT converted to intermittent hemodialysis as hemodynamics stabilized. Creatinine improved to 2.4 mg/dL.
+
+ICU Day 13:
+  Patient successfully extubated. Remained on high-flow nasal cannula at 40L/min, FiO2 0.50. Alert and interactive. Oriented to person and place.
+
+Step-Down Unit (Days 14-18):
+  Oxygen requirements gradually decreased. Physical and occupational therapy initiated. Renal function continued to improve (Cr 1.9 mg/dL at discharge). Resumed oral apixaban after platelet count >100,000. Antibiotic course completed.
+
+=============================================================================
+DISCHARGE CONDITION AND PLAN
+=============================================================================
+Discharged on Day 18 to skilled nursing facility for continued rehabilitation.
+
+Discharge medications included adjusted antihypertensives (lisinopril dose reduced due to residual renal impairment), resumed atrial fibrillation management, diabetes medications adjusted.
+
+Recommended follow-up: Pulmonology in 4 weeks, Nephrology in 2 weeks, Primary care in 1 week.
+
+Vaccination: Pneumococcal vaccine (PPSV23) and updated influenza vaccine administered prior to discharge.
+
+=============================================================================
+DISCUSSION
+=============================================================================
+This case highlights the clinical cascade from community-acquired pneumonia to septic shock and ARDS — a presentation associated with high mortality, particularly in elderly patients with multiple comorbidities. The patient's immunocompromised state (post-chemotherapy), COPD, diabetes, and age all contributed to her inability to mount an effective early immune response.
+
+Key management principles demonstrated in this case:
+1. Early recognition of sepsis using qSOFA/SOFA scoring
+2. Adherence to the 1-hour Surviving Sepsis Campaign bundle
+3. Lung-protective ventilation strategy per ARDSnet protocol
+4. Prone positioning for severe ARDS (P/F <150)
+5. Early antibiotic de-escalation once culture results available
+6. Corticosteroids for refractory septic shock
+
+The bacteremic pneumococcal pneumonia causing severe ARDS and septic shock represents a preventable condition — pneumococcal vaccination would likely have prevented this life-threatening episode.
+
+=============================================================================
+OUTCOME
+=============================================================================
+Survived. Discharged to SNF Day 18. Significant functional decline from baseline requiring rehabilitation. Renal function partially recovered but likely CKD stage 4 permanently.
+
+=============================================================================
+REFERENCES
+=============================================================================
+1. Rhodes A, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2016. Crit Care Med. 2017;45(3):486-552.
+2. ARDS Network. Ventilation with lower tidal volumes as compared with traditional tidal volumes. N Engl J Med. 2000;342:1301-1308.
+3. Guerin C, et al. Prone positioning in severe acute respiratory distress syndrome (PROSEVA). N Engl J Med. 2013;368:2159-2168.
+4. Mandell LA, et al. IDSA/ATS Consensus Guidelines on the Management of CAP in Adults. Clin Infect Dis. 2007;44:S27-72.

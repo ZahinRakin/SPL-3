@@ -6,7 +6,7 @@ import asyncio
 import aiofiles
 from pathlib import Path
 
-from core.logger import logger
+from backend.core.logger import logger
 
 
 async def extract_text(file_path: str, content_type: str = "") -> str:

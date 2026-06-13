@@ -1,0 +1,169 @@
+CASE REPORT — CONTRACT LAW
+Case Number: CV-2023-04821
+Court: Superior Court of the State, Commercial Division
+Title: Hartwell Construction Group, LLC v. Pinnacle Development Partners, Inc.
+Filed: September 12, 2023
+Status: Settled — March 18, 2024
+
+=============================================================================
+CASE SUMMARY
+=============================================================================
+This matter involves a breach of contract dispute arising out of a commercial construction agreement for the renovation and expansion of the Millbrook Corporate Campus in Millbrook City. Plaintiff Hartwell Construction Group, LLC ("Hartwell" or "Plaintiff") sued Defendant Pinnacle Development Partners, Inc. ("Pinnacle" or "Defendant") for breach of contract, quantum meruit, and unjust enrichment, seeking damages of $4.7 million for unpaid work, delay damages, and loss of anticipated profit. Defendant counterclaimed for defective workmanship, project abandonment, and damages of $2.3 million.
+
+=============================================================================
+PARTIES
+=============================================================================
+
+Plaintiff:
+  Name: Hartwell Construction Group, LLC
+  Principal place of business: 1420 Industrial Parkway, Millbrook City
+  Nature of business: General contractor; commercial construction
+  Founded: 2004; 22 years of operation; 180 employees
+  Represented by: Morrison & Keane LLP (Lead Attorney: Sandra Morrison, Esq.)
+
+Defendant:
+  Name: Pinnacle Development Partners, Inc.
+  Principal place of business: 880 Corporate Blvd., Suite 400, Millbrook City
+  Nature of business: Commercial real estate developer
+  Founded: 2010; 45 employees
+  Represented by: Greystone Legal Associates (Lead Attorney: Marcus T. Webb, Esq.)
+
+=============================================================================
+FACTUAL BACKGROUND
+=============================================================================
+
+The Contract:
+  On February 15, 2022, Hartwell and Pinnacle entered into an AIA A102-2017 standard form contract (the "Contract") for the renovation of Building A and the construction of a new Building C addition at the Millbrook Corporate Campus. The Contract established:
+  - Contract price: $12,850,000 (cost-plus with a guaranteed maximum price)
+  - Completion date: December 31, 2022
+  - Liquidated damages: $15,000 per day for delays beyond the contract date
+  - Payment terms: Monthly progress payments within 21 days of invoice submission
+  - Retainage: 10% withheld until substantial completion
+
+Project Commencement and Early Performance (February–July 2022):
+  Project commenced on schedule. Hartwell mobilized crew, began demolition of Building A's interior, and completed underground utility work by April 2022. Initial progress payments were made timely through June 2022.
+
+Owner-Initiated Changes and Scope Creep (May–September 2022):
+  Beginning in May 2022, Pinnacle's project manager, Mr. Derek Ashford, directed numerous verbal change requests without issuing formal Change Orders:
+  - Addition of high-efficiency HVAC system upgrade (not in original scope)
+  - Expansion of Building C footprint by 4,200 sq ft
+  - Upgrade from standard to premium finishes throughout Building A
+  - Addition of underground parking structure (major scope addition)
+
+  Hartwell documented these directives in site meeting minutes and written correspondence but proceeded with work based on verbal assurances from Mr. Ashford that Change Orders and additional payment would be forthcoming. Estimated value of changes: $2.1 million.
+
+Payment Disputes Begin (September 2022):
+  Pinnacle withheld payment on the August invoice ($890,000) without explanation. When Hartwell inquired, Pinnacle cited alleged quality concerns with the HVAC installation. An independent inspector retained by Hartwell found the installation within code specifications. Pinnacle nonetheless refused to release payment.
+
+Project Suspension and Abandonment Allegations (October 2022):
+  Hartwell sent formal written notice on October 4, 2022 pursuant to AIA A201 Section 14.1, stating that payment had been outstanding for 28 days (beyond the contractual 21-day payment deadline) and that Hartwell would suspend performance if payment was not received within 7 days.
+
+  No payment was received. Hartwell suspended operations on October 12, 2022. Pinnacle declared this a material breach and termination of the contract on October 15, 2022, hired a replacement contractor, and refused further communication with Hartwell.
+
+Pinnacle's Completion with Substitute Contractor:
+  Pinnacle engaged Second Chance Builders, LLC to complete the project. Completion was achieved on April 30, 2023 — 4 months past the original deadline. Pinnacle claims Hartwell's "abandonment" caused this delay and seeks liquidated damages of $1.8 million (120 days x $15,000/day).
+
+=============================================================================
+CLAIMS AND ALLEGATIONS
+=============================================================================
+
+Plaintiff's Claims (Hartwell v. Pinnacle):
+
+  Count I — Breach of Contract:
+    Hartwell alleges Pinnacle breached the contract by:
+    (a) Failing to make timely progress payments as required by Section 9.4 of the AIA A201-2017
+    (b) Refusing to issue Change Orders for owner-directed scope changes
+    (c) Wrongfully terminating the contract when Hartwell properly exercised its suspension rights
+
+    Damages sought: $1.2 million (unpaid invoices) + $2.1 million (unapproved change order work) + $900,000 (anticipated profit on remaining work) + $500,000 (demobilization costs and equipment standby)
+    Total: $4.7 million
+
+  Count II — Quantum Meruit:
+    In the alternative, Hartwell seeks the reasonable value of services rendered based on unjust enrichment, as Pinnacle received the benefit of $8.4 million in construction work for which it refused to fully compensate.
+
+  Count III — Breach of Implied Covenant of Good Faith:
+    Hartwell alleges Pinnacle acted in bad faith by: (a) directing work verbally while refusing written Change Orders to circumvent the contract price ceiling; (b) manufacturing quality complaints to delay payment; (c) using the payment withholding to force Hartwell off the project and avoid paying for additional scope work.
+
+Defendant's Counterclaims (Pinnacle v. Hartwell):
+
+  Count I — Breach of Contract / Project Abandonment:
+    Pinnacle alleges Hartwell abandoned the project and breached the Contract by suspending work, causing project delays and completion costs with substitute contractor.
+    Damages: $1.8 million (liquidated damages for 120-day delay) + $500,000 (premium cost to retain substitute contractor on emergency basis)
+
+  Count II — Defective Workmanship:
+    Pinnacle alleges the HVAC installation was defective and non-compliant with specifications, requiring $280,000 in remediation.
+    Note: Disputed by Hartwell's expert; independent inspection found no defects.
+
+  Count III — Breach of Project Schedule:
+    Pinnacle alleges Hartwell's crew reductions in August 2022 constituted a material breach of the project schedule obligations.
+
+=============================================================================
+KEY EVIDENCE
+=============================================================================
+
+For Plaintiff (Hartwell):
+  1. Certified copies of unpaid invoices (August–October 2022) totaling $1.2 million
+  2. Project meeting minutes (May–September 2022) documenting verbal change directives from Pinnacle's project manager
+  3. Email correspondence from Mr. Ashford confirming additional scope work verbally
+  4. Independent inspection report (Thompson Engineering Associates, October 2022) finding HVAC installation within code
+  5. Construction scheduling expert report (Dr. Maria Castillo, CPM) showing delay was caused by owner-initiated changes
+  6. Expert cost analysis establishing $2.1 million value of unapproved changes
+
+For Defendant (Pinnacle):
+  1. Contract clause requiring all changes to be in writing with signed Change Orders
+  2. Pinnacle's internal engineer report (October 2022) citing HVAC deficiencies
+  3. Revised project schedule showing Hartwell was 6 weeks behind on Building C
+  4. Substitute contractor invoices showing $500,000 premium to mobilize on short notice
+
+=============================================================================
+LEGAL ISSUES
+=============================================================================
+
+Issue 1: Did Pinnacle's verbal directives for additional work constitute enforceable change orders, or were they void for lack of compliance with the contract's written change order requirement?
+  Analysis: Courts have generally enforced verbal change orders when: (a) the owner directed the work, (b) the contractor reasonably believed it would be compensated, and (c) both parties acted as though the change was authorized. The doctrine of waiver applies when the owner consistently approves additional work verbally. Citing: PCL Construction Services v. U.S. (2001); Foley Co. v. U.S. (1994).
+
+Issue 2: Was Hartwell's suspension of work pursuant to AIA A201 Section 14.1 a proper exercise of contractual rights or a material breach?
+  Analysis: AIA A201 Section 14.1 explicitly grants the contractor the right to suspend work upon 7 days' written notice when payment is overdue by 21 days. Hartwell's October 4 notice and October 12 suspension followed this procedure exactly. Pinnacle's subsequent termination notice appears to lack contractual basis.
+
+Issue 3: Are liquidated damages enforceable if the delay was caused by owner-directed changes?
+  Analysis: Liquidated damages provisions are not enforceable for delays within the owner's control. The addition of 4,200 sq ft and underground parking would necessarily extend the project timeline. Concurrent delay analysis required.
+
+=============================================================================
+SETTLEMENT AGREEMENT (March 18, 2024)
+=============================================================================
+After mediation conducted February 28, 2024 (Mediator: Hon. Richard Paulson, Ret.):
+
+Terms:
+  - Pinnacle to pay Hartwell $2,950,000 (net settlement)
+  - Hartwell releases all claims including change order amounts and lost profits
+  - Pinnacle withdraws all counterclaims including liquidated damages
+  - Both parties to bear their own attorneys' fees
+  - Confidentiality clause — terms not for public disclosure (this record is anonymized)
+  - No admission of liability by either party
+
+=============================================================================
+LEGAL ANALYSIS AND LESSONS LEARNED
+=============================================================================
+
+This case illustrates several recurring issues in commercial construction disputes:
+
+1. Change Order Discipline: The owner's pattern of directing changes verbally while refusing to issue Change Orders is a classic high-risk practice. Contractors should stop work on additional scope until a Change Order is signed — proceeding on verbal assurances creates significant risk.
+
+2. Documentation is Critical: Hartwell's survival in this case relied heavily on meeting minutes and email correspondence documenting the owner's directives. Contemporaneous documentation saved Hartwell from a far worse outcome.
+
+3. Exercising Contractual Rights: Hartwell's careful compliance with AIA A201 suspension procedures (written notice, 7-day wait) preserved its contractual rights. Immediate walkoff would have constituted breach.
+
+4. Payment Withholding as Leverage: Courts have consistently found that using manufactured defect claims to withhold payment and gain negotiating leverage constitutes bad faith. Pinnacle's exposure on the bad faith claim was significant.
+
+5. Liquidated Damages and Concurrent Delay: Owner-caused delays generally excuse contractor delay damages. The failure to analyze concurrent delay before asserting liquidated damages was a strategic error.
+
+=============================================================================
+ATTORNEYS AND PROFESSIONALS
+=============================================================================
+Plaintiff's Counsel: Morrison & Keane LLP
+Defendant's Counsel: Greystone Legal Associates
+Mediator: Hon. Richard Paulson (Retired Superior Court Judge)
+Plaintiff's Expert (Construction Scheduling): Dr. Maria Castillo, PE, CPM
+Plaintiff's Expert (Cost/Valuation): Kenneth H. Rhodes, CPA, CVA
+Defendant's Expert (Construction Defects): Raymond Phelps, PE
+Independent Inspector: Thompson Engineering Associates

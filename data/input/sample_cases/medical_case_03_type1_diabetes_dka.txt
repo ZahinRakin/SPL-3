@@ -1,0 +1,221 @@
+CLINICAL CASE REPORT
+Case ID: MED-2024-0317
+Title: New-Onset Type 1 Diabetes Mellitus Presenting as Diabetic Ketoacidosis in a 19-Year-Old Female
+Institution: Children's and Young Adults' Hospital, Department of Endocrinology
+Date of Admission: August 23, 2024
+
+=============================================================================
+PATIENT INFORMATION
+=============================================================================
+Age: 19 years
+Sex: Female
+Occupation: First-year university student
+Chief Complaint: Nausea, vomiting, abdominal pain, and altered consciousness for 12 hours
+
+=============================================================================
+HISTORY OF PRESENT ILLNESS
+=============================================================================
+Miss A.T. is a previously healthy 19-year-old female who presented to the ED with her roommate who found her minimally responsive in their dormitory room. The roommate reported that Miss A.T. had been complaining of increased thirst and urination for approximately 3 weeks, along with significant weight loss (approximately 8 kg over 6 weeks). She had been experiencing nausea and vomiting for 2 days and abdominal pain for 12 hours. She had not eaten for 24 hours.
+
+The roommate also reported a fruity odor from Miss A.T.'s breath. Miss A.T. had attributed her symptoms to the stress of starting university and had not sought medical attention.
+
+No recent illness, sick contacts, or travel. No medications. No prior medical history. Denies alcohol use and illicit drug use.
+
+=============================================================================
+PAST MEDICAL HISTORY
+=============================================================================
+No known medical history. Vaccinations up to date. No prior hospitalizations or surgeries.
+
+=============================================================================
+FAMILY HISTORY
+=============================================================================
+- Mother: Hashimoto's thyroiditis
+- Maternal aunt: Type 1 diabetes mellitus
+- Father: Type 2 diabetes mellitus (diagnosed age 52)
+- No family history of type 1 diabetes in siblings
+
+=============================================================================
+REVIEW OF SYSTEMS
+=============================================================================
+Positive: Polyuria (8-10 voids/day), polydipsia, polyphagia then anorexia, significant weight loss, nausea, vomiting, diffuse abdominal pain, blurred vision, fatigue, weakness
+Negative: No chest pain, no headache, no focal neurological symptoms prior to presentation
+
+=============================================================================
+PHYSICAL EXAMINATION
+=============================================================================
+Vital Signs:
+  Blood Pressure: 102/68 mmHg (mildly hypotensive, orthostatic)
+  Heart Rate: 118 bpm
+  Respiratory Rate: 28 breaths/min (Kussmaul breathing)
+  Temperature: 37.0 C (afebrile)
+  SpO2: 99% on room air
+  BMI: 17.8 kg/m2 (underweight — was 21.5 six weeks prior per school health records)
+
+General: Young female, ill-appearing, minimally responsive to voice, Kussmaul breathing pattern, fruity breath odor
+HEENT: Dry mucous membranes, sunken eyes; pupils equal and reactive
+Cardiovascular: Tachycardic, regular rhythm; no murmurs
+Abdomen: Diffuse mild-to-moderate tenderness; no rigidity or guarding; decreased bowel sounds
+Skin: Decreased skin turgor; prolonged capillary refill (3 seconds)
+Neurological: GCS 12 (E3V4M5); no focal deficits
+
+Estimated fluid deficit: 6-8% body weight (~4-5 L)
+
+=============================================================================
+DIAGNOSTIC INVESTIGATIONS
+=============================================================================
+
+Point-of-Care Testing (immediate):
+  Blood glucose: 487 mg/dL (26.9 mmol/L)
+  Blood ketones: 6.8 mmol/L (severe ketonemia; normal <0.6)
+  Urine dipstick: Glucose 4+, Ketones 4+
+
+Arterial Blood Gas:
+  pH: 7.09 (severe acidosis)
+  PaCO2: 18 mmHg (compensatory hyperventilation)
+  PaO2: 98 mmHg
+  HCO3: 8 mEq/L (severely low)
+  Base deficit: -18
+
+Complete Metabolic Panel:
+  Sodium: 128 mEq/L (corrected Na = 128 + 1.6 x (487-100)/100 = 134 mEq/L)
+  Potassium: 5.8 mEq/L (total body potassium depleted despite elevated serum level)
+  Chloride: 98 mEq/L
+  Bicarbonate: 8 mEq/L
+  Anion gap: 128 - (98+8) = 22 mEq/L (elevated, normal 12)
+  BUN: 32 mg/dL
+  Creatinine: 1.1 mg/dL (pre-renal azotemia; baseline normal)
+  Phosphorus: 2.1 mg/dL (low-normal)
+  Magnesium: 1.7 mg/dL
+
+CBC: WBC 18,400/uL (stress leukocytosis in DKA; no infection suspected), Hgb 14.2, Platelets 340,000
+
+Hemoglobin A1c: 13.8% (severely elevated, reflecting weeks of uncontrolled hyperglycemia)
+
+Autoantibody Panel (diagnostic for Type 1 DM):
+  GAD65 antibodies: Positive (titer 2,840 IU/mL; normal <5)
+  IA-2 antibodies: Positive
+  Insulin antibodies: Negative (patient not yet insulin-treated)
+  ZnT8 antibodies: Positive
+
+C-Peptide: 0.08 ng/mL (virtually undetectable; confirms insulin deficiency/beta-cell destruction)
+
+Thyroid Function (given family history of autoimmune thyroid disease):
+  TSH: 4.8 mIU/L (mildly elevated)
+  Anti-TPO antibodies: Positive (1,240 IU/mL) — concurrent autoimmune thyroiditis
+
+Chest X-Ray: Clear; no infiltrates
+ECG: Sinus tachycardia; no peaked T-waves (potassium not critically elevated)
+Urinalysis: Glucose 3+, Ketones 3+, no infection; urine culture pending
+
+=============================================================================
+DIAGNOSIS
+=============================================================================
+1. Diabetic Ketoacidosis (DKA) — Severe (pH 7.09, HCO3 8, glucose 487)
+2. New-Onset Type 1 Diabetes Mellitus (autoantibody-confirmed)
+3. Severe Dehydration (~6-8% body weight)
+4. Autoimmune Thyroiditis (Hashimoto's) — incidental finding
+5. Hyponatremia — factitious (dilutional from hyperglycemia)
+
+=============================================================================
+TREATMENT AND MANAGEMENT
+=============================================================================
+
+Phase 1 — Emergency Stabilization (Hours 0-2):
+  - IV access established (two large-bore IVs)
+  - Normal saline 1L bolus over 30 minutes for volume resuscitation
+  - Continuous cardiac monitoring and hourly glucose checks
+  - Foley catheter inserted; urine output target >0.5 mL/kg/hr
+  - Nothing by mouth
+  - ABG, BMP, and ketone monitoring every 2 hours
+
+Phase 2 — DKA Protocol Initiated:
+  Fluid Replacement:
+    - Normal saline (0.9% NaCl) 500 mL/hr x 4 hours
+    - Switched to 0.45% NaCl at 250 mL/hr once hemodynamically stable
+    - When glucose reached 250 mg/dL: added dextrose (D5W + 0.45% NaCl) to prevent hypoglycemia while continuing insulin
+
+  Insulin Therapy:
+    - Fixed-rate insulin infusion 0.1 units/kg/hr = 5.5 units/hr regular insulin IV
+    - No bolus dose (per updated DKA guidelines to avoid hypokalemia risk)
+    - Target glucose reduction: 50-75 mg/dL/hr
+    - Insulin infusion continued until: pH >7.30, HCO3 >18, anion gap closed, ketones <0.6
+
+  Potassium Replacement (critical):
+    - Initial K+ 5.8 mEq/L — held potassium replacement, continued monitoring
+    - As insulin therapy drove K+ intracellularly: K+ fell to 3.9 at 4 hours, 3.4 at 8 hours
+    - Potassium chloride 20 mEq/hr added to IV fluids when K+ <4.0
+    - Target: maintain K+ 3.5-5.0 throughout treatment
+
+  Bicarbonate: NOT administered (pH >6.9; current evidence does not support use)
+
+Phase 3 — Transition (Hour 12-24):
+  Ketoacidosis resolved at hour 14:
+    pH: 7.34, HCO3: 19 mEq/L, Blood ketones: 0.4 mmol/L, Glucose: 189 mg/dL
+
+  Subcutaneous insulin regimen initiated:
+    Glargine (long-acting): 16 units at bedtime
+    Aspart (rapid-acting): 1 unit per 10g carbohydrate at meals + correction scale
+
+  Insulin infusion overlapped with first subcutaneous long-acting dose by 2 hours before discontinuation.
+
+=============================================================================
+DIABETES EDUCATION AND TRAINING
+=============================================================================
+Patient and family received intensive diabetes education over Days 2-4:
+  - Pathophysiology of Type 1 DM explained
+  - Insulin types, injection technique, pen device training
+  - Blood glucose monitoring: target 80-130 mg/dL fasting, <180 post-meal
+  - Continuous glucose monitoring (CGM) introduced — Dexcom G7 prescribed
+  - Carbohydrate counting and insulin-to-carb ratio
+  - Sick day rules and when to call physician
+  - DKA prevention: never stop insulin, check ketones when glucose >250 or ill
+  - Hypoglycemia recognition and treatment: glucagon kit prescribed
+  - Medical alert bracelet recommended
+
+=============================================================================
+HOSPITAL COURSE
+=============================================================================
+Day 1: DKA protocol. Intensive monitoring. Patient became progressively more alert as acidosis corrected.
+Day 2: Fully alert. DKA resolved. Subcutaneous insulin initiated. Began eating small meals.
+Day 3: Diabetes education. Blood glucose stabilizing (range 120-210 mg/dL).
+Day 4: Final education sessions. Endocrinology outpatient appointment confirmed.
+Day 5: Discharged home with family support.
+
+=============================================================================
+DISCHARGE PLAN
+=============================================================================
+Medications:
+  - Insulin glargine 16 units SQ at bedtime
+  - Insulin aspart per carbohydrate counting (1:10 ratio) at meals + correction
+  - Glucose meter (provided), CGM (prescription given)
+  - Glucagon emergency kit (GlucaGen 1mg IM/SQ)
+  - Levothyroxine 25 mcg daily for Hashimoto's thyroiditis
+
+Follow-up:
+  - Endocrinology in 1 week (urgent)
+  - Primary care in 2 weeks
+  - Ophthalmology for diabetic eye baseline within 3 months
+  - Nephrology for kidney function baseline at 5 years of disease
+
+=============================================================================
+DISCUSSION
+=============================================================================
+This case is a classic presentation of new-onset Type 1 Diabetes Mellitus in a young adult. The 3-week prodrome of polyuria, polydipsia, and weight loss is typical, and the stress of starting university may have delayed medical help-seeking. The positive autoantibody panel (GAD65, IA-2, ZnT8) and undetectable C-peptide confirm absolute insulin deficiency consistent with autoimmune beta-cell destruction.
+
+Key teaching points:
+1. The "sick-euthyroid"-like factitious hyponatremia in DKA must be corrected mathematically before treating sodium abnormalities.
+2. Potassium must be replenished aggressively during DKA treatment — insulin drives K+ intracellularly, and hypokalemia is a leading cause of DKA-related mortality.
+3. Autoimmune screening is important given the clustering of autoimmune conditions (concurrent Hashimoto's thyroiditis identified).
+4. Comprehensive diabetes education at diagnosis reduces long-term complications and improves quality of life.
+
+=============================================================================
+OUTCOME
+=============================================================================
+Full recovery from DKA. New Type 1 DM diagnosis established. Patient returned to university with diabetes self-management skills. 3-month follow-up HbA1c: 7.2% (significant improvement from 13.8%).
+
+=============================================================================
+REFERENCES
+=============================================================================
+1. Kitabchi AE, et al. Hyperglycemic crises in adult patients with diabetes. Diabetes Care. 2009;32(7):1335-1343.
+2. Dhatariya KK. Diabetic ketoacidosis in adults: an update. BMJ. 2022;376:e065987.
+3. American Diabetes Association. Standards of Medical Care in Diabetes 2024. Diabetes Care. 2024;47(Suppl 1).

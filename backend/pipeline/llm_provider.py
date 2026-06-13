@@ -10,8 +10,8 @@ import json as _json
 import urllib.request
 from typing import List
 
-from core.config import settings
-from core.logger import logger
+from backend.core.config import settings
+from backend.core.logger import logger
 
 # ── config ────────────────────────────────────────────────────────────────────
 

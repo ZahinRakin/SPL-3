@@ -1,0 +1,137 @@
+CLINICAL CASE REPORT
+Case ID: MED-2024-0042
+Title: Acute ST-Elevation Myocardial Infarction with Cardiogenic Shock in a 58-Year-Old Male
+Institution: University Medical Center, Department of Cardiology
+Date of Admission: March 14, 2024
+
+=============================================================================
+PATIENT INFORMATION
+=============================================================================
+Age: 58 years
+Sex: Male
+Chief Complaint: Severe crushing chest pain radiating to the left arm for 2 hours
+
+=============================================================================
+HISTORY OF PRESENT ILLNESS
+=============================================================================
+Mr. D.H. is a 58-year-old male with a history of hypertension and type 2 diabetes mellitus who presented to the emergency department via ambulance with a 2-hour history of severe, crushing, substernal chest pain rated 9/10 in severity. The pain radiated to the left arm and jaw and was associated with diaphoresis, nausea, and vomiting. He denies any similar episodes in the past. The pain began while he was at rest watching television.
+
+He took two aspirin tablets (325 mg each) at home as instructed by his primary care physician for chest pain emergencies.
+
+=============================================================================
+PAST MEDICAL HISTORY
+=============================================================================
+1. Hypertension (diagnosed 2015) — controlled on Amlodipine 10 mg daily
+2. Type 2 Diabetes Mellitus (diagnosed 2018) — managed with Metformin 1000 mg twice daily
+3. Hyperlipidemia (diagnosed 2019) — on Atorvastatin 40 mg nightly
+4. Obesity (BMI: 31.2 kg/m2)
+5. No prior history of coronary artery disease or cardiac procedures
+
+=============================================================================
+FAMILY HISTORY
+=============================================================================
+- Father: Died at age 62 from myocardial infarction
+- Mother: Alive, age 82, hypertension
+- Brother: Age 55, underwent coronary artery bypass grafting (CABG) in 2021
+
+=============================================================================
+SOCIAL HISTORY
+=============================================================================
+- Tobacco: 30 pack-year smoking history; quit 5 years ago
+- Alcohol: Social drinker, approximately 3-4 drinks per week
+- Exercise: Sedentary lifestyle; no regular physical activity
+
+=============================================================================
+PHYSICAL EXAMINATION
+=============================================================================
+Vital Signs:
+  Blood Pressure: 88/60 mmHg (cardiogenic shock criteria)
+  Heart Rate: 112 bpm (sinus tachycardia)
+  Respiratory Rate: 22 breaths/min
+  Oxygen Saturation: 91% on room air
+  Temperature: 37.1 C
+
+General: Pale, diaphoretic, in moderate-to-severe distress; alert and oriented
+Cardiovascular: Tachycardic, regular rhythm; S3 gallop present; peripheral pulses weak bilaterally
+Respiratory: Bilateral basilar crackles
+Extremities: Cool, clammy extremities; capillary refill >3 seconds
+
+=============================================================================
+DIAGNOSTIC INVESTIGATIONS
+=============================================================================
+
+12-Lead ECG: ST elevation 3-4 mm in leads II, III, aVF; reciprocal ST depression in I and aVL
+Interpretation: Acute inferior STEMI
+
+Laboratory Results:
+  Troponin I: 8.4 ng/mL (normal <0.04) — markedly elevated
+  CK-MB: 68 U/L (normal <25) — elevated
+  BNP: 1,240 pg/mL (normal <100) — severely elevated
+  Glucose: 248 mg/dL
+  Creatinine: 1.4 mg/dL
+
+Echo (Bedside):
+  Ejection fraction: 30% (severely reduced)
+  Inferior and posterior wall hypokinesis/akinesis
+  Mild mitral regurgitation
+
+=============================================================================
+DIAGNOSIS
+=============================================================================
+1. Acute STEMI — Inferior wall (RCA territory)
+2. Cardiogenic Shock (Killip Class IV)
+3. Acute Kidney Injury
+4. Hyperglycemia secondary to physiological stress
+
+=============================================================================
+TREATMENT AND MANAGEMENT
+=============================================================================
+Emergency Interventions:
+  - Aspirin 325 mg chewed
+  - Ticagrelor 180 mg loading dose
+  - Heparin bolus 4,000 units IV then infusion
+  - Dopamine for cardiogenic shock
+  - Oxygen supplementation
+
+Cardiac Catheterization (door-to-balloon time: 28 minutes):
+  Findings: RCA 100% occlusion at mid-segment (culprit); LAD 40% stenosis
+  PCI: Drug-eluting stent 3.5x28 mm placed in RCA; TIMI 3 flow achieved
+  IABP inserted for hemodynamic support
+
+Hospital Course:
+  Day 1-2: CCU — hemodynamics stabilized, dopamine weaned, IABP removed
+  Day 3-4: Step-down floor — Echo EF improved to 38%, diuresis initiated
+  Day 5-7: Cardiac rehab program started, oral medications optimized
+  Day 8: Discharged in stable condition
+
+=============================================================================
+DISCHARGE MEDICATIONS
+=============================================================================
+1. Aspirin 81 mg daily (indefinite)
+2. Ticagrelor 90 mg twice daily (12 months)
+3. Atorvastatin 80 mg nightly (high-intensity)
+4. Lisinopril 5 mg daily
+5. Carvedilol 6.25 mg twice daily
+6. Furosemide 20 mg daily
+7. Insulin glargine 10 units at bedtime (temporary)
+
+=============================================================================
+DISCUSSION
+=============================================================================
+This case illustrates a classic presentation of an acute inferior STEMI complicated by cardiogenic shock. The patient's multiple risk factors — male sex, age >50, diabetes, hypertension, hyperlipidemia, smoking history, and strong family history — contributed to his atherosclerotic burden.
+
+The door-to-balloon time of 28 minutes was critical in achieving myocardial salvage. The use of ticagrelor over clopidogrel was based on the PLATO trial data showing superior outcomes in ACS patients. The addition of ACE inhibitor and beta-blocker is essential for post-MI remodeling prevention.
+
+Long-term management will focus on aggressive secondary prevention, cardiac rehabilitation, and optimization of all cardiovascular risk factors.
+
+=============================================================================
+OUTCOME
+=============================================================================
+Patient discharged in stable condition on Day 8. Scheduled for repeat echocardiogram in 6 weeks.
+
+=============================================================================
+REFERENCES
+=============================================================================
+1. Ibanez B, et al. 2017 ESC Guidelines for STEMI management. Eur Heart J. 2018;39(2):119-177.
+2. Wallentin L, et al. Ticagrelor versus clopidogrel in ACS (PLATO trial). N Engl J Med. 2009;361:1045-1057.
+3. O'Gara PT, et al. 2013 ACCF/AHA Guideline for STEMI Management. J Am Coll Cardiol. 2013;61(4):e78-140.

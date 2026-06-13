@@ -146,6 +146,7 @@ function nodeRadius(deg: number) { return Math.max(8, Math.min(22, 8 + Math.sqrt
     </div>
   `,
   styles: [`
+    :host { display: block; flex: 1; height: 100%; overflow: hidden; }
     .gv-shell { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 
     /* toolbar */

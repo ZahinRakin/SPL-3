@@ -14,7 +14,7 @@ from typing import Dict, List, Optional, Tuple
 
 import networkx as nx
 
-from core.logger import logger
+from backend.core.logger import logger
 from .llm_provider import generate
 
 

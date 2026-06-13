@@ -1,0 +1,201 @@
+CLINICAL CASE REPORT
+Case ID: PED-2023-0088
+Title: Newly Diagnosed B-Cell Acute Lymphoblastic Leukemia in a 7-Year-Old Boy — Induction and Consolidation Treatment
+Institution: Children's Cancer Center, Pediatric Oncology Department
+Date of Diagnosis: October 19, 2023
+
+=============================================================================
+PATIENT INFORMATION
+=============================================================================
+Age: 7 years, 4 months
+Sex: Male
+Referred by: Primary pediatrician following CBC abnormalities
+Chief Complaint: 3-week history of fatigue, pallor, easy bruising, and intermittent fever
+
+=============================================================================
+HISTORY OF PRESENT ILLNESS
+=============================================================================
+Master R.P. is a 7-year-old previously healthy boy who was referred to pediatric oncology after his pediatrician found leukocytosis with blasts on a CBC obtained for evaluation of fatigue and recurrent fevers. His parents reported a 3-week history of increasing tiredness, loss of appetite, pallor, and development of multiple unexplained bruises on his legs and arms. He had two febrile episodes (39.2 C and 38.7 C) in the past 2 weeks, treated at home with acetaminophen.
+
+He also complained of bone pain, predominantly in his legs and knees, which his parents initially attributed to "growing pains." He had no history of prior illness, hospitalizations, or significant family history of malignancy.
+
+=============================================================================
+PAST MEDICAL HISTORY
+=============================================================================
+No significant medical history. All vaccinations up to date. Normal developmental milestones. No prior hospitalizations or surgeries. No known allergies.
+
+=============================================================================
+FAMILY HISTORY
+=============================================================================
+- No family history of leukemia or other hematologic malignancies
+- Mother: Healthy, age 35; no significant medical history
+- Father: Healthy, age 38; mild hypertension
+- Sibling: Sister, age 10, healthy
+
+=============================================================================
+PHYSICAL EXAMINATION ON REFERRAL
+=============================================================================
+Vital Signs:
+  Temperature: 38.1 C (low-grade fever)
+  Blood Pressure: 98/62 mmHg (normal for age)
+  Heart Rate: 118 bpm (tachycardic, compensatory for anemia)
+  Respiratory Rate: 22 breaths/min
+  Weight: 24 kg
+  Height: 122 cm (both 50th percentile for age)
+
+General: Pale, tired-appearing child; in no acute distress; cooperative with examination
+Skin: Multiple ecchymoses in various stages of healing on bilateral lower extremities; petechiae on soft palate; no rashes or skin lesions
+HEENT: Conjunctival pallor; no icterus
+Lymph nodes: Bilateral cervical lymphadenopathy (multiple nodes, largest 2.5 cm, firm, non-tender); axillary lymphadenopathy bilateral
+Cardiovascular: Tachycardic; regular rhythm; systolic flow murmur (grade 2/6) consistent with anemia; no gallops
+Respiratory: Clear
+Abdomen: Hepatomegaly (liver 4 cm below right costal margin); splenomegaly (spleen 6 cm below left costal margin); no tenderness
+Musculoskeletal: Mild tenderness to palpation of bilateral tibiae; no joint swelling
+Neurological: Alert, oriented; cranial nerves intact; no focal deficits; no papilledema
+
+=============================================================================
+DIAGNOSTIC INVESTIGATIONS
+=============================================================================
+
+Complete Blood Count:
+  WBC: 87,400/uL (markedly elevated; normal 5,000-15,000 for age)
+  Differential: 78% lymphoblasts; 12% neutrophils; 8% monocytes; 2% eosinophils
+  Hemoglobin: 6.8 g/dL (severely anemic)
+  MCV: 84 fL (normocytic)
+  Platelets: 18,000/uL (severely thrombocytopenic; risk of spontaneous hemorrhage)
+
+  Peripheral Smear: Numerous lymphoblasts with high nuclear-to-cytoplasmic ratio, fine chromatin, indistinct nucleoli — morphology consistent with lymphoblasts. No Auer rods (rules out AML).
+
+Bone Marrow Aspirate and Biopsy (October 20, 2023):
+  Cellularity: Hypercellular (>95%)
+  Blasts: 94% of marrow cells
+  Morphology: Small-to-medium lymphoblasts, L1 morphology (French-American-British classification)
+  Diagnosis confirmed: B-cell Acute Lymphoblastic Leukemia (B-ALL)
+
+Immunophenotyping (Flow Cytometry):
+  Positive: CD10, CD19, CD22, CD34, TdT, HLA-DR
+  Negative: CD3, CD7, CD13, CD33, CD117, surface immunoglobulin
+  Interpretation: Pre-B Acute Lymphoblastic Leukemia (Common B-ALL; CD10+)
+
+Cytogenetics and Molecular Analysis:
+  Standard Karyotype: 46,XY — No detectable chromosomal abnormality by standard karyotype
+  FISH Panel:
+    BCR-ABL1 (Ph chromosome): NEGATIVE (favorable — Ph+ ALL has worse prognosis)
+    ETV6-RUNX1 (t(12;21)): POSITIVE — detected by FISH and RT-PCR
+    Hyperdiploidy (>50 chromosomes): Not detected
+    MLL rearrangement: Negative
+  Interpretation: ETV6-RUNX1 positive B-ALL — the most common translocation in pediatric ALL; associated with FAVORABLE prognosis
+
+Risk Stratification:
+  National Cancer Institute (NCI) Standard Risk Criteria:
+  - Age 1-9.99 years: YES (favorable)
+  - WBC <50,000/uL: NO (WBC 87,400 — unfavorable)
+  NCI Risk: HIGH RISK (due to elevated WBC despite favorable age)
+
+  COG Risk Classification (after Day 29 MRD):
+  - Final risk: Standard Risk (reassigned based on MRD response — see below)
+
+Additional Studies:
+  Lumbar Puncture (CNS evaluation): CSF WBC 0/uL; no blasts; protein and glucose normal
+  CNS Status: CNS 1 (no CNS involvement) — favorable
+  Testicular exam: No testicular enlargement; not a site of disease
+  CT Chest: Mediastinal mass ABSENT (B-ALL; present in T-ALL)
+  Echocardiogram: Normal; EF 62% (baseline before anthracycline-based chemotherapy)
+  LFTs/Renal function: LDH 1,840 U/L (elevated, reflecting high tumor burden); creatinine normal; uric acid 9.4 mg/dL (elevated, tumor lysis risk)
+
+=============================================================================
+TUMOR LYSIS SYNDROME PROPHYLAXIS
+=============================================================================
+Initiated immediately upon admission:
+  - IV hydration: 2x maintenance (3,000 mL/m2/day)
+  - Rasburicase 0.2 mg/kg IV (rapid uric acid reduction — converted uric acid from 9.4 to 0.6 mg/dL within 4 hours)
+  - Allopurinol 100 mg/m2/day PO (maintenance)
+  - Cardiac monitoring
+  - Electrolytes every 4-6 hours
+  No significant tumor lysis syndrome developed.
+
+=============================================================================
+TREATMENT: COG AALL1231 PROTOCOL (HIGH RISK B-ALL)
+=============================================================================
+
+Phase 1 — Induction (Days 1-29):
+  Goal: Achieve complete remission (blast count <5% bone marrow)
+  Drugs:
+    Vincristine 1.5 mg/m2 IV (Days 1, 8, 15, 22) — max 2 mg
+    Dexamethasone 10 mg/m2/day PO (Days 1-7, 15-21)
+    PEG-asparaginase 2,500 IU/m2 IM (Day 4) — Erwinia asparaginase alternative planned if hypersensitivity
+    Doxorubicin 30 mg/m2 IV (Day 1)
+    Triple intrathecal chemotherapy (methotrexate/ARA-C/hydrocortisone): Days 1, 8, 15, 29
+    Prophylactic co-trimoxazole for Pneumocystis jirovecii pneumonia prevention
+
+  Induction Toxicities (documented):
+    Neutropenic fever (Day 14): Admitted; blood cultures negative; treated empirically with cefepime x 5 days
+    Grade 2 nausea/vomiting: Managed with ondansetron and dexamethasone
+    Vincristine-related constipation: Managed with lactulose and bowel regimen
+    Peripheral neuropathy: Mild tingling in fingers; monitored; resolved
+    Mood changes: Steroid-related irritability; counseling provided to family
+
+  Day 29 Bone Marrow Evaluation:
+    Blasts: 0.8% by morphology (Complete Remission achieved)
+    Minimal Residual Disease (MRD) by flow cytometry: 0.005% (MRD NEGATIVE — threshold <0.01%)
+    Significance: MRD negativity at Day 29 is the strongest predictor of long-term remission
+    COG Risk Reassignment: STANDARD RISK (due to excellent MRD response despite initial high risk)
+
+Phase 2 — Consolidation (Weeks 5-17):
+  Goal: Eliminate residual disease; prevent CNS relapse
+  Drugs: High-dose methotrexate 5,000 mg/m2 IV x 4 cycles; leucovorin rescue; 6-mercaptopurine daily; vincristine; intrathecal therapy
+  No cranial radiation required (replaced by intrathecal chemotherapy in modern protocols)
+
+  Toxicities during consolidation:
+    Methotrexate mucositis: Grade 2; managed with leucovorin rescue and oral care
+    Elevated LFTs: Transient; resolved
+    Line-associated infection (PICC): Removed and replaced; treated with vancomycin
+
+Phase 3 — Interim Maintenance and Delayed Intensification: Ongoing at time of case writing
+
+Total treatment duration: 2 years (girls) / 3 years (boys)
+
+=============================================================================
+SUPPORTIVE CARE
+=============================================================================
+Central venous access: Implanted port placed under general anesthesia
+Nutritional support: Dietitian consultation; nutritional supplements during chemotherapy
+Psychosocial: Child life specialist; pediatric psychologist for family and patient; school re-integration plan
+Infection prevention: Hand hygiene education; neutropenic precautions; prophylactic antibiotics
+Pain management: Procedural sedation for bone marrow procedures; lidocaine/prilocaine cream for port access
+School: Individualized Education Program (IEP) and homebound instruction during intensive therapy
+
+=============================================================================
+PROGNOSIS
+=============================================================================
+ETV6-RUNX1 positive, MRD negative at Day 29, Standard Risk B-ALL:
+Expected 5-year event-free survival (EFS): >90%
+Expected overall survival (OS): >95%
+This is one of the most favorable subgroups of pediatric ALL.
+
+=============================================================================
+DISCUSSION
+=============================================================================
+Pediatric acute lymphoblastic leukemia is the most common childhood cancer, representing approximately 25% of all pediatric malignancies. With modern risk-stratified chemotherapy protocols, overall survival rates now exceed 90% for pediatric B-ALL.
+
+Key teaching points:
+1. The classic presentation triad of pallor, bruising, and lymphadenopathy should prompt immediate CBC.
+2. Bone pain in children is a red flag symptom that should not be dismissed as "growing pains."
+3. ETV6-RUNX1 translocation (the most common in pediatric ALL) carries an excellent prognosis and responds well to standard chemotherapy without intensification.
+4. MRD monitoring at Day 29 is now the gold standard for risk stratification — it predicts relapse risk better than initial clinical features.
+5. Cranial radiation has been largely eliminated in modern pediatric ALL protocols, reducing long-term neurocognitive side effects.
+6. Long-term survivorship monitoring for late effects (cardiomyopathy, secondary malignancies, endocrine dysfunction, neurocognitive effects) is an essential component of comprehensive care.
+
+=============================================================================
+OUTCOME AT 6 MONTHS (INTERIM FOLLOW-UP)
+=============================================================================
+Patient continues in complete remission. MRD remains undetectable. Tolerating maintenance therapy well. Back to school part-time with accommodations. Family coping with psychosocial support. Overall prognosis remains excellent.
+
+=============================================================================
+REFERENCES
+=============================================================================
+1. Hunger SP, Mullighan CG. Acute Lymphoblastic Leukemia in Children. N Engl J Med. 2015;373:1541-1552.
+2. Pui CH, et al. Childhood acute lymphoblastic leukemia: progress through collaboration. J Clin Oncol. 2012;30(14):1724-1732.
+3. Teachey DT, et al. Identifying the most appropriate MRD risk stratification for children with newly diagnosed ALL. Blood. 2018;132(9):967-978.
+4. COG AALL1231 Protocol: Risk-adapted therapy for pediatric B-ALL. Children's Oncology Group. 2015.
+5. Pieters R, et al. ETV6-RUNX1-positive childhood acute lymphoblastic leukemia: excellent treatment outcome with or without early intensification. Blood. 2017;129(2):252-255.

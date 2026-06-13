@@ -1,0 +1,203 @@
+CASE REPORT — ENVIRONMENTAL LAW / REGULATORY
+Case Reference: EPA Enforcement Action + Civil Litigation
+EPA Docket No.: EPA-HQ-OECA-2021-0892
+Civil Case: CV-2022-00341
+Court: U.S. District Court, District of Ohio
+Title: United States of America and State of Ohio v. Meridian Chemical Manufacturing, Corp.
+Filed: April 7, 2022
+Status: Consent Decree Entered — September 22, 2023
+
+=============================================================================
+CASE OVERVIEW
+=============================================================================
+The United States Environmental Protection Agency (EPA) and the State of Ohio Department of Natural Resources (ODNR) brought a joint enforcement action against Meridian Chemical Manufacturing, Corp. ("Meridian") for violations of the Clean Water Act (CWA), the Resource Conservation and Recovery Act (RCRA), and the Emergency Planning and Community Right-to-Know Act (EPCRA), arising from the unpermitted discharge of chlorinated solvents and heavy metals into the Millstone River and associated groundwater contamination affecting residential drinking water wells in an adjacent community of approximately 3,400 residents.
+
+The case resulted in a consent decree requiring $94 million in remediation costs, civil penalties of $18.7 million, and a comprehensive environmental compliance management system.
+
+=============================================================================
+PARTIES
+=============================================================================
+
+Plaintiffs:
+  United States of America (acting through EPA, Region 5)
+  State of Ohio (through Ohio EPA and Ohio Department of Natural Resources)
+
+Defendant:
+  Meridian Chemical Manufacturing, Corp.
+  Location: Millstone Industrial Park, Ashford County, Ohio
+  Operations: Chemical manufacturing — solvents, industrial degreasers, specialty coatings
+  Founded: 1968; family-owned until 2015 acquisition by Venture Capital Consortium
+  Employees: 480; annual revenues ~$180 million
+
+Third-Party Defendant (added by Meridian):
+  Ashford Industrial Properties, LLC (former property owner; alleged to have contributed to legacy contamination)
+
+Intervening Plaintiffs:
+  Millstone Community Action Group (representing affected residents)
+  Represented by: Environmental Justice Legal Clinic (pro bono)
+
+=============================================================================
+FACTUAL BACKGROUND
+=============================================================================
+
+Facility and Historical Operations:
+  The Meridian facility, operating since 1968, manufactures chlorinated solvents including trichloroethylene (TCE), perchloroethylene (PCE), methylene chloride, and specialty degreasing formulations. Wastewater generated in the manufacturing process historically included process water contaminated with volatile organic compounds (VOCs), heavy metals (chromium, lead, cadmium), and pH-adjusted effluent.
+
+  The facility holds a National Pollutant Discharge Elimination System (NPDES) permit allowing treated wastewater discharge to the Millstone River within established effluent limits.
+
+Discovery of Violations (2018-2020):
+  An EPA routine compliance inspection in October 2018 identified potential permit exceedances. A follow-up investigation in 2019 included:
+  - Review of Meridian's discharge monitoring reports (DMRs) submitted to Ohio EPA
+  - Independent sampling of river water upstream and downstream of discharge point
+  - Soil and groundwater sampling at the facility boundary
+  - Review of facility records and internal operational logs
+
+  Findings:
+  (a) NPDES Permit Violations: Meridian's DMRs showed monthly exceedances of TCE effluent limits (maximum 5 ppb; measured discharges up to 890 ppb) on 47 occasions over a 3-year period (2017-2020). DMRs were falsified to show compliance by under-reporting actual measurements.
+
+  (b) Unpermitted Discharge: Investigation revealed an unreported secondary drainage pathway — a legacy drainage pipe installed prior to 1990 — discharging directly to a seasonal drainage ditch that connected to the Millstone River. This discharge had no permit authorization.
+
+  (c) RCRA Hazardous Waste Violations: Meridian was found to be storing hazardous waste (TCE still bottoms classified as F002 listed hazardous waste) beyond the 90-day storage limit for large quantity generators. Approximately 4,200 gallons of hazardous waste was found in unmarked, unlabeled containers in a secondary storage area. Storage areas lacked required secondary containment.
+
+  (d) EPCRA Reporting Failure: Meridian failed to report releases of TCE exceeding the 10-pound threshold under EPCRA Section 304 on multiple occasions. The company's annual Toxic Release Inventory (TRI) reports under Section 313 substantially underreported releases.
+
+Community Impacts:
+  Groundwater sampling of residential drinking water wells in the Millstone Acres neighborhood, located approximately 0.8 miles from the facility, revealed:
+  - TCE in 34 of 78 tested wells (range: 8 ppb to 126 ppb; EPA MCL is 5 ppb)
+  - PCE in 19 wells (range: 4 ppb to 44 ppb; EPA MCL is 5 ppb)
+  - Lead in 8 wells exceeding action level (15 ppb)
+
+  Affected residents reported health concerns including:
+  - Cluster of non-Hodgkin lymphoma (12 cases in an 8-block area over 10 years; statistically above expected incidence)
+  - Multiple residents reporting neurological symptoms
+  - Skin conditions reported by children
+
+  Ohio Health Department conducted epidemiological investigation; findings were inconclusive regarding causation but identified the TCE contamination as a significant public health concern requiring remediation.
+
+=============================================================================
+LEGAL VIOLATIONS
+=============================================================================
+
+Clean Water Act (33 U.S.C. Sections 1251-1387):
+  Section 301: Unlawful discharge of pollutants without permit (unpermitted secondary discharge)
+  Section 308: Falsification of monitoring records (DMR falsification — 47 counts)
+  Section 309(c)(4): Knowing falsification of required reports (criminal referral for two plant managers)
+  Maximum civil penalty: $25,137 per day per violation (2022 adjusted amount)
+
+RCRA (42 U.S.C. Sections 6901-6992k):
+  Section 3004: Improper storage of hazardous waste (unlabeled containers, inadequate containment)
+  Section 3005: Operating without required permits
+  Section 3008(a): Failure to comply with hazardous waste standards
+
+EPCRA (42 U.S.C. Sections 11001-11050):
+  Section 304: Failure to notify emergency planning committee of reportable releases
+  Section 313: Underreporting in Toxic Release Inventory reports
+
+=============================================================================
+ENFORCEMENT AND LITIGATION
+=============================================================================
+
+Criminal Referral:
+  EPA referred evidence of DMR falsification to the U.S. Department of Justice Environmental Crimes Section. Two plant managers — Operations Manager Edward Kowalski and Environmental Compliance Coordinator Sandra Voss — were indicted on charges of CWA falsification (18 U.S.C. Section 1001; 33 U.S.C. Section 1319(c)(4)).
+
+  Criminal outcomes:
+  - Kowalski: Pled guilty; 18 months federal prison + $75,000 fine
+  - Voss: Pled guilty (cooperation agreement); 12 months home confinement + $25,000 fine
+
+  Meridian Corp. not criminally charged (cooperation credit after individual prosecutions)
+
+Civil Enforcement:
+  EPA issued administrative compliance order in March 2021; Meridian disputed extent of violations. Formal complaint filed April 2022 after negotiations stalled.
+
+Meridian's Defense Position:
+  - Argued secondary drainage pipe was a "legacy" condition predating current ownership
+  - Contested the DMR falsification attributing it to individual employee misconduct, not company policy
+  - Argued groundwater contamination was partly attributable to upgradient sources and historical industrial activity
+  - Retained hydrogeological expert challenging EPA's groundwater modeling
+
+Third-Party Claim Against Prior Owner:
+  Meridian brought contribution claim against Ashford Industrial Properties (property owner pre-1990) under CERCLA Section 113 contribution and Ohio common law.
+
+Resident Class Action (separate but parallel):
+  285 Millstone Acres residents filed class action in state court:
+  - Negligence per se (violation of environmental regulations)
+  - Private nuisance
+  - Trespass
+  - Medical monitoring class (request for court-supervised fund for health monitoring)
+  - Individual personal injury claims for cancer and neurological conditions
+
+=============================================================================
+CONSENT DECREE (September 22, 2023)
+=============================================================================
+
+Civil Penalties:
+  Federal civil penalty: $12,500,000 (CWA + RCRA + EPCRA)
+  State of Ohio civil penalty: $6,200,000
+  Total civil penalties: $18,700,000
+
+Remediation Requirements:
+
+  Immediate Actions:
+  - Decommission and properly seal unpermitted drainage pipe
+  - Alternative water supply (bottled water and whole-house filters) for all affected residents within 60 days
+  - Connection to municipal water supply for Millstone Acres neighborhood: Meridian to fund $8.2 million water line extension within 18 months
+
+  Facility Remediation:
+  - Install groundwater extraction and treatment system (pump-and-treat): Capital cost $24 million; 30-year operational commitment estimated at $28 million total
+  - Soil excavation and removal: 14,200 tons of contaminated soil (cost: $11.5 million)
+  - NPDES permit wastewater treatment upgrade: $6.8 million
+  - Air emissions control system: $3.2 million
+  Total estimated remediation cost: $81.7 million (NPV of 30-year program)
+
+Supplemental Environmental Project (SEP):
+  $5 million SEP to establish environmental health clinic in Millstone community providing free health monitoring for 10 years to affected residents.
+
+Environmental Management System (EMS):
+  - ISO 14001-certified EMS implementation required
+  - Third-party environmental compliance auditor (independent from company) for 5 years
+  - Real-time continuous monitoring of all discharge points with data transmitted to regulators
+  - Enhanced DMR compliance program with supervisor verification
+
+Community Engagement:
+  - Community advisory group with quarterly reporting by Meridian
+  - Citizen lawsuit limitation: Consent decree limits certain citizen suits during compliance period
+
+Third-Party Settlement:
+  Ashford Industrial Properties agreed to contribute $12 million to remediation costs in separate settlement.
+
+Resident Class Action Settlement (state court, concurrent):
+  $42 million class action settlement:
+  - Medical monitoring program ($15 million)
+  - Property value diminution compensation ($18 million, pro rata)
+  - Individual injury claimants: $9 million (allocated through claims administration process)
+
+=============================================================================
+ANALYSIS
+=============================================================================
+
+Corporate Liability vs. Individual Liability:
+  The criminal conviction of individual managers — not the corporation — sends the clearest deterrence message. Environmental compliance failures driven by cost-cutting pressure require personal accountability to change corporate culture.
+
+False Reporting as Force Multiplier:
+  The DMR falsification converted a regulatory compliance problem into a criminal enforcement matter and dramatically increased the company's exposure. Accurate environmental reporting, even when it reveals violations, is always the preferred approach. Voluntary disclosure programs exist at EPA and state agencies.
+
+Environmental Justice Dimensions:
+  The Millstone Acres community — predominantly lower-income — experienced disproportionate environmental burden. The EPA's environmental justice policies and enhanced enforcement in EJ communities has increased scrutiny of facilities located near vulnerable populations.
+
+Successor Liability:
+  The 2015 private equity acquisition of Meridian did not transfer liability away from Meridian. Buyers of industrial facilities must conduct thorough environmental due diligence and price remediation risk into transactions, or use indemnification structures.
+
+CERCLA vs. CWA Remediation:
+  This case used CWA enforcement and consent decree mechanisms rather than CERCLA (Superfund) listing, which is typically reserved for more severe contamination or when responsible parties are uncooperative. The cooperative consent decree approach achieved faster remediation timelines.
+
+=============================================================================
+KEY STATUTES AND CITATIONS
+=============================================================================
+Clean Water Act, 33 U.S.C. Sections 1251-1387 (NPDES; discharge prohibitions)
+RCRA, 42 U.S.C. Sections 6901-6992k (hazardous waste management)
+EPCRA, 42 U.S.C. Sections 11001-11050 (emergency planning; TRI reporting)
+CERCLA, 42 U.S.C. Section 9613(f) (contribution claims)
+18 U.S.C. Section 1001 (False statements — criminal)
+EPA Civil Penalty Policy for Clean Water Act (2022)
+United States v. Bestfoods, 524 U.S. 51 (1998) (corporate liability principles)
+Gwaltney of Smithfield v. Chesapeake Bay Foundation, 484 U.S. 49 (1987) (citizen suits under CWA)

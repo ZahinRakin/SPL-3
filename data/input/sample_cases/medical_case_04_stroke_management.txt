@@ -1,0 +1,193 @@
+CLINICAL CASE REPORT
+Case ID: MED-2024-0521
+Title: Acute Ischemic Stroke with Large Vessel Occlusion — Successful Mechanical Thrombectomy in a 67-Year-Old Male
+Institution: Comprehensive Stroke Center, Metropolitan University Hospital
+Date of Admission: May 3, 2024
+
+=============================================================================
+PATIENT INFORMATION
+=============================================================================
+Age: 67 years
+Sex: Male
+Occupation: Retired accountant
+Chief Complaint: Sudden onset left-sided weakness and speech difficulty at 9:14 AM
+
+=============================================================================
+HISTORY OF PRESENT ILLNESS
+=============================================================================
+Mr. G.F. is a 67-year-old male who was brought to the emergency department by his wife who witnessed sudden onset of left-sided facial droop, left arm and leg weakness, and slurred speech while he was eating breakfast. The patient's wife called 911 immediately. Onset was clearly witnessed at 9:14 AM. EMS arrived within 6 minutes and transported him immediately to the nearest comprehensive stroke center.
+
+Pre-notification was activated, allowing the stroke team to be assembled before patient arrival. EMS transmitted a pre-hospital stroke scale (LAMS score: 4/5, indicating large vessel occlusion).
+
+Last known well: 9:14 AM (witnessed onset — reliable last-known-well time)
+ED arrival: 9:38 AM
+
+=============================================================================
+PAST MEDICAL HISTORY
+=============================================================================
+1. Atrial Fibrillation (paroxysmal) — NOT on anticoagulation (patient declined due to fall risk concerns)
+2. Hypertension — on Amlodipine 10 mg + Losartan 100 mg
+3. Type 2 Diabetes — on Sitagliptin 100 mg daily
+4. Hyperlipidemia — on Rosuvastatin 20 mg
+5. Prior TIA (2019) — full workup at that time, aspirin started but stopped by patient
+6. Moderate obesity (BMI 29.8)
+
+=============================================================================
+PHYSICAL EXAMINATION ON ARRIVAL
+=============================================================================
+Vital Signs:
+  Blood Pressure: 168/92 mmHg (permissive hypertension per stroke protocol)
+  Heart Rate: 88 bpm (irregular — known AF)
+  Respiratory Rate: 16 breaths/min
+  Temperature: 36.9 C
+  SpO2: 97% on room air
+  Blood Glucose (POC): 142 mg/dL
+
+NIHSS Score: 18 (severe stroke)
+  Level of consciousness: 1 (drowsy but arousable)
+  Gaze deviation: 2 (forced deviation right)
+  Visual fields: 1 (partial hemianopia)
+  Facial palsy: 2 (complete left facial palsy)
+  Left arm motor: 4 (no movement against gravity)
+  Left leg motor: 3 (some effort against gravity)
+  Limb ataxia: 0
+  Sensory: 1 (partial loss left side)
+  Language: 1 (mild aphasia)
+  Dysarthria: 2 (severe slurring)
+  Extinction/Inattention: 1 (left-sided neglect)
+
+=============================================================================
+DIAGNOSTIC IMAGING
+=============================================================================
+
+Non-Contrast CT Brain (completed at 9:44 AM — 6 minutes after arrival):
+  - No acute hemorrhage
+  - ASPECTS score: 9/10 (only 1 segment — M3 — shows subtle early ischemic changes)
+  - No large established infarct core
+  - Hyperdense right MCA sign (thrombus visible in proximal right MCA)
+  Interpretation: Acute ischemic stroke, no hemorrhage, favorable imaging for intervention
+
+CT Angiography (CTA) Brain and Neck (completed 9:48 AM):
+  - Complete occlusion of right M1 segment of middle cerebral artery
+  - Carotid arteries: 40% stenosis at right carotid bifurcation (not critical)
+  - Intracranial anterior and posterior circulation otherwise patent
+  - Robust collateral circulation on CT perfusion (RAPID software):
+    Ischemic Core (rCBF <30%): 18 mL
+    Penumbra (Tmax >6 sec): 112 mL
+    Mismatch Ratio: 6.2:1 (excellent — large salvageable tissue)
+
+=============================================================================
+TIME METRICS (CRITICAL FOR STROKE OUTCOMES)
+=============================================================================
+Onset to ED arrival: 24 minutes (excellent)
+Door to CT completion: 6 minutes
+Door to CTA completion: 10 minutes
+Door to IV tPA decision: 14 minutes
+IV tPA administration (door-to-needle): 22 minutes
+CT to groin puncture (thrombectomy): 48 minutes
+Groin puncture to recanalization: 34 minutes
+Door to recanalization: 82 minutes
+
+(American Heart Association target: door-to-needle <60 min; door-to-recanalization <90 min — BOTH MET)
+
+=============================================================================
+TREATMENT
+=============================================================================
+
+IV Thrombolysis (tPA):
+  Alteplase (tPA) 0.9 mg/kg (max 90 mg) administered at 10:00 AM
+  10% bolus over 1 minute, remainder over 60 minutes
+  Eligibility confirmed: symptom onset <4.5 hours, no hemorrhage on CT, no absolute contraindications
+  Blood pressure maintained <185/110 during tPA administration with IV labetalol
+
+Mechanical Thrombectomy (Endovascular Treatment):
+  Patient was simultaneously prepared for thrombectomy (bridging tPA approach):
+  Angiography Suite: Patient arrived 10:26 AM
+
+  Procedural details:
+    Approach: Right femoral artery access
+    Guide catheter: 8F Neuron Max 088 placed in right ICA
+    Thrombus location: Right M1 occlusion, confirmed on diagnostic angiogram
+    Device: Solitaire X 4 x 40 mm stent retriever
+    Technique: ADAPT (A Direct Aspiration First Pass Technique) attempted first; combined with stent retriever
+    Pass 1: Partial recanalization; TICI 2a
+    Pass 2: Complete recanalization achieved; TICI 3 (near complete, <10% residual stenosis)
+    Total passes: 2
+    Time to recanalization: 34 minutes after groin puncture
+    Complications: None
+
+=============================================================================
+POST-PROCEDURE COURSE
+=============================================================================
+
+Immediate Post-Procedure (Stroke ICU):
+  Repeat CT at 24 hours: No hemorrhagic transformation; established right MCA territory infarction in 24 mL area (smaller than expected, consistent with successful reperfusion)
+  NIHSS at 24 hours: 7 (improved from 18; dramatic improvement)
+  Blood pressure management: Target <140/90 after first 24 hours
+  Anticoagulation: Held first 24 hours; apixaban initiated at 48 hours (AF — high cardioembolic risk)
+  Statin intensification: Rosuvastatin increased to 40 mg
+  DVT prophylaxis: Sequential compression devices; heparin SQ added at 48 hours
+
+Cardiology Consultation:
+  Echocardiogram: Left atrial enlargement; no thrombus; moderate LV hypertrophy; EF 58%
+  Long-term cardiac monitoring: Implantable loop recorder (ILR) placed on Day 5 for AF monitoring
+  Anticoagulation: Apixaban 5 mg twice daily (long-term for AF stroke prevention)
+
+Neurological Improvement:
+  NIHSS at 72 hours: 5 (continued improvement)
+  Day 7: Patient ambulating with minimal assistance; speech nearly normal; left arm strength recovering
+  Day 10: NIHSS 3 (minor residual left arm weakness and mild neglect)
+  mRS (modified Rankin Scale) at discharge: 2 (slight disability but independent in most activities)
+
+=============================================================================
+REHABILITATION
+=============================================================================
+Inpatient rehabilitation: 12 days (Days 10-22 post-admission)
+Disciplines: Physical therapy, occupational therapy, speech-language pathology, neuropsychology
+
+Day 22 Assessment:
+  Left arm strength: 4+/5
+  Ambulation: Independent
+  Speech: Near-normal; mild word-finding difficulty
+  mRS at discharge from rehab: 1 (no significant disability)
+
+=============================================================================
+SECONDARY PREVENTION
+=============================================================================
+Cause identified: Cardioembolic (atrial fibrillation — thrombus from LAA)
+
+Long-term management:
+  - Apixaban 5 mg twice daily (anticoagulation for AF — CHA2DS2-VASc score: 6)
+  - Rosuvastatin 40 mg nightly
+  - Antihypertensives continued with target BP <130/80
+  - Diabetes management continued
+  - Lifestyle: Mediterranean diet, moderate exercise, weight management
+  - Monitoring: ILR for AF burden monitoring; clinic follow-up quarterly x 1 year, then annually
+
+=============================================================================
+DISCUSSION
+=============================================================================
+This case illustrates the extraordinary impact of timely stroke intervention. With an NIHSS of 18 at presentation (severe stroke), the patient achieved an mRS of 1 at rehabilitation discharge — an exceptional outcome attributable to:
+
+1. Rapid symptom recognition and 911 activation by bystander
+2. Pre-hospital stroke scale by EMS enabling pre-notification and team mobilization
+3. Organized "stroke code" system at the comprehensive stroke center
+4. Excellent time metrics — door-to-needle 22 min, door-to-recanalization 82 min
+5. Favorable imaging profile (large penumbra, small core, ASPECTS 9/10)
+6. Successful 2-pass thrombectomy achieving TICI 3 recanalization
+7. Simultaneous bridging IV tPA
+
+The case also highlights atrial fibrillation as the stroke etiology — the most common modifiable cause of cardioembolic stroke. His prior TIA in 2019 represented a missed opportunity for stroke prevention through anticoagulation. Had the patient accepted anticoagulation after his TIA, this stroke — and its associated suffering and healthcare costs — may have been entirely prevented.
+
+=============================================================================
+OUTCOME
+=============================================================================
+Excellent functional recovery. mRS 1 at 90 days (independent, returned to normal activities). Patient now on appropriate anticoagulation. Stroke risk significantly reduced.
+
+=============================================================================
+REFERENCES
+=============================================================================
+1. Powers WJ, et al. 2019 AHA/ASA Guideline for the Early Management of Patients with Acute Ischemic Stroke. Stroke. 2019;50(12):e344-e418.
+2. Nogueira RG, et al. Thrombectomy 6 to 24 Hours after Stroke with a Mismatch between Deficit and Infarct (DAWN). N Engl J Med. 2018;378:11-21.
+3. Goyal M, et al. Randomized Assessment of Rapid Endovascular Treatment of Ischemic Stroke (ESCAPE). N Engl J Med. 2015;372:1019-1030.
+4. Berkhemer OA, et al. A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke (MR CLEAN). N Engl J Med. 2015;372:11-20.

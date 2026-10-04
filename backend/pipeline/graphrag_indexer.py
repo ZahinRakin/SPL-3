@@ -9,7 +9,7 @@ import asyncio
 import json
 import re
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Dict, List, Optional, Tuple
 
 import networkx as nx
@@ -211,16 +211,29 @@ class GraphRAGIndexer:
             communities = await asyncio.to_thread(
                 nx.community.louvain_communities, self.graph, seed=42
             )
+            # Louvain renumbers communities on every run, so summaries are keyed by
+            # membership: a community whose members haven't changed keeps its summary
+            # (no LLM call), and summaries of communities that no longer exist are dropped.
+            previous = self._summaries_by_members()
             for n in self.graph.nodes:
                 self.graph.nodes[n]["community"] = -1
+            new_summaries: Dict[int, str] = {}
             tasks = []
             for cid, comm in enumerate(communities):
                 for n in comm:
                     self.graph.nodes[n]["community"] = cid
-                if len(comm) >= 3:
+                if len(comm) < 3:
+                    continue
+                reused = previous.get(frozenset(comm))
+                if reused is not None:
+                    new_summaries[cid] = reused
+                else:
                     names = [self.entities[n].name for n in comm if n in self.entities]
                     tasks.append((cid, names))
-            logger.info(f"_detect_communities: {len(communities)} communities found, {len(tasks)} to summarise")
+            logger.info(
+                f"_detect_communities: {len(communities)} communities found, "
+                f"{len(new_summaries)} summaries reused, {len(tasks)} to summarise"
+            )
             summaries = await asyncio.gather(
                 *[self._summarise_community(cid, names) for cid, names in tasks],
                 return_exceptions=True,
@@ -229,9 +242,19 @@ class GraphRAGIndexer:
                 if isinstance(summary, Exception):
                     logger.warning(f"Community summary failed for cid={cid}: {summary}")
                 else:
-                    self.community_summaries[cid] = summary
+                    new_summaries[cid] = summary
+            self.community_summaries = new_summaries
         except Exception as exc:
             logger.error(f"_detect_communities failed: {exc}", exc_info=True)
+
+    def _summaries_by_members(self) -> Dict[frozenset, str]:
+        """Current summaries keyed by the set of entity ids in their community."""
+        members: Dict[int, set] = {}
+        for n, data in self.graph.nodes(data=True):
+            cid = data.get("community", -1)
+            if cid in self.community_summaries:
+                members.setdefault(cid, set()).add(n)
+        return {frozenset(ids): self.community_summaries[cid] for cid, ids in members.items()}
 
     async def _summarise_community(self, cid: int, names: List[str]) -> str:
         excerpt = ", ".join(names[:20])
@@ -315,3 +338,43 @@ class GraphRAGIndexer:
                 lines.append(f"  (community context) {self.community_summaries[comm]}")
                 seen_comms.add(comm)
         return "\n".join(lines) if lines else "No matching entities found in the knowledge graph."
+
+    # ── state (persistence) ───────────────────────────────────────────────────
+    # Plain dicts only; the pipeline never knows about the database (decision D12).
+
+    def export_state(self) -> Dict:
+        return {
+            "entities": [asdict(e) for e in self.entities.values()],
+            "relationships": [asdict(r) for r in self.relationships],
+            "communities": dict(self.community_summaries),
+            "node_community": {n: d.get("community", -1) for n, d in self.graph.nodes(data=True)},
+        }
+
+    def load_state(self, state: Dict) -> None:
+        self.graph = nx.Graph()
+        self.entities = {}
+        self.relationships = []
+        self._name_to_id = {}
+        node_community = state.get("node_community", {})
+        for e in state.get("entities", []):
+            ent = Entity(**e)
+            self.entities[ent.id] = ent
+            # ent.name is already _normalise()d, so this is the same key _upsert_entity uses.
+            self._name_to_id[ent.name.lower()] = ent.id
+            self.graph.add_node(
+                ent.id, name=ent.name, type=ent.type, community=node_community.get(ent.id, -1)
+            )
+        # Replaying in the original order gives the same weights and "first relation"
+        # per edge as index_document produced.
+        for r in state.get("relationships", []):
+            rel = Relationship(**r)
+            self.relationships.append(rel)
+            if self.graph.has_edge(rel.source_id, rel.target_id):
+                self.graph[rel.source_id][rel.target_id]["weight"] += 1
+            else:
+                self.graph.add_edge(rel.source_id, rel.target_id, weight=1, relation=rel.relation_type)
+        self.community_summaries = {int(k): v for k, v in state.get("communities", {}).items()}
+        logger.debug(
+            f"GraphRAGIndexer.load_state: entities={len(self.entities)}, "
+            f"relationships={len(self.relationships)}, communities={len(self.community_summaries)}"
+        )

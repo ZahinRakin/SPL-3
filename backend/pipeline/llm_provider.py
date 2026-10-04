@@ -10,6 +10,8 @@ import json as _json
 import urllib.request
 from typing import List
 
+import groq
+
 from backend.core.config import settings
 from backend.core.logger import logger
 
@@ -27,8 +29,18 @@ logger.info(f"LLM: Groq model={GROQ_MODEL!r} | Embeddings: Ollama model={OLLAMA_
 
 _LLM_SEM       = asyncio.Semaphore(3)
 _EMBED_SEM     = asyncio.Semaphore(5)
-_LLM_TIMEOUT   = 45.0
+_LLM_TIMEOUT   = 45.0          # per attempt
 _EMBED_TIMEOUT = 30.0
+
+# ── retries (rate limits and transient server errors) ─────────────────────────
+# Retrying happens here rather than inside the Groq SDK so that every attempt gets its
+# own timeout and Groq's retry-after hint is respected. A slot of _LLM_SEM is held while
+# waiting, which slows the whole burst down instead of firing more doomed requests.
+
+_LLM_MAX_RETRIES  = 5
+_RETRY_BASE_DELAY = 2.0        # seconds, doubled on each attempt
+_RETRY_MAX_DELAY  = 30.0
+_RETRYABLE = (groq.RateLimitError, groq.InternalServerError, groq.APIConnectionError)
 
 # ── lazy singleton ────────────────────────────────────────────────────────────
 
@@ -39,8 +51,7 @@ def _get_groq_client():
     global _groq_client
     if _groq_client is None:
         logger.info(f"Initialising Groq client: model={GROQ_MODEL!r}")
-        from groq import Groq
-        _groq_client = Groq(api_key=GROQ_API_KEY)
+        _groq_client = groq.Groq(api_key=GROQ_API_KEY, max_retries=0)   # generate() retries
     return _groq_client
 
 
@@ -51,38 +62,59 @@ async def generate(
     json_mode: bool = False,
     temperature: float = 0.1,
 ) -> str:
-    """Call Groq. Returns the raw text response."""
+    """Call Groq. Returns the raw text response. Retries rate limits and transient errors."""
     logger.debug(f"generate: json_mode={json_mode}, prompt_len={len(prompt)}")
     async with _LLM_SEM:
-        try:
-            result = await asyncio.wait_for(
-                _groq_generate(prompt, json_mode, temperature),
-                timeout=_LLM_TIMEOUT,
-            )
-            logger.debug(f"generate complete: response_len={len(result)}")
-            return result
-        except asyncio.TimeoutError:
-            logger.error(f"generate timed out after {_LLM_TIMEOUT}s")
-            raise
-        except Exception as exc:
-            logger.error(f"generate failed: {exc}", exc_info=True)
-            raise
+        for attempt in range(_LLM_MAX_RETRIES + 1):
+            try:
+                result = await asyncio.wait_for(
+                    _groq_generate(prompt, json_mode, temperature),
+                    timeout=_LLM_TIMEOUT,
+                )
+                logger.debug(f"generate complete: response_len={len(result)}")
+                return result
+            except _RETRYABLE as exc:
+                if attempt == _LLM_MAX_RETRIES:
+                    logger.error(f"generate failed after {attempt + 1} attempts: {exc}")
+                    raise
+                delay = _retry_delay(exc, attempt)
+                logger.warning(
+                    f"generate: {type(exc).__name__}, retrying in {delay:.1f}s "
+                    f"(retry {attempt + 1}/{_LLM_MAX_RETRIES})"
+                )
+                await asyncio.sleep(delay)
+            except asyncio.TimeoutError:
+                logger.error(f"generate timed out after {_LLM_TIMEOUT}s")
+                raise
+            except Exception as exc:
+                logger.error(f"generate failed: {exc}", exc_info=True)
+                raise
+    raise RuntimeError("unreachable: the retry loop always returns or raises")
+
+
+def _retry_delay(exc: Exception, attempt: int) -> float:
+    """Groq's retry-after header when it sends one, else exponential backoff."""
+    backoff = _RETRY_BASE_DELAY * (2 ** attempt)
+    response = getattr(exc, "response", None)
+    header = response.headers.get("retry-after") if response is not None else None
+    try:
+        delay = float(header) if header else backoff
+    except ValueError:
+        delay = backoff
+    return min(max(delay, 0.5), _RETRY_MAX_DELAY)
 
 
 def _groq_generate_sync(prompt: str, json_mode: bool, temperature: float) -> str:
-    try:
-        kwargs: dict = dict(
-            model=GROQ_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=temperature,
-        )
-        if json_mode:
-            kwargs["response_format"] = {"type": "json_object"}
-        resp = _get_groq_client().chat.completions.create(**kwargs)
-        return resp.choices[0].message.content or ""
-    except Exception as exc:
-        logger.error(f"Groq chat.completions.create failed: {exc}", exc_info=True)
-        raise
+    # Errors are logged once, by generate(), which knows whether it will retry.
+    kwargs: dict = dict(
+        model=GROQ_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=temperature,
+    )
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+    resp = _get_groq_client().chat.completions.create(**kwargs)
+    return resp.choices[0].message.content or ""
 
 
 async def _groq_generate(prompt: str, json_mode: bool, temperature: float) -> str:
@@ -91,13 +123,31 @@ async def _groq_generate(prompt: str, json_mode: bool, temperature: float) -> st
 
 # ── Embeddings (Ollama) ───────────────────────────────────────────────────────
 
+# nomic-embed-text was trained with task prefixes; without them, query and passage
+# vectors match each other less well. Other embedding models get the text unchanged.
+_NOMIC_TASK_PREFIX = {
+    "retrieval_document": "search_document: ",
+    "retrieval_query":    "search_query: ",
+}
+
+
+def _with_task_prefix(text: str, task_type: str) -> str:
+    if not OLLAMA_EMBED_MODEL.startswith("nomic-embed-text"):
+        return text
+    prefix = _NOMIC_TASK_PREFIX.get(task_type)
+    if prefix is None:
+        logger.warning(f"embed: unknown task_type={task_type!r}, treating it as a document")
+        prefix = _NOMIC_TASK_PREFIX["retrieval_document"]
+    return prefix + text
+
+
 async def embed(text: str, task_type: str = "retrieval_document") -> List[float]:
-    """Embed text using Ollama."""
-    logger.debug(f"embed: text_len={len(text)}")
+    """Embed text using Ollama. task_type: "retrieval_document" or "retrieval_query"."""
+    logger.debug(f"embed: task_type={task_type}, text_len={len(text)}")
     async with _EMBED_SEM:
         try:
             result = await asyncio.wait_for(
-                _ollama_embed(text),
+                _ollama_embed(_with_task_prefix(text, task_type)),
                 timeout=_EMBED_TIMEOUT,
             )
             logger.debug(f"embed complete: vector_dim={len(result)}")

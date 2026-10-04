@@ -1,33 +1,48 @@
 from fastapi import APIRouter, HTTPException, Depends
-from backend.core.logger import logger
-from backend.core.database import documents
-from backend.app.dependencies import get_graphrag, get_raptor, get_hippo
+from sqlalchemy import func, select
+from sqlalchemy.ext.asyncio import AsyncSession
 
-router = APIRouter(prefix="/graph", tags=["graph"])
+from backend.app.dependencies import CaseAccess, get_case_index_registry, require_case_role
+from backend.core.database import get_db
+from backend.core.logger import logger
+from backend.models import Document
+from backend.services.case_index_registry import CaseIndexRegistry
+
+router = APIRouter(prefix="/cases/{case_id}/graph", tags=["graph"])
 
 @router.get("")
-async def get_graph(graphrag = Depends(get_graphrag)):
-    logger.debug("Fetching graph data")
-    return graphrag.get_graph_data()
+async def get_graph(
+    access: CaseAccess = Depends(require_case_role("viewer")),
+    registry: CaseIndexRegistry = Depends(get_case_index_registry),
+):
+    logger.debug(f"Fetching graph data for case {access.case.id}")
+    bundle = await registry.get(access.case.id)
+    return bundle.graphrag.get_graph_data()
 
 @router.get("/stats")
 async def get_graph_stats(
-    graphrag = Depends(get_graphrag),
-    raptor = Depends(get_raptor),
-    hippo = Depends(get_hippo)
+    access: CaseAccess = Depends(require_case_role("viewer")),
+    db: AsyncSession = Depends(get_db),
+    registry: CaseIndexRegistry = Depends(get_case_index_registry),
 ):
-    logger.debug("Fetching graph statistics")
-    stats = graphrag.get_stats()
-    stats["raptor"] = raptor.get_stats()
-    stats["hippo"] = hippo.get_stats()
-    stats["indexed_documents"] = sum(
-        1 for d in documents.values() if d.status == "indexed"
-    )
-    logger.debug(f"Graph statistics: {stats}")
+    bundle = await registry.get(access.case.id)
+    stats = bundle.graphrag.get_stats()
+    stats["raptor"] = bundle.raptor.get_stats()
+    stats["hippo"] = bundle.hippo.get_stats()
+    stats["indexed_documents"] = (await db.execute(
+        select(func.count()).select_from(Document)
+        .where(Document.case_id == access.case.id, Document.status == "indexed")
+    )).scalar_one()
+    logger.debug(f"Graph statistics for case {access.case.id}: {stats}")
     return stats
 
 @router.get("/entity/{entity_id}")
-async def get_entity(entity_id: str, graphrag = Depends(get_graphrag)):
+async def get_entity(
+    entity_id: str,
+    access: CaseAccess = Depends(require_case_role("viewer")),
+    registry: CaseIndexRegistry = Depends(get_case_index_registry),
+):
+    graphrag = (await registry.get(access.case.id)).graphrag
     ent = graphrag.entities.get(entity_id)
     if not ent:
         raise HTTPException(status_code=404, detail="Entity not found.")

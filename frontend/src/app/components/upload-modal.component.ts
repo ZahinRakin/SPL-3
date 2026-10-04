@@ -1,6 +1,9 @@
-import { Component, Output, EventEmitter, signal, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter, signal, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService, DocRecord } from '../services/api.service';
+import { CaseContextService } from '../services/case-context.service';
+import { describeApiError } from '../services/api-errors';
+import { fileIcon, formatSize } from '../shared/format';
 
 interface UploadEntry {
   file: File;
@@ -174,6 +177,8 @@ export class UploadModalComponent {
   dragOver = signal(false);
   uploading = signal(false);
 
+  private ctx = inject(CaseContextService);
+
   constructor(private api: ApiService) {}
 
   @HostListener('document:keydown.escape')
@@ -214,13 +219,13 @@ export class UploadModalComponent {
     for (const entry of entries) {
       this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'uploading' } : e));
       await new Promise<void>(resolve => {
-        this.api.uploadDocument(entry.file).subscribe({
+        this.api.uploadDocument(this.ctx.caseId(), entry.file).subscribe({
           next: rec => {
             this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'done', record: rec } : e));
             resolve();
           },
           error: err => {
-            this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'error', error: err.message ?? 'Upload failed' } : e));
+            this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'error', error: describeApiError(err, 'Upload failed') } : e));
             resolve();
           },
         });
@@ -232,18 +237,6 @@ export class UploadModalComponent {
     }
   }
 
-  fileIcon(name: string): string {
-    const ext = name.split('.').pop()?.toLowerCase() ?? '';
-    if (ext === 'pdf')  return '📄';
-    if (['docx','doc'].includes(ext)) return '📝';
-    if (ext === 'txt')  return '📃';
-    if (['html','htm'].includes(ext)) return '🌐';
-    return '📋';
-  }
-
-  formatSize(bytes: number): string {
-    if (bytes < 1024)           return `${bytes} B`;
-    if (bytes < 1024 * 1024)    return `${(bytes / 1024).toFixed(1)} KB`;
-    return `${(bytes / (1024*1024)).toFixed(1)} MB`;
-  }
+  readonly fileIcon = fileIcon;
+  readonly formatSize = formatSize;
 }

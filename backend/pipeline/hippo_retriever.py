@@ -7,13 +7,15 @@ Embedding provider is selected via EMBED_PROVIDER in .env.
 """
 import asyncio
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Dict, List, Optional
 
 import numpy as np
 
 from backend.core.logger import logger
-from .llm_provider import embed
+from .vectors import EmbeddingIndex, embed_or_fallback
+
+_LEVEL_PENALTY = 0.02   # per pyramid level, preferring fine-grained passages
 
 
 @dataclass
@@ -34,17 +36,18 @@ class HippoRetriever:
         self.max_levels = max_levels
         self.nodes: Dict[str, HippoNode] = {}
         self.levels: Dict[int, List[str]] = {}
+        self._index: Optional[EmbeddingIndex] = None
 
     # ── embedding ─────────────────────────────────────────────────────────────
 
     async def _embed(self, text: str) -> List[float]:
-        try:
-            return await embed(text)
-        except Exception as exc:
-            logger.warning(f"HippoRetriever._embed failed, using random fallback: {exc}", exc_info=True)
-            rng = np.random.default_rng(abs(hash(text)) % (2**32))
-            v = rng.standard_normal(768).astype(float)
-            return (v / np.linalg.norm(v)).tolist()
+        return await embed_or_fallback(text, owner="HippoRetriever")
+
+    def _embedding_index(self) -> EmbeddingIndex:
+        # Built lazily, dropped whenever nodes change (build/index/load).
+        if self._index is None:
+            self._index = EmbeddingIndex.build({nid: n.embedding for nid, n in self.nodes.items()})
+        return self._index
 
     # ── pooling ───────────────────────────────────────────────────────────────
 
@@ -63,6 +66,7 @@ class HippoRetriever:
             return {}
 
         logger.info(f"HippoRetriever.index_passages: {len(passages)} passages, max_levels={self.max_levels}")
+        self._index = None
         embs = await asyncio.gather(
             *[self._embed(p["text"]) for p in passages], return_exceptions=True
         )
@@ -110,6 +114,7 @@ class HippoRetriever:
             logger.debug(f"HippoRetriever: level={level} built with {len(next_level)} nodes")
             current = next_level
 
+        self._index = None
         stats = {"total_nodes": len(self.nodes), "levels": {k: len(v) for k, v in self.levels.items()}}
         logger.info(f"HippoRetriever.index_passages complete: {stats}")
         return stats
@@ -117,18 +122,11 @@ class HippoRetriever:
     # ── retrieval ─────────────────────────────────────────────────────────────
 
     def retrieve(self, query_embedding: List[float], top_k: int = 5, level: int = 0) -> List[Dict]:
-        qv = np.array(query_embedding)
         target = self.levels.get(level, self.levels.get(0, []))
         if not target:
             logger.warning(f"HippoRetriever.retrieve: no nodes at level={level}")
-        scored = []
-        for nid in target:
-            node = self.nodes.get(nid)
-            if node and node.embedding:
-                nv = np.array(node.embedding)
-                denom = np.linalg.norm(qv) * np.linalg.norm(nv)
-                sim = float(np.dot(qv, nv) / denom) if denom > 0 else 0.0
-                scored.append((sim, nid))
+        ids, sims = self._embedding_index().cosine(query_embedding, target)
+        scored = [(float(sim), nid) for nid, sim in zip(ids, sims)]
         scored.sort(reverse=True)
         results = [
             {
@@ -148,14 +146,11 @@ class HippoRetriever:
         if not self.nodes:
             logger.warning("HippoRetriever.retrieve_multi_level: no nodes indexed")
             return []
-        qv = np.array(query_embedding)
-        scored = []
-        for nid, node in self.nodes.items():
-            if node.embedding:
-                nv = np.array(node.embedding)
-                denom = np.linalg.norm(qv) * np.linalg.norm(nv)
-                sim = float(np.dot(qv, nv) / denom) if denom > 0 else 0.0
-                scored.append((sim - node.level * 0.02, nid))
+        ids, sims = self._embedding_index().cosine(query_embedding)
+        scored = [
+            (float(sim) - self.nodes[nid].level * _LEVEL_PENALTY, nid)
+            for nid, sim in zip(ids, sims)
+        ]
         scored.sort(reverse=True)
         results = [
             {
@@ -175,3 +170,20 @@ class HippoRetriever:
             "total_nodes": len(self.nodes),
             "levels": {k: len(v) for k, v in self.levels.items()},
         }
+
+    # ── state (persistence) ───────────────────────────────────────────────────
+
+    def export_state(self) -> Dict:
+        return {
+            "nodes": [asdict(n) for n in self.nodes.values()],
+            "levels": {str(k): list(v) for k, v in self.levels.items()},
+        }
+
+    def load_state(self, state: Dict) -> None:
+        self.nodes = {}
+        for n in state.get("nodes", []):
+            node = HippoNode(**n)
+            self.nodes[node.id] = node
+        self.levels = {int(k): list(v) for k, v in state.get("levels", {}).items()}
+        self._index = None
+        logger.debug(f"HippoRetriever.load_state: nodes={len(self.nodes)}, levels={len(self.levels)}")

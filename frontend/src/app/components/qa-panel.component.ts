@@ -1,23 +1,27 @@
-import { Component, OnInit, signal, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, signal, ViewChild, ElementRef, AfterViewChecked, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, QueryResponse } from '../services/api.service';
+import { ApiService, ChatMessage, QueryResponse } from '../services/api.service';
+import { CaseContextService } from '../services/case-context.service';
+import { describeApiError } from '../services/api-errors';
+import { withAlpha } from '../shared/format';
 
 interface Message {
   role: 'user' | 'ai';
   text?: string;
   response?: QueryResponse;
   loading?: boolean;
+  author?: string;   // who asked; set for turns loaded from the case history
   ts: number;
 }
 
 type Method = 'hybrid' | 'graphrag' | 'raptor' | 'hippo';
 
 const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string }> = {
-  hybrid:   { label: 'Hybrid',    color: '#4f87ff', desc: 'GraphRAG + RAPTOR + HiPPO' },
-  graphrag: { label: 'GraphRAG',  color: '#34d399', desc: 'Knowledge graph communities' },
-  raptor:   { label: 'RAPTOR',    color: '#a78bfa', desc: 'Tree-based summarisation' },
-  hippo:    { label: 'HiPPO',     color: '#fbbf24', desc: 'Hierarchical passage pooling' },
+  hybrid:   { label: 'Hybrid',    color: 'var(--accent)', desc: 'GraphRAG + RAPTOR + HiPPO' },
+  graphrag: { label: 'GraphRAG',  color: 'var(--green)', desc: 'Knowledge graph communities' },
+  raptor:   { label: 'RAPTOR',    color: 'var(--purple)', desc: 'Tree-based summarisation' },
+  hippo:    { label: 'HiPPO',     color: 'var(--amber)', desc: 'Hierarchical passage pooling' },
 };
 
 @Component({
@@ -26,12 +30,20 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
   imports: [CommonModule, FormsModule],
   template: `
     <div class="qa-shell">
+      @if (messages().length) {
+        <div class="chat-tools">
+          <span>Case chat history · shared with everyone on this case</span>
+          @if (ctx.isLead()) {
+            <button class="clear-btn" (click)="clearHistory()" [disabled]="isLoading()">Clear history</button>
+          }
+        </div>
+      }
       <!-- messages -->
       <div class="messages" #msgContainer>
         @if (messages().length === 0) {
           <div class="welcome">
             <div class="welcome-icon">💬</div>
-            <div class="welcome-title">Ask anything across your documents</div>
+            <div class="welcome-title">Ask anything about this case's evidence</div>
             <div class="welcome-sub">The AI will search the knowledge graph, RAPTOR tree, and HiPPO passages to answer your question.</div>
             <div class="suggestion-grid">
               @for (s of suggestions(); track s) {
@@ -45,7 +57,7 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
           @if (msg.role === 'user') {
             <div class="msg user-msg">
               <div class="msg-avatar user-av">U</div>
-              <div class="msg-bubble user-bubble">{{ msg.text }}</div>
+              <div class="msg-bubble user-bubble" [title]="msg.author ? 'Asked by ' + msg.author : ''">{{ msg.text }}</div>
             </div>
           }
           @if (msg.role === 'ai') {
@@ -83,8 +95,8 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
                   <div class="ai-meta">
                     <span class="method-badge"
                           [style.color]="methodInfo(msg.response.method).color"
-                          [style.border-color]="hexToRgba(methodInfo(msg.response.method).color, 0.3)"
-                          [style.background]="hexToRgba(methodInfo(msg.response.method).color, 0.08)">
+                          [style.border-color]="withAlpha(methodInfo(msg.response.method).color, 0.3)"
+                          [style.background]="withAlpha(methodInfo(msg.response.method).color, 0.08)">
                       {{ methodInfo(msg.response.method).label }}
                     </span>
                     <span class="conf-badge" [class.conf-high]="msg.response.confidence > 0.7">
@@ -125,8 +137,8 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
             <button class="method-btn"
                     [class.active]="activeMethod() === m"
                     [style.color]="activeMethod() === m ? methodInfo(m).color : ''"
-                    [style.border-color]="activeMethod() === m ? hexToRgba(methodInfo(m).color, 0.4) : ''"
-                    [style.background]="activeMethod() === m ? hexToRgba(methodInfo(m).color, 0.1) : ''"
+                    [style.border-color]="activeMethod() === m ? withAlpha(methodInfo(m).color, 0.4) : ''"
+                    [style.background]="activeMethod() === m ? withAlpha(methodInfo(m).color, 0.1) : ''"
                     [title]="methodInfo(m).desc"
                     (click)="activeMethod.set(m)">
               {{ methodInfo(m).label }}
@@ -156,6 +168,17 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
     :host { display: block; flex: 1; height: 100%; overflow: hidden; }
     .qa-shell { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 
+    .chat-tools {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 8px 24px; font-size: 11px; color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border-subtle); flex-shrink: 0;
+    }
+    .clear-btn {
+      background: none; border: 1px solid var(--border-normal); border-radius: var(--radius-sm);
+      color: var(--text-secondary); font-size: 11px; padding: 3px 9px; cursor: pointer;
+      &:hover:not(:disabled) { color: var(--red); border-color: var(--red); }
+    }
+
     /* messages */
     .messages {
       flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 18px;
@@ -179,6 +202,17 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
       color: var(--text-secondary); font-size: 12px; cursor: pointer; text-align: left;
       transition: all 0.15s; line-height: 1.5;
       &:hover { border-color: var(--accent); color: var(--text-primary); background: var(--accent-dim); }
+    }
+
+    .chat-tools {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 8px 24px; font-size: 11px; color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border-subtle); flex-shrink: 0;
+    }
+    .clear-btn {
+      background: none; border: 1px solid var(--border-normal); border-radius: var(--radius-sm);
+      color: var(--text-secondary); font-size: 11px; padding: 3px 9px; cursor: pointer;
+      &:hover:not(:disabled) { color: var(--red); border-color: var(--red); }
     }
 
     /* messages */
@@ -297,11 +331,13 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
   methods: Method[] = ['hybrid', 'graphrag', 'raptor', 'hippo'];
 
   private shouldScroll = false;
+  readonly ctx = inject(CaseContextService);
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.api.getSuggestions().subscribe({
+    this.loadHistory();
+    this.api.getSuggestions(this.ctx.caseId()).subscribe({
       next: r => this.suggestions.set(r.suggestions),
       error: () => this.suggestions.set([
         'Summarise the key themes',
@@ -322,12 +358,7 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
     return METHOD_LABELS[m as Method] ?? METHOD_LABELS['hybrid'];
   }
 
-  hexToRgba(hex: string, alpha: number): string {
-    const r = parseInt(hex.slice(1,3), 16);
-    const g = parseInt(hex.slice(3,5), 16);
-    const b = parseInt(hex.slice(5,7), 16);
-    return `rgba(${r},${g},${b},${alpha})`;
-  }
+  withAlpha = withAlpha;
 
   toggleReasoning(msg: Message) {
     if (this.expandedMsgs.has(msg.ts)) {
@@ -354,7 +385,7 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
     this.isLoading.set(true);
     this.shouldScroll = true;
 
-    this.api.query(q, this.activeMethod(), 6).subscribe({
+    this.api.query(this.ctx.caseId(), q, this.activeMethod(), 6).subscribe({
       next: resp => {
         this.messages.update(msgs =>
           msgs.map(m => m === aiMsg ? { ...m, loading: false, response: resp } : m)
@@ -364,7 +395,7 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
       },
       error: err => {
         const errResp: QueryResponse = {
-          answer: 'An error occurred. Make sure documents are indexed and the API key is set.',
+          answer: describeApiError(err, 'An error occurred. Make sure documents are indexed and the API key is set.'),
           entities: [], sources: [], confidence: 0, reasoning: '', method: this.activeMethod(),
         };
         this.messages.update(msgs =>
@@ -373,6 +404,37 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
         this.isLoading.set(false);
         this.shouldScroll = true;
       },
+    });
+  }
+
+  /** Turn the stored history into user/AI message pairs. */
+  private loadHistory() {
+    this.api.getChatHistory(this.ctx.caseId()).subscribe({
+      next: history => {
+        this.messages.set(history.flatMap(h => this.toMessages(h)));
+        this.shouldScroll = true;
+      },
+      error: () => {},
+    });
+  }
+
+  private toMessages(h: ChatMessage): Message[] {
+    const ts = Date.parse(h.created_at);
+    const response: QueryResponse = {
+      answer: h.answer, entities: h.entities, sources: h.sources,
+      confidence: h.confidence, reasoning: h.reasoning, method: h.method,
+    };
+    return [
+      { role: 'user', text: h.question, author: h.user_name ?? undefined, ts },
+      { role: 'ai', response, ts: ts + 1 },
+    ];
+  }
+
+  clearHistory() {
+    if (!confirm('Clear the chat history of this case for everyone?')) return;
+    this.api.clearChatHistory(this.ctx.caseId()).subscribe({
+      next: () => this.messages.set([]),
+      error: () => {},
     });
   }
 

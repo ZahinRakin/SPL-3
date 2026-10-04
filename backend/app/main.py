@@ -1,17 +1,48 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text, update
+
 from backend.core.config import settings
+from backend.core.database import engine, session_scope
 from backend.core.logger import logger
 from backend.api.router import api_router
+from backend.models import Document
 from backend.pipeline.llm_provider import active_api_key_set, provider_info
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if not settings.JWT_SECRET_KEY:
+        raise RuntimeError("JWT_SECRET_KEY is not set. Add it to .env (see .env.example).")
+    async with engine.connect() as conn:
+        await conn.execute(text("SELECT 1"))
+    logger.info("Database connected")
+
+    # Background indexing doesn't survive a restart; without this, documents would
+    # show "indexing" forever.
+    async with session_scope() as session:
+        result = await session.execute(
+            update(Document)
+            .where(Document.status.in_(("uploaded", "indexing")))
+            .values(status="error", error="Interrupted by server restart. Please re-upload.")
+        )
+    if result.rowcount:
+        logger.warning(f"Marked {result.rowcount} interrupted document(s) as error")
+
+    yield
+    await engine.dispose()
+
+
 app = FastAPI(
-    title="GraphRAG Document Intelligence API",
-    description="Upload documents, build a knowledge graph, and query across them.",
-    version="1.0.0",
+    title="GraphRAG Investigation API",
+    description="Register, open investigation cases, upload evidence, and query it with GraphRAG, RAPTOR and HiPPO.",
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
-CORS_ORIGINS = settings.CORS_ORIGINS.split(",") if settings.CORS_ORIGINS else ["*"]
+CORS_ORIGINS = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,

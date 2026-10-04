@@ -7,13 +7,12 @@ LLM / embedding provider is selected via LLM_PROVIDER / EMBED_PROVIDER in .env.
 import json
 from typing import Dict, List, Literal
 
-import numpy as np
-
 from backend.core.logger import logger
 from .graphrag_indexer import GraphRAGIndexer
 from .hippo_retriever import HippoRetriever
-from .llm_provider import embed, generate
+from .llm_provider import generate
 from .raptor_runner import RaptorRunner
+from .vectors import embed_or_fallback
 
 Method = Literal["graphrag", "raptor", "hippo", "hybrid"]
 
@@ -54,13 +53,7 @@ class QueryEngine:
     # ── embedding ─────────────────────────────────────────────────────────────
 
     async def _embed_query(self, query: str) -> List[float]:
-        try:
-            return await embed(query, task_type="retrieval_query")
-        except Exception as exc:
-            logger.warning(f"QueryEngine._embed_query failed, using random fallback: {exc}", exc_info=True)
-            rng = np.random.default_rng(abs(hash(query)) % (2**32))
-            v = rng.standard_normal(768).astype(float)
-            return (v / np.linalg.norm(v)).tolist()
+        return await embed_or_fallback(query, owner="QueryEngine", task_type="retrieval_query")
 
     # ── context assembly ──────────────────────────────────────────────────────
 
@@ -181,3 +174,12 @@ class QueryEngine:
             top_type = max(type_counts, key=type_counts.get)  # type: ignore[arg-type]
             suggestions.insert(0, f"Who are the main {top_type.lower()} entities?")
         return suggestions[:5]
+
+    # ── state (persistence) ───────────────────────────────────────────────────
+    # Only the conversation history; the retrievers persist their own state.
+
+    def export_state(self) -> Dict:
+        return {"history": list(self.history)}
+
+    def load_state(self, state: Dict) -> None:
+        self.history = list(state.get("history", []))

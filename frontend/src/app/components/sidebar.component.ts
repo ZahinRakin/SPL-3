@@ -1,8 +1,10 @@
-import { Component, Input, OnInit, Output, EventEmitter, signal } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Output, EventEmitter, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService, DocRecord, GraphStats } from '../services/api.service';
-import { interval } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { CaseContextService } from '../services/case-context.service';
+import { fileIcon, formatSize } from '../shared/format';
+
+const DOCS_POLL_MS = 4000;
 
 @Component({
   selector: 'app-sidebar',
@@ -11,20 +13,24 @@ import { switchMap } from 'rxjs/operators';
   template: `
     <aside class="sidebar">
       <div class="sidebar-header">
-        <div class="sidebar-title">Documents</div>
-        <button class="add-btn" (click)="uploadClick.emit()" title="Upload documents">
-          <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13">
-            <path d="M8 2a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2H9v4a1 1 0 1 1-2 0V9H3a1 1 0 0 1 0-2h4V3a1 1 0 0 1 1-1z"/>
-          </svg>
-        </button>
+        <div class="sidebar-title">Evidence</div>
+        @if (ctx.canEdit()) {
+          <button class="add-btn" (click)="uploadClick.emit()" title="Upload evidence">
+            <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13">
+              <path d="M8 2a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2H9v4a1 1 0 1 1-2 0V9H3a1 1 0 0 1 0-2h4V3a1 1 0 0 1 1-1z"/>
+            </svg>
+          </button>
+        }
       </div>
 
       <div class="doc-list">
         @if (docs().length === 0) {
           <div class="doc-empty">
             <div class="doc-empty-icon">📄</div>
-            <div class="doc-empty-text">No documents yet</div>
-            <button class="doc-empty-btn" (click)="uploadClick.emit()">Upload files</button>
+            <div class="doc-empty-text">No evidence yet</div>
+            @if (ctx.canEdit()) {
+              <button class="doc-empty-btn" (click)="uploadClick.emit()">Upload files</button>
+            }
           </div>
         }
 
@@ -32,7 +38,7 @@ import { switchMap } from 'rxjs/operators';
           <div class="doc-item" [class.indexing]="doc.status === 'indexing'" [class.error]="doc.status === 'error'">
             <div class="doc-icon">{{ fileIcon(doc.filename) }}</div>
             <div class="doc-info">
-              <div class="doc-name" [title]="doc.filename">{{ doc.filename }}</div>
+              <div class="doc-name" [title]="doc.filename + ' · SHA-256: ' + doc.sha256">{{ doc.filename }}</div>
               <div class="doc-meta">
                 {{ formatSize(doc.size_bytes) }}
                 @if (doc.status === 'indexing') {
@@ -40,11 +46,13 @@ import { switchMap } from 'rxjs/operators';
                 } @else if (doc.status === 'indexed') {
                   · <span class="status-indexed">{{ doc.chunks }} chunks</span>
                 } @else if (doc.status === 'error') {
-                  · <span class="status-error">error</span>
+                  · <span class="status-error" [title]="doc.error ?? ''">error</span>
                 }
               </div>
             </div>
-            <button class="doc-delete" (click)="deleteDoc(doc.id)" title="Remove">✕</button>
+            @if (ctx.isLead()) {
+              <button class="doc-delete" (click)="deleteDoc(doc)" title="Remove">✕</button>
+            }
           </div>
         }
       </div>
@@ -142,42 +150,38 @@ import { switchMap } from 'rxjs/operators';
     .stat-lbl { font-size: 9px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
   `],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
   @Input() stats: GraphStats | null = null;
   @Output() uploadClick = new EventEmitter<void>();
 
+  readonly ctx = inject(CaseContextService);
   docs = signal<DocRecord[]>([]);
+  private timer?: ReturnType<typeof setInterval>;
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
     this.refresh();
-    setInterval(() => this.refresh(), 4000);
+    this.timer = setInterval(() => this.refresh(), DOCS_POLL_MS);
+  }
+
+  ngOnDestroy() {
+    if (this.timer) clearInterval(this.timer);
   }
 
   refresh() {
-    this.api.listDocuments().subscribe({
+    this.api.listDocuments(this.ctx.caseId()).subscribe({
       next: d => this.docs.set(d),
       error: () => {},
     });
   }
 
-  deleteDoc(id: string) {
-    this.api.deleteDocument(id).subscribe({ next: () => this.refresh() });
+  deleteDoc(doc: DocRecord) {
+    // Known limitation: the file's knowledge stays in the case's indexes (ARCHITECTURE.md §8).
+    if (!confirm(`Remove ${doc.filename} from this case?`)) return;
+    this.api.deleteDocument(this.ctx.caseId(), doc.id).subscribe({ next: () => this.refresh() });
   }
 
-  fileIcon(name: string): string {
-    const ext = name.split('.').pop()?.toLowerCase() ?? '';
-    if (ext === 'pdf')  return '📄';
-    if (ext === 'docx' || ext === 'doc') return '📝';
-    if (ext === 'txt')  return '📃';
-    if (ext === 'html') return '🌐';
-    return '📋';
-  }
-
-  formatSize(bytes: number): string {
-    if (bytes < 1024) return `${bytes} B`;
-    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-  }
+  readonly fileIcon = fileIcon;
+  readonly formatSize = formatSize;
 }

@@ -1,11 +1,13 @@
 import {
   Component, OnInit, OnDestroy, ElementRef, ViewChild,
-  AfterViewInit, signal, HostListener,
+  AfterViewInit, signal, HostListener, inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as d3 from 'd3';
 import { ApiService, GraphData, GraphNode, GraphEdge, EntityDetail } from '../services/api.service';
+import { CaseContextService } from '../services/case-context.service';
+import { withAlpha } from '../shared/format';
 import { Subscription, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -17,21 +19,16 @@ interface D3Link extends d3.SimulationLinkDatum<D3Node> {
   relation: string; weight: number;
 }
 
-const TYPE_COLOR: Record<string, string> = {
-  person:       '#60a5fa',
-  organization: '#34d399',
-  location:     '#fbbf24',
-  concept:      '#a78bfa',
-  event:        '#f87171',
-  date:         '#fb923c',
-  product:      '#22d3ee',
-  law:          '#e879f9',
-  disease:      '#f43f5e',
-  drug:         '#84cc16',
-  other:        '#94a3b8',
-};
+// Entity colours are the --c-* tokens in styles.scss.
+const ENTITY_TYPES = new Set([
+  'person', 'organization', 'location', 'concept', 'event', 'date',
+  'product', 'law', 'disease', 'drug', 'other',
+]);
 
-function typeColor(t: string) { return TYPE_COLOR[t.toLowerCase()] ?? '#94a3b8'; }
+function typeColor(t: string) {
+  const type = t.toLowerCase();
+  return `var(--c-${ENTITY_TYPES.has(type) ? type : 'other'})`;
+}
 function nodeRadius(deg: number) { return Math.max(8, Math.min(22, 8 + Math.sqrt(deg) * 2.5)); }
 
 @Component({
@@ -58,7 +55,7 @@ function nodeRadius(deg: number) { return Math.max(8, Math.min(22, 8 + Math.sqrt
             <button class="filter-pill"
                     [style.border-color]="activeFilters().has(type) ? typeColor(type) : 'transparent'"
                     [style.color]="activeFilters().has(type) ? typeColor(type) : 'var(--text-tertiary)'"
-                    [style.background]="activeFilters().has(type) ? hexToRgba(typeColor(type), 0.1) : 'transparent'"
+                    [style.background]="activeFilters().has(type) ? withAlpha(typeColor(type), 0.1) : 'transparent'"
                     (click)="toggleFilter(type)">
               <span class="filter-dot" [style.background]="typeColor(type)"></span>
               {{ type }}
@@ -121,7 +118,7 @@ function nodeRadius(deg: number) { return Math.max(8, Math.min(22, 8 + Math.sqrt
                 <div class="detail-sec-label">Connected to</div>
                 @for (n of entityDetail()!.neighbors; track n.id) {
                   <div class="neighbor-chip"
-                       [style.border-color]="hexToRgba(typeColor(n.type), 0.35)"
+                       [style.border-color]="withAlpha(typeColor(n.type), 0.35)"
                        [style.color]="typeColor(n.type)"
                        (click)="selectNodeById(n.id)">
                     <span class="neighbor-dot" [style.background]="typeColor(n.type)"></span>
@@ -288,9 +285,9 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
   searchTerm = '';
   entityTypes: string[] = [];
 
-  legendEntries = Object.entries(TYPE_COLOR)
-    .filter(([t]) => !['date'].includes(t))
-    .map(([type, color]) => ({ type, label: type, color }));
+  legendEntries = [...ENTITY_TYPES]
+    .filter(t => !['date'].includes(t))
+    .map(type => ({ type, label: type, color: typeColor(type) }));
 
   private svg!: d3.Selection<SVGGElement, unknown, null, undefined>;
   private zoom!: d3.ZoomBehavior<SVGElement, unknown>;
@@ -298,6 +295,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
   private allNodes: D3Node[] = [];
   private allLinks: D3Link[] = [];
   private sub?: Subscription;
+  private ctx = inject(CaseContextService);
 
   constructor(private api: ApiService) {}
 
@@ -312,12 +310,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   typeColor = typeColor;
 
-  hexToRgba(hex: string, alpha: number): string {
-    const r = parseInt(hex.slice(1,3), 16);
-    const g = parseInt(hex.slice(3,5), 16);
-    const b = parseInt(hex.slice(5,7), 16);
-    return `rgba(${r},${g},${b},${alpha})`;
-  }
+  withAlpha = withAlpha;
 
   // ── init ──────────────────────────────────────────────────────────────────
 
@@ -335,7 +328,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loadGraph() {
     this.loading.set(true);
-    this.api.getGraph().subscribe({
+    this.api.getGraph(this.ctx.caseId()).subscribe({
       next: (data: GraphData) => {
         this.loading.set(false);
         const typeSet = new Set<string>();
@@ -419,7 +412,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
     const link = linkG.selectAll<SVGLineElement, D3Link>('line')
       .data(links).join('line')
       .attr('class', 'link')
-      .attr('stroke', 'rgba(255,255,255,0.12)')
+      .style('stroke', 'rgba(255,255,255,0.12)')
       .attr('stroke-width', (d: D3Link) => Math.sqrt(d.weight))
       .attr('marker-end', 'url(#arrow)');
 
@@ -446,8 +439,8 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
     node.append('circle')
       .attr('class', 'node-circle')
       .attr('r', (d: D3Node) => nodeRadius(d.degree))
-      .attr('fill', (d: D3Node) => this.hexToRgba(typeColor(d.type), 0.15))
-      .attr('stroke', (d: D3Node) => typeColor(d.type))
+      .style('fill', (d: D3Node) => withAlpha(typeColor(d.type), 0.15))
+      .style('stroke', (d: D3Node) => typeColor(d.type))
       .attr('stroke-width', 1.5)
       .attr('filter', 'url(#glow)');
 
@@ -456,7 +449,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
       .attr('dominant-baseline', 'central')
       .attr('font-size', (d: D3Node) => Math.max(8, nodeRadius(d.degree) * 0.6))
       .attr('font-family', 'Inter, system-ui, sans-serif')
-      .attr('fill', (d: D3Node) => typeColor(d.type))
+      .style('fill', (d: D3Node) => typeColor(d.type))
       .attr('pointer-events', 'none')
       .text((d: D3Node) => d.label.split(' ')[0]);
 
@@ -475,8 +468,8 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
       .on('mouseenter', (event, d) => {
         tip.transition().duration(100).style('opacity', 1);
         tip.html(`<strong>${d.label}</strong><br><span style="color:${typeColor(d.type)}">${d.type}</span>`
-          + (d.description ? `<br><span style="color:#8b9ab8;font-size:11px">${d.description.slice(0,80)}…</span>` : ''));
-        link.attr('stroke', (l: D3Link) =>
+          + (d.description ? `<br><span style="color:var(--text-secondary);font-size:11px">${d.description.slice(0,80)}…</span>` : ''));
+        link.style('stroke', (l: D3Link) =>
           l.source.id === d.id || l.target.id === d.id
             ? typeColor(d.type)
             : 'rgba(255,255,255,0.06)'
@@ -490,7 +483,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
       })
       .on('mouseleave', () => {
         tip.transition().duration(200).style('opacity', 0);
-        link.attr('stroke', 'rgba(255,255,255,0.12)')
+        link.style('stroke', 'rgba(255,255,255,0.12)')
             .attr('stroke-width', (l: D3Link) => Math.sqrt(l.weight));
       });
 
@@ -517,13 +510,13 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
   private onNodeClick(d: D3Node) {
     this.selected.set(d);
     this.entityDetail.set(null);
-    this.api.getEntity(d.id).subscribe({
+    this.api.getEntity(this.ctx.caseId(), d.id).subscribe({
       next: det => this.entityDetail.set(det),
       error: () => {},
     });
     // highlight connected edges
     d3.selectAll<SVGLineElement, D3Link>('.link')
-      .attr('stroke', (l: D3Link) =>
+      .style('stroke', (l: D3Link) =>
         l.source.id === d.id || l.target.id === d.id
           ? typeColor(d.type)
           : 'rgba(255,255,255,0.06)'

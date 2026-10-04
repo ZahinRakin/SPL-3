@@ -16,8 +16,35 @@ class Settings(BaseSettings):
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_EMBED_MODEL: str = "nomic-embed-text"
 
-    UPLOAD_DIR: str = "./uploads"
+    UPLOAD_DIR: str = "./data/uploads"
     MAX_FILE_SIZE_MB: int = 50
-    CORS_ORIGINS: str = "*" # currently set to allow all origins, but should be restricted in production
+    CORS_ORIGINS: str = "http://localhost:4200" # comma-separated; never "*" because auth uses cookies
+    LOG_LEVEL: str = "INFO"               # DEBUG | INFO | WARNING | ERROR
+
+    # ── database ──────────────────────────────────────────────────────────────
+    DATABASE_URL: str = "postgresql+asyncpg://spl3:spl3@localhost:5432/spl3"
+
+    # ── auth ──────────────────────────────────────────────────────────────────
+    JWT_SECRET_KEY: str = ""              # empty → the server refuses to start
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 7
+    COOKIE_SECURE: bool = False           # set true when served over HTTPS
+    FRONTEND_URL: str = "http://localhost:4200"
+
+    # Google OAuth2 (authorization-code flow). Both empty → Google login disabled.
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+
+    # ── per-case index cache ──────────────────────────────────────────────────
+    INDEX_CACHE_MAX_CASES: int = 4
+
+    @property
+    def google_enabled(self) -> bool:
+        return bool(self.GOOGLE_CLIENT_ID and self.GOOGLE_CLIENT_SECRET)
+
+    @property
+    def google_redirect_url(self) -> str:
+        # Google sends the user back to the SPA, which forwards code+state to the API.
+        return f"{self.FRONTEND_URL.rstrip('/')}/auth/google/callback"
 
 settings = Settings()

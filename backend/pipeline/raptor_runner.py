@@ -7,7 +7,7 @@ LLM / embedding provider is selected via LLM_PROVIDER / EMBED_PROVIDER in .env.
 """
 import asyncio
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -15,7 +15,10 @@ from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import normalize
 
 from backend.core.logger import logger
-from .llm_provider import embed, generate
+from .llm_provider import generate
+from .vectors import EmbeddingIndex, embed_or_fallback
+
+_LEVEL_PENALTY = 0.03   # per tree level, so summaries don't crowd out leaf passages
 
 
 @dataclass
@@ -35,17 +38,18 @@ class RaptorRunner:
         self.target_cluster_size = target_cluster_size
         self.nodes: Dict[str, RaptorNode] = {}
         self.root_ids: List[str] = []
+        self._index: Optional[EmbeddingIndex] = None
 
     # ── embedding ─────────────────────────────────────────────────────────────
 
     async def _embed(self, text: str) -> List[float]:
-        try:
-            return await embed(text)
-        except Exception as exc:
-            logger.warning(f"RaptorRunner._embed failed, using random fallback: {exc}", exc_info=True)
-            rng = np.random.default_rng(abs(hash(text)) % (2**32))
-            v = rng.standard_normal(768).astype(float)
-            return (v / np.linalg.norm(v)).tolist()
+        return await embed_or_fallback(text, owner="RaptorRunner")
+
+    def _embedding_index(self) -> EmbeddingIndex:
+        # Built lazily, dropped whenever nodes change (build/index/load).
+        if self._index is None:
+            self._index = EmbeddingIndex.build({nid: n.embedding for nid, n in self.nodes.items()})
+        return self._index
 
     # ── summarisation ─────────────────────────────────────────────────────────
 
@@ -92,6 +96,7 @@ class RaptorRunner:
             return {}
 
         logger.info(f"RaptorRunner.build_tree: {len(chunks)} chunks, max_levels={self.max_levels}")
+        self._index = None
         embs = await asyncio.gather(*[self._embed(c["text"]) for c in chunks], return_exceptions=True)
         leaf_ids = []
         for chunk, emb in zip(chunks, embs):
@@ -158,6 +163,7 @@ class RaptorRunner:
             current = new_level
 
         self.root_ids = current
+        self._index = None
         stats = self.get_stats()
         logger.info(f"RaptorRunner.build_tree complete: {stats}")
         return stats
@@ -168,14 +174,11 @@ class RaptorRunner:
         if not self.nodes:
             logger.warning("RaptorRunner.retrieve called but no nodes in tree")
             return []
-        qv = np.array(query_embedding)
-        scored = []
-        for nid, node in self.nodes.items():
-            if node.embedding:
-                nv = np.array(node.embedding)
-                denom = np.linalg.norm(qv) * np.linalg.norm(nv)
-                sim = float(np.dot(qv, nv) / denom) if denom > 0 else 0.0
-                scored.append((sim - node.level * 0.03, nid, node.level))
+        ids, sims = self._embedding_index().cosine(query_embedding)
+        scored = [
+            (float(sim) - self.nodes[nid].level * _LEVEL_PENALTY, nid, self.nodes[nid].level)
+            for nid, sim in zip(ids, sims)
+        ]
         scored.sort(reverse=True)
         results = [
             {
@@ -195,3 +198,20 @@ class RaptorRunner:
         for n in self.nodes.values():
             lvl_counts[n.level] = lvl_counts.get(n.level, 0) + 1
         return {"total_nodes": len(self.nodes), "levels": lvl_counts}
+
+    # ── state (persistence) ───────────────────────────────────────────────────
+
+    def export_state(self) -> Dict:
+        return {
+            "nodes": [asdict(n) for n in self.nodes.values()],
+            "root_ids": list(self.root_ids),
+        }
+
+    def load_state(self, state: Dict) -> None:
+        self.nodes = {}
+        for n in state.get("nodes", []):
+            node = RaptorNode(**n)
+            self.nodes[node.id] = node
+        self.root_ids = list(state.get("root_ids", []))
+        self._index = None
+        logger.debug(f"RaptorRunner.load_state: nodes={len(self.nodes)}")

@@ -59,7 +59,7 @@ API docs available at http://localhost:8000/docs
 ```bash
 cd graphrag-project/frontend
 npm install
-npm start       # serves at http://localhost:4200
+ng serve       # serves at http://localhost:4200
 ```
 
 Requests to `/api/*` are proxied to the FastAPI backend automatically.

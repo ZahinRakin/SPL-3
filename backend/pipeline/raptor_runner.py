@@ -16,7 +16,7 @@ from sklearn.preprocessing import normalize
 
 from backend.core.logger import logger
 from .llm_provider import generate
-from .vectors import EmbeddingIndex, embed_or_fallback
+from .vectors import EmbeddingIndex, embed_many_or_fallback
 
 _LEVEL_PENALTY = 0.03   # per tree level, so summaries don't crowd out leaf passages
 
@@ -40,10 +40,7 @@ class RaptorRunner:
         self.root_ids: List[str] = []
         self._index: Optional[EmbeddingIndex] = None
 
-    # ── embedding ─────────────────────────────────────────────────────────────
-
-    async def _embed(self, text: str) -> List[float]:
-        return await embed_or_fallback(text, owner="RaptorRunner")
+    # ── embedding index ───────────────────────────────────────────────────────
 
     def _embedding_index(self) -> EmbeddingIndex:
         # Built lazily, dropped whenever nodes change (build/index/load).
@@ -97,12 +94,9 @@ class RaptorRunner:
 
         logger.info(f"RaptorRunner.build_tree: {len(chunks)} chunks, max_levels={self.max_levels}")
         self._index = None
-        embs = await asyncio.gather(*[self._embed(c["text"]) for c in chunks], return_exceptions=True)
+        embs = await embed_many_or_fallback([c["text"] for c in chunks], owner="RaptorRunner")
         leaf_ids = []
         for chunk, emb in zip(chunks, embs):
-            if isinstance(emb, Exception):
-                logger.warning(f"Embedding failed for chunk {chunk.get('id')!r}, using fallback: {emb}")
-                emb = await self._embed("")
             node = RaptorNode(
                 text=chunk["text"],
                 level=0,
@@ -132,9 +126,8 @@ class RaptorRunner:
                 *[self._summarise(txts, level) for txts in texts_per_cluster],
                 return_exceptions=True,
             )
-            new_embs = await asyncio.gather(
-                *[self._embed(s if not isinstance(s, Exception) else "") for s in summaries],
-                return_exceptions=True,
+            new_embs = await embed_many_or_fallback(
+                [s if not isinstance(s, Exception) else "" for s in summaries], owner="RaptorRunner"
             )
 
             new_level: List[str] = []
@@ -144,9 +137,6 @@ class RaptorRunner:
                 if isinstance(summary, Exception):
                     logger.warning(f"Summary exception at level={level}: {summary}")
                     summary = "Summary unavailable."
-                if isinstance(emb, Exception):
-                    logger.warning(f"Embedding exception at level={level}: {emb}")
-                    emb = await self._embed("")
                 all_docs = list({d for nid in cluster_ids for d in self.nodes[nid].doc_ids})
                 parent = RaptorNode(
                     text=summary,

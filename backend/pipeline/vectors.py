@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 import numpy as np
 
 from backend.core.logger import logger
-from .llm_provider import embed
+from .llm_provider import embed, embed_many
 
 EMBED_DIM = 768   # nomic-embed-text
 
@@ -27,6 +27,20 @@ async def embed_or_fallback(text: str, owner: str, task_type: str = "retrieval_d
     except Exception as exc:
         logger.warning(f"{owner}: embedding failed, using random fallback: {exc}", exc_info=True)
         return fallback_embedding(text)
+
+
+async def embed_many_or_fallback(
+    texts: List[str], owner: str, task_type: str = "retrieval_document"
+) -> List[List[float]]:
+    """Embed a batch in one Ollama round trip. If the batch fails, every text gets a fallback."""
+    try:
+        return await embed_many(texts, task_type=task_type)
+    except Exception as exc:
+        logger.warning(
+            f"{owner}: batch embedding of {len(texts)} texts failed, using random fallbacks: {exc}",
+            exc_info=True,
+        )
+        return [fallback_embedding(t) for t in texts]
 
 
 # ── cosine search ─────────────────────────────────────────────────────────────

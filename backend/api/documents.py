@@ -68,15 +68,22 @@ async def _run_indexing(
                 raise ValueError("No text could be extracted from the document.")
 
             chunks = bundle.graphrag.chunk_text(text, str(doc_id))
-            result = await bundle.graphrag.index_document(str(doc_id), text, chunks)
-            logger.debug(f"GraphRAG indexing result for {doc_id}: {result}")
-
-            await asyncio.gather(
+            # All three indexes build at the same time (decision D5): indexing takes as long
+            # as the slowest one instead of GraphRAG + the slower of RAPTOR/HiPPO.
+            graph_result, raptor_result, hippo_result = await asyncio.gather(
+                bundle.graphrag.index_document(str(doc_id), text, chunks),
                 bundle.raptor.build_tree(chunks),
                 bundle.hippo.index_passages(chunks),
                 return_exceptions=True,
             )
-            logger.debug(f"RAPTOR and HiPPO indexing completed for {doc_id}")
+            # A GraphRAG failure fails the document; RAPTOR/HiPPO failures degrade (D6).
+            if isinstance(graph_result, BaseException):
+                raise graph_result
+            result = graph_result
+            for name, outcome in (("RAPTOR", raptor_result), ("HiPPO", hippo_result)):
+                if isinstance(outcome, BaseException):
+                    logger.warning(f"{name} indexing failed for {doc_id}: {outcome!r}")
+            logger.debug(f"GraphRAG, RAPTOR and HiPPO indexing completed for {doc_id}: {result}")
 
             # One transaction: chunks + index snapshot + status, so the DB never
             # says "indexed" without the index rows to back it.
@@ -122,8 +129,8 @@ async def upload_document(
     case = access.case
     if case.status in CLOSED_STATUSES:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, f"Case is {case.status}; reopen it to add evidence.")
-    if not settings.GROQ_API_KEY:
-        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "GROQ_API_KEY not configured.")
+    if not settings.LLM_API_KEY:
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, "LLM_API_KEY not configured.")
 
     logger.info(f"Received upload: case={case.id}, filename={file.filename!r}, content_type={file.content_type}")
     doc_id = uuid.uuid4()

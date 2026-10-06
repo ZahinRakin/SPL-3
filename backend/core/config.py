@@ -6,14 +6,16 @@ class Settings(BaseSettings):
 
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
 
-    GROQ_API_KEY: str = "GROQ_API_KEY" # should be set in .env file or environment variable
-    # Recommended models (free tier, fast):
-    #   llama-3.3-70b-versatile   — best quality
-    #   llama-3.1-8b-instant      — fastest
-    #   mixtral-8x7b-32768        — good balance
-    GROQ_MODEL: str = "llama-3.3-70b-versatile"
+    # ── LLM (any OpenAI-compatible API; default OpenRouter) ───────────────────
+    LLM_API_KEY: str = ""                 # empty → uploads are refused with 500
+    LLM_BASE_URL: str = "https://openrouter.ai/api/v1"
+    # openai/gpt-oss-20b: cheap reasoning model; llm_provider runs it at low reasoning effort.
+    LLM_MODEL: str = "openai/gpt-oss-20b"
+    LLM_MAX_CONCURRENCY: int = 16         # LLM requests in flight at once
+    # OpenRouter provider ordering: "throughput" (fastest), "price" (cheapest), "latency", or "".
+    LLM_PROVIDER_SORT: str = "throughput"
 
-    OLLAMA_BASE_URL: str = "http://localhost:11434"
+    OLLAMA_BASE_URL: str = "http://127.0.0.1:11434"
     OLLAMA_EMBED_MODEL: str = "nomic-embed-text"
 
     UPLOAD_DIR: str = "./data/uploads"

@@ -40,7 +40,7 @@ These are deliberately out of scope. Don't build them unless the owner asks.
 - **Streaming answers.** Each query returns a single JSON response.
 - **Fine-tuning or training models.**
 - **Running large local models.** The dev machine has a 4 GB VRAM GPU and about 8 GB of RAM.
-  Local models must be about 4B parameters or smaller. Generation runs on Groq; only
+  Local models must be about 4B parameters or smaller. Generation runs on OpenRouter; only
   embeddings run locally.
 
 ## 3. System overview
@@ -58,8 +58,8 @@ These are deliberately out of scope. Don't build them unless the owner asks.
    pipeline/  GraphRAGIndexer · RaptorRunner · HippoRetriever · QueryEngine  (one bundle per case)
               llm_provider.generate / embed
         │                         │                          │
-  PostgreSQL 18 + pgvector   Groq Cloud API             Ollama (localhost:11434)
-  (database spl3)            (GROQ_MODEL)               nomic-embed-text (768-d)
+  PostgreSQL 18 + pgvector   OpenRouter (OpenAI API)    Ollama (localhost:11434)
+  (database spl3)            (LLM_MODEL)                nomic-embed-text (768-d)
 ```
 
 ## 4. Module boundaries
@@ -72,7 +72,7 @@ All paths are relative to `graphrag-project/`.
 |---|---|---|---|
 | `app/main.py` | Creates the FastAPI app, CORS, `/api/health`, lifespan (JWT-secret check, DB ping, marks interrupted indexing as `error`) | `core`, `api`, `models`, `pipeline.llm_provider` | contain business logic |
 | `app/dependencies.py` | `require_workspace_role(min)` / `require_case_role(min)` access dependencies; `get_case_index_registry()` | `services`, `models` | be bypassed. Every protected route declares its minimum role here |
-| `api/*.py` | HTTP layer: validation, status codes, commits, background tasks | `schemas`, `core`, `models`, `services`, `app.dependencies`, `pipeline.document_processor` | call Groq or Ollama directly, or hold algorithm logic |
+| `api/*.py` | HTTP layer: validation, status codes, commits, background tasks | `schemas`, `core`, `models`, `services`, `app.dependencies`, `pipeline.document_processor` | call the LLM API or Ollama directly, or hold algorithm logic |
 | `schemas/*.py` | Pydantic request and response models (the **public API contract**) | `pydantic`, `fastapi_users.schemas` | import pipeline code |
 | `models/*.py` | SQLAlchemy ORM tables (§6.3) | `core.database` (Base) | import `pipeline` or `schemas` |
 | `core/config.py` | `Settings` loaded from `.env` (pydantic-settings) | — | — |
@@ -155,8 +155,10 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
    the **case lock** (uploads to one case are indexed one at a time):
    1. status `indexing`; `extract_text`; `chunk_text` → **500-word windows, 80-word overlap**,
       chunk id = `"{doc_id}_c{idx}"`
-   2. `graphrag.index_document(...)` first, then `asyncio.gather(raptor.build_tree, hippo.index_passages)`
-      (decisions D4/D5). Louvain re-runs over the whole case graph; a community whose
+   2. `asyncio.gather(graphrag.index_document, raptor.build_tree, hippo.index_passages)`: all three
+      build **at the same time** on the same chunks (decisions D4/D5). A GraphRAG failure fails the
+      document; RAPTOR/HiPPO failures are logged and degrade (D6). Typical time for a ~1,700-word
+      document: **8–15 s** (was ~140 s). Louvain re-runs over the whole case graph; a community whose
       membership is unchanged **reuses its summary** (no LLM call), and summaries of communities
       that no longer exist are dropped, so LLM calls per upload don't grow with the case
    3. **one transaction**: insert the chunk rows, `save_case_state` (replace the case's index
@@ -304,13 +306,24 @@ async def embed(text: str, task_type: str = "retrieval_document") -> List[float]
     # task_type "retrieval_document" | "retrieval_query" → nomic prefixes "search_document: " / "search_query: "
 def active_api_key_set() -> bool
 def provider_info() -> dict
-# Concurrency: LLM semaphore 3, embed semaphore 5. Timeouts (per attempt): LLM 45 s, embed 30 s.
+# Concurrency: LLM semaphore LLM_MAX_CONCURRENCY (16), embed semaphore 2 batch requests. Timeouts (per attempt): LLM 45 s, embed 30 s.
+# gpt-oss models are called with reasoning_effort="low" (see §8 item 1).
 # generate() retries RateLimitError / InternalServerError / APIConnectionError up to 5 times,
-# waiting Groq's retry-after or 2 s, 4 s, 8 s… (max 30 s). Other errors (e.g. 400) raise at once.
+# waiting the provider's retry-after or 2 s, 4 s, 8 s… (max 30 s). Other errors (e.g. 400, 402 out of credits) raise at once.
+# The client is openai.AsyncOpenAI(base_url=LLM_BASE_URL); concurrency = LLM_MAX_CONCURRENCY (default 8).
+# On OpenRouter every request sets provider.require_parameters=true, so it is only routed to
+# providers that support JSON mode and reasoning effort.
+
+async def embed_many(texts: List[str], task_type: str = "retrieval_document") -> List[List[float]]
+    # Ollama /api/embed, 32 texts per request (~16x faster than one request per text); vectors L2-normalised.
+    # OLLAMA_BASE_URL "localhost" is rewritten to 127.0.0.1 (Windows IPv6 fallback added ~2 s per request).
+# OpenRouter routing: LLM_PROVIDER_SORT="throughput" picks the fastest host (~400-700 tok/s vs 18-44 tok/s
+# for the cheapest), which is what makes indexing take seconds instead of minutes.
 
 # pipeline/vectors.py
 EMBED_DIM = 768
 async def embed_or_fallback(text: str, owner: str, task_type: str = "retrieval_document") -> List[float]
+async def embed_many_or_fallback(texts: List[str], owner: str, task_type: str = "retrieval_document") -> List[List[float]]
 class EmbeddingIndex:   # built lazily by RAPTOR/HiPPO, dropped whenever their nodes change
     def cosine(query, ids=None) -> Tuple[List[str], np.ndarray]
 
@@ -368,7 +381,7 @@ python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method grap
 | Auth | **fastapi-users** (register, login, JWT, Google OAuth via httpx-oauth; argon2 via pwdlib) + own rotating refresh-token cookie | Owner decision P1. fastapi-users has no refresh tokens |
 | Google sign-in | OAuth2 **authorization-code** flow, redirect back to the SPA | Owner decision P2. Needs client ID + secret and the People API |
 | Tenancy | Workspaces (personal + organization) + **per-case member lists** | Owner decision P7 |
-| LLM | **Groq** (`GROQ_MODEL`, default `llama-3.3-70b-versatile`) | See §8 item 1: that model is no longer available to the project key |
+| LLM | **OpenRouter** `openai/gpt-oss-20b` via the `openai` package (`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL`) | Owner's choice (2026-10-06): $0.02/$0.10 per 1M tokens, no fixed per-minute cap on paid models, falls back across ~11 hosting providers. Any OpenAI-compatible API works by changing `.env`. A reasoning model, run at low effort |
 | Embeddings | **Ollama** `nomic-embed-text`, local, 768-d | Free and offline; fits in 4 GB VRAM |
 | Graph | NetworkX + `nx.community.louvain_communities(seed=42)` | Deterministic communities |
 | Clustering | scikit-learn `GaussianMixture(covariance_type="full", random_state=42)` | As in the RAPTOR paper (no UMAP) |
@@ -384,18 +397,19 @@ python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method grap
 These are recorded so nobody "discovers" them twice. Fixing any of them is a separate,
 approved task.
 
-1. **The default Groq model is gone.** `llama-3.3-70b-versatile` returns 404 for the project's
-   key; every LLM call then degrades (no entities, error answers). Set `GROQ_MODEL` in `.env`
-   to an available model (tested: `openai/gpt-oss-120b`, which works but sometimes fails Groq's
-   JSON validation on extraction). **[OPEN]** which model to standardise on.
+1. **gpt-oss needs low reasoning effort.** At the default (medium) effort it often returns empty
+   content, which fails JSON mode (`json_validate_failed`), so every extraction fails.
+   `llm_provider` sends low reasoning effort for `gpt-oss` models (OpenRouter: `reasoning.effort`;
+   other OpenAI-compatible APIs: `reasoning_effort`). Moved off Groq on 2026-10-06 because its
+   paid tier wasn't available; the free tier (8K tokens/min) was too slow for indexing.
 2. **Delete does not un-index.** A deleted document's entities, edges, RAPTOR and HiPPO nodes stay
    in the case's indexes and still appear in answers and the graph.
 3. **Snapshot replace on every index.** After each document, all of the case's index rows are
    deleted and re-inserted. Simple and consistent, but the cost grows with case size.
 4. **Silent embedding fallback.** If Ollama is down, `_embed` returns a **random** unit vector
    (seeded by `hash(text)`), so retrieval quality silently collapses. Check the logs for `random fallback`.
-5. **API-key check is ineffective.** `Settings.GROQ_API_KEY` defaults to the literal string
-   `"GROQ_API_KEY"`, so `active_api_key_set()` is always true and the 500 check in `upload` never fires.
+5. **The API-key check only tests that `LLM_API_KEY` is non-empty**, not that it is valid or has
+   credits. A bad key or empty balance shows up as failed extractions (401/402 in the log).
 6. **The frontend bypasses the dev proxy.** `ApiService.base` is hard-coded to
    `http://localhost:8000/api` and relies on CORS (cookies work because both are on `localhost`).
 7. **Chat history is per case, shared by all its members**, both stored and in the prompt
@@ -422,7 +436,8 @@ approved task.
 - **D3 — Indexing is async and backgrounded.** Upload returns at once; the client polls status.
 - **D4 — Shared chunks.** All three indexes consume the **same** chunk list from
   `GraphRAGIndexer.chunk_text`, so retrieval comparisons are fair.
-- **D5 — GraphRAG runs first, then RAPTOR and HiPPO in parallel.**
+- **D5 — GraphRAG, RAPTOR and HiPPO index in parallel** (changed 2026-10-06). It used to be
+  GraphRAG first, to stay within Groq's free-tier rate limits; that no longer applies.
 - **D6 — Degrade, don't crash.** Pipeline failures are logged and replaced by a fallback.
   A document only gets `error` status when the whole indexing task throws.
 - **D7 — "HiPPO" is hierarchical passage pooling**, not the paper's HippoRAG (OpenIE + PPR).
@@ -441,7 +456,6 @@ approved task.
 
 ## 10. Open questions for the owner
 
-- [ ] Which Groq model replaces `llama-3.3-70b-versatile` (§8.1)?
 - [ ] Should delete un-index (rebuild the case from its remaining documents)?
 - [ ] Implement true HippoRAG (PPR over the entity graph) or keep pooling (D7)?
 - [ ] Which test framework (pytest + pytest-asyncio + httpx?) — needs dependency approval.

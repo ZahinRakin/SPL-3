@@ -24,12 +24,12 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
 
    If a change truly needs one of these, stop and propose it with the reason. If it's
    approved, update the backend schema, `api.service.ts` and ARCHITECTURE.md §6 **together**.
-2. **No new dependencies without approval.** This covers pip, npm, and Ollama/Groq model
-   changes. Say what you'd add and why, and what the no-dependency alternative is.
+2. **No new dependencies without approval.** This covers pip, npm, and Ollama/LLM model or
+   provider changes. Say what you'd add and why, and what the no-dependency alternative is.
    `requirements.txt` and `frontend/package.json` must not change silently.
 3. **Don't move off the decided stack** (ARCHITECTURE.md §7 and §9). In particular, all
    LLM and embedding calls go through `backend/pipeline/llm_provider.py`. Nothing else
-   imports `groq` or calls Ollama.
+   imports `openai` or calls Ollama.
 4. **Never read, print, log or commit `.env`**, or put API keys anywhere. Use `.env.example`
    for documenting config. Never log passwords, access/refresh tokens, OAuth codes or the
    database URL.
@@ -57,7 +57,7 @@ alembic upgrade head                        # create/upgrade the schema (DATABAS
 alembic revision --autogenerate -m "what changed"   # then READ the file and fix it by hand
 alembic upgrade head
 
-# backend  (needs Postgres, `ollama serve`, and GROQ_API_KEY, DATABASE_URL, JWT_SECRET_KEY in .env)
+# backend  (needs Postgres, `ollama serve`, and LLM_API_KEY, DATABASE_URL, JWT_SECRET_KEY in .env)
 uvicorn backend.app.main:app --reload --port 8000     # docs: http://localhost:8000/docs
 curl http://localhost:8000/api/health
 
@@ -84,7 +84,7 @@ checks you ran.
 | Frontend | `cd frontend; npx ng build --configuration development` (strict TS + strict templates) |
 | Eval | Run the eval on 1–2 QA pairs |
 
-If a check can't run (Ollama or Groq unreachable, no key), say so plainly. Don't claim it passed.
+If a check can't run (Ollama or the LLM API unreachable, no key or credits), say so plainly. Don't claim it passed.
 
 ## Coding style
 
@@ -134,8 +134,8 @@ If a check can't run (Ollama or Groq unreachable, no key), say so plainly. Don't
 
 ## Domain notes (things that are easy to get wrong)
 
-- The proposals, README and the owner may say "**Gemini**". The code actually uses **Groq**
-  (`llama-3.3-70b-versatile`) for generation and **Ollama** (`nomic-embed-text`) for
+- The proposals, README and the owner may say "**Gemini**". The code actually uses **OpenRouter**
+  (`openai/gpt-oss-20b`, through the `openai` package) for generation and **Ollama** (`nomic-embed-text`) for
   embeddings. Don't "fix" the code back to Gemini.
 - "**HiPPO**" in this code is hierarchical mean-pooling, **not** the HippoRAG paper's PPR
   method (decision D7). Don't describe it as PPR in docs or UI.
@@ -160,4 +160,5 @@ Every time the owner corrects the agent on something it might repeat, add one li
 the date, the rule, and the reason in a few words. Newest first. This list overrides the
 defaults above if they conflict.
 
+- 2026-10-06 — Generation moved from Groq to OpenRouter (`openai` package, `LLM_*` settings): Groq's paid tier was unavailable. Don't reintroduce the `groq` SDK.
 - 2026-10-04 — (seed) Generation uses Groq and embeddings use Ollama, even when someone says "Gemini". The code moved off Gemini.

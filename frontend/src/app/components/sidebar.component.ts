@@ -14,7 +14,7 @@ const DOCS_POLL_MS = 4000;
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="sidebar-title">Evidence</div>
-        @if (ctx.canEdit()) {
+        @if (ctx.canUpload()) {
           <button class="add-btn" (click)="uploadClick.emit()" title="Upload evidence">
             <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13">
               <path d="M8 2a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2H9v4a1 1 0 1 1-2 0V9H3a1 1 0 0 1 0-2h4V3a1 1 0 0 1 1-1z"/>
@@ -28,7 +28,7 @@ const DOCS_POLL_MS = 4000;
           <div class="doc-empty">
             <div class="doc-empty-icon">📄</div>
             <div class="doc-empty-text">No evidence yet</div>
-            @if (ctx.canEdit()) {
+            @if (ctx.canUpload()) {
               <button class="doc-empty-btn" (click)="uploadClick.emit()">Upload files</button>
             }
           </div>

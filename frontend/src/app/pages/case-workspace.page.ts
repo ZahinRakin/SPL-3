@@ -52,8 +52,8 @@ const STATS_POLL_MS = 5_000;
                 @for (s of statuses; track s.id) { <option [value]="s.id">{{ s.label }}</option> }
               </select>
               <button class="btn btn-primary" (click)="showUpload.set(true)"
-                      [disabled]="c.status === 'closed' || c.status === 'archived'"
-                      [title]="c.status === 'closed' || c.status === 'archived' ? 'Reopen the case to add evidence' : 'Upload evidence'">
+                      [disabled]="!ctx.canUpload()"
+                      [title]="!ctx.canUpload() ? 'Reopen the case to add evidence' : 'Upload evidence'">
                 Upload evidence
               </button>
             } @else {

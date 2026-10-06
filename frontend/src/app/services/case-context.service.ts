@@ -13,6 +13,11 @@ export class CaseContextService {
   readonly role = computed(() => this.case()?.my_role ?? 'viewer');
   /** investigator or lead: upload evidence, edit case details */
   readonly canEdit = computed(() => this.role() !== 'viewer');
+  /** Evidence can only be added to open / in-progress cases (the API returns 400 otherwise). */
+  readonly canUpload = computed(() => {
+    const status = this.case()?.status;
+    return this.canEdit() && status !== 'closed' && status !== 'archived';
+  });
   /** lead: delete evidence, manage members, clear chat, see audit log */
   readonly isLead = computed(() => this.role() === 'lead');
 }

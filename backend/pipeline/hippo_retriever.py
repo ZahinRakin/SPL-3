@@ -5,7 +5,6 @@ fine-grained at level 0, coarser at higher levels.
 
 Embedding provider is selected via EMBED_PROVIDER in .env.
 """
-import asyncio
 import uuid
 from dataclasses import asdict, dataclass, field
 from typing import Dict, List, Optional
@@ -13,7 +12,7 @@ from typing import Dict, List, Optional
 import numpy as np
 
 from backend.core.logger import logger
-from .vectors import EmbeddingIndex, embed_or_fallback
+from .vectors import EmbeddingIndex, embed_many_or_fallback
 
 _LEVEL_PENALTY = 0.02   # per pyramid level, preferring fine-grained passages
 
@@ -38,10 +37,7 @@ class HippoRetriever:
         self.levels: Dict[int, List[str]] = {}
         self._index: Optional[EmbeddingIndex] = None
 
-    # ── embedding ─────────────────────────────────────────────────────────────
-
-    async def _embed(self, text: str) -> List[float]:
-        return await embed_or_fallback(text, owner="HippoRetriever")
+    # ── embedding index ───────────────────────────────────────────────────────
 
     def _embedding_index(self) -> EmbeddingIndex:
         # Built lazily, dropped whenever nodes change (build/index/load).
@@ -67,14 +63,9 @@ class HippoRetriever:
 
         logger.info(f"HippoRetriever.index_passages: {len(passages)} passages, max_levels={self.max_levels}")
         self._index = None
-        embs = await asyncio.gather(
-            *[self._embed(p["text"]) for p in passages], return_exceptions=True
-        )
+        embs = await embed_many_or_fallback([p["text"] for p in passages], owner="HippoRetriever")
         level0: List[str] = []
         for i, (p, emb) in enumerate(zip(passages, embs)):
-            if isinstance(emb, Exception):
-                logger.warning(f"Embedding failed for passage index={i}, using fallback: {emb}")
-                emb = await self._embed("")
             node = HippoNode(
                 text=p["text"],
                 embedding=emb,

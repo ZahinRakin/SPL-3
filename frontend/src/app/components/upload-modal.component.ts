@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, signal, HostListener, inject } from '@angular/core';
+import { Component, OnDestroy, Output, EventEmitter, signal, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService, DocRecord } from '../services/api.service';
 import { CaseContextService } from '../services/case-context.service';
@@ -6,6 +6,7 @@ import { describeApiError } from '../services/api-errors';
 import { fileIcon, formatSize } from '../shared/format';
 
 interface UploadEntry {
+  id: number;          // stable key: entries are replaced (not mutated) on every status change
   file: File;
   status: 'pending' | 'uploading' | 'done' | 'error';
   error?: string;
@@ -41,12 +42,13 @@ interface UploadEntry {
         <!-- file queue -->
         @if (queue().length) {
           <div class="queue">
-            @for (entry of queue(); track entry.file.name) {
+            @for (entry of queue(); track entry.id) {
               <div class="queue-item" [class.done]="entry.status === 'done'" [class.err]="entry.status === 'error'">
                 <div class="qi-icon">{{ fileIcon(entry.file.name) }}</div>
                 <div class="qi-info">
                   <div class="qi-name">{{ entry.file.name }}</div>
                   <div class="qi-size">{{ formatSize(entry.file.size) }}</div>
+                  @if (entry.error) { <div class="qi-error">{{ entry.error }}</div> }
                 </div>
                 <div class="qi-status">
                   @if (entry.status === 'uploading') {
@@ -66,7 +68,7 @@ interface UploadEntry {
 
         <div class="modal-footer">
           <div class="footer-note">
-            Documents are indexed automatically after upload. This may take a moment.
+            Files are indexed in the background after upload; the evidence list shows progress.
           </div>
           <div class="footer-btns">
             <button class="btn-sec" (click)="close.emit()">{{ allDone() ? 'Close' : 'Cancel' }}</button>
@@ -140,6 +142,7 @@ interface UploadEntry {
     .qi-info  { flex: 1; min-width: 0; }
     .qi-name  { font-size: 12px; font-weight: 500; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .qi-size  { font-size: 10px; color: var(--text-tertiary); }
+    .qi-error { font-size: 11px; color: var(--red); margin-top: 2px; }
     .qi-status { flex-shrink: 0; width: 20px; text-align: center; }
     .status-spinner {
       display: inline-block; width: 14px; height: 14px;
@@ -170,7 +173,7 @@ interface UploadEntry {
     }
   `],
 })
-export class UploadModalComponent {
+export class UploadModalComponent implements OnDestroy {
   @Output() close = new EventEmitter<void>();
 
   queue    = signal<UploadEntry[]>([]);
@@ -178,6 +181,8 @@ export class UploadModalComponent {
   uploading = signal(false);
 
   private ctx = inject(CaseContextService);
+  private nextId = 0;
+  private closeTimer?: ReturnType<typeof setTimeout>;
 
   constructor(private api: ApiService) {}
 
@@ -204,7 +209,7 @@ export class UploadModalComponent {
   }
 
   addFiles(files: File[]) {
-    const entries: UploadEntry[] = files.map(f => ({ file: f, status: 'pending' }));
+    const entries: UploadEntry[] = files.map(f => ({ id: this.nextId++, file: f, status: 'pending' }));
     this.queue.update(q => [...q, ...entries]);
   }
 
@@ -217,24 +222,35 @@ export class UploadModalComponent {
     this.uploading.set(true);
     const entries = this.queue().filter(e => e.status === 'pending');
     for (const entry of entries) {
-      this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'uploading' } : e));
+      // Match by id: each update replaces the entry object, so `e === entry` would stop
+      // matching after the first change and the status would never reach 'done'.
+      this.setEntry(entry.id, { status: 'uploading' });
       await new Promise<void>(resolve => {
         this.api.uploadDocument(this.ctx.caseId(), entry.file).subscribe({
           next: rec => {
-            this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'done', record: rec } : e));
+            this.setEntry(entry.id, { status: 'done', record: rec });
             resolve();
           },
           error: err => {
-            this.queue.update(q => q.map(e => e === entry ? { ...e, status: 'error', error: describeApiError(err, 'Upload failed') } : e));
+            this.setEntry(entry.id, { status: 'error', error: describeApiError(err, 'Upload failed') });
             resolve();
           },
         });
       });
     }
     this.uploading.set(false);
+    // Indexing continues in the background; the sidebar shows its progress.
     if (this.queue().every(e => e.status === 'done')) {
-      setTimeout(() => this.close.emit(), 1200);
+      this.closeTimer = setTimeout(() => this.close.emit(), 1200);
     }
+  }
+
+  ngOnDestroy() {
+    if (this.closeTimer) clearTimeout(this.closeTimer);
+  }
+
+  private setEntry(id: number, changes: Partial<UploadEntry>) {
+    this.queue.update(q => q.map(e => (e.id === id ? { ...e, ...changes } : e)));
   }
 
   readonly fileIcon = fileIcon;

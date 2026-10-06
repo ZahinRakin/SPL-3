@@ -15,7 +15,7 @@ fastapi-users[sqlalchemy,oauth]>=15.0.0 # brings PyJWT, pwdlib[argon2], httpx-oa
 
 # ── LLM / Embeddings ───────────────────────────────────────────────────────
 ollama>=0.6.2
-groq>=1.2.0
+openai>=1.40.0
 
 # ── Graph / ML ─────────────────────────────────────────────────────────────
 networkx>=3.3

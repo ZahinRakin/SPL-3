@@ -1,5 +1,5 @@
 """
-One pipeline bundle (GraphRAG + RAPTOR + HiPPO + QueryEngine) per case (decision D11).
+One pipeline bundle (RAPTOR + GraphRAG + HippoRAG + QueryEngine) per case (decision D11).
 
 Bundles are loaded lazily from Postgres and kept in a small LRU cache, because the
 dev machine has ~8 GB of RAM. Each bundle has its own lock so two uploads to the same
@@ -60,7 +60,9 @@ class CaseIndexRegistry:
     # ── internals ─────────────────────────────────────────────────────────────
 
     async def _load(self, case_id: uuid.UUID) -> CaseBundle:
-        graphrag, raptor, hippo = GraphRAGIndexer(), RaptorRunner(), HippoRetriever()
+        graphrag, raptor = GraphRAGIndexer(), RaptorRunner()
+        # HippoRAG keeps no state of its own; it ranks over this case's graph and RAPTOR nodes.
+        hippo = HippoRetriever(graphrag=graphrag, raptor=raptor)
         bundle = CaseBundle(graphrag, raptor, hippo, QueryEngine(graphrag=graphrag, raptor=raptor, hippo=hippo))
         await self._fill(case_id, bundle)
         logger.info(f"CaseIndexRegistry: loaded case {case_id} ({len(graphrag.entities)} entities)")
@@ -72,7 +74,6 @@ class CaseIndexRegistry:
         # Rebuilding the graph can be slow for big cases; keep it off the event loop.
         await asyncio.to_thread(bundle.graphrag.load_state, state["graphrag"])
         bundle.raptor.load_state(state["raptor"])
-        bundle.hippo.load_state(state["hippo"])
         bundle.engine.load_state(state["engine"])
 
     def _evict_overflow(self) -> None:

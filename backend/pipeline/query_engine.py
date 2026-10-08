@@ -1,11 +1,12 @@
 """
-Query Engine: combines GraphRAG graph-context, RAPTOR tree-retrieval, and
-HiPPO hierarchical-passage retrieval to answer questions over indexed documents.
+Query Engine: answers questions over a case's indexed documents in one of two modes.
 
-LLM / embedding provider is selected via LLM_PROVIDER / EMBED_PROVIDER in .env.
+- standard: plain RAG, the baseline. The top-k chunks most similar to the question.
+- refined:  the cascade. RAPTOR summaries enrich the passages, GraphRAG links them through
+            one knowledge graph, and HippoRAG's Personalized PageRank picks the top-k.
 """
 import json
-from typing import Dict, List, Literal
+from typing import Dict, List, Literal, Tuple
 
 from backend.core.logger import logger
 from .graphrag_indexer import GraphRAGIndexer
@@ -14,7 +15,7 @@ from .llm_provider import generate
 from .raptor_runner import RaptorRunner
 from .vectors import embed_or_fallback
 
-Method = Literal["graphrag", "raptor", "hippo", "hybrid"]
+Method = Literal["standard", "refined"]
 
 _ANSWER_PROMPT = """You are an intelligent document-analysis assistant.
 Answer the question ONLY from the provided context. If the context does not
@@ -57,34 +58,31 @@ class QueryEngine:
 
     # ── context assembly ──────────────────────────────────────────────────────
 
-    def _build_context(
+    async def _build_context(
         self, question: str, query_emb: List[float], method: Method, top_k: int
-    ) -> tuple[str, List[str]]:
+    ) -> Tuple[str, List[str]]:
         blocks: List[str] = []
         sources: List[str] = []
 
-        if method in ("graphrag", "hybrid"):
-            gctx = self.graphrag.get_context_for_query(question)
-            blocks.append(f"[KNOWLEDGE GRAPH]\n{gctx}")
-            logger.debug(f"_build_context: graph context block length={len(gctx)}")
+        if method == "standard":
+            passages = self.raptor.retrieve(query_emb, top_k=top_k, level=0)
+        else:
+            ranked = await self.hippo.retrieve(question, query_emb, top_k=top_k)
+            passages = ranked["passages"]
+            facts = self.graphrag.describe_entities(ranked["entities"])
+            if facts:
+                blocks.append(f"[KNOWLEDGE GRAPH]\n{facts}")
 
-        if method in ("raptor", "hybrid"):
-            raptor_hits = self.raptor.retrieve(query_emb, top_k=top_k)
-            for r in raptor_hits:
-                blocks.append(f"[DOC TREE — level {r['level']}]\n{r['text']}")
-                sources.extend(r.get("doc_ids", []))
-            logger.debug(f"_build_context: raptor returned {len(raptor_hits)} hits")
+        for p in passages:
+            label = "PASSAGE" if p["level"] == 0 else f"SUMMARY — level {p['level']}"
+            blocks.append(f"[{label}]\n{p['text']}")
+            sources.extend(p.get("doc_ids", []))
 
-        if method in ("hippo", "hybrid"):
-            hippo_hits = self.hippo.retrieve_multi_level(query_emb, top_k=max(2, top_k // 2))
-            for r in hippo_hits:
-                blocks.append(f"[PASSAGE]\n{r['text'][:600]}")
-                if r.get("doc_id"):
-                    sources.append(r["doc_id"])
-            logger.debug(f"_build_context: hippo returned {len(hippo_hits)} hits")
-
-        context = "\n\n".join(blocks[:10])
-        logger.debug(f"_build_context: total blocks={len(blocks)}, context_len={len(context)}, sources={sources}")
+        context = "\n\n".join(blocks)
+        logger.debug(
+            f"_build_context: method={method!r}, passages={len(passages)}, "
+            f"context_len={len(context)}, sources={sources}"
+        )
         return context, list(dict.fromkeys(sources))
 
     # ── history ───────────────────────────────────────────────────────────────
@@ -101,11 +99,11 @@ class QueryEngine:
     # ── query ─────────────────────────────────────────────────────────────────
 
     async def query(
-        self, question: str, method: Method = "hybrid", top_k: int = 6
+        self, question: str, method: Method = "refined", top_k: int = 6
     ) -> Dict:
         logger.info(f"QueryEngine.query: method={method!r}, top_k={top_k}, question={question[:80]!r}")
         query_emb = await self._embed_query(question)
-        context, sources = self._build_context(question, query_emb, method, top_k)
+        context, sources = await self._build_context(question, query_emb, method, top_k)
 
         prompt = _ANSWER_PROMPT.format(
             context=context,

@@ -1,11 +1,12 @@
-"""Investigation tables: cases, their members, evidence documents and chunks."""
+"""Investigation tables: cases, their members and evidence documents.
+A document's text lives in the `passages` index table (models/index.py)."""
 import uuid
 from datetime import datetime
 from typing import Optional
 
 from sqlalchemy import (
     BigInteger, CheckConstraint, DateTime, ForeignKey, Index, Integer, String, Text,
-    UniqueConstraint, func, text,
+    func, text,
 )
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -98,18 +99,3 @@ class Document(Base):
         Index("ix_documents_case_sha", "case_id", "sha256"),
     )
 
-
-class Chunk(Base):
-    __tablename__ = "chunks"
-
-    id: Mapped[str] = mapped_column(String(80), primary_key=True)   # "{doc_id}_c{idx}" from chunk_text
-    document_id: Mapped[uuid.UUID] = mapped_column(
-        ForeignKey("documents.id", ondelete="CASCADE"), nullable=False
-    )
-    case_id: Mapped[uuid.UUID] = mapped_column(
-        ForeignKey("cases.id", ondelete="CASCADE"), nullable=False, index=True
-    )
-    chunk_index: Mapped[int] = mapped_column(Integer, nullable=False)
-    text: Mapped[str] = mapped_column(Text, nullable=False)
-
-    __table_args__ = (UniqueConstraint("document_id", "chunk_index"),)

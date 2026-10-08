@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, ViewChild, ElementRef, AfterViewChecked, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, ChatMessage, QueryResponse } from '../services/api.service';
+import { ApiService, ChatMessage, QueryMethod, QueryResponse } from '../services/api.service';
 import { CaseContextService } from '../services/case-context.service';
 import { describeApiError } from '../services/api-errors';
 import { withAlpha } from '../shared/format';
@@ -15,13 +15,11 @@ interface Message {
   ts: number;
 }
 
-type Method = 'hybrid' | 'graphrag' | 'raptor' | 'hippo';
-
-const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string }> = {
-  hybrid:   { label: 'Hybrid',    color: 'var(--accent)', desc: 'GraphRAG + RAPTOR + HiPPO' },
-  graphrag: { label: 'GraphRAG',  color: 'var(--green)', desc: 'Knowledge graph communities' },
-  raptor:   { label: 'RAPTOR',    color: 'var(--purple)', desc: 'Tree-based summarisation' },
-  hippo:    { label: 'HiPPO',     color: 'var(--amber)', desc: 'Hierarchical passage pooling' },
+const METHOD_LABELS: Record<QueryMethod, { label: string; color: string; desc: string }> = {
+  refined:  { label: 'Refined',  color: 'var(--accent)',
+              desc: 'RAPTOR summaries → knowledge graph → HippoRAG PageRank ranking' },
+  standard: { label: 'Standard', color: 'var(--text-secondary)',
+              desc: 'Plain RAG: the most similar passages only' },
 };
 
 @Component({
@@ -44,7 +42,7 @@ const METHOD_LABELS: Record<Method, { label: string; color: string; desc: string
           <div class="welcome">
             <div class="welcome-icon">💬</div>
             <div class="welcome-title">Ask anything about this case's evidence</div>
-            <div class="welcome-sub">The AI will search the knowledge graph, RAPTOR tree, and HiPPO passages to answer your question.</div>
+            <div class="welcome-sub">Refined links the evidence through the knowledge graph and ranks it with PageRank. Standard answers from the most similar passages only.</div>
             <div class="suggestion-grid">
               @for (s of suggestions(); track s) {
                 <button class="sugg-card" (click)="useQuery(s)">{{ s }}</button>
@@ -324,11 +322,11 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
   messages   = signal<Message[]>([]);
   suggestions = signal<string[]>([]);
   isLoading  = signal(false);
-  activeMethod = signal<Method>('hybrid');
+  activeMethod = signal<QueryMethod>('refined');
   expandedMsgs = new Set<number>();
 
   inputText = '';
-  methods: Method[] = ['hybrid', 'graphrag', 'raptor', 'hippo'];
+  methods: QueryMethod[] = ['refined', 'standard'];
 
   private shouldScroll = false;
   readonly ctx = inject(CaseContextService);
@@ -355,7 +353,7 @@ export class QaPanelComponent implements OnInit, AfterViewChecked {
   }
 
   methodInfo(m: string) {
-    return METHOD_LABELS[m as Method] ?? METHOD_LABELS['hybrid'];
+    return METHOD_LABELS[m as QueryMethod] ?? METHOD_LABELS['refined'];
   }
 
   withAlpha = withAlpha;

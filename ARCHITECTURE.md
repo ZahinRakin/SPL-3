@@ -1,7 +1,9 @@
 # GraphRAG Investigations — Architecture & Spec
 
 > Status: **DRAFT — pending owner review.** Updated 2026-10-04 for the investigation-tool
-> extension (auth, cases, PostgreSQL). The original plan is in `docs/EXTENSION_PLAN.md`.
+> extension (auth, cases, PostgreSQL), and 2026-10-08 for the cascade redesign (three parallel
+> retrievers → one RAPTOR → GraphRAG → HippoRAG pipeline, two query modes). The original plan is
+> in `docs/EXTENSION_PLAN.md`.
 > Sections marked **[OPEN]** are things the owner still needs to decide.
 > When code and this document disagree, fix one of them; don't leave the gap.
 
@@ -11,21 +13,23 @@
 
 A full-stack **investigation tool** for the SPL-3 course project. People and organizations
 register, open **cases**, and upload evidence files (PDF / DOCX / TXT / HTML) to each case.
-Every case gets its own indexes, built three ways, and its own Q&A chat over its evidence.
+Every case gets its own indexes, built by one cascaded pipeline, and its own Q&A chat over its evidence.
 
 The project has to show:
 
-1. **Three retrieval architectures, implemented side by side**, based on the papers in
-   `../assets/papers/`:
-   - **GraphRAG**: an LLM-extracted knowledge graph, Louvain communities and community summaries.
-   - **RAPTOR**: a recursive summary tree built with GMM clustering.
-   - **HiPPO**: a pyramid of mean-pooled passage embeddings (see §9 for how it differs from the paper).
-2. **A hybrid mode** that merges the context from all three before generating an answer.
+1. **Three research methods combined into one cascade**, based on the papers in
+   `../assets/papers/`. Each stage has one job:
+   1. **RAPTOR — enrich**: a recursive summary tree built with GMM clustering. Its nodes (chunks
+      and summaries) are the case's passages.
+   2. **GraphRAG — structure**: one LLM-extracted knowledge graph over the chunks **and** the
+      RAPTOR summaries, with Louvain communities and community summaries.
+   3. **HippoRAG — rank**: Personalized PageRank over that graph, seeded from the question's
+      entities, scores the passages; only the top-k reach the LLM.
+2. **Two query modes**: `standard` (plain RAG: the top-k most similar chunks, the baseline) and
+   `refined` (the cascade).
 3. **A real-life use**: multi-user, access-controlled investigation cases stored in PostgreSQL.
-4. **A side-by-side evaluation** of the four modes (`graphrag`, `raptor`, `hippo`, `hybrid`)
-   using ROUGE, BLEU-1, entity recall, faithfulness and latency. A later phase adds a
-   traditional ("naive") RAG baseline (`docs/EXTENSION_PLAN.md` §9). Every chat turn already
-   stores its method and latency to support that comparison.
+4. **An evaluation of refined vs standard** using ROUGE, BLEU-1, entity recall and latency.
+   Every chat turn stores its mode and latency to support that comparison.
 
 ## 2. Non-goals
 
@@ -55,7 +59,7 @@ These are deliberately out of scope. Don't build them unless the owner asks.
         │ Depends(current_active_user) → Depends(require_workspace_role / require_case_role)
    services/  users · refresh_tokens · access · audit · storage · case_index_registry · index_store
    models/    SQLAlchemy ORM           core/database.py  async engine + sessions
-   pipeline/  GraphRAGIndexer · RaptorRunner · HippoRetriever · QueryEngine  (one bundle per case)
+   pipeline/  RaptorRunner → GraphRAGIndexer → HippoRetriever (PPR) · QueryEngine  (one bundle per case)
               llm_provider.generate / embed
         │                         │                          │
   PostgreSQL 18 + pgvector   OpenRouter (OpenAI API)    Ollama (localhost:11434)
@@ -88,10 +92,10 @@ All paths are relative to `graphrag-project/`.
 | `pipeline/llm_provider.py` | **The only module that talks to the LLM or the embedding service.** It handles concurrency limits, timeouts, retries (rate limits / transient errors) and nomic task prefixes | `core` | be skipped. Every other module calls `generate()` / `embed()` |
 | `pipeline/vectors.py` | Shared vector helpers: `embed_or_fallback` (embedding with the D6 random fallback), `EmbeddingIndex` (cosine search as one NumPy operation), `EMBED_DIM` | `llm_provider` | — |
 | `pipeline/document_processor.py` | Extracts file → plain text | PyMuPDF, PyPDF2, python-docx | chunk or index |
-| `pipeline/graphrag_indexer.py` | Chunking, entity/relation extraction, graph, communities, graph context | `llm_provider` | know about HTTP or the database |
-| `pipeline/raptor_runner.py` | RAPTOR tree build and retrieval | `llm_provider`, `vectors` | know about the database |
-| `pipeline/hippo_retriever.py` | HiPPO pyramid build and retrieval | `vectors` (embed only) | call `generate` |
-| `pipeline/query_engine.py` | Context assembly per method, answer prompt, entity linking, chat history (in-memory, per case) | the three retrievers, `llm_provider` | mutate the indexes |
+| `pipeline/graphrag_indexer.py` | Chunking; stage 2: entity/relation extraction over passages, graph, communities; question-entity matching and entity descriptions for the prompt | `llm_provider` | know about HTTP or the database |
+| `pipeline/raptor_runner.py` | Stage 1: RAPTOR tree build (the case's passages); similarity search over the tree or one level (Standard mode) | `llm_provider`, `vectors` | know about the database |
+| `pipeline/hippo_retriever.py` | Stage 3: HippoRAG Personalized PageRank ranking at query time. Stores nothing | `graphrag_indexer`, `raptor_runner` (read only) | call `generate`, mutate the indexes |
+| `pipeline/query_engine.py` | Context assembly per mode (`standard` / `refined`), answer prompt, entity linking, chat history (in-memory, per case) | the three stages, `llm_provider` | mutate the indexes |
 | `middleware/`, `utils/` | Empty placeholders | — | — |
 
 ### Migrations (`alembic/`)
@@ -122,7 +126,7 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
 | `components/sidebar.component.ts` | Evidence list and status, stats; upload/delete shown by role |
 | `components/upload-modal.component.ts` | Drag-and-drop upload; `@Output() close` |
 | `components/graph-view.component.ts` | D3 force graph, entity detail panel |
-| `components/qa-panel.component.ts` | Chat UI over the case's stored history, method selector, suggestions, clear history (lead) |
+| `components/qa-panel.component.ts` | Chat UI over the case's stored history, Refined / Standard mode selector, suggestions, clear history (lead) |
 | `components/case-team.component.ts` | Case details, case members, audit log, delete case |
 | `components/google-button.component.ts` | "Continue with Google" (hidden when the server has no Google credentials) |
 
@@ -155,13 +159,15 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
    the **case lock** (uploads to one case are indexed one at a time):
    1. status `indexing`; `extract_text`; `chunk_text` → **500-word windows, 80-word overlap**,
       chunk id = `"{doc_id}_c{idx}"`
-   2. `asyncio.gather(graphrag.index_document, raptor.build_tree, hippo.index_passages)`: all three
-      build **at the same time** on the same chunks (decisions D4/D5). A GraphRAG failure fails the
-      document; RAPTOR/HiPPO failures are logged and degrade (D6). Typical time for a ~1,700-word
-      document: **8–15 s** (was ~140 s). Louvain re-runs over the whole case graph; a community whose
-      membership is unchanged **reuses its summary** (no LLM call), and summaries of communities
-      that no longer exist are dropped, so LLM calls per upload don't grow with the case
-   3. **one transaction**: insert the chunk rows, `save_case_state` (replace the case's index
+   2. **The cascade** (decision D5), one stage after another:
+      `raptor.build_tree(chunks)` → `passages = raptor.passages(doc_id)` (the doc's chunks + summaries,
+      ids = RAPTOR node ids) → `graphrag.index_document(doc_id, text, passages)`. HippoRAG has no
+      indexing step. A GraphRAG failure fails the document; a RAPTOR failure is logged and the graph
+      is built from the plain chunks (D6). Measured for a ~1,700-word document: **~19 s**
+      (5 chunks + 6 summaries → 216 entities). Louvain re-runs over the whole case graph; a community
+      whose membership is unchanged **reuses its summary** (no LLM call), and summaries of
+      communities that no longer exist are dropped, so LLM calls per upload don't grow with the case
+   3. **one transaction**: `save_case_state` (replace the case's index
       snapshot), status `indexed` + `chunk_count`, audit event
    4. on any exception: status `error` + message, audit event, and the bundle is **reloaded from
       Postgres** so the half-updated in-memory state is discarded
@@ -170,9 +176,18 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
 ### 5.3 Query (`POST /api/cases/{case_id}/query`, viewer+)
 
 1. 400 if the case has no documents.
-2. The case's `QueryEngine` runs exactly as before: embed the question, `_build_context` per
-   method (graph keyword match / RAPTOR collapsed tree / HiPPO multi-level, first 10 blocks),
-   `_ANSWER_PROMPT` with the last 3 turns of **this case's** history, `generate(json_mode=True)`.
+2. The case's `QueryEngine` embeds the question and builds the context for the mode:
+   - `standard`: the top-k RAPTOR level-0 nodes (chunks) by cosine similarity. Plain RAG.
+   - `refined`: `HippoRetriever.retrieve`. Seeds = entities named in the question
+     (`graphrag.match_entities`, weight = share of the name's words found) + the entities of the 3
+     most similar passages (weak, spread over each passage's entities); every seed is divided by the
+     number of passages mentioning it (node specificity). `nx.pagerank(alpha=0.5, personalization=seeds)`
+     runs over the entity graph; each passage scores the sum of its entities' PageRank; the top-k
+     passages (chunks or summaries) plus a `[KNOWLEDGE GRAPH]` block describing the top PageRank
+     entities form the context. With no seeds, or too few linked passages, it fills with similarity
+     hits (D6).
+
+   Then `_ANSWER_PROMPT` with the last 3 turns of **this case's** history, `generate(json_mode=True)`.
 3. The turn is stored in `chat_messages` (user, method, top_k, answer, reasoning, confidence,
    entities, sources, **latency_ms**) with an audit event, and the `QueryResponse` is returned.
 4. `GET /api/cases/{case_id}/chat` returns the stored history (oldest first);
@@ -266,7 +281,9 @@ class CaseMemberOut: user_id, email, full_name, role ("lead"|"investigator"|"vie
 class DocRecord: id, filename, content_type, size_bytes, status, error, chunks,
                  case_id, sha256, uploaded_by, created_at
 
-# schemas/query.py — QueryRequest / QueryResponse unchanged
+# schemas/query.py
+class QueryRequest:  question, method: "standard"|"refined" = "refined", top_k=6   # 422 for any other method
+class QueryResponse: answer, entities, sources, confidence, reasoning, method
 class ChatMessageOut: id, question, method, top_k, answer, reasoning, confidence, entities,
                       sources, latency_ms, user_id, user_name, created_at
 
@@ -289,11 +306,17 @@ unique email (`lower(email)`).
 |---|---|
 | Identity | `users` (fastapi-users columns + `full_name`, `last_login_at`), `oauth_accounts`, `refresh_tokens` (hash only) |
 | Tenancy | `workspaces` (`personal`/`organization`), `workspace_members` (owner/admin/member) |
-| Investigation | `cases` (status, priority, reference code unique per workspace), `case_members` (lead/investigator/viewer), `documents` (stored path, sha256, status), `chunks` |
-| Index (derived, per case) | `entities`, `entity_mentions`, `relationships`, `communities`, `raptor_nodes` (`vector(768)`), `hippo_nodes` (`vector(768)`), `case_index_meta` |
-| Activity | `chat_messages` (chat history + query log), `audit_events` |
+| Investigation | `cases` (status, priority, reference code unique per workspace), `case_members` (lead/investigator/viewer), `documents` (stored path, sha256, status, `chunk_count`) |
+| Index (derived, per case) — shaped like the cascade | **`passages`** (stage 1: RAPTOR nodes; `level` 0 = chunk, > 0 = summary; `vector(768)`; the only text the LLM sees) · **`entities`**, **`relationships`**, **`communities`** (stage 2: the GraphRAG graph) · **`entity_mentions`** (`entity_id` → `passage_id`, FK to both, cascade: the links HippoRAG scores passages by). Stage 3 (HippoRAG) has no table |
+| Activity | `chat_messages` (chat history + query log; `method IN ('standard','refined')`), `audit_events` |
 
-Index tables have an FK to `cases` but **no FK to documents/chunks** (deleting a document doesn't
+Migrations of 2026-10-08: `3c9e2a7d41f0` dropped `hippo_nodes`, set the chat `method` check to
+`standard`/`refined` and deleted chat rows with the old methods. `80d2d067ef08` renamed
+`raptor_nodes` → `passages`, replaced `entity_mentions.chunk_id` (text, no FK) with `passage_id`
+(UUID FK), dropped the write-only `chunks` table and `case_index_meta` (unused RAPTOR root ids),
+emptied every case's index and marked existing documents `error` ("re-upload").
+
+Index tables have an FK to `cases` but **no FK to documents** (deleting a document doesn't
 un-index it). `seq` columns keep the pipeline's insertion order, so a reload rebuilds identical
 objects (graph edge weights and "first relation" are replayed from `relationships` in order).
 
@@ -324,7 +347,7 @@ async def embed_many(texts: List[str], task_type: str = "retrieval_document") ->
 EMBED_DIM = 768
 async def embed_or_fallback(text: str, owner: str, task_type: str = "retrieval_document") -> List[float]
 async def embed_many_or_fallback(texts: List[str], owner: str, task_type: str = "retrieval_document") -> List[List[float]]
-class EmbeddingIndex:   # built lazily by RAPTOR/HiPPO, dropped whenever their nodes change
+class EmbeddingIndex:   # built lazily by RAPTOR, dropped whenever its nodes change
     def cosine(query, ids=None) -> Tuple[List[str], np.ndarray]
 
 # pipeline/document_processor.py
@@ -336,23 +359,26 @@ class GraphRAGIndexer(chunk_size=500, overlap=80):
     def chunk_text(text: str, doc_id: str) -> List[Chunk]
     async def index_document(doc_id: str, text: str, chunks: Optional[List[Chunk]] = None) -> Dict
     def get_graph_data() -> Dict; def get_stats() -> Dict
-    def get_context_for_query(query: str, max_entities: int = 15) -> str
-    def export_state() -> Dict; def load_state(state: Dict) -> None          # NEW (persistence)
+    # index_document's `chunks` are passages: the RAPTOR chunks + summaries of the document
+    def match_entities(question: str) -> Dict[str, float]          # entity id → name-word overlap (≥ 0.5)
+    def describe_entities(entity_ids: List[str], max_relations: int = 4) -> str
+    def export_state() -> Dict; def load_state(state: Dict) -> None
 
 # pipeline/raptor_runner.py
 class RaptorRunner(max_levels=3, target_cluster_size=5):
-    async def build_tree(chunks) -> Dict; def retrieve(query_embedding, top_k=6) -> List[Dict]
+    async def build_tree(chunks) -> Dict
+    def retrieve(query_embedding, top_k=6, level: Optional[int] = None) -> List[Dict]   # level=0: chunks only
+    def passages(doc_id: str) -> List[Dict]                         # {id, text, doc_id, level}
     def get_stats() -> Dict; def export_state() -> Dict; def load_state(state) -> None
 
-# pipeline/hippo_retriever.py
-class HippoRetriever(pool_size=2, max_levels=4):
-    async def index_passages(passages) -> Dict; def retrieve(query_embedding, top_k=5, level=0)
-    def retrieve_multi_level(query_embedding, top_k=5); def get_stats() -> Dict
-    def export_state() -> Dict; def load_state(state) -> None
+# pipeline/hippo_retriever.py   — stateless; no export_state/load_state
+class HippoRetriever(graphrag, raptor, damping=0.5, seed_passages=3):
+    async def retrieve(question: str, query_embedding, top_k: int = 6) -> Dict   # {passages, entities}
 
 # pipeline/query_engine.py
+Method = Literal["standard", "refined"]
 class QueryEngine(graphrag, raptor, hippo):
-    async def query(question: str, method: Method = "hybrid", top_k: int = 6) -> Dict
+    async def query(question: str, method: Method = "refined", top_k: int = 6) -> Dict
     def get_suggestions() -> List[str]
     def export_state() -> Dict; def load_state(state) -> None   # history only
 
@@ -368,7 +394,8 @@ They are kept only for signature compatibility.
 ### 6.5 Evaluation CLI
 
 ```
-python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method graphrag|raptor|hippo|hybrid] [--output eval_report.json]
+python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method standard|refined] [--output eval_report.json]
+# indexes --docs_dir with the same cascade as the API
 # qa_pairs format: [{"question": "...", "reference": "..."}]
 ```
 
@@ -402,7 +429,7 @@ approved task.
    `llm_provider` sends low reasoning effort for `gpt-oss` models (OpenRouter: `reasoning.effort`;
    other OpenAI-compatible APIs: `reasoning_effort`). Moved off Groq on 2026-10-06 because its
    paid tier wasn't available; the free tier (8K tokens/min) was too slow for indexing.
-2. **Delete does not un-index.** A deleted document's entities, edges, RAPTOR and HiPPO nodes stay
+2. **Delete does not un-index.** A deleted document's entities, edges and RAPTOR nodes stay
    in the case's indexes and still appear in answers and the graph.
 3. **Snapshot replace on every index.** After each document, all of the case's index rows are
    deleted and re-inserted. Simple and consistent, but the cost grows with case size.
@@ -415,11 +442,11 @@ approved task.
 7. **Chat history is per case, shared by all its members**, both stored and in the prompt
    (the last 3 turns of anyone on the case).
 8. **`POST /query` only checks that the case has a document**, not that one reached `indexed`.
-9. **RAPTOR `root_ids` is overwritten** on each document. Retrieval is unaffected.
-10. **HiPPO `levels` reflects only the last document**, while `nodes` holds all of them, so
-    `retrieve_multi_level` searches only that document's pyramid. Pre-existing; persisted as-is.
-11. **Indexes built before 2026-10-04 lack the nomic task prefixes.** Queries are now embedded
-    with `search_query: `, so re-upload old evidence to get matching document vectors.
+9. *(Gone 2026-10-08: RAPTOR `root_ids` was removed with `case_index_meta`.)*
+10. **If RAPTOR fails for a document, its graph links are not stored.** The graph is then built
+    from plain chunk ids, which aren't passages, so those entity mentions are skipped on save
+    (logged as a warning) and `refined` falls back to similarity for that document's content.
+11. *(Gone 2026-10-08: migration `80d2d067ef08` emptied all pre-cascade indexes.)*
 12. **Embeddings are stored as float32** (pgvector). After a reload, similarity scores can differ
     from the pre-reload in-memory float64 values in the last decimals.
 13. **Google OAuth tokens** are stored in `oauth_accounts` in plain text (fastapi-users design).
@@ -434,15 +461,17 @@ approved task.
 - **D1 — One gateway for models.** All LLM and embedding calls go through `pipeline/llm_provider.py`.
 - **D2 — (superseded by D11)** Global pipeline singletons.
 - **D3 — Indexing is async and backgrounded.** Upload returns at once; the client polls status.
-- **D4 — Shared chunks.** All three indexes consume the **same** chunk list from
-  `GraphRAGIndexer.chunk_text`, so retrieval comparisons are fair.
-- **D5 — GraphRAG, RAPTOR and HiPPO index in parallel** (changed 2026-10-06). It used to be
-  GraphRAG first, to stay within Groq's free-tier rate limits; that no longer applies.
+- **D4 — Shared passages.** `GraphRAGIndexer.chunk_text` chunks once; RAPTOR's nodes (those chunks
+  + their summaries) are the passages that GraphRAG extracts from and HippoRAG ranks.
+- **D5 — The pipeline is a cascade** (changed 2026-10-08): RAPTOR → GraphRAG at indexing,
+  HippoRAG PageRank at query time. Before that the three indexed in parallel as independent retrievers
+  with a hybrid mode; the owner dropped per-method comparison for one coherent algorithm.
 - **D6 — Degrade, don't crash.** Pipeline failures are logged and replaced by a fallback.
   A document only gets `error` status when the whole indexing task throws.
-- **D7 — "HiPPO" is hierarchical passage pooling**, not the paper's HippoRAG (OpenIE + PPR).
-  **[OPEN]** whether to implement PPR for the final.
-- **D8 — Graph context uses keyword matching**, not embeddings.
+- **D7 — HippoRAG is the paper's Personalized PageRank** (changed 2026-10-08), over the GraphRAG
+  graph rather than a separate OpenIE graph. The earlier mean-pooling "HiPPO" pyramid was removed.
+- **D8 — Question entities are found by keyword matching** on entity names, not embeddings or an
+  LLM call (keeps queries at one LLM call).
 - **D9 — The LLM returns structured JSON** (`json_mode=True`) for extraction and answers.
 - **D10 — Fixed seeds** for anything stochastic.
 - **D11 — One pipeline bundle per case**, loaded lazily from Postgres and LRU-cached, with a
@@ -457,7 +486,6 @@ approved task.
 ## 10. Open questions for the owner
 
 - [ ] Should delete un-index (rebuild the case from its remaining documents)?
-- [ ] Implement true HippoRAG (PPR over the entity graph) or keep pooling (D7)?
 - [ ] Which test framework (pytest + pytest-asyncio + httpx?) — needs dependency approval.
 - [ ] Dark theme (current) vs the light palette in `color_theme.md`?
 - [ ] Should the frontend use relative `/api` and the proxy instead of the hard-coded host?

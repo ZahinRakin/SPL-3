@@ -1,9 +1,12 @@
 """
 RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval.
 Clusters document chunks, summarises each cluster, and recurses until a
-single root summary remains.  Retrieval traverses the tree top-down.
+single root summary remains.
 
-LLM / embedding provider is selected via LLM_PROVIDER / EMBED_PROVIDER in .env.
+Stage 1 of the cascade (RAPTOR → GraphRAG → HippoRAG). The tree's nodes are the
+case's passages: leaves are the chunks, higher levels are summaries. GraphRAG extracts
+entities from all of them, and HippoRAG ranks them. The Standard (plain RAG) mode
+searches the leaves directly.
 """
 import asyncio
 import uuid
@@ -37,7 +40,6 @@ class RaptorRunner:
         self.max_levels = max_levels
         self.target_cluster_size = target_cluster_size
         self.nodes: Dict[str, RaptorNode] = {}
-        self.root_ids: List[str] = []
         self._index: Optional[EmbeddingIndex] = None
 
     # ── embedding index ───────────────────────────────────────────────────────
@@ -152,7 +154,6 @@ class RaptorRunner:
 
             current = new_level
 
-        self.root_ids = current
         self._index = None
         stats = self.get_stats()
         logger.info(f"RaptorRunner.build_tree complete: {stats}")
@@ -160,11 +161,15 @@ class RaptorRunner:
 
     # ── retrieval ─────────────────────────────────────────────────────────────
 
-    def retrieve(self, query_embedding: List[float], top_k: int = 6) -> List[Dict]:
+    def retrieve(
+        self, query_embedding: List[float], top_k: int = 6, level: Optional[int] = None
+    ) -> List[Dict]:
+        """Cosine search over the whole tree, or over one level only (level=0: the chunks)."""
         if not self.nodes:
             logger.warning("RaptorRunner.retrieve called but no nodes in tree")
             return []
-        ids, sims = self._embedding_index().cosine(query_embedding)
+        candidates = None if level is None else [nid for nid, n in self.nodes.items() if n.level == level]
+        ids, sims = self._embedding_index().cosine(query_embedding, candidates)
         scored = [
             (float(sim) - self.nodes[nid].level * _LEVEL_PENALTY, nid, self.nodes[nid].level)
             for nid, sim in zip(ids, sims)
@@ -183,6 +188,15 @@ class RaptorRunner:
         logger.debug(f"RaptorRunner.retrieve: top_k={top_k}, returned={len(results)}")
         return results
 
+    def passages(self, doc_id: str) -> List[Dict]:
+        """One document's chunks and summaries as passages for entity extraction.
+        Each build_tree call builds a tree over one document, so its nodes carry only that doc id."""
+        return [
+            {"id": nid, "text": n.text, "doc_id": doc_id, "level": n.level}
+            for nid, n in self.nodes.items()
+            if n.doc_ids == [doc_id]
+        ]
+
     def get_stats(self) -> Dict:
         lvl_counts: Dict[int, int] = {}
         for n in self.nodes.values():
@@ -192,16 +206,12 @@ class RaptorRunner:
     # ── state (persistence) ───────────────────────────────────────────────────
 
     def export_state(self) -> Dict:
-        return {
-            "nodes": [asdict(n) for n in self.nodes.values()],
-            "root_ids": list(self.root_ids),
-        }
+        return {"nodes": [asdict(n) for n in self.nodes.values()]}
 
     def load_state(self, state: Dict) -> None:
         self.nodes = {}
         for n in state.get("nodes", []):
             node = RaptorNode(**n)
             self.nodes[node.id] = node
-        self.root_ids = list(state.get("root_ids", []))
         self._index = None
         logger.debug(f"RaptorRunner.load_state: nodes={len(self.nodes)}")

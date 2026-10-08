@@ -101,12 +101,12 @@ const STATS_POLL_MS = 5_000;
                     <div class="a-value">{{ stats()?.density ?? 0 | number:'1.4-4' }}</div>
                   </div>
                   <div class="a-card">
-                    <div class="a-label">RAPTOR Nodes</div>
-                    <div class="a-value cyan">{{ stats()?.raptor?.total_nodes ?? 0 }}</div>
+                    <div class="a-label">Passages</div>
+                    <div class="a-value cyan">{{ stats()?.raptor?.levels?.['0'] ?? 0 }}</div>
                   </div>
                   <div class="a-card">
-                    <div class="a-label">HiPPO Nodes</div>
-                    <div class="a-value">{{ stats()?.hippo?.total_nodes ?? 0 }}</div>
+                    <div class="a-label">RAPTOR Summaries</div>
+                    <div class="a-value">{{ (stats()?.raptor?.total_nodes ?? 0) - (stats()?.raptor?.levels?.['0'] ?? 0) }}</div>
                   </div>
                   <div class="a-card">
                     <div class="a-label">Connected Components</div>

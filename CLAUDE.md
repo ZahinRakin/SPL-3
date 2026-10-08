@@ -65,7 +65,7 @@ curl http://localhost:8000/api/health
 cd frontend; npm install; npm start                    # http://localhost:4200 (uses proxy.conf.json)
 
 # evaluation
-python -m evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method hybrid --output eval_report.json
+python -m evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
 ```
 
 ## Tests and verification
@@ -91,7 +91,7 @@ If a check can't run (Ollama or the LLM API unreachable, no key or credits), say
 ### Python (backend, evaluation)
 - Python 3.11. Use type hints on every function signature, in the existing `typing` style
   (`List`, `Dict`, `Optional`). Stay consistent within a file.
-- Internal data uses `@dataclass` (see `Entity`, `RaptorNode`, `HippoNode`). Anything that
+- Internal data uses `@dataclass` (see `Entity`, `Relationship`, `RaptorNode`). Anything that
   crosses HTTP is a Pydantic model in `backend/schemas/`.
 - Imports: absolute `backend.…` in `api/`, `app/`, `core/`, `models/`, `services/` and
   `evaluation/`; relative `.module` inside `pipeline/`.
@@ -137,8 +137,10 @@ If a check can't run (Ollama or the LLM API unreachable, no key or credits), say
 - The proposals, README and the owner may say "**Gemini**". The code actually uses **OpenRouter**
   (`openai/gpt-oss-20b`, through the `openai` package) for generation and **Ollama** (`nomic-embed-text`) for
   embeddings. Don't "fix" the code back to Gemini.
-- "**HiPPO**" in this code is hierarchical mean-pooling, **not** the HippoRAG paper's PPR
-  method (decision D7). Don't describe it as PPR in docs or UI.
+- The pipeline is a **cascade** (RAPTOR → GraphRAG → HippoRAG), answered in two modes:
+  `standard` (plain RAG baseline) and `refined` (the cascade). "**HippoRAG**" here *is* the paper's
+  Personalized PageRank (decision D7, since 2026-10-08); the old mean-pooling "HiPPO" is gone.
+  Don't reintroduce per-method modes (`graphrag`/`raptor`/`hippo`/`hybrid`).
 - The `api_key` constructor parameters on the pipeline classes are unused legacy
   parameters. Leave them alone (they are part of the interface).
 - Uploads live in `data/uploads/` (`UPLOAD_DIR` in `.env`). Files there are test debris, not

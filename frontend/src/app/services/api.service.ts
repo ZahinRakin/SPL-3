@@ -136,8 +136,8 @@ export interface GraphStats {
   density: number;
   components: number;
   indexed_documents: number;
+  /** RAPTOR tree: level 0 = chunks, higher levels = summaries. */
   raptor: { total_nodes: number; levels: Record<string, number> };
-  hippo:  { total_nodes: number; levels: Record<string, number> };
 }
 
 export interface EntityDetail {
@@ -149,6 +149,9 @@ export interface EntityDetail {
   doc_count: number;
   community: number;
 }
+
+/** standard = plain RAG baseline; refined = RAPTOR → GraphRAG → HippoRAG cascade. */
+export type QueryMethod = 'standard' | 'refined';
 
 export interface QueryResponse {
   answer: string;
@@ -335,7 +338,7 @@ export class ApiService {
   }
 
   // ── query + chat history ───────────────────────────────────────────────────
-  query(caseId: string, question: string, method = 'hybrid', top_k = 6): Observable<QueryResponse> {
+  query(caseId: string, question: string, method: QueryMethod = 'refined', top_k = 6): Observable<QueryResponse> {
     return this.http.post<QueryResponse>(`${this.base}/cases/${caseId}/query`, { question, method, top_k });
   }
 

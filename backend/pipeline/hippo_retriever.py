@@ -1,180 +1,134 @@
 """
-HiPPO Retriever: Hierarchical Passage Pooling.
-Builds a pyramid of pooled passage embeddings for multi-granularity retrieval —
-fine-grained at level 0, coarser at higher levels.
+HippoRAG ranker: Personalized PageRank over the GraphRAG knowledge graph.
 
-Embedding provider is selected via EMBED_PROVIDER in .env.
+Stage 3 of the cascade (RAPTOR → GraphRAG → HippoRAG), after Gutiérrez et al.,
+"HippoRAG: Neurobiologically Inspired Long-Term Memory for LLMs" (NeurIPS 2024).
+
+1. Seed the graph: entities named in the question (strong), plus the entities of the few
+   passages most similar to the question (weak, so questions that name nothing still work).
+   Each seed is divided by how many passages mention it (the paper's node specificity).
+2. Personalized PageRank spreads relevance from the seeds along the graph's edges.
+3. Every passage (a RAPTOR chunk or summary) scores the PageRank mass of its entities,
+   and only the top-k passages reach the LLM.
+
+It stores nothing of its own: it reads the graph and the RAPTOR nodes at query time.
 """
-import uuid
-from dataclasses import asdict, dataclass, field
+import asyncio
 from typing import Dict, List, Optional
 
-import numpy as np
+import networkx as nx
 
 from backend.core.logger import logger
-from .vectors import EmbeddingIndex, embed_many_or_fallback
+from .graphrag_indexer import GraphRAGIndexer
+from .raptor_runner import RaptorRunner
 
-_LEVEL_PENALTY = 0.02   # per pyramid level, preferring fine-grained passages
-
-
-@dataclass
-class HippoNode:
-    id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    text: str = ""
-    embedding: Optional[List[float]] = None
-    level: int = 0
-    parent_id: Optional[str] = None
-    child_ids: List[str] = field(default_factory=list)
-    doc_id: str = ""
-    chunk_idx: int = 0
+_DAMPING = 0.5              # the paper's value: chance of following an edge vs jumping back to a seed
+_QUESTION_SEED_WEIGHT = 1.0
+_PASSAGE_SEED_WEIGHT = 0.3  # total seed mass one similar passage spreads over its entities
+_SEED_PASSAGES = 3
+_TOP_ENTITIES = 8           # highest-PageRank entities described in the answer prompt
+_MIN_ENTITY_SHARE = 0.01    # ...if they hold at least this share of the top entity's score
 
 
 class HippoRetriever:
-    def __init__(self, api_key: str = "", pool_size: int = 2, max_levels: int = 4):
-        self.pool_size = pool_size
-        self.max_levels = max_levels
-        self.nodes: Dict[str, HippoNode] = {}
-        self.levels: Dict[int, List[str]] = {}
-        self._index: Optional[EmbeddingIndex] = None
+    def __init__(
+        self,
+        api_key: str = "",
+        graphrag: Optional[GraphRAGIndexer] = None,
+        raptor: Optional[RaptorRunner] = None,
+        damping: float = _DAMPING,
+        seed_passages: int = _SEED_PASSAGES,
+    ):
+        self.graphrag = graphrag
+        self.raptor = raptor
+        self.damping = damping
+        self.seed_passages = seed_passages
 
-    # ── embedding index ───────────────────────────────────────────────────────
+    # ── passage ↔ entity links ────────────────────────────────────────────────
 
-    def _embedding_index(self) -> EmbeddingIndex:
-        # Built lazily, dropped whenever nodes change (build/index/load).
-        if self._index is None:
-            self._index = EmbeddingIndex.build({nid: n.embedding for nid, n in self.nodes.items()})
-        return self._index
+    def _passage_entities(self) -> Dict[str, List[str]]:
+        """Passage id → ids of the entities extracted from it. Mentions that are not RAPTOR
+        nodes (plain chunk ids, when RAPTOR failed for a document) are skipped."""
+        links: Dict[str, List[str]] = {}
+        for eid, ent in self.graphrag.entities.items():
+            for pid in ent.source_chunks:
+                if pid in self.raptor.nodes:
+                    links.setdefault(pid, []).append(eid)
+        return links
 
-    # ── pooling ───────────────────────────────────────────────────────────────
+    # ── seeds ─────────────────────────────────────────────────────────────────
 
-    @staticmethod
-    def _mean_pool(embeddings: List[List[float]]) -> List[float]:
-        arr = np.array(embeddings, dtype=float)
-        pooled = arr.mean(axis=0)
-        norm = np.linalg.norm(pooled)
-        return (pooled / norm).tolist() if norm > 0 else pooled.tolist()
+    def _seeds(
+        self, question: str, query_embedding: List[float], passage_entities: Dict[str, List[str]]
+    ) -> Dict[str, float]:
+        seeds: Dict[str, float] = {}
+        for eid, overlap in self.graphrag.match_entities(question).items():
+            seeds[eid] = seeds.get(eid, 0.0) + _QUESTION_SEED_WEIGHT * overlap
+        for hit in self.raptor.retrieve(query_embedding, top_k=self.seed_passages):
+            ents = passage_entities.get(hit["id"], [])
+            for eid in ents:
+                seeds[eid] = seeds.get(eid, 0.0) + _PASSAGE_SEED_WEIGHT * max(hit["score"], 0.0) / len(ents)
 
-    # ── indexing ──────────────────────────────────────────────────────────────
-
-    async def index_passages(self, passages: List[Dict]) -> Dict:
-        if not passages:
-            logger.warning("HippoRetriever.index_passages called with empty passages list")
-            return {}
-
-        logger.info(f"HippoRetriever.index_passages: {len(passages)} passages, max_levels={self.max_levels}")
-        self._index = None
-        embs = await embed_many_or_fallback([p["text"] for p in passages], owner="HippoRetriever")
-        level0: List[str] = []
-        for i, (p, emb) in enumerate(zip(passages, embs)):
-            node = HippoNode(
-                text=p["text"],
-                embedding=emb,
-                level=0,
-                doc_id=p.get("doc_id", ""),
-                chunk_idx=i,
-            )
-            self.nodes[node.id] = node
-            level0.append(node.id)
-
-        self.levels[0] = level0
-        logger.debug(f"HippoRetriever: {len(level0)} level-0 nodes created")
-        current = level0
-
-        for level in range(1, self.max_levels + 1):
-            if len(current) <= 1:
-                logger.debug(f"HippoRetriever: stopping at level={level}, only {len(current)} node(s) remain")
-                break
-            next_level: List[str] = []
-            for i in range(0, len(current), self.pool_size):
-                group = current[i : i + self.pool_size]
-                child_embs = [self.nodes[nid].embedding for nid in group]
-                pooled = self._mean_pool(child_embs)
-                preview = " | ".join(self.nodes[nid].text[:80] for nid in group)
-                parent = HippoNode(
-                    text=preview,
-                    embedding=pooled,
-                    level=level,
-                    child_ids=group,
-                    doc_id=self.nodes[group[0]].doc_id if group else "",
-                )
-                self.nodes[parent.id] = parent
-                for cid in group:
-                    self.nodes[cid].parent_id = parent.id
-                next_level.append(parent.id)
-            self.levels[level] = next_level
-            logger.debug(f"HippoRetriever: level={level} built with {len(next_level)} nodes")
-            current = next_level
-
-        self._index = None
-        stats = {"total_nodes": len(self.nodes), "levels": {k: len(v) for k, v in self.levels.items()}}
-        logger.info(f"HippoRetriever.index_passages complete: {stats}")
-        return stats
+        mentions: Dict[str, int] = {}
+        for ents in passage_entities.values():
+            for eid in ents:
+                mentions[eid] = mentions.get(eid, 0) + 1
+        specific = {
+            eid: w / max(mentions.get(eid, 1), 1)
+            for eid, w in seeds.items()
+            if w > 0 and eid in self.graphrag.graph
+        }
+        logger.debug(f"HippoRetriever._seeds: {len(specific)} seed entities")
+        return specific
 
     # ── retrieval ─────────────────────────────────────────────────────────────
 
-    def retrieve(self, query_embedding: List[float], top_k: int = 5, level: int = 0) -> List[Dict]:
-        target = self.levels.get(level, self.levels.get(0, []))
-        if not target:
-            logger.warning(f"HippoRetriever.retrieve: no nodes at level={level}")
-        ids, sims = self._embedding_index().cosine(query_embedding, target)
-        scored = [(float(sim), nid) for nid, sim in zip(ids, sims)]
-        scored.sort(reverse=True)
-        results = [
-            {
-                "id": nid,
-                "text": self.nodes[nid].text,
-                "level": self.nodes[nid].level,
-                "score": round(s, 4),
-                "doc_id": self.nodes[nid].doc_id,
-            }
-            for s, nid in scored[:top_k]
-        ]
-        logger.debug(f"HippoRetriever.retrieve: level={level}, top_k={top_k}, returned={len(results)}")
-        return results
+    def _passage(self, pid: str, score: float) -> Dict:
+        node = self.raptor.nodes[pid]
+        return {"id": pid, "text": node.text, "level": node.level, "score": round(score, 6),
+                "doc_ids": node.doc_ids}
 
-    def retrieve_multi_level(self, query_embedding: List[float], top_k: int = 5) -> List[Dict]:
-        """Retrieve across all levels and deduplicate, preferring fine-grained hits."""
-        if not self.nodes:
-            logger.warning("HippoRetriever.retrieve_multi_level: no nodes indexed")
-            return []
-        ids, sims = self._embedding_index().cosine(query_embedding)
-        scored = [
-            (float(sim) - self.nodes[nid].level * _LEVEL_PENALTY, nid)
-            for nid, sim in zip(ids, sims)
-        ]
-        scored.sort(reverse=True)
-        results = [
-            {
-                "id": nid,
-                "text": self.nodes[nid].text,
-                "level": self.nodes[nid].level,
-                "score": round(s, 4),
-                "doc_id": self.nodes[nid].doc_id,
-            }
-            for s, nid in scored[:top_k]
-        ]
-        logger.debug(f"HippoRetriever.retrieve_multi_level: top_k={top_k}, returned={len(results)}")
-        return results
+    async def retrieve(self, question: str, query_embedding: List[float], top_k: int = 6) -> Dict:
+        """Top-k passages ranked by Personalized PageRank, and the highest-ranked entities.
+        Degrades to plain similarity ranking when the graph gives nothing to rank (D6)."""
+        passage_entities = self._passage_entities()
+        seeds = self._seeds(question, query_embedding, passage_entities)
 
-    def get_stats(self) -> Dict:
-        return {
-            "total_nodes": len(self.nodes),
-            "levels": {k: len(v) for k, v in self.levels.items()},
+        ppr: Dict[str, float] = {}
+        if seeds:
+            try:
+                ppr = await asyncio.to_thread(
+                    nx.pagerank, self.graphrag.graph, alpha=self.damping,
+                    personalization=seeds, weight="weight",
+                )
+            except Exception as exc:
+                logger.warning(f"HippoRetriever: PageRank failed, using similarity ranking: {exc}", exc_info=True)
+        else:
+            logger.warning("HippoRetriever: no seed entities, using similarity ranking")
+
+        scores = {
+            pid: sum(ppr.get(eid, 0.0) for eid in ents)
+            for pid, ents in passage_entities.items()
         }
+        ranked = sorted((s, pid) for pid, s in scores.items() if s > 0)[::-1]
+        passages = [self._passage(pid, s) for s, pid in ranked[:top_k]]
 
-    # ── state (persistence) ───────────────────────────────────────────────────
+        if len(passages) < top_k:
+            taken = {p["id"] for p in passages}
+            for hit in self.raptor.retrieve(query_embedding, top_k=top_k):
+                if len(passages) >= top_k:
+                    break
+                if hit["id"] not in taken:
+                    passages.append(self._passage(hit["id"], 0.0))
+            logger.debug(f"HippoRetriever: filled to {len(passages)} passages with similarity hits")
 
-    def export_state(self) -> Dict:
-        return {
-            "nodes": [asdict(n) for n in self.nodes.values()],
-            "levels": {str(k): list(v) for k, v in self.levels.items()},
-        }
-
-    def load_state(self, state: Dict) -> None:
-        self.nodes = {}
-        for n in state.get("nodes", []):
-            node = HippoNode(**n)
-            self.nodes[node.id] = node
-        self.levels = {int(k): list(v) for k, v in state.get("levels", {}).items()}
-        self._index = None
-        logger.debug(f"HippoRetriever.load_state: nodes={len(self.nodes)}, levels={len(self.levels)}")
+        cutoff = max(ppr.values(), default=0.0) * _MIN_ENTITY_SHARE
+        top_entities = [
+            eid for eid, score in sorted(ppr.items(), key=lambda kv: kv[1], reverse=True)[:_TOP_ENTITIES]
+            if score > cutoff
+        ]
+        logger.debug(
+            f"HippoRetriever.retrieve: seeds={len(seeds)}, ranked_passages={len(ranked)}, "
+            f"returned={len(passages)}"
+        )
+        return {"passages": passages, "entities": top_entities}

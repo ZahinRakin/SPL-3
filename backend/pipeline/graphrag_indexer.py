@@ -1,7 +1,12 @@
 """
-GraphRAG Indexer: extracts entities + relationships from document chunks,
+GraphRAG Indexer: extracts entities + relationships from passages,
 builds a NetworkX knowledge graph, detects communities with Louvain,
-and generates community summaries for global-context retrieval.
+and generates community summaries.
+
+Stage 2 of the cascade (RAPTOR → GraphRAG → HippoRAG). The passages are the RAPTOR
+nodes (chunks and their summaries), so the graph also captures themes that only the
+summaries state. Entity.source_chunks holds the ids of the passages an entity came from,
+which is what HippoRAG uses to score passages.
 
 LLM provider: OpenAI-compatible API (LLM_API_KEY / LLM_BASE_URL / LLM_MODEL in .env).
 """
@@ -41,6 +46,18 @@ _ENTITY_TYPES = {
     "PERSON", "ORGANIZATION", "LOCATION", "DATE", "EVENT",
     "CONCEPT", "PRODUCT", "LAW", "DISEASE", "DRUG", "OTHER",
 }
+
+_MIN_NAME_OVERLAP = 0.5   # share of an entity's name words the question must contain
+_STOPWORDS = {
+    "the", "and", "for", "with", "what", "who", "whom", "how", "are", "was", "were", "does",
+    "did", "this", "that", "these", "those", "from", "into", "about", "which", "when", "where",
+    "why", "between", "there", "their", "have", "has", "been", "any", "all", "its", "his", "her",
+}
+
+
+def _words(text: str) -> set:
+    return {w for w in re.findall(r"[a-z0-9]+", text.lower()) if len(w) > 2 and w not in _STOPWORDS}
+
 
 _EXTRACT_PROMPT = """Extract ALL named entities and their relationships from the text below.
 Be thorough — capture every meaningful entity regardless of domain.
@@ -135,7 +152,7 @@ class GraphRAGIndexer:
     async def index_document(self, doc_id: str, text: str, chunks: Optional[List[Dict]] = None) -> Dict:
         if chunks is None:
             chunks = self.chunk_text(text, doc_id)
-        logger.info(f"index_document: doc_id={doc_id!r}, chunks={len(chunks)}")
+        logger.info(f"index_document: doc_id={doc_id!r}, passages={len(chunks)}")
         results = await asyncio.gather(
             *[self._extract(c) for c in chunks], return_exceptions=True
         )
@@ -309,35 +326,41 @@ class GraphRAGIndexer:
             "components": nx.number_connected_components(self.graph),
         }
 
-    # ── graph-context lookup for query engine ─────────────────────────────────
+    # ── lookups for the query engine ──────────────────────────────────────────
 
-    def get_context_for_query(self, query: str, max_entities: int = 15) -> str:
-        words = {w for w in query.lower().split() if len(w) > 3}
-        matched: List[Tuple[int, str]] = []
+    def match_entities(self, question: str) -> Dict[str, float]:
+        """Entities named in the question (keyword match, decision D8): entity id → fraction
+        of the entity's name words that appear in the question. These seed HippoRAG's PageRank."""
+        q_words = _words(question)
+        matches: Dict[str, float] = {}
         for eid, ent in self.entities.items():
-            score = sum(1 for w in words if w in ent.name.lower() or w in ent.description.lower())
-            if score:
-                matched.append((score, eid))
-        matched.sort(reverse=True)
-        logger.debug(f"get_context_for_query: query={query[:60]!r}, matched_entities={len(matched)}")
+            name_words = _words(ent.name)
+            if not name_words:
+                continue
+            overlap = len(name_words & q_words) / len(name_words)
+            if overlap >= _MIN_NAME_OVERLAP:
+                matches[eid] = overlap
+        logger.debug(f"match_entities: question={question[:60]!r}, matched={len(matches)}")
+        return matches
+
+    def describe_entities(self, entity_ids: List[str], max_relations: int = 4) -> str:
+        """Short graph facts for the answer prompt: each entity, its type, description,
+        and a few of its relations."""
         lines = []
-        seen_comms = set()
-        for _, eid in matched[:max_entities]:
-            ent = self.entities[eid]
-            nbrs = [
-                self.entities[n].name
+        for eid in entity_ids:
+            ent = self.entities.get(eid)
+            if ent is None:
+                continue
+            rels = [
+                f"{self.graph[eid][n].get('relation', 'RELATED_TO')} {self.entities[n].name}"
                 for n in self.graph.neighbors(eid)
                 if n in self.entities
-            ][:5]
+            ][:max_relations]
             lines.append(
                 f"- {ent.name} [{ent.type}]: {ent.description}"
-                + (f" | connected to: {', '.join(nbrs)}" if nbrs else "")
+                + (f" | {'; '.join(rels)}" if rels else "")
             )
-            comm = self.graph.nodes[eid].get("community", -1)
-            if comm >= 0 and comm not in seen_comms and comm in self.community_summaries:
-                lines.append(f"  (community context) {self.community_summaries[comm]}")
-                seen_comms.add(comm)
-        return "\n".join(lines) if lines else "No matching entities found in the knowledge graph."
+        return "\n".join(lines)
 
     # ── state (persistence) ───────────────────────────────────────────────────
     # Plain dicts only; the pipeline never knows about the database (decision D12).

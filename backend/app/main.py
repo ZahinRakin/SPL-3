@@ -37,7 +37,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="GraphRAG Investigation API",
-    description="Register, open investigation cases, upload evidence, and query it with GraphRAG, RAPTOR and HiPPO.",
+    description="Register, open investigation cases, upload evidence, and query it with a RAPTOR → GraphRAG → HippoRAG cascade.",
     version="2.0.0",
     lifespan=lifespan,
 )

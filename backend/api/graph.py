@@ -28,7 +28,6 @@ async def get_graph_stats(
     bundle = await registry.get(access.case.id)
     stats = bundle.graphrag.get_stats()
     stats["raptor"] = bundle.raptor.get_stats()
-    stats["hippo"] = bundle.hippo.get_stats()
     stats["indexed_documents"] = (await db.execute(
         select(func.count()).select_from(Document)
         .where(Document.case_id == access.case.id, Document.status == "indexed")

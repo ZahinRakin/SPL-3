@@ -19,7 +19,7 @@ from backend.pipeline.document_processor import extract_text
 from backend.schemas.documents import DocRecord
 from backend.services import audit
 from backend.services.case_index_registry import CaseIndexRegistry
-from backend.services.index_store import save_case_state, save_chunks
+from backend.services.index_store import save_case_state
 from backend.services.storage import MAX_FILE_MB, document_path
 
 router = APIRouter(prefix="/cases/{case_id}/documents", tags=["documents"])
@@ -68,37 +68,36 @@ async def _run_indexing(
                 raise ValueError("No text could be extracted from the document.")
 
             chunks = bundle.graphrag.chunk_text(text, str(doc_id))
-            # All three indexes build at the same time (decision D5): indexing takes as long
-            # as the slowest one instead of GraphRAG + the slower of RAPTOR/HiPPO.
-            graph_result, raptor_result, hippo_result = await asyncio.gather(
-                bundle.graphrag.index_document(str(doc_id), text, chunks),
-                bundle.raptor.build_tree(chunks),
-                bundle.hippo.index_passages(chunks),
-                return_exceptions=True,
+            # The cascade (decision D5): RAPTOR first, so the graph is built over the chunks
+            # *and* their summaries. HippoRAG needs no indexing step; it ranks at query time.
+            passages = chunks
+            try:
+                await bundle.raptor.build_tree(chunks)
+                passages = bundle.raptor.passages(str(doc_id)) or chunks
+            except Exception as exc:
+                # Degrade (D6): the graph is built from the plain chunks instead.
+                logger.warning(f"RAPTOR indexing failed for {doc_id}, graph uses chunks only: {exc!r}",
+                               exc_info=True)
+            # A GraphRAG failure fails the document.
+            result = await bundle.graphrag.index_document(str(doc_id), text, passages)
+            logger.debug(
+                f"Cascade indexing completed for {doc_id}: {len(chunks)} chunks, "
+                f"{len(passages) - len(chunks)} summaries, {result}"
             )
-            # A GraphRAG failure fails the document; RAPTOR/HiPPO failures degrade (D6).
-            if isinstance(graph_result, BaseException):
-                raise graph_result
-            result = graph_result
-            for name, outcome in (("RAPTOR", raptor_result), ("HiPPO", hippo_result)):
-                if isinstance(outcome, BaseException):
-                    logger.warning(f"{name} indexing failed for {doc_id}: {outcome!r}")
-            logger.debug(f"GraphRAG, RAPTOR and HiPPO indexing completed for {doc_id}: {result}")
 
-            # One transaction: chunks + index snapshot + status, so the DB never
+            # One transaction: index snapshot + status, so the DB never
             # says "indexed" without the index rows to back it.
             async with session_scope() as s:
-                await save_chunks(s, case_id, doc_id, chunks)
-                await save_case_state(s, case_id, bundle.graphrag, bundle.raptor, bundle.hippo)
+                await save_case_state(s, case_id, bundle.graphrag, bundle.raptor)
                 await s.execute(update(Document).where(Document.id == doc_id).values(
-                    status="indexed", chunk_count=result["chunks"], error=None,
+                    status="indexed", chunk_count=len(chunks), error=None,
                     indexed_at=datetime.now(timezone.utc),
                 ))
                 audit.record(s, audit.DOCUMENT_INDEXED, user_id=user_id, case_id=case_id,
                              target_type="document", target_id=doc_id,
-                             details={"chunks": result["chunks"], "entities_total": result["entities_total"]})
+                             details={"chunks": len(chunks), "entities_total": result["entities_total"]})
             logger.info(
-                f"Completed indexing for document {doc_id}: {result['chunks']} chunks, "
+                f"Completed indexing for document {doc_id}: {len(chunks)} chunks, "
                 f"{result['entities_total']} entities in case"
             )
         except Exception as exc:

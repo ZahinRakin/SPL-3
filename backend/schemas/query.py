@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 class QueryRequest(BaseModel):
     question: str
-    method: Literal["graphrag", "raptor", "hippo", "hybrid"] = "hybrid"
+    method: Literal["standard", "refined"] = "refined"
     top_k: int = 6
 
 class QueryResponse(BaseModel):

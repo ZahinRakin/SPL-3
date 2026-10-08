@@ -1,7 +1,9 @@
 """
 Save and load one case's pipeline state to and from Postgres.
 
-The pipeline exposes plain dicts (export_state / load_state); this module maps them to rows.
+The pipeline exposes plain dicts (export_state / load_state); this module maps them to rows:
+RAPTOR nodes → passages, GraphRAG entities/relations/communities → their tables, and each
+entity's source passages → entity_mentions. HippoRAG has no state of its own.
 Saving is a "replace snapshot": delete the case's derived rows, bulk-insert the current ones.
 Louvain re-runs over the whole case graph after every document, so communities and entity
 rows change globally anyway; replacing is simple and always consistent (ARCHITECTURE.md §8).
@@ -10,16 +12,13 @@ import uuid
 from typing import Any, Dict, List, Optional
 
 from sqlalchemy import delete, insert, select
-from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.core.logger import logger
 from backend.models import (
-    CaseIndexMeta, ChatMessage, Chunk, CommunityRow, EntityMention, EntityRow, HippoNodeRow,
-    RaptorNodeRow, RelationshipRow,
+    ChatMessage, CommunityRow, EntityMention, EntityRow, PassageRow, RelationshipRow,
 )
 from backend.pipeline.graphrag_indexer import GraphRAGIndexer
-from backend.pipeline.hippo_retriever import HippoRetriever
 from backend.pipeline.raptor_runner import RaptorRunner
 
 HISTORY_TURNS = 3   # QueryEngine only uses the last 3 turns in its prompt
@@ -30,7 +29,7 @@ def _uuid(value: Optional[str]) -> Optional[uuid.UUID]:
 
 
 def _floats(vec: Optional[List[float]]) -> Optional[List[float]]:
-    # NumPy scalars (from mean-pooling) must become plain floats before binding.
+    # NumPy scalars must become plain floats before binding.
     return [float(x) for x in vec] if vec is not None else None
 
 
@@ -41,31 +40,35 @@ async def _bulk_insert(session: AsyncSession, model: Any, rows: List[Dict]) -> N
 
 # ── save ──────────────────────────────────────────────────────────────────────
 
-async def save_chunks(session: AsyncSession, case_id: uuid.UUID, document_id: uuid.UUID, chunks: List[Dict]) -> None:
-    await _bulk_insert(session, Chunk, [
-        {"id": c["id"], "document_id": document_id, "case_id": case_id, "chunk_index": i, "text": c["text"]}
-        for i, c in enumerate(chunks)
-    ])
-
-
 async def save_case_state(
     session: AsyncSession,
     case_id: uuid.UUID,
     graphrag: GraphRAGIndexer,
     raptor: RaptorRunner,
-    hippo: HippoRetriever,
 ) -> None:
     """Replace the case's derived index rows. Runs inside the caller's transaction."""
     g = graphrag.export_state()
     r = raptor.export_state()
-    h = hippo.export_state()
 
-    # entity_mentions and relationships go with entities via ON DELETE CASCADE.
-    for model in (EntityRow, CommunityRow, RaptorNodeRow, HippoNodeRow):
+    # entity_mentions and relationships go with entities/passages via ON DELETE CASCADE.
+    for model in (EntityRow, CommunityRow, PassageRow):
         await session.execute(delete(model).where(model.case_id == case_id))
+
+    passage_rows = [
+        {
+            "id": uuid.UUID(n["id"]), "case_id": case_id, "seq": seq, "level": n["level"],
+            "text": n["text"] or "", "parent_id": _uuid(n["parent"]),
+            "children": [uuid.UUID(c) for c in n["children"]],
+            "doc_ids": [str(d) for d in n["doc_ids"]],
+            "embedding": _floats(n["embedding"]),
+        }
+        for seq, n in enumerate(r["nodes"])
+    ]
+    passage_ids = {row["id"] for row in passage_rows}
 
     node_community = g["node_community"]
     entity_rows, mention_rows = [], []
+    unlinked = 0
     for seq, e in enumerate(g["entities"]):
         eid = uuid.UUID(e["id"])
         entity_rows.append({
@@ -74,8 +77,17 @@ async def save_case_state(
             "type": e["type"], "description": e["description"] or "",
             "community": node_community.get(e["id"], -1),
         })
-        for pos, chunk_id in enumerate(dict.fromkeys(e["source_chunks"])):
-            mention_rows.append({"entity_id": eid, "chunk_id": chunk_id, "position": pos})
+        for pos, pid in enumerate(dict.fromkeys(e["source_chunks"])):
+            # Only passages can be linked. A plain chunk id appears only when RAPTOR failed
+            # and the graph was built from raw chunks (D6); that mention can't be stored.
+            try:
+                passage_id = uuid.UUID(pid)
+            except ValueError:
+                passage_id = None
+            if passage_id in passage_ids:
+                mention_rows.append({"entity_id": eid, "passage_id": passage_id, "position": pos})
+            else:
+                unlinked += 1
 
     rel_rows = [
         {
@@ -92,63 +104,38 @@ async def save_case_state(
         {"case_id": case_id, "community_id": int(cid), "summary": summary or ""}
         for cid, summary in g["communities"].items()
     ]
-    raptor_rows = [
-        {
-            "id": uuid.UUID(n["id"]), "case_id": case_id, "seq": seq, "level": n["level"],
-            "text": n["text"] or "", "parent_id": _uuid(n["parent"]),
-            "children": [uuid.UUID(c) for c in n["children"]],
-            "doc_ids": [str(d) for d in n["doc_ids"]],
-            "embedding": _floats(n["embedding"]),
-        }
-        for seq, n in enumerate(r["nodes"])
-    ]
-    hippo_rows = [
-        {
-            "id": uuid.UUID(n["id"]), "case_id": case_id, "seq": seq, "level": n["level"],
-            "text": n["text"] or "", "parent_id": _uuid(n["parent_id"]),
-            "child_ids": [uuid.UUID(c) for c in n["child_ids"]],
-            "doc_id": str(n["doc_id"] or ""), "chunk_idx": n["chunk_idx"],
-            "embedding": _floats(n["embedding"]),
-        }
-        for seq, n in enumerate(h["nodes"])
-    ]
 
+    # Passages before mentions (FK).
+    await _bulk_insert(session, PassageRow, passage_rows)
     await _bulk_insert(session, EntityRow, entity_rows)
     await _bulk_insert(session, EntityMention, mention_rows)
     await _bulk_insert(session, RelationshipRow, rel_rows)
     await _bulk_insert(session, CommunityRow, community_rows)
-    await _bulk_insert(session, RaptorNodeRow, raptor_rows)
-    await _bulk_insert(session, HippoNodeRow, hippo_rows)
 
-    meta = {"case_id": case_id, "raptor_root_ids": r["root_ids"], "hippo_levels": h["levels"]}
-    await session.execute(
-        pg_insert(CaseIndexMeta).values(**meta).on_conflict_do_update(
-            index_elements=[CaseIndexMeta.case_id],
-            set_={"raptor_root_ids": meta["raptor_root_ids"], "hippo_levels": meta["hippo_levels"]},
-        )
-    )
+    if unlinked:
+        logger.warning(f"save_case_state: case={case_id}, {unlinked} entity mentions have no passage, not stored")
     logger.debug(
-        f"save_case_state: case={case_id}, entities={len(entity_rows)}, relationships={len(rel_rows)}, "
-        f"raptor={len(raptor_rows)}, hippo={len(hippo_rows)}"
+        f"save_case_state: case={case_id}, passages={len(passage_rows)}, entities={len(entity_rows)}, "
+        f"mentions={len(mention_rows)}, relationships={len(rel_rows)}"
     )
 
 
 # ── load ──────────────────────────────────────────────────────────────────────
 
 async def load_case_state(session: AsyncSession, case_id: uuid.UUID) -> Dict:
-    """Everything load_state() needs for the case's GraphRAG, RAPTOR, HiPPO and QueryEngine."""
+    """Everything load_state() needs for the case's GraphRAG, RAPTOR and QueryEngine."""
     entities = (await session.execute(
         select(EntityRow).where(EntityRow.case_id == case_id).order_by(EntityRow.seq)
     )).scalars().all()
     mentions = (await session.execute(
-        select(EntityMention.entity_id, EntityMention.chunk_id)
+        select(EntityMention.entity_id, EntityMention.passage_id)
         .join(EntityRow, EntityRow.id == EntityMention.entity_id)
         .where(EntityRow.case_id == case_id)
         .order_by(EntityMention.entity_id, EntityMention.position)
     )).all()
-    chunks_by_entity: Dict[uuid.UUID, List[str]] = {}
-    for entity_id, chunk_id in mentions:
-        chunks_by_entity.setdefault(entity_id, []).append(chunk_id)
+    passages_by_entity: Dict[uuid.UUID, List[str]] = {}
+    for entity_id, passage_id in mentions:
+        passages_by_entity.setdefault(entity_id, []).append(str(passage_id))
 
     rels = (await session.execute(
         select(RelationshipRow).where(RelationshipRow.case_id == case_id).order_by(RelationshipRow.seq)
@@ -156,13 +143,9 @@ async def load_case_state(session: AsyncSession, case_id: uuid.UUID) -> Dict:
     communities = (await session.execute(
         select(CommunityRow).where(CommunityRow.case_id == case_id)
     )).scalars().all()
-    raptor_nodes = (await session.execute(
-        select(RaptorNodeRow).where(RaptorNodeRow.case_id == case_id).order_by(RaptorNodeRow.seq)
+    passages = (await session.execute(
+        select(PassageRow).where(PassageRow.case_id == case_id).order_by(PassageRow.seq)
     )).scalars().all()
-    hippo_nodes = (await session.execute(
-        select(HippoNodeRow).where(HippoNodeRow.case_id == case_id).order_by(HippoNodeRow.seq)
-    )).scalars().all()
-    meta = await session.get(CaseIndexMeta, case_id)
     recent = (await session.execute(
         select(ChatMessage.question, ChatMessage.answer)
         .where(ChatMessage.case_id == case_id)
@@ -178,7 +161,7 @@ async def load_case_state(session: AsyncSession, case_id: uuid.UUID) -> Dict:
             "entities": [
                 {
                     "id": str(e.id), "name": e.name, "type": e.type, "description": e.description,
-                    "source_chunks": chunks_by_entity.get(e.id, []),
+                    "source_chunks": passages_by_entity.get(e.id, []),
                 }
                 for e in entities
             ],
@@ -200,28 +183,15 @@ async def load_case_state(session: AsyncSession, case_id: uuid.UUID) -> Dict:
                     "parent": str(n.parent_id) if n.parent_id else None,
                     "embedding": _vec(n.embedding), "doc_ids": list(n.doc_ids),
                 }
-                for n in raptor_nodes
+                for n in passages
             ],
-            "root_ids": list(meta.raptor_root_ids) if meta else [],
-        },
-        "hippo": {
-            "nodes": [
-                {
-                    "id": str(n.id), "text": n.text, "embedding": _vec(n.embedding), "level": n.level,
-                    "parent_id": str(n.parent_id) if n.parent_id else None,
-                    "child_ids": [str(c) for c in n.child_ids],
-                    "doc_id": n.doc_id, "chunk_idx": n.chunk_idx,
-                }
-                for n in hippo_nodes
-            ],
-            "levels": dict(meta.hippo_levels) if meta else {},
         },
         "engine": {
             "history": [{"question": q, "answer": a} for q, a in reversed(recent)],
         },
     }
     logger.debug(
-        f"load_case_state: case={case_id}, entities={len(entities)}, raptor={len(raptor_nodes)}, "
-        f"hippo={len(hippo_nodes)}, history={len(recent)}"
+        f"load_case_state: case={case_id}, entities={len(entities)}, passages={len(passages)}, "
+        f"history={len(recent)}"
     )
     return state

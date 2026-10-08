@@ -13,11 +13,11 @@ from sqlalchemy.orm import Mapped, mapped_column
 from backend.core.database import Base
 from backend.models.common import check_in
 
-QUERY_METHODS = ("graphrag", "raptor", "hippo", "hybrid")
+QUERY_METHODS = ("standard", "refined")
 
 
 class ChatMessage(Base):
-    """One question/answer turn in a case's chat. Also the query log used for comparing methods."""
+    """One question/answer turn in a case's chat. Also the query log for comparing standard vs refined."""
     __tablename__ = "chat_messages"
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)

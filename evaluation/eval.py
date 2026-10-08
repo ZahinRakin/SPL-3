@@ -1,5 +1,6 @@
 """
-Evaluation harness for the GraphRAG/RAPTOR/HiPPO pipeline.
+Evaluation harness for the cascade (RAPTOR -> GraphRAG -> HippoRAG).
+Compare `--method standard` (plain RAG baseline) with `--method refined` (the cascade).
 
 Metrics
 -------
@@ -11,7 +12,7 @@ Metrics
 
 Usage
 -----
-  python -m evaluation.eval --qa_pairs eval_data.json --method hybrid
+  python -m evaluation.eval --qa_pairs eval_data.json --method refined
 """
 
 import argparse
@@ -89,8 +90,8 @@ async def evaluate(
     method: Method,
     graphrag: GraphRAGIndexer,
     raptor: RaptorRunner,
-    hippo: HippoRetriever,
 ) -> Dict[str, Any]:
+    hippo = HippoRetriever(graphrag=graphrag, raptor=raptor)
     engine = QueryEngine(graphrag=graphrag, raptor=raptor, hippo=hippo)
     results = []
 
@@ -136,7 +137,6 @@ async def _main(args: argparse.Namespace):
     # bootstrap pipeline (no documents — just test query engine on pre-built state)
     graphrag = GraphRAGIndexer()
     raptor   = RaptorRunner()
-    hippo    = HippoRetriever()
 
     if args.docs_dir:
         from backend.pipeline.document_processor import extract_text
@@ -145,12 +145,12 @@ async def _main(args: argparse.Namespace):
             if fp.is_file():
                 text = await extract_text(str(fp))
                 if text.strip():
+                    # Same cascade as the API: RAPTOR first, then the graph over chunks + summaries.
                     chunks = graphrag.chunk_text(text, fp.stem)
-                    await graphrag.index_document(fp.stem, text)
                     await raptor.build_tree(chunks)
-                    await hippo.index_passages(chunks)
+                    await graphrag.index_document(fp.stem, text, raptor.passages(fp.stem) or chunks)
 
-    report = await evaluate(qa_pairs, args.method, graphrag, raptor, hippo)  # type: ignore[arg-type]
+    report = await evaluate(qa_pairs, args.method, graphrag, raptor)  # type: ignore[arg-type]
     out_path = Path(args.output)
     out_path.write_text(json.dumps(report, indent=2))
     logger.info(f"\nReport written to {out_path}")
@@ -163,7 +163,8 @@ if __name__ == "__main__":
     logger.info("Starting evaluation...")
     parser = argparse.ArgumentParser(description="Evaluate GraphRAG pipeline")
     parser.add_argument("--qa_pairs",  required=True,          help="JSON file with [{question, reference}]")
-    parser.add_argument("--method",    default="hybrid",       help="graphrag|raptor|hippo|hybrid")
+    parser.add_argument("--method",    default="refined",      choices=["standard", "refined"],
+                        help="standard (plain RAG) or refined (the cascade)")
     parser.add_argument("--docs_dir",  default=None,           help="Directory of documents to index before evaluating")
     parser.add_argument("--output",    default="eval_report.json", help="Output JSON report path")
     asyncio.run(_main(parser.parse_args()))

@@ -1,0 +1,45 @@
+{
+ "dataset": "quality",
+ "split": "dev",
+ "questions": 193,
+ "ppr_weight": 0.25,
+ "budget": 8000,
+ "grid": [
+  1,
+  2,
+  4
+ ],
+ "selection": "S3 dev accuracy; tie \u2192 smaller m",
+ "results": {
+  "S2_tune": {
+   "n": 193,
+   "accuracy": 0.6736,
+   "unparseable": 0,
+   "mean_summaries_in_context": 0,
+   "mean_context_chars": 7338
+  },
+  "S3_m1": {
+   "n": 193,
+   "accuracy": 0.6684,
+   "unparseable": 0,
+   "mean_summaries_in_context": 0,
+   "mean_context_chars": 7330
+  },
+  "S3_m2": {
+   "n": 193,
+   "accuracy": 0.6684,
+   "unparseable": 0,
+   "mean_summaries_in_context": 0,
+   "mean_context_chars": 7328
+  },
+  "S3_m4": {
+   "n": 193,
+   "accuracy": 0.6684,
+   "unparseable": 0,
+   "mean_summaries_in_context": 0,
+   "mean_context_chars": 7321
+  }
+ },
+ "chosen_max_summaries": 1,
+ "tuned_at": "2026-10-09 06:37:19 UTC"
+}

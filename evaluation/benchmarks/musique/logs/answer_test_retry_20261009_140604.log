@@ -1,0 +1,101 @@
+2026-10-09 14:06:04,886 | INFO | [answer] start 2026-10-09 08:06:04 UTC argv=['--dataset', 'musique', '--split', 'test', '--systems', 'S4,S5', '--tag', 'retry', '--retry_errors'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:06:08,489 | DEBUG | GraphRAGIndexer.load_state: entities=106867, relationships=124350, communities=1588
+2026-10-09 14:06:09,048 | DEBUG | RaptorRunner.load_state: nodes=11656
+2026-10-09 14:06:09,519 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:06:09,824 | DEBUG | match_entities: question="Who is the chief judge of Friday Osanebi's birthplace?", matched=47
+2026-10-09 14:06:09,855 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 14:06:10,028 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:06:10,356 | DEBUG | match_entities: question='Who did the creator of Derech Mitzvosecha follow?', matched=8
+2026-10-09 14:06:10,408 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 14:06:10,565 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:06:11,606 | DEBUG | match_entities: question='What is the mascot of the operator of RV Wecoma?', matched=9
+2026-10-09 14:06:11,711 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 14:06:11,979 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:06:12,435 | DEBUG | match_entities: question='What is another notable work by the illustrator of Sylvester', matched=58
+2026-10-09 14:06:12,542 | DEBUG | HippoRetriever._seeds: 83 seed entities
+2026-10-09 14:06:13,424 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:06:13,730 | DEBUG | match_entities: question='How many atms does the bank that bought FleetBoston Financia', matched=89
+2026-10-09 14:06:13,764 | DEBUG | HippoRetriever._seeds: 123 seed entities
+2026-10-09 14:06:14,519 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:06:14,671 | DEBUG | embed_many: task_type=retrieval_document, texts=1588
+2026-10-09 14:06:14,887 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:06:15,126 | DEBUG | embed_many: task_type=retrieval_document, texts=1588
+2026-10-09 14:06:15,410 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:06:15,555 | DEBUG | embed_many: task_type=retrieval_document, texts=1588
+2026-10-09 14:06:15,790 | DEBUG | HippoRetriever.retrieve: seeds=83, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:06:15,962 | DEBUG | embed_many: task_type=retrieval_document, texts=1588
+2026-10-09 14:06:16,786 | DEBUG | HippoRetriever.retrieve: seeds=123, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:06:16,908 | DEBUG | embed_many: task_type=retrieval_document, texts=1588
+2026-10-09 14:07:22,315 | DEBUG | embed_many complete: 1588 vectors
+2026-10-09 14:07:22,371 | DEBUG | QueryEngine: embedded 1588 community summaries
+2026-10-09 14:07:22,391 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:22,395 | DEBUG | _build_context: method='refined', passages=8, extras=1, context_len=3411, budget=4000
+2026-10-09 14:07:22,401 | DEBUG | generate: json_mode=True, prompt_len=3838
+2026-10-09 14:07:22,403 | INFO | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 14:07:22,588 | DEBUG | embed_many complete: 1588 vectors
+2026-10-09 14:07:22,635 | DEBUG | QueryEngine: embedded 1588 community summaries
+2026-10-09 14:07:22,657 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:22,659 | DEBUG | _build_context: method='refined', passages=5, extras=1, context_len=3378, budget=4000
+2026-10-09 14:07:22,659 | DEBUG | generate: json_mode=True, prompt_len=3800
+2026-10-09 14:07:22,674 | DEBUG | embed_many complete: 1588 vectors
+2026-10-09 14:07:22,719 | DEBUG | QueryEngine: embedded 1588 community summaries
+2026-10-09 14:07:22,742 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:22,747 | DEBUG | _build_context: method='refined', passages=8, extras=1, context_len=3871, budget=4000
+2026-10-09 14:07:22,761 | DEBUG | generate: json_mode=True, prompt_len=4292
+2026-10-09 14:07:22,904 | DEBUG | embed_many complete: 1588 vectors
+2026-10-09 14:07:22,946 | DEBUG | QueryEngine: embedded 1588 community summaries
+2026-10-09 14:07:22,977 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:22,985 | DEBUG | _build_context: method='refined', passages=6, extras=1, context_len=3313, budget=4000
+2026-10-09 14:07:22,986 | DEBUG | generate: json_mode=True, prompt_len=3768
+2026-10-09 14:07:23,090 | DEBUG | embed_many complete: 1588 vectors
+2026-10-09 14:07:23,151 | DEBUG | QueryEngine: embedded 1588 community summaries
+2026-10-09 14:07:23,194 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:23,198 | DEBUG | _build_context: method='refined', passages=6, extras=1, context_len=3398, budget=4000
+2026-10-09 14:07:23,205 | DEBUG | generate: json_mode=True, prompt_len=3847
+2026-10-09 14:07:23,898 | DEBUG | generate complete: response_len=25
+2026-10-09 14:07:24,002 | DEBUG | generate complete: response_len=34
+2026-10-09 14:07:24,245 | DEBUG | generate complete: response_len=37
+2026-10-09 14:07:24,715 | DEBUG | generate complete: response_len=19
+2026-10-09 14:07:25,338 | DEBUG | generate complete: response_len=37
+2026-10-09 14:07:25,346 | INFO | [answer musique/S4] {'answered': 5, 'skipped_done': 0, 'errors': 0, 'seconds': 80.0}
+2026-10-09 14:07:25,416 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:07:25,593 | DEBUG | match_entities: question="Who is the chief judge of Friday Osanebi's birthplace?", matched=47
+2026-10-09 14:07:25,622 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 14:07:25,712 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:07:26,070 | DEBUG | match_entities: question='Who did the creator of Derech Mitzvosecha follow?', matched=8
+2026-10-09 14:07:26,207 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 14:07:26,280 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:07:26,666 | DEBUG | match_entities: question='What is the mascot of the operator of RV Wecoma?', matched=9
+2026-10-09 14:07:27,268 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 14:07:27,426 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:07:27,836 | DEBUG | match_entities: question='What is another notable work by the illustrator of Sylvester', matched=58
+2026-10-09 14:07:27,888 | DEBUG | HippoRetriever._seeds: 83 seed entities
+2026-10-09 14:07:28,039 | DEBUG | RaptorRunner.retrieve: top_k=11656, returned=11656
+2026-10-09 14:07:28,366 | DEBUG | match_entities: question='How many atms does the bank that bought FleetBoston Financia', matched=89
+2026-10-09 14:07:28,914 | DEBUG | HippoRetriever._seeds: 123 seed entities
+2026-10-09 14:07:29,574 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:07:29,714 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:29,716 | DEBUG | _build_context: method='refined', passages=8, extras=1, context_len=3411, budget=4000
+2026-10-09 14:07:29,717 | DEBUG | generate: json_mode=True, prompt_len=3838
+2026-10-09 14:07:29,892 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:07:30,060 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:30,063 | DEBUG | _build_context: method='refined', passages=5, extras=1, context_len=3378, budget=4000
+2026-10-09 14:07:30,064 | DEBUG | generate: json_mode=True, prompt_len=3800
+2026-10-09 14:07:30,067 | DEBUG | generate: cache hit
+2026-10-09 14:07:30,248 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:07:30,354 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:30,354 | DEBUG | _build_context: method='refined', passages=8, extras=1, context_len=3871, budget=4000
+2026-10-09 14:07:30,354 | DEBUG | generate: json_mode=True, prompt_len=4292
+2026-10-09 14:07:30,514 | DEBUG | HippoRetriever.retrieve: seeds=83, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:07:30,613 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:30,613 | DEBUG | _build_context: method='refined', passages=6, extras=1, context_len=3313, budget=4000
+2026-10-09 14:07:30,613 | DEBUG | generate: json_mode=True, prompt_len=3768
+2026-10-09 14:07:30,631 | DEBUG | generate: cache hit
+2026-10-09 14:07:30,776 | DEBUG | HippoRetriever.retrieve: seeds=123, chunks_with_entities=11654, graph_ranked=11654, summaries=0, returned=40
+2026-10-09 14:07:30,888 | DEBUG | _graph_extras: global_question=False, community_limit=2
+2026-10-09 14:07:30,888 | DEBUG | _build_context: method='refined', passages=6, extras=1, context_len=3398, budget=4000
+2026-10-09 14:07:30,888 | DEBUG | generate: json_mode=True, prompt_len=3847
+2026-10-09 14:07:30,888 | DEBUG | generate: cache hit
+2026-10-09 14:07:30,888 | DEBUG | generate: cache hit
+2026-10-09 14:07:30,888 | DEBUG | generate: cache hit
+2026-10-09 14:07:30,888 | INFO | [answer musique/S5] {'answered': 5, 'skipped_done': 0, 'errors': 0, 'seconds': 5.5}

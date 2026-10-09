@@ -55,3 +55,6 @@ Cumulative ≈ **$3.461**.
 
 Decision: continue in plan order; the GraphRAG-Bench subsample size is fixed when it is reached,
 from the money actually left.
+| 4 | MuSiQue test: rankings (free) + answers C0,S0,S1,S2,S3,S4,S5 × 800, + retry of 10 timeouts | 0.39 | 4.3118 | 4.6193 | **0.3075** | **4.1618** | answer run reported $0.307; 10 retries $0.0005; S3 ≡ S2 and (by a defect) S4 ≈ S2 → cache hits |
+| 5 | QuALITY index (50 articles) | 0.40 | 3.9185 | 4.2748 | **0.3564** | **3.8173** | 975 chunks, 253 RAPTOR summaries, 9,797 entities, 227 community summaries; ran while MuSiQue test rankings (no LLM) ran |
+| 6 | QuALITY dev tuning of m: S2 + S3 (m = 1, 2, 4) × 193 dev q, then the summary-fix prototype S3 (m = 1, 2, 4) × 193 | 0.11 | 4.2748 | 4.3118 | **0.0370** | **3.8543** | 1,351 dev answers ≈ $0.000027 each (many short MC replies; S3 ≡ S2 before the fix → cache hits) |

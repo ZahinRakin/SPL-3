@@ -1,0 +1,180 @@
+2026-10-09 12:55:27,861 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 12:55:29,339 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:55:29,339 | INFO | graphrag | [answer] start 2026-10-09 06:55:29 UTC argv=['--dataset', 'musique', '--split', 'test', '--systems', 'C0,S0,S1,S2,S3,S4,S5'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:55:29,739 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 12:56:06,748 | INFO | graphrag | [answer musique/C0] {'answered': 800, 'skipped_done': 0, 'errors': 0, 'seconds': 37.0}
+2026-10-09 12:56:50,568 | INFO | graphrag | [answer musique/S0] {'answered': 800, 'skipped_done': 0, 'errors': 0, 'seconds': 43.8}
+2026-10-09 12:57:39,918 | INFO | graphrag | [answer musique/S1] {'answered': 800, 'skipped_done': 0, 'errors': 0, 'seconds': 49.4}
+2026-10-09 13:01:15,714 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:15,714 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:15,714 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:15,714 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:15,714 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:27,134 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:01:27,134 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:01:27,468 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:01:27,468 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:01:27,468 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:01:27,470 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:05:32,092 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:05:32,092 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:05:55,903 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:05:55,905 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:05:55,905 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:06:19,095 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:06:26,845 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:06:29,445 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:06:37,324 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:06:42,864 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:06:50,341 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:05,250 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:30,554 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,176 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,538 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,538 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,545 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,545 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:31,545 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:07:49,072 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:08:03,834 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:08:24,235 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:08:24,235 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:08:38,938 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:08:57,018 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:04,163 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:04,417 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:17,488 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:36,679 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:38,826 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:09:55,679 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:03,223 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:23,011 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:23,744 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:24,173 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:43,454 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:46,192 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:10:46,590 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:11:01,576 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:11:10,127 | INFO | graphrag | [answer musique/S2] {'answered': 800, 'skipped_done': 0, 'errors': 0, 'seconds': 810.2}
+2026-10-09 13:24:23,515 | INFO | graphrag | [answer musique/S3] {'answered': 800, 'skipped_done': 0, 'errors': 0, 'seconds': 793.4}
+2026-10-09 13:30:55,383 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:31:27,580 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:32:03,213 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:32:42,775 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:33:30,472 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:33:30,545 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:34:01,176 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:34:34,052 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:34:34,102 | ERROR | graphrag | [answer musique/S4] 2hop__226204_69048: APITimeoutError: Request timed out.
+2026-10-09 13:34:36,003 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:35:04,823 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:35:15,407 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:35:36,696 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:36:04,441 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:36:10,178 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:36:48,837 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:36:59,434 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:37:02,396 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:37:02,396 | ERROR | graphrag | [answer musique/S4] 2hop__121145_561444: APITimeoutError: Request timed out.
+2026-10-09 13:37:02,476 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:37:30,164 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:37:32,284 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:37:36,639 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:38:02,796 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:38:02,796 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:38:32,261 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:38:32,261 | ERROR | graphrag | [answer musique/S4] 2hop__351045_47134: APITimeoutError: Request timed out.
+2026-10-09 13:38:36,286 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:38:36,286 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:39:20,774 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:39:20,774 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:40:21,335 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:40:21,335 | ERROR | graphrag | [answer musique/S4] 2hop__126306_396277: APITimeoutError: Request timed out.
+2026-10-09 13:40:21,335 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:40:21,335 | ERROR | graphrag | [answer musique/S4] 2hop__6827_79845: APITimeoutError: Request timed out.
+2026-10-09 13:42:41,287 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:43:26,991 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:43:37,197 | INFO | graphrag | [answer musique/S4] {'answered': 800, 'skipped_done': 0, 'errors': 5, 'seconds': 1153.7}
+2026-10-09 13:46:44,774 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:47:14,919 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:47:46,898 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:48:25,703 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:49:07,986 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:49:13,136 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:49:39,287 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:50:06,919 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:50:06,935 | ERROR | graphrag | [answer musique/S5] 2hop__226204_69048: APITimeoutError: Request timed out.
+2026-10-09 13:50:12,325 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:50:48,753 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:50:50,811 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:51:17,296 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:51:36,233 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:51:47,066 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:52:24,246 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:52:33,275 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:52:33,275 | ERROR | graphrag | [answer musique/S5] 2hop__121145_561444: APITimeoutError: Request timed out.
+2026-10-09 13:52:50,947 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:52:54,450 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 13:53:04,118 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:53:20,464 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:53:22,392 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 13:53:47,903 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:53:51,199 | WARNING | graphrag | generate: APITimeoutError, retrying in 8.0s (retry 3/5)
+2026-10-09 13:54:01,615 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:54:01,615 | ERROR | graphrag | [answer musique/S5] 2hop__351045_47134: APITimeoutError: Request timed out.
+2026-10-09 13:54:27,273 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:54:31,895 | WARNING | graphrag | generate: APITimeoutError, retrying in 16.0s (retry 4/5)
+2026-10-09 13:55:11,807 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:55:19,201 | WARNING | graphrag | generate: APITimeoutError, retrying in 30.0s (retry 5/5)
+2026-10-09 13:56:09,274 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:56:09,274 | ERROR | graphrag | [answer musique/S5] 2hop__126306_396277: APITimeoutError: Request timed out.
+2026-10-09 13:56:22,535 | ERROR | graphrag | generate failed after 6 attempts: Request timed out.
+2026-10-09 13:56:22,560 | ERROR | graphrag | [answer musique/S5] 2hop__6827_79845: APITimeoutError: Request timed out.
+2026-10-09 13:59:37,144 | INFO | graphrag | [answer musique/S5] {'answered': 800, 'skipped_done': 0, 'errors': 5, 'seconds': 959.9}
+{
+ "summary": {
+  "C0": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 37.0
+  },
+  "S0": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 43.8
+  },
+  "S1": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 49.4
+  },
+  "S2": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 810.2
+  },
+  "S3": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 793.4
+  },
+  "S4": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 5,
+   "seconds": 1153.7
+  },
+  "S5": {
+   "answered": 800,
+   "skipped_done": 0,
+   "errors": 5,
+   "seconds": 959.9
+  }
+ },
+ "cost": 0.307
+}

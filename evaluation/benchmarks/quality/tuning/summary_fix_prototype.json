@@ -1,0 +1,30 @@
+{
+ "created_at": "2026-10-09 06:40:34 UTC",
+ "change": "summaries inherit best descendant chunk graph rank",
+ "ppr_weight": 0.25,
+ "budget": 8000,
+ "split": "dev",
+ "results": {
+  "m1": {
+   "summaries_top8": 0.456,
+   "summaries_in_context": 0.135,
+   "questions_with_summary_in_context": 26,
+   "accuracy": 0.6321,
+   "errors": 0
+  },
+  "m2": {
+   "summaries_top8": 0.699,
+   "summaries_in_context": 0.145,
+   "questions_with_summary_in_context": 26,
+   "accuracy": 0.6269,
+   "errors": 0
+  },
+  "m4": {
+   "summaries_top8": 0.808,
+   "summaries_in_context": 0.145,
+   "questions_with_summary_in_context": 26,
+   "accuracy": 0.6269,
+   "errors": 0
+  }
+ }
+}

@@ -1,0 +1,320 @@
+2026-10-09 12:26:51,516 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 12:26:53,171 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:26:53,171 | INFO | graphrag | [index] start 2026-10-09 06:26:53 UTC argv=['--dataset', 'quality', '--name', 'full'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:26:54,249 | INFO | graphrag | [index full] 50 docs, 975 chunks
+2026-10-09 12:26:54,249 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 11 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 11 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 12 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 9 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:26:54,250 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:26:56,665 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 12:27:00,496 | WARNING | graphrag | embed_many: 1/2 texts cut to 6000 chars
+2026-10-09 12:27:01,590 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 15, 'levels': {0: 11, 1: 3, 2: 1}}
+2026-10-09 12:27:01,590 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:27:01,876 | WARNING | graphrag | embed_many: 1/2 texts cut to 6000 chars
+2026-10-09 12:27:02,167 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:02,256 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 10, 1: 2, 2: 1}}
+2026-10-09 12:27:02,256 | INFO | graphrag | RaptorRunner.build_tree: 27 chunks, max_levels=3
+2026-10-09 12:27:02,813 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 10, 1: 2, 2: 1}}
+2026-10-09 12:27:02,813 | INFO | graphrag | RaptorRunner.build_tree: 15 chunks, max_levels=3
+2026-10-09 12:27:02,852 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 15, 'levels': {0: 11, 1: 3, 2: 1}}
+2026-10-09 12:27:02,852 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:03,654 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 16, 'levels': {0: 12, 1: 3, 2: 1}}
+2026-10-09 12:27:03,654 | INFO | graphrag | RaptorRunner.build_tree: 28 chunks, max_levels=3
+2026-10-09 12:27:03,717 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 10, 1: 2, 2: 1}}
+2026-10-09 12:27:03,717 | INFO | graphrag | RaptorRunner.build_tree: 12 chunks, max_levels=3
+2026-10-09 12:27:04,128 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:04,593 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 12, 'levels': {0: 9, 1: 2, 2: 1}}
+2026-10-09 12:27:04,593 | INFO | graphrag | RaptorRunner.build_tree: 29 chunks, max_levels=3
+2026-10-09 12:27:04,653 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 10, 1: 2, 2: 1}}
+2026-10-09 12:27:04,653 | INFO | graphrag | RaptorRunner.build_tree: 10 chunks, max_levels=3
+2026-10-09 12:27:06,894 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 12, 'levels': {0: 10, 1: 1, 2: 1}}
+2026-10-09 12:27:06,894 | INFO | graphrag | RaptorRunner.build_tree: 25 chunks, max_levels=3
+2026-10-09 12:27:07,224 | WARNING | graphrag | embed_many: 1/3 texts cut to 6000 chars
+2026-10-09 12:27:07,406 | WARNING | graphrag | embed_many: 1/4 texts cut to 6000 chars
+2026-10-09 12:27:07,629 | WARNING | graphrag | embed_many: 1/6 texts cut to 6000 chars
+2026-10-09 12:27:08,886 | WARNING | graphrag | embed_many: 1/4 texts cut to 6000 chars
+2026-10-09 12:27:09,592 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:10,346 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:10,526 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 19, 'levels': {0: 15, 1: 3, 2: 1}}
+2026-10-09 12:27:10,526 | INFO | graphrag | RaptorRunner.build_tree: 20 chunks, max_levels=3
+2026-10-09 12:27:10,959 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 15, 'levels': {0: 12, 1: 2, 2: 1}}
+2026-10-09 12:27:10,959 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:11,030 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 10, 1: 2, 2: 1}}
+2026-10-09 12:27:11,030 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:11,796 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:12,131 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 24, 1: 4, 2: 1}}
+2026-10-09 12:27:12,131 | INFO | graphrag | RaptorRunner.build_tree: 25 chunks, max_levels=3
+2026-10-09 12:27:12,191 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 36, 'levels': {0: 28, 1: 6, 2: 1, 3: 1}}
+2026-10-09 12:27:12,191 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:13,173 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 25, 1: 5, 2: 1}}
+2026-10-09 12:27:13,173 | INFO | graphrag | RaptorRunner.build_tree: 27 chunks, max_levels=3
+2026-10-09 12:27:13,193 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 36, 'levels': {0: 29, 1: 4, 2: 2, 3: 1}}
+2026-10-09 12:27:13,193 | INFO | graphrag | RaptorRunner.build_tree: 25 chunks, max_levels=3
+2026-10-09 12:27:13,321 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:14,229 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 34, 'levels': {0: 27, 1: 5, 2: 1, 3: 1}}
+2026-10-09 12:27:14,229 | INFO | graphrag | RaptorRunner.build_tree: 27 chunks, max_levels=3
+2026-10-09 12:27:15,671 | WARNING | graphrag | embed_many: 1/5 texts cut to 6000 chars
+2026-10-09 12:27:18,116 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 25, 'levels': {0: 20, 1: 4, 2: 1}}
+2026-10-09 12:27:18,116 | INFO | graphrag | RaptorRunner.build_tree: 27 chunks, max_levels=3
+2026-10-09 12:27:18,921 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:19,011 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 23, 1: 5, 2: 1}}
+2026-10-09 12:27:19,011 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:19,816 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 25, 1: 5, 2: 1}}
+2026-10-09 12:27:19,816 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:19,851 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 30, 'levels': {0: 25, 1: 4, 2: 1}}
+2026-10-09 12:27:19,852 | INFO | graphrag | RaptorRunner.build_tree: 15 chunks, max_levels=3
+2026-10-09 12:27:20,712 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 24, 1: 5, 2: 1, 3: 1}}
+2026-10-09 12:27:20,712 | INFO | graphrag | RaptorRunner.build_tree: 15 chunks, max_levels=3
+2026-10-09 12:27:21,073 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 34, 'levels': {0: 27, 1: 5, 2: 1, 3: 1}}
+2026-10-09 12:27:21,073 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:21,866 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 24, 1: 5, 2: 1, 3: 1}}
+2026-10-09 12:27:21,866 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:22,685 | WARNING | graphrag | embed_many: 1/4 texts cut to 6000 chars
+2026-10-09 12:27:24,505 | WARNING | graphrag | embed_many: 1/5 texts cut to 6000 chars
+2026-10-09 12:27:24,830 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 27007 chars cut to 24000
+2026-10-09 12:27:25,700 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 35, 'levels': {0: 27, 1: 5, 2: 2, 3: 1}}
+2026-10-09 12:27:25,700 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:25,756 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 19, 'levels': {0: 15, 1: 3, 2: 1}}
+2026-10-09 12:27:25,757 | INFO | graphrag | RaptorRunner.build_tree: 21 chunks, max_levels=3
+2026-10-09 12:27:26,131 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:26,595 | WARNING | graphrag | embed_many: 1/4 texts cut to 6000 chars
+2026-10-09 12:27:26,700 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 19, 'levels': {0: 15, 1: 3, 2: 1}}
+2026-10-09 12:27:26,700 | INFO | graphrag | RaptorRunner.build_tree: 22 chunks, max_levels=3
+2026-10-09 12:27:26,790 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:27,553 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 24, 1: 4, 2: 1}}
+2026-10-09 12:27:27,554 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:27,712 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 30, 'levels': {0: 24, 1: 5, 2: 1}}
+2026-10-09 12:27:27,712 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:28,659 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:28,746 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 34, 'levels': {0: 27, 1: 5, 2: 1, 3: 1}}
+2026-10-09 12:27:28,746 | INFO | graphrag | RaptorRunner.build_tree: 25 chunks, max_levels=3
+2026-10-09 12:27:28,786 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 24, 1: 4, 2: 1}}
+2026-10-09 12:27:28,786 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:29,200 | WARNING | graphrag | embed_many: 1/3 texts cut to 6000 chars
+2026-10-09 12:27:30,100 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 33, 'levels': {0: 24, 1: 6, 2: 2, 3: 1}}
+2026-10-09 12:27:30,100 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:32,644 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 27, 'levels': {0: 23, 1: 3, 2: 1}}
+2026-10-09 12:27:32,644 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:32,983 | WARNING | graphrag | embed_many: 1/3 texts cut to 6000 chars
+2026-10-09 12:27:33,166 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 26, 'levels': {0: 21, 1: 4, 2: 1}}
+2026-10-09 12:27:33,166 | INFO | graphrag | RaptorRunner.build_tree: 21 chunks, max_levels=3
+2026-10-09 12:27:33,805 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 28, 'levels': {0: 23, 1: 4, 2: 1}}
+2026-10-09 12:27:33,805 | INFO | graphrag | RaptorRunner.build_tree: 23 chunks, max_levels=3
+2026-10-09 12:27:34,560 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 28, 'levels': {0: 22, 1: 5, 2: 1}}
+2026-10-09 12:27:34,560 | INFO | graphrag | RaptorRunner.build_tree: 24 chunks, max_levels=3
+2026-10-09 12:27:35,471 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 25, 1: 3, 2: 1}}
+2026-10-09 12:27:35,472 | INFO | graphrag | RaptorRunner.build_tree: 11 chunks, max_levels=3
+2026-10-09 12:27:36,068 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 23, 1: 5, 2: 1}}
+2026-10-09 12:27:36,068 | INFO | graphrag | RaptorRunner.build_tree: 19 chunks, max_levels=3
+2026-10-09 12:27:36,542 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 23, 1: 5, 2: 2, 3: 1}}
+2026-10-09 12:27:36,542 | INFO | graphrag | RaptorRunner.build_tree: 18 chunks, max_levels=3
+2026-10-09 12:27:37,447 | WARNING | graphrag | embed_many: 1/4 texts cut to 6000 chars
+2026-10-09 12:27:37,974 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:38,067 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 23, 1: 5, 2: 1}}
+2026-10-09 12:27:38,067 | INFO | graphrag | RaptorRunner.build_tree: 13 chunks, max_levels=3
+2026-10-09 12:27:38,374 | WARNING | graphrag | embed_many: 1/5 texts cut to 6000 chars
+2026-10-09 12:27:38,683 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:38,807 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 26602 chars cut to 24000
+2026-10-09 12:27:38,874 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 29, 'levels': {0: 23, 1: 5, 2: 1}}
+2026-10-09 12:27:38,874 | INFO | graphrag | RaptorRunner.build_tree: 12 chunks, max_levels=3
+2026-10-09 12:27:39,013 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:40,239 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 26, 'levels': {0: 21, 1: 4, 2: 1}}
+2026-10-09 12:27:40,239 | INFO | graphrag | RaptorRunner.build_tree: 17 chunks, max_levels=3
+2026-10-09 12:27:40,573 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 13, 'levels': {0: 11, 1: 1, 2: 1}}
+2026-10-09 12:27:40,620 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 28, 'levels': {0: 23, 1: 4, 2: 1}}
+2026-10-09 12:27:41,529 | WARNING | graphrag | embed_many: 1/3 texts cut to 6000 chars
+2026-10-09 12:27:41,562 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 30, 'levels': {0: 24, 1: 5, 2: 1}}
+2026-10-09 12:27:42,116 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:42,229 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 23, 'levels': {0: 19, 1: 3, 2: 1}}
+2026-10-09 12:27:42,260 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 17, 'levels': {0: 13, 1: 3, 2: 1}}
+2026-10-09 12:27:42,316 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 23, 'levels': {0: 18, 1: 4, 2: 1}}
+2026-10-09 12:27:44,754 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:44,814 | WARNING | graphrag | embed_many: 1/1 texts cut to 6000 chars
+2026-10-09 12:27:44,930 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 16, 'levels': {0: 12, 1: 3, 2: 1}}
+2026-10-09 12:27:45,020 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 22, 'levels': {0: 17, 1: 4, 2: 1}}
+2026-10-09 12:27:52,131 | WARNING | graphrag | Extraction for '05d5a0d2-ab64-49fa-8dfa-9c48f527ea99' was malformed: 0 bare-string entities converted, 26 items dropped
+2026-10-09 12:27:55,324 | WARNING | graphrag | Extraction for 'b85707a1-2500-4e45-8101-c0f3e4b7172d' was malformed: 0 bare-string entities converted, 30 items dropped
+2026-10-09 12:28:05,997 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 12:28:09,294 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 12:28:09,889 | INFO | graphrag | [index full] extraction 250/975
+2026-10-09 12:28:30,844 | INFO | graphrag | [index full] extraction 500/975
+2026-10-09 12:28:47,587 | WARNING | graphrag | Extraction for '127cc084-19e6-4f92-81b4-5611397f2f9f' was malformed: 0 bare-string entities converted, 1 items dropped
+2026-10-09 12:28:51,696 | INFO | graphrag | [index full] extraction 750/975
+2026-10-09 12:29:03,842 | WARNING | graphrag | Extraction for 'ea040cc6-58ca-430c-a033-ac56c7acc898' was malformed: 0 bare-string entities converted, 1 items dropped
+2026-10-09 12:29:13,409 | INFO | graphrag | index_document: doc_id='20002', passages=10
+2026-10-09 12:29:13,424 | INFO | graphrag | index_document complete: doc_id='20002', new_entities=137, new_relationships=98, alias_edges=5, graph_nodes=137
+2026-10-09 12:29:13,424 | INFO | graphrag | index_document endpoints: doc_id='20002', resolved={'exact': 177, 'fuzzy': 4, 'case': 5, 'created': 22}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:13,425 | INFO | graphrag | index_document: doc_id='20008', passages=11
+2026-10-09 12:29:13,436 | INFO | graphrag | index_document complete: doc_id='20008', new_entities=216, new_relationships=120, alias_edges=13, graph_nodes=353
+2026-10-09 12:29:13,436 | INFO | graphrag | index_document endpoints: doc_id='20008', resolved={'exact': 210, 'fuzzy': 12, 'case': 3, 'created': 33}, relationships_dropped={'self_loop': 0, 'ambiguous': 1, 'empty': 10}
+2026-10-09 12:29:13,436 | INFO | graphrag | index_document: doc_id='20020', passages=11
+2026-10-09 12:29:13,440 | INFO | graphrag | index_document complete: doc_id='20020', new_entities=123, new_relationships=98, alias_edges=9, graph_nodes=476
+2026-10-09 12:29:13,440 | INFO | graphrag | index_document endpoints: doc_id='20020', resolved={'exact': 199, 'fuzzy': 1, 'case': 2, 'created': 10}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 10}
+2026-10-09 12:29:13,440 | INFO | graphrag | index_document: doc_id='20027', passages=12
+2026-10-09 12:29:13,456 | INFO | graphrag | index_document complete: doc_id='20027', new_entities=201, new_relationships=148, alias_edges=5, graph_nodes=677
+2026-10-09 12:29:13,456 | INFO | graphrag | index_document endpoints: doc_id='20027', resolved={'exact': 276, 'fuzzy': 4, 'case': 4, 'created': 22}, relationships_dropped={'self_loop': 1, 'ambiguous': 2, 'empty': 0}
+2026-10-09 12:29:13,456 | INFO | graphrag | index_document: doc_id='20051', passages=10
+2026-10-09 12:29:13,465 | INFO | graphrag | index_document complete: doc_id='20051', new_entities=153, new_relationships=114, alias_edges=13, graph_nodes=830
+2026-10-09 12:29:13,465 | INFO | graphrag | index_document endpoints: doc_id='20051', resolved={'exact': 219, 'fuzzy': 4, 'case': 1, 'created': 10}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:13,465 | INFO | graphrag | index_document: doc_id='20055', passages=9
+2026-10-09 12:29:13,465 | WARNING | graphrag | Extraction for '05d5a0d2-ab64-49fa-8dfa-9c48f527ea99' was malformed: 0 bare-string entities converted, 26 items dropped
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document complete: doc_id='20055', new_entities=191, new_relationships=129, alias_edges=12, graph_nodes=1021
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document endpoints: doc_id='20055', resolved={'exact': 238, 'fuzzy': 2, 'case': 2, 'created': 24}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 12}
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document: doc_id='20056', passages=10
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document complete: doc_id='20056', new_entities=138, new_relationships=110, alias_edges=14, graph_nodes=1159
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document endpoints: doc_id='20056', resolved={'exact': 225, 'fuzzy': 2, 'case': 0, 'created': 9}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 13}
+2026-10-09 12:29:13,472 | INFO | graphrag | index_document: doc_id='20064', passages=10
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document complete: doc_id='20064', new_entities=142, new_relationships=100, alias_edges=13, graph_nodes=1301
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document endpoints: doc_id='20064', resolved={'exact': 180, 'fuzzy': 3, 'case': 2, 'created': 23}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 7}
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document: doc_id='20075', passages=10
+2026-10-09 12:29:13,487 | WARNING | graphrag | Extraction for 'b85707a1-2500-4e45-8101-c0f3e4b7172d' was malformed: 0 bare-string entities converted, 30 items dropped
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document complete: doc_id='20075', new_entities=119, new_relationships=97, alias_edges=6, graph_nodes=1420
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document endpoints: doc_id='20075', resolved={'exact': 182, 'fuzzy': 0, 'case': 6, 'created': 16}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 23}
+2026-10-09 12:29:13,487 | INFO | graphrag | index_document: doc_id='22073', passages=27
+2026-10-09 12:29:13,519 | INFO | graphrag | index_document complete: doc_id='22073', new_entities=379, new_relationships=275, alias_edges=23, graph_nodes=1799
+2026-10-09 12:29:13,519 | INFO | graphrag | index_document endpoints: doc_id='22073', resolved={'exact': 493, 'fuzzy': 2, 'case': 42, 'created': 41}, relationships_dropped={'self_loop': 0, 'ambiguous': 12, 'empty': 23}
+2026-10-09 12:29:13,519 | INFO | graphrag | index_document: doc_id='22102', passages=15
+2026-10-09 12:29:13,537 | INFO | graphrag | index_document complete: doc_id='22102', new_entities=202, new_relationships=186, alias_edges=16, graph_nodes=2001
+2026-10-09 12:29:13,537 | INFO | graphrag | index_document endpoints: doc_id='22102', resolved={'exact': 389, 'fuzzy': 1, 'case': 6, 'created': 18}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:13,537 | INFO | graphrag | index_document: doc_id='22579', passages=24
+2026-10-09 12:29:13,551 | INFO | graphrag | index_document complete: doc_id='22579', new_entities=350, new_relationships=263, alias_edges=14, graph_nodes=2351
+2026-10-09 12:29:13,551 | INFO | graphrag | index_document endpoints: doc_id='22579', resolved={'exact': 490, 'fuzzy': 15, 'case': 14, 'created': 51}, relationships_dropped={'self_loop': 2, 'ambiguous': 4, 'empty': 0}
+2026-10-09 12:29:13,551 | INFO | graphrag | index_document: doc_id='22867', passages=28
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document complete: doc_id='22867', new_entities=312, new_relationships=265, alias_edges=25, graph_nodes=2663
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document endpoints: doc_id='22867', resolved={'exact': 801, 'fuzzy': 9, 'case': 13, 'created': 35}, relationships_dropped={'self_loop': 2, 'ambiguous': 16, 'empty': 10}
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document: doc_id='22875', passages=12
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document complete: doc_id='22875', new_entities=99, new_relationships=100, alias_edges=12, graph_nodes=2762
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document endpoints: doc_id='22875', resolved={'exact': 228, 'fuzzy': 4, 'case': 6, 'created': 8}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:13,583 | INFO | graphrag | index_document: doc_id='22876', passages=29
+2026-10-09 12:29:13,599 | INFO | graphrag | index_document complete: doc_id='22876', new_entities=207, new_relationships=184, alias_edges=17, graph_nodes=2969
+2026-10-09 12:29:13,599 | INFO | graphrag | index_document endpoints: doc_id='22876', resolved={'exact': 447, 'fuzzy': 5, 'case': 9, 'created': 17}, relationships_dropped={'self_loop': 0, 'ambiguous': 10, 'empty': 0}
+2026-10-09 12:29:13,599 | INFO | graphrag | index_document: doc_id='22966', passages=10
+2026-10-09 12:29:13,619 | INFO | graphrag | index_document complete: doc_id='22966', new_entities=128, new_relationships=110, alias_edges=15, graph_nodes=3097
+2026-10-09 12:29:13,619 | INFO | graphrag | index_document endpoints: doc_id='22966', resolved={'exact': 227, 'fuzzy': 1, 'case': 1, 'created': 5}, relationships_dropped={'self_loop': 0, 'ambiguous': 2, 'empty': 0}
+2026-10-09 12:29:13,619 | INFO | graphrag | index_document: doc_id='23104', passages=25
+2026-10-09 12:29:13,630 | INFO | graphrag | index_document complete: doc_id='23104', new_entities=187, new_relationships=186, alias_edges=16, graph_nodes=3284
+2026-10-09 12:29:13,630 | INFO | graphrag | index_document endpoints: doc_id='23104', resolved={'exact': 435, 'fuzzy': 1, 'case': 21, 'created': 29}, relationships_dropped={'self_loop': 1, 'ambiguous': 6, 'empty': 19}
+2026-10-09 12:29:13,630 | INFO | graphrag | index_document: doc_id='23563', passages=20
+2026-10-09 12:29:13,650 | INFO | graphrag | index_document complete: doc_id='23563', new_entities=180, new_relationships=188, alias_edges=17, graph_nodes=3464
+2026-10-09 12:29:13,650 | INFO | graphrag | index_document endpoints: doc_id='23563', resolved={'exact': 403, 'fuzzy': 2, 'case': 17, 'created': 14}, relationships_dropped={'self_loop': 0, 'ambiguous': 2, 'empty': 0}
+2026-10-09 12:29:13,650 | INFO | graphrag | index_document: doc_id='40965', passages=23
+2026-10-09 12:29:13,664 | INFO | graphrag | index_document complete: doc_id='40965', new_entities=197, new_relationships=219, alias_edges=19, graph_nodes=3661
+2026-10-09 12:29:13,664 | INFO | graphrag | index_document endpoints: doc_id='40965', resolved={'exact': 508, 'fuzzy': 0, 'case': 0, 'created': 4}, relationships_dropped={'self_loop': 0, 'ambiguous': 2, 'empty': 0}
+2026-10-09 12:29:13,664 | INFO | graphrag | index_document: doc_id='49897', passages=24
+2026-10-09 12:29:13,680 | INFO | graphrag | index_document complete: doc_id='49897', new_entities=172, new_relationships=173, alias_edges=7, graph_nodes=3833
+2026-10-09 12:29:13,680 | INFO | graphrag | index_document endpoints: doc_id='49897', resolved={'exact': 483, 'fuzzy': 2, 'case': 9, 'created': 10}, relationships_dropped={'self_loop': 0, 'ambiguous': 3, 'empty': 0}
+2026-10-09 12:29:13,680 | INFO | graphrag | index_document: doc_id='50818', passages=25
+2026-10-09 12:29:13,694 | INFO | graphrag | index_document complete: doc_id='50818', new_entities=187, new_relationships=179, alias_edges=13, graph_nodes=4020
+2026-10-09 12:29:13,694 | INFO | graphrag | index_document endpoints: doc_id='50818', resolved={'exact': 430, 'fuzzy': 0, 'case': 1, 'created': 13}, relationships_dropped={'self_loop': 0, 'ambiguous': 10, 'empty': 0}
+2026-10-09 12:29:13,694 | INFO | graphrag | index_document: doc_id='51027', passages=24
+2026-10-09 12:29:13,708 | INFO | graphrag | index_document complete: doc_id='51027', new_entities=164, new_relationships=159, alias_edges=19, graph_nodes=4184
+2026-10-09 12:29:13,708 | INFO | graphrag | index_document endpoints: doc_id='51027', resolved={'exact': 388, 'fuzzy': 8, 'case': 7, 'created': 13}, relationships_dropped={'self_loop': 3, 'ambiguous': 9, 'empty': 12}
+2026-10-09 12:29:13,708 | INFO | graphrag | index_document: doc_id='51274', passages=27
+2026-10-09 12:29:13,724 | INFO | graphrag | index_document complete: doc_id='51274', new_entities=224, new_relationships=213, alias_edges=16, graph_nodes=4408
+2026-10-09 12:29:13,724 | INFO | graphrag | index_document endpoints: doc_id='51274', resolved={'exact': 468, 'fuzzy': 2, 'case': 22, 'created': 6}, relationships_dropped={'self_loop': 1, 'ambiguous': 1, 'empty': 0}
+2026-10-09 12:29:13,724 | INFO | graphrag | index_document: doc_id='51295', passages=25
+2026-10-09 12:29:13,741 | INFO | graphrag | index_document complete: doc_id='51295', new_entities=217, new_relationships=237, alias_edges=26, graph_nodes=4625
+2026-10-09 12:29:13,741 | INFO | graphrag | index_document endpoints: doc_id='51295', resolved={'exact': 500, 'fuzzy': 0, 'case': 17, 'created': 13}, relationships_dropped={'self_loop': 0, 'ambiguous': 4, 'empty': 5}
+2026-10-09 12:29:13,741 | INFO | graphrag | index_document: doc_id='51351', passages=27
+2026-10-09 12:29:13,761 | INFO | graphrag | index_document complete: doc_id='51351', new_entities=229, new_relationships=219, alias_edges=17, graph_nodes=4854
+2026-10-09 12:29:13,761 | INFO | graphrag | index_document endpoints: doc_id='51351', resolved={'exact': 463, 'fuzzy': 10, 'case': 13, 'created': 20}, relationships_dropped={'self_loop': 1, 'ambiguous': 18, 'empty': 0}
+2026-10-09 12:29:13,761 | INFO | graphrag | index_document: doc_id='51362', passages=27
+2026-10-09 12:29:13,775 | INFO | graphrag | index_document complete: doc_id='51362', new_entities=243, new_relationships=241, alias_edges=17, graph_nodes=5097
+2026-10-09 12:29:13,775 | INFO | graphrag | index_document endpoints: doc_id='51362', resolved={'exact': 498, 'fuzzy': 6, 'case': 4, 'created': 18}, relationships_dropped={'self_loop': 0, 'ambiguous': 19, 'empty': 0}
+2026-10-09 12:29:13,775 | INFO | graphrag | index_document: doc_id='51605', passages=24
+2026-10-09 12:29:13,789 | INFO | graphrag | index_document complete: doc_id='51605', new_entities=156, new_relationships=193, alias_edges=6, graph_nodes=5253
+2026-10-09 12:29:13,789 | INFO | graphrag | index_document endpoints: doc_id='51605', resolved={'exact': 427, 'fuzzy': 8, 'case': 17, 'created': 22}, relationships_dropped={'self_loop': 1, 'ambiguous': 16, 'empty': 0}
+2026-10-09 12:29:13,789 | INFO | graphrag | index_document: doc_id='52855', passages=24
+2026-10-09 12:29:13,818 | INFO | graphrag | index_document complete: doc_id='52855', new_entities=232, new_relationships=223, alias_edges=25, graph_nodes=5485
+2026-10-09 12:29:13,818 | INFO | graphrag | index_document endpoints: doc_id='52855', resolved={'exact': 505, 'fuzzy': 4, 'case': 5, 'created': 12}, relationships_dropped={'self_loop': 0, 'ambiguous': 6, 'empty': 0}
+2026-10-09 12:29:13,818 | INFO | graphrag | index_document: doc_id='59368', passages=15
+2026-10-09 12:29:13,830 | INFO | graphrag | index_document complete: doc_id='59368', new_entities=106, new_relationships=110, alias_edges=12, graph_nodes=5591
+2026-10-09 12:29:13,830 | INFO | graphrag | index_document endpoints: doc_id='59368', resolved={'exact': 319, 'fuzzy': 1, 'case': 9, 'created': 3}, relationships_dropped={'self_loop': 0, 'ambiguous': 1, 'empty': 0}
+2026-10-09 12:29:13,830 | INFO | graphrag | index_document: doc_id='60897', passages=15
+2026-10-09 12:29:13,842 | INFO | graphrag | index_document complete: doc_id='60897', new_entities=103, new_relationships=100, alias_edges=11, graph_nodes=5694
+2026-10-09 12:29:13,842 | INFO | graphrag | index_document endpoints: doc_id='60897', resolved={'exact': 209, 'fuzzy': 5, 'case': 3, 'created': 11}, relationships_dropped={'self_loop': 0, 'ambiguous': 41, 'empty': 0}
+2026-10-09 12:29:13,842 | INFO | graphrag | index_document: doc_id='61146', passages=24
+2026-10-09 12:29:13,855 | INFO | graphrag | index_document complete: doc_id='61146', new_entities=215, new_relationships=205, alias_edges=16, graph_nodes=5909
+2026-10-09 12:29:13,855 | INFO | graphrag | index_document endpoints: doc_id='61146', resolved={'exact': 472, 'fuzzy': 8, 'case': 4, 'created': 12}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:13,855 | INFO | graphrag | index_document: doc_id='61285', passages=24
+2026-10-09 12:29:13,867 | INFO | graphrag | index_document complete: doc_id='61285', new_entities=266, new_relationships=212, alias_edges=23, graph_nodes=6175
+2026-10-09 12:29:13,867 | INFO | graphrag | index_document endpoints: doc_id='61285', resolved={'exact': 482, 'fuzzy': 4, 'case': 4, 'created': 20}, relationships_dropped={'self_loop': 0, 'ambiguous': 11, 'empty': 0}
+2026-10-09 12:29:13,867 | INFO | graphrag | index_document: doc_id='61467', passages=23
+2026-10-09 12:29:13,883 | INFO | graphrag | index_document complete: doc_id='61467', new_entities=166, new_relationships=192, alias_edges=18, graph_nodes=6341
+2026-10-09 12:29:13,883 | INFO | graphrag | index_document endpoints: doc_id='61467', resolved={'exact': 470, 'fuzzy': 0, 'case': 7, 'created': 19}, relationships_dropped={'self_loop': 0, 'ambiguous': 9, 'empty': 0}
+2026-10-09 12:29:13,883 | INFO | graphrag | index_document: doc_id='62085', passages=21
+2026-10-09 12:29:13,910 | INFO | graphrag | index_document complete: doc_id='62085', new_entities=219, new_relationships=198, alias_edges=18, graph_nodes=6560
+2026-10-09 12:29:13,910 | INFO | graphrag | index_document endpoints: doc_id='62085', resolved={'exact': 407, 'fuzzy': 12, 'case': 11, 'created': 20}, relationships_dropped={'self_loop': 1, 'ambiguous': 8, 'empty': 0}
+2026-10-09 12:29:13,910 | INFO | graphrag | index_document: doc_id='62139', passages=22
+2026-10-09 12:29:13,915 | INFO | graphrag | index_document complete: doc_id='62139', new_entities=200, new_relationships=178, alias_edges=20, graph_nodes=6760
+2026-10-09 12:29:13,915 | INFO | graphrag | index_document endpoints: doc_id='62139', resolved={'exact': 351, 'fuzzy': 6, 'case': 19, 'created': 16}, relationships_dropped={'self_loop': 0, 'ambiguous': 12, 'empty': 11}
+2026-10-09 12:29:13,915 | INFO | graphrag | index_document: doc_id='62382', passages=23
+2026-10-09 12:29:13,937 | WARNING | graphrag | Extraction for '127cc084-19e6-4f92-81b4-5611397f2f9f' was malformed: 0 bare-string entities converted, 1 items dropped
+2026-10-09 12:29:13,938 | INFO | graphrag | index_document complete: doc_id='62382', new_entities=164, new_relationships=181, alias_edges=11, graph_nodes=6924
+2026-10-09 12:29:13,938 | INFO | graphrag | index_document endpoints: doc_id='62382', resolved={'exact': 427, 'fuzzy': 8, 'case': 6, 'created': 11}, relationships_dropped={'self_loop': 0, 'ambiguous': 2, 'empty': 10}
+2026-10-09 12:29:13,938 | INFO | graphrag | index_document: doc_id='63473', passages=23
+2026-10-09 12:29:13,946 | INFO | graphrag | index_document complete: doc_id='63473', new_entities=183, new_relationships=189, alias_edges=19, graph_nodes=7107
+2026-10-09 12:29:13,946 | INFO | graphrag | index_document endpoints: doc_id='63473', resolved={'exact': 501, 'fuzzy': 6, 'case': 11, 'created': 8}, relationships_dropped={'self_loop': 0, 'ambiguous': 7, 'empty': 0}
+2026-10-09 12:29:13,946 | INFO | graphrag | index_document: doc_id='63523', passages=25
+2026-10-09 12:29:13,978 | INFO | graphrag | index_document complete: doc_id='63523', new_entities=182, new_relationships=208, alias_edges=23, graph_nodes=7289
+2026-10-09 12:29:13,978 | INFO | graphrag | index_document endpoints: doc_id='63523', resolved={'exact': 526, 'fuzzy': 5, 'case': 3, 'created': 22}, relationships_dropped={'self_loop': 0, 'ambiguous': 9, 'empty': 13}
+2026-10-09 12:29:13,978 | INFO | graphrag | index_document: doc_id='63616', passages=23
+2026-10-09 12:29:13,994 | INFO | graphrag | index_document complete: doc_id='63616', new_entities=198, new_relationships=195, alias_edges=21, graph_nodes=7487
+2026-10-09 12:29:13,994 | INFO | graphrag | index_document endpoints: doc_id='63616', resolved={'exact': 439, 'fuzzy': 2, 'case': 4, 'created': 9}, relationships_dropped={'self_loop': 0, 'ambiguous': 9, 'empty': 11}
+2026-10-09 12:29:13,994 | INFO | graphrag | index_document: doc_id='63633', passages=23
+2026-10-09 12:29:14,010 | INFO | graphrag | index_document complete: doc_id='63633', new_entities=183, new_relationships=203, alias_edges=18, graph_nodes=7670
+2026-10-09 12:29:14,010 | INFO | graphrag | index_document endpoints: doc_id='63633', resolved={'exact': 443, 'fuzzy': 2, 'case': 3, 'created': 14}, relationships_dropped={'self_loop': 1, 'ambiguous': 1, 'empty': 0}
+2026-10-09 12:29:14,010 | INFO | graphrag | index_document: doc_id='63812', passages=23
+2026-10-09 12:29:14,024 | INFO | graphrag | index_document complete: doc_id='63812', new_entities=127, new_relationships=172, alias_edges=10, graph_nodes=7797
+2026-10-09 12:29:14,024 | INFO | graphrag | index_document endpoints: doc_id='63812', resolved={'exact': 406, 'fuzzy': 3, 'case': 7, 'created': 4}, relationships_dropped={'self_loop': 1, 'ambiguous': 4, 'empty': 0}
+2026-10-09 12:29:14,024 | INFO | graphrag | index_document: doc_id='63833', passages=21
+2026-10-09 12:29:14,044 | INFO | graphrag | index_document complete: doc_id='63833', new_entities=250, new_relationships=204, alias_edges=20, graph_nodes=8047
+2026-10-09 12:29:14,046 | INFO | graphrag | index_document endpoints: doc_id='63833', resolved={'exact': 404, 'fuzzy': 4, 'case': 16, 'created': 38}, relationships_dropped={'self_loop': 0, 'ambiguous': 13, 'empty': 14}
+2026-10-09 12:29:14,046 | INFO | graphrag | index_document: doc_id='63855', passages=23
+2026-10-09 12:29:14,058 | INFO | graphrag | index_document complete: doc_id='63855', new_entities=241, new_relationships=248, alias_edges=25, graph_nodes=8288
+2026-10-09 12:29:14,058 | INFO | graphrag | index_document endpoints: doc_id='63855', resolved={'exact': 520, 'fuzzy': 8, 'case': 11, 'created': 31}, relationships_dropped={'self_loop': 0, 'ambiguous': 11, 'empty': 0}
+2026-10-09 12:29:14,058 | INFO | graphrag | index_document: doc_id='63862', passages=24
+2026-10-09 12:29:14,074 | WARNING | graphrag | Extraction for 'ea040cc6-58ca-430c-a033-ac56c7acc898' was malformed: 0 bare-string entities converted, 1 items dropped
+2026-10-09 12:29:14,185 | INFO | graphrag | index_document complete: doc_id='63862', new_entities=261, new_relationships=205, alias_edges=33, graph_nodes=8549
+2026-10-09 12:29:14,185 | INFO | graphrag | index_document endpoints: doc_id='63862', resolved={'exact': 416, 'fuzzy': 2, 'case': 7, 'created': 27}, relationships_dropped={'self_loop': 0, 'ambiguous': 30, 'empty': 0}
+2026-10-09 12:29:14,185 | INFO | graphrag | index_document: doc_id='99905', passages=11
+2026-10-09 12:29:14,217 | INFO | graphrag | index_document complete: doc_id='99905', new_entities=190, new_relationships=146, alias_edges=14, graph_nodes=8739
+2026-10-09 12:29:14,217 | INFO | graphrag | index_document endpoints: doc_id='99905', resolved={'exact': 299, 'fuzzy': 1, 'case': 2, 'created': 6}, relationships_dropped={'self_loop': 1, 'ambiguous': 1, 'empty': 11}
+2026-10-09 12:29:14,217 | INFO | graphrag | index_document: doc_id='99911', passages=19
+2026-10-09 12:29:14,234 | INFO | graphrag | index_document complete: doc_id='99911', new_entities=223, new_relationships=195, alias_edges=8, graph_nodes=8962
+2026-10-09 12:29:14,234 | INFO | graphrag | index_document endpoints: doc_id='99911', resolved={'exact': 400, 'fuzzy': 1, 'case': 7, 'created': 14}, relationships_dropped={'self_loop': 0, 'ambiguous': 0, 'empty': 0}
+2026-10-09 12:29:14,234 | INFO | graphrag | index_document: doc_id='99915', passages=18
+2026-10-09 12:29:14,248 | INFO | graphrag | index_document complete: doc_id='99915', new_entities=254, new_relationships=175, alias_edges=18, graph_nodes=9216
+2026-10-09 12:29:14,248 | INFO | graphrag | index_document endpoints: doc_id='99915', resolved={'exact': 337, 'fuzzy': 6, 'case': 7, 'created': 26}, relationships_dropped={'self_loop': 0, 'ambiguous': 3, 'empty': 58}
+2026-10-09 12:29:14,248 | INFO | graphrag | index_document: doc_id='99919', passages=13
+2026-10-09 12:29:14,264 | INFO | graphrag | index_document complete: doc_id='99919', new_entities=187, new_relationships=124, alias_edges=10, graph_nodes=9403
+2026-10-09 12:29:14,264 | INFO | graphrag | index_document endpoints: doc_id='99919', resolved={'exact': 228, 'fuzzy': 1, 'case': 8, 'created': 17}, relationships_dropped={'self_loop': 0, 'ambiguous': 2, 'empty': 27}
+2026-10-09 12:29:14,264 | INFO | graphrag | index_document: doc_id='99922', passages=12
+2026-10-09 12:29:14,280 | INFO | graphrag | index_document complete: doc_id='99922', new_entities=219, new_relationships=171, alias_edges=14, graph_nodes=9622
+2026-10-09 12:29:14,280 | INFO | graphrag | index_document endpoints: doc_id='99922', resolved={'exact': 315, 'fuzzy': 3, 'case': 8, 'created': 28}, relationships_dropped={'self_loop': 0, 'ambiguous': 5, 'empty': 0}
+2026-10-09 12:29:14,280 | INFO | graphrag | index_document: doc_id='99927', passages=17
+2026-10-09 12:29:14,296 | INFO | graphrag | index_document complete: doc_id='99927', new_entities=175, new_relationships=164, alias_edges=9, graph_nodes=9797
+2026-10-09 12:29:14,296 | INFO | graphrag | index_document endpoints: doc_id='99927', resolved={'exact': 325, 'fuzzy': 12, 'case': 6, 'created': 15}, relationships_dropped={'self_loop': 0, 'ambiguous': 1, 'empty': 21}
+2026-10-09 12:29:14,296 | INFO | graphrag | _detect_communities: running Louvain on 9797 nodes
+2026-10-09 12:29:14,903 | INFO | graphrag | _detect_communities: 2323 communities found, 0 summaries reused, 227 to summarise
+2026-10-09 12:29:26,649 | INFO | graphrag | [index full] done: {'label': 'full', 'docs': 50, 'chunks': 975, 'raptor_levels': {'0': 975, '1': 189, '2': 54, '3': 10}, 'summaries': 253, 'extractions_empty': 1, 'total_entities': 9797, 'total_relationships': 11114, 'total_communities': 227, 'density': 0.0002, 'components': 2278, 'isolated_entities': 1828, 'seconds': {'raptor': 50.8, 'extraction': 88.4, 'communities': 12.3, 'total': 152.4}}
+{
+ "dataset": "quality",
+ "name": "full",
+ "docs": 50,
+ "finished_at": "2026-10-09 06:32:28 UTC",
+ "cost_usd": 0.3564,
+ "key_usage_before": 3.918453069,
+ "key_usage_after": 4.274838384,
+ "new_cache_entries": 1455,
+ "chunks": 975,
+ "summaries": 253,
+ "entities": 9797,
+ "relationships": 11114,
+ "communities": 227,
+ "seconds": 152.4
+}

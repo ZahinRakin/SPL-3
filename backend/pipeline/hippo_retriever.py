@@ -14,8 +14,8 @@ Stage 3 of the cascade (RAPTOR → GraphRAG → HippoRAG), after Gutiérrez et a
    score(p) = 1 / (K + rank_sim(p)) + w · 1 / (K + rank_graph(p))
    Ranks, not raw scores, are fused: cosine scores of the top candidates differ by a few
    hundredths while a normalised PageRank score spans 0-1, so adding raw scores let the
-   graph decide the order on its own. Only chunks get a graph rank; summaries compete on
-   similarity alone and take at most `max_summaries` of the slots.
+   graph decide the order on its own. A chunk's graph rank comes from its entities; a summary
+   takes the best graph rank of the chunks under it. At most `max_summaries` summaries compete.
 
 Ablation switches (constructor):
    ppr_weight=0, max_summaries=0  → exactly the Standard (similarity-only) chunk ranking
@@ -63,6 +63,8 @@ class HippoRetriever:
         self.max_summaries = max_summaries
         self._links: Dict[str, List[str]] = {}
         self._links_key: Optional[Tuple] = None
+        self._leaf_cache: Dict[str, List[str]] = {}
+        self._leaves_key: Optional[Tuple] = None
 
     # ── chunk ↔ entity links ──────────────────────────────────────────────────
 
@@ -84,6 +86,18 @@ class HippoRetriever:
                     links.setdefault(pid, []).append(eid)
         self._links, self._links_key = links, key
         return links
+
+    def _leaves(self, pid: str) -> List[str]:
+        """The chunks (level 0) under a RAPTOR node, cached until the tree changes."""
+        key = (id(self.raptor.nodes), len(self.raptor.nodes))
+        if key != self._leaves_key:
+            self._leaf_cache, self._leaves_key = {}, key
+        if pid not in self._leaf_cache:
+            node = self.raptor.nodes[pid]
+            self._leaf_cache[pid] = [pid] if node.level == 0 else [
+                leaf for c in node.children if c in self.raptor.nodes for leaf in self._leaves(c)
+            ]
+        return self._leaf_cache[pid]
 
     # ── seeds ─────────────────────────────────────────────────────────────────
 
@@ -154,6 +168,13 @@ class HippoRetriever:
             ((s, pid) for pid, s in graph_score.items() if s > 0), reverse=True
         )
         graph_rank = {pid: r for r, (_, pid) in enumerate(graph_ranked, start=1)}
+        # A summary covers its descendant chunks, so it takes the best graph rank among them.
+        # Without this a summary had one RRF term against a chunk's two, and any graph-ranked
+        # chunk outranked every summary (found on QuALITY dev: 0 summaries ever selected).
+        for h in summary_hits:
+            ranks = [graph_rank[leaf] for leaf in self._leaves(h["id"]) if leaf in graph_rank]
+            if ranks:
+                graph_rank[h["id"]] = min(ranks)
 
         def fused(pid: str) -> float:
             score = 1.0 / (_RRF_K + sim_rank[pid])

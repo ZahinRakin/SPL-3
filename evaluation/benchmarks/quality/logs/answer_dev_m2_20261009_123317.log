@@ -1,0 +1,1356 @@
+2026-10-09 12:33:17,092 | INFO | [answer] start 2026-10-09 06:33:17 UTC argv=['--dataset', 'quality', '--split', 'dev', '--systems', 'S3', '--w', '0.25', '--m', '2', '--budget', '8000', '--tag', 'm2', '--no_settle'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:33:17,447 | DEBUG | GraphRAGIndexer.load_state: entities=9797, relationships=11114, communities=227
+2026-10-09 12:33:17,494 | DEBUG | RaptorRunner.load_state: nodes=1228
+2026-10-09 12:33:17,539 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,541 | DEBUG | match_entities: question='What does the author say about correlating athletic ability ', matched=17
+2026-10-09 12:33:17,557 | DEBUG | HippoRetriever._seeds: 77 seed entities
+2026-10-09 12:33:17,573 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,595 | DEBUG | match_entities: question='When does the author think we will have an Olympics in which', matched=32
+2026-10-09 12:33:17,595 | DEBUG | HippoRetriever._seeds: 84 seed entities
+2026-10-09 12:33:17,617 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,633 | DEBUG | match_entities: question='What is not listed as a trend in human development?', matched=24
+2026-10-09 12:33:17,636 | DEBUG | HippoRetriever._seeds: 81 seed entities
+2026-10-09 12:33:17,649 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,665 | DEBUG | match_entities: question='What is one of the main reasons the top athletes are so supe', matched=20
+2026-10-09 12:33:17,665 | DEBUG | HippoRetriever._seeds: 85 seed entities
+2026-10-09 12:33:17,697 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,697 | DEBUG | match_entities: question='How does improved medical care impact athletic ability?', matched=14
+2026-10-09 12:33:17,697 | DEBUG | HippoRetriever._seeds: 77 seed entities
+2026-10-09 12:33:17,735 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,741 | DEBUG | match_entities: question='Which factor is not listed as being related to the large poo', matched=13
+2026-10-09 12:33:17,750 | DEBUG | HippoRetriever._seeds: 78 seed entities
+2026-10-09 12:33:17,766 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,788 | DEBUG | match_entities: question='Why do the British win fewer medals than they used to?', matched=10
+2026-10-09 12:33:17,790 | DEBUG | HippoRetriever._seeds: 68 seed entities
+2026-10-09 12:33:17,892 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,908 | DEBUG | match_entities: question='The author believes that athletic ability changes over time ', matched=38
+2026-10-09 12:33:17,908 | DEBUG | HippoRetriever._seeds: 88 seed entities
+2026-10-09 12:33:17,941 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,957 | DEBUG | match_entities: question='The author believes that innovations in athletic training ha', matched=17
+2026-10-09 12:33:17,959 | DEBUG | HippoRetriever._seeds: 85 seed entities
+2026-10-09 12:33:17,980 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:17,980 | DEBUG | match_entities: question='What does the article posit as the main factor leading to hu', matched=46
+2026-10-09 12:33:17,996 | DEBUG | HippoRetriever._seeds: 106 seed entities
+2026-10-09 12:33:18,011 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,039 | DEBUG | match_entities: question='The author says, "After all, as biomechanical machines with ', matched=42
+2026-10-09 12:33:18,039 | DEBUG | HippoRetriever._seeds: 106 seed entities
+2026-10-09 12:33:18,076 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,089 | DEBUG | match_entities: question='According to the article, why do Africans dominate long dist', matched=21
+2026-10-09 12:33:18,089 | DEBUG | HippoRetriever._seeds: 77 seed entities
+2026-10-09 12:33:18,106 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,132 | DEBUG | match_entities: question='What genetic influences on running speed does the author ide', matched=14
+2026-10-09 12:33:18,134 | DEBUG | HippoRetriever._seeds: 75 seed entities
+2026-10-09 12:33:18,152 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,168 | DEBUG | match_entities: question='What did the Chinese do to help dispell the idea that racial', matched=12
+2026-10-09 12:33:18,184 | DEBUG | HippoRetriever._seeds: 80 seed entities
+2026-10-09 12:33:18,200 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,228 | DEBUG | match_entities: question='According to the author, how does the availability of better', matched=17
+2026-10-09 12:33:18,230 | DEBUG | HippoRetriever._seeds: 97 seed entities
+2026-10-09 12:33:18,257 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,263 | DEBUG | match_entities: question="According to the author, the age of onset of girls' periods ", matched=119
+2026-10-09 12:33:18,263 | DEBUG | HippoRetriever._seeds: 185 seed entities
+2026-10-09 12:33:18,438 | DEBUG | HippoRetriever.retrieve: seeds=81, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:18,442 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6572, budget=8000
+2026-10-09 12:33:18,443 | DEBUG | generate: json_mode=False, prompt_len=6970
+2026-10-09 12:33:18,450 | DEBUG | HippoRetriever.retrieve: seeds=84, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,450 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6773, budget=8000
+2026-10-09 12:33:18,450 | DEBUG | generate: json_mode=False, prompt_len=7172
+2026-10-09 12:33:18,450 | DEBUG | HippoRetriever.retrieve: seeds=77, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,450 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7827, budget=8000
+2026-10-09 12:33:18,450 | DEBUG | generate: json_mode=False, prompt_len=8425
+2026-10-09 12:33:18,466 | DEBUG | HippoRetriever.retrieve: seeds=77, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,466 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7827, budget=8000
+2026-10-09 12:33:18,466 | DEBUG | generate: json_mode=False, prompt_len=8210
+2026-10-09 12:33:18,482 | DEBUG | HippoRetriever.retrieve: seeds=85, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,482 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7763, budget=8000
+2026-10-09 12:33:18,482 | DEBUG | generate: json_mode=False, prompt_len=8194
+2026-10-09 12:33:18,497 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,497 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,513 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,513 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,530 | DEBUG | match_entities: question='What does the author offer to refute the notion that the bes', matched=19
+2026-10-09 12:33:18,530 | DEBUG | HippoRetriever._seeds: 78 seed entities
+2026-10-09 12:33:18,547 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,561 | DEBUG | match_entities: question='What does the author put forward as the main reason why Brit', matched=33
+2026-10-09 12:33:18,562 | DEBUG | HippoRetriever._seeds: 95 seed entities
+2026-10-09 12:33:18,576 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,600 | DEBUG | match_entities: question='What practicial limit did Thoroughbreds bump into which has ', matched=15
+2026-10-09 12:33:18,600 | DEBUG | HippoRetriever._seeds: 80 seed entities
+2026-10-09 12:33:18,616 | DEBUG | HippoRetriever.retrieve: seeds=68, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:18,616 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6790, budget=8000
+2026-10-09 12:33:18,616 | DEBUG | generate: json_mode=False, prompt_len=7256
+2026-10-09 12:33:18,631 | DEBUG | HippoRetriever.retrieve: seeds=78, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:18,631 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7763, budget=8000
+2026-10-09 12:33:18,647 | DEBUG | generate: json_mode=False, prompt_len=8223
+2026-10-09 12:33:18,647 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,647 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,672 | DEBUG | HippoRetriever.retrieve: seeds=88, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,672 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6789, budget=8000
+2026-10-09 12:33:18,672 | DEBUG | generate: json_mode=False, prompt_len=7201
+2026-10-09 12:33:18,689 | DEBUG | HippoRetriever.retrieve: seeds=85, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,690 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6808, budget=8000
+2026-10-09 12:33:18,691 | DEBUG | generate: json_mode=False, prompt_len=7256
+2026-10-09 12:33:18,693 | DEBUG | HippoRetriever.retrieve: seeds=106, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,693 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7524, budget=8000
+2026-10-09 12:33:18,693 | DEBUG | generate: json_mode=False, prompt_len=8601
+2026-10-09 12:33:18,709 | DEBUG | HippoRetriever.retrieve: seeds=106, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,709 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6765, budget=8000
+2026-10-09 12:33:18,709 | DEBUG | generate: json_mode=False, prompt_len=7711
+2026-10-09 12:33:18,725 | DEBUG | HippoRetriever.retrieve: seeds=75, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,725 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7875, budget=8000
+2026-10-09 12:33:18,725 | DEBUG | generate: json_mode=False, prompt_len=8734
+2026-10-09 12:33:18,731 | DEBUG | HippoRetriever.retrieve: seeds=77, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,731 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7803, budget=8000
+2026-10-09 12:33:18,731 | DEBUG | generate: json_mode=False, prompt_len=8716
+2026-10-09 12:33:18,750 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,758 | DEBUG | match_entities: question='Why does Tannen say her book is not about civility?', matched=13
+2026-10-09 12:33:18,758 | DEBUG | HippoRetriever._seeds: 101 seed entities
+2026-10-09 12:33:18,772 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,772 | DEBUG | match_entities: question='What two fields does the author say Tannen mixes together?', matched=31
+2026-10-09 12:33:18,772 | DEBUG | HippoRetriever._seeds: 106 seed entities
+2026-10-09 12:33:18,818 | DEBUG | HippoRetriever.retrieve: seeds=80, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,818 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7677, budget=8000
+2026-10-09 12:33:18,818 | DEBUG | generate: json_mode=False, prompt_len=8765
+2026-10-09 12:33:18,843 | DEBUG | HippoRetriever.retrieve: seeds=185, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,843 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6737, budget=8000
+2026-10-09 12:33:18,845 | DEBUG | generate: json_mode=False, prompt_len=8046
+2026-10-09 12:33:18,850 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,850 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,850 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,866 | DEBUG | HippoRetriever.retrieve: seeds=97, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,866 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7580, budget=8000
+2026-10-09 12:33:18,866 | DEBUG | generate: json_mode=False, prompt_len=8490
+2026-10-09 12:33:18,866 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,866 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,885 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,897 | DEBUG | HippoRetriever.retrieve: seeds=80, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,897 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7576, budget=8000
+2026-10-09 12:33:18,897 | DEBUG | generate: json_mode=False, prompt_len=8672
+2026-10-09 12:33:18,897 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,897 | DEBUG | HippoRetriever.retrieve: seeds=78, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:18,897 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6784, budget=8000
+2026-10-09 12:33:18,897 | DEBUG | generate: json_mode=False, prompt_len=7810
+2026-10-09 12:33:18,913 | DEBUG | generate: cache hit
+2026-10-09 12:33:18,913 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,931 | DEBUG | match_entities: question="What does the author feel is contradictory about Tannen's wo", matched=13
+2026-10-09 12:33:18,931 | DEBUG | HippoRetriever._seeds: 104 seed entities
+2026-10-09 12:33:18,961 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:18,961 | DEBUG | match_entities: question="How did the author feel about Tannen's book?", matched=14
+2026-10-09 12:33:18,961 | DEBUG | HippoRetriever._seeds: 87 seed entities
+2026-10-09 12:33:18,993 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,004 | DEBUG | match_entities: question='What is not a lesson the author gleaned from the book?', matched=12
+2026-10-09 12:33:19,008 | DEBUG | HippoRetriever._seeds: 33 seed entities
+2026-10-09 12:33:19,030 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,167 | DEBUG | match_entities: question='Why does the author think Tannen is wrong?', matched=6
+2026-10-09 12:33:19,168 | DEBUG | HippoRetriever._seeds: 97 seed entities
+2026-10-09 12:33:19,195 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,195 | DEBUG | match_entities: question='What does the author think investigative journalism accompli', matched=5
+2026-10-09 12:33:19,213 | DEBUG | HippoRetriever._seeds: 77 seed entities
+2026-10-09 12:33:19,227 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,245 | DEBUG | match_entities: question='What mistake does Tannen make when discussing the military?', matched=9
+2026-10-09 12:33:19,245 | DEBUG | HippoRetriever._seeds: 74 seed entities
+2026-10-09 12:33:19,262 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,275 | DEBUG | match_entities: question="Which statement resonates most with Tannen's viewpoint?", matched=5
+2026-10-09 12:33:19,277 | DEBUG | HippoRetriever._seeds: 96 seed entities
+2026-10-09 12:33:19,283 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,311 | DEBUG | match_entities: question='How does Tannen feel about the Bill of Rights?', matched=7
+2026-10-09 12:33:19,322 | DEBUG | HippoRetriever._seeds: 80 seed entities
+2026-10-09 12:33:19,330 | DEBUG | HippoRetriever.retrieve: seeds=95, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,331 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7769, budget=8000
+2026-10-09 12:33:19,349 | DEBUG | generate: json_mode=False, prompt_len=8609
+2026-10-09 12:33:19,349 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,361 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,377 | DEBUG | HippoRetriever.retrieve: seeds=106, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,378 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:19,380 | DEBUG | generate: json_mode=False, prompt_len=8050
+2026-10-09 12:33:19,381 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,395 | DEBUG | HippoRetriever.retrieve: seeds=101, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,396 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7539, budget=8000
+2026-10-09 12:33:19,397 | DEBUG | generate: json_mode=False, prompt_len=8052
+2026-10-09 12:33:19,397 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,403 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,411 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,425 | DEBUG | match_entities: question='What discipline does Tannen apply to many of the topics disc', matched=7
+2026-10-09 12:33:19,428 | DEBUG | HippoRetriever._seeds: 98 seed entities
+2026-10-09 12:33:19,448 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,462 | DEBUG | match_entities: question='What role does technology play in Tannen’s views?', matched=13
+2026-10-09 12:33:19,466 | DEBUG | HippoRetriever._seeds: 102 seed entities
+2026-10-09 12:33:19,606 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,630 | DEBUG | match_entities: question='What does the author think about the state of public politic', matched=30
+2026-10-09 12:33:19,633 | DEBUG | HippoRetriever._seeds: 93 seed entities
+2026-10-09 12:33:19,657 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,670 | DEBUG | match_entities: question='What does the author argue is true about Tannen’s latest wor', matched=15
+2026-10-09 12:33:19,673 | DEBUG | HippoRetriever._seeds: 96 seed entities
+2026-10-09 12:33:19,700 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,715 | DEBUG | match_entities: question='Is there a nuance to the criticism of Tannen’s work?', matched=11
+2026-10-09 12:33:19,717 | DEBUG | HippoRetriever._seeds: 102 seed entities
+2026-10-09 12:33:19,717 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,756 | DEBUG | HippoRetriever.retrieve: seeds=87, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,758 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:19,759 | DEBUG | generate: json_mode=False, prompt_len=8117
+2026-10-09 12:33:19,760 | DEBUG | generate: cache hit
+2026-10-09 12:33:19,776 | DEBUG | HippoRetriever.retrieve: seeds=104, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,777 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:19,778 | DEBUG | generate: json_mode=False, prompt_len=8166
+2026-10-09 12:33:19,788 | DEBUG | HippoRetriever.retrieve: seeds=33, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:19,790 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7426, budget=8000
+2026-10-09 12:33:19,791 | DEBUG | generate: json_mode=False, prompt_len=7910
+2026-10-09 12:33:19,791 | INFO | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 12:33:19,885 | DEBUG | HippoRetriever.retrieve: seeds=97, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,886 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:19,886 | DEBUG | generate: json_mode=False, prompt_len=8179
+2026-10-09 12:33:19,901 | DEBUG | HippoRetriever.retrieve: seeds=80, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,902 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7666, budget=8000
+2026-10-09 12:33:19,902 | DEBUG | generate: json_mode=False, prompt_len=8152
+2026-10-09 12:33:19,914 | DEBUG | HippoRetriever.retrieve: seeds=74, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:19,915 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7556, budget=8000
+2026-10-09 12:33:19,915 | DEBUG | generate: json_mode=False, prompt_len=7964
+2026-10-09 12:33:19,925 | DEBUG | HippoRetriever.retrieve: seeds=77, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,926 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7580, budget=8000
+2026-10-09 12:33:19,926 | DEBUG | generate: json_mode=False, prompt_len=8016
+2026-10-09 12:33:19,930 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:19,944 | DEBUG | match_entities: question='How does the author feel about Tannen’s work?', matched=13
+2026-10-09 12:33:19,946 | DEBUG | HippoRetriever._seeds: 88 seed entities
+2026-10-09 12:33:19,972 | DEBUG | HippoRetriever.retrieve: seeds=96, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:19,973 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7666, budget=8000
+2026-10-09 12:33:19,980 | DEBUG | generate: json_mode=False, prompt_len=8016
+2026-10-09 12:33:19,988 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,000 | DEBUG | match_entities: question='What do we know of the subjects that Tannen researches and w', matched=3
+2026-10-09 12:33:20,002 | DEBUG | HippoRetriever._seeds: 78 seed entities
+2026-10-09 12:33:20,002 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,030 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,032 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,045 | DEBUG | HippoRetriever.retrieve: seeds=98, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,046 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:20,046 | DEBUG | generate: json_mode=False, prompt_len=7996
+2026-10-09 12:33:20,057 | DEBUG | HippoRetriever.retrieve: seeds=102, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,058 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7666, budget=8000
+2026-10-09 12:33:20,058 | DEBUG | generate: json_mode=False, prompt_len=8214
+2026-10-09 12:33:20,070 | DEBUG | HippoRetriever.retrieve: seeds=93, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,072 | DEBUG | _build_context: method='refined', passages=4, extras=0, context_len=6466, budget=8000
+2026-10-09 12:33:20,073 | DEBUG | generate: json_mode=False, prompt_len=6984
+2026-10-09 12:33:20,084 | DEBUG | HippoRetriever.retrieve: seeds=96, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,085 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7532, budget=8000
+2026-10-09 12:33:20,085 | DEBUG | generate: json_mode=False, prompt_len=7932
+2026-10-09 12:33:20,095 | DEBUG | HippoRetriever.retrieve: seeds=102, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,096 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:20,096 | DEBUG | generate: json_mode=False, prompt_len=8321
+2026-10-09 12:33:20,097 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,102 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,103 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,104 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,107 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,121 | DEBUG | match_entities: question='What is Tannen’s thesis on courtroom confrontations?', matched=5
+2026-10-09 12:33:20,122 | DEBUG | HippoRetriever._seeds: 84 seed entities
+2026-10-09 12:33:20,145 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,158 | DEBUG | match_entities: question='What context does the author write the article in?', matched=4
+2026-10-09 12:33:20,160 | DEBUG | HippoRetriever._seeds: 36 seed entities
+2026-10-09 12:33:20,285 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,308 | DEBUG | match_entities: question='What is the significance of the author’s title for the piece', matched=6
+2026-10-09 12:33:20,309 | DEBUG | HippoRetriever._seeds: 63 seed entities
+2026-10-09 12:33:20,326 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,342 | DEBUG | match_entities: question='What is true about the subject of the book the author read?', matched=16
+2026-10-09 12:33:20,342 | DEBUG | HippoRetriever._seeds: 81 seed entities
+2026-10-09 12:33:20,352 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,374 | DEBUG | match_entities: question='How does the author view mathematicians?', matched=4
+2026-10-09 12:33:20,374 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:20,400 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,406 | DEBUG | match_entities: question="What was not true about Nash's college years?", matched=33
+2026-10-09 12:33:20,406 | DEBUG | HippoRetriever._seeds: 81 seed entities
+2026-10-09 12:33:20,406 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,438 | DEBUG | match_entities: question='What is true about the Nobel prize, according to the author?', matched=11
+2026-10-09 12:33:20,438 | DEBUG | HippoRetriever._seeds: 61 seed entities
+2026-10-09 12:33:20,438 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,479 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,491 | DEBUG | HippoRetriever.retrieve: seeds=78, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,491 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7632, budget=8000
+2026-10-09 12:33:20,491 | DEBUG | generate: json_mode=False, prompt_len=8135
+2026-10-09 12:33:20,509 | DEBUG | HippoRetriever.retrieve: seeds=88, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,511 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7639, budget=8000
+2026-10-09 12:33:20,511 | DEBUG | generate: json_mode=False, prompt_len=8031
+2026-10-09 12:33:20,511 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,516 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,520 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,525 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,534 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,546 | DEBUG | match_entities: question='What is true about Nash?', matched=5
+2026-10-09 12:33:20,550 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 12:33:20,569 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,569 | DEBUG | match_entities: question='How was Nash distinguished as a professor?', matched=5
+2026-10-09 12:33:20,588 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:20,720 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,728 | DEBUG | match_entities: question="What was one of Nash's delusions?", matched=12
+2026-10-09 12:33:20,728 | DEBUG | HippoRetriever._seeds: 71 seed entities
+2026-10-09 12:33:20,744 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,755 | DEBUG | match_entities: question='Why were they concerned about giving Nash the prize?', matched=7
+2026-10-09 12:33:20,761 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:20,791 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,791 | DEBUG | match_entities: question='How did winning the prize impact Nash?', matched=6
+2026-10-09 12:33:20,807 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:20,832 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,848 | DEBUG | match_entities: question='How does the author feel about mathematicians?', matched=3
+2026-10-09 12:33:20,850 | DEBUG | HippoRetriever._seeds: 47 seed entities
+2026-10-09 12:33:20,868 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,868 | DEBUG | generate: cache hit
+2026-10-09 12:33:20,884 | DEBUG | HippoRetriever.retrieve: seeds=84, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,884 | DEBUG | _build_context: method='refined', passages=4, extras=0, context_len=6672, budget=8000
+2026-10-09 12:33:20,884 | DEBUG | generate: json_mode=False, prompt_len=7250
+2026-10-09 12:33:20,900 | DEBUG | HippoRetriever.retrieve: seeds=63, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:20,900 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7624, budget=8000
+2026-10-09 12:33:20,900 | DEBUG | generate: json_mode=False, prompt_len=8205
+2026-10-09 12:33:20,924 | DEBUG | HippoRetriever.retrieve: seeds=36, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,924 | DEBUG | _build_context: method='refined', passages=7, extras=0, context_len=7914, budget=8000
+2026-10-09 12:33:20,924 | DEBUG | generate: json_mode=False, prompt_len=8288
+2026-10-09 12:33:20,932 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,932 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7635, budget=8000
+2026-10-09 12:33:20,940 | DEBUG | generate: json_mode=False, prompt_len=8046
+2026-10-09 12:33:20,951 | DEBUG | HippoRetriever.retrieve: seeds=81, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,952 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7473, budget=8000
+2026-10-09 12:33:20,952 | DEBUG | generate: json_mode=False, prompt_len=7890
+2026-10-09 12:33:20,966 | DEBUG | HippoRetriever.retrieve: seeds=61, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:20,968 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7728, budget=8000
+2026-10-09 12:33:20,969 | DEBUG | generate: json_mode=False, prompt_len=8241
+2026-10-09 12:33:20,977 | DEBUG | HippoRetriever.retrieve: seeds=81, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:20,977 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7677, budget=8000
+2026-10-09 12:33:20,977 | DEBUG | generate: json_mode=False, prompt_len=8211
+2026-10-09 12:33:20,977 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:20,994 | DEBUG | match_entities: question='How is the author connected with Nash?', matched=6
+2026-10-09 12:33:20,994 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:21,042 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,066 | DEBUG | match_entities: question='How was Nash’s family involved in the story?', matched=13
+2026-10-09 12:33:21,068 | DEBUG | HippoRetriever._seeds: 56 seed entities
+2026-10-09 12:33:21,105 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,127 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,128 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,128 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,128 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,136 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,136 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,136 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,152 | DEBUG | match_entities: question='What were some of the themes in Nash’s later years?', matched=27
+2026-10-09 12:33:21,158 | DEBUG | HippoRetriever._seeds: 75 seed entities
+2026-10-09 12:33:21,285 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,315 | DEBUG | match_entities: question='How was Nash viewed by his colleagues over time?', matched=30
+2026-10-09 12:33:21,317 | DEBUG | HippoRetriever._seeds: 73 seed entities
+2026-10-09 12:33:21,324 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,344 | DEBUG | match_entities: question='What were some of the reported events that the author brings', matched=7
+2026-10-09 12:33:21,344 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:21,372 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,372 | DEBUG | match_entities: question='What were some of Nash’s working habits?', matched=4
+2026-10-09 12:33:21,372 | DEBUG | HippoRetriever._seeds: 47 seed entities
+2026-10-09 12:33:21,410 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,426 | DEBUG | match_entities: question='What is the significance of the fixed point to the story?', matched=8
+2026-10-09 12:33:21,429 | DEBUG | HippoRetriever._seeds: 49 seed entities
+2026-10-09 12:33:21,443 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,458 | DEBUG | match_entities: question='What was an early achievement of the main character the auth', matched=12
+2026-10-09 12:33:21,458 | DEBUG | HippoRetriever._seeds: 55 seed entities
+2026-10-09 12:33:21,474 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,490 | DEBUG | match_entities: question='How many major mathematical problems does Nash solve that ar', matched=10
+2026-10-09 12:33:21,490 | DEBUG | HippoRetriever._seeds: 57 seed entities
+2026-10-09 12:33:21,528 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,528 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7641, budget=8000
+2026-10-09 12:33:21,528 | DEBUG | generate: json_mode=False, prompt_len=8058
+2026-10-09 12:33:21,547 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,547 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7641, budget=8000
+2026-10-09 12:33:21,554 | DEBUG | generate: json_mode=False, prompt_len=8019
+2026-10-09 12:33:21,565 | DEBUG | HippoRetriever.retrieve: seeds=71, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,567 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7700, budget=8000
+2026-10-09 12:33:21,571 | DEBUG | generate: json_mode=False, prompt_len=8069
+2026-10-09 12:33:21,571 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,571 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7641, budget=8000
+2026-10-09 12:33:21,571 | DEBUG | generate: json_mode=False, prompt_len=8112
+2026-10-09 12:33:21,592 | DEBUG | HippoRetriever.retrieve: seeds=47, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,592 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7635, budget=8000
+2026-10-09 12:33:21,592 | DEBUG | generate: json_mode=False, prompt_len=8053
+2026-10-09 12:33:21,607 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,607 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7686, budget=8000
+2026-10-09 12:33:21,607 | DEBUG | generate: json_mode=False, prompt_len=8117
+2026-10-09 12:33:21,616 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,616 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7655, budget=8000
+2026-10-09 12:33:21,616 | DEBUG | generate: json_mode=False, prompt_len=8117
+2026-10-09 12:33:21,632 | DEBUG | HippoRetriever.retrieve: seeds=56, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:21,632 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7406, budget=8000
+2026-10-09 12:33:21,632 | DEBUG | generate: json_mode=False, prompt_len=7872
+2026-10-09 12:33:21,632 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,632 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,648 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,648 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,648 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,648 | DEBUG | HippoRetriever.retrieve: seeds=73, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:21,648 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7655, budget=8000
+2026-10-09 12:33:21,648 | DEBUG | generate: json_mode=False, prompt_len=8277
+2026-10-09 12:33:21,673 | DEBUG | HippoRetriever.retrieve: seeds=75, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:21,674 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7600, budget=8000
+2026-10-09 12:33:21,674 | DEBUG | generate: json_mode=False, prompt_len=8059
+2026-10-09 12:33:21,675 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,676 | DEBUG | generate: cache hit
+2026-10-09 12:33:21,680 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,690 | DEBUG | match_entities: question='What does the author hypothesize is connected in human genet', matched=25
+2026-10-09 12:33:21,690 | DEBUG | HippoRetriever._seeds: 74 seed entities
+2026-10-09 12:33:21,813 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,829 | DEBUG | match_entities: question='What is the main reason that the author thinks that some peo', matched=38
+2026-10-09 12:33:21,829 | DEBUG | HippoRetriever._seeds: 93 seed entities
+2026-10-09 12:33:21,845 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,861 | DEBUG | match_entities: question='Why does the author think that the actors in the Phantom Men', matched=15
+2026-10-09 12:33:21,861 | DEBUG | HippoRetriever._seeds: 70 seed entities
+2026-10-09 12:33:21,879 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,885 | DEBUG | match_entities: question='What does the author think of the editing in the film?', matched=4
+2026-10-09 12:33:21,900 | DEBUG | HippoRetriever._seeds: 40 seed entities
+2026-10-09 12:33:21,924 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,929 | DEBUG | match_entities: question="How does the author feel about the Phantom Menace's implicat", matched=35
+2026-10-09 12:33:21,929 | DEBUG | HippoRetriever._seeds: 94 seed entities
+2026-10-09 12:33:21,960 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,969 | DEBUG | match_entities: question="What issue does the Author have with Natalie Portman's chara", matched=8
+2026-10-09 12:33:21,976 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:21,992 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:21,992 | DEBUG | match_entities: question="What issue does the Author have with Liam Neeson's character", matched=8
+2026-10-09 12:33:22,008 | DEBUG | HippoRetriever._seeds: 46 seed entities
+2026-10-09 12:33:22,042 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,043 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7686, budget=8000
+2026-10-09 12:33:22,048 | DEBUG | generate: json_mode=False, prompt_len=8284
+2026-10-09 12:33:22,054 | DEBUG | HippoRetriever.retrieve: seeds=57, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,054 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7628, budget=8000
+2026-10-09 12:33:22,054 | DEBUG | generate: json_mode=False, prompt_len=7982
+2026-10-09 12:33:22,054 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,074 | DEBUG | HippoRetriever.retrieve: seeds=49, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:22,074 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7500, budget=8000
+2026-10-09 12:33:22,086 | DEBUG | generate: json_mode=False, prompt_len=7958
+2026-10-09 12:33:22,088 | DEBUG | HippoRetriever.retrieve: seeds=55, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,103 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7498, budget=8000
+2026-10-09 12:33:22,104 | DEBUG | generate: json_mode=False, prompt_len=7989
+2026-10-09 12:33:22,109 | DEBUG | HippoRetriever.retrieve: seeds=47, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:22,109 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7641, budget=8000
+2026-10-09 12:33:22,109 | DEBUG | generate: json_mode=False, prompt_len=8043
+2026-10-09 12:33:22,109 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,117 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,117 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,133 | DEBUG | match_entities: question='How does the author think that George Lucas could have made ', matched=13
+2026-10-09 12:33:22,133 | DEBUG | HippoRetriever._seeds: 72 seed entities
+2026-10-09 12:33:22,153 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,174 | DEBUG | match_entities: question='Why does the author dislike the character Darth Maul', matched=8
+2026-10-09 12:33:22,176 | DEBUG | HippoRetriever._seeds: 70 seed entities
+2026-10-09 12:33:22,314 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,330 | DEBUG | match_entities: question="What issue does the author take with Yoda's judgement of Ana", matched=10
+2026-10-09 12:33:22,343 | DEBUG | HippoRetriever._seeds: 72 seed entities
+2026-10-09 12:33:22,343 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,371 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,379 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,384 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,385 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,387 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,403 | DEBUG | match_entities: question='Why does the person responding to the author feel that the P', matched=13
+2026-10-09 12:33:22,405 | DEBUG | HippoRetriever._seeds: 55 seed entities
+2026-10-09 12:33:22,426 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,438 | DEBUG | match_entities: question='Does the author want his audience to dislike The Phantom Men', matched=12
+2026-10-09 12:33:22,439 | DEBUG | HippoRetriever._seeds: 67 seed entities
+2026-10-09 12:33:22,439 | DEBUG | HippoRetriever.retrieve: seeds=74, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,439 | DEBUG | _build_context: method='refined', passages=4, extras=0, context_len=6173, budget=8000
+2026-10-09 12:33:22,455 | DEBUG | generate: json_mode=False, prompt_len=6617
+2026-10-09 12:33:22,475 | DEBUG | HippoRetriever.retrieve: seeds=94, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,487 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7623, budget=8000
+2026-10-09 12:33:22,487 | DEBUG | generate: json_mode=False, prompt_len=8241
+2026-10-09 12:33:22,487 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,503 | DEBUG | match_entities: question='What does the critic likely view as the best part of the mov', matched=9
+2026-10-09 12:33:22,503 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:22,519 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,526 | DEBUG | match_entities: question='How did the critic likely feel about the email from his wife', matched=8
+2026-10-09 12:33:22,526 | DEBUG | HippoRetriever._seeds: 69 seed entities
+2026-10-09 12:33:22,551 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,567 | DEBUG | match_entities: question="What problem does The Phantom Menace create for Darth Vader'", matched=13
+2026-10-09 12:33:22,567 | DEBUG | HippoRetriever._seeds: 68 seed entities
+2026-10-09 12:33:22,583 | DEBUG | HippoRetriever.retrieve: seeds=70, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,583 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:22,599 | DEBUG | generate: json_mode=False, prompt_len=7976
+2026-10-09 12:33:22,615 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:22,615 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7767, budget=8000
+2026-10-09 12:33:22,615 | DEBUG | generate: json_mode=False, prompt_len=8230
+2026-10-09 12:33:22,636 | DEBUG | HippoRetriever.retrieve: seeds=93, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,637 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7415, budget=8000
+2026-10-09 12:33:22,638 | DEBUG | generate: json_mode=False, prompt_len=7854
+2026-10-09 12:33:22,653 | DEBUG | HippoRetriever.retrieve: seeds=40, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:22,653 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7439, budget=8000
+2026-10-09 12:33:22,655 | DEBUG | generate: json_mode=False, prompt_len=7905
+2026-10-09 12:33:22,658 | DEBUG | HippoRetriever.retrieve: seeds=46, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:22,658 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7513, budget=8000
+2026-10-09 12:33:22,658 | DEBUG | generate: json_mode=False, prompt_len=7954
+2026-10-09 12:33:22,658 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,676 | DEBUG | HippoRetriever.retrieve: seeds=70, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:22,676 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7580, budget=8000
+2026-10-09 12:33:22,676 | DEBUG | generate: json_mode=False, prompt_len=8078
+2026-10-09 12:33:22,691 | DEBUG | HippoRetriever.retrieve: seeds=72, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:22,691 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6713, budget=8000
+2026-10-09 12:33:22,691 | DEBUG | generate: json_mode=False, prompt_len=7246
+2026-10-09 12:33:22,691 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,715 | DEBUG | HippoRetriever.retrieve: seeds=72, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:22,715 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:22,715 | DEBUG | generate: json_mode=False, prompt_len=7957
+2026-10-09 12:33:22,721 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,721 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,721 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,741 | DEBUG | match_entities: question='Which of the following was a problem with the movie identifi', matched=6
+2026-10-09 12:33:22,748 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:22,756 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,778 | DEBUG | match_entities: question='Who does the critic blame for the quality of this movie?', matched=2
+2026-10-09 12:33:22,778 | DEBUG | HippoRetriever._seeds: 46 seed entities
+2026-10-09 12:33:22,909 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,918 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,927 | DEBUG | match_entities: question='If the critic had to use one word to describe the movie, whi', matched=20
+2026-10-09 12:33:22,934 | DEBUG | HippoRetriever._seeds: 71 seed entities
+2026-10-09 12:33:22,951 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:22,951 | DEBUG | match_entities: question='Why does the critic believe that some people will like The P', matched=29
+2026-10-09 12:33:22,968 | DEBUG | HippoRetriever._seeds: 72 seed entities
+2026-10-09 12:33:22,968 | DEBUG | generate: cache hit
+2026-10-09 12:33:22,998 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,002 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,006 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,012 | DEBUG | HippoRetriever.retrieve: seeds=69, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,012 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7168, budget=8000
+2026-10-09 12:33:23,012 | DEBUG | generate: json_mode=False, prompt_len=7514
+2026-10-09 12:33:23,012 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,028 | DEBUG | match_entities: question='What change does the critic think would have the biggest imp', matched=3
+2026-10-09 12:33:23,028 | DEBUG | HippoRetriever._seeds: 72 seed entities
+2026-10-09 12:33:23,028 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,060 | DEBUG | HippoRetriever.retrieve: seeds=67, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:23,060 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:23,076 | DEBUG | generate: json_mode=False, prompt_len=8029
+2026-10-09 12:33:23,089 | DEBUG | HippoRetriever.retrieve: seeds=55, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:23,089 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:23,089 | DEBUG | generate: json_mode=False, prompt_len=8007
+2026-10-09 12:33:23,092 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,092 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7968, budget=8000
+2026-10-09 12:33:23,092 | DEBUG | generate: json_mode=False, prompt_len=8320
+2026-10-09 12:33:23,109 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,124 | DEBUG | match_entities: question='What missing component of the movie does the critic referenc', matched=6
+2026-10-09 12:33:23,125 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:23,137 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,153 | DEBUG | match_entities: question="What was the author's initial motivation for writing the com", matched=9
+2026-10-09 12:33:23,153 | DEBUG | HippoRetriever._seeds: 59 seed entities
+2026-10-09 12:33:23,185 | DEBUG | HippoRetriever.retrieve: seeds=68, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,189 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7656, budget=8000
+2026-10-09 12:33:23,189 | DEBUG | generate: json_mode=False, prompt_len=8082
+2026-10-09 12:33:23,189 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,201 | DEBUG | match_entities: question="What was the author's experience level when writing the arti", matched=9
+2026-10-09 12:33:23,201 | DEBUG | HippoRetriever._seeds: 40 seed entities
+2026-10-09 12:33:23,219 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,230 | DEBUG | match_entities: question='What other value for scoring the martial arts most highly co', matched=36
+2026-10-09 12:33:23,248 | DEBUG | HippoRetriever._seeds: 76 seed entities
+2026-10-09 12:33:23,278 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,279 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7819, budget=8000
+2026-10-09 12:33:23,280 | DEBUG | generate: json_mode=False, prompt_len=8187
+2026-10-09 12:33:23,296 | DEBUG | HippoRetriever.retrieve: seeds=46, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:23,296 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7977, budget=8000
+2026-10-09 12:33:23,296 | DEBUG | generate: json_mode=False, prompt_len=8324
+2026-10-09 12:33:23,296 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,312 | DEBUG | match_entities: question='Which martial art on the list received the least scores over', matched=6
+2026-10-09 12:33:23,312 | DEBUG | HippoRetriever._seeds: 39 seed entities
+2026-10-09 12:33:23,348 | DEBUG | HippoRetriever.retrieve: seeds=71, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,352 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7871, budget=8000
+2026-10-09 12:33:23,355 | DEBUG | generate: json_mode=False, prompt_len=8253
+2026-10-09 12:33:23,357 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,375 | DEBUG | HippoRetriever.retrieve: seeds=72, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:23,375 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:23,375 | DEBUG | generate: json_mode=False, prompt_len=7865
+2026-10-09 12:33:23,375 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,381 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,381 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,381 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,381 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,403 | DEBUG | match_entities: question='Which martial art did the author think was the hardest worko', matched=9
+2026-10-09 12:33:23,403 | DEBUG | HippoRetriever._seeds: 62 seed entities
+2026-10-09 12:33:23,523 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,539 | DEBUG | match_entities: question='How did the author choose to score each martial art for "int', matched=9
+2026-10-09 12:33:23,539 | DEBUG | HippoRetriever._seeds: 68 seed entities
+2026-10-09 12:33:23,572 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,587 | DEBUG | match_entities: question='What martial art does the author think is best overall?', matched=9
+2026-10-09 12:33:23,589 | DEBUG | HippoRetriever._seeds: 44 seed entities
+2026-10-09 12:33:23,603 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,616 | DEBUG | match_entities: question='What was unusual the author about the Kung Fu class?', matched=10
+2026-10-09 12:33:23,616 | DEBUG | HippoRetriever._seeds: 62 seed entities
+2026-10-09 12:33:23,616 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,648 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,663 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,663 | DEBUG | match_entities: question='What is a quality included in each of the martial art descri', matched=4
+2026-10-09 12:33:23,680 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 12:33:23,681 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,695 | DEBUG | HippoRetriever.retrieve: seeds=72, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,695 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7099, budget=8000
+2026-10-09 12:33:23,695 | DEBUG | generate: json_mode=False, prompt_len=7555
+2026-10-09 12:33:23,695 | DEBUG | generate: cache hit
+2026-10-09 12:33:23,720 | DEBUG | HippoRetriever.retrieve: seeds=59, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:23,720 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7511, budget=8000
+2026-10-09 12:33:23,727 | DEBUG | generate: json_mode=False, prompt_len=8007
+2026-10-09 12:33:23,734 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,741 | DEBUG | match_entities: question='Why does the author think that Akido could explain why Steve', matched=12
+2026-10-09 12:33:23,741 | DEBUG | HippoRetriever._seeds: 39 seed entities
+2026-10-09 12:33:23,756 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,777 | DEBUG | match_entities: question='What is the author’s purpose for writing the article?', matched=8
+2026-10-09 12:33:23,779 | DEBUG | HippoRetriever._seeds: 66 seed entities
+2026-10-09 12:33:23,789 | DEBUG | HippoRetriever.retrieve: seeds=76, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:23,789 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:23,789 | DEBUG | generate: json_mode=False, prompt_len=7890
+2026-10-09 12:33:23,804 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,833 | DEBUG | match_entities: question='What does the author NOT rate for each class?', matched=15
+2026-10-09 12:33:23,835 | DEBUG | HippoRetriever._seeds: 69 seed entities
+2026-10-09 12:33:23,958 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:23,976 | DEBUG | match_entities: question='Who is the target audience for this article?', matched=5
+2026-10-09 12:33:23,989 | DEBUG | HippoRetriever._seeds: 76 seed entities
+2026-10-09 12:33:23,989 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:23,989 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6505, budget=8000
+2026-10-09 12:33:24,009 | DEBUG | generate: json_mode=False, prompt_len=6871
+2026-10-09 12:33:24,021 | DEBUG | HippoRetriever.retrieve: seeds=40, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,021 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7977, budget=8000
+2026-10-09 12:33:24,021 | DEBUG | generate: json_mode=False, prompt_len=8327
+2026-10-09 12:33:24,037 | DEBUG | HippoRetriever.retrieve: seeds=39, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,037 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7761, budget=8000
+2026-10-09 12:33:24,037 | DEBUG | generate: json_mode=False, prompt_len=8107
+2026-10-09 12:33:24,037 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,062 | DEBUG | HippoRetriever.retrieve: seeds=62, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,062 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7381, budget=8000
+2026-10-09 12:33:24,062 | DEBUG | generate: json_mode=False, prompt_len=7725
+2026-10-09 12:33:24,075 | DEBUG | HippoRetriever.retrieve: seeds=68, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,075 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7474, budget=8000
+2026-10-09 12:33:24,081 | DEBUG | generate: json_mode=False, prompt_len=7959
+2026-10-09 12:33:24,081 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,095 | DEBUG | HippoRetriever.retrieve: seeds=62, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,095 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7355, budget=8000
+2026-10-09 12:33:24,095 | DEBUG | generate: json_mode=False, prompt_len=7833
+2026-10-09 12:33:24,095 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,115 | DEBUG | match_entities: question='Which martial arts class did the author find the most diffic', matched=15
+2026-10-09 12:33:24,116 | DEBUG | HippoRetriever._seeds: 67 seed entities
+2026-10-09 12:33:24,116 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,143 | DEBUG | HippoRetriever.retrieve: seeds=44, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,143 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7739, budget=8000
+2026-10-09 12:33:24,143 | DEBUG | generate: json_mode=False, prompt_len=8113
+2026-10-09 12:33:24,143 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,161 | DEBUG | match_entities: question='What was different about the Kung Fu class?', matched=7
+2026-10-09 12:33:24,161 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 12:33:24,194 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,219 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,220 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7355, budget=8000
+2026-10-09 12:33:24,220 | DEBUG | generate: json_mode=False, prompt_len=7788
+2026-10-09 12:33:24,220 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,220 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,220 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,236 | DEBUG | match_entities: question='Which class was the least intense?', matched=5
+2026-10-09 12:33:24,236 | DEBUG | HippoRetriever._seeds: 58 seed entities
+2026-10-09 12:33:24,252 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,268 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,284 | DEBUG | match_entities: question='Which class was the most intense?', matched=6
+2026-10-09 12:33:24,284 | DEBUG | HippoRetriever._seeds: 54 seed entities
+2026-10-09 12:33:24,312 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,346 | DEBUG | match_entities: question='Which martial arts classes are best for someone looking for ', matched=14
+2026-10-09 12:33:24,347 | DEBUG | HippoRetriever._seeds: 41 seed entities
+2026-10-09 12:33:24,375 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,388 | DEBUG | match_entities: question='Which martial arts classes are best for someone looking for ', matched=19
+2026-10-09 12:33:24,391 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:24,391 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,423 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,431 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,445 | DEBUG | match_entities: question='What was the bad news that Ravdin was eager to deliver?', matched=10
+2026-10-09 12:33:24,449 | DEBUG | HippoRetriever._seeds: 50 seed entities
+2026-10-09 12:33:24,451 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,486 | DEBUG | HippoRetriever.retrieve: seeds=66, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,487 | DEBUG | _build_context: method='refined', passages=4, extras=0, context_len=6561, budget=8000
+2026-10-09 12:33:24,495 | DEBUG | generate: json_mode=False, prompt_len=7100
+2026-10-09 12:33:24,509 | DEBUG | HippoRetriever.retrieve: seeds=39, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:24,510 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7725, budget=8000
+2026-10-09 12:33:24,514 | DEBUG | generate: json_mode=False, prompt_len=8218
+2026-10-09 12:33:24,528 | DEBUG | HippoRetriever.retrieve: seeds=69, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:24,528 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7847, budget=8000
+2026-10-09 12:33:24,530 | DEBUG | generate: json_mode=False, prompt_len=8305
+2026-10-09 12:33:24,542 | DEBUG | HippoRetriever.retrieve: seeds=76, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,542 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7708, budget=8000
+2026-10-09 12:33:24,543 | DEBUG | generate: json_mode=False, prompt_len=8173
+2026-10-09 12:33:24,543 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,550 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,561 | DEBUG | match_entities: question='What is "the link" mentioned in the title?', matched=2
+2026-10-09 12:33:24,568 | DEBUG | HippoRetriever._seeds: 43 seed entities
+2026-10-09 12:33:24,593 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,608 | DEBUG | match_entities: question='Why was the city going to be burned?', matched=22
+2026-10-09 12:33:24,610 | DEBUG | HippoRetriever._seeds: 65 seed entities
+2026-10-09 12:33:24,641 | DEBUG | HippoRetriever.retrieve: seeds=67, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,644 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7601, budget=8000
+2026-10-09 12:33:24,644 | DEBUG | generate: json_mode=False, prompt_len=7951
+2026-10-09 12:33:24,645 | DEBUG | generate complete: response_len=1
+2026-10-09 12:33:24,651 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,666 | DEBUG | match_entities: question="What is the peaceful society's ultimate goal?", matched=1
+2026-10-09 12:33:24,667 | DEBUG | HippoRetriever._seeds: 60 seed entities
+2026-10-09 12:33:24,814 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,829 | DEBUG | match_entities: question='Why is Ravdin willing to try and make peace with the Hunters', matched=11
+2026-10-09 12:33:24,831 | DEBUG | HippoRetriever._seeds: 29 seed entities
+2026-10-09 12:33:24,849 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,849 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7355, budget=8000
+2026-10-09 12:33:24,863 | DEBUG | generate: json_mode=False, prompt_len=7823
+2026-10-09 12:33:24,874 | DEBUG | HippoRetriever.retrieve: seeds=58, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:24,875 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7761, budget=8000
+2026-10-09 12:33:24,877 | DEBUG | generate: json_mode=False, prompt_len=8082
+2026-10-09 12:33:24,889 | DEBUG | HippoRetriever.retrieve: seeds=54, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:24,892 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7438, budget=8000
+2026-10-09 12:33:24,894 | DEBUG | generate: json_mode=False, prompt_len=7761
+2026-10-09 12:33:24,896 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,901 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,905 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,919 | DEBUG | HippoRetriever.retrieve: seeds=41, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,920 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7646, budget=8000
+2026-10-09 12:33:24,922 | DEBUG | generate: json_mode=False, prompt_len=8075
+2026-10-09 12:33:24,933 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:24,934 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7720, budget=8000
+2026-10-09 12:33:24,935 | DEBUG | generate: json_mode=False, prompt_len=8135
+2026-10-09 12:33:24,936 | DEBUG | generate: cache hit
+2026-10-09 12:33:24,942 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,956 | DEBUG | match_entities: question='What did Dana mean by the saying the concerts "have come so ', matched=4
+2026-10-09 12:33:24,958 | DEBUG | HippoRetriever._seeds: 26 seed entities
+2026-10-09 12:33:24,972 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:24,992 | DEBUG | match_entities: question='What is Nehmon most worried about while talking with Ravdin ', matched=9
+2026-10-09 12:33:24,994 | DEBUG | HippoRetriever._seeds: 34 seed entities
+2026-10-09 12:33:25,006 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,032 | DEBUG | match_entities: question="What did Frankle mean when he asked to see Dana's magic?", matched=6
+2026-10-09 12:33:25,035 | DEBUG | HippoRetriever._seeds: 33 seed entities
+2026-10-09 12:33:25,060 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,076 | DEBUG | match_entities: question='Why did Ravdin and Dana enter a cave in the jungle at the en', matched=18
+2026-10-09 12:33:25,077 | DEBUG | HippoRetriever._seeds: 42 seed entities
+2026-10-09 12:33:25,077 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,100 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,105 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,117 | DEBUG | HippoRetriever.retrieve: seeds=43, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,117 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7728, budget=8000
+2026-10-09 12:33:25,118 | DEBUG | generate: json_mode=False, prompt_len=8189
+2026-10-09 12:33:25,128 | DEBUG | HippoRetriever.retrieve: seeds=50, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:25,129 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7173, budget=8000
+2026-10-09 12:33:25,130 | DEBUG | generate: json_mode=False, prompt_len=7625
+2026-10-09 12:33:25,142 | DEBUG | HippoRetriever.retrieve: seeds=65, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,143 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7162, budget=8000
+2026-10-09 12:33:25,143 | DEBUG | generate: json_mode=False, prompt_len=7641
+2026-10-09 12:33:25,147 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,161 | DEBUG | match_entities: question='What did Ravdin and Dana accomplish by staying behind?', matched=3
+2026-10-09 12:33:25,163 | DEBUG | HippoRetriever._seeds: 32 seed entities
+2026-10-09 12:33:25,163 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,194 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,199 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,213 | DEBUG | match_entities: question='What is Ravdin’s job?', matched=4
+2026-10-09 12:33:25,215 | DEBUG | HippoRetriever._seeds: 41 seed entities
+2026-10-09 12:33:25,234 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,248 | DEBUG | match_entities: question='Which word does NOT describe Lord Nehmon’s leadership?', matched=13
+2026-10-09 12:33:25,249 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:25,341 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,366 | DEBUG | match_entities: question='What is the relationship between Ravdin and Dana?', matched=4
+2026-10-09 12:33:25,373 | DEBUG | HippoRetriever._seeds: 31 seed entities
+2026-10-09 12:33:25,381 | DEBUG | HippoRetriever.retrieve: seeds=29, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:25,381 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7226, budget=8000
+2026-10-09 12:33:25,405 | DEBUG | generate: json_mode=False, prompt_len=7718
+2026-10-09 12:33:25,421 | DEBUG | HippoRetriever.retrieve: seeds=60, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,421 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7452, budget=8000
+2026-10-09 12:33:25,421 | DEBUG | generate: json_mode=False, prompt_len=7877
+2026-10-09 12:33:25,421 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,437 | DEBUG | match_entities: question='Why do they need to burn the city?', matched=21
+2026-10-09 12:33:25,437 | DEBUG | HippoRetriever._seeds: 66 seed entities
+2026-10-09 12:33:25,471 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,483 | DEBUG | match_entities: question='Which word describes Frankle’s leadership?', matched=9
+2026-10-09 12:33:25,487 | DEBUG | HippoRetriever._seeds: 59 seed entities
+2026-10-09 12:33:25,488 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,524 | DEBUG | HippoRetriever.retrieve: seeds=34, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,525 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7038, budget=8000
+2026-10-09 12:33:25,525 | DEBUG | generate: json_mode=False, prompt_len=7615
+2026-10-09 12:33:25,525 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,528 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,541 | DEBUG | HippoRetriever.retrieve: seeds=26, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,541 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7209, budget=8000
+2026-10-09 12:33:25,541 | DEBUG | generate: json_mode=False, prompt_len=7751
+2026-10-09 12:33:25,560 | DEBUG | HippoRetriever.retrieve: seeds=33, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:25,560 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7260, budget=8000
+2026-10-09 12:33:25,560 | DEBUG | generate: json_mode=False, prompt_len=7722
+2026-10-09 12:33:25,564 | DEBUG | HippoRetriever.retrieve: seeds=42, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:25,564 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6995, budget=8000
+2026-10-09 12:33:25,564 | DEBUG | generate: json_mode=False, prompt_len=7518
+2026-10-09 12:33:25,575 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,593 | DEBUG | match_entities: question='Predict: was Ravdin and Dana’s plan successful?', matched=7
+2026-10-09 12:33:25,593 | DEBUG | HippoRetriever._seeds: 36 seed entities
+2026-10-09 12:33:25,607 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,619 | DEBUG | match_entities: question='What is “the link”?', matched=1
+2026-10-09 12:33:25,623 | DEBUG | HippoRetriever._seeds: 42 seed entities
+2026-10-09 12:33:25,654 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,660 | DEBUG | match_entities: question='What is a theme in the story?', matched=1
+2026-10-09 12:33:25,660 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 12:33:25,660 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,704 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,723 | DEBUG | HippoRetriever.retrieve: seeds=32, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:25,723 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7154, budget=8000
+2026-10-09 12:33:25,723 | DEBUG | generate: json_mode=False, prompt_len=7658
+2026-10-09 12:33:25,723 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,748 | DEBUG | HippoRetriever.retrieve: seeds=41, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:25,748 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7194, budget=8000
+2026-10-09 12:33:25,754 | DEBUG | generate: json_mode=False, prompt_len=7544
+2026-10-09 12:33:25,756 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,763 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,769 | DEBUG | match_entities: question='Why do Dana and Ravdin stay behind?', matched=3
+2026-10-09 12:33:25,769 | DEBUG | HippoRetriever._seeds: 29 seed entities
+2026-10-09 12:33:25,785 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,785 | DEBUG | match_entities: question='Nehmon wants to flee, but Ravdin and Dana argue with him. Wh', matched=8
+2026-10-09 12:33:25,785 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:25,785 | DEBUG | generate: cache hit
+2026-10-09 12:33:25,959 | DEBUG | HippoRetriever.retrieve: seeds=31, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:25,959 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7154, budget=8000
+2026-10-09 12:33:25,975 | DEBUG | generate: json_mode=False, prompt_len=7550
+2026-10-09 12:33:25,978 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:25,990 | DEBUG | match_entities: question='What does the  Atomic Wonder Space Wave Tapper gadget do?', matched=55
+2026-10-09 12:33:25,993 | DEBUG | HippoRetriever._seeds: 99 seed entities
+2026-10-09 12:33:25,993 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,027 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,027 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7152, budget=8000
+2026-10-09 12:33:26,027 | DEBUG | generate: json_mode=False, prompt_len=7489
+2026-10-09 12:33:26,027 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,043 | DEBUG | match_entities: question='Why does Biff stay to watch the demonstration?', matched=4
+2026-10-09 12:33:26,043 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 12:33:26,059 | DEBUG | HippoRetriever.retrieve: seeds=66, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,059 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7189, budget=8000
+2026-10-09 12:33:26,075 | DEBUG | generate: json_mode=False, prompt_len=7711
+2026-10-09 12:33:26,087 | DEBUG | HippoRetriever.retrieve: seeds=59, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,087 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7524, budget=8000
+2026-10-09 12:33:26,087 | DEBUG | generate: json_mode=False, prompt_len=7858
+2026-10-09 12:33:26,093 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,109 | DEBUG | match_entities: question='What is the secret to how the gadget works?', matched=15
+2026-10-09 12:33:26,109 | DEBUG | HippoRetriever._seeds: 69 seed entities
+2026-10-09 12:33:26,109 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,139 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,155 | DEBUG | match_entities: question='Why are Biff’s friends so intrigued with the gadget?', matched=9
+2026-10-09 12:33:26,155 | DEBUG | HippoRetriever._seeds: 61 seed entities
+2026-10-09 12:33:26,155 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,186 | DEBUG | HippoRetriever.retrieve: seeds=36, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,186 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7035, budget=8000
+2026-10-09 12:33:26,186 | DEBUG | generate: json_mode=False, prompt_len=7606
+2026-10-09 12:33:26,202 | DEBUG | HippoRetriever.retrieve: seeds=42, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,202 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7577, budget=8000
+2026-10-09 12:33:26,202 | DEBUG | generate: json_mode=False, prompt_len=8099
+2026-10-09 12:33:26,202 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,220 | DEBUG | match_entities: question='What distracts Biff and his friends from continuing their po', matched=14
+2026-10-09 12:33:26,222 | DEBUG | HippoRetriever._seeds: 70 seed entities
+2026-10-09 12:33:26,227 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:26,227 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7373, budget=8000
+2026-10-09 12:33:26,233 | DEBUG | generate: json_mode=False, prompt_len=7796
+2026-10-09 12:33:26,233 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,248 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,264 | DEBUG | match_entities: question='The inventors of the gadget are targeting who to buy it?', matched=2
+2026-10-09 12:33:26,264 | DEBUG | HippoRetriever._seeds: 59 seed entities
+2026-10-09 12:33:26,264 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,295 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,295 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,311 | DEBUG | HippoRetriever.retrieve: seeds=29, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:26,311 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7154, budget=8000
+2026-10-09 12:33:26,311 | DEBUG | generate: json_mode=False, prompt_len=7731
+2026-10-09 12:33:26,311 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,328 | DEBUG | match_entities: question='Why did the demonstrator reduce the price to $3 for Biff?', matched=11
+2026-10-09 12:33:26,328 | DEBUG | HippoRetriever._seeds: 63 seed entities
+2026-10-09 12:33:26,328 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:26,328 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7074, budget=8000
+2026-10-09 12:33:26,328 | DEBUG | generate: json_mode=False, prompt_len=7603
+2026-10-09 12:33:26,366 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,367 | DEBUG | match_entities: question='What are the inventors of the gadget hoping to achieve with ', matched=2
+2026-10-09 12:33:26,382 | DEBUG | HippoRetriever._seeds: 69 seed entities
+2026-10-09 12:33:26,518 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,531 | DEBUG | match_entities: question='What have the inventors of the gadget patented?', matched=2
+2026-10-09 12:33:26,531 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 12:33:26,546 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,546 | DEBUG | match_entities: question='How are the inventors of the gadget hoping to get rich?', matched=5
+2026-10-09 12:33:26,562 | DEBUG | HippoRetriever._seeds: 60 seed entities
+2026-10-09 12:33:26,562 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,605 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,608 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,609 | DEBUG | HippoRetriever.retrieve: seeds=99, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:26,609 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7120, budget=8000
+2026-10-09 12:33:26,609 | DEBUG | generate: json_mode=False, prompt_len=7527
+2026-10-09 12:33:26,624 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,624 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7148, budget=8000
+2026-10-09 12:33:26,624 | DEBUG | generate: json_mode=False, prompt_len=7616
+2026-10-09 12:33:26,640 | DEBUG | HippoRetriever.retrieve: seeds=69, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,640 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7068, budget=8000
+2026-10-09 12:33:26,640 | DEBUG | generate: json_mode=False, prompt_len=7469
+2026-10-09 12:33:26,656 | DEBUG | HippoRetriever.retrieve: seeds=61, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,656 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7050, budget=8000
+2026-10-09 12:33:26,656 | DEBUG | generate: json_mode=False, prompt_len=7527
+2026-10-09 12:33:26,656 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,676 | DEBUG | match_entities: question='Why did all the kids leave the Atomic Wonder Space Wave Trap', matched=55
+2026-10-09 12:33:26,678 | DEBUG | HippoRetriever._seeds: 91 seed entities
+2026-10-09 12:33:26,704 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,728 | DEBUG | match_entities: question='What loophole will get other people to do the work and resea', matched=67
+2026-10-09 12:33:26,730 | DEBUG | HippoRetriever._seeds: 109 seed entities
+2026-10-09 12:33:26,750 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,766 | DEBUG | match_entities: question='Why did Biff buy the toy?', matched=3
+2026-10-09 12:33:26,766 | DEBUG | HippoRetriever._seeds: 55 seed entities
+2026-10-09 12:33:26,766 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,801 | DEBUG | generate complete: response_len=1
+2026-10-09 12:33:26,813 | DEBUG | HippoRetriever.retrieve: seeds=59, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,813 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6892, budget=8000
+2026-10-09 12:33:26,813 | DEBUG | generate: json_mode=False, prompt_len=7251
+2026-10-09 12:33:26,813 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,829 | DEBUG | HippoRetriever.retrieve: seeds=70, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,829 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6695, budget=8000
+2026-10-09 12:33:26,829 | DEBUG | generate: json_mode=False, prompt_len=7249
+2026-10-09 12:33:26,844 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,844 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,860 | DEBUG | match_entities: question='What will likely happen with the Atomic Wonder?', matched=7
+2026-10-09 12:33:26,860 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:26,895 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,908 | DEBUG | match_entities: question='What will cause the buyers to research the toy?', matched=10
+2026-10-09 12:33:26,908 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 12:33:26,908 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,944 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,952 | DEBUG | generate: cache hit
+2026-10-09 12:33:26,960 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:26,970 | DEBUG | match_entities: question="Why wasn't anyone interested in the coils before the toy?", matched=6
+2026-10-09 12:33:26,970 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:26,985 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:26,988 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7064, budget=8000
+2026-10-09 12:33:27,002 | DEBUG | generate: json_mode=False, prompt_len=7527
+2026-10-09 12:33:27,002 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,018 | DEBUG | HippoRetriever.retrieve: seeds=63, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,018 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7012, budget=8000
+2026-10-09 12:33:27,018 | DEBUG | generate: json_mode=False, prompt_len=7483
+2026-10-09 12:33:27,034 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,034 | DEBUG | match_entities: question='Which of the following jobs helped someone recognize the tri', matched=4
+2026-10-09 12:33:27,050 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 12:33:27,068 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,082 | DEBUG | match_entities: question='What was ironic about the colonel saying that all good illus', matched=9
+2026-10-09 12:33:27,083 | DEBUG | HippoRetriever._seeds: 73 seed entities
+2026-10-09 12:33:27,211 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,213 | DEBUG | match_entities: question='Which of the following most accurately represents how much m', matched=15
+2026-10-09 12:33:27,213 | DEBUG | HippoRetriever._seeds: 55 seed entities
+2026-10-09 12:33:27,213 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,261 | DEBUG | HippoRetriever.retrieve: seeds=60, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,261 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6967, budget=8000
+2026-10-09 12:33:27,261 | DEBUG | generate: json_mode=False, prompt_len=7507
+2026-10-09 12:33:27,261 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,277 | DEBUG | match_entities: question='Where is Broom in the beginning of the story?', matched=4
+2026-10-09 12:33:27,277 | DEBUG | HippoRetriever._seeds: 31 seed entities
+2026-10-09 12:33:27,319 | DEBUG | HippoRetriever.retrieve: seeds=69, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,322 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7064, budget=8000
+2026-10-09 12:33:27,322 | DEBUG | generate: json_mode=False, prompt_len=7546
+2026-10-09 12:33:27,330 | DEBUG | HippoRetriever.retrieve: seeds=109, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,330 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7464, budget=8000
+2026-10-09 12:33:27,330 | DEBUG | generate: json_mode=False, prompt_len=7872
+2026-10-09 12:33:27,344 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,346 | DEBUG | match_entities: question='Where is Broom from?', matched=2
+2026-10-09 12:33:27,346 | DEBUG | HippoRetriever._seeds: 36 seed entities
+2026-10-09 12:33:27,368 | DEBUG | HippoRetriever.retrieve: seeds=55, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,368 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7006, budget=8000
+2026-10-09 12:33:27,368 | DEBUG | generate: json_mode=False, prompt_len=7379
+2026-10-09 12:33:27,396 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,409 | DEBUG | match_entities: question='When was Broom born?', matched=2
+2026-10-09 12:33:27,409 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:27,442 | DEBUG | HippoRetriever.retrieve: seeds=91, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,444 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7157, budget=8000
+2026-10-09 12:33:27,445 | DEBUG | generate: json_mode=False, prompt_len=7555
+2026-10-09 12:33:27,446 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,449 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,449 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7147, budget=8000
+2026-10-09 12:33:27,449 | DEBUG | generate: json_mode=False, prompt_len=7545
+2026-10-09 12:33:27,465 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,480 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,480 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7051, budget=8000
+2026-10-09 12:33:27,480 | DEBUG | generate: json_mode=False, prompt_len=7432
+2026-10-09 12:33:27,480 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,499 | DEBUG | match_entities: question='What is the metal box that makes a humming sound?', matched=59
+2026-10-09 12:33:27,499 | DEBUG | HippoRetriever._seeds: 97 seed entities
+2026-10-09 12:33:27,499 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,528 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,550 | DEBUG | match_entities: question='What is Broom’s relationship with Contarini?', matched=5
+2026-10-09 12:33:27,550 | DEBUG | HippoRetriever._seeds: 33 seed entities
+2026-10-09 12:33:27,550 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,576 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,581 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,591 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,592 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6993, budget=8000
+2026-10-09 12:33:27,592 | DEBUG | generate: json_mode=False, prompt_len=7384
+2026-10-09 12:33:27,592 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,592 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,612 | DEBUG | match_entities: question='What is Broom’s relationship to Mr. Edward Jasperson?', matched=7
+2026-10-09 12:33:27,612 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:27,612 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,642 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,642 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7023, budget=8000
+2026-10-09 12:33:27,642 | DEBUG | generate: json_mode=False, prompt_len=7379
+2026-10-09 12:33:27,657 | DEBUG | HippoRetriever.retrieve: seeds=73, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:27,657 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7268, budget=8000
+2026-10-09 12:33:27,657 | DEBUG | generate: json_mode=False, prompt_len=7767
+2026-10-09 12:33:27,657 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,677 | DEBUG | match_entities: question='What did Broom go to prison for?', matched=3
+2026-10-09 12:33:27,679 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:27,698 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,711 | DEBUG | match_entities: question='Why doesn’t Broom know where he is or who he is?', matched=2
+2026-10-09 12:33:27,713 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:27,723 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,738 | DEBUG | match_entities: question='What war did Broom fight in?', matched=17
+2026-10-09 12:33:27,738 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 12:33:27,917 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:27,921 | DEBUG | match_entities: question='What is the twist of this story?', matched=1
+2026-10-09 12:33:27,931 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 12:33:27,954 | DEBUG | HippoRetriever.retrieve: seeds=55, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:27,954 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6993, budget=8000
+2026-10-09 12:33:27,954 | DEBUG | generate: json_mode=False, prompt_len=7418
+2026-10-09 12:33:27,954 | DEBUG | generate: cache hit
+2026-10-09 12:33:27,969 | DEBUG | HippoRetriever.retrieve: seeds=31, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:27,969 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:27,969 | DEBUG | generate: json_mode=False, prompt_len=7328
+2026-10-09 12:33:27,993 | DEBUG | HippoRetriever.retrieve: seeds=36, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:27,993 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:27,993 | DEBUG | generate: json_mode=False, prompt_len=7310
+2026-10-09 12:33:28,000 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,014 | DEBUG | match_entities: question='When was Broom in prison?', matched=3
+2026-10-09 12:33:28,016 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:28,016 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,016 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:28,032 | DEBUG | generate: json_mode=False, prompt_len=7432
+2026-10-09 12:33:28,060 | DEBUG | HippoRetriever.retrieve: seeds=97, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:28,060 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7143, budget=8000
+2026-10-09 12:33:28,060 | DEBUG | generate: json_mode=False, prompt_len=7486
+2026-10-09 12:33:28,060 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,060 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,086 | DEBUG | match_entities: question='Why was the painting so clear?', matched=4
+2026-10-09 12:33:28,090 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:28,100 | DEBUG | HippoRetriever.retrieve: seeds=33, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,100 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6946, budget=8000
+2026-10-09 12:33:28,101 | DEBUG | generate: json_mode=False, prompt_len=7330
+2026-10-09 12:33:28,101 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,123 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,123 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,151 | DEBUG | match_entities: question='Which of the following weapons was Broom most likely wishing', matched=8
+2026-10-09 12:33:28,154 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 12:33:28,154 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,164 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,192 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,194 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6791, budget=8000
+2026-10-09 12:33:28,196 | DEBUG | generate: json_mode=False, prompt_len=7183
+2026-10-09 12:33:28,196 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,196 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,212 | DEBUG | match_entities: question='How did Broom travel through time?', matched=34
+2026-10-09 12:33:28,212 | DEBUG | HippoRetriever._seeds: 70 seed entities
+2026-10-09 12:33:28,244 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,246 | DEBUG | match_entities: question='Which of the following did Broom recognize?', matched=2
+2026-10-09 12:33:28,246 | DEBUG | HippoRetriever._seeds: 30 seed entities
+2026-10-09 12:33:28,260 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,276 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,291 | DEBUG | match_entities: question='What is referenced as the devil Broom knows?', matched=5
+2026-10-09 12:33:28,291 | DEBUG | HippoRetriever._seeds: 37 seed entities
+2026-10-09 12:33:28,310 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,314 | DEBUG | match_entities: question='What language was Mr. Edward Jasperson speaking?', matched=10
+2026-10-09 12:33:28,323 | DEBUG | HippoRetriever._seeds: 63 seed entities
+2026-10-09 12:33:28,339 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,372 | DEBUG | match_entities: question='Why was Broom a prisoner?', matched=3
+2026-10-09 12:33:28,372 | DEBUG | HippoRetriever._seeds: 31 seed entities
+2026-10-09 12:33:28,391 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,393 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6876, budget=8000
+2026-10-09 12:33:28,407 | DEBUG | generate: json_mode=False, prompt_len=7226
+2026-10-09 12:33:28,408 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,415 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,430 | DEBUG | match_entities: question='What city does Broom wake up in?', matched=22
+2026-10-09 12:33:28,430 | DEBUG | HippoRetriever._seeds: 59 seed entities
+2026-10-09 12:33:28,447 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:28,447 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:28,574 | DEBUG | generate: json_mode=False, prompt_len=7373
+2026-10-09 12:33:28,582 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:28,582 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7966, budget=8000
+2026-10-09 12:33:28,582 | DEBUG | generate: json_mode=False, prompt_len=8348
+2026-10-09 12:33:28,597 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:28,597 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:28,597 | DEBUG | generate: json_mode=False, prompt_len=7442
+2026-10-09 12:33:28,611 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,611 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6970, budget=8000
+2026-10-09 12:33:28,611 | DEBUG | generate: json_mode=False, prompt_len=7291
+2026-10-09 12:33:28,611 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,611 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,636 | DEBUG | match_entities: question='What is the most likely meaning of the slang O.Q.? (in twent', matched=13
+2026-10-09 12:33:28,636 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:28,673 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:28,673 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7222, budget=8000
+2026-10-09 12:33:28,673 | DEBUG | generate: json_mode=False, prompt_len=7628
+2026-10-09 12:33:28,689 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:28,697 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6916, budget=8000
+2026-10-09 12:33:28,697 | DEBUG | generate: json_mode=False, prompt_len=7254
+2026-10-09 12:33:28,705 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,705 | DEBUG | match_entities: question='Why does the Skipper stop abruptly after he says "when you\'r', matched=9
+2026-10-09 12:33:28,705 | DEBUG | HippoRetriever._seeds: 47 seed entities
+2026-10-09 12:33:28,705 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,762 | DEBUG | HippoRetriever.retrieve: seeds=70, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:28,763 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7322, budget=8000
+2026-10-09 12:33:28,765 | DEBUG | generate: json_mode=False, prompt_len=7675
+2026-10-09 12:33:28,766 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,771 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,775 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,777 | DEBUG | generate: cache hit
+2026-10-09 12:33:28,782 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,782 | DEBUG | match_entities: question='Who or what is Leo?', matched=6
+2026-10-09 12:33:28,798 | DEBUG | HippoRetriever._seeds: 41 seed entities
+2026-10-09 12:33:28,815 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,831 | DEBUG | match_entities: question='Why does the Skipper allow the new chef to use the heat-cann', matched=36
+2026-10-09 12:33:28,831 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 12:33:28,847 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,847 | DEBUG | match_entities: question=' Lieutenant Dugan brings up the examples of "High G" Gordon ', matched=24
+2026-10-09 12:33:28,864 | DEBUG | HippoRetriever._seeds: 66 seed entities
+2026-10-09 12:33:28,886 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,914 | DEBUG | match_entities: question="Why didn't the Skipper follow the new cook's advice about av", matched=22
+2026-10-09 12:33:28,916 | DEBUG | HippoRetriever._seeds: 59 seed entities
+2026-10-09 12:33:28,923 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:28,949 | DEBUG | match_entities: question='Why was the new cook so upset that the Skipper decided to su', matched=21
+2026-10-09 12:33:28,954 | DEBUG | HippoRetriever._seeds: 50 seed entities
+2026-10-09 12:33:28,964 | DEBUG | HippoRetriever.retrieve: seeds=37, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:28,964 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6955, budget=8000
+2026-10-09 12:33:29,076 | DEBUG | generate: json_mode=False, prompt_len=7280
+2026-10-09 12:33:29,103 | DEBUG | HippoRetriever.retrieve: seeds=30, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,103 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:29,103 | DEBUG | generate: json_mode=False, prompt_len=7298
+2026-10-09 12:33:29,103 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,112 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,129 | DEBUG | HippoRetriever.retrieve: seeds=31, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:29,129 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6970, budget=8000
+2026-10-09 12:33:29,129 | DEBUG | generate: json_mode=False, prompt_len=7310
+2026-10-09 12:33:29,129 | DEBUG | HippoRetriever.retrieve: seeds=63, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,129 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7033, budget=8000
+2026-10-09 12:33:29,129 | DEBUG | generate: json_mode=False, prompt_len=7406
+2026-10-09 12:33:29,129 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,144 | DEBUG | HippoRetriever.retrieve: seeds=59, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:29,144 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=6979, budget=8000
+2026-10-09 12:33:29,144 | DEBUG | generate: json_mode=False, prompt_len=7287
+2026-10-09 12:33:29,160 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,160 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7599, budget=8000
+2026-10-09 12:33:29,160 | DEBUG | generate: json_mode=False, prompt_len=7965
+2026-10-09 12:33:29,160 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,176 | DEBUG | match_entities: question='What does the Skipper mean by "lady-logic"?', matched=8
+2026-10-09 12:33:29,176 | DEBUG | HippoRetriever._seeds: 41 seed entities
+2026-10-09 12:33:29,176 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,214 | DEBUG | match_entities: question="What would've happened if the new cook had told the Skipper ", matched=25
+2026-10-09 12:33:29,223 | DEBUG | HippoRetriever._seeds: 61 seed entities
+2026-10-09 12:33:29,246 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,247 | DEBUG | match_entities: question='Why was the cook called Captain Slops?', matched=22
+2026-10-09 12:33:29,247 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 12:33:29,279 | DEBUG | HippoRetriever.retrieve: seeds=47, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,279 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7248, budget=8000
+2026-10-09 12:33:29,279 | DEBUG | generate: json_mode=False, prompt_len=7829
+2026-10-09 12:33:29,279 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,295 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,295 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,307 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,313 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,328 | DEBUG | match_entities: question="What is the most likely explanation for the cook's demeanor ", matched=7
+2026-10-09 12:33:29,330 | DEBUG | HippoRetriever._seeds: 50 seed entities
+2026-10-09 12:33:29,353 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,368 | DEBUG | match_entities: question='How did Dugan find a new cook?', matched=23
+2026-10-09 12:33:29,371 | DEBUG | HippoRetriever._seeds: 67 seed entities
+2026-10-09 12:33:29,372 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,404 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,410 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,424 | DEBUG | match_entities: question='How did the cook get the tool he wanted in the kitchen?', matched=5
+2026-10-09 12:33:29,426 | DEBUG | HippoRetriever._seeds: 49 seed entities
+2026-10-09 12:33:29,437 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,454 | DEBUG | match_entities: question='How do they get from the kitchen to the control room?', matched=51
+2026-10-09 12:33:29,466 | DEBUG | HippoRetriever._seeds: 89 seed entities
+2026-10-09 12:33:29,497 | DEBUG | HippoRetriever.retrieve: seeds=41, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:29,497 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7202, budget=8000
+2026-10-09 12:33:29,499 | DEBUG | generate: json_mode=False, prompt_len=7564
+2026-10-09 12:33:29,512 | DEBUG | HippoRetriever.retrieve: seeds=59, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:29,513 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7083, budget=8000
+2026-10-09 12:33:29,513 | DEBUG | generate: json_mode=False, prompt_len=7753
+2026-10-09 12:33:29,524 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,526 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7281, budget=8000
+2026-10-09 12:33:29,528 | DEBUG | generate: json_mode=False, prompt_len=7969
+2026-10-09 12:33:29,539 | DEBUG | HippoRetriever.retrieve: seeds=66, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,540 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7548, budget=8000
+2026-10-09 12:33:29,541 | DEBUG | generate: json_mode=False, prompt_len=8178
+2026-10-09 12:33:29,544 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,550 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,565 | DEBUG | match_entities: question='What would have most likely happened if the captain followed', matched=22
+2026-10-09 12:33:29,566 | DEBUG | HippoRetriever._seeds: 56 seed entities
+2026-10-09 12:33:29,590 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,603 | DEBUG | match_entities: question="Why was the ship's crew happy about their voyage?", matched=46
+2026-10-09 12:33:29,606 | DEBUG | HippoRetriever._seeds: 78 seed entities
+2026-10-09 12:33:29,776 | DEBUG | HippoRetriever.retrieve: seeds=50, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,777 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7227, budget=8000
+2026-10-09 12:33:29,778 | DEBUG | generate: json_mode=False, prompt_len=7957
+2026-10-09 12:33:29,788 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,804 | DEBUG | match_entities: question='Why did the ship try to travel via Vesta?', matched=38
+2026-10-09 12:33:29,814 | DEBUG | HippoRetriever._seeds: 82 seed entities
+2026-10-09 12:33:29,847 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:29,848 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7103, budget=8000
+2026-10-09 12:33:29,848 | DEBUG | generate: json_mode=False, prompt_len=7527
+2026-10-09 12:33:29,861 | DEBUG | HippoRetriever.retrieve: seeds=41, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,862 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7301, budget=8000
+2026-10-09 12:33:29,863 | DEBUG | generate: json_mode=False, prompt_len=7648
+2026-10-09 12:33:29,876 | DEBUG | HippoRetriever.retrieve: seeds=61, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,878 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7264, budget=8000
+2026-10-09 12:33:29,879 | DEBUG | generate: json_mode=False, prompt_len=7941
+2026-10-09 12:33:29,879 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,884 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,887 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,889 | DEBUG | generate: cache hit
+2026-10-09 12:33:29,901 | DEBUG | HippoRetriever.retrieve: seeds=50, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:29,901 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7163, budget=8000
+2026-10-09 12:33:29,904 | DEBUG | generate: json_mode=False, prompt_len=7566
+2026-10-09 12:33:29,906 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,920 | DEBUG | match_entities: question='Why did the alliance want to capture the ship?', matched=41
+2026-10-09 12:33:29,922 | DEBUG | HippoRetriever._seeds: 78 seed entities
+2026-10-09 12:33:29,945 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,960 | DEBUG | match_entities: question='How many of her grandchildren did Mrs.Perkins spend time wit', matched=41
+2026-10-09 12:33:29,962 | DEBUG | HippoRetriever._seeds: 74 seed entities
+2026-10-09 12:33:29,982 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:29,997 | DEBUG | match_entities: question='Which of Mrs. Perkins’ qualities makes her suspicious?', matched=11
+2026-10-09 12:33:29,999 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 12:33:30,005 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,023 | DEBUG | match_entities: question='How many times does Mrs. Perkins run into Darling in the sto', matched=26
+2026-10-09 12:33:30,037 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 12:33:30,038 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,080 | DEBUG | HippoRetriever.retrieve: seeds=89, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,080 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7357, budget=8000
+2026-10-09 12:33:30,083 | DEBUG | generate: json_mode=False, prompt_len=7715
+2026-10-09 12:33:30,093 | DEBUG | HippoRetriever.retrieve: seeds=67, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,094 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7090, budget=8000
+2026-10-09 12:33:30,096 | DEBUG | generate: json_mode=False, prompt_len=7467
+2026-10-09 12:33:30,097 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,110 | DEBUG | HippoRetriever.retrieve: seeds=49, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,111 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7074, budget=8000
+2026-10-09 12:33:30,111 | DEBUG | generate: json_mode=False, prompt_len=7489
+2026-10-09 12:33:30,111 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,115 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,129 | DEBUG | HippoRetriever.retrieve: seeds=56, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,129 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7216, budget=8000
+2026-10-09 12:33:30,130 | DEBUG | generate: json_mode=False, prompt_len=7722
+2026-10-09 12:33:30,139 | DEBUG | HippoRetriever.retrieve: seeds=78, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,139 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7202, budget=8000
+2026-10-09 12:33:30,140 | DEBUG | generate: json_mode=False, prompt_len=7624
+2026-10-09 12:33:30,144 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,157 | DEBUG | match_entities: question="What best describes Mrs. Perkins' intent in the story?", matched=15
+2026-10-09 12:33:30,159 | DEBUG | HippoRetriever._seeds: 39 seed entities
+2026-10-09 12:33:30,177 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,191 | DEBUG | match_entities: question='What history had the pirates had with Darling?', matched=11
+2026-10-09 12:33:30,192 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 12:33:30,210 | DEBUG | HippoRetriever.retrieve: seeds=82, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,210 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7327, budget=8000
+2026-10-09 12:33:30,323 | DEBUG | generate: json_mode=False, prompt_len=7739
+2026-10-09 12:33:30,330 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,346 | DEBUG | match_entities: question='What was the relationship like between Mrs. Perkins and the ', matched=30
+2026-10-09 12:33:30,346 | DEBUG | HippoRetriever._seeds: 57 seed entities
+2026-10-09 12:33:30,362 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,378 | DEBUG | match_entities: question='Which planet is not known to be colonized in the story?', matched=23
+2026-10-09 12:33:30,378 | DEBUG | HippoRetriever._seeds: 69 seed entities
+2026-10-09 12:33:30,378 | DEBUG | generate complete: response_len=1
+2026-10-09 12:33:30,378 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,411 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,419 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,419 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,426 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,426 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7160, budget=8000
+2026-10-09 12:33:30,426 | DEBUG | generate: json_mode=False, prompt_len=7500
+2026-10-09 12:33:30,442 | DEBUG | HippoRetriever.retrieve: seeds=78, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:30,442 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7858, budget=8000
+2026-10-09 12:33:30,442 | DEBUG | generate: json_mode=False, prompt_len=8265
+2026-10-09 12:33:30,442 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,468 | DEBUG | match_entities: question='What is the relationship like between Mrs. Perkins and Johnn', matched=17
+2026-10-09 12:33:30,470 | DEBUG | HippoRetriever._seeds: 46 seed entities
+2026-10-09 12:33:30,492 | DEBUG | HippoRetriever.retrieve: seeds=74, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:30,492 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7173, budget=8000
+2026-10-09 12:33:30,492 | DEBUG | generate: json_mode=False, prompt_len=7515
+2026-10-09 12:33:30,492 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,516 | DEBUG | match_entities: question='How many round trips does the Kismet make in the story?', matched=12
+2026-10-09 12:33:30,516 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 12:33:30,521 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,552 | DEBUG | match_entities: question='How are the pirates foiled?', matched=4
+2026-10-09 12:33:30,555 | DEBUG | HippoRetriever._seeds: 37 seed entities
+2026-10-09 12:33:30,555 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,567 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,587 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,598 | DEBUG | match_entities: question='Of the following options, which traits best describe Darling', matched=14
+2026-10-09 12:33:30,606 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 12:33:30,606 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,646 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:30,646 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7213, budget=8000
+2026-10-09 12:33:30,646 | DEBUG | generate: json_mode=False, prompt_len=7545
+2026-10-09 12:33:30,646 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,670 | DEBUG | match_entities: question='Of the following options, which traits best describe Grandma', matched=11
+2026-10-09 12:33:30,670 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 12:33:30,691 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,715 | DEBUG | match_entities: question='Of the following options, which traits best describe Johnny?', matched=13
+2026-10-09 12:33:30,715 | DEBUG | HippoRetriever._seeds: 43 seed entities
+2026-10-09 12:33:30,723 | DEBUG | HippoRetriever.retrieve: seeds=39, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:30,723 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7160, budget=8000
+2026-10-09 12:33:30,723 | DEBUG | generate: json_mode=False, prompt_len=7494
+2026-10-09 12:33:30,739 | DEBUG | HippoRetriever.retrieve: seeds=57, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:30,739 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7048, budget=8000
+2026-10-09 12:33:30,755 | DEBUG | generate: json_mode=False, prompt_len=7629
+2026-10-09 12:33:30,755 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,770 | DEBUG | match_entities: question="What is likely Grandma Perkins's primary motivation for inte", matched=9
+2026-10-09 12:33:30,770 | DEBUG | HippoRetriever._seeds: 41 seed entities
+2026-10-09 12:33:30,796 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:30,812 | DEBUG | match_entities: question='Of the following options, which best describe Captain Homer ', matched=26
+2026-10-09 12:33:30,967 | DEBUG | HippoRetriever._seeds: 56 seed entities
+2026-10-09 12:33:30,967 | DEBUG | generate: cache hit
+2026-10-09 12:33:30,999 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,016 | DEBUG | HippoRetriever.retrieve: seeds=69, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,020 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7343, budget=8000
+2026-10-09 12:33:31,020 | DEBUG | generate: json_mode=False, prompt_len=7667
+2026-10-09 12:33:31,030 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:31,030 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7379, budget=8000
+2026-10-09 12:33:31,030 | DEBUG | generate: json_mode=False, prompt_len=7850
+2026-10-09 12:33:31,030 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,030 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,042 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:31,055 | DEBUG | match_entities: question="If the pirates hadn't tried to ambush the ship, what would'v", matched=42
+2026-10-09 12:33:31,057 | DEBUG | HippoRetriever._seeds: 74 seed entities
+2026-10-09 12:33:31,074 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:31,074 | DEBUG | match_entities: question='Which of the following is NOT a technological advancement th', matched=5
+2026-10-09 12:33:31,090 | DEBUG | HippoRetriever._seeds: 51 seed entities
+2026-10-09 12:33:31,090 | DEBUG | HippoRetriever.retrieve: seeds=37, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:31,090 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7280, budget=8000
+2026-10-09 12:33:31,117 | DEBUG | generate: json_mode=False, prompt_len=7734
+2026-10-09 12:33:31,124 | DEBUG | HippoRetriever.retrieve: seeds=46, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,124 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7133, budget=8000
+2026-10-09 12:33:31,124 | DEBUG | generate: json_mode=False, prompt_len=7606
+2026-10-09 12:33:31,124 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:31,138 | DEBUG | match_entities: question='Of the following options, which is not an issue discussed wi', matched=27
+2026-10-09 12:33:31,138 | DEBUG | HippoRetriever._seeds: 75 seed entities
+2026-10-09 12:33:31,176 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,185 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7151, budget=8000
+2026-10-09 12:33:31,186 | DEBUG | generate: json_mode=False, prompt_len=7470
+2026-10-09 12:33:31,186 | DEBUG | RaptorRunner.retrieve: top_k=1228, returned=1228
+2026-10-09 12:33:31,202 | DEBUG | match_entities: question='Of the following options, who might enjoy reading this story', matched=6
+2026-10-09 12:33:31,202 | DEBUG | HippoRetriever._seeds: 42 seed entities
+2026-10-09 12:33:31,202 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,234 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,250 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:31,250 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7241, budget=8000
+2026-10-09 12:33:31,250 | DEBUG | generate: json_mode=False, prompt_len=7629
+2026-10-09 12:33:31,250 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,270 | DEBUG | HippoRetriever.retrieve: seeds=43, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:31,271 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7237, budget=8000
+2026-10-09 12:33:31,272 | DEBUG | generate: json_mode=False, prompt_len=7606
+2026-10-09 12:33:31,274 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,275 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,293 | DEBUG | HippoRetriever.retrieve: seeds=56, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:31,294 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7215, budget=8000
+2026-10-09 12:33:31,294 | DEBUG | generate: json_mode=False, prompt_len=7600
+2026-10-09 12:33:31,294 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,295 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,295 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7278, budget=8000
+2026-10-09 12:33:31,295 | DEBUG | generate: json_mode=False, prompt_len=7672
+2026-10-09 12:33:31,319 | DEBUG | HippoRetriever.retrieve: seeds=41, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,319 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7416, budget=8000
+2026-10-09 12:33:31,319 | DEBUG | generate: json_mode=False, prompt_len=7971
+2026-10-09 12:33:31,319 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,327 | DEBUG | HippoRetriever.retrieve: seeds=51, chunks_with_entities=974, graph_ranked=974, summaries=1, returned=40
+2026-10-09 12:33:31,327 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7288, budget=8000
+2026-10-09 12:33:31,327 | DEBUG | generate: json_mode=False, prompt_len=7823
+2026-10-09 12:33:31,343 | DEBUG | HippoRetriever.retrieve: seeds=74, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,343 | DEBUG | _build_context: method='refined', passages=5, extras=0, context_len=7261, budget=8000
+2026-10-09 12:33:31,343 | DEBUG | generate: json_mode=False, prompt_len=7904
+2026-10-09 12:33:31,343 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,343 | DEBUG | HippoRetriever.retrieve: seeds=75, chunks_with_entities=974, graph_ranked=974, summaries=0, returned=40
+2026-10-09 12:33:31,343 | DEBUG | _build_context: method='refined', passages=4, extras=0, context_len=6267, budget=8000
+2026-10-09 12:33:31,343 | DEBUG | generate: json_mode=False, prompt_len=6637
+2026-10-09 12:33:31,359 | DEBUG | HippoRetriever.retrieve: seeds=42, chunks_with_entities=974, graph_ranked=974, summaries=2, returned=40
+2026-10-09 12:33:31,359 | DEBUG | _build_context: method='refined', passages=6, extras=0, context_len=7853, budget=8000
+2026-10-09 12:33:31,359 | DEBUG | generate: json_mode=False, prompt_len=8399
+2026-10-09 12:33:31,359 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,359 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,359 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,369 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,369 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,369 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,369 | DEBUG | generate: cache hit
+2026-10-09 12:33:31,886 | DEBUG | generate complete: response_len=1
+2026-10-09 12:33:31,886 | INFO | [answer quality/S3] {'answered': 193, 'skipped_done': 0, 'errors': 0, 'seconds': 14.7}

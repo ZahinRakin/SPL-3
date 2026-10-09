@@ -137,6 +137,10 @@ async def main(args) -> None:
         out = out_dir / f"{sid}{'_' + args.tag if args.tag else ''}.jsonl"
         done = {row["qid"] for row in read_jsonl(out)} if out.exists() else set()
         todo = [q for q in questions if q["qid"] not in done]
+        if args.retry_errors:
+            # Only the questions whose answer failed in the main run file; the original rows stay.
+            failed = {row["qid"] for row in read_jsonl(out_dir / f"{sid}.jsonl") if row["error"]}
+            todo = [q for q in todo if q["qid"] in failed]
         sem = asyncio.Semaphore(_CONCURRENCY)
         t0 = time.perf_counter()
 
@@ -173,4 +177,6 @@ if __name__ == "__main__":
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only_types", default="")
     ap.add_argument("--no_settle", action="store_true")
+    ap.add_argument("--retry_errors", action="store_true",
+                    help="answer only questions that failed in runs/<split>/<system>.jsonl (use with --tag)")
     asyncio.run(main(ap.parse_args()))

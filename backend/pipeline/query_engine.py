@@ -42,6 +42,7 @@ _GLOBAL_COMMUNITIES = 6      # ...and for a broad one
 _COMMUNITY_PPR_WEIGHT = 0.5  # like passages: cosine + λ · PageRank mass normalised to the best
 _BUDGET_POOL = 40            # passages ranked when filling a context budget
 _MAX_EXTRAS_SHARE = 0.35     # with a budget, graph extras may use at most this share of it
+_COMMUNITY_LABEL_DOCS = 3    # documents named in a community block's source label
 
 # Multi-hop questions need facts from several sources combined, and they rarely say so; the
 # prompt asks the model to keep sources apart only where they are about different things.
@@ -144,14 +145,22 @@ class QueryEngine:
         return sorted(chosen, key=ranked.index)
 
     def _community_docs(self, members: List[str]) -> List[str]:
-        """The documents a community's entities were extracted from."""
-        docs: List[str] = []
+        """The documents a community's entities were extracted from, most-mentioned first."""
+        counts: Dict[str, int] = {}
         for eid in members:
             for pid in self.graphrag.entities[eid].source_chunks:
                 node = self.raptor.nodes.get(pid)
                 if node is not None:
-                    docs.extend(node.doc_ids)
-        return list(dict.fromkeys(docs))
+                    for d in node.doc_ids:
+                        counts[d] = counts.get(d, 0) + 1
+        return sorted(counts, key=lambda d: -counts[d])
+
+    def _community_label(self, docs: List[str]) -> str:
+        # A community in a large collection can span thousands of documents; naming them all made
+        # the block too big for any context budget, so the label names the main few.
+        shown = self._source_label(docs[:_COMMUNITY_LABEL_DOCS])
+        more = len(docs) - _COMMUNITY_LABEL_DOCS
+        return shown + (f" (+{more} more)" if more > 0 else "")
 
     async def _graph_extras(
         self, question: str, query_emb: List[float], ranked: Dict
@@ -168,7 +177,7 @@ class QueryEngine:
         for cid in self._select_communities(ranked_communities, community_docs, limit, is_global):
             docs = community_docs.get(cid, [])
             block = (
-                f"[COMMUNITY SUMMARY — source: {self._source_label(docs)}]\n"
+                f"[COMMUNITY SUMMARY — source: {self._community_label(docs)}]\n"
                 f"{self.graphrag.community_summaries[cid]}"
             )
             community_blocks.append(block)
@@ -209,7 +218,7 @@ class QueryEngine:
             kept, used = [], 0
             for b in community_blocks + fact_blocks:
                 if used + len(b) + 2 > extras_cap:
-                    break
+                    continue   # skip a block that doesn't fit; a later, smaller one still may
                 kept.append(b)
                 used += len(b) + 2
             community_blocks = [b for b in community_blocks if b in kept]

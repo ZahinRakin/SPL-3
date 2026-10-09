@@ -94,6 +94,19 @@ def test_named_entity_lifts_its_chunk(case):
     assert ranked_ids.index("s2") < ranked_ids.index("l1")
 
 
+def test_summary_inherits_its_chunks_graph_rank(case):
+    # sum_a summarises the aspirin chunk: with the graph term it must be able to beat
+    # chunks that have neither high similarity nor a graph rank.
+    # sum_a, sum_b, sum_c are equally similar; only sum_a has a graph-ranked chunk under it.
+    case.raptor.nodes["sum_a"].children = ["s2"]
+    case.engine.hippo.ppr_weight = 1.0
+    case.engine.hippo.max_summaries = 3
+    ranked = [p["id"] for p in case.retrieve("What dose of aspirin was given?", top_k=9)["passages"]]
+    assert ranked.index("sum_a") < ranked.index("sum_b")
+    assert ranked.index("sum_a") < ranked.index("sum_c")
+    assert ranked.index("sum_a") < ranked.index("l2")
+
+
 def test_without_a_graph_ranking_is_similarity(case):
     case.graph.entities.clear()
     case.graph.graph.clear()
@@ -133,6 +146,19 @@ def test_standard_mode_has_no_graph_context(case):
 def test_community_summary_names_its_documents(case):
     context = case.context("What dose of aspirin was given?")
     assert "[COMMUNITY SUMMARY — source: stemi]\ncommunity 0 summary" in context
+
+
+def test_community_label_is_capped_and_big_blocks_are_skipped(case):
+    # A community whose entities come from many documents: the label names the 3 most-mentioned.
+    docs = [f"doc{i}" for i in range(40)]
+    label = case.engine._community_label(docs)
+    assert label.startswith("doc0, doc1, doc2") and label.endswith("(+37 more)")
+    # With a budget, an oversized community block is skipped, not a reason to drop the rest.
+    case.graph.community_summaries[0] = "x" * 5000
+    context = asyncio.run(case.engine._build_context(
+        "What dose of aspirin was given?", QUERY, "refined", 6, context_budget=4000, graph_extras=True))[0]
+    assert "x" * 5000 not in context
+    assert "[KNOWLEDGE GRAPH]" in context
 
 
 def test_broad_questions_cover_every_document():

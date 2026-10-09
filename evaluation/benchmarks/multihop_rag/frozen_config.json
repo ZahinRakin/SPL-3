@@ -1,0 +1,20 @@
+{
+ "dataset": "multihop_rag",
+ "ppr_weight": 0.5,
+ "max_summaries": 1,
+ "budget": 8000,
+ "temperature": 0.0,
+ "systems": [
+  "C0",
+  "S0",
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "index": "full",
+ "prompt": "MULTIHOP_RAG / MULTIHOP_RAG_CLOSED",
+ "code_commit": "b49276a",
+ "frozen_at": "2026-10-09"
+}

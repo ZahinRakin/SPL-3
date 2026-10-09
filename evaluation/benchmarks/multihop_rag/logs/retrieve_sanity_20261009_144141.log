@@ -1,0 +1,255 @@
+2026-10-09 14:41:42,099 | INFO | [retrieve sanity] start 2026-10-09 08:41:42 UTC argv=['sanity', '--dataset', 'multihop_rag', '--index', 'full'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:41:44,337 | DEBUG | GraphRAGIndexer.load_state: entities=55076, relationships=71765, communities=776
+2026-10-09 14:41:44,854 | DEBUG | RaptorRunner.load_state: nodes=7071
+2026-10-09 14:41:53,528 | DEBUG | embed_many: task_type=retrieval_query, texts=100
+2026-10-09 14:42:09,679 | DEBUG | embed_many complete: 100 vectors
+2026-10-09 14:42:09,988 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,017 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,045 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,075 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,104 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,132 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,159 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,186 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,212 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,238 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,263 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,291 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,316 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,343 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,369 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,394 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,418 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,443 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,471 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,498 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,527 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,550 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,578 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,608 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,636 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,660 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,685 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,706 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,728 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,751 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,779 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,802 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,825 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,845 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,869 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,890 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,910 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,931 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,954 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:10,991 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,043 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,082 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,116 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,140 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,163 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,190 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,213 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,235 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,259 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,285 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 14:42:11,312 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:11,470 | DEBUG | match_entities: question='Does the TechCrunch article on generative AI in the enterpri', matched=298
+2026-10-09 14:42:11,492 | DEBUG | HippoRetriever._seeds: 333 seed entities
+2026-10-09 14:42:11,518 | DEBUG | HippoRetriever.retrieve: seeds=333, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:11,534 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:11,616 | DEBUG | match_entities: question='Between the TechCrunch article published on October 31, 2023', matched=592
+2026-10-09 14:42:11,634 | DEBUG | HippoRetriever._seeds: 638 seed entities
+2026-10-09 14:42:11,649 | DEBUG | HippoRetriever.retrieve: seeds=638, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:11,666 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:11,746 | DEBUG | match_entities: question='Between the report from The Independent - Life and Style pub', matched=563
+2026-10-09 14:42:11,760 | DEBUG | HippoRetriever._seeds: 585 seed entities
+2026-10-09 14:42:11,774 | DEBUG | HippoRetriever.retrieve: seeds=585, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:11,792 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:11,868 | DEBUG | match_entities: question='Did the article from The Roar | Sports Writers Blog attribut', matched=463
+2026-10-09 14:42:11,881 | DEBUG | HippoRetriever._seeds: 509 seed entities
+2026-10-09 14:42:11,899 | DEBUG | HippoRetriever.retrieve: seeds=509, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:11,921 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,004 | DEBUG | match_entities: question='Does the Engadget article on the Artificial Intelligence Adv', matched=666
+2026-10-09 14:42:12,019 | DEBUG | HippoRetriever._seeds: 724 seed entities
+2026-10-09 14:42:12,035 | DEBUG | HippoRetriever.retrieve: seeds=724, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,052 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,131 | DEBUG | match_entities: question="Did the TechCrunch article indicate that Google's release of", matched=427
+2026-10-09 14:42:12,145 | DEBUG | HippoRetriever._seeds: 462 seed entities
+2026-10-09 14:42:12,160 | DEBUG | HippoRetriever.retrieve: seeds=462, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,177 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,267 | DEBUG | match_entities: question='Between the Zee Business report on the India national cricke', matched=875
+2026-10-09 14:42:12,282 | DEBUG | HippoRetriever._seeds: 904 seed entities
+2026-10-09 14:42:12,302 | DEBUG | HippoRetriever.retrieve: seeds=904, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,327 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,429 | DEBUG | match_entities: question='Who is the individual that, despite being likened to a promi', matched=320
+2026-10-09 14:42:12,454 | DEBUG | HippoRetriever._seeds: 366 seed entities
+2026-10-09 14:42:12,482 | DEBUG | HippoRetriever.retrieve: seeds=366, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,498 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,581 | DEBUG | match_entities: question='Considering the information from an article by Variety and a', matched=224
+2026-10-09 14:42:12,601 | DEBUG | HippoRetriever._seeds: 285 seed entities
+2026-10-09 14:42:12,621 | DEBUG | HippoRetriever.retrieve: seeds=285, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,640 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,725 | DEBUG | match_entities: question='What is the name of the organization behind ChatGPT, which i', matched=238
+2026-10-09 14:42:12,742 | DEBUG | HippoRetriever._seeds: 297 seed entities
+2026-10-09 14:42:12,759 | DEBUG | HippoRetriever.retrieve: seeds=297, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,776 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:12,871 | DEBUG | match_entities: question='Which company, known for creating a Prime-themed sale day ac', matched=599
+2026-10-09 14:42:12,885 | DEBUG | HippoRetriever._seeds: 655 seed entities
+2026-10-09 14:42:12,914 | DEBUG | HippoRetriever.retrieve: seeds=655, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:12,934 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:13,050 | DEBUG | match_entities: question='Does the CBSSports.com article claim that Caesars Sportsbook', matched=371
+2026-10-09 14:42:13,067 | DEBUG | HippoRetriever._seeds: 409 seed entities
+2026-10-09 14:42:13,086 | DEBUG | HippoRetriever.retrieve: seeds=409, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:13,103 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:13,203 | DEBUG | match_entities: question='Who is the player that played a crucial role in anchoring th', matched=635
+2026-10-09 14:42:13,217 | DEBUG | HippoRetriever._seeds: 682 seed entities
+2026-10-09 14:42:13,234 | DEBUG | HippoRetriever.retrieve: seeds=682, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:13,252 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:13,350 | DEBUG | match_entities: question="Does the 'Fortune' article claim that Sam Bankman-Fried used", matched=492
+2026-10-09 14:42:13,366 | DEBUG | HippoRetriever._seeds: 532 seed entities
+2026-10-09 14:42:13,381 | DEBUG | HippoRetriever.retrieve: seeds=532, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:13,402 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:13,482 | DEBUG | match_entities: question='Which company, reported by both TechCrunch and The Verge, ha', matched=227
+2026-10-09 14:42:13,496 | DEBUG | HippoRetriever._seeds: 275 seed entities
+2026-10-09 14:42:13,514 | DEBUG | HippoRetriever.retrieve: seeds=275, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:13,534 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:13,625 | DEBUG | match_entities: question='Who is the individual facing a criminal trial on charges of ', matched=143
+2026-10-09 14:42:13,645 | DEBUG | HippoRetriever._seeds: 181 seed entities
+2026-10-09 14:42:13,670 | DEBUG | HippoRetriever.retrieve: seeds=181, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,003 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,105 | DEBUG | match_entities: question='Does the article from The Age confirm the same aspect of Goo', matched=374
+2026-10-09 14:42:14,131 | DEBUG | HippoRetriever._seeds: 416 seed entities
+2026-10-09 14:42:14,156 | DEBUG | HippoRetriever.retrieve: seeds=416, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,179 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,291 | DEBUG | match_entities: question='Who is the individual that has become a significant figure i', matched=156
+2026-10-09 14:42:14,306 | DEBUG | HippoRetriever._seeds: 215 seed entities
+2026-10-09 14:42:14,326 | DEBUG | HippoRetriever.retrieve: seeds=215, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,344 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,424 | DEBUG | match_entities: question="Does 'The Sydney Morning Herald' suggest that the US economy", matched=172
+2026-10-09 14:42:14,441 | DEBUG | HippoRetriever._seeds: 236 seed entities
+2026-10-09 14:42:14,458 | DEBUG | HippoRetriever.retrieve: seeds=236, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,483 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,570 | DEBUG | match_entities: question='Considering the information from an article in the New York ', matched=370
+2026-10-09 14:42:14,588 | DEBUG | HippoRetriever._seeds: 456 seed entities
+2026-10-09 14:42:14,613 | DEBUG | HippoRetriever.retrieve: seeds=456, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,631 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,730 | DEBUG | match_entities: question='Between the Sporting News report on NBA betting sites and ap', matched=610
+2026-10-09 14:42:14,751 | DEBUG | HippoRetriever._seeds: 658 seed entities
+2026-10-09 14:42:14,778 | DEBUG | HippoRetriever.retrieve: seeds=658, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,795 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:14,904 | DEBUG | match_entities: question='Who, according to TechCrunch, is the generous and caring ind', matched=245
+2026-10-09 14:42:14,920 | DEBUG | HippoRetriever._seeds: 273 seed entities
+2026-10-09 14:42:14,939 | DEBUG | HippoRetriever.retrieve: seeds=273, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:14,960 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,036 | DEBUG | match_entities: question="Does the 'Fortune' article suggest that Israel's actions are", matched=493
+2026-10-09 14:42:15,053 | DEBUG | HippoRetriever._seeds: 540 seed entities
+2026-10-09 14:42:15,069 | DEBUG | HippoRetriever.retrieve: seeds=540, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,090 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,202 | DEBUG | match_entities: question='Considering the information from a CNBC article discussing S', matched=374
+2026-10-09 14:42:15,220 | DEBUG | HippoRetriever._seeds: 463 seed entities
+2026-10-09 14:42:15,239 | DEBUG | HippoRetriever.retrieve: seeds=463, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,256 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,344 | DEBUG | match_entities: question="Did the CBSSports.com article suggest that Terry McLaurin's ", matched=511
+2026-10-09 14:42:15,359 | DEBUG | HippoRetriever._seeds: 564 seed entities
+2026-10-09 14:42:15,388 | DEBUG | HippoRetriever.retrieve: seeds=564, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,407 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,501 | DEBUG | match_entities: question="Does the 'Insidesport' article claim that the Indian Premier", matched=245
+2026-10-09 14:42:15,515 | DEBUG | HippoRetriever._seeds: 308 seed entities
+2026-10-09 14:42:15,544 | DEBUG | HippoRetriever.retrieve: seeds=308, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,571 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,649 | DEBUG | match_entities: question='Considering the information from an article in The Times of ', matched=250
+2026-10-09 14:42:15,665 | DEBUG | HippoRetriever._seeds: 345 seed entities
+2026-10-09 14:42:15,684 | DEBUG | HippoRetriever.retrieve: seeds=345, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,704 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,800 | DEBUG | match_entities: question="Who is the NFL player that contributed to his team's Super B", matched=731
+2026-10-09 14:42:15,817 | DEBUG | HippoRetriever._seeds: 797 seed entities
+2026-10-09 14:42:15,841 | DEBUG | HippoRetriever.retrieve: seeds=797, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,860 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:15,945 | DEBUG | match_entities: question="Has the focus of the European Commission's actions reported ", matched=322
+2026-10-09 14:42:15,959 | DEBUG | HippoRetriever._seeds: 366 seed entities
+2026-10-09 14:42:15,976 | DEBUG | HippoRetriever.retrieve: seeds=366, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:15,991 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,072 | DEBUG | match_entities: question="After the Sporting News report on Caesars Sportsbook's expec", matched=743
+2026-10-09 14:42:16,089 | DEBUG | HippoRetriever._seeds: 779 seed entities
+2026-10-09 14:42:16,109 | DEBUG | HippoRetriever.retrieve: seeds=779, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,129 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,215 | DEBUG | match_entities: question='Who is the individual under 30 who was once the richest in t', matched=314
+2026-10-09 14:42:16,233 | DEBUG | HippoRetriever._seeds: 372 seed entities
+2026-10-09 14:42:16,264 | DEBUG | HippoRetriever.retrieve: seeds=372, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,295 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,413 | DEBUG | match_entities: question='Was there inconsistency in the portrayal of Sam Bankman-Frie', matched=432
+2026-10-09 14:42:16,436 | DEBUG | HippoRetriever._seeds: 467 seed entities
+2026-10-09 14:42:16,451 | DEBUG | HippoRetriever.retrieve: seeds=467, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,468 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,558 | DEBUG | match_entities: question='Does the TechCrunch article claim that "Microsoft\'s investme', matched=159
+2026-10-09 14:42:16,572 | DEBUG | HippoRetriever._seeds: 204 seed entities
+2026-10-09 14:42:16,589 | DEBUG | HippoRetriever.retrieve: seeds=204, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,605 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,693 | DEBUG | match_entities: question="After the TechCrunch report on Sam Altman backing a teen's A", matched=525
+2026-10-09 14:42:16,712 | DEBUG | HippoRetriever._seeds: 562 seed entities
+2026-10-09 14:42:16,730 | DEBUG | HippoRetriever.retrieve: seeds=562, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,747 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,839 | DEBUG | match_entities: question='Regarding the handling of consent in media-related incidents', matched=246
+2026-10-09 14:42:16,868 | DEBUG | HippoRetriever._seeds: 280 seed entities
+2026-10-09 14:42:16,883 | DEBUG | HippoRetriever.retrieve: seeds=280, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:16,902 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:16,984 | DEBUG | match_entities: question="Does the Sporting News article suggest that 'The Wolverines ", matched=517
+2026-10-09 14:42:16,999 | DEBUG | HippoRetriever._seeds: 555 seed entities
+2026-10-09 14:42:17,015 | DEBUG | HippoRetriever.retrieve: seeds=555, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,031 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,109 | DEBUG | match_entities: question='Does the article from Fortune suggest that the Federal Reser', matched=395
+2026-10-09 14:42:17,128 | DEBUG | HippoRetriever._seeds: 455 seed entities
+2026-10-09 14:42:17,144 | DEBUG | HippoRetriever.retrieve: seeds=455, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,161 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,271 | DEBUG | match_entities: question='Who is the individual under 30, previously reported by TechC', matched=433
+2026-10-09 14:42:17,289 | DEBUG | HippoRetriever._seeds: 481 seed entities
+2026-10-09 14:42:17,307 | DEBUG | HippoRetriever.retrieve: seeds=481, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,334 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,450 | DEBUG | match_entities: question='Who is the individual whose trial is scrutinized by a jury, ', matched=139
+2026-10-09 14:42:17,466 | DEBUG | HippoRetriever._seeds: 181 seed entities
+2026-10-09 14:42:17,490 | DEBUG | HippoRetriever.retrieve: seeds=181, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,522 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,622 | DEBUG | match_entities: question='Does the Sporting News article suggest that a single victory', matched=606
+2026-10-09 14:42:17,635 | DEBUG | HippoRetriever._seeds: 630 seed entities
+2026-10-09 14:42:17,655 | DEBUG | HippoRetriever.retrieve: seeds=630, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,673 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,778 | DEBUG | match_entities: question="Does the 'Sporting News' article suggest that the Seattle Se", matched=133
+2026-10-09 14:42:17,793 | DEBUG | HippoRetriever._seeds: 174 seed entities
+2026-10-09 14:42:17,808 | DEBUG | HippoRetriever.retrieve: seeds=174, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,828 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:17,909 | DEBUG | match_entities: question='After Essentially Sports reported on October 18, 2023, that ', matched=666
+2026-10-09 14:42:17,923 | DEBUG | HippoRetriever._seeds: 701 seed entities
+2026-10-09 14:42:17,939 | DEBUG | HippoRetriever.retrieve: seeds=701, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:17,960 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:18,040 | DEBUG | match_entities: question='Does the Sporting News article suggest that new users of spo', matched=327
+2026-10-09 14:42:18,053 | DEBUG | HippoRetriever._seeds: 369 seed entities
+2026-10-09 14:42:18,075 | DEBUG | HippoRetriever.retrieve: seeds=369, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:18,093 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:18,187 | DEBUG | match_entities: question='Between the report by Cnbc | World Business News Leader on S', matched=359
+2026-10-09 14:42:18,223 | DEBUG | HippoRetriever._seeds: 411 seed entities
+2026-10-09 14:42:18,246 | DEBUG | HippoRetriever.retrieve: seeds=411, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:18,263 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:18,344 | DEBUG | match_entities: question='Which company, recently covered by both TechCrunch and The V', matched=493
+2026-10-09 14:42:18,357 | DEBUG | HippoRetriever._seeds: 547 seed entities
+2026-10-09 14:42:18,374 | DEBUG | HippoRetriever.retrieve: seeds=547, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:18,390 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:18,485 | DEBUG | match_entities: question='Does the Fortune article suggest that the jury will not play', matched=213
+2026-10-09 14:42:18,499 | DEBUG | HippoRetriever._seeds: 259 seed entities
+2026-10-09 14:42:18,515 | DEBUG | HippoRetriever.retrieve: seeds=259, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:18,532 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:18,634 | DEBUG | match_entities: question='Did the CBSSports.com article suggest that the Minnesota Vik', matched=439
+2026-10-09 14:42:18,656 | DEBUG | HippoRetriever._seeds: 492 seed entities
+2026-10-09 14:42:18,673 | DEBUG | HippoRetriever.retrieve: seeds=492, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:18,952 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:19,041 | DEBUG | match_entities: question="Which company, recently compared for its Gemini Pro's perfor", matched=541
+2026-10-09 14:42:19,056 | DEBUG | HippoRetriever._seeds: 573 seed entities
+2026-10-09 14:42:19,081 | DEBUG | HippoRetriever.retrieve: seeds=573, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:19,099 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:19,193 | DEBUG | match_entities: question="Between the 'Fortune' report on Donald Trump's real estate v", matched=433
+2026-10-09 14:42:19,214 | DEBUG | HippoRetriever._seeds: 471 seed entities
+2026-10-09 14:42:19,233 | DEBUG | HippoRetriever.retrieve: seeds=471, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20
+2026-10-09 14:42:19,251 | DEBUG | RaptorRunner.retrieve: top_k=7071, returned=7071
+2026-10-09 14:42:19,335 | DEBUG | match_entities: question='After the report by The Sydney Morning Herald on October 1, ', matched=506
+2026-10-09 14:42:19,354 | DEBUG | HippoRetriever._seeds: 571 seed entities
+2026-10-09 14:42:19,371 | DEBUG | HippoRetriever.retrieve: seeds=571, chunks_with_entities=5396, graph_ranked=0, summaries=0, returned=20

@@ -1,0 +1,75 @@
+2026-10-09 14:42:20,928 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 14:42:22,395 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:42:22,395 | INFO | graphrag | [retrieve tune] start 2026-10-09 08:42:22 UTC argv=['tune', '--dataset', 'multihop_rag', '--index', 'full'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:42:26,747 | INFO | graphrag | [tune multihop_rag] S0: {'recall@2': 0.4138257575757576, 'recall@5': 0.6297348484848484, 'hits@4': 0.5956439393939393, 'hits@10': 0.7452651515151516, 'mrr@10': 0.7286120129870131, 'seconds_per_q': 0.027}
+2026-10-09 14:42:36,356 | INFO | graphrag | [tune multihop_rag] S1: {'recall@2': 0.46875, 'recall@5': 0.6676136363636364, 'hits@4': 0.6420454545454546, 'hits@10': 0.7765151515151515, 'mrr@10': 0.8001397907647907, 'seconds_per_q': 0.096}
+2026-10-09 14:43:36,215 | INFO | graphrag | [tune multihop_rag] S2-w0.25: {'recall@2': 0.3901515151515152, 'recall@5': 0.6221590909090909, 'hits@4': 0.5549242424242423, 'hits@10': 0.7537878787878789, 'mrr@10': 0.6828373015873016, 'seconds_per_q': 0.599}
+2026-10-09 14:44:36,090 | INFO | graphrag | [tune multihop_rag] S2-w0.5: {'recall@2': 0.35511363636363635, 'recall@5': 0.615530303030303, 'hits@4': 0.5587121212121212, 'hits@10': 0.7926136363636364, 'mrr@10': 0.6897546897546898, 'seconds_per_q': 0.599}
+2026-10-09 14:45:35,374 | INFO | graphrag | [tune multihop_rag] S2-w1.0: {'recall@2': 0.33049242424242425, 'recall@5': 0.5880681818181818, 'hits@4': 0.53125, 'hits@10': 0.7367424242424243, 'mrr@10': 0.6817821067821067, 'seconds_per_q': 0.593}
+2026-10-09 14:46:34,369 | INFO | graphrag | [tune multihop_rag] S2-w2.0: {'recall@2': 0.32670454545454547, 'recall@5': 0.46685606060606055, 'hits@4': 0.43939393939393945, 'hits@10': 0.65625, 'mrr@10': 0.6426722582972583, 'seconds_per_q': 0.59}
+{
+ "dataset": "multihop_rag",
+ "index": "full",
+ "split": "dev",
+ "questions": 100,
+ "selection_metric": "hits@4",
+ "grid": [
+  0.25,
+  0.5,
+  1.0,
+  2.0
+ ],
+ "results": {
+  "S0": {
+   "recall@2": 0.4138257575757576,
+   "recall@5": 0.6297348484848484,
+   "hits@4": 0.5956439393939393,
+   "hits@10": 0.7452651515151516,
+   "mrr@10": 0.7286120129870131,
+   "seconds_per_q": 0.027
+  },
+  "S1": {
+   "recall@2": 0.46875,
+   "recall@5": 0.6676136363636364,
+   "hits@4": 0.6420454545454546,
+   "hits@10": 0.7765151515151515,
+   "mrr@10": 0.8001397907647907,
+   "seconds_per_q": 0.096
+  },
+  "S2-w0.25": {
+   "recall@2": 0.3901515151515152,
+   "recall@5": 0.6221590909090909,
+   "hits@4": 0.5549242424242423,
+   "hits@10": 0.7537878787878789,
+   "mrr@10": 0.6828373015873016,
+   "seconds_per_q": 0.599
+  },
+  "S2-w0.5": {
+   "recall@2": 0.35511363636363635,
+   "recall@5": 0.615530303030303,
+   "hits@4": 0.5587121212121212,
+   "hits@10": 0.7926136363636364,
+   "mrr@10": 0.6897546897546898,
+   "seconds_per_q": 0.599
+  },
+  "S2-w1.0": {
+   "recall@2": 0.33049242424242425,
+   "recall@5": 0.5880681818181818,
+   "hits@4": 0.53125,
+   "hits@10": 0.7367424242424243,
+   "mrr@10": 0.6817821067821067,
+   "seconds_per_q": 0.593
+  },
+  "S2-w2.0": {
+   "recall@2": 0.32670454545454547,
+   "recall@5": 0.46685606060606055,
+   "hits@4": 0.43939393939393945,
+   "hits@10": 0.65625,
+   "mrr@10": 0.6426722582972583,
+   "seconds_per_q": 0.59
+  }
+ },
+ "chosen_ppr_weight": 0.5,
+ "tie_rule": "highest dev metric; ties \u2192 the value closest to 1.0",
+ "tuned_at": "2026-10-09 08:46:34 UTC"
+}

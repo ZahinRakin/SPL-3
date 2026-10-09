@@ -1,0 +1,9 @@
+{
+ "dataset": "multihop_rag",
+ "index": "full",
+ "questions": 50,
+ "depth": 20,
+ "identical": 50,
+ "mismatches": [],
+ "checked_at": "2026-10-09 08:42:19 UTC"
+}

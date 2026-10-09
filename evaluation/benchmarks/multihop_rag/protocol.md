@@ -1,6 +1,7 @@
 # Protocol — MultiHop-RAG (real news, cross-document), H4
 
-Status: **DRAFT** (becomes FROZEN when committed, before any test-set answer exists).
+Status: **FROZEN 2026-10-09** (committed before any MultiHop-RAG test ranking or answer).
+Code under test: commit `b49276a` (with the two retrieval fixes listed in the QuALITY protocol).
 
 ## Data (verified 2026-10-09)
 
@@ -16,11 +17,17 @@ Status: **DRAFT** (becomes FROZEN when committed, before any test-set answer exi
 
 ## Systems and settings
 
-C0, S0–S5 (`systems.py`). Budget **B = 8,000 characters**. `ppr_weight` **w\* = {W_STAR}**
+C0, S0–S5 (`systems.py`). Budget **B = 8,000 characters**. `ppr_weight` **w\* = 0.5**
 (re-tuned on this dataset's dev split by Hits@4 from {0.25, 0.5, 1, 2}; `tuning/ppr_weight.json`).
-`max_summaries` **m\* = {M_STAR}** (from QuALITY dev). Prompt: the repository's own instruction
+`max_summaries` **m\* = 1** (from QuALITY dev). Prompt: the repository's own instruction
 (`MULTIHOP_RAG` in `prompts.py`, verbatim from `qa_llama.py`) with our labelled context blocks;
 temperature 0.
+
+## Dev observations recorded at freeze time (not results)
+
+`tuning/ppr_weight.json` (100 dev queries, Hits@4): S0 0.596, S1 (BM25) 0.642, S2 w = 0.25 0.555,
+0.5 0.559, 1 0.531, 2 0.439 → w* = 0.5 by the pre-registered rule. On dev the graph ranking is below
+dense and BM25 is best. Sanity test (S2 with w = 0, m = 0 ≡ S0) passed on 50 dev queries.
 
 ## Hypothesis H4 (confirmatory)
 
@@ -47,4 +54,6 @@ punctuation-normalised variant of the scorer; Claude judge correctness on 200 te
 
 ## Deviations
 
-(none yet)
+1. Index: 609 articles, 5,406 chunks, 1,665 RAPTOR summaries, 55,076 entities, 776 community
+   summaries; cost $2.55 (1.28× estimate), see `budget_ledger.md`.
+2. Budget: 2Wiki, official HippoRAG 2 and extra seeds dropped; GraphRAG-Bench subsampled.

@@ -115,6 +115,9 @@ async def main(args) -> None:
     questions = load_questions(args.dataset, args.split)
     if args.only_types:
         questions = [q for q in questions if q["type"] in args.only_types.split(",")]
+    if args.only_docs:
+        keep = set(args.only_docs.split(","))
+        questions = [q for q in questions if q["gold_doc_ids"][0] in keep]
     if args.limit:
         questions = questions[: args.limit]
     embs = await query_embeddings(args.dataset, args.split, load_questions(args.dataset, args.split))
@@ -176,6 +179,7 @@ if __name__ == "__main__":
     ap.add_argument("--tag", default="")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only_types", default="")
+    ap.add_argument("--only_docs", default="", help="comma-separated gold document ids (GraphRAG-Bench novels)")
     ap.add_argument("--no_settle", action="store_true")
     ap.add_argument("--retry_errors", action="store_true",
                     help="answer only questions that failed in runs/<split>/<system>.jsonl (use with --tag)")

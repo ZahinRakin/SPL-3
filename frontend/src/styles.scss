@@ -1,63 +1,74 @@
 /* ── global reset + design tokens ───────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   /* backgrounds */
-  --bg-base:       #080d1a;
-  --bg-surface:    #0f1625;
-  --bg-elevated:   #162035;
-  --bg-hover:      #1d2a42;
-  --bg-active:     #243350;
+  --bg-base: #080d1a;
+  --bg-surface: #0f1625;
+  --bg-elevated: #162035;
+  --bg-hover: #1d2a42;
+  --bg-active: #243350;
 
   /* borders */
-  --border-subtle: rgba(255,255,255,0.06);
-  --border-normal: rgba(255,255,255,0.10);
-  --border-strong: rgba(255,255,255,0.18);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-normal: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  /* graph */
+  --graph-edge: rgba(255, 255, 255, 1);
 
   /* text */
-  --text-primary:   #f0f4ff;
+  --text-primary: #f0f4ff;
   --text-secondary: #8b9ab8;
-  --text-tertiary:  #5a6a8a;
+  --text-tertiary: #5a6a8a;
 
   /* accent */
-  --accent:        #4f87ff;
-  --accent-dim:    rgba(79,135,255,0.15);
-  --accent-hover:  #6b9fff;
-  --green:         #34d399;
-  --green-dim:     rgba(52,211,153,0.15);
-  --purple:        #a78bfa;
-  --purple-dim:    rgba(167,139,250,0.15);
-  --amber:         #fbbf24;
-  --amber-dim:     rgba(251,191,36,0.15);
-  --red:           #f87171;
-  --red-dim:       rgba(248,113,113,0.15);
-  --cyan:          #22d3ee;
-  --cyan-dim:      rgba(34,211,238,0.15);
+  --accent: #4f87ff;
+  --accent-dim: rgba(79, 135, 255, 0.15);
+  --accent-hover: #6b9fff;
+  --green: #34d399;
+  --green-dim: rgba(52, 211, 153, 0.15);
+  --purple: #a78bfa;
+  --purple-dim: rgba(167, 139, 250, 0.15);
+  --amber: #fbbf24;
+  --amber-dim: rgba(251, 191, 36, 0.15);
+  --red: #f87171;
+  --red-dim: rgba(248, 113, 113, 0.15);
+  --cyan: #22d3ee;
+  --cyan-dim: rgba(34, 211, 238, 0.15);
 
   /* entity colours */
-  --c-person:       #60a5fa;
+  --c-person: #60a5fa;
   --c-organization: #34d399;
-  --c-location:     #fbbf24;
-  --c-concept:      #a78bfa;
-  --c-event:        #f87171;
-  --c-date:         #fb923c;
-  --c-product:      #22d3ee;
-  --c-law:          #e879f9;
-  --c-disease:      #f43f5e;
-  --c-drug:         #84cc16;
-  --c-other:        #94a3b8;
+  --c-location: #fbbf24;
+  --c-concept: #a78bfa;
+  --c-event: #f87171;
+  --c-date: #fb923c;
+  --c-product: #22d3ee;
+  --c-law: #e879f9;
+  --c-disease: #f43f5e;
+  --c-drug: #84cc16;
+  --c-other: #94a3b8;
 
   /* misc */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-xl: 20px;
-  --shadow:    0 4px 24px rgba(0,0,0,0.4);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   --font: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-html, body {
-  height: 100vh; width: 100vw;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   background: var(--bg-base);
   color: var(--text-primary);
@@ -68,110 +79,369 @@ html, body {
 }
 
 /* ── scrollbars ─────────────────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-normal); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-normal);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
 
 /* ── utility ─────────────────────────────────────────────────────────────── */
 .sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* ── entity chip colours (global because used in multiple components) ───── */
 .chip {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 2px 9px; border-radius: 99px;
-  font-size: 11px; font-weight: 500; line-height: 1.6;
-  border: 1px solid transparent; cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  border: 1px solid transparent;
+  cursor: default;
 }
-.chip-person       { background: rgba(96,165,250,0.12); color: var(--c-person);       border-color: rgba(96,165,250,0.25); }
-.chip-organization { background: rgba(52,211,153,0.12); color: var(--c-organization); border-color: rgba(52,211,153,0.25); }
-.chip-location     { background: rgba(251,191,36,0.12); color: var(--c-location);     border-color: rgba(251,191,36,0.25); }
-.chip-concept      { background: rgba(167,139,250,0.12);color: var(--c-concept);      border-color: rgba(167,139,250,0.25);}
-.chip-event        { background: rgba(248,113,113,0.12); color: var(--c-event);       border-color: rgba(248,113,113,0.25);}
-.chip-date         { background: rgba(251,146,60,0.12);  color: var(--c-date);        border-color: rgba(251,146,60,0.25); }
-.chip-product      { background: rgba(34,211,238,0.12);  color: var(--c-product);     border-color: rgba(34,211,238,0.25); }
-.chip-law          { background: rgba(232,121,249,0.12); color: var(--c-law);         border-color: rgba(232,121,249,0.25);}
-.chip-disease      { background: rgba(244,63,94,0.12);   color: var(--c-disease);     border-color: rgba(244,63,94,0.25);  }
-.chip-drug         { background: rgba(132,204,22,0.12);  color: var(--c-drug);        border-color: rgba(132,204,22,0.25); }
-.chip-other        { background: rgba(148,163,184,0.10); color: var(--c-other);       border-color: rgba(148,163,184,0.20);}
+
+.chip-person {
+  background: rgba(96, 165, 250, 0.12);
+  color: var(--c-person);
+  border-color: rgba(96, 165, 250, 0.25);
+}
+
+.chip-organization {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--c-organization);
+  border-color: rgba(52, 211, 153, 0.25);
+}
+
+.chip-location {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--c-location);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+.chip-concept {
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--c-concept);
+  border-color: rgba(167, 139, 250, 0.25);
+}
+
+.chip-event {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--c-event);
+  border-color: rgba(248, 113, 113, 0.25);
+}
+
+.chip-date {
+  background: rgba(251, 146, 60, 0.12);
+  color: var(--c-date);
+  border-color: rgba(251, 146, 60, 0.25);
+}
+
+.chip-product {
+  background: rgba(34, 211, 238, 0.12);
+  color: var(--c-product);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+.chip-law {
+  background: rgba(232, 121, 249, 0.12);
+  color: var(--c-law);
+  border-color: rgba(232, 121, 249, 0.25);
+}
+
+.chip-disease {
+  background: rgba(244, 63, 94, 0.12);
+  color: var(--c-disease);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.chip-drug {
+  background: rgba(132, 204, 22, 0.12);
+  color: var(--c-drug);
+  border-color: rgba(132, 204, 22, 0.25);
+}
+
+.chip-other {
+  background: rgba(148, 163, 184, 0.10);
+  color: var(--c-other);
+  border-color: rgba(148, 163, 184, 0.20);
+}
 
 /* ── cite tag ────────────────────────────────────────────────────────────── */
 .cite-tag {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 2px 9px; border-radius: 99px;
-  font-size: 11px; font-weight: 500;
-  background: var(--accent-dim); color: var(--accent);
-  border: 1px solid rgba(79,135,255,0.25);
-  cursor: pointer; transition: background 0.15s;
-  &:hover { background: rgba(79,135,255,0.25); }
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(79, 135, 255, 0.25);
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(79, 135, 255, 0.25);
+  }
 }
 
 /* ── buttons, forms, cards (shared by auth, dashboard and dialog pages) ─── */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 8px 14px; border-radius: var(--radius-md);
-  font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
-  border: 1px solid var(--border-normal); background: var(--bg-elevated); color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border-normal);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
-  &:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--border-strong); }
-  &:disabled { opacity: 0.5; cursor: not-allowed; }
-}
-.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--text-primary);
-  &:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); } }
-.btn-ghost { background: transparent; border-color: transparent; color: var(--text-secondary);
-  &:hover:not(:disabled) { color: var(--text-primary); background: var(--bg-elevated); } }
-.btn-danger { color: var(--red); border-color: var(--red-dim); background: transparent;
-  &:hover:not(:disabled) { background: var(--red-dim); border-color: var(--red); } }
-.btn-sm { padding: 4px 10px; font-size: 12px; }
-.btn-block { width: 100%; }
 
-.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-.field-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+  &:hover:not(:disabled) {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-primary);
+
+  &:hover:not(:disabled) {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+
+  &:hover:not(:disabled) {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+  }
+}
+
+.btn-danger {
+  color: var(--red);
+  border-color: var(--red-dim);
+  background: transparent;
+
+  &:hover:not(:disabled) {
+    background: var(--red-dim);
+    border-color: var(--red);
+  }
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
 .input {
-  width: 100%; padding: 9px 12px; border-radius: var(--radius-md);
-  background: var(--bg-base); border: 1px solid var(--border-normal); color: var(--text-primary);
-  font: inherit; font-size: 13px; outline: none; transition: border-color 0.15s;
-  &:focus { border-color: var(--accent); }
-  &::placeholder { color: var(--text-tertiary); }
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-base);
+  border: 1px solid var(--border-normal);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+
+  &:focus {
+    border-color: var(--accent);
+  }
+
+  &::placeholder {
+    color: var(--text-tertiary);
+  }
 }
-textarea.input { resize: vertical; min-height: 80px; }
-select.input { cursor: pointer; }
+
+textarea.input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+select.input {
+  cursor: pointer;
+}
+
 .form-error {
-  padding: 8px 12px; border-radius: var(--radius-md); margin-bottom: 14px;
-  font-size: 12px; color: var(--red); background: var(--red-dim);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  font-size: 12px;
+  color: var(--red);
+  background: var(--red-dim);
 }
+
 .card {
-  background: var(--bg-surface); border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg); padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
 }
-.muted { color: var(--text-secondary); }
+
+.muted {
+  color: var(--text-secondary);
+}
 
 /* ── case status / priority / role pills ─────────────────────────────────── */
 .pill {
-  display: inline-flex; align-items: center; padding: 1px 9px; border-radius: 99px;
-  font-size: 11px; font-weight: 500; text-transform: capitalize; white-space: nowrap;
-  border: 1px solid var(--border-normal); color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  border: 1px solid var(--border-normal);
+  color: var(--text-secondary);
 }
-.status-open        { color: var(--green);  background: var(--green-dim);  border-color: transparent; }
-.status-in_progress { color: var(--accent); background: var(--accent-dim); border-color: transparent; }
-.status-closed      { color: var(--text-secondary); background: var(--bg-elevated); }
-.status-archived    { color: var(--text-tertiary);  background: transparent; }
-.prio-low      { color: var(--text-secondary); }
-.prio-medium   { color: var(--cyan);   background: var(--cyan-dim);   border-color: transparent; }
-.prio-high     { color: var(--amber);  background: var(--amber-dim);  border-color: transparent; }
-.prio-critical { color: var(--red);    background: var(--red-dim);    border-color: transparent; }
-.role-lead, .role-owner { color: var(--purple); background: var(--purple-dim); border-color: transparent; }
-.role-investigator, .role-admin { color: var(--accent); background: var(--accent-dim); border-color: transparent; }
+
+.status-open {
+  color: var(--green);
+  background: var(--green-dim);
+  border-color: transparent;
+}
+
+.status-in_progress {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: transparent;
+}
+
+.status-closed {
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+}
+
+.status-archived {
+  color: var(--text-tertiary);
+  background: transparent;
+}
+
+.prio-low {
+  color: var(--text-secondary);
+}
+
+.prio-medium {
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border-color: transparent;
+}
+
+.prio-high {
+  color: var(--amber);
+  background: var(--amber-dim);
+  border-color: transparent;
+}
+
+.prio-critical {
+  color: var(--red);
+  background: var(--red-dim);
+  border-color: transparent;
+}
+
+.role-lead,
+.role-owner {
+  color: var(--purple);
+  background: var(--purple-dim);
+  border-color: transparent;
+}
+
+.role-investigator,
+.role-admin {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: transparent;
+}
 
 /* ── modal dialog ────────────────────────────────────────────────────────── */
 .dialog-backdrop {
-  position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,0.55); padding: 16px;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 16px;
 }
-.dialog { width: 100%; max-width: 460px; box-shadow: var(--shadow); }
-.dialog-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
-.dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+
+.dialog {
+  width: 100%;
+  max-width: 460px;
+  box-shadow: var(--shadow);
+}
+
+.dialog-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}

@@ -77,7 +77,7 @@ function nodeRadius(deg: number) { return Math.max(8, Math.min(22, 8 + Math.sqrt
           <defs>
             <marker id="arrow" markerWidth="6" markerHeight="6"
                     refX="5" refY="3" orient="auto">
-              <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.18)"/>
+              <path d="M0,0 L6,3 L0,6 Z" fill="var(--graph-edge)"/>
             </marker>
           </defs>
         </svg>
@@ -412,7 +412,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
     const link = linkG.selectAll<SVGLineElement, D3Link>('line')
       .data(links).join('line')
       .attr('class', 'link')
-      .style('stroke', 'rgba(255,255,255,0.12)')
+      .style('stroke', 'var(--graph-edge)')
       .attr('stroke-width', (d: D3Link) => Math.sqrt(d.weight))
       .attr('marker-end', 'url(#arrow)');
 
@@ -483,7 +483,7 @@ export class GraphViewComponent implements OnInit, OnDestroy, AfterViewInit {
       })
       .on('mouseleave', () => {
         tip.transition().duration(200).style('opacity', 0);
-        link.style('stroke', 'rgba(255,255,255,0.12)')
+        link.style('stroke', 'var(--graph-edge)')
             .attr('stroke-width', (l: D3Link) => Math.sqrt(l.weight));
       });
 

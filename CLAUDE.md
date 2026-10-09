@@ -34,7 +34,7 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
    for documenting config. Never log passwords, access/refresh tokens, OAuth codes or the
    database URL.
 5. **Don't touch** `../assets/`, `../diagrams/`, `../mid_presentation/`, the proposal `.md`
-   files, `data/input/sample_cases/`, or `frontend/package-lock.json`. Edit `.graph_rag/`
+   files, `data/input/sample_cases/`, or `frontend/package-lock.json`. Edit `backend/.graph_rag/`
    (the venv) only when asked.
 6. **Don't fix the known limitations in ARCHITECTURE.md §8 as a side effect.** Mention them
    if they're relevant; fix them only as their own task.
@@ -49,14 +49,14 @@ Keep backend migrations, tests, evaluation, docs, requirements, and migration co
 under `backend/`. `backend/pytest.ini` discovers `backend/tests/` and adds the project
 root to the import path. Environment files live in `backend/`; settings load `backend/.env`
 independently of the working directory. The owner approved
-keeping `data/` and `.graph_rag/` at the root to preserve upload paths and the existing
-Windows environment. A backend-local `.graph_rag/` is also present; use the environment
-already selected for the command. Keep project-wide documentation and Git
+keeping `data/` at the root to preserve upload paths. The only venv is
+`backend/.graph_rag/` (Python 3.11); activate it for every Python command below, whichever
+directory you run from. Keep project-wide documentation and Git
 settings at the root; ask before adding another root directory.
 
 ```powershell
 # one-time
-.\.graph_rag\Scripts\Activate.ps1          # Python 3.11 venv
+.\backend\.graph_rag\Scripts\Activate.ps1  # Python 3.11 venv
 pip install -r backend/requirements.txt
 ollama pull nomic-embed-text
 # PostgreSQL 18 with pgvector; once per database, as postgres:  CREATE EXTENSION vector;
@@ -67,8 +67,9 @@ alembic -c backend/alembic.ini revision --autogenerate -m "what changed"   # the
 alembic -c backend/alembic.ini upgrade head
 
 # backend  (needs Postgres, `ollama serve`, and LLM_API_KEY, DATABASE_URL, JWT_SECRET_KEY in .env)
-uvicorn backend.app.main:app --reload --port 8000     # docs: http://localhost:8000/docs
-# Alternatively, from backend/: python -m uvicorn backend.app.main:app --app-dir .. --reload --port 8000
+# The owner starts it from backend/; app/main.py puts the project root on sys.path for this.
+cd backend; uvicorn app.main:app --reload --port 8000  # docs: http://localhost:8000/docs
+# From the root, this also works: uvicorn backend.app.main:app --reload --port 8000
 curl http://localhost:8000/api/health
 
 # frontend
@@ -175,7 +176,7 @@ Every time the owner corrects the agent on something it might repeat, add one li
 the date, the rule, and the reason in a few words. Newest first. This list overrides the
 defaults above if they conflict.
 
-- 2026-10-09 — Environment files and pytest config live in `backend/`. Keep imports rooted at `backend.*`; use `--app-dir ..` when starting the server there, and preserve project-root-relative evidence paths.
-
+- 2026-10-09 — The owner runs the server from inside `backend/` with `uvicorn app.main:app`. Keep the `sys.path` shim at the top of `backend/app/main.py` and keep imports rooted at `backend.*`. The venv is `backend/.graph_rag/` (Python 3.11; the root venv was removed). Windows Smart App Control blocked compiled wheels (asyncpg, sklearn) and has been turned off; if a "DLL load failed … Application Control policy" error appears, it's that, not the code.
+- 2026-10-09 — Environment files and pytest config live in `backend/`. Preserve project-root-relative evidence paths.
 - 2026-10-06 — Generation moved from Groq to OpenRouter (`openai` package, `LLM_*` settings): Groq's paid tier was unavailable. Don't reintroduce the `groq` SDK.
 - 2026-10-04 — (seed) Generation uses Groq and embeddings use Ollama, even when someone says "Gemini". The code moved off Gemini.

@@ -25,23 +25,15 @@ graphrag-project/
 |   |-- migrations/         Alembic environment and migration revisions
 |   |-- tests/              Offline Python tests
 |   |-- evaluation/         Evaluation tools, benchmarks, results, and experiments
-|   |-- docs/               Backend extension plan
 |   |-- .env / .env.example Local settings / settings template
 |   |-- pytest.ini          Test discovery and import paths
-|   |-- .graph_rag/         Backend-local Python environment (ignored by Git)
+|   |-- .graph_rag/         Python 3.11 virtual environment (ignored by Git)
 |   |-- alembic.ini         Migration configuration
 |   |-- requirements.txt    Python dependencies
 |-- data/                   Sample inputs and existing uploaded evidence
-|-- .graph_rag/             Verified Python 3.11 environment (ignored by Git)
 |-- ARCHITECTURE.md         Project architecture, contracts, and decisions
 |-- CLAUDE.md               Repository working instructions
 ```
-
-Run the server, migrations, and tests from `backend/` using the commands below.
-The frontend runs from `frontend/`; evaluation commands below run from the project root.
-Settings always load `backend/.env`, regardless of the working directory. Relative
-upload paths remain relative to the project root, preserving existing `data/uploads/`
-files and paths stored in the database.
 
 ## Setup and running
 
@@ -51,25 +43,26 @@ Copy `backend/.env.example` to `backend/.env` and configure `LLM_API_KEY`, `DATA
 Never commit `.env`.
 
 ```powershell
-# From graphrag-project/, enter the backend and activate the existing Python 3.11 environment.
+# From graphrag-project/, enter the backend.
 cd backend
-..\.graph_rag\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+# Only once: create the Python 3.11 environment and install dependencies.
+py -3.11 -m venv .graph_rag
+.\.graph_rag\Scripts\Activate.ps1
+pip install -r requirements.txt
 ollama pull nomic-embed-text
 # Keep Ollama running; enable the vector extension in your PostgreSQL database.
-python -m alembic -c alembic.ini upgrade head
-python -m uvicorn backend.app.main:app --app-dir .. --reload --port 8000
+alembic -c alembic.ini upgrade head
+
+# Every time:
+.\.graph_rag\Scripts\Activate.ps1
+uvicorn app.main:app --reload --port 8000
 ```
 
-`--app-dir ..` adds the project root to Python's import path, so the existing
-`backend.*` imports work when launched from `backend/`.
-The commands use the original root `.graph_rag/` environment. The separate
-`backend/.graph_rag/` currently uses Python 3.14, and Windows Application Control
-blocks some of its compiled dependencies; use the verified root environment.
-From the project root, the server command is
-`python -m uvicorn backend.app.main:app --reload --port 8000`.
-
 API documentation: http://localhost:8000/docs.
+
+If startup fails with `DLL load failed ... An Application Control policy has blocked
+this file`, Windows Smart App Control is blocking a compiled package (such as asyncpg).
+Turn it off in Windows Security → App & browser control, then try again.
 
 In another terminal:
 
@@ -88,9 +81,6 @@ Frontend: http://localhost:4200. The current API service connects to
 # From backend/, with your environment active; LLM and embeddings are stubbed.
 python -m pytest -q
 
-# Alternatively, from the project root, explicitly select the backend config.
-python -m pytest -c backend/pytest.ini -q
-
 # From frontend/; validates TypeScript and Angular templates.
 npm run build -- --configuration development
 ```
@@ -98,7 +88,7 @@ npm run build -- --configuration development
 ## Evaluation
 
 ```powershell
-# From graphrag-project/, with your Python environment active.
+# From graphrag-project/, with backend\.graph_rag active.
 # QA format: [{"question": "...", "reference": "..."}]
 python -m backend.evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
 python -m backend.evaluation.compare analyze --exp backend/evaluation/experiments/2026-10-08_standard_vs_refined

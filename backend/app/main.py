@@ -1,4 +1,12 @@
+import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
+
+# Lets `uvicorn app.main:app` run from inside backend/: the code imports itself as
+# `backend.…`, so the folder containing backend/ must be on sys.path.
+_PROJECT_ROOT = str(Path(__file__).resolve().parents[2])
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware

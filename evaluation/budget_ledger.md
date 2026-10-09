@@ -60,4 +60,7 @@ from the money actually left.
 | 6 | QuALITY dev tuning of m: S2 + S3 (m = 1, 2, 4) × 193 dev q, then the summary-fix prototype S3 (m = 1, 2, 4) × 193 | 0.11 | 4.2748 | 4.3118 | **0.0370** | **3.8543** | 1,351 dev answers ≈ $0.000027 each (many short MC replies; S3 ≡ S2 before the fix → cache hits) |
 | 7 | QuALITY test: C0, S0–S5 × 722 | 0.30 | 4.6193 | | | | dev MC answers cost ≈ /usr/bin/bash.00003–0.00011 each |
 | 9 | MultiHop-RAG test: C0, S0–S5 × 400 | 0.30 | 7.6125 | 7.8912 | **0.2787** | **7.4337** | 2,800 answers, 0 errors. Left under the guard: $1.066 |
-| 10 | GraphRAG-Bench: 6 novels (241k words) per-novel index + C0, S0–S5 × 108 test q | 0.68 | 7.8912 | | | | subsample sized to the money left with a $0.30 margin (`subsample.json`) |
+| 10 | GraphRAG-Bench: 6 novels (241k words), per-novel index | 0.58 | 7.8912 | 8.3821 | **0.4909** | **7.9246** | 1,152 chunks, 297 RAPTOR summaries, 15,529 entities, 670 community summaries. Left under the guard: $0.575 |
+| 11 | GraphRAG-Bench test answers: C0, S0–S5 × 108 (levels 3–4) | 0.10 | 8.3821 | 8.5031 | **0.1210** | **8.0456** | 756 answers, 0 errors |
+
+**Total evaluation spend: $8.0456** (key usage $8.5031 of the $9.00 limit; guard $8.50 not exceeded). No further paid steps are planned.

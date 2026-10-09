@@ -1,0 +1,58 @@
+2026-10-09 15:28:50,851 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 15:28:52,490 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 15:28:52,490 | INFO | graphrag | [answer] start 2026-10-09 09:28:52 UTC argv=['--dataset', 'graphrag_bench_novel', '--split', 'test', '--systems', 'C0,S0,S1,S2,S3,S4,S5', '--per_doc', '--only_types', 'Contextual Summarize,Creative Generation', '--only_docs', 'Novel-10762,Novel-10146,Novel-30752,Novel-29973,Novel-54537,Novel-10356'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 15:29:05,731 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 15:29:14,863 | INFO | graphrag | [answer graphrag_bench_novel/C0] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 9.1}
+2026-10-09 15:29:23,993 | INFO | graphrag | [answer graphrag_bench_novel/S0] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 9.1}
+2026-10-09 15:29:33,525 | INFO | graphrag | [answer graphrag_bench_novel/S1] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 9.5}
+2026-10-09 15:29:43,527 | INFO | graphrag | [answer graphrag_bench_novel/S2] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 10.0}
+2026-10-09 15:29:49,442 | INFO | graphrag | [answer graphrag_bench_novel/S3] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 5.9}
+2026-10-09 15:31:14,850 | INFO | graphrag | [answer graphrag_bench_novel/S4] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 85.4}
+2026-10-09 15:31:24,375 | INFO | graphrag | [answer graphrag_bench_novel/S5] {'answered': 108, 'skipped_done': 0, 'errors': 0, 'seconds': 9.5}
+{
+ "summary": {
+  "C0": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 9.1
+  },
+  "S0": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 9.1
+  },
+  "S1": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 9.5
+  },
+  "S2": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 10.0
+  },
+  "S3": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 5.9
+  },
+  "S4": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 85.4
+  },
+  "S5": {
+   "answered": 108,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 9.5
+  }
+ },
+ "cost": 0.121
+}

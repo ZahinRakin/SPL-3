@@ -1,0 +1,1324 @@
+{
+ "meta": {
+  "mode": "pairwise",
+  "dataset": "graphrag_bench_novel",
+  "split": "test",
+  "systems": [
+   "S4",
+   "S2"
+  ],
+  "types": [
+   "Contextual Summarize",
+   "Creative Generation"
+  ],
+  "questions": 108,
+  "items": 216,
+  "batches": [
+   "blinded_pairwise_S4_S2_001.jsonl",
+   "blinded_pairwise_S4_S2_002.jsonl",
+   "blinded_pairwise_S4_S2_003.jsonl",
+   "blinded_pairwise_S4_S2_004.jsonl",
+   "blinded_pairwise_S4_S2_005.jsonl"
+  ],
+  "created_at": "2026-10-09 09:34:37 UTC",
+  "seed": 42
+ },
+ "key": {
+  "a3b1799d": {
+   "qid": "Novel-0170eecb",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "1c80317f": {
+   "qid": "Novel-0170eecb",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "06671ad1": {
+   "qid": "Novel-058b0e04",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "bdd640fb": {
+   "qid": "Novel-058b0e04",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "46685257": {
+   "qid": "Novel-069d432d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "3eb13b90": {
+   "qid": "Novel-069d432d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "392456de": {
+   "qid": "Novel-08f7b7da",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "23b8c1e9": {
+   "qid": "Novel-08f7b7da",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "bc8960a9": {
+   "qid": "Novel-09902328",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "1a3d1fa7": {
+   "qid": "Novel-09902328",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "ad3c2d6d": {
+   "qid": "Novel-09c3281f",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "bd9c66b3": {
+   "qid": "Novel-09c3281f",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "e465e150": {
+   "qid": "Novel-0d661e08",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "8b9d2434": {
+   "qid": "Novel-0d661e08",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "16419f82": {
+   "qid": "Novel-1466d7c5",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "972a8469": {
+   "qid": "Novel-1466d7c5",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "6c031199": {
+   "qid": "Novel-158384f7",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "0822e8f3": {
+   "qid": "Novel-158384f7",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "07a0ca6e": {
+   "qid": "Novel-1693ae5d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "17fc695a": {
+   "qid": "Novel-1693ae5d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "37f8a88b": {
+   "qid": "Novel-16d855f9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "3b8faa18": {
+   "qid": "Novel-16d855f9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "815ef6d1": {
+   "qid": "Novel-18e51427",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "9a1de644": {
+   "qid": "Novel-18e51427",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "06cb0fb3": {
+   "qid": "Novel-1b22b62b",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "8fadc1a6": {
+   "qid": "Novel-1b22b62b",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "32e70629": {
+   "qid": "Novel-1f3a3ec3",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "b74d0fb1": {
+   "qid": "Novel-1f3a3ec3",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "a65ed389": {
+   "qid": "Novel-1fe5ab6c",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "b38a088c": {
+   "qid": "Novel-1fe5ab6c",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "8b8148f6": {
+   "qid": "Novel-20a20596",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "6b65a6a4": {
+   "qid": "Novel-20a20596",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "386ecbe0": {
+   "qid": "Novel-23285edf",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "72ff5d2a": {
+   "qid": "Novel-23285edf",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "96da1dac": {
+   "qid": "Novel-25a4b381",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "47378190": {
+   "qid": "Novel-25a4b381",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "cf36d58b": {
+   "qid": "Novel-2a03bf35",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "de8a774b": {
+   "qid": "Novel-2a03bf35",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "01a9e71f": {
+   "qid": "Novel-2c03807c",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "c241330b": {
+   "qid": "Novel-2c03807c",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "ce4a2bbd": {
+   "qid": "Novel-2def53f0",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "28df6ec4": {
+   "qid": "Novel-2def53f0",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "b2b9437a": {
+   "qid": "Novel-2f8f5467",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "6c307511": {
+   "qid": "Novel-2f8f5467",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "571aa876": {
+   "qid": "Novel-34e4b969",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "47229389": {
+   "qid": "Novel-34e4b969",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "27cd8130": {
+   "qid": "Novel-34e7cea9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "371ecd7b": {
+   "qid": "Novel-34e7cea9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "f50bea63": {
+   "qid": "Novel-350bcbcd",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "c37459ee": {
+   "qid": "Novel-350bcbcd",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "562b0f79": {
+   "qid": "Novel-35e77a1a",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "1a2a73ed": {
+   "qid": "Novel-35e77a1a",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "17be3111": {
+   "qid": "Novel-384895cc",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "6142ea7d": {
+   "qid": "Novel-384895cc",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "18c26797": {
+   "qid": "Novel-395b1b2c",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5be6128e": {
+   "qid": "Novel-395b1b2c",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "d8f56413": {
+   "qid": "Novel-3c661d88",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "580d7b71": {
+   "qid": "Novel-3c661d88",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "9a8dca03": {
+   "qid": "Novel-3cf18099",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "43b7a3a6": {
+   "qid": "Novel-3cf18099",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "ce9ff57f": {
+   "qid": "Novel-3d413e64",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "0b1f9163": {
+   "qid": "Novel-3d413e64",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "bacfb3d0": {
+   "qid": "Novel-3e66af03",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "759cde66": {
+   "qid": "Novel-3e66af03",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "89463e85": {
+   "qid": "Novel-3f09106a",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "1ff49b78": {
+   "qid": "Novel-3f09106a",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "f91e1d4c": {
+   "qid": "Novel-455e0c99",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ec1b8ca1": {
+   "qid": "Novel-455e0c99",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "60e7a113": {
+   "qid": "Novel-46f66098",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "142c3fe8": {
+   "qid": "Novel-46f66098",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "8d5288f1": {
+   "qid": "Novel-4937721e",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "4b0dbb41": {
+   "qid": "Novel-4937721e",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "d453dd32": {
+   "qid": "Novel-49b59468",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "a0ee89ae": {
+   "qid": "Novel-49b59468",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "9e574f7a": {
+   "qid": "Novel-4dcd1884",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "e2acf72f": {
+   "qid": "Novel-4dcd1884",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "dc98d2c1": {
+   "qid": "Novel-56575021",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5c941cf0": {
+   "qid": "Novel-56575021",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "93cd59bf": {
+   "qid": "Novel-5c82be50",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "3139d32c": {
+   "qid": "Novel-5c82be50",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "b45ed1f0": {
+   "qid": "Novel-5d50db7b",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "11ce5dd2": {
+   "qid": "Novel-5d50db7b",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "0bbb2599": {
+   "qid": "Novel-5f6b723d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "a9488d99": {
+   "qid": "Novel-5f6b723d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "3a578a8e": {
+   "qid": "Novel-62d1fdf9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "c5e7ce8a": {
+   "qid": "Novel-62d1fdf9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "4a15544d": {
+   "qid": "Novel-64b347a6",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "fc377a4c": {
+   "qid": "Novel-64b347a6",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "146d3f31": {
+   "qid": "Novel-64dcab77",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "daf61a26": {
+   "qid": "Novel-64dcab77",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "3b982ef8": {
+   "qid": "Novel-656cfe9f",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ddd1dfb2": {
+   "qid": "Novel-656cfe9f",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "19db3ad0": {
+   "qid": "Novel-67b7cadd",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "614ff3d7": {
+   "qid": "Novel-67b7cadd",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "47294739": {
+   "qid": "Novel-67d6c501",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "7412b293": {
+   "qid": "Novel-67d6c501",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "a2bc372f": {
+   "qid": "Novel-6809b810",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "d58842de": {
+   "qid": "Novel-6809b810",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "5d65a441": {
+   "qid": "Novel-69d1d35a",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "29a3b2e9": {
+   "qid": "Novel-69d1d35a",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "5ec42e08": {
+   "qid": "Novel-6b77dd49",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5af30553": {
+   "qid": "Novel-6b77dd49",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "35a240ae": {
+   "qid": "Novel-6da13b57",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ab9099a4": {
+   "qid": "Novel-6da13b57",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "4458a885": {
+   "qid": "Novel-6e3efa6e",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "b3aa7efe": {
+   "qid": "Novel-6e3efa6e",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "efc89849": {
+   "qid": "Novel-719c8fc1",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "aefcfad8": {
+   "qid": "Novel-719c8fc1",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "a5e5a5ab": {
+   "qid": "Novel-786a5d0e",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "12476f57": {
+   "qid": "Novel-786a5d0e",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "9bf00273": {
+   "qid": "Novel-79c9dda9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "a28defe3": {
+   "qid": "Novel-79c9dda9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "2bcfbe01": {
+   "qid": "Novel-7a27ed73",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "88bd6407": {
+   "qid": "Novel-7a27ed73",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "baa80dd4": {
+   "qid": "Novel-7ecabf57",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "3eabedcb": {
+   "qid": "Novel-7ecabf57",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "29d4beef": {
+   "qid": "Novel-7feddecb",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "7656af72": {
+   "qid": "Novel-7feddecb",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "6123fdf7": {
+   "qid": "Novel-82d548d7",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "451b4cf3": {
+   "qid": "Novel-82d548d7",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "fd5166e6": {
+   "qid": "Novel-831734ba",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ece66fa2": {
+   "qid": "Novel-831734ba",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "a3d70628": {
+   "qid": "Novel-84af5b0f",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "b02b61c4": {
+   "qid": "Novel-84af5b0f",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "8e944239": {
+   "qid": "Novel-852c2eb2",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "3838b326": {
+   "qid": "Novel-852c2eb2",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "af42e12f": {
+   "qid": "Novel-875a0ddd",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5304317f": {
+   "qid": "Novel-875a0ddd",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "d7c524a5": {
+   "qid": "Novel-880d8f25",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "c4b032cc": {
+   "qid": "Novel-880d8f25",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "c6a7ee39": {
+   "qid": "Novel-890d94d9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "0e51f30d": {
+   "qid": "Novel-890d94d9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "3aa2e4f9": {
+   "qid": "Novel-8df9d4bc",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "d261a7ab": {
+   "qid": "Novel-8df9d4bc",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "0837b8a3": {
+   "qid": "Novel-90fcd2bb",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ce177b4e": {
+   "qid": "Novel-90fcd2bb",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "50c187fc": {
+   "qid": "Novel-915aa032",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "66b2bc5b": {
+   "qid": "Novel-915aa032",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "448aaa9e": {
+   "qid": "Novel-91ba8b50",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "10f1bc81": {
+   "qid": "Novel-91ba8b50",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "3602f8ac": {
+   "qid": "Novel-9712745d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "e9c349e0": {
+   "qid": "Novel-9712745d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "f16287e4": {
+   "qid": "Novel-974ed0c9",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "9132b63e": {
+   "qid": "Novel-974ed0c9",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "e059a0ee": {
+   "qid": "Novel-980656b1",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "b7c93acf": {
+   "qid": "Novel-980656b1",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "508ebad7": {
+   "qid": "Novel-9f3e9382",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "366eb16f": {
+   "qid": "Novel-9f3e9382",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "a7cad415": {
+   "qid": "Novel-a3c885aa",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "7fcd9eb1": {
+   "qid": "Novel-a3c885aa",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "654821d0": {
+   "qid": "Novel-a5356e35",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "e27a984d": {
+   "qid": "Novel-a5356e35",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "ea1fca65": {
+   "qid": "Novel-a631a017",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "a491f0b2": {
+   "qid": "Novel-a631a017",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "757750a9": {
+   "qid": "Novel-aa279376",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "24933b83": {
+   "qid": "Novel-aa279376",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "43cf2fde": {
+   "qid": "Novel-aacc2e77",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "23bed01d": {
+   "qid": "Novel-aacc2e77",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "3f22faf8": {
+   "qid": "Novel-b6a36b72",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "beb79919": {
+   "qid": "Novel-b6a36b72",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "8fb5d27b": {
+   "qid": "Novel-b97e069d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "89fa6a68": {
+   "qid": "Novel-b97e069d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "434308bc": {
+   "qid": "Novel-b9f1cbe3",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "bf3c4c06": {
+   "qid": "Novel-b9f1cbe3",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "95a76d79": {
+   "qid": "Novel-bc903265",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "6dadd6c7": {
+   "qid": "Novel-bc903265",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "e5d7b875": {
+   "qid": "Novel-bcc6b060",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "956269f0": {
+   "qid": "Novel-bcc6b060",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "663f1c97": {
+   "qid": "Novel-bd27695d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5cabcc97": {
+   "qid": "Novel-bd27695d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "382567b8": {
+   "qid": "Novel-c516b54d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ff50bde4": {
+   "qid": "Novel-c516b54d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "ff5e9ff0": {
+   "qid": "Novel-c64292d6",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "2369b584": {
+   "qid": "Novel-c64292d6",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "827050a8": {
+   "qid": "Novel-c691073d",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "7e570ddf": {
+   "qid": "Novel-c691073d",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "1745d6d8": {
+   "qid": "Novel-c77d3143",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "c17af08a": {
+   "qid": "Novel-c77d3143",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "0c0fd195": {
+   "qid": "Novel-cdb7fa38",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "dc713d96": {
+   "qid": "Novel-cdb7fa38",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "1c11f735": {
+   "qid": "Novel-cf2f3466",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "27209bdf": {
+   "qid": "Novel-cf2f3466",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "a0a04dc4": {
+   "qid": "Novel-d168a555",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "28f49481": {
+   "qid": "Novel-d168a555",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "cac5b68c": {
+   "qid": "Novel-d33066da",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "ae340454": {
+   "qid": "Novel-d33066da",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "6c12ace8": {
+   "qid": "Novel-d446abb7",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "98ae4334": {
+   "qid": "Novel-d446abb7",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "10435a10": {
+   "qid": "Novel-d8e24b59",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "62801c45": {
+   "qid": "Novel-d8e24b59",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "61b1cd22": {
+   "qid": "Novel-dca192a7",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "988c24c9": {
+   "qid": "Novel-dca192a7",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "ff01cf99": {
+   "qid": "Novel-ddedee1e",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "77d21e02": {
+   "qid": "Novel-ddedee1e",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "877409a9": {
+   "qid": "Novel-e36d4ce4",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "405cacec": {
+   "qid": "Novel-e36d4ce4",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "f89897b9": {
+   "qid": "Novel-e891105b",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "8da0365b": {
+   "qid": "Novel-e891105b",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "dc5c0eed": {
+   "qid": "Novel-e92c0652",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "f143262f": {
+   "qid": "Novel-e92c0652",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "02f06b90": {
+   "qid": "Novel-ead74cb3",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "ae270da7": {
+   "qid": "Novel-ead74cb3",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "b88139b9": {
+   "qid": "Novel-edf93c33",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "1d53434b": {
+   "qid": "Novel-edf93c33",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "ae849217": {
+   "qid": "Novel-ee34cda2",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "e2817efd": {
+   "qid": "Novel-ee34cda2",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "8976e334": {
+   "qid": "Novel-f24b3922",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "c0398710": {
+   "qid": "Novel-f24b3922",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "444ea7c8": {
+   "qid": "Novel-f9d1c48a",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "c4c2e2e3": {
+   "qid": "Novel-f9d1c48a",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "a4161293": {
+   "qid": "Novel-fc7727b2",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "5715bd6f": {
+   "qid": "Novel-fc7727b2",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  },
+  "1c8eaee9": {
+   "qid": "Novel-fce3c59a",
+   "A": "S4",
+   "B": "S2",
+   "type": "Creative Generation"
+  },
+  "4b22d308": {
+   "qid": "Novel-fce3c59a",
+   "A": "S2",
+   "B": "S4",
+   "type": "Creative Generation"
+  },
+  "6f4cc69a": {
+   "qid": "Novel-ff57e076",
+   "A": "S4",
+   "B": "S2",
+   "type": "Contextual Summarize"
+  },
+  "287d06ca": {
+   "qid": "Novel-ff57e076",
+   "A": "S2",
+   "B": "S4",
+   "type": "Contextual Summarize"
+  }
+ }
+}

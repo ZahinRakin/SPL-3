@@ -140,8 +140,10 @@ def coverage_facts(dataset: str, types: List[str], split: str = "test") -> None:
     system output, so it needs no blinding; the extracted facts are reused for every system."""
     qs = [q for q in read_jsonl(bench(dataset) / "questions.jsonl") if q["type"] in types]
     split_ids = set(l.strip() for l in open(bench(dataset) / "splits" / f"{split}.txt", encoding="utf-8"))
+    frozen = bench(dataset) / "frozen_config.json"
+    novels = set(json.loads(frozen.read_text(encoding="utf-8")).get("novels", [])) if frozen.exists() else set()
     rows = [{"fid": q["qid"], "question": q["question"], "reference": q["answers"][0]}
-            for q in qs if q["qid"] in split_ids]
+            for q in qs if q["qid"] in split_ids and (not novels or q["gold_doc_ids"][0] in novels)]
     jdir = bench(dataset) / "judging"
     jdir.mkdir(exist_ok=True)
     files = _write_batches(jdir, "facts", rows)

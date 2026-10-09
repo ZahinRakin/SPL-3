@@ -1,0 +1,150 @@
+{
+ "dataset": "graphrag_bench_novel",
+ "analyzed_at": "2026-10-09 09:38:46 UTC",
+ "rougeL_by_type": {
+  "Contextual Summarize": {
+   "C0": 0.15675289560328057,
+   "S0": 0.2012368838653423,
+   "S1": 0.199135401038664,
+   "S2": 0.19807017496294252,
+   "S3": 0.18621631821847814,
+   "S4": 0.19233581580202716,
+   "S5": 0.19453627268447266
+  },
+  "Creative Generation": {
+   "C0": 0.16712353701428248,
+   "S0": 0.14927105789494488,
+   "S1": 0.14790588010320224,
+   "S2": 0.14733597041233387,
+   "S3": 0.14290692620414036,
+   "S4": 0.14296605616343155,
+   "S5": 0.14141153661084316
+  }
+ },
+ "H3": {
+  "hypothesis": "Community summaries help broad questions (S4 vs S2, judge coverage, Contextual Summarize, test)",
+  "n": 86,
+  "mean_a": 0.9283453303802142,
+  "mean_b": 0.8548680324843115,
+  "mean_diff": 0.07347729789590254,
+  "ci_low": 0.011544850498338866,
+  "ci_high": 0.14100290697674417,
+  "wtl": {
+   "win": 16,
+   "tie": 65,
+   "loss": 5
+  },
+  "test": "wilcoxon",
+  "stat": {
+   "statistic": 56.0,
+   "p": 0.0376229008637558,
+   "n_nonzero": 21
+  }
+ },
+ "coverage": {
+  "mean": {
+   "S2": 0.8548680324843115,
+   "S4": 0.9283453303802142
+  },
+  "n": {
+   "S2": 86,
+   "S4": 86
+  },
+  "comparison": {
+   "n": 86,
+   "mean_a": 0.9283453303802142,
+   "mean_b": 0.8548680324843115,
+   "mean_diff": 0.07347729789590254,
+   "ci_low": 0.011544850498338866,
+   "ci_high": 0.14100290697674417,
+   "wtl": {
+    "win": 16,
+    "tie": 65,
+    "loss": 5
+   },
+   "test": "wilcoxon",
+   "stat": {
+    "statistic": 56.0,
+    "p": 0.0376229008637558,
+    "n_nonzero": 21
+   }
+  }
+ },
+ "pairwise_S4_vs_S2": {
+  "systems": [
+   "S4",
+   "S2"
+  ],
+  "pairs": 108,
+  "wins_S4": 33,
+  "wins_S2": 20,
+  "ties": 55,
+  "position_consistency": 0.7962962962962963,
+  "sign_test_p": 0.09837064844049181
+ },
+ "run_stats": {
+  "C0": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 0.0,
+   "mean_retrieval_s": 0.0,
+   "mean_generation_s_uncached": 1.2851574074074077,
+   "uncached_answers": 108
+  },
+  "S0": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 11004.00925925926,
+   "mean_retrieval_s": 0.00162962962962963,
+   "mean_generation_s_uncached": 1.194148148148148,
+   "uncached_answers": 108
+  },
+  "S1": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 11153.5,
+   "mean_retrieval_s": 0.003453703703703704,
+   "mean_generation_s_uncached": 1.2338333333333336,
+   "uncached_answers": 108
+  },
+  "S2": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 11029.555555555555,
+   "mean_retrieval_s": 0.03619444444444445,
+   "mean_generation_s_uncached": 1.270574074074074,
+   "uncached_answers": 108
+  },
+  "S3": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 10843.203703703704,
+   "mean_retrieval_s": 0.04550925925925927,
+   "mean_generation_s_uncached": 1.2822500000000001,
+   "uncached_answers": 52
+  },
+  "S4": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 11365.712962962964,
+   "mean_retrieval_s": 10.887296296296299,
+   "mean_generation_s_uncached": 1.354175925925926,
+   "uncached_answers": 108
+  },
+  "S5": {
+   "n": 108,
+   "errors": 0,
+   "empty_answers": 0,
+   "mean_context_chars": 10889.768518518518,
+   "mean_retrieval_s": 0.09936111111111112,
+   "mean_generation_s_uncached": 1.5444347826086955,
+   "uncached_answers": 46
+  }
+ }
+}

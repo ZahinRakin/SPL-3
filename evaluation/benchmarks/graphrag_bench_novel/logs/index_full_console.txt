@@ -1,0 +1,129 @@
+2026-10-09 15:19:58,121 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 15:19:59,589 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 15:19:59,591 | INFO | graphrag | [index] start 2026-10-09 09:19:59 UTC argv=['--dataset', 'graphrag_bench_novel', '--name', 'full', '--per_doc', '--docs', 'Novel-10762,Novel-10146,Novel-30752,Novel-29973,Novel-54537,Novel-10356'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 15:20:00,939 | INFO | graphrag | [index full/Novel-10762] 1 docs, 278 chunks
+2026-10-09 15:20:00,939 | INFO | graphrag | RaptorRunner.build_tree: 278 chunks, max_levels=3
+2026-10-09 15:20:11,978 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 15:20:21,636 | WARNING | graphrag | embed_many: 5/56 texts cut to 6000 chars
+2026-10-09 15:20:24,693 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 45462 chars cut to 24000
+2026-10-09 15:20:24,693 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 24458 chars cut to 24000
+2026-10-09 15:20:24,695 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 27820 chars cut to 24000
+2026-10-09 15:20:24,695 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 31597 chars cut to 24000
+2026-10-09 15:20:24,697 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 30312 chars cut to 24000
+2026-10-09 15:20:27,584 | WARNING | graphrag | embed_many: 3/12 texts cut to 6000 chars
+2026-10-09 15:20:28,322 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 47569 chars cut to 24000
+2026-10-09 15:20:30,227 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 348, 'levels': {0: 278, 1: 56, 2: 12, 3: 2}}
+2026-10-09 15:20:43,874 | WARNING | graphrag | Extraction for '3d44f28b-4c06-4d19-b18a-757e93d2f6ad' was malformed: 0 bare-string entities converted, 5 items dropped
+2026-10-09 15:20:53,562 | INFO | graphrag | [index full/Novel-10762] extraction 250/278
+2026-10-09 15:20:56,822 | INFO | graphrag | index_document: doc_id='Novel-10762', passages=278
+2026-10-09 15:20:56,899 | WARNING | graphrag | Extraction for '3d44f28b-4c06-4d19-b18a-757e93d2f6ad' was malformed: 0 bare-string entities converted, 5 items dropped
+2026-10-09 15:20:57,010 | INFO | graphrag | index_document complete: doc_id='Novel-10762', new_entities=3671, new_relationships=2612, alias_edges=182, graph_nodes=3671
+2026-10-09 15:20:57,010 | INFO | graphrag | index_document endpoints: doc_id='Novel-10762', resolved={'exact': 5191, 'fuzzy': 35, 'case': 127, 'created': 347}, relationships_dropped={'self_loop': 4, 'ambiguous': 53, 'empty': 102}
+2026-10-09 15:20:57,010 | INFO | graphrag | _detect_communities: running Louvain on 3671 nodes
+2026-10-09 15:20:57,201 | INFO | graphrag | _detect_communities: 1114 communities found, 0 summaries reused, 210 to summarise
+2026-10-09 15:21:06,888 | INFO | graphrag | [index full/Novel-10762] done: {'label': 'full/Novel-10762', 'docs': 1, 'chunks': 278, 'raptor_levels': {'0': 278, '1': 56, '2': 12, '3': 2}, 'summaries': 70, 'extractions_empty': 0, 'total_entities': 3671, 'total_relationships': 3028, 'total_communities': 210, 'density': 0.0004, 'components': 1084, 'isolated_entities': 663, 'seconds': {'raptor': 29.3, 'extraction': 26.6, 'communities': 9.9, 'total': 66.0}}
+2026-10-09 15:21:07,142 | INFO | graphrag | [index full/Novel-10146] 1 docs, 203 chunks
+2026-10-09 15:21:07,142 | INFO | graphrag | RaptorRunner.build_tree: 203 chunks, max_levels=3
+2026-10-09 15:21:17,727 | WARNING | graphrag | embed_many: 5/42 texts cut to 6000 chars
+2026-10-09 15:21:20,016 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 32958 chars cut to 24000
+2026-10-09 15:21:20,016 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 29555 chars cut to 24000
+2026-10-09 15:21:20,016 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 31937 chars cut to 24000
+2026-10-09 15:21:23,915 | WARNING | graphrag | embed_many: 5/9 texts cut to 6000 chars
+2026-10-09 15:21:24,601 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 39780 chars cut to 24000
+2026-10-09 15:21:29,613 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 15:21:29,613 | WARNING | graphrag | embed_many: 2/3 texts cut to 6000 chars
+2026-10-09 15:21:30,111 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 257, 'levels': {0: 203, 1: 42, 2: 9, 3: 3}}
+2026-10-09 15:21:53,564 | INFO | graphrag | index_document: doc_id='Novel-10146', passages=203
+2026-10-09 15:21:53,723 | INFO | graphrag | index_document complete: doc_id='Novel-10146', new_entities=2641, new_relationships=2233, alias_edges=168, graph_nodes=2641
+2026-10-09 15:21:53,723 | INFO | graphrag | index_document endpoints: doc_id='Novel-10146', resolved={'exact': 4384, 'fuzzy': 56, 'case': 64, 'created': 272}, relationships_dropped={'self_loop': 9, 'ambiguous': 15, 'empty': 108}
+2026-10-09 15:21:53,723 | INFO | graphrag | _detect_communities: running Louvain on 2641 nodes
+2026-10-09 15:21:53,936 | INFO | graphrag | _detect_communities: 702 communities found, 0 summaries reused, 90 to summarise
+2026-10-09 15:22:03,368 | INFO | graphrag | [index full/Novel-10146] done: {'label': 'full/Novel-10146', 'docs': 1, 'chunks': 203, 'raptor_levels': {'0': 203, '1': 42, '2': 9, '3': 3}, 'summaries': 54, 'extractions_empty': 1, 'total_entities': 2641, 'total_relationships': 2547, 'total_communities': 90, 'density': 0.0007, 'components': 670, 'isolated_entities': 525, 'seconds': {'raptor': 23.0, 'extraction': 23.5, 'communities': 9.6, 'total': 56.2}}
+2026-10-09 15:22:03,566 | INFO | graphrag | [index full/Novel-30752] 1 docs, 139 chunks
+2026-10-09 15:22:03,566 | INFO | graphrag | RaptorRunner.build_tree: 139 chunks, max_levels=3
+2026-10-09 15:22:11,259 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 15:22:12,497 | WARNING | graphrag | embed_many: 6/29 texts cut to 6000 chars
+2026-10-09 15:22:14,248 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 49198 chars cut to 24000
+2026-10-09 15:22:14,248 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 26416 chars cut to 24000
+2026-10-09 15:22:18,797 | WARNING | graphrag | embed_many: 3/7 texts cut to 6000 chars
+2026-10-09 15:22:19,499 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 30285 chars cut to 24000
+2026-10-09 15:22:24,900 | WARNING | graphrag | embed_many: 2/2 texts cut to 6000 chars
+2026-10-09 15:22:25,252 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 177, 'levels': {0: 139, 1: 29, 2: 7, 3: 2}}
+2026-10-09 15:22:33,591 | WARNING | graphrag | Extraction for 'b426c9bb-3bdd-4dbc-9b67-bbe4cd8121bf' was malformed: 0 bare-string entities converted, 19 items dropped
+2026-10-09 15:22:40,973 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 15:22:42,405 | INFO | graphrag | index_document: doc_id='Novel-30752', passages=139
+2026-10-09 15:22:42,453 | WARNING | graphrag | Extraction for 'b426c9bb-3bdd-4dbc-9b67-bbe4cd8121bf' was malformed: 0 bare-string entities converted, 19 items dropped
+2026-10-09 15:22:42,516 | INFO | graphrag | index_document complete: doc_id='Novel-30752', new_entities=1859, new_relationships=1541, alias_edges=116, graph_nodes=1859
+2026-10-09 15:22:42,516 | INFO | graphrag | index_document endpoints: doc_id='Novel-30752', resolved={'exact': 2932, 'fuzzy': 47, 'case': 92, 'created': 279}, relationships_dropped={'self_loop': 5, 'ambiguous': 10, 'empty': 128}
+2026-10-09 15:22:42,516 | INFO | graphrag | _detect_communities: running Louvain on 1859 nodes
+2026-10-09 15:22:42,659 | INFO | graphrag | _detect_communities: 478 communities found, 0 summaries reused, 102 to summarise
+2026-10-09 15:22:49,835 | INFO | graphrag | [index full/Novel-30752] done: {'label': 'full/Novel-30752', 'docs': 1, 'chunks': 139, 'raptor_levels': {'0': 139, '1': 29, '2': 7, '3': 2}, 'summaries': 38, 'extractions_empty': 0, 'total_entities': 1859, 'total_relationships': 1786, 'total_communities': 102, 'density': 0.001, 'components': 453, 'isolated_entities': 304, 'seconds': {'raptor': 21.7, 'extraction': 17.2, 'communities': 7.3, 'total': 46.3}}
+2026-10-09 15:22:49,980 | INFO | graphrag | [index full/Novel-29973] 1 docs, 132 chunks
+2026-10-09 15:22:49,980 | INFO | graphrag | RaptorRunner.build_tree: 132 chunks, max_levels=3
+2026-10-09 15:23:00,389 | WARNING | graphrag | embed_many: 4/29 texts cut to 6000 chars
+2026-10-09 15:23:02,221 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 29303 chars cut to 24000
+2026-10-09 15:23:02,221 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 42416 chars cut to 24000
+2026-10-09 15:23:06,660 | WARNING | graphrag | embed_many: 5/6 texts cut to 6000 chars
+2026-10-09 15:23:07,257 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 36136 chars cut to 24000
+2026-10-09 15:23:11,165 | WARNING | graphrag | embed_many: 1/2 texts cut to 6000 chars
+2026-10-09 15:23:11,480 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 169, 'levels': {0: 132, 1: 29, 2: 6, 3: 2}}
+2026-10-09 15:23:29,499 | INFO | graphrag | index_document: doc_id='Novel-29973', passages=132
+2026-10-09 15:23:29,595 | INFO | graphrag | index_document complete: doc_id='Novel-29973', new_entities=1574, new_relationships=1535, alias_edges=91, graph_nodes=1574
+2026-10-09 15:23:29,595 | INFO | graphrag | index_document endpoints: doc_id='Novel-29973', resolved={'exact': 3077, 'fuzzy': 65, 'case': 75, 'created': 175}, relationships_dropped={'self_loop': 12, 'ambiguous': 28, 'empty': 0}
+2026-10-09 15:23:29,595 | INFO | graphrag | _detect_communities: running Louvain on 1574 nodes
+2026-10-09 15:23:29,642 | INFO | graphrag | _detect_communities: 400 communities found, 0 summaries reused, 50 to summarise
+2026-10-09 15:23:34,568 | INFO | graphrag | [index full/Novel-29973] done: {'label': 'full/Novel-29973', 'docs': 1, 'chunks': 132, 'raptor_levels': {'0': 132, '1': 29, '2': 6, '3': 2}, 'summaries': 37, 'extractions_empty': 0, 'total_entities': 1574, 'total_relationships': 1775, 'total_communities': 50, 'density': 0.0013, 'components': 376, 'isolated_entities': 300, 'seconds': {'raptor': 21.5, 'extraction': 18.0, 'communities': 5.0, 'total': 44.6}}
+2026-10-09 15:23:34,717 | INFO | graphrag | [index full/Novel-54537] 1 docs, 152 chunks
+2026-10-09 15:23:34,717 | INFO | graphrag | RaptorRunner.build_tree: 152 chunks, max_levels=3
+2026-10-09 15:23:43,563 | WARNING | graphrag | embed_many: 2/31 texts cut to 6000 chars
+2026-10-09 15:23:45,419 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 50423 chars cut to 24000
+2026-10-09 15:23:45,419 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 34298 chars cut to 24000
+2026-10-09 15:23:48,841 | WARNING | graphrag | embed_many: 1/5 texts cut to 6000 chars
+2026-10-09 15:23:49,316 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 28980 chars cut to 24000
+2026-10-09 15:23:51,699 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 189, 'levels': {0: 152, 1: 31, 2: 5, 3: 1}}
+2026-10-09 15:24:12,489 | INFO | graphrag | index_document: doc_id='Novel-54537', passages=152
+2026-10-09 15:24:12,631 | INFO | graphrag | index_document complete: doc_id='Novel-54537', new_entities=2355, new_relationships=1769, alias_edges=136, graph_nodes=2355
+2026-10-09 15:24:12,631 | INFO | graphrag | index_document endpoints: doc_id='Novel-54537', resolved={'exact': 3196, 'fuzzy': 77, 'case': 142, 'created': 223}, relationships_dropped={'self_loop': 2, 'ambiguous': 42, 'empty': 111}
+2026-10-09 15:24:12,631 | INFO | graphrag | _detect_communities: running Louvain on 2355 nodes
+2026-10-09 15:24:12,791 | INFO | graphrag | _detect_communities: 696 communities found, 0 summaries reused, 103 to summarise
+2026-10-09 15:24:19,457 | INFO | graphrag | [index full/Novel-54537] done: {'label': 'full/Novel-54537', 'docs': 1, 'chunks': 152, 'raptor_levels': {'0': 152, '1': 31, '2': 5, '3': 1}, 'summaries': 37, 'extractions_empty': 0, 'total_entities': 2355, 'total_relationships': 1953, 'total_communities': 103, 'density': 0.0007, 'components': 665, 'isolated_entities': 498, 'seconds': {'raptor': 17.0, 'extraction': 20.8, 'communities': 6.8, 'total': 44.8}}
+2026-10-09 15:24:19,616 | INFO | graphrag | [index full/Novel-10356] 1 docs, 248 chunks
+2026-10-09 15:24:19,616 | INFO | graphrag | RaptorRunner.build_tree: 248 chunks, max_levels=3
+2026-10-09 15:24:35,002 | WARNING | graphrag | LLM output hit max_tokens=4096; the response is cut off
+2026-10-09 15:24:35,004 | WARNING | graphrag | embed_many: 11/49 texts cut to 6000 chars
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 38507 chars cut to 24000
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 30129 chars cut to 24000
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 34790 chars cut to 24000
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 38469 chars cut to 24000
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 35571 chars cut to 24000
+2026-10-09 15:24:38,102 | WARNING | graphrag | RaptorRunner._summarise: level=2 input of 34297 chars cut to 24000
+2026-10-09 15:24:43,460 | WARNING | graphrag | embed_many: 5/10 texts cut to 6000 chars
+2026-10-09 15:24:44,278 | WARNING | graphrag | RaptorRunner._summarise: level=3 input of 53551 chars cut to 24000
+2026-10-09 15:24:50,537 | WARNING | graphrag | embed_many: 2/2 texts cut to 6000 chars
+2026-10-09 15:24:51,003 | INFO | graphrag | RaptorRunner.build_tree complete: {'total_nodes': 309, 'levels': {0: 248, 1: 49, 2: 10, 3: 2}}
+2026-10-09 15:24:59,226 | WARNING | graphrag | Extraction for '4ea0a9f3-63c1-46b8-a6e7-3f036d7dc5ae' was malformed: 8 bare-string entities converted, 0 items dropped
+2026-10-09 15:25:17,355 | WARNING | graphrag | Extraction for '921adc5f-1adc-45a7-b1e7-ef8f8066dda1' was malformed: 12 bare-string entities converted, 14 items dropped
+2026-10-09 15:25:22,221 | INFO | graphrag | index_document: doc_id='Novel-10356', passages=248
+2026-10-09 15:25:22,284 | WARNING | graphrag | Extraction for '4ea0a9f3-63c1-46b8-a6e7-3f036d7dc5ae' was malformed: 8 bare-string entities converted, 0 items dropped
+2026-10-09 15:25:22,300 | WARNING | graphrag | Extraction for '921adc5f-1adc-45a7-b1e7-ef8f8066dda1' was malformed: 12 bare-string entities converted, 14 items dropped
+2026-10-09 15:25:22,508 | INFO | graphrag | index_document complete: doc_id='Novel-10356', new_entities=3429, new_relationships=3138, alias_edges=166, graph_nodes=3429
+2026-10-09 15:25:22,508 | INFO | graphrag | index_document endpoints: doc_id='Novel-10356', resolved={'exact': 6299, 'fuzzy': 164, 'case': 160, 'created': 421}, relationships_dropped={'self_loop': 80, 'ambiguous': 57, 'empty': 62}
+2026-10-09 15:25:22,508 | INFO | graphrag | _detect_communities: running Louvain on 3429 nodes
+2026-10-09 15:25:22,643 | INFO | graphrag | _detect_communities: 849 communities found, 0 summaries reused, 115 to summarise
+2026-10-09 15:25:30,857 | INFO | graphrag | [index full/Novel-10356] done: {'label': 'full/Novel-10356', 'docs': 1, 'chunks': 248, 'raptor_levels': {'0': 248, '1': 49, '2': 10, '3': 2}, 'summaries': 61, 'extractions_empty': 0, 'total_entities': 3429, 'total_relationships': 3608, 'total_communities': 115, 'density': 0.0006, 'components': 814, 'isolated_entities': 623, 'seconds': {'raptor': 31.4, 'extraction': 31.2, 'communities': 8.3, 'total': 71.2}}
+{
+ "dataset": "graphrag_bench_novel",
+ "name": "full",
+ "docs": 6,
+ "finished_at": "2026-10-09 09:28:32 UTC",
+ "cost_usd": 0.4909,
+ "key_usage_before": 7.891193774,
+ "key_usage_after": 8.382141929,
+ "new_cache_entries": 2119,
+ "chunks": 1152,
+ "summaries": 297,
+ "entities": 15529,
+ "relationships": 14697,
+ "communities": 670,
+ "seconds": 329.1
+}

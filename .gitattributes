@@ -1,0 +1,2 @@
+# Judge files are hashed (sha256) before unblinding: keep them byte-identical on every checkout.
+evaluation/benchmarks/*/judging/** -text

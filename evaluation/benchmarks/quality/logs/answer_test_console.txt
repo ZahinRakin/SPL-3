@@ -5,3 +5,54 @@
 2026-10-09 14:12:20,622 | INFO | graphrag | [answer quality/C0] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 26.7}
 2026-10-09 14:12:53,977 | INFO | graphrag | [answer quality/S0] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 33.4}
 2026-10-09 14:13:23,427 | INFO | graphrag | [answer quality/S1] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 29.5}
+2026-10-09 14:14:18,952 | INFO | graphrag | [answer quality/S2] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 55.5}
+2026-10-09 14:15:05,429 | INFO | graphrag | [answer quality/S3] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 46.5}
+2026-10-09 14:16:51,267 | INFO | graphrag | [answer quality/S4] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 105.8}
+2026-10-09 14:17:42,999 | INFO | graphrag | [answer quality/S5] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 51.7}
+{
+ "summary": {
+  "C0": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 26.7
+  },
+  "S0": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 33.4
+  },
+  "S1": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 29.5
+  },
+  "S2": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 55.5
+  },
+  "S3": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 46.5
+  },
+  "S4": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 105.8
+  },
+  "S5": {
+   "answered": 722,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 51.7
+  }
+ },
+ "cost": 0.4423
+}

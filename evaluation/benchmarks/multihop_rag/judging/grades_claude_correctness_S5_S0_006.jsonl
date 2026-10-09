@@ -1,0 +1,50 @@
+{"bid": "1165e210", "score": 1, "reason": "Answer 'Consistent' matches the gold."}
+{"bid": "1a50aec3", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "bc2cbb0d", "score": 0, "reason": "Answer 'No' contradicts the gold 'Yes'."}
+{"bid": "e7c99b26", "score": 0, "reason": "Claims insufficient information when the gold answer is 'no'."}
+{"bid": "ccc56569", "score": 1, "reason": "Answer 'Google' matches the gold."}
+{"bid": "5496f63c", "score": 0, "reason": "Null query, but the answer gives a specific company instead of saying information is missing."}
+{"bid": "7a0ecfea", "score": 1, "reason": "Answer 'No' matches the gold."}
+{"bid": "b0e6a969", "score": 0.5, "reason": "'Yes' affirms the FOX suggestion but does not clearly state agreement versus disagreement as the gold requires."}
+{"bid": "b253d218", "score": 1, "reason": "Answer 'Google' matches the gold."}
+{"bid": "f1eedba3", "score": 1, "reason": "Answer 'Google' matches the gold."}
+{"bid": "eededb07", "score": 0, "reason": "Claims insufficient information when the gold answer is 'no'."}
+{"bid": "080aadfb", "score": 1, "reason": "'No, Yes' makes the conjunctive question false overall, consistent with the gold 'no'."}
+{"bid": "89a2688b", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "f512c4c3", "score": 0, "reason": "Claims insufficient information when the gold answer is 'Yes'."}
+{"bid": "36b82481", "score": 1, "reason": "Answer 'Google' matches the gold."}
+{"bid": "a76afde6", "score": 0, "reason": "Null query, but the answer gives a specific institution instead of saying information is missing."}
+{"bid": "bb026576", "score": 0, "reason": "Claims insufficient information when the gold answer is 'Yes'."}
+{"bid": "0f02bad0", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "43e458fc", "score": 0, "reason": "Claims insufficient information when the gold answer is 'Yes'."}
+{"bid": "eeea163e", "score": 0, "reason": "Claims insufficient information when the gold answer is 'no'."}
+{"bid": "711c21c9", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold."}
+{"bid": "ba6c34ab", "score": 1, "reason": "Answer 'ChatGPT' matches the gold."}
+{"bid": "43e42caf", "score": 1, "reason": "Null query and the answer correctly says information is insufficient."}
+{"bid": "75523327", "score": 0, "reason": "Claims insufficient information when the gold answer is 'Yes'."}
+{"bid": "f05db76e", "score": 1, "reason": "Answer 'Meta' matches the gold."}
+{"bid": "dd56cc94", "score": 1, "reason": "Null query and the answer correctly says information is insufficient."}
+{"bid": "958ca9ba", "score": 1, "reason": "Answer 'No' matches the gold."}
+{"bid": "35ebd32d", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold."}
+{"bid": "d89a40c0", "score": 1, "reason": "Answer 'Amazon' matches the gold."}
+{"bid": "6c6fa611", "score": 0, "reason": "Claims insufficient information when the gold answer is 'no'."}
+{"bid": "295d6fbf", "score": 0, "reason": "Null query, but the answer gives a specific symbol instead of saying information is missing."}
+{"bid": "30beb45f", "score": 1, "reason": "'Sportsbook' is the singular form of the gold 'Sportsbooks', same meaning."}
+{"bid": "2a25a888", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "05628059", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "48f4ef12", "score": 1, "reason": "Null query and the answer correctly says information is insufficient."}
+{"bid": "be0f051b", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "72d8567d", "score": 0, "reason": "Answer 'Yes' contradicts the gold 'no'."}
+{"bid": "f8102383", "score": 1, "reason": "Answer 'Google' matches the gold."}
+{"bid": "02627f73", "score": 0, "reason": "Answer 'FanDuel' contradicts the gold 'Caesars Sportsbook'."}
+{"bid": "922fe15a", "score": 0, "reason": "Answer 'Inconsistent' contradicts the gold 'Consistent'."}
+{"bid": "36386821", "score": 0, "reason": "Answer 'Yes' contradicts the gold 'no'."}
+{"bid": "61ee411a", "score": 0, "reason": "Answer 'different' contradicts the gold 'Similar'."}
+{"bid": "66aa9385", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "d20eac17", "score": 0, "reason": "Null query, but the answer gives a specific letter instead of saying information is missing."}
+{"bid": "8dfa6a56", "score": 0, "reason": "Answer 'Yes' contradicts the gold 'no'."}
+{"bid": "85d51695", "score": 0, "reason": "Claims insufficient information when the gold answer is 'Yes'."}
+{"bid": "134c6c92", "score": 1, "reason": "Answer 'Yes' matches the gold."}
+{"bid": "c56811cd", "score": 1, "reason": "Answer 'Taylor Swift' matches the gold."}
+{"bid": "50f0fd0a", "score": 1, "reason": "Answer 'Sam Altman' matches the gold."}
+{"bid": "119c4ea3", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold."}

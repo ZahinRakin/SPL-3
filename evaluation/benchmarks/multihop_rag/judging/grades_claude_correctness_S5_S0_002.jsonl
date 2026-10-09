@@ -1,0 +1,50 @@
+{"bid": "dd59ba71", "score": 1, "reason": "Answer matches gold Google."}
+{"bid": "f9e8a369", "score": 1, "reason": "Answer matches gold Google."}
+{"bid": "eb1fa9f2", "score": 1, "reason": "Answer No matches gold no."}
+{"bid": "847fd9b4", "score": 0, "reason": "Null query but a specific answer was given."}
+{"bid": "df0f06cb", "score": 1, "reason": "Answer matches gold Sam Bankman-Fried."}
+{"bid": "778eedb3", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "dbccc477", "score": 0, "reason": "Claims insufficient information when gold answer is no."}
+{"bid": "3ae8cc93", "score": 0, "reason": "Null query but a specific answer was given."}
+{"bid": "310c0c00", "score": 1, "reason": "Answer matches gold Sam Bankman-Fried."}
+{"bid": "26286bfb", "score": 1, "reason": "Null query correctly answered as insufficient information."}
+{"bid": "e3e9de99", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "6712303a", "score": 1, "reason": "Answer matches gold ChatGPT."}
+{"bid": "3ceddf2d", "score": 0, "reason": "Answer Yes contradicts gold no."}
+{"bid": "e256a6dc", "score": 1, "reason": "Answer matches gold couple."}
+{"bid": "63f2ae24", "score": 1, "reason": "Answer matches gold Sam Bankman-Fried."}
+{"bid": "6e068097", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "696608aa", "score": 0, "reason": "Answer Yes contradicts gold no."}
+{"bid": "008d4127", "score": 1, "reason": "Answer matches gold Google."}
+{"bid": "568cc69b", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "9c96e9ec", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "da4bd9ca", "score": 0, "reason": "Gary Wang is wrong; gold is Sam Bankman-Fried."}
+{"bid": "1bf90e27", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "a25d6b29", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "12c136e0", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "b535106e", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "474a493b", "score": 0, "reason": "Answer Yes contradicts gold no."}
+{"bid": "e767dcea", "score": 1, "reason": "Null query correctly answered as insufficient information."}
+{"bid": "2f923996", "score": 1, "reason": "Answer matches gold Google."}
+{"bid": "b4a69f3c", "score": 1, "reason": "Answer matches gold Taylor Swift."}
+{"bid": "6c006f61", "score": 0, "reason": "Null query but a specific answer was given."}
+{"bid": "0f9aea4b", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "edcd465e", "score": 0, "reason": "Claims insufficient information when gold answer is no."}
+{"bid": "0a2c827e", "score": 1, "reason": "Answer Consistent matches gold."}
+{"bid": "36d8393a", "score": 0, "reason": "Answer Yes contradicts gold no."}
+{"bid": "5d59cd2a", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "baa4b71a", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "344a54b8", "score": 0, "reason": "Answer Yes contradicts gold No."}
+{"bid": "38f16a81", "score": 0, "reason": "Null query but a specific answer was given."}
+{"bid": "0cd620c2", "score": 0, "reason": "Claims insufficient information when gold answer is Align."}
+{"bid": "4ca415ea", "score": 1, "reason": "Answer Yes matches gold."}
+{"bid": "66245bfa", "score": 0, "reason": "Answer Yes contradicts gold no."}
+{"bid": "01d74256", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "060edf5b", "score": 0, "reason": "Answer Consistent contradicts gold no."}
+{"bid": "dc815fe7", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}
+{"bid": "5b9962c6", "score": 1, "reason": "Answer matches gold Sam Altman."}
+{"bid": "3c835dc0", "score": 1, "reason": "Answer matches gold Valve."}
+{"bid": "94340a03", "score": 1, "reason": "Answer matches gold Sam Bankman-Fried."}
+{"bid": "d12dbc9a", "score": 1, "reason": "Answer No matches gold no."}
+{"bid": "2790cebd", "score": 0, "reason": "Answer Inconsistent contradicts gold Consistent."}
+{"bid": "b758588d", "score": 0, "reason": "Claims insufficient information when gold answer is Yes."}

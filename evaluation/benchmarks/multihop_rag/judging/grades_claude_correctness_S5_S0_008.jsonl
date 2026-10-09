@@ -1,0 +1,50 @@
+{"bid": "5a8aaeca", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "28c13091", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "8d7248e2", "score": 1, "reason": "Answer 'No' matches the gold answer."}
+{"bid": "75d66ed4", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "c7b5b2bc", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "a8f7ef5a", "score": 0, "reason": "Answer 'Yes' contradicts the gold answer 'no'."}
+{"bid": "ff9ab5c2", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "3f07f814", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "71710434", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'True'."}
+{"bid": "dfed2c43", "score": 1, "reason": "Answer matches the gold couple Will Smith and Jada Pinkett Smith."}
+{"bid": "3c9ad14c", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "afffcfd2", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "8da01097", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "6c52c49f", "score": 0, "reason": "Null query requires insufficient information, but the answer gives a specific letter."}
+{"bid": "444d610b", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "bc8f7d29", "score": 0, "reason": "Answer 'Gary Wang' is wrong; the gold answer is Sam Bankman-Fried."}
+{"bid": "3985c3cf", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'Yes'."}
+{"bid": "fc3d3348", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "dfde4fbf", "score": 0, "reason": "Null query requires insufficient information, but the answer gives a specific model."}
+{"bid": "217d65a0", "score": 1, "reason": "Answer 'Taylor Swift' matches the gold answer."}
+{"bid": "50fd9d3f", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'Yes'."}
+{"bid": "d10bd1d0", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'no'."}
+{"bid": "43b409ef", "score": 0, "reason": "Null query requires insufficient information, but the answer gives a specific character."}
+{"bid": "e21342b0", "score": 0.5, "reason": "Answer 'Yes' affirms the FOX suggestion but does not state the agreement the gold answer requires."}
+{"bid": "19985f15", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "0ea2622b", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'Align'."}
+{"bid": "3f87e362", "score": 0, "reason": "Null query requires insufficient information, but the answer names a country."}
+{"bid": "98543881", "score": 0, "reason": "Answer 'Inconsistent' contradicts the gold answer 'Consistent'."}
+{"bid": "ff002d4d", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "8f9797b0", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "93829b43", "score": 0, "reason": "Answer 'Inconsistent' contradicts the gold answer 'Consistent'."}
+{"bid": "7394988f", "score": 0, "reason": "Null query requires insufficient information, but the answer gives a specific letter."}
+{"bid": "c8fe3ccd", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'no'."}
+{"bid": "fad409e2", "score": 0, "reason": "Null query requires insufficient information, but the answer names a country."}
+{"bid": "23e2fcb4", "score": 1, "reason": "Answer 'No' matches the gold answer."}
+{"bid": "ed3049cf", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "7914c120", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "a65e688e", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'Yes'."}
+{"bid": "0e8fa8e0", "score": 1, "reason": "Saying both articles imply misconduct is equivalent to the gold 'no' to the transparency framing."}
+{"bid": "341ef40b", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "bfddc3d9", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "3d1a85dd", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "2260e70f", "score": 1, "reason": "Null query correctly answered with insufficient information."}
+{"bid": "cbceabde", "score": 1, "reason": "Answer 'Israel' matches the gold answer."}
+{"bid": "dca02eec", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "3170f437", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "39118497", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "0f1259e0", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'no'."}
+{"bid": "fed4057d", "score": 1, "reason": "Answer 'No' matches the gold answer."}
+{"bid": "284d82e5", "score": 0, "reason": "Answer claims insufficient information although the gold answer is 'no'."}

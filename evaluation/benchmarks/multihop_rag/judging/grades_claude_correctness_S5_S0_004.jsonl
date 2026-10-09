@@ -1,0 +1,50 @@
+{"bid": "96a402f2", "score": 0, "reason": "Null query; the answer gives a specific answer instead of saying the information is missing."}
+{"bid": "7b3a4e3e", "score": 1, "reason": "Answer Yes matches the gold answer."}
+{"bid": "3fe12e47", "score": 1, "reason": "Answer matches the gold answer 'Different aspects'."}
+{"bid": "683514f2", "score": 1, "reason": "Answer Google matches the gold answer."}
+{"bid": "8768a84f", "score": 0, "reason": "Null query; the answer names a specific institution instead of saying the information is missing."}
+{"bid": "48212ddb", "score": 1, "reason": "Inconsistent has the same meaning as the gold answer 'no'."}
+{"bid": "b92da22b", "score": 0, "reason": "Null query; the answer names a specific country instead of saying the information is missing."}
+{"bid": "ecfedb99", "score": 0, "reason": "Answer Inconsistent contradicts the gold answer Consistent."}
+{"bid": "506e5a9a", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "4fcca39a", "score": 0, "reason": "Answer Yes contradicts the gold answer no."}
+{"bid": "e64d1bcb", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "3e351128", "score": 1, "reason": "Answer Google matches the gold answer."}
+{"bid": "ae9bec36", "score": 1, "reason": "Answer Google matches the gold answer."}
+{"bid": "abf3ad39", "score": 0, "reason": "Null query; the answer names a specific team instead of saying the information is missing."}
+{"bid": "d5a804eb", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "8a0f4efb", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "4e20fd1a", "score": 0, "reason": "Null query; the answer gives a specific letter instead of saying the information is missing."}
+{"bid": "1efa2197", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "18d0752b", "score": 1, "reason": "Answer Google matches the gold answer."}
+{"bid": "12922f83", "score": 0, "reason": "Answer FanDuel contradicts the gold answer Caesars Sportsbook."}
+{"bid": "dd2467ac", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "0200b1f0", "score": 0, "reason": "Answer Los Angeles Lakers contradicts the gold answer Golden State Warriors."}
+{"bid": "ab73295b", "score": 0, "reason": "Answer Yes contradicts the gold answer No."}
+{"bid": "b386f7a4", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "d9441fa5", "score": 1, "reason": "Answer Valve matches the gold answer."}
+{"bid": "ce9e1a11", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "ccf3a171", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "b7b56ea7", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "6e595ed3", "score": 0, "reason": "Null query; the answer names a specific company instead of saying the information is missing."}
+{"bid": "6d7ce3c9", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "ab4220a7", "score": 1, "reason": "Consistent has the same meaning as the gold answer Yes."}
+{"bid": "2a935d62", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "a18ff6b6", "score": 0, "reason": "Answer says information is insufficient while the gold answer is no."}
+{"bid": "951f58d0", "score": 1, "reason": "Answer No matches the gold answer."}
+{"bid": "20a04502", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "3f76be1d", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "c07a30f2", "score": 1, "reason": "Answer Yes matches the gold answer."}
+{"bid": "2999b735", "score": 0, "reason": "Null query; the answer names a specific country instead of saying the information is missing."}
+{"bid": "8e46d534", "score": 1, "reason": "Answer Yes matches the gold answer."}
+{"bid": "f94d6204", "score": 1, "reason": "Answer Israel matches the gold answer."}
+{"bid": "e1a47e10", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "badcc32a", "score": 0, "reason": "Answer Yes contradicts the gold answer no."}
+{"bid": "747b6dba", "score": 1, "reason": "Answer Consistent matches the gold answer."}
+{"bid": "504867ba", "score": 1, "reason": "Answer matches the gold answer Sam Bankman-Fried."}
+{"bid": "122c9a56", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "8b10550c", "score": 0, "reason": "Answer says information is insufficient while the gold answer is no."}
+{"bid": "1223b513", "score": 0, "reason": "Answer says information is insufficient while the gold answer is no."}
+{"bid": "91d63f78", "score": 0, "reason": "Answer says information is insufficient while the gold answer is Yes."}
+{"bid": "db20a56e", "score": 1, "reason": "Answer Yes matches the gold answer."}
+{"bid": "d9f195d0", "score": 0, "reason": "Answer Yes contradicts the gold answer no."}

@@ -1,0 +1,2027 @@
+{
+ "meta": {
+  "mode": "correctness",
+  "dataset": "multihop_rag",
+  "split": "test",
+  "systems": [
+   "S5",
+   "S0"
+  ],
+  "questions": 200,
+  "items": 400,
+  "batches": [
+   "blinded_correctness_S5_S0_001.jsonl",
+   "blinded_correctness_S5_S0_002.jsonl",
+   "blinded_correctness_S5_S0_003.jsonl",
+   "blinded_correctness_S5_S0_004.jsonl",
+   "blinded_correctness_S5_S0_005.jsonl",
+   "blinded_correctness_S5_S0_006.jsonl",
+   "blinded_correctness_S5_S0_007.jsonl",
+   "blinded_correctness_S5_S0_008.jsonl"
+  ],
+  "created_at": "2026-10-09 09:18:07 UTC",
+  "seed": 42
+ },
+ "key": {
+  "6c52c49f": {
+   "qid": "mh1002",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "f6e07cc0": {
+   "qid": "mh1002",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "36386821": {
+   "qid": "mh1003",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "edcd465e": {
+   "qid": "mh1003",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "8a0f4efb": {
+   "qid": "mh1009",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "c1590f53": {
+   "qid": "mh1009",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "badcc32a": {
+   "qid": "mh1017",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "b09b2a5c": {
+   "qid": "mh1017",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "337ea2df": {
+   "qid": "mh1026",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "b683d2e6": {
+   "qid": "mh1026",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "4fcca39a": {
+   "qid": "mh1039",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "66245bfa": {
+   "qid": "mh1039",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "fec21bbe": {
+   "qid": "mh1066",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "abf3ad39": {
+   "qid": "mh1066",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "a65e688e": {
+   "qid": "mh1068",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5f987c71": {
+   "qid": "mh1068",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "702753a1": {
+   "qid": "mh1076",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "e64d1bcb": {
+   "qid": "mh1076",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "847fd9b4": {
+   "qid": "mh1096",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "7394988f": {
+   "qid": "mh1096",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "1efa2197": {
+   "qid": "mh1116",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "3f76be1d": {
+   "qid": "mh1116",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "3985c3cf": {
+   "qid": "mh1120",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "1064005c": {
+   "qid": "mh1120",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "568cc69b": {
+   "qid": "mh1134",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "05628059": {
+   "qid": "mh1134",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "969b6662": {
+   "qid": "mh1142",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "8dcdcd03": {
+   "qid": "mh1142",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3ae8cc93": {
+   "qid": "mh1147",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "96a402f2": {
+   "qid": "mh1147",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "38602ab6": {
+   "qid": "mh1156",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "01d74256": {
+   "qid": "mh1156",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "122c9a56": {
+   "qid": "mh1160",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "b535106e": {
+   "qid": "mh1160",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "a18ff6b6": {
+   "qid": "mh1167",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "0f1259e0": {
+   "qid": "mh1167",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "3a9bedd4": {
+   "qid": "mh1180",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "114125c6": {
+   "qid": "mh1180",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "e7c99b26": {
+   "qid": "mh1201",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "080aadfb": {
+   "qid": "mh1201",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "dc1110c1": {
+   "qid": "mh1202",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "5496f63c": {
+   "qid": "mh1202",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "1223b513": {
+   "qid": "mh1204",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "839fbc50": {
+   "qid": "mh1204",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3ceddf2d": {
+   "qid": "mh1213",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "474a493b": {
+   "qid": "mh1213",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "ab4220a7": {
+   "qid": "mh1242",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "7c441fe7": {
+   "qid": "mh1242",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "36d8393a": {
+   "qid": "mh1248",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "8a0b3c33": {
+   "qid": "mh1248",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "21df306f": {
+   "qid": "mh1257",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "b92da22b": {
+   "qid": "mh1257",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "ef7ddc76": {
+   "qid": "mh1259",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "e1e3db63": {
+   "qid": "mh1259",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "922fe15a": {
+   "qid": "mh1280",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "93829b43": {
+   "qid": "mh1280",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "7900f7f9": {
+   "qid": "mh1292",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "3e351128": {
+   "qid": "mh1292",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "c8dcd19f": {
+   "qid": "mh1326",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "7914c120": {
+   "qid": "mh1326",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "ceb81f9d": {
+   "qid": "mh1329",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "683514f2": {
+   "qid": "mh1329",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "30beb45f": {
+   "qid": "mh1340",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "1825bc54": {
+   "qid": "mh1340",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "18d0752b": {
+   "qid": "mh1357",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "a8b317fa": {
+   "qid": "mh1357",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "6e595ed3": {
+   "qid": "mh1376",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "5ab33edf": {
+   "qid": "mh1376",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "6c6fa611": {
+   "qid": "mh1385",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "693dffbc": {
+   "qid": "mh1385",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "778eedb3": {
+   "qid": "mh1387",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "dd2467ac": {
+   "qid": "mh1387",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "baa4b71a": {
+   "qid": "mh1397",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0dde29a6": {
+   "qid": "mh1397",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "ac619e63": {
+   "qid": "mh1413",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "a748dbcf": {
+   "qid": "mh1413",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "fbf24050": {
+   "qid": "mh1442",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "a56c0941": {
+   "qid": "mh1442",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "1931e9ee": {
+   "qid": "mh1448",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "0f844fef": {
+   "qid": "mh1448",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "6712303a": {
+   "qid": "mh1468",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "ba6c34ab": {
+   "qid": "mh1468",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "56dc8907": {
+   "qid": "mh152",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "ccf3a171": {
+   "qid": "mh152",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "dc96925e": {
+   "qid": "mh1539",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "1bf90e27": {
+   "qid": "mh1539",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3fa7f104": {
+   "qid": "mh1544",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "310c0c00": {
+   "qid": "mh1544",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "30b187ef": {
+   "qid": "mh1553",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "894a05e4": {
+   "qid": "mh1553",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "72d8567d": {
+   "qid": "mh1554",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "23e2fcb4": {
+   "qid": "mh1554",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "6c006f61": {
+   "qid": "mh1578",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "2ef91276": {
+   "qid": "mh1578",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "474ebc19": {
+   "qid": "mh1616",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "766ecb15": {
+   "qid": "mh1616",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3ff350bf": {
+   "qid": "mh163",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "dfde4fbf": {
+   "qid": "mh163",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "ec5b227c": {
+   "qid": "mh1636",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "134c6c92": {
+   "qid": "mh1636",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "71710434": {
+   "qid": "mh1648",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "ceda8bbb": {
+   "qid": "mh1648",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "dc815fe7": {
+   "qid": "mh1650",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "db20a56e": {
+   "qid": "mh1650",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "8ce21ea3": {
+   "qid": "mh1654",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "19108be5": {
+   "qid": "mh1654",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "0cf35b58": {
+   "qid": "mh1659",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "a6f2f7b8": {
+   "qid": "mh1659",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "ffd0f9d5": {
+   "qid": "mh1661",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "8a63f881": {
+   "qid": "mh1661",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "d605e770": {
+   "qid": "mh1673",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "03c72ba8": {
+   "qid": "mh1673",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "f8102383": {
+   "qid": "mh1699",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "17e011b7": {
+   "qid": "mh1699",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "ed2662e9": {
+   "qid": "mh1707",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "c0e9ab30": {
+   "qid": "mh1707",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "d9441fa5": {
+   "qid": "mh1709",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "3c835dc0": {
+   "qid": "mh1709",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "2a935d62": {
+   "qid": "mh1728",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "680ac07a": {
+   "qid": "mh1728",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "7c52fa17": {
+   "qid": "mh1731",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "7b3a4e3e": {
+   "qid": "mh1731",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "36b82481": {
+   "qid": "mh1742",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "dd59ba71": {
+   "qid": "mh1742",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "66aa9385": {
+   "qid": "mh1749",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "e7067ef4": {
+   "qid": "mh1749",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "0f02bad0": {
+   "qid": "mh1759",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "2a25a888": {
+   "qid": "mh1759",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "610461e3": {
+   "qid": "mh1770",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "008d4127": {
+   "qid": "mh1770",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "fc3d3348": {
+   "qid": "mh1775",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "63f2ae24": {
+   "qid": "mh1775",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "43e458fc": {
+   "qid": "mh1789",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "ed3049cf": {
+   "qid": "mh1789",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "c8b8d9c6": {
+   "qid": "mh1808",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "c8fe3ccd": {
+   "qid": "mh1808",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "747b6dba": {
+   "qid": "mh1841",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "490617f2": {
+   "qid": "mh1841",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "6c4a37ea": {
+   "qid": "mh1845",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "b253d218": {
+   "qid": "mh1845",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "f512c4c3": {
+   "qid": "mh1858",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "bb026576": {
+   "qid": "mh1858",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "fed4057d": {
+   "qid": "mh1867",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "c88a618e": {
+   "qid": "mh1867",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "8e46d534": {
+   "qid": "mh189",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "a97065e1": {
+   "qid": "mh189",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "b7e99aca": {
+   "qid": "mh1891",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "7c967f79": {
+   "qid": "mh1891",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "27a0c3d7": {
+   "qid": "mh1894",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "309d258c": {
+   "qid": "mh1894",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "4bf50b52": {
+   "qid": "mh190",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "37bb3eec": {
+   "qid": "mh190",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "f7fd5646": {
+   "qid": "mh1924",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0ef8c2d6": {
+   "qid": "mh1924",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "944528c0": {
+   "qid": "mh1938",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "bc594585": {
+   "qid": "mh1938",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "8acd4e10": {
+   "qid": "mh1950",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0f9aea4b": {
+   "qid": "mh1950",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "bf7b539b": {
+   "qid": "mh198",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "504867ba": {
+   "qid": "mh198",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "0ea2622b": {
+   "qid": "mh1983",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0cd620c2": {
+   "qid": "mh1983",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "958ca9ba": {
+   "qid": "mh1995",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "7a0ecfea": {
+   "qid": "mh1995",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "80bacd64": {
+   "qid": "mh2",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "eb5cf467": {
+   "qid": "mh2",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "da4bd9ca": {
+   "qid": "mh2025",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "87f7e1fb": {
+   "qid": "mh2025",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "284d82e5": {
+   "qid": "mh2035",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0e8fa8e0": {
+   "qid": "mh2035",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "f5f59b22": {
+   "qid": "mh2047",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "82010c62": {
+   "qid": "mh2047",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "14822f53": {
+   "qid": "mh2060",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "d9f195d0": {
+   "qid": "mh2060",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "2f923996": {
+   "qid": "mh2064",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "118a9d29": {
+   "qid": "mh2064",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "98543881": {
+   "qid": "mh207",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "1165e210": {
+   "qid": "mh207",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "acdabacc": {
+   "qid": "mh2072",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "dca02eec": {
+   "qid": "mh2072",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3c365296": {
+   "qid": "mh2074",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "675dd5af": {
+   "qid": "mh2074",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "1eb0e38a": {
+   "qid": "mh208",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "f10c718b": {
+   "qid": "mh208",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "e3e9de99": {
+   "qid": "mh2096",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "91d63f78": {
+   "qid": "mh2096",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "3f07f814": {
+   "qid": "mh210",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "94340a03": {
+   "qid": "mh210",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "98326856": {
+   "qid": "mh2102",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "0a2c827e": {
+   "qid": "mh2102",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "9e8fc965": {
+   "qid": "mh2116",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "14fcdd54": {
+   "qid": "mh2116",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "6b5252e3": {
+   "qid": "mh2138",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "a8499b92": {
+   "qid": "mh2138",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "956b8c0c": {
+   "qid": "mh216",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "90b2b633": {
+   "qid": "mh216",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "85d51695": {
+   "qid": "mh2163",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "50fd9d3f": {
+   "qid": "mh2163",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "ef48e8d5": {
+   "qid": "mh217",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "42c18a62": {
+   "qid": "mh217",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "344a54b8": {
+   "qid": "mh2176",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "ab73295b": {
+   "qid": "mh2176",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "b758588d": {
+   "qid": "mh2189",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "506e5a9a": {
+   "qid": "mh2189",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "3d1a85dd": {
+   "qid": "mh2194",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "43ff5011": {
+   "qid": "mh2194",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "655238a6": {
+   "qid": "mh2196",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "21813d25": {
+   "qid": "mh2196",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "abf3e3fc": {
+   "qid": "mh2204",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "a53f8a28": {
+   "qid": "mh2204",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "4ccc9bc2": {
+   "qid": "mh2206",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "750cab75": {
+   "qid": "mh2206",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "50f0fd0a": {
+   "qid": "mh2239",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "edd4253b": {
+   "qid": "mh2239",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "c07a30f2": {
+   "qid": "mh2245",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "ef8c485b": {
+   "qid": "mh2245",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "12922f83": {
+   "qid": "mh2264",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "02627f73": {
+   "qid": "mh2264",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "75523327": {
+   "qid": "mh2298",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "9f044aed": {
+   "qid": "mh2298",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "ff9ab5c2": {
+   "qid": "mh2308",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "902059e4": {
+   "qid": "mh2308",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "ff002d4d": {
+   "qid": "mh2314",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "19985f15": {
+   "qid": "mh2314",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "12c136e0": {
+   "qid": "mh2322",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "89a2688b": {
+   "qid": "mh2322",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "369147eb": {
+   "qid": "mh2328",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "8181a8cc": {
+   "qid": "mh2328",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "43e42caf": {
+   "qid": "mh2353",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "21e8ac68": {
+   "qid": "mh2353",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "eeea163e": {
+   "qid": "mh2380",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5958a499": {
+   "qid": "mh2380",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "e1805081": {
+   "qid": "mh2389",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "119c4ea3": {
+   "qid": "mh2389",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "e117dac3": {
+   "qid": "mh2400",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "3e896c64": {
+   "qid": "mh2400",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "5e9953d2": {
+   "qid": "mh2402",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "48f4ef12": {
+   "qid": "mh2402",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "286218b8": {
+   "qid": "mh2426",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "702cdd20": {
+   "qid": "mh2426",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "d5704f32": {
+   "qid": "mh2428",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "8b10550c": {
+   "qid": "mh2428",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "b41b3143": {
+   "qid": "mh2432",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "4d71c366": {
+   "qid": "mh2432",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "9c96e9ec": {
+   "qid": "mh2444",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "fbddcf7c": {
+   "qid": "mh2444",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "fcbb4e59": {
+   "qid": "mh2468",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "ce9e1a11": {
+   "qid": "mh2468",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "a76afde6": {
+   "qid": "mh2476",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "8768a84f": {
+   "qid": "mh2476",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "0200b1f0": {
+   "qid": "mh248",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "aaf91531": {
+   "qid": "mh248",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "d12dbc9a": {
+   "qid": "mh2489",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "8dfa6a56": {
+   "qid": "mh2489",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "4ca415ea": {
+   "qid": "mh2508",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "ee87905e": {
+   "qid": "mh2508",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "a9d3d7c7": {
+   "qid": "mh2510",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "1a84a51a": {
+   "qid": "mh2510",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "f05db76e": {
+   "qid": "mh2521",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "e0ccedc5": {
+   "qid": "mh2521",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "2260e70f": {
+   "qid": "mh2527",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "43b409ef": {
+   "qid": "mh2527",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "1d8cbbac": {
+   "qid": "mh2541",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "e3c43657": {
+   "qid": "mh2541",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "1b66b5a9": {
+   "qid": "mh2547",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "be0f051b": {
+   "qid": "mh2547",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "8da01097": {
+   "qid": "mh2555",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "27cb6f2a": {
+   "qid": "mh2555",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "45b89cd9": {
+   "qid": "mh257",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "48212ddb": {
+   "qid": "mh257",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "9ad620ab": {
+   "qid": "mh265",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "35ebd32d": {
+   "qid": "mh265",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "b7b56ea7": {
+   "qid": "mh27",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "57c700aa": {
+   "qid": "mh27",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "341ef40b": {
+   "qid": "mh273",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "afffcfd2": {
+   "qid": "mh273",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "a25d6b29": {
+   "qid": "mh275",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "da587e8a": {
+   "qid": "mh275",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "439472e6": {
+   "qid": "mh280",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "81627cf1": {
+   "qid": "mh280",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "7d106c60": {
+   "qid": "mh281",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "40497b71": {
+   "qid": "mh281",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "e7c421c7": {
+   "qid": "mh309",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "e87d1c78": {
+   "qid": "mh309",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "d89a40c0": {
+   "qid": "mh321",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "0d01280f": {
+   "qid": "mh321",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "17a0df49": {
+   "qid": "mh343",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "a2607723": {
+   "qid": "mh343",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "6c6f7633": {
+   "qid": "mh4",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "d450281c": {
+   "qid": "mh4",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "46d483f3": {
+   "qid": "mh403",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0b49452d": {
+   "qid": "mh403",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "00e85ece": {
+   "qid": "mh454",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5563f616": {
+   "qid": "mh454",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "c56811cd": {
+   "qid": "mh460",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "217d65a0": {
+   "qid": "mh460",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "a319dcb4": {
+   "qid": "mh467",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "fad409e2": {
+   "qid": "mh467",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "430f801d": {
+   "qid": "mh502",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "295d6fbf": {
+   "qid": "mh502",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "bdc14f1f": {
+   "qid": "mh520",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "711c21c9": {
+   "qid": "mh520",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "8d3aed99": {
+   "qid": "mh529",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "b4a69f3c": {
+   "qid": "mh529",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "6d7ce3c9": {
+   "qid": "mh541",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "8f9797b0": {
+   "qid": "mh541",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "0279b6a6": {
+   "qid": "mh544",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "1ca3c448": {
+   "qid": "mh544",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "13432e61": {
+   "qid": "mh546",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "f1eedba3": {
+   "qid": "mh546",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "e21342b0": {
+   "qid": "mh572",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "b0e6a969": {
+   "qid": "mh572",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "e767dcea": {
+   "qid": "mh604",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "26286bfb": {
+   "qid": "mh604",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "8babce3b": {
+   "qid": "mh616",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "093923de": {
+   "qid": "mh616",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "d5a804eb": {
+   "qid": "mh629",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5e84f058": {
+   "qid": "mh629",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "951f58d0": {
+   "qid": "mh630",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "8d7248e2": {
+   "qid": "mh630",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "25e97977": {
+   "qid": "mh634",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "6e068097": {
+   "qid": "mh634",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "20a04502": {
+   "qid": "mh637",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "0ab54bde": {
+   "qid": "mh637",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "4eea04e7": {
+   "qid": "mh638",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5d59cd2a": {
+   "qid": "mh638",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "e623a689": {
+   "qid": "mh646",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "eededb07": {
+   "qid": "mh646",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "cbceabde": {
+   "qid": "mh650",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "f8e1daa7": {
+   "qid": "mh650",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "dc570131": {
+   "qid": "mh66",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "0a368ce7": {
+   "qid": "mh66",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "e61fecc0": {
+   "qid": "mh665",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "5b9962c6": {
+   "qid": "mh665",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "35c7936c": {
+   "qid": "mh669",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "ae9bec36": {
+   "qid": "mh669",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "3fe12e47": {
+   "qid": "mh692",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "aabc25fa": {
+   "qid": "mh692",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "1a50aec3": {
+   "qid": "mh695",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "5a8aaeca": {
+   "qid": "mh695",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "c7b5b2bc": {
+   "qid": "mh704",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "8f5486b7": {
+   "qid": "mh704",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "e256a6dc": {
+   "qid": "mh706",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "dfed2c43": {
+   "qid": "mh706",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "6808593f": {
+   "qid": "mh716",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "f94d6204": {
+   "qid": "mh716",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "9ee3ac2a": {
+   "qid": "mh745",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "bfddc3d9": {
+   "qid": "mh745",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "2790cebd": {
+   "qid": "mh750",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "ecfedb99": {
+   "qid": "mh750",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "ee0caeb5": {
+   "qid": "mh753",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "3c9ad14c": {
+   "qid": "mh753",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "dd56cc94": {
+   "qid": "mh758",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "2999b735": {
+   "qid": "mh758",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "f9e8a369": {
+   "qid": "mh759",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "ccc56569": {
+   "qid": "mh759",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "cf8ebc5a": {
+   "qid": "mh76",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "2d534dd0": {
+   "qid": "mh76",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "e1a47e10": {
+   "qid": "mh766",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "698c206f": {
+   "qid": "mh766",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "0658663a": {
+   "qid": "mh770",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "2dea9493": {
+   "qid": "mh770",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "bc8f7d29": {
+   "qid": "mh781",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "ecab3301": {
+   "qid": "mh781",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "550a1b46": {
+   "qid": "mh790",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "c84a7b28": {
+   "qid": "mh790",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "ee49f329": {
+   "qid": "mh806",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "696608aa": {
+   "qid": "mh806",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "cd5f4822": {
+   "qid": "mh822",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "ab7f089a": {
+   "qid": "mh822",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "dd334cc7": {
+   "qid": "mh825",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "bc2cbb0d": {
+   "qid": "mh825",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "cf8d446a": {
+   "qid": "mh826",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "3f87e362": {
+   "qid": "mh826",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "444d610b": {
+   "qid": "mh874",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "28c13091": {
+   "qid": "mh874",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "c991603f": {
+   "qid": "mh879",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "b386f7a4": {
+   "qid": "mh879",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "1bac27a7": {
+   "qid": "mh886",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "61ee411a": {
+   "qid": "mh886",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "df465290": {
+   "qid": "mh890",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "09e9db0a": {
+   "qid": "mh890",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "dbccc477": {
+   "qid": "mh896",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "787f2425": {
+   "qid": "mh896",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "38f16a81": {
+   "qid": "mh902",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "33173470": {
+   "qid": "mh902",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "d10bd1d0": {
+   "qid": "mh92",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "eb1fa9f2": {
+   "qid": "mh92",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "75d66ed4": {
+   "qid": "mh924",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "598336e3": {
+   "qid": "mh924",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "4e20fd1a": {
+   "qid": "mh943",
+   "system": "S5",
+   "type": "null_query"
+  },
+  "d20eac17": {
+   "qid": "mh943",
+   "system": "S0",
+   "type": "null_query"
+  },
+  "cb9bc326": {
+   "qid": "mh953",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "df0f06cb": {
+   "qid": "mh953",
+   "system": "S0",
+   "type": "inference_query"
+  },
+  "3a43b2ba": {
+   "qid": "mh967",
+   "system": "S5",
+   "type": "comparison_query"
+  },
+  "39118497": {
+   "qid": "mh967",
+   "system": "S0",
+   "type": "comparison_query"
+  },
+  "060edf5b": {
+   "qid": "mh99",
+   "system": "S5",
+   "type": "temporal_query"
+  },
+  "a8f7ef5a": {
+   "qid": "mh99",
+   "system": "S0",
+   "type": "temporal_query"
+  },
+  "3170f437": {
+   "qid": "mh993",
+   "system": "S5",
+   "type": "inference_query"
+  },
+  "6601ddd0": {
+   "qid": "mh993",
+   "system": "S0",
+   "type": "inference_query"
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{"bid": "81627cf1", "score": 0, "reason": "Says information is insufficient although the gold answer is 'no'."}
+{"bid": "1931e9ee", "score": 0, "reason": "Says information is insufficient although the gold answer is 'no'."}
+{"bid": "1eb0e38a", "score": 0, "reason": "Null query requires saying information is missing, but a specific company was given."}
+{"bid": "42c18a62", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "e117dac3", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "2ef91276", "score": 1, "reason": "Null query correctly answered as insufficient information."}
+{"bid": "ee49f329", "score": 0, "reason": "Answer 'Yes' contradicts the gold answer 'no'."}
+{"bid": "ed2662e9", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "c8b8d9c6", "score": 0, "reason": "Says information is insufficient although the gold answer is 'no'."}
+{"bid": "1bac27a7", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Similar'."}
+{"bid": "c8dcd19f", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "d5704f32", "score": 0, "reason": "Says information is insufficient although the gold answer is 'no'."}
+{"bid": "da587e8a", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "0d01280f", "score": 0, "reason": "Answer 'Etsy' contradicts the gold answer 'Amazon'."}
+{"bid": "27a0c3d7", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "a9d3d7c7", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "33173470", "score": 0, "reason": "Null query requires saying information is missing, but a specific numeral was given."}
+{"bid": "19108be5", "score": 0, "reason": "Answer 'Evan Spiegel' contradicts the gold answer 'Sam Bankman-Fried'."}
+{"bid": "e1e3db63", "score": 0, "reason": "Answer picks the 'common trend' alternative rather than affirming the first claim as the gold 'Yes' does."}
+{"bid": "ffd0f9d5", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "550a1b46", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "8babce3b", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "56dc8907", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "6601ddd0", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "337ea2df", "score": 0, "reason": "Answer 'Yes' contradicts the gold answer 'No'."}
+{"bid": "0ab54bde", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "9ad620ab", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "f10c718b", "score": 0, "reason": "Null query requires saying information is missing, but a specific company was given."}
+{"bid": "30b187ef", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "a8499b92", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "38602ab6", "score": 0, "reason": "Answer 'Different' contradicts the gold answer 'Yes'."}
+{"bid": "a56c0941", "score": 1, "reason": "Answer 'European Commission' matches the gold answer."}
+{"bid": "969b6662", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "40497b71", "score": 0, "reason": "Null query requires saying information is missing, but a specific skill was given."}
+{"bid": "09e9db0a", "score": 1, "reason": "Answer 'Yes' to both parts matches the gold answer 'Yes'."}
+{"bid": "21df306f", "score": 0, "reason": "Null query requires saying information is missing, but a specific country was given."}
+{"bid": "0279b6a6", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "3ff350bf", "score": 0, "reason": "Null query requires saying information is missing, but a specific character was given."}
+{"bid": "c84a7b28", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "2d534dd0", "score": 0, "reason": "Answer 'Common trend' does not convey the gold answer 'no'."}
+{"bid": "8dcdcd03", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "0f844fef", "score": 1, "reason": "Answer 'No' matches the gold answer."}
+{"bid": "ee87905e", "score": 1, "reason": "Answer 'Yes' matches the gold answer."}
+{"bid": "4bf50b52", "score": 1, "reason": "Answer 'Caesars Sportsbook' matches the gold answer."}
+{"bid": "ab7f089a", "score": 0, "reason": "Null query requires saying information is missing, but a specific company was given."}
+{"bid": "474ebc19", "score": 0, "reason": "Says information is insufficient although the gold answer is 'Yes'."}
+{"bid": "ee0caeb5", "score": 1, "reason": "Answer 'Google' matches the gold answer."}
+{"bid": "8181a8cc", "score": 1, "reason": "Answer names Sam Bankman-Fried, matching the gold answer."}
+{"bid": "df465290", "score": 1, "reason": "Answer 'Yes' to both parts matches the gold answer 'Yes'."}
+{"bid": "6c6f7633", "score": 1, "reason": "Answer 'Caesars' is an accepted short form of 'Caesars Sportsbook'."}

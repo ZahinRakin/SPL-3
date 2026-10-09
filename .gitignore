@@ -7,7 +7,8 @@ documents
 *.pyc
 frontend/build
 frontend/dist
-frontend/.angular# evaluation: large or regenerable artefacts (hashes and manifests are committed instead)
+frontend/.angular
+# evaluation: large or regenerable artefacts (hashes and manifests are committed instead)
 evaluation/llm_cache/
 evaluation/benchmarks/*/data/
 evaluation/benchmarks/*/index/

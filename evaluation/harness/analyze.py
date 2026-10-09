@@ -31,6 +31,17 @@ def load_runs(dataset: str, split: str = "test", tag: str = "") -> Dict[str, Dic
     return out
 
 
+def with_retries(dataset: str, runs: Dict[str, Dict[str, Dict]], split: str = "test") -> Dict[str, Dict[str, Dict]]:
+    """A copy of runs where a failed answer is replaced by its retry (runs/<split>/<sys>_retry.jsonl),
+    if one exists. Primary results follow rule 6 (failure = 0); this is the sensitivity check."""
+    merged = {}
+    for s, rows in runs.items():
+        p = bench(dataset) / "runs" / split / f"{s}_retry.jsonl"
+        retry = {r["qid"]: r for r in read_jsonl(p)} if p.exists() else {}
+        merged[s] = {q: (retry[q] if r.get("error") and q in retry else r) for q, r in rows.items()}
+    return merged
+
+
 def load_ranks(dataset: str, split: str = "test") -> Dict[str, Dict[str, Dict]]:
     out = {}
     for s in ("S0", "S1", "S2", "S3"):
@@ -97,7 +108,7 @@ def unblind(dataset: str, name: str, judge: str = "claude") -> Dict[str, Dict[st
     """system → qid → score, from grades_<judge>_<name>_*.jsonl and key_<name>.json.
     Must only be called after the grade files are hashed (blind.hash_grades)."""
     jdir = bench(dataset) / "judging"
-    if not (jdir / f"grades_{judge}_{name}.sha256").exists():
+    if not (jdir / f"grades_{judge}_{name}_ALL.sha256").exists():
         raise SystemExit(f"grades_{judge}_{name} not hashed yet: hash before unblinding (rule 5)")
     key = json.loads((jdir / f"key_{name}.json").read_text(encoding="utf-8"))["key"]
     out: Dict[str, Dict[str, float]] = defaultdict(dict)
@@ -114,7 +125,7 @@ def unblind(dataset: str, name: str, judge: str = "claude") -> Dict[str, Dict[st
 
 def unblind_pairwise(dataset: str, name: str, judge: str = "claude") -> Dict:
     jdir = bench(dataset) / "judging"
-    if not (jdir / f"grades_{judge}_{name}.sha256").exists():
+    if not (jdir / f"grades_{judge}_{name}_ALL.sha256").exists():
         raise SystemExit("hash before unblinding (rule 5)")
     meta_key = json.loads((jdir / f"key_{name}.json").read_text(encoding="utf-8"))
     key, (sys_a, sys_b) = meta_key["key"], meta_key["meta"]["systems"]
@@ -159,7 +170,7 @@ def _retrieval_section(dataset: str, metric_keys: List[str]) -> Dict:
 
 def _judge_section(dataset: str, name: str, pair: List[str]) -> Optional[Dict]:
     jdir = bench(dataset) / "judging"
-    if not (jdir / f"grades_claude_{name}.sha256").exists():
+    if not (jdir / f"grades_claude_{name}_ALL.sha256").exists():
         return None
     g = unblind(dataset, name)
     a, b = pair
@@ -187,6 +198,12 @@ def analyze_musique(dataset: str = "musique") -> Dict:
     f1 = {s: score_rows(r, lambda x: M.token_f1(x["answer"], x["gold_answers"])) for s, r in runs.items()}
     res["qa"] = {s: {"EM": float(np.mean(list(em[s].values()))), "F1": float(np.mean(list(f1[s].values())))}
                  for s in runs}
+    rr = with_retries(dataset, runs)
+    res["qa_with_retries"] = {
+        s: {"EM": float(np.mean([M.exact_match(x["answer"], x["gold_answers"]) if not x["error"] else 0.0 for x in r.values()])),
+            "F1": float(np.mean([M.token_f1(x["answer"], x["gold_answers"]) if not x["error"] else 0.0 for x in r.values()])),
+            "errors_left": sum(1 for x in r.values() if x["error"])}
+        for s, r in rr.items()}
     res["qa_comparisons"] = {f"{a}_vs_{b}:{m}": compare(d[a], d[b], "wilcoxon")
                              for a, b in [("S2", "S0"), ("S5", "S0"), ("S4", "S2"), ("S2", "S1"), ("S0", "C0")]
                              if a in runs and b in runs for m, d in (("EM", em), ("F1", f1))}
@@ -261,7 +278,7 @@ def analyze_novel() -> Dict:
         res["H3"] = {"hypothesis": "Community summaries help broad questions (S4 vs S2, judge coverage, "
                                    "Contextual Summarize, test)", **cov["comparison"]}
         res["coverage"] = {k: v for k, v in cov.items() if k != "scores"}
-    if (bench(ds) / "judging" / "grades_claude_pairwise_S4_S2.sha256").exists():
+    if (bench(ds) / "judging" / "grades_claude_pairwise_S4_S2_ALL.sha256").exists():
         pw = unblind_pairwise(ds, "pairwise_S4_S2")
         res["pairwise_S4_vs_S2"] = {k: v for k, v in pw.items() if k != "per_question"}
     res["run_stats"] = run_stats(runs)

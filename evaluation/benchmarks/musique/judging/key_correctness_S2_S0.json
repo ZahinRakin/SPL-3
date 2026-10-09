@@ -1,0 +1,2027 @@
+{
+ "meta": {
+  "mode": "correctness",
+  "dataset": "musique",
+  "split": "test",
+  "systems": [
+   "S2",
+   "S0"
+  ],
+  "questions": 200,
+  "items": 400,
+  "batches": [
+   "blinded_correctness_S2_S0_001.jsonl",
+   "blinded_correctness_S2_S0_002.jsonl",
+   "blinded_correctness_S2_S0_003.jsonl",
+   "blinded_correctness_S2_S0_004.jsonl",
+   "blinded_correctness_S2_S0_005.jsonl",
+   "blinded_correctness_S2_S0_006.jsonl",
+   "blinded_correctness_S2_S0_007.jsonl",
+   "blinded_correctness_S2_S0_008.jsonl"
+  ],
+  "created_at": "2026-10-09 08:11:47 UTC",
+  "seed": 42
+ },
+ "key": {
+  "df57c59a": {
+   "qid": "2hop__107548_124896",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "9b49bd26": {
+   "qid": "2hop__107548_124896",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6c52c49f": {
+   "qid": "2hop__123214_22402",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "f6e07cc0": {
+   "qid": "2hop__123214_22402",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "36386821": {
+   "qid": "2hop__123509_5385",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "edcd465e": {
+   "qid": "2hop__123509_5385",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "8a0f4efb": {
+   "qid": "2hop__124412_402641",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "c1590f53": {
+   "qid": "2hop__124412_402641",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "badcc32a": {
+   "qid": "2hop__124592_402641",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "b09b2a5c": {
+   "qid": "2hop__124592_402641",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "337ea2df": {
+   "qid": "2hop__128945_47686",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "b683d2e6": {
+   "qid": "2hop__128945_47686",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "4fcca39a": {
+   "qid": "2hop__130404_59180",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "66245bfa": {
+   "qid": "2hop__130404_59180",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "fec21bbe": {
+   "qid": "2hop__131818_161450",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "abf3ad39": {
+   "qid": "2hop__131818_161450",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "a65e688e": {
+   "qid": "2hop__13548_13529",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "5f987c71": {
+   "qid": "2hop__13548_13529",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "702753a1": {
+   "qid": "2hop__135652_669373",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "e64d1bcb": {
+   "qid": "2hop__135652_669373",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "847fd9b4": {
+   "qid": "2hop__135822_46621",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7394988f": {
+   "qid": "2hop__135822_46621",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "1efa2197": {
+   "qid": "2hop__137061_45752",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "3f76be1d": {
+   "qid": "2hop__137061_45752",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3985c3cf": {
+   "qid": "2hop__143650_152023",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "1064005c": {
+   "qid": "2hop__143650_152023",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "568cc69b": {
+   "qid": "2hop__144317_120065",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "05628059": {
+   "qid": "2hop__144317_120065",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "969b6662": {
+   "qid": "2hop__147212_60904",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "8dcdcd03": {
+   "qid": "2hop__147212_60904",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3ae8cc93": {
+   "qid": "2hop__149862_108549",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "96a402f2": {
+   "qid": "2hop__149862_108549",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "38602ab6": {
+   "qid": "2hop__149983_108549",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "01d74256": {
+   "qid": "2hop__149983_108549",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "122c9a56": {
+   "qid": "2hop__153573_109006",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "b535106e": {
+   "qid": "2hop__153573_109006",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "a18ff6b6": {
+   "qid": "2hop__15650_77173",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0f1259e0": {
+   "qid": "2hop__15650_77173",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3a9bedd4": {
+   "qid": "2hop__159741_161674",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "114125c6": {
+   "qid": "2hop__159741_161674",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "e7c99b26": {
+   "qid": "2hop__167577_31122",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "080aadfb": {
+   "qid": "2hop__167577_31122",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "dc1110c1": {
+   "qid": "2hop__168816_144857",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "5496f63c": {
+   "qid": "2hop__168816_144857",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "1223b513": {
+   "qid": "2hop__179322_83289",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "839fbc50": {
+   "qid": "2hop__179322_83289",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3ceddf2d": {
+   "qid": "2hop__20268_42014",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "474a493b": {
+   "qid": "2hop__20268_42014",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ab4220a7": {
+   "qid": "2hop__215898_67465",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7c441fe7": {
+   "qid": "2hop__215898_67465",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "36d8393a": {
+   "qid": "2hop__223823_29905",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "8a0b3c33": {
+   "qid": "2hop__223823_29905",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "21df306f": {
+   "qid": "2hop__238499_431914",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "b92da22b": {
+   "qid": "2hop__238499_431914",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ef7ddc76": {
+   "qid": "2hop__24661_81961",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "e1e3db63": {
+   "qid": "2hop__24661_81961",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "922fe15a": {
+   "qid": "2hop__24976_161105",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "93829b43": {
+   "qid": "2hop__24976_161105",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "7900f7f9": {
+   "qid": "2hop__24976_25002",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "3e351128": {
+   "qid": "2hop__24976_25002",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "c8dcd19f": {
+   "qid": "2hop__253612_110882",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7914c120": {
+   "qid": "2hop__253612_110882",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ceb81f9d": {
+   "qid": "2hop__25788_25839",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "683514f2": {
+   "qid": "2hop__25788_25839",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "30beb45f": {
+   "qid": "2hop__25797_990",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "1825bc54": {
+   "qid": "2hop__25797_990",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "18d0752b": {
+   "qid": "2hop__2613_59409",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a8b317fa": {
+   "qid": "2hop__2613_59409",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6e595ed3": {
+   "qid": "2hop__286621_67370",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "5ab33edf": {
+   "qid": "2hop__286621_67370",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6c6fa611": {
+   "qid": "2hop__326404_120065",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "693dffbc": {
+   "qid": "2hop__326404_120065",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "778eedb3": {
+   "qid": "2hop__32887_578772",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "dd2467ac": {
+   "qid": "2hop__32887_578772",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "baa4b71a": {
+   "qid": "2hop__33288_157788",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0dde29a6": {
+   "qid": "2hop__33288_157788",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ac619e63": {
+   "qid": "2hop__335418_279684",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a748dbcf": {
+   "qid": "2hop__335418_279684",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "fbf24050": {
+   "qid": "2hop__34734_92852",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a56c0941": {
+   "qid": "2hop__34734_92852",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "1931e9ee": {
+   "qid": "2hop__351045_47134",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0f844fef": {
+   "qid": "2hop__351045_47134",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6712303a": {
+   "qid": "2hop__353836_80026",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "ba6c34ab": {
+   "qid": "2hop__353836_80026",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "56dc8907": {
+   "qid": "2hop__354635_174222",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "ccf3a171": {
+   "qid": "2hop__354635_174222",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "dc96925e": {
+   "qid": "2hop__384238_74735",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "1bf90e27": {
+   "qid": "2hop__384238_74735",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3fa7f104": {
+   "qid": "2hop__398344_85513",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "310c0c00": {
+   "qid": "2hop__398344_85513",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "30b187ef": {
+   "qid": "2hop__40485_40502",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "894a05e4": {
+   "qid": "2hop__40485_40502",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "72d8567d": {
+   "qid": "2hop__41158_35124",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "23e2fcb4": {
+   "qid": "2hop__41158_35124",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6c006f61": {
+   "qid": "2hop__415518_616002",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "2ef91276": {
+   "qid": "2hop__415518_616002",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "474ebc19": {
+   "qid": "2hop__444265_82341",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "766ecb15": {
+   "qid": "2hop__444265_82341",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3ff350bf": {
+   "qid": "2hop__446324_620302",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "dfde4fbf": {
+   "qid": "2hop__446324_620302",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ec5b227c": {
+   "qid": "2hop__44815_494136",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "134c6c92": {
+   "qid": "2hop__44815_494136",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "71710434": {
+   "qid": "2hop__448615_127908",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "ceda8bbb": {
+   "qid": "2hop__448615_127908",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "dc815fe7": {
+   "qid": "2hop__460091_405771",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "db20a56e": {
+   "qid": "2hop__460091_405771",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "8ce21ea3": {
+   "qid": "2hop__463884_807572",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "19108be5": {
+   "qid": "2hop__463884_807572",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "0cf35b58": {
+   "qid": "2hop__464479_70131",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a6f2f7b8": {
+   "qid": "2hop__464479_70131",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ffd0f9d5": {
+   "qid": "2hop__48784_70131",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "8a63f881": {
+   "qid": "2hop__48784_70131",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "d605e770": {
+   "qid": "2hop__503085_110222",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "03c72ba8": {
+   "qid": "2hop__503085_110222",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "f8102383": {
+   "qid": "2hop__507528_139339",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "17e011b7": {
+   "qid": "2hop__507528_139339",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ed2662e9": {
+   "qid": "2hop__527400_159673",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "c0e9ab30": {
+   "qid": "2hop__527400_159673",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "d9441fa5": {
+   "qid": "2hop__543050_245420",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "3c835dc0": {
+   "qid": "2hop__543050_245420",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "2a935d62": {
+   "qid": "2hop__547045_131879",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "680ac07a": {
+   "qid": "2hop__547045_131879",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "7c52fa17": {
+   "qid": "2hop__551235_310309",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7b3a4e3e": {
+   "qid": "2hop__551235_310309",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "36b82481": {
+   "qid": "2hop__59133_512508",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "dd59ba71": {
+   "qid": "2hop__59133_512508",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "66aa9385": {
+   "qid": "2hop__63214_319330",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "e7067ef4": {
+   "qid": "2hop__63214_319330",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "0f02bad0": {
+   "qid": "2hop__632161_643449",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "2a25a888": {
+   "qid": "2hop__632161_643449",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "610461e3": {
+   "qid": "2hop__642686_7292",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "008d4127": {
+   "qid": "2hop__642686_7292",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "fc3d3348": {
+   "qid": "2hop__645448_77615",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "63f2ae24": {
+   "qid": "2hop__645448_77615",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "43e458fc": {
+   "qid": "2hop__665660_135481",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "ed3049cf": {
+   "qid": "2hop__665660_135481",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "c8b8d9c6": {
+   "qid": "2hop__66843_494136",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "c8fe3ccd": {
+   "qid": "2hop__66843_494136",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "747b6dba": {
+   "qid": "2hop__6827_79845",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "490617f2": {
+   "qid": "2hop__6827_79845",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6c4a37ea": {
+   "qid": "2hop__685045_19320",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "b253d218": {
+   "qid": "2hop__685045_19320",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "f512c4c3": {
+   "qid": "2hop__685280_510757",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "bb026576": {
+   "qid": "2hop__685280_510757",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "fed4057d": {
+   "qid": "2hop__705035_152093",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "c88a618e": {
+   "qid": "2hop__705035_152093",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "8e46d534": {
+   "qid": "2hop__70584_198548",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a97065e1": {
+   "qid": "2hop__70584_198548",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "b7e99aca": {
+   "qid": "2hop__709357_136043",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7c967f79": {
+   "qid": "2hop__709357_136043",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "27a0c3d7": {
+   "qid": "2hop__71871_494136",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "309d258c": {
+   "qid": "2hop__71871_494136",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "4bf50b52": {
+   "qid": "2hop__734582_71302",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "37bb3eec": {
+   "qid": "2hop__734582_71302",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "f7fd5646": {
+   "qid": "2hop__742831_156034",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0ef8c2d6": {
+   "qid": "2hop__742831_156034",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "944528c0": {
+   "qid": "2hop__75207_365216",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "bc594585": {
+   "qid": "2hop__75207_365216",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "8acd4e10": {
+   "qid": "2hop__757497_78606",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0f9aea4b": {
+   "qid": "2hop__757497_78606",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "bf7b539b": {
+   "qid": "2hop__76314_177869",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "504867ba": {
+   "qid": "2hop__76314_177869",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "0ea2622b": {
+   "qid": "2hop__768312_814677",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0cd620c2": {
+   "qid": "2hop__768312_814677",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "958ca9ba": {
+   "qid": "2hop__771477_149987",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "7a0ecfea": {
+   "qid": "2hop__771477_149987",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "80bacd64": {
+   "qid": "2hop__778212_22458",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "eb5cf467": {
+   "qid": "2hop__778212_22458",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "da4bd9ca": {
+   "qid": "2hop__781079_9237",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "87f7e1fb": {
+   "qid": "2hop__781079_9237",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "284d82e5": {
+   "qid": "2hop__789565_416401",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0e8fa8e0": {
+   "qid": "2hop__789565_416401",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "f5f59b22": {
+   "qid": "2hop__807257_590611",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "82010c62": {
+   "qid": "2hop__807257_590611",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "14822f53": {
+   "qid": "2hop__80_59409",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "d9f195d0": {
+   "qid": "2hop__80_59409",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "2f923996": {
+   "qid": "2hop__81659_52835",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "118a9d29": {
+   "qid": "2hop__81659_52835",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "98543881": {
+   "qid": "2hop__820739_250752",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "1165e210": {
+   "qid": "2hop__820739_250752",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "acdabacc": {
+   "qid": "2hop__82766_67668",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "dca02eec": {
+   "qid": "2hop__82766_67668",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3c365296": {
+   "qid": "2hop__82910_75184",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "675dd5af": {
+   "qid": "2hop__82910_75184",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "1eb0e38a": {
+   "qid": "2hop__83257_19033",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "f10c718b": {
+   "qid": "2hop__83257_19033",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "e3e9de99": {
+   "qid": "2hop__835710_7298",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "91d63f78": {
+   "qid": "2hop__835710_7298",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3f07f814": {
+   "qid": "2hop__839126_472799",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "94340a03": {
+   "qid": "2hop__839126_472799",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "98326856": {
+   "qid": "2hop__846921_160249",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "0a2c827e": {
+   "qid": "2hop__846921_160249",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "9e8fc965": {
+   "qid": "2hop__85713_72187",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "14fcdd54": {
+   "qid": "2hop__85713_72187",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "6b5252e3": {
+   "qid": "2hop__860241_766393",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "a8499b92": {
+   "qid": "2hop__860241_766393",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "956b8c0c": {
+   "qid": "2hop__865828_377862",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "90b2b633": {
+   "qid": "2hop__865828_377862",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "85d51695": {
+   "qid": "2hop__865961_159109",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "50fd9d3f": {
+   "qid": "2hop__865961_159109",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "ef48e8d5": {
+   "qid": "2hop__9223_9237",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "42c18a62": {
+   "qid": "2hop__9223_9237",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "344a54b8": {
+   "qid": "2hop__93230_319887",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "ab73295b": {
+   "qid": "2hop__93230_319887",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "b758588d": {
+   "qid": "2hop__96137_62765",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "506e5a9a": {
+   "qid": "2hop__96137_62765",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "3d1a85dd": {
+   "qid": "2hop__96410_47902",
+   "system": "S2",
+   "type": "2hop"
+  },
+  "43ff5011": {
+   "qid": "2hop__96410_47902",
+   "system": "S0",
+   "type": "2hop"
+  },
+  "655238a6": {
+   "qid": "3hop1__103890_10659_67187",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "21813d25": {
+   "qid": "3hop1__103890_10659_67187",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "abf3e3fc": {
+   "qid": "3hop1__129675_39743_24526",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "a53f8a28": {
+   "qid": "3hop1__129675_39743_24526",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "4ccc9bc2": {
+   "qid": "3hop1__132795_40769_64047",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "750cab75": {
+   "qid": "3hop1__132795_40769_64047",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "50f0fd0a": {
+   "qid": "3hop1__139862_2053_52946",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "edd4253b": {
+   "qid": "3hop1__139862_2053_52946",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "c07a30f2": {
+   "qid": "3hop1__141138_2053_5289",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "ef8c485b": {
+   "qid": "3hop1__141138_2053_5289",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "12922f83": {
+   "qid": "3hop1__141138_2053_52946",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "02627f73": {
+   "qid": "3hop1__141138_2053_52946",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "75523327": {
+   "qid": "3hop1__147162_131905_41948",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "9f044aed": {
+   "qid": "3hop1__147162_131905_41948",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "ff9ab5c2": {
+   "qid": "3hop1__147225_30587_83479",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "902059e4": {
+   "qid": "3hop1__147225_30587_83479",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "ff002d4d": {
+   "qid": "3hop1__161433_33952_34099",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "19985f15": {
+   "qid": "3hop1__161433_33952_34099",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "12c136e0": {
+   "qid": "3hop1__161507_160713_77246",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "89a2688b": {
+   "qid": "3hop1__161507_160713_77246",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "369147eb": {
+   "qid": "3hop1__254856_400692_51423",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "8181a8cc": {
+   "qid": "3hop1__254856_400692_51423",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "43e42caf": {
+   "qid": "3hop1__280834_547811_41132",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "21e8ac68": {
+   "qid": "3hop1__280834_547811_41132",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "eeea163e": {
+   "qid": "3hop1__313670_42197_18397",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "5958a499": {
+   "qid": "3hop1__313670_42197_18397",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "e1805081": {
+   "qid": "3hop1__320697_547811_80702",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "119c4ea3": {
+   "qid": "3hop1__320697_547811_80702",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "e117dac3": {
+   "qid": "3hop1__337705_132457_47686",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "3e896c64": {
+   "qid": "3hop1__337705_132457_47686",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "5e9953d2": {
+   "qid": "3hop1__337705_132457_51423",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "48f4ef12": {
+   "qid": "3hop1__337705_132457_51423",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "286218b8": {
+   "qid": "3hop1__380590_831637_91775",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "702cdd20": {
+   "qid": "3hop1__380590_831637_91775",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "d5704f32": {
+   "qid": "3hop1__398232_326948_59893",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "8b10550c": {
+   "qid": "3hop1__398232_326948_59893",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "b41b3143": {
+   "qid": "3hop1__426806_42197_18397",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "4d71c366": {
+   "qid": "3hop1__426806_42197_18397",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "9c96e9ec": {
+   "qid": "3hop1__465684_160545_62931",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "fbddcf7c": {
+   "qid": "3hop1__465684_160545_62931",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "fcbb4e59": {
+   "qid": "3hop1__497845_629431_124169",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "ce9e1a11": {
+   "qid": "3hop1__497845_629431_124169",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "a76afde6": {
+   "qid": "3hop1__497845_629431_64412",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "8768a84f": {
+   "qid": "3hop1__497845_629431_64412",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "0200b1f0": {
+   "qid": "3hop1__507961_160713_77246",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "aaf91531": {
+   "qid": "3hop1__507961_160713_77246",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "d12dbc9a": {
+   "qid": "3hop1__518381_709625_84283",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "8dfa6a56": {
+   "qid": "3hop1__518381_709625_84283",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "4ca415ea": {
+   "qid": "3hop1__603558_87694_124169",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "ee87905e": {
+   "qid": "3hop1__603558_87694_124169",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "a9d3d7c7": {
+   "qid": "3hop1__604797_443779_52195",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "1a84a51a": {
+   "qid": "3hop1__604797_443779_52195",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "f05db76e": {
+   "qid": "3hop1__617062_127905_48717",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "e0ccedc5": {
+   "qid": "3hop1__617062_127905_48717",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "2260e70f": {
+   "qid": "3hop1__632623_160713_77246",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "43b409ef": {
+   "qid": "3hop1__632623_160713_77246",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "1d8cbbac": {
+   "qid": "3hop1__635099_131926_87157",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "e3c43657": {
+   "qid": "3hop1__635099_131926_87157",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "1b66b5a9": {
+   "qid": "3hop1__641921_42197_18397",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "be0f051b": {
+   "qid": "3hop1__641921_42197_18397",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "8da01097": {
+   "qid": "3hop1__64957_87694_64412",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "27cb6f2a": {
+   "qid": "3hop1__64957_87694_64412",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "45b89cd9": {
+   "qid": "3hop1__652852_2053_52946",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "48212ddb": {
+   "qid": "3hop1__652852_2053_52946",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "9ad620ab": {
+   "qid": "3hop1__672543_503371_21711",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "35ebd32d": {
+   "qid": "3hop1__672543_503371_21711",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "b7b56ea7": {
+   "qid": "3hop1__691197_15840_36002",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "57c700aa": {
+   "qid": "3hop1__691197_15840_36002",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "341ef40b": {
+   "qid": "3hop1__695430_831637_91775",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "afffcfd2": {
+   "qid": "3hop1__695430_831637_91775",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "a25d6b29": {
+   "qid": "3hop1__699507_792411_51423",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "da587e8a": {
+   "qid": "3hop1__699507_792411_51423",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "439472e6": {
+   "qid": "3hop1__726561_132457_51423",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "81627cf1": {
+   "qid": "3hop1__726561_132457_51423",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "7d106c60": {
+   "qid": "3hop1__743797_443779_52195",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "40497b71": {
+   "qid": "3hop1__743797_443779_52195",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "e7c421c7": {
+   "qid": "3hop1__761225_831637_91775",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "e87d1c78": {
+   "qid": "3hop1__761225_831637_91775",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "d89a40c0": {
+   "qid": "3hop1__79039_131926_87157",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "0d01280f": {
+   "qid": "3hop1__79039_131926_87157",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "17a0df49": {
+   "qid": "3hop1__796649_720914_27537",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "a2607723": {
+   "qid": "3hop1__796649_720914_27537",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "6c6f7633": {
+   "qid": "3hop1__800948_40769_64047",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "d450281c": {
+   "qid": "3hop1__800948_40769_64047",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "46d483f3": {
+   "qid": "3hop1__818422_160545_34754",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "0b49452d": {
+   "qid": "3hop1__818422_160545_34754",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "00e85ece": {
+   "qid": "3hop1__849312_503371_21711",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "5563f616": {
+   "qid": "3hop1__849312_503371_21711",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "c56811cd": {
+   "qid": "3hop1__857241_503371_21711",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "217d65a0": {
+   "qid": "3hop1__857241_503371_21711",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "a319dcb4": {
+   "qid": "3hop1__857_846_7713",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "fad409e2": {
+   "qid": "3hop1__857_846_7713",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "430f801d": {
+   "qid": "3hop1__857_846_7798",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "295d6fbf": {
+   "qid": "3hop1__857_846_7798",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "bdc14f1f": {
+   "qid": "3hop1__857_846_7821",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "711c21c9": {
+   "qid": "3hop1__857_846_7821",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "8d3aed99": {
+   "qid": "3hop1__857_846_7887",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "b4a69f3c": {
+   "qid": "3hop1__857_846_7887",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "6d7ce3c9": {
+   "qid": "3hop1__92991_78276_68042",
+   "system": "S2",
+   "type": "3hop1"
+  },
+  "8f9797b0": {
+   "qid": "3hop1__92991_78276_68042",
+   "system": "S0",
+   "type": "3hop1"
+  },
+  "0279b6a6": {
+   "qid": "3hop2__11282_57233_56883",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "1ca3c448": {
+   "qid": "3hop2__11282_57233_56883",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "13432e61": {
+   "qid": "3hop2__132957_51933_40768",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "f1eedba3": {
+   "qid": "3hop2__132957_51933_40768",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "e21342b0": {
+   "qid": "3hop2__14777_8533_9331",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "b0e6a969": {
+   "qid": "3hop2__14777_8533_9331",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "e767dcea": {
+   "qid": "3hop2__158279_71753_70784",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "26286bfb": {
+   "qid": "3hop2__158279_71753_70784",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "8babce3b": {
+   "qid": "3hop2__30152_105895_20999",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "093923de": {
+   "qid": "3hop2__30152_105895_20999",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "d5a804eb": {
+   "qid": "3hop2__304722_582839_63959",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "5e84f058": {
+   "qid": "3hop2__304722_582839_63959",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "951f58d0": {
+   "qid": "3hop2__368986_89048_66294",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "8d7248e2": {
+   "qid": "3hop2__368986_89048_66294",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "25e97977": {
+   "qid": "3hop2__569322_223623_162182",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "6e068097": {
+   "qid": "3hop2__569322_223623_162182",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "20a04502": {
+   "qid": "3hop2__782397_467331_162182",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "0ab54bde": {
+   "qid": "3hop2__782397_467331_162182",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "4eea04e7": {
+   "qid": "3hop2__851134_613770_7713",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "5d59cd2a": {
+   "qid": "3hop2__851134_613770_7713",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "e623a689": {
+   "qid": "3hop2__87184_36497_76291",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "eededb07": {
+   "qid": "3hop2__87184_36497_76291",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "cbceabde": {
+   "qid": "3hop2__88342_93066_90766",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "f8e1daa7": {
+   "qid": "3hop2__88342_93066_90766",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "dc570131": {
+   "qid": "3hop2__89854_38738_76291",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "0a368ce7": {
+   "qid": "3hop2__89854_38738_76291",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "e61fecc0": {
+   "qid": "3hop2__92991_27069_76291",
+   "system": "S2",
+   "type": "3hop2"
+  },
+  "5b9962c6": {
+   "qid": "3hop2__92991_27069_76291",
+   "system": "S0",
+   "type": "3hop2"
+  },
+  "35c7936c": {
+   "qid": "4hop1__105401_17130_70784_79935",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "ae9bec36": {
+   "qid": "4hop1__105401_17130_70784_79935",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "3fe12e47": {
+   "qid": "4hop1__130623_32392_823060_610794",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "aabc25fa": {
+   "qid": "4hop1__130623_32392_823060_610794",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "1a50aec3": {
+   "qid": "4hop1__131820_59747_211319_557671",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "5a8aaeca": {
+   "qid": "4hop1__131820_59747_211319_557671",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "c7b5b2bc": {
+   "qid": "4hop1__152146_5274_458768_33632",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "8f5486b7": {
+   "qid": "4hop1__152146_5274_458768_33632",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "e256a6dc": {
+   "qid": "4hop1__152562_5274_458768_33632",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "dfed2c43": {
+   "qid": "4hop1__152562_5274_458768_33632",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "6808593f": {
+   "qid": "4hop1__15607_59747_211319_557671",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "f94d6204": {
+   "qid": "4hop1__15607_59747_211319_557671",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "9ee3ac2a": {
+   "qid": "4hop1__31333_59747_211319_557671",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "bfddc3d9": {
+   "qid": "4hop1__31333_59747_211319_557671",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "2790cebd": {
+   "qid": "4hop1__342858_131850_33952_34099",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "ecfedb99": {
+   "qid": "4hop1__342858_131850_33952_34099",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "ee0caeb5": {
+   "qid": "4hop1__391525_49925_13759_736921",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "3c9ad14c": {
+   "qid": "4hop1__391525_49925_13759_736921",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "dd56cc94": {
+   "qid": "4hop1__463635_624859_355213_203322",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "2999b735": {
+   "qid": "4hop1__463635_624859_355213_203322",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "f9e8a369": {
+   "qid": "4hop1__567737_141375_458768_33633",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "ccc56569": {
+   "qid": "4hop1__567737_141375_458768_33633",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "cf8ebc5a": {
+   "qid": "4hop1__57467_53706_795904_580996",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "2d534dd0": {
+   "qid": "4hop1__57467_53706_795904_580996",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "e1a47e10": {
+   "qid": "4hop1__608132_508773_85832_745702",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "698c206f": {
+   "qid": "4hop1__608132_508773_85832_745702",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "0658663a": {
+   "qid": "4hop1__629520_49925_13759_736921",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "2dea9493": {
+   "qid": "4hop1__629520_49925_13759_736921",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "bc8f7d29": {
+   "qid": "4hop1__802394_153080_159767_81096",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "ecab3301": {
+   "qid": "4hop1__802394_153080_159767_81096",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "550a1b46": {
+   "qid": "4hop1__813171_153080_159767_81096",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "c84a7b28": {
+   "qid": "4hop1__813171_153080_159767_81096",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "ee49f329": {
+   "qid": "4hop1__842143_153080_159767_81096",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "696608aa": {
+   "qid": "4hop1__842143_153080_159767_81096",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "cd5f4822": {
+   "qid": "4hop1__842143_153080_33897_81096",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "ab7f089a": {
+   "qid": "4hop1__842143_153080_33897_81096",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "dd334cc7": {
+   "qid": "4hop1__846600_153080_159767_81096",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "bc2cbb0d": {
+   "qid": "4hop1__846600_153080_159767_81096",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "cf8d446a": {
+   "qid": "4hop1__88342_49853_128008_46748",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "3f87e362": {
+   "qid": "4hop1__88342_49853_128008_46748",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "444d610b": {
+   "qid": "4hop1__88342_75218_128008_86588",
+   "system": "S2",
+   "type": "4hop1"
+  },
+  "28c13091": {
+   "qid": "4hop1__88342_75218_128008_86588",
+   "system": "S0",
+   "type": "4hop1"
+  },
+  "c991603f": {
+   "qid": "4hop2__161324_14670_8987_8974",
+   "system": "S2",
+   "type": "4hop2"
+  },
+  "b386f7a4": {
+   "qid": "4hop2__161324_14670_8987_8974",
+   "system": "S0",
+   "type": "4hop2"
+  },
+  "1bac27a7": {
+   "qid": "4hop2__161602_426860_88460_20988",
+   "system": "S2",
+   "type": "4hop2"
+  },
+  "61ee411a": {
+   "qid": "4hop2__161602_426860_88460_20988",
+   "system": "S0",
+   "type": "4hop2"
+  },
+  "df465290": {
+   "qid": "4hop2__71753_729371_70784_79935",
+   "system": "S2",
+   "type": "4hop2"
+  },
+  "09e9db0a": {
+   "qid": "4hop2__71753_729371_70784_79935",
+   "system": "S0",
+   "type": "4hop2"
+  },
+  "dbccc477": {
+   "qid": "4hop2__9988_158279_70784_61381",
+   "system": "S2",
+   "type": "4hop2"
+  },
+  "787f2425": {
+   "qid": "4hop2__9988_158279_70784_61381",
+   "system": "S0",
+   "type": "4hop2"
+  },
+  "38f16a81": {
+   "qid": "4hop2__9988_158985_70784_79935",
+   "system": "S2",
+   "type": "4hop2"
+  },
+  "33173470": {
+   "qid": "4hop2__9988_158985_70784_79935",
+   "system": "S0",
+   "type": "4hop2"
+  },
+  "d10bd1d0": {
+   "qid": "4hop3__193820_466199_128875_72134",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "eb1fa9f2": {
+   "qid": "4hop3__193820_466199_128875_72134",
+   "system": "S0",
+   "type": "4hop3"
+  },
+  "75d66ed4": {
+   "qid": "4hop3__312119_132409_146285_35031",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "598336e3": {
+   "qid": "4hop3__312119_132409_146285_35031",
+   "system": "S0",
+   "type": "4hop3"
+  },
+  "4e20fd1a": {
+   "qid": "4hop3__531933_836463_161616_77103",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "d20eac17": {
+   "qid": "4hop3__531933_836463_161616_77103",
+   "system": "S0",
+   "type": "4hop3"
+  },
+  "cb9bc326": {
+   "qid": "4hop3__601548_836463_161616_77103",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "df0f06cb": {
+   "qid": "4hop3__601548_836463_161616_77103",
+   "system": "S0",
+   "type": "4hop3"
+  },
+  "3a43b2ba": {
+   "qid": "4hop3__630723_88460_30152_20999",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "39118497": {
+   "qid": "4hop3__630723_88460_30152_20999",
+   "system": "S0",
+   "type": "4hop3"
+  },
+  "060edf5b": {
+   "qid": "4hop3__746868_88460_30152_20999",
+   "system": "S2",
+   "type": "4hop3"
+  },
+  "a8f7ef5a": {
+   "qid": "4hop3__746868_88460_30152_20999",
+   "system": "S0",
+   "type": "4hop3"
+  }
+ }
+}

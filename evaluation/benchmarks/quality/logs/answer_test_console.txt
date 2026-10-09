@@ -1,0 +1,7 @@
+2026-10-09 14:11:46,654 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 14:11:48,204 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:11:48,206 | INFO | graphrag | [answer] start 2026-10-09 08:11:48 UTC argv=['--dataset', 'quality', '--split', 'test', '--systems', 'C0,S0,S1,S2,S3,S4,S5'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:11:53,939 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 14:12:20,622 | INFO | graphrag | [answer quality/C0] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 26.7}
+2026-10-09 14:12:53,977 | INFO | graphrag | [answer quality/S0] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 33.4}
+2026-10-09 14:13:23,427 | INFO | graphrag | [answer quality/S1] {'answered': 722, 'skipped_done': 0, 'errors': 0, 'seconds': 29.5}

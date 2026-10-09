@@ -1,0 +1,20 @@
+{
+ "dataset": "quality",
+ "corpus_docs": 50,
+ "corpus_words": 198383,
+ "questions": 915,
+ "dev": 193,
+ "test": 722,
+ "types": {
+  "easy": 457,
+  "hard": 458
+ },
+ "dev_types": {
+  "easy": 107,
+  "hard": 86
+ },
+ "corpus_sha256": "065a8b748abd4e6d94019f0a7bae4df92406b2d0d41c4c03702117658f5c3fc7",
+ "questions_sha256": "6958fd25d64629b8a193033acb3ba0af0e505bdf0de08b311005a6fa954f49db",
+ "dev_sha256": "b428fa0439c8593dc30fe57ecc29713422de128a1cd20f089db767e35362e20f",
+ "test_sha256": "decdfca759cb558986b9489107ce0d4866490f2a383affd53cebb1ff664a1604"
+}

@@ -1,0 +1,24 @@
+{
+ "dataset": "2wiki",
+ "corpus_docs": 6119,
+ "corpus_words": 434519,
+ "questions": 1000,
+ "dev": 200,
+ "test": 800,
+ "types": {
+  "compositional": 413,
+  "comparison": 244,
+  "bridge_comparison": 235,
+  "inference": 108
+ },
+ "dev_types": {
+  "comparison": 56,
+  "inference": 17,
+  "compositional": 83,
+  "bridge_comparison": 44
+ },
+ "corpus_sha256": "9ff0917fee1acef5604e7892fea2d47c89c9e55e189cd1e349ad65061ea98d68",
+ "questions_sha256": "b4f91d1a1790245d70e58a22ca9413ba1bd1f9b0a5276fb4caab3ca9d85fd327",
+ "dev_sha256": "de88ffceebc704144dcb92d5e8697c9aa9ffa0fb67849cf95081576ae034fd7f",
+ "test_sha256": "e553ed3b6d89e71c2338a5fb7accbbf2006eb0c7c651eb7d6ee7add224b0c1a3"
+}

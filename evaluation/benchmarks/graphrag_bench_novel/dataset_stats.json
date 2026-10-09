@@ -1,0 +1,24 @@
+{
+ "dataset": "graphrag_bench_novel",
+ "corpus_docs": 20,
+ "corpus_words": 839608,
+ "questions": 2010,
+ "dev": 401,
+ "test": 1609,
+ "types": {
+  "Fact Retrieval": 971,
+  "Complex Reasoning": 610,
+  "Contextual Summarize": 362,
+  "Creative Generation": 67
+ },
+ "dev_types": {
+  "Fact Retrieval": 194,
+  "Complex Reasoning": 122,
+  "Contextual Summarize": 72,
+  "Creative Generation": 13
+ },
+ "corpus_sha256": "540763da9a66b7ae07a618f29c6ce3c4cd564dbccff6163cbb99497b957f7592",
+ "questions_sha256": "936fb1edac5511b08d4a726f5d39961c7767c3d3d11de3ed4ac30a5140098d60",
+ "dev_sha256": "9752311c5d42ff83a11f60233907f167fe957fef5fd5396e57d2dc99d437457b",
+ "test_sha256": "582769a498b17082082f42d9db5ff38a08089b153051bf244a0c3eec6579fe74"
+}

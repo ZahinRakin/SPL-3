@@ -1,0 +1,24 @@
+{
+ "dataset": "multihop_rag",
+ "corpus_docs": 609,
+ "corpus_words": 1063319,
+ "questions": 500,
+ "dev": 100,
+ "test": 400,
+ "types": {
+  "inference_query": 160,
+  "temporal_query": 114,
+  "null_query": 59,
+  "comparison_query": 167
+ },
+ "dev_types": {
+  "comparison_query": 33,
+  "temporal_query": 23,
+  "inference_query": 32,
+  "null_query": 12
+ },
+ "corpus_sha256": "935b41b34ff826242e0d8e9a4c1d8e1fc5b5b3261ad6bdf1be32740aafc9d707",
+ "questions_sha256": "c3ad0832ae7ea57a473c4242cfd056802736ed0afd20ba298d4395ed31522b1a",
+ "dev_sha256": "81d0de20985b5d508b14a75037cb8128655dee1e76b4fba3a3626a5220189529",
+ "test_sha256": "2e7f0cf19d61d594b5044ca6305b904eec2ecfcb7bf53e6e9c58f0910af5ae13"
+}

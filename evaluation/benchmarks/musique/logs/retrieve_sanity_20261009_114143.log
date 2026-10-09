@@ -1,0 +1,255 @@
+2026-10-09 11:41:43,489 | INFO | [retrieve sanity] start 2026-10-09 05:41:43 UTC argv=['sanity', '--dataset', 'musique', '--index', 'pilot200'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 11:41:43,558 | DEBUG | GraphRAGIndexer.load_state: entities=2511, relationships=2072, communities=153
+2026-10-09 11:41:43,574 | DEBUG | RaptorRunner.load_state: nodes=200
+2026-10-09 11:41:43,628 | DEBUG | embed_many: task_type=retrieval_query, texts=200
+2026-10-09 11:41:45,484 | DEBUG | embed_many complete: 200 vectors
+2026-10-09 11:41:45,511 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,512 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,513 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,514 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,515 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,516 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,517 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,517 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,518 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,519 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,520 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,521 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,528 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,529 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,529 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,530 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,541 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,550 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,551 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,551 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,552 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,553 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,553 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,554 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,556 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,556 | DEBUG | RaptorRunner.retrieve: top_k=20, returned=20
+2026-10-09 11:41:45,558 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,562 | DEBUG | match_entities: question='What year did the publisher of Labyrinth end?', matched=0
+2026-10-09 11:41:45,562 | DEBUG | HippoRetriever._seeds: 49 seed entities
+2026-10-09 11:41:45,563 | DEBUG | HippoRetriever.retrieve: seeds=49, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,563 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,563 | DEBUG | match_entities: question='Where does the body of water by the city where the Southeast', matched=13
+2026-10-09 11:41:45,563 | DEBUG | HippoRetriever._seeds: 47 seed entities
+2026-10-09 11:41:45,563 | DEBUG | HippoRetriever.retrieve: seeds=47, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,563 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,573 | DEBUG | match_entities: question='How were the people from whom new coins were a proclamation ', matched=19
+2026-10-09 11:41:45,573 | DEBUG | HippoRetriever._seeds: 83 seed entities
+2026-10-09 11:41:45,573 | DEBUG | HippoRetriever.retrieve: seeds=83, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,573 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,573 | DEBUG | match_entities: question="Who is the spouse of Young Man Luther's author?", matched=3
+2026-10-09 11:41:45,573 | DEBUG | HippoRetriever._seeds: 44 seed entities
+2026-10-09 11:41:45,573 | DEBUG | HippoRetriever.retrieve: seeds=44, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,573 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,583 | DEBUG | match_entities: question='In what year was the group who performed Attics To Eden form', matched=2
+2026-10-09 11:41:45,583 | DEBUG | HippoRetriever._seeds: 35 seed entities
+2026-10-09 11:41:45,583 | DEBUG | HippoRetriever.retrieve: seeds=35, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,583 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,594 | DEBUG | match_entities: question='When did the city where Greenwood Laboratory School is locat', matched=17
+2026-10-09 11:41:45,594 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 11:41:45,594 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,594 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,594 | DEBUG | match_entities: question='How long are the council terms of the city that shares a cou', matched=19
+2026-10-09 11:41:45,594 | DEBUG | HippoRetriever._seeds: 47 seed entities
+2026-10-09 11:41:45,594 | DEBUG | HippoRetriever.retrieve: seeds=47, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,594 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,604 | DEBUG | match_entities: question='When did the person chosen to be president of the confederac', matched=14
+2026-10-09 11:41:45,604 | DEBUG | HippoRetriever._seeds: 58 seed entities
+2026-10-09 11:41:45,604 | DEBUG | HippoRetriever.retrieve: seeds=58, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,604 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,614 | DEBUG | match_entities: question='what is meaning of the word that is a majority religion of t', matched=13
+2026-10-09 11:41:45,614 | DEBUG | HippoRetriever._seeds: 89 seed entities
+2026-10-09 11:41:45,614 | DEBUG | HippoRetriever.retrieve: seeds=89, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,614 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,614 | DEBUG | match_entities: question='When did the majority party in the House of Representatives ', matched=14
+2026-10-09 11:41:45,614 | DEBUG | HippoRetriever._seeds: 57 seed entities
+2026-10-09 11:41:45,614 | DEBUG | HippoRetriever.retrieve: seeds=57, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,614 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,624 | DEBUG | match_entities: question='What is the name of the famous bridge in the birth city of t', matched=6
+2026-10-09 11:41:45,624 | DEBUG | HippoRetriever._seeds: 40 seed entities
+2026-10-09 11:41:45,624 | DEBUG | HippoRetriever.retrieve: seeds=40, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,624 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,624 | DEBUG | match_entities: question="What was the 2018 population of the Italian city that's unde", matched=14
+2026-10-09 11:41:45,624 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 11:41:45,624 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,624 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,634 | DEBUG | match_entities: question='Who is the head of the agency that created MYSTIC?', matched=1
+2026-10-09 11:41:45,634 | DEBUG | HippoRetriever._seeds: 36 seed entities
+2026-10-09 11:41:45,634 | DEBUG | HippoRetriever.retrieve: seeds=36, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,640 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,645 | DEBUG | match_entities: question='What administrative territorial entity does Darley Ramon Tor', matched=3
+2026-10-09 11:41:45,645 | DEBUG | HippoRetriever._seeds: 56 seed entities
+2026-10-09 11:41:45,646 | DEBUG | HippoRetriever.retrieve: seeds=56, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,647 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,651 | DEBUG | match_entities: question='What is the meaning of the name of the city where the Yongle', matched=10
+2026-10-09 11:41:45,651 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 11:41:45,652 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,653 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,657 | DEBUG | match_entities: question='What is the name of the famous bridge in the city where the ', matched=6
+2026-10-09 11:41:45,657 | DEBUG | HippoRetriever._seeds: 33 seed entities
+2026-10-09 11:41:45,657 | DEBUG | HippoRetriever.retrieve: seeds=33, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,657 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,658 | DEBUG | match_entities: question='Who is the spouse of the actor that plays Jarvis in the Aven', matched=3
+2026-10-09 11:41:45,658 | DEBUG | HippoRetriever._seeds: 42 seed entities
+2026-10-09 11:41:45,658 | DEBUG | HippoRetriever.retrieve: seeds=42, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,663 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,663 | DEBUG | match_entities: question='What is the maximum load drawn by the 1.0 and 2.0 versions o', matched=1
+2026-10-09 11:41:45,663 | DEBUG | HippoRetriever._seeds: 32 seed entities
+2026-10-09 11:41:45,663 | DEBUG | HippoRetriever.retrieve: seeds=32, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,663 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,674 | DEBUG | match_entities: question='When did Nissan, the Acura Legend maker and the Scion Fuse m', matched=4
+2026-10-09 11:41:45,674 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 11:41:45,674 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,674 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,684 | DEBUG | match_entities: question='Who had the lowest batting average in the league where the t', matched=11
+2026-10-09 11:41:45,684 | DEBUG | HippoRetriever._seeds: 50 seed entities
+2026-10-09 11:41:45,684 | DEBUG | HippoRetriever.retrieve: seeds=50, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,684 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,684 | DEBUG | match_entities: question='What is the public library system called in the place where ', matched=22
+2026-10-09 11:41:45,684 | DEBUG | HippoRetriever._seeds: 68 seed entities
+2026-10-09 11:41:45,694 | DEBUG | HippoRetriever.retrieve: seeds=68, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,695 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,695 | DEBUG | match_entities: question='When was the region immediately north of the region where th', matched=18
+2026-10-09 11:41:45,705 | DEBUG | HippoRetriever._seeds: 70 seed entities
+2026-10-09 11:41:45,705 | DEBUG | HippoRetriever.retrieve: seeds=70, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,705 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,705 | DEBUG | match_entities: question='How many people work at the school that holds the Julian P. ', matched=11
+2026-10-09 11:41:45,705 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 11:41:45,705 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,705 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,715 | DEBUG | match_entities: question='When did the U.S. and the country in effective control of po', matched=16
+2026-10-09 11:41:45,715 | DEBUG | HippoRetriever._seeds: 72 seed entities
+2026-10-09 11:41:45,715 | DEBUG | HippoRetriever.retrieve: seeds=72, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,715 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,725 | DEBUG | match_entities: question="When was Burma's name changed to that of the country on the ", matched=5
+2026-10-09 11:41:45,729 | DEBUG | HippoRetriever._seeds: 62 seed entities
+2026-10-09 11:41:45,730 | DEBUG | HippoRetriever.retrieve: seeds=62, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,730 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,730 | DEBUG | match_entities: question='What dissolved the privileges in Poland of the empire that t', matched=14
+2026-10-09 11:41:45,730 | DEBUG | HippoRetriever._seeds: 52 seed entities
+2026-10-09 11:41:45,730 | DEBUG | HippoRetriever.retrieve: seeds=52, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,736 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,742 | DEBUG | match_entities: question="Who's the son of the Italian navigator who explored the east", matched=4
+2026-10-09 11:41:45,744 | DEBUG | HippoRetriever._seeds: 38 seed entities
+2026-10-09 11:41:45,744 | DEBUG | HippoRetriever.retrieve: seeds=38, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,744 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,754 | DEBUG | match_entities: question='Who was president when congress declared war on the country ', matched=9
+2026-10-09 11:41:45,755 | DEBUG | HippoRetriever._seeds: 61 seed entities
+2026-10-09 11:41:45,755 | DEBUG | HippoRetriever.retrieve: seeds=61, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,759 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,762 | DEBUG | match_entities: question="Kiwil's birth country participated in a Commission of Truth ", matched=8
+2026-10-09 11:41:45,763 | DEBUG | HippoRetriever._seeds: 73 seed entities
+2026-10-09 11:41:45,763 | DEBUG | HippoRetriever.retrieve: seeds=73, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,764 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,768 | DEBUG | match_entities: question='Who was the mother of the person who found the sacred writin', matched=1
+2026-10-09 11:41:45,769 | DEBUG | HippoRetriever._seeds: 29 seed entities
+2026-10-09 11:41:45,769 | DEBUG | HippoRetriever.retrieve: seeds=29, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,770 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,774 | DEBUG | match_entities: question='When was the most recent Bicycle Friendly Community Award gi', matched=17
+2026-10-09 11:41:45,774 | DEBUG | HippoRetriever._seeds: 73 seed entities
+2026-10-09 11:41:45,774 | DEBUG | HippoRetriever.retrieve: seeds=73, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,776 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,779 | DEBUG | match_entities: question="When was the last time Tony Richard's team beat the 1894-95 ", matched=15
+2026-10-09 11:41:45,779 | DEBUG | HippoRetriever._seeds: 60 seed entities
+2026-10-09 11:41:45,781 | DEBUG | HippoRetriever.retrieve: seeds=60, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,781 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,786 | DEBUG | match_entities: question="Where did the arguer that Dmitry Okhotsimsky's country of ci", matched=7
+2026-10-09 11:41:45,786 | DEBUG | HippoRetriever._seeds: 50 seed entities
+2026-10-09 11:41:45,786 | DEBUG | HippoRetriever.retrieve: seeds=50, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,786 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,786 | DEBUG | match_entities: question='Where is the origin of the river that Kraai River is a tribu', matched=10
+2026-10-09 11:41:45,792 | DEBUG | HippoRetriever._seeds: 39 seed entities
+2026-10-09 11:41:45,792 | DEBUG | HippoRetriever.retrieve: seeds=39, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,792 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,796 | DEBUG | match_entities: question='What is the league of the Carolina Panthers an example of?', matched=8
+2026-10-09 11:41:45,796 | DEBUG | HippoRetriever._seeds: 64 seed entities
+2026-10-09 11:41:45,796 | DEBUG | HippoRetriever.retrieve: seeds=64, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,796 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,802 | DEBUG | match_entities: question='When did the city where the author of Sacerdotii Nostri Prim', matched=9
+2026-10-09 11:41:45,802 | DEBUG | HippoRetriever._seeds: 37 seed entities
+2026-10-09 11:41:45,802 | DEBUG | HippoRetriever.retrieve: seeds=37, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,804 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,804 | DEBUG | match_entities: question="In which state is Póvoa de Santa Iria's municipality located", matched=9
+2026-10-09 11:41:45,804 | DEBUG | HippoRetriever._seeds: 58 seed entities
+2026-10-09 11:41:45,804 | DEBUG | HippoRetriever.retrieve: seeds=58, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,804 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,812 | DEBUG | match_entities: question='Who won the indy car race in the largest populated city in t', matched=20
+2026-10-09 11:41:45,812 | DEBUG | HippoRetriever._seeds: 65 seed entities
+2026-10-09 11:41:45,812 | DEBUG | HippoRetriever.retrieve: seeds=65, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,812 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,816 | DEBUG | match_entities: question='Who is the president of the newly declared independent count', matched=8
+2026-10-09 11:41:45,818 | DEBUG | HippoRetriever._seeds: 62 seed entities
+2026-10-09 11:41:45,818 | DEBUG | HippoRetriever.retrieve: seeds=62, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,818 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,822 | DEBUG | match_entities: question='Who sings home alone tonight with the singer of you can cras', matched=7
+2026-10-09 11:41:45,822 | DEBUG | HippoRetriever._seeds: 45 seed entities
+2026-10-09 11:41:45,822 | DEBUG | HippoRetriever.retrieve: seeds=45, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,822 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,822 | DEBUG | match_entities: question='At the end of what year did the tribes from the place where ', matched=11
+2026-10-09 11:41:45,822 | DEBUG | HippoRetriever._seeds: 39 seed entities
+2026-10-09 11:41:45,832 | DEBUG | HippoRetriever.retrieve: seeds=39, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,832 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,832 | DEBUG | match_entities: question='Which two features were played up by the highest paid person', matched=17
+2026-10-09 11:41:45,832 | DEBUG | HippoRetriever._seeds: 73 seed entities
+2026-10-09 11:41:45,832 | DEBUG | HippoRetriever.retrieve: seeds=73, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,832 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,842 | DEBUG | match_entities: question='How many times did plague occur in the birth city of the com', matched=6
+2026-10-09 11:41:45,842 | DEBUG | HippoRetriever._seeds: 34 seed entities
+2026-10-09 11:41:45,842 | DEBUG | HippoRetriever.retrieve: seeds=34, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,842 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,848 | DEBUG | match_entities: question='There is a state A where Storm of the Century was filmed bas', matched=19
+2026-10-09 11:41:45,848 | DEBUG | HippoRetriever._seeds: 65 seed entities
+2026-10-09 11:41:45,848 | DEBUG | HippoRetriever.retrieve: seeds=65, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,848 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,848 | DEBUG | match_entities: question='How many parties rule the city where the Yongle emperor gree', matched=12
+2026-10-09 11:41:45,848 | DEBUG | HippoRetriever._seeds: 48 seed entities
+2026-10-09 11:41:45,848 | DEBUG | HippoRetriever.retrieve: seeds=48, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,848 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,859 | DEBUG | match_entities: question='What does the acronym of the organization Danish Football Un', matched=8
+2026-10-09 11:41:45,859 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 11:41:45,859 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,859 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,859 | DEBUG | match_entities: question='What is the place of birth of the person who submitted the f', matched=13
+2026-10-09 11:41:45,859 | DEBUG | HippoRetriever._seeds: 44 seed entities
+2026-10-09 11:41:45,859 | DEBUG | HippoRetriever.retrieve: seeds=44, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,859 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,869 | DEBUG | match_entities: question='What is the longest home run in the history of the league th', matched=13
+2026-10-09 11:41:45,869 | DEBUG | HippoRetriever._seeds: 53 seed entities
+2026-10-09 11:41:45,873 | DEBUG | HippoRetriever.retrieve: seeds=53, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,873 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,877 | DEBUG | match_entities: question='What was the population of the republic that participated in', matched=8
+2026-10-09 11:41:45,877 | DEBUG | HippoRetriever._seeds: 54 seed entities
+2026-10-09 11:41:45,877 | DEBUG | HippoRetriever.retrieve: seeds=54, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20
+2026-10-09 11:41:45,877 | DEBUG | RaptorRunner.retrieve: top_k=200, returned=200
+2026-10-09 11:41:45,884 | DEBUG | match_entities: question='What type of government did North Korea have during the conf', matched=29
+2026-10-09 11:41:45,884 | DEBUG | HippoRetriever._seeds: 56 seed entities
+2026-10-09 11:41:45,885 | DEBUG | HippoRetriever.retrieve: seeds=56, chunks_with_entities=200, graph_ranked=0, summaries=0, returned=20

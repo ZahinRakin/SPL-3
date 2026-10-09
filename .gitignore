@@ -13,3 +13,5 @@ evaluation/llm_cache/
 evaluation/benchmarks/*/data/
 evaluation/benchmarks/*/index/
 .pytest_cache/
+evaluation/benchmarks/*/corpus.jsonl
+evaluation/benchmarks/*/query_emb/

@@ -1,0 +1,28 @@
+{
+ "dataset": "musique",
+ "corpus_docs": 11656,
+ "corpus_words": 930127,
+ "questions": 1000,
+ "dev": 200,
+ "test": 800,
+ "types": {
+  "2hop": 518,
+  "3hop1": 243,
+  "4hop2": 27,
+  "4hop1": 108,
+  "4hop3": 31,
+  "3hop2": 73
+ },
+ "dev_types": {
+  "2hop": 101,
+  "4hop1": 26,
+  "4hop3": 5,
+  "3hop1": 45,
+  "3hop2": 17,
+  "4hop2": 6
+ },
+ "corpus_sha256": "9645e5c33d522d36ce2ec5d5a9a001f944e803c22cdfc08a3445d1018326f7e2",
+ "questions_sha256": "b06ef17ef2a39dced3ae645be877837f1bb7a7fe5add0e5cb4c3cb680c9e1767",
+ "dev_sha256": "c7d6362f0e6edb52344be93085cbedbd4a0043f30274fd1a07105b1ffd2ae979",
+ "test_sha256": "bc2f4ba2b97ef69dff84466bdfed81ee7c23d32ca02aeb008acaa0e74f1f8356"
+}

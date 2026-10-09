@@ -1,0 +1,60 @@
+{
+ "created_at": "2026-10-09 09:18:06 UTC",
+ "note": "Exploratory diagnosis of the H4 result (not pre-registered).",
+ "systems": {
+  "S0": {
+   "insufficient_answers": 76,
+   "insufficient_on_answerable": 63,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.5262,
+   "mean_passages_in_context": 4.57,
+   "contexts_with_community_block": 0,
+   "contexts_with_graph_facts": 0
+  },
+  "S1": {
+   "insufficient_answers": 77,
+   "insufficient_on_answerable": 64,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.5543,
+   "mean_passages_in_context": 4.45,
+   "contexts_with_community_block": 0,
+   "contexts_with_graph_facts": 0
+  },
+  "S2": {
+   "insufficient_answers": 90,
+   "insufficient_on_answerable": 76,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.4981,
+   "mean_passages_in_context": 4.59,
+   "contexts_with_community_block": 0,
+   "contexts_with_graph_facts": 0
+  },
+  "S3": {
+   "insufficient_answers": 94,
+   "insufficient_on_answerable": 78,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.4577,
+   "mean_passages_in_context": 4.14,
+   "contexts_with_community_block": 0,
+   "contexts_with_graph_facts": 0
+  },
+  "S4": {
+   "insufficient_answers": 116,
+   "insufficient_on_answerable": 100,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.4233,
+   "mean_passages_in_context": 3.24,
+   "contexts_with_community_block": 400,
+   "contexts_with_graph_facts": 59
+  },
+  "S5": {
+   "insufficient_answers": 120,
+   "insufficient_on_answerable": 102,
+   "answerable": 353,
+   "gold_article_recall_in_context": 0.3888,
+   "mean_passages_in_context": 2.96,
+   "contexts_with_community_block": 400,
+   "contexts_with_graph_facts": 59
+  }
+ }
+}

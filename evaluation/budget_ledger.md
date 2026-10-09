@@ -59,3 +59,5 @@ from the money actually left.
 | 5 | QuALITY index (50 articles) | 0.40 | 3.9185 | 4.2748 | **0.3564** | **3.8173** | 975 chunks, 253 RAPTOR summaries, 9,797 entities, 227 community summaries; ran while MuSiQue test rankings (no LLM) ran |
 | 6 | QuALITY dev tuning of m: S2 + S3 (m = 1, 2, 4) × 193 dev q, then the summary-fix prototype S3 (m = 1, 2, 4) × 193 | 0.11 | 4.2748 | 4.3118 | **0.0370** | **3.8543** | 1,351 dev answers ≈ $0.000027 each (many short MC replies; S3 ≡ S2 before the fix → cache hits) |
 | 7 | QuALITY test: C0, S0–S5 × 722 | 0.30 | 4.6193 | | | | dev MC answers cost ≈ /usr/bin/bash.00003–0.00011 each |
+| 9 | MultiHop-RAG test: C0, S0–S5 × 400 | 0.30 | 7.6125 | 7.8912 | **0.2787** | **7.4337** | 2,800 answers, 0 errors. Left under the guard: $1.066 |
+| 10 | GraphRAG-Bench: 6 novels (241k words) per-novel index + C0, S0–S5 × 108 test q | 0.68 | 7.8912 | | | | subsample sized to the money left with a $0.30 margin (`subsample.json`) |

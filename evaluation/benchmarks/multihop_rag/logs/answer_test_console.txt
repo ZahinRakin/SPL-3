@@ -1,0 +1,105 @@
+2026-10-09 14:55:45,525 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 14:55:46,645 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:55:46,645 | INFO | graphrag | [answer] start 2026-10-09 08:55:46 UTC argv=['--dataset', 'multihop_rag', '--split', 'test', '--systems', 'C0,S0,S1,S2,S3,S4,S5'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:55:47,052 | INFO | graphrag | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 14:56:04,154 | INFO | graphrag | [answer multihop_rag/C0] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 17.1}
+2026-10-09 14:56:27,453 | INFO | graphrag | [answer multihop_rag/S0] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 23.3}
+2026-10-09 14:57:16,155 | INFO | graphrag | [answer multihop_rag/S1] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 48.7}
+2026-10-09 15:01:32,629 | INFO | graphrag | [answer multihop_rag/S2] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 256.5}
+2026-10-09 15:01:52,543 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:01:52,543 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:01:53,630 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:01:53,634 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:01:55,470 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:13,197 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:15,427 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:15,495 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:17,863 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:23,536 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:43,509 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:44,929 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:44,929 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:02:46,297 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:03:09,501 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:03:11,572 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:03:24,295 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:03:25,894 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:03:45,099 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:04:01,502 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:05:09,775 | INFO | graphrag | [answer multihop_rag/S3] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 217.1}
+2026-10-09 15:08:50,009 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:10:37,241 | INFO | graphrag | [answer multihop_rag/S4] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 327.5}
+2026-10-09 15:10:58,663 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:10:58,687 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:01,117 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:01,117 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:01,261 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:35,349 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:35,779 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:37,219 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:38,365 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:11:40,949 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:11,653 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:11,793 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:20,055 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:37,519 | WARNING | graphrag | generate: APITimeoutError, retrying in 4.0s (retry 2/5)
+2026-10-09 15:12:39,752 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:39,752 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:12:42,084 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:05,754 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:05,754 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:12,149 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:12,161 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:28,889 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:37,643 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:13:46,302 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:14:05,177 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:14:15,936 | WARNING | graphrag | generate: APITimeoutError, retrying in 2.0s (retry 1/5)
+2026-10-09 15:14:18,482 | INFO | graphrag | [answer multihop_rag/S5] {'answered': 400, 'skipped_done': 0, 'errors': 0, 'seconds': 221.2}
+{
+ "summary": {
+  "C0": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 17.1
+  },
+  "S0": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 23.3
+  },
+  "S1": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 48.7
+  },
+  "S2": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 256.5
+  },
+  "S3": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 217.1
+  },
+  "S4": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 327.5
+  },
+  "S5": {
+   "answered": 400,
+   "skipped_done": 0,
+   "errors": 0,
+   "seconds": 221.2
+  }
+ },
+ "cost": 0.2787
+}

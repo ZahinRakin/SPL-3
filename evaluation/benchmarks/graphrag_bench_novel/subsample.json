@@ -1,0 +1,42 @@
+{
+ "created_at": "2026-10-09 09:19:23 UTC",
+ "rule": "random.Random(42).sample(sorted(novel ids), 20); first N",
+ "order": [
+  "Novel-10762",
+  "Novel-10146",
+  "Novel-30752",
+  "Novel-29973",
+  "Novel-54537",
+  "Novel-10356",
+  "Novel-41603",
+  "Novel-10321",
+  "Novel-4128",
+  "Novel-58553",
+  "Novel-44557",
+  "Novel-26183",
+  "Novel-5956",
+  "Novel-51410",
+  "Novel-47558",
+  "Novel-40700",
+  "Novel-2544",
+  "Novel-47676",
+  "Novel-25646",
+  "Novel-8559"
+ ],
+ "n_novels": 6,
+ "novels": [
+  "Novel-10762",
+  "Novel-10146",
+  "Novel-30752",
+  "Novel-29973",
+  "Novel-54537",
+  "Novel-10356"
+ ],
+ "words": 241387,
+ "test_questions": 108,
+ "by_type": {
+  "Contextual Summarize": 86,
+  "Creative Generation": 22
+ },
+ "budget_basis": "left under the $8.50 guard after MultiHop-RAG: $1.066; $0.30 margin; estimate for 6 novels $0.68"
+}

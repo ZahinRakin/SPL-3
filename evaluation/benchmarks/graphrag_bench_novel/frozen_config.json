@@ -1,0 +1,33 @@
+{
+ "dataset": "graphrag_bench_novel",
+ "ppr_weight": 0.5,
+ "max_summaries": 1,
+ "budget": 12000,
+ "temperature": 0.0,
+ "systems": [
+  "C0",
+  "S0",
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "index": "full",
+ "per_doc": true,
+ "novels": [
+  "Novel-10762",
+  "Novel-10146",
+  "Novel-30752",
+  "Novel-29973",
+  "Novel-54537",
+  "Novel-10356"
+ ],
+ "types": [
+  "Contextual Summarize",
+  "Creative Generation"
+ ],
+ "prompt": "FREE_QA / FREE_QA_CLOSED",
+ "code_commit": "b49276a",
+ "frozen_at": "2026-10-09"
+}

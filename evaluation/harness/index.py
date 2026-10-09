@@ -150,6 +150,10 @@ async def main(args: argparse.Namespace) -> None:
     docs = read_jsonl(root / "corpus.jsonl")
     if args.limit:
         docs = sorted(random.Random(SEED).sample(docs, args.limit), key=lambda d: docs.index(d))
+    if args.docs:
+        wanted = args.docs.split(",")
+        by_id = {d["doc_id"]: d for d in docs}
+        docs = [by_id[w] for w in wanted]
     usage0 = key_usage()["usage"]
     cache0 = cache_entries()
     run_log(f"index `{args.dataset}` / `{args.name}` started: {len(docs)} docs, key usage ${usage0:.4f}, "
@@ -193,4 +197,5 @@ if __name__ == "__main__":
     ap.add_argument("--name", default="full")
     ap.add_argument("--limit", type=int, default=0, help="index a seeded random sample of N documents")
     ap.add_argument("--per_doc", action="store_true", help="one index per document (GraphRAG-Bench)")
+    ap.add_argument("--docs", default="", help="comma-separated document ids to index, in this order")
     asyncio.run(main(ap.parse_args()))

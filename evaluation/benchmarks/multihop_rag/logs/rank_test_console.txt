@@ -1,0 +1,33 @@
+2026-10-09 14:46:55,745 | INFO | graphrag | LLM: openrouter.ai model='openai/gpt-oss-20b' | Embeddings: Ollama model='nomic-embed-text' at http://127.0.0.1:11434
+2026-10-09 14:46:57,321 | INFO | graphrag | LLM response cache: C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 14:46:57,321 | INFO | graphrag | [retrieve rank] start 2026-10-09 08:46:57 UTC argv=['rank', '--dataset', 'multihop_rag', '--index', 'full'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+{
+ "S0": {
+  "recall@2": 0.4008,
+  "recall@5": 0.6277,
+  "hits@4": 0.5869,
+  "mrr@10": 0.7243,
+  "seconds_per_q": 0.021
+ },
+ "S1": {
+  "recall@2": 0.4559,
+  "recall@5": 0.674,
+  "hits@4": 0.6176,
+  "mrr@10": 0.7806,
+  "seconds_per_q": 0.092
+ },
+ "S2": {
+  "recall@2": 0.3673,
+  "recall@5": 0.6128,
+  "hits@4": 0.5548,
+  "mrr@10": 0.673,
+  "seconds_per_q": 0.606
+ },
+ "S3": {
+  "recall@2": 0.3664,
+  "recall@5": 0.6138,
+  "hits@4": 0.5543,
+  "mrr@10": 0.6711,
+  "seconds_per_q": 0.585
+ }
+}

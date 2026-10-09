@@ -61,7 +61,8 @@ the published methods do not work with stronger models (see §7).
   (`benchmarks/*/tuning/sanity_S2w0_equals_S0.json`).
 - **Judge:** Claude (independent sub-agents, one per batch of ≤ 50 items, given only the rubric
   and the blinded batch). Grades were validated and **sha256-hashed before the key was opened**
-  (`benchmarks/*/judging/*_ALL.sha256`). Codex and the owner's 100-item check are pending
+  (`benchmarks/*/judging/*_ALL.sha256`). No second judge and no human audit were performed
+  (owner's decision, 2026-10-10); the blinded files are kept so they can be added later
   (`JUDGING_HANDOFF.md`).
 
 ## 3. Datasets (as downloaded; hashes in `benchmarks/*/data_hashes.txt`)
@@ -161,7 +162,7 @@ Index sizes (`benchmarks/*/index/full/build_summary.json`):
 
 Total evaluation spend **$8.05** of a $9.00 key limit (guard $8.50 not crossed), read from the
 OpenRouter key's own usage counter before and after each step (`budget_ledger.md`). Indexing was
-86 % of the spend. Answering costs ≈ $0.00009–0.00011 per question at 4–8k characters of context.
+85 % of the spend. Answering costs ≈ $0.00009–0.00011 per question at 4–8k characters of context.
 Query latency is not reported as a result: answers ran 16 at a time and many were cache hits, so
 measured times reflect contention, not the systems (`run_stats` in each `results.json` has them).
 
@@ -190,9 +191,10 @@ measured times reflect contention, not the systems (`run_stats` in each `results
    passage-level signal to tune on); **no tuning on GraphRAG-Bench**.
 7. **GraphRAG-Bench's LLM metrics** (coverage, pairwise) were run by the blinded Claude judge with
    the benchmark's own prompts instead of an API model.
-8. **Second judge and human check pending:** Codex and the owner grade the same blinded files
-   later (`JUDGING_HANDOFF.md`); `harness/final.py` then adds κ to `results_summary.json`. Until
-   then the judge numbers rest on one judge and are secondary everywhere except H3.
+8. **Single judge:** the plan's second LLM judge (Codex) and the owner's 100-item human check
+   were not carried out (owner's decision, 2026-10-10), so judge agreement (κ) is not reported.
+   All judge numbers rest on one blinded LLM judge; they are secondary everywhere except H3.
+   The blinded files and `JUDGING_HANDOFF.md` remain if this is done later.
 
 Frozen protocols and code: MuSiQue `5f1dc24`; QuALITY `fe5ae6d` (code `b49276a`); MultiHop-RAG
 `95ccc7e`; GraphRAG-Bench `9f9e2aa`. Each `protocol.md` lists its own deviations.
@@ -208,7 +210,7 @@ Frozen protocols and code: MuSiQue `5f1dc24`; QuALITY `fe5ae6d` (code `b49276a`)
 - GraphRAG-Bench: 6 of 20 novels and 86 questions for H3 — low power.
 - MuSiQue S4/S5 ran with the label defect (§6.4).
 - LLM judges can prefer longer answers; mitigated (directness criterion, A/B swapping, blinded
-  sub-agents), not removed; second judge and human check outstanding.
+  sub-agents), not removed; only one judge, no human check.
 - C0 is high on MultiHop-RAG (0.505), so that benchmark's headroom is limited.
 
 ## 8. Where the evidence is

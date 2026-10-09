@@ -11,7 +11,7 @@ Prices (OpenRouter, `openai/gpt-oss-20b`): cheapest provider $0.018 / M input, $
 
 | # | Step | Estimate (USD) | Key usage before | Key usage after | Actual (USD) | Cumulative eval spend | Notes |
 |---|---|---|---|---|---|---|---|
-| 1 | MuSiQue pilot index (200 passages) | 0.04 (≤ 0.10) | | | | | 200 extractions × (~330 in + ~700 out tokens) + community summaries |
+| 1 | MuSiQue pilot index (200 passages) | 0.04 (≤ 0.10) | 0.4575 | (see below) | (see below) | (see below) | estimate row written before the pilot; actuals in the table below |
 
 Row 1 actual: $0.5113 − $0.4575 = **$0.0538** for 353 LLM calls (200 extractions + 153 community
 summaries) → ≈ $0.00020 per extraction, ≈ $0.00009 per community summary (split estimated from
@@ -39,7 +39,7 @@ every step.
 | 1 | MuSiQue pilot index (200 passages) | 0.04 | 0.4575 | 0.5113 | 0.0538 | 0.0538 | see above |
 | 1b | (pilot, late billing) | — | 0.5113 | 0.5261 | 0.0148 | 0.0686 | the pilot's charges kept arriving after the first reading; pilot total = **$0.0686** |
 | 2 | MuSiQue full index (11,656 passages) | 2.80 | 0.5261 | 3.9131 | **3.3870** | **3.4556** | 13,043 new LLM responses (11,654 extractions + 1,588 community summaries − 199 pilot hits); ≈ $0.00028 per extraction, 1.4× the pilot rate; 1,390 s |
-| 3 | MuSiQue dev answer-cost probe (S0, 50 dev questions) | 0.01 | | | | | measures the real per-answer cost before re-planning |
+| 3 | MuSiQue dev answer-cost probe (S0, 50 dev questions) | 0.01 | 3.9131 | 3.9185 | **0.0054** | **3.4610** | measures the real per-answer cost before re-planning |
 
 Row 3 actual: **$0.0054** for 50 answers (S0, B = 4,000 chars) → **$0.000108 per answer**.
 Cumulative ≈ **$3.461**.
@@ -58,7 +58,8 @@ from the money actually left.
 | 4 | MuSiQue test: rankings (free) + answers C0,S0,S1,S2,S3,S4,S5 × 800, + retry of 10 timeouts | 0.39 | 4.3118 | 4.6193 | **0.3075** | **4.1618** | answer run reported $0.307; 10 retries $0.0005; S3 ≡ S2 and (by a defect) S4 ≈ S2 → cache hits |
 | 5 | QuALITY index (50 articles) | 0.40 | 3.9185 | 4.2748 | **0.3564** | **3.8173** | 975 chunks, 253 RAPTOR summaries, 9,797 entities, 227 community summaries; ran while MuSiQue test rankings (no LLM) ran |
 | 6 | QuALITY dev tuning of m: S2 + S3 (m = 1, 2, 4) × 193 dev q, then the summary-fix prototype S3 (m = 1, 2, 4) × 193 | 0.11 | 4.2748 | 4.3118 | **0.0370** | **3.8543** | 1,351 dev answers ≈ $0.000027 each (many short MC replies; S3 ≡ S2 before the fix → cache hits) |
-| 7 | QuALITY test: C0, S0–S5 × 722 | 0.30 | 4.6193 | | | | dev MC answers cost ≈ /usr/bin/bash.00003–0.00011 each |
+| 7 | QuALITY test: C0, S0–S5 × 722 | 0.30 | 4.6193 | 5.0616 | **0.4423** | **4.6041** | 5,054 answers, 0 errors ≈ $0.000087 each |
+| 8 | MultiHop-RAG index (609 articles, whole corpus) | 2.00 | 5.0616 | 7.6125 | **2.5509** | **7.1550** | 5,406 chunks, 1,665 RAPTOR summaries, 55,076 entities, 776 community summaries; 1.28× estimate. Left under the guard: $1.345 |
 | 9 | MultiHop-RAG test: C0, S0–S5 × 400 | 0.30 | 7.6125 | 7.8912 | **0.2787** | **7.4337** | 2,800 answers, 0 errors. Left under the guard: $1.066 |
 | 10 | GraphRAG-Bench: 6 novels (241k words), per-novel index | 0.58 | 7.8912 | 8.3821 | **0.4909** | **7.9246** | 1,152 chunks, 297 RAPTOR summaries, 15,529 entities, 670 community summaries. Left under the guard: $0.575 |
 | 11 | GraphRAG-Bench test answers: C0, S0–S5 × 108 (levels 3–4) | 0.10 | 8.3821 | 8.5031 | **0.1210** | **8.0456** | 756 answers, 0 errors |

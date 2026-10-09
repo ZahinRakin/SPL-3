@@ -1,0 +1,112 @@
+{
+  "built_at": "2026-10-08T06:58:31.616616+00:00",
+  "seconds_total": 272.9,
+  "documents": [
+    {
+      "doc": "cybersecurity_case_01_data_breach.txt",
+      "words": 1694,
+      "chunks": 5,
+      "summaries": 6,
+      "seconds": 58.2
+    },
+    {
+      "doc": "environmental_case_01_pollution_liability.txt",
+      "words": 1612,
+      "chunks": 4,
+      "summaries": 6,
+      "seconds": 28.5
+    },
+    {
+      "doc": "finance_case_01_corporate_bankruptcy.txt",
+      "words": 1565,
+      "chunks": 4,
+      "summaries": 6,
+      "seconds": 10.9
+    },
+    {
+      "doc": "legal_case_01_contract_dispute_construction.txt",
+      "words": 1563,
+      "chunks": 4,
+      "summaries": 6,
+      "seconds": 11.1
+    },
+    {
+      "doc": "legal_case_02_criminal_fraud.txt",
+      "words": 1722,
+      "chunks": 5,
+      "summaries": 6,
+      "seconds": 10.1
+    },
+    {
+      "doc": "legal_case_03_employment_discrimination.txt",
+      "words": 1723,
+      "chunks": 5,
+      "summaries": 6,
+      "seconds": 8.3
+    },
+    {
+      "doc": "legal_case_04_intellectual_property.txt",
+      "words": 1730,
+      "chunks": 5,
+      "summaries": 6,
+      "seconds": 9.1
+    },
+    {
+      "doc": "medical_case_01_acute_myocardial_infarction.txt",
+      "words": 764,
+      "chunks": 2,
+      "summaries": 6,
+      "seconds": 8.1
+    },
+    {
+      "doc": "medical_case_02_septic_shock_pneumonia.txt",
+      "words": 1162,
+      "chunks": 3,
+      "summaries": 6,
+      "seconds": 8.5
+    },
+    {
+      "doc": "medical_case_03_type1_diabetes_dka.txt",
+      "words": 1361,
+      "chunks": 4,
+      "summaries": 6,
+      "seconds": 21.8
+    },
+    {
+      "doc": "medical_case_04_stroke_management.txt",
+      "words": 1251,
+      "chunks": 3,
+      "summaries": 6,
+      "seconds": 43.3
+    },
+    {
+      "doc": "medical_case_05_pediatric_leukemia.txt",
+      "words": 1407,
+      "chunks": 4,
+      "summaries": 6,
+      "seconds": 55.0
+    }
+  ],
+  "graph": {
+    "total_entities": 2027,
+    "total_relationships": 1563,
+    "total_communities": 77,
+    "density": 0.0007,
+    "components": 840
+  },
+  "raptor": {
+    "total_nodes": 120,
+    "levels": {
+      "0": 48,
+      "1": 24,
+      "2": 24,
+      "3": 24
+    }
+  },
+  "models": {
+    "llm_provider": "openrouter.ai",
+    "llm_model": "openai/gpt-oss-20b",
+    "embed_provider": "ollama",
+    "embed_model": "nomic-embed-text"
+  }
+}

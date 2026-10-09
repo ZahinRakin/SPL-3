@@ -1,0 +1,110 @@
+## Interpretation
+
+**The null hypothesis was rejected, in the direction opposite to the one the system was designed
+for.** On 200 paired questions, Standard RAG (top-6 chunks by similarity) answered correctly
+significantly more often than Refined RAG (RAPTOR → GraphRAG → HippoRAG Personalized PageRank):
+mean correctness 0.930 vs 0.790, difference −0.140 (95% CI −0.200 to −0.083), Wilcoxon p ≈ 1.2 × 10⁻⁵,
+rank-biserial r = −0.64. Refined was better on 13 questions, worse on 46, and tied on 141.
+
+By question type (exploratory, Holm-adjusted): Refined was worse on **fact** (−0.13, p = 0.025) and
+**summary** (−0.20, p = 0.003) questions. On **relational** (multi-hop) questions, the type the
+graph stage was meant to help, the difference was −0.09 and not significant (p = 0.075). So the
+cascade did not show an advantage on any type in this corpus. All four automatic metrics agree in
+direction with the primary result.
+
+The loss happens at retrieval, not generation. The retrieved context contained the reference's
+key facts in 99.1% of Standard's cases but only 86.7% of Refined's.
+
+## Why Refined lost (post-hoc diagnosis; exploratory, not part of the confirmatory test)
+
+These figures come from `results.jsonl` after grading was complete and saved:
+
+| | Standard | Refined |
+|---|---|---|
+| RAPTOR summaries in the 6 context slots (mean per question) | 0.00 | 3.11 |
+| Original chunks in the 6 context slots (mean per question) | 6.00 | 2.89 |
+| Context included a passage from the question's own document | 200/200 | 198/200 |
+| Answers saying the information is not in the context | 4 | 25 |
+
+Of Refined's 46 losses, 44 had the correct document in the context, but mostly as RAPTOR
+summaries, which compress away the specific numbers, names and dates the questions ask about
+(22 of those 44 answered "not available"). The likely mechanism, predicted before the experiment:
+
+1. **Summary bias in the passage score.** A passage scores the *sum* of the PageRank of the
+   entities it mentions. Summaries cover a whole cluster and mention many entities, so they
+   outrank the detailed chunk that actually holds the answer.
+2. **Too many, redundant summaries.** RAPTOR's clustering never uses fewer than 2 clusters and
+   always builds 3 levels, so every document got exactly 6 summaries, even a 2-chunk document.
+   Many are near-duplicates of a single chunk, and they take context slots without adding detail.
+3. **Cross-document confusion is not specific to either system.** The corpus deliberately contains
+   name collisions (two companies named "Meridian"; "Ashford" as a person, a company and a county).
+   Checked after unblinding, both systems made cross-document errors:
+   - *Standard* attributed Meridian **Chemical**'s environmental penalties to Meridian
+     **Healthcare** (FRAUD-S5) and invented an IPR invalidation share (IP-F5).
+   - *Refined* gave the leukemia patient's blood pressure for the STEMI patient (MI-F4) and listed
+     another case's settlement terms as a bankruptcy "lesson" (BANKR-S6).
+
+   So this is not evidence that graph propagation causes confusion; it is a shared weakness of
+   indexing unrelated cases together.
+4. **Keyword-matched seeds.** Question entities are matched by name words, so paraphrases
+   ("the auditor") seed nothing, and the weaker similarity-based seeds dominate.
+
+These are hypotheses consistent with the data, not tested causes. Testing them requires changes
+to the algorithm, and **any such change must be evaluated on a new question set.** Re-running
+this set after tuning would overfit to it and invalidate the comparison.
+
+## What this means for the project
+
+- The conclusion to report is: *in this implementation and on this corpus, the cascaded pipeline
+  was less accurate than plain RAG, mainly because the ranking stage preferred summaries over the
+  detailed passages that contain the answers.* It used about a third less context and was slightly
+  faster.
+- Candidate improvements to evaluate on a fresh question set:
+  - Normalise the PageRank passage score by the number of entities, or average it, instead of summing.
+  - Reserve most slots for chunks, or expand a selected summary into its child chunks (RAPTOR tree traversal).
+  - Blend PageRank with similarity, as in HippoRAG 2.
+  - Link question entities with embeddings or an LLM rather than name keywords.
+  - Let RAPTOR stop clustering when a document has few chunks.
+
+## Deviations from the protocol
+
+1. **Indexing crash and restart.** The first run (`run_attempt1_crashed.log`) crashed while
+   indexing the 7th document: the LLM returned some entities as bare strings instead of objects,
+   and `GraphRAGIndexer.index_document` assumed objects. This was a pre-existing robustness bug
+   (the live app would also have failed that upload). It was fixed in
+   `backend/pipeline/graphrag_indexer.py` (`_clean_extraction`: convert bare strings, drop
+   malformed items, log a warning) **before any answer was generated**, and the run was restarted
+   from scratch. In the final run the cleaner repaired 2 extractions (10 bare-string entities
+   converted, 1 item dropped). One RAPTOR summary call failed and fell back to truncated text (D6).
+2. **Grading rules made precise during grading.** The protocol rubric (0 / 0.5 / 1) was applied
+   with these clarifications, all fixed early (batches 1 and 8) and applied blind to both systems:
+   - errors in content the question did not ask about were not penalised unless they contradicted the evidence;
+   - an error or misattribution inside the asked content limits the score to 0.5;
+   - list-type answers score 1 when they cover about 80% or more of the main points with none of the central ones missing;
+   - an answer that contradicts the evidence on the asked point and covers less than half of it scores 0.
+3. **Document inconsistencies** were handled by accepting either value: the fraud case gives 14 years
+   (overview) and 144 months (sentencing); the breach case says "17-day" dwell time while its dates
+   give 16 days. The remediation total ($94M vs $81.7M) was avoided when writing questions.
+4. **Implementation details not in the protocol.** `QueryEngine.query` now also returns the
+   retrieved `context` (needed for context recall; not part of the HTTP response). `scipy` was added
+   to `requirements.txt` (approved by the owner). The `punkt_tab` NLTK data was downloaded for
+   `evaluation/eval.py` (unrelated to this analysis).
+
+## Limitations
+
+- **Grader independence.** The grader (Claude) wrote the question set and the system. Answers
+  were graded from a shuffled file without system labels, and the grades file was hashed
+  (`judging/grading_completed_at.txt`) before the key was opened. Still, each question's two
+  answers appeared in the same file, and style (e.g., Refined's "not available" answers or graph-fact
+  listings) could sometimes hint at the system. There is no second annotator, so no inter-rater
+  agreement figure. A human re-grading of a random subset would strengthen the result.
+- **One run, one model, one corpus.** One generation per question at temperature 0.3, with
+  gpt-oss-20b as the generator, over 12 synthetic case files (about 15,000 words) with
+  deliberate name collisions. The effect size could differ with a stronger generator, longer
+  documents, or a corpus with richer cross-document links, where graph methods are reported to
+  help most.
+- **Question style.** Most questions name the case precisely ("the 58-year-old STEMI patient"),
+  which suits similarity search. Investigators' real questions may be vaguer or more
+  cross-document.
+- **Key-fact metrics** use substring matching, and some key facts are short numbers ("6", "14")
+  that can match by chance. They are secondary measures only.

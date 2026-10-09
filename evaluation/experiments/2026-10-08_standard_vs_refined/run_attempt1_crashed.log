@@ -1,0 +1,576 @@
+2026-10-08 12:51:32,132 | INFO | === run started: 200 questions, 12 documents, models={'llm_provider': 'openrouter.ai', 'llm_model': 'openai/gpt-oss-20b', 'embed_provider': 'ollama', 'embed_model': 'nomic-embed-text'}
+2026-10-08 12:51:32,132 | DEBUG | extract_text: file='data\\input\\sample_cases\\cybersecurity_case_01_data_breach.txt', ext='.txt', content_type=''
+2026-10-08 12:51:32,132 | DEBUG | Plain-text extraction complete: 14329 chars from 'data\\input\\sample_cases\\cybersecurity_case_01_data_breach.txt'
+2026-10-08 12:51:32,132 | DEBUG | chunk_text: doc_id='cybersecurity_case_01_data_breach', words=1694, chunks=5
+2026-10-08 12:51:32,132 | INFO | RaptorRunner.build_tree: 5 chunks, max_levels=3
+2026-10-08 12:51:32,132 | DEBUG | embed_many: task_type=retrieval_document, texts=5
+2026-10-08 12:51:36,951 | DEBUG | embed_many complete: 5 vectors
+2026-10-08 12:51:36,951 | DEBUG | RaptorRunner: 5 leaf nodes created
+2026-10-08 12:51:36,951 | DEBUG | RaptorRunner: level=1, nodes=5, clusters=2
+2026-10-08 12:51:38,969 | DEBUG | generate: json_mode=False, prompt_len=2535
+2026-10-08 12:51:38,969 | DEBUG | generate: json_mode=False, prompt_len=230
+2026-10-08 12:51:38,969 | INFO | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-08 12:51:41,758 | DEBUG | generate complete: response_len=2265
+2026-10-08 12:51:41,826 | DEBUG | generate complete: response_len=2524
+2026-10-08 12:51:41,826 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:41,913 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:41,914 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:51:42,169 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:42,169 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:42,853 | DEBUG | generate complete: response_len=473
+2026-10-08 12:51:43,513 | DEBUG | generate complete: response_len=721
+2026-10-08 12:51:43,513 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:43,588 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:43,588 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:51:43,838 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:43,838 | DEBUG | generate: json_mode=False, prompt_len=598
+2026-10-08 12:51:44,486 | DEBUG | generate complete: response_len=473
+2026-10-08 12:51:44,620 | DEBUG | generate complete: response_len=721
+2026-10-08 12:51:44,620 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:44,669 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:44,673 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 11, 'levels': {0: 5, 1: 2, 2: 2, 3: 2}}
+2026-10-08 12:51:44,673 | INFO | index_document: doc_id='cybersecurity_case_01_data_breach', passages=11
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=4688
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=4299
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=4768
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=4290
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=629
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=2778
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=3037
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=1234
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=986
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=1234
+2026-10-08 12:51:44,673 | DEBUG | generate: json_mode=True, prompt_len=986
+2026-10-08 12:51:46,298 | DEBUG | generate complete: response_len=2077
+2026-10-08 12:51:46,298 | DEBUG | _extract chunk='c5fa5ae6-38b7-4cdf-bdf8-10b6719c79a2': 7 entities, 6 relationships
+2026-10-08 12:51:46,628 | DEBUG | generate complete: response_len=5389
+2026-10-08 12:51:46,628 | DEBUG | _extract chunk='d151be61-dfe3-4cad-8251-3e191f45797e': 42 entities, 11 relationships
+2026-10-08 12:51:46,691 | DEBUG | generate complete: response_len=4126
+2026-10-08 12:51:46,693 | DEBUG | _extract chunk='3b99f11d-7676-4169-9c7a-2a716e9add2a': 17 entities, 12 relationships
+2026-10-08 12:51:46,699 | DEBUG | generate complete: response_len=4026
+2026-10-08 12:51:46,699 | DEBUG | _extract chunk='68a81b7c-c8f7-4844-a1ad-093be30fc4e8': 17 entities, 15 relationships
+2026-10-08 12:51:46,844 | DEBUG | generate complete: response_len=6110
+2026-10-08 12:51:46,844 | DEBUG | _extract chunk='c3cb4f48-cdb9-4a82-8748-dabe41216d2e': 27 entities, 23 relationships
+2026-10-08 12:51:47,535 | DEBUG | generate complete: response_len=5468
+2026-10-08 12:51:47,535 | DEBUG | _extract chunk='da06c3d3-14f0-4b9b-a6da-fb085e587a13': 14 entities, 18 relationships
+2026-10-08 12:51:47,651 | DEBUG | generate complete: response_len=6471
+2026-10-08 12:51:47,651 | DEBUG | _extract chunk='b3d70f4a-9c12-46c5-8793-bd5f01ad1562': 26 entities, 18 relationships
+2026-10-08 12:51:47,973 | DEBUG | generate complete: response_len=9860
+2026-10-08 12:51:47,973 | DEBUG | _extract chunk='6ef476c4-a253-401b-8474-c8e341c2f8b7': 58 entities, 18 relationships
+2026-10-08 12:51:48,090 | DEBUG | generate complete: response_len=3513
+2026-10-08 12:51:48,090 | DEBUG | _extract chunk='96979a86-47e5-4bdd-8508-71bd3f024c75': 13 entities, 11 relationships
+2026-10-08 12:51:48,154 | DEBUG | generate complete: response_len=3410
+2026-10-08 12:51:48,154 | DEBUG | _extract chunk='52c8135c-414f-4b50-be60-d13ffde46597': 16 entities, 12 relationships
+2026-10-08 12:51:49,535 | DEBUG | generate complete: response_len=16864
+2026-10-08 12:51:49,535 | DEBUG | _extract chunk='ce6c977d-e5ad-400d-8b7c-f19d3551b2a3': 79 entities, 59 relationships
+2026-10-08 12:51:49,551 | INFO | index_document complete: doc_id='cybersecurity_case_01_data_breach', new_entities=247, new_relationships=143, graph_nodes=247
+2026-10-08 12:51:49,551 | INFO | _detect_communities: running Louvain on 247 nodes
+2026-10-08 12:51:49,567 | INFO | _detect_communities: 120 communities found, 0 summaries reused, 19 to summarise
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=299
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=205
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=176
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=219
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=249
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=216
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=185
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=155
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=178
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=148
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=176
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=203
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=145
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=135
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=183
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=207
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=207
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=527
+2026-10-08 12:51:49,567 | DEBUG | generate: json_mode=False, prompt_len=506
+2026-10-08 12:51:50,418 | DEBUG | generate complete: response_len=445
+2026-10-08 12:51:50,464 | DEBUG | generate complete: response_len=655
+2026-10-08 12:51:50,507 | DEBUG | generate complete: response_len=570
+2026-10-08 12:51:50,852 | DEBUG | generate complete: response_len=387
+2026-10-08 12:51:50,876 | DEBUG | generate complete: response_len=343
+2026-10-08 12:51:50,877 | DEBUG | generate complete: response_len=433
+2026-10-08 12:51:50,877 | DEBUG | generate complete: response_len=464
+2026-10-08 12:51:50,882 | DEBUG | generate complete: response_len=536
+2026-10-08 12:51:50,940 | DEBUG | generate complete: response_len=616
+2026-10-08 12:51:50,949 | DEBUG | generate complete: response_len=615
+2026-10-08 12:51:50,954 | DEBUG | generate complete: response_len=482
+2026-10-08 12:51:50,983 | DEBUG | generate complete: response_len=447
+2026-10-08 12:51:50,997 | DEBUG | generate complete: response_len=545
+2026-10-08 12:51:51,121 | DEBUG | generate complete: response_len=464
+2026-10-08 12:51:51,267 | DEBUG | generate complete: response_len=649
+2026-10-08 12:51:51,502 | DEBUG | generate complete: response_len=516
+2026-10-08 12:51:51,621 | DEBUG | generate complete: response_len=422
+2026-10-08 12:51:51,740 | DEBUG | generate complete: response_len=650
+2026-10-08 12:51:53,474 | DEBUG | generate complete: response_len=612
+2026-10-08 12:51:53,474 | INFO | Indexed cybersecurity_case_01_data_breach.txt: 5 chunks, 6 summaries, 21.3s
+2026-10-08 12:51:53,474 | DEBUG | extract_text: file='data\\input\\sample_cases\\environmental_case_01_pollution_liability.txt', ext='.txt', content_type=''
+2026-10-08 12:51:53,486 | DEBUG | Plain-text extraction complete: 13453 chars from 'data\\input\\sample_cases\\environmental_case_01_pollution_liability.txt'
+2026-10-08 12:51:53,490 | DEBUG | chunk_text: doc_id='environmental_case_01_pollution_liability', words=1612, chunks=4
+2026-10-08 12:51:53,490 | INFO | RaptorRunner.build_tree: 4 chunks, max_levels=3
+2026-10-08 12:51:53,490 | DEBUG | embed_many: task_type=retrieval_document, texts=4
+2026-10-08 12:51:53,788 | DEBUG | embed_many complete: 4 vectors
+2026-10-08 12:51:53,788 | DEBUG | RaptorRunner: 4 leaf nodes created
+2026-10-08 12:51:53,788 | DEBUG | RaptorRunner: level=1, nodes=4, clusters=2
+2026-10-08 12:51:54,019 | DEBUG | generate: json_mode=False, prompt_len=1928
+2026-10-08 12:51:54,019 | DEBUG | generate: json_mode=False, prompt_len=714
+2026-10-08 12:51:55,082 | DEBUG | generate complete: response_len=1432
+2026-10-08 12:51:55,260 | DEBUG | generate complete: response_len=2335
+2026-10-08 12:51:55,261 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:55,341 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:55,342 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:51:55,609 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:55,609 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:56,370 | DEBUG | generate complete: response_len=639
+2026-10-08 12:51:57,972 | DEBUG | generate complete: response_len=629
+2026-10-08 12:51:57,972 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:58,161 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:58,161 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:51:58,383 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:58,383 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:51:59,020 | DEBUG | generate complete: response_len=594
+2026-10-08 12:51:59,036 | DEBUG | generate complete: response_len=577
+2026-10-08 12:51:59,036 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:51:59,204 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:51:59,204 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 21, 'levels': {0: 9, 1: 4, 2: 4, 3: 4}}
+2026-10-08 12:51:59,204 | INFO | index_document: doc_id='environmental_case_01_pollution_liability', passages=10
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=4706
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=4378
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=4585
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=3517
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=2848
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=1945
+2026-10-08 12:51:59,204 | DEBUG | generate: json_mode=True, prompt_len=1142
+2026-10-08 12:51:59,205 | DEBUG | generate: json_mode=True, prompt_len=1152
+2026-10-08 12:51:59,205 | DEBUG | generate: json_mode=True, prompt_len=1090
+2026-10-08 12:51:59,205 | DEBUG | generate: json_mode=True, prompt_len=1107
+2026-10-08 12:52:00,731 | DEBUG | generate complete: response_len=3867
+2026-10-08 12:52:00,731 | DEBUG | _extract chunk='034e168e-bc51-4f6a-97bf-83b40b310662': 15 entities, 12 relationships
+2026-10-08 12:52:00,803 | DEBUG | generate complete: response_len=2829
+2026-10-08 12:52:00,803 | DEBUG | _extract chunk='4334fb5b-0532-4af2-8a9b-64e55d59128c': 12 entities, 8 relationships
+2026-10-08 12:52:01,070 | DEBUG | generate complete: response_len=3651
+2026-10-08 12:52:01,070 | DEBUG | _extract chunk='71865ef7-a6ce-4051-b8e8-8ecbc3fd8744': 14 entities, 11 relationships
+2026-10-08 12:52:01,257 | DEBUG | generate complete: response_len=7083
+2026-10-08 12:52:01,257 | DEBUG | _extract chunk='a4a1b995-bee4-4aff-9f0e-4dba6005d907': 28 entities, 19 relationships
+2026-10-08 12:52:01,348 | DEBUG | generate complete: response_len=4202
+2026-10-08 12:52:01,348 | DEBUG | _extract chunk='0c94f90c-f384-4e04-92af-694d73b05b05': 16 entities, 13 relationships
+2026-10-08 12:52:01,980 | DEBUG | generate complete: response_len=7675
+2026-10-08 12:52:01,980 | DEBUG | _extract chunk='145a3af8-61c9-4071-a140-4f1ff4132f04': 28 entities, 27 relationships
+2026-10-08 12:52:02,058 | DEBUG | generate complete: response_len=5227
+2026-10-08 12:52:02,058 | DEBUG | _extract chunk='1cb503f3-5e30-438e-8ba9-f227c864d5fc': 25 entities, 13 relationships
+2026-10-08 12:52:02,420 | DEBUG | generate complete: response_len=10393
+2026-10-08 12:52:02,420 | DEBUG | _extract chunk='39f1d5b3-5954-4818-be1b-3b48407270ed': 45 entities, 33 relationships
+2026-10-08 12:52:02,804 | DEBUG | generate complete: response_len=12403
+2026-10-08 12:52:02,804 | DEBUG | _extract chunk='a5bcb4b5-324a-467b-b6d4-0652af3ea7a9': 49 entities, 42 relationships
+2026-10-08 12:52:03,537 | DEBUG | generate complete: response_len=14607
+2026-10-08 12:52:03,537 | DEBUG | _extract chunk='355a2216-a978-409e-81ac-4e4946f21db6': 51 entities, 48 relationships
+2026-10-08 12:52:03,539 | INFO | index_document complete: doc_id='environmental_case_01_pollution_liability', new_entities=204, new_relationships=157, graph_nodes=451
+2026-10-08 12:52:03,540 | INFO | _detect_communities: running Louvain on 451 nodes
+2026-10-08 12:52:03,553 | INFO | _detect_communities: 185 communities found, 17 summaries reused, 10 to summarise
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=527
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=686
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=337
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=193
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=615
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=237
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=598
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=633
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=178
+2026-10-08 12:52:03,553 | DEBUG | generate: json_mode=False, prompt_len=177
+2026-10-08 12:52:04,241 | DEBUG | generate complete: response_len=579
+2026-10-08 12:52:04,297 | DEBUG | generate complete: response_len=608
+2026-10-08 12:52:04,313 | DEBUG | generate complete: response_len=661
+2026-10-08 12:52:04,329 | DEBUG | generate complete: response_len=873
+2026-10-08 12:52:04,361 | DEBUG | generate complete: response_len=684
+2026-10-08 12:52:04,500 | DEBUG | generate complete: response_len=488
+2026-10-08 12:52:04,533 | DEBUG | generate complete: response_len=750
+2026-10-08 12:52:04,751 | DEBUG | generate complete: response_len=454
+2026-10-08 12:52:04,900 | DEBUG | generate complete: response_len=401
+2026-10-08 12:52:05,034 | DEBUG | generate complete: response_len=588
+2026-10-08 12:52:05,034 | INFO | Indexed environmental_case_01_pollution_liability.txt: 4 chunks, 6 summaries, 11.6s
+2026-10-08 12:52:05,034 | DEBUG | extract_text: file='data\\input\\sample_cases\\finance_case_01_corporate_bankruptcy.txt', ext='.txt', content_type=''
+2026-10-08 12:52:05,034 | DEBUG | Plain-text extraction complete: 12988 chars from 'data\\input\\sample_cases\\finance_case_01_corporate_bankruptcy.txt'
+2026-10-08 12:52:05,034 | DEBUG | chunk_text: doc_id='finance_case_01_corporate_bankruptcy', words=1565, chunks=4
+2026-10-08 12:52:05,034 | INFO | RaptorRunner.build_tree: 4 chunks, max_levels=3
+2026-10-08 12:52:05,034 | DEBUG | embed_many: task_type=retrieval_document, texts=4
+2026-10-08 12:52:05,466 | DEBUG | embed_many complete: 4 vectors
+2026-10-08 12:52:05,466 | DEBUG | RaptorRunner: 4 leaf nodes created
+2026-10-08 12:52:05,466 | DEBUG | RaptorRunner: level=1, nodes=4, clusters=2
+2026-10-08 12:52:05,728 | DEBUG | generate: json_mode=False, prompt_len=1928
+2026-10-08 12:52:05,729 | DEBUG | generate: json_mode=False, prompt_len=714
+2026-10-08 12:52:06,785 | DEBUG | generate complete: response_len=1325
+2026-10-08 12:52:07,059 | DEBUG | generate complete: response_len=1793
+2026-10-08 12:52:07,059 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:07,115 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:07,115 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:52:07,472 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:07,472 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:08,181 | DEBUG | generate complete: response_len=590
+2026-10-08 12:52:08,250 | DEBUG | generate complete: response_len=635
+2026-10-08 12:52:08,250 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:08,313 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:08,313 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:52:08,611 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:08,611 | DEBUG | generate: json_mode=False, prompt_len=715
+2026-10-08 12:52:09,209 | DEBUG | generate complete: response_len=400
+2026-10-08 12:52:11,922 | DEBUG | generate complete: response_len=588
+2026-10-08 12:52:11,922 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:12,108 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:12,108 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 31, 'levels': {0: 13, 1: 6, 2: 6, 3: 6}}
+2026-10-08 12:52:12,108 | INFO | index_document: doc_id='finance_case_01_corporate_bankruptcy', passages=10
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=4657
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=4385
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=4303
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=3059
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=2306
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=1838
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=1148
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=1103
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=1101
+2026-10-08 12:52:12,108 | DEBUG | generate: json_mode=True, prompt_len=913
+2026-10-08 12:52:13,613 | DEBUG | generate complete: response_len=2968
+2026-10-08 12:52:13,614 | DEBUG | _extract chunk='7d2b0ec9-ef31-4bda-91b8-23593c1f5ff8': 11 entities, 11 relationships
+2026-10-08 12:52:13,721 | DEBUG | generate complete: response_len=3101
+2026-10-08 12:52:13,721 | DEBUG | _extract chunk='e994b3d1-88e5-48e7-aa98-bb1fa0cc1ceb': 11 entities, 10 relationships
+2026-10-08 12:52:13,735 | DEBUG | generate complete: response_len=2725
+2026-10-08 12:52:13,735 | DEBUG | _extract chunk='cd380dd5-cf00-4f42-9898-73d83f602f32': 10 entities, 11 relationships
+2026-10-08 12:52:13,783 | DEBUG | generate complete: response_len=3068
+2026-10-08 12:52:13,783 | DEBUG | _extract chunk='8a5a0357-3ac3-4d75-aefb-4dfb044c2074': 15 entities, 6 relationships
+2026-10-08 12:52:14,317 | DEBUG | generate complete: response_len=6429
+2026-10-08 12:52:14,317 | DEBUG | _extract chunk='142fcff1-a84f-48ea-a7e1-7c7e6a29720f': 23 entities, 22 relationships
+2026-10-08 12:52:14,327 | DEBUG | generate complete: response_len=4824
+2026-10-08 12:52:14,327 | DEBUG | _extract chunk='1157588c-7746-482e-ac26-86e0a7971864': 21 entities, 16 relationships
+2026-10-08 12:52:14,663 | DEBUG | generate complete: response_len=8288
+2026-10-08 12:52:14,663 | DEBUG | _extract chunk='e6782663-deaf-4d67-9a87-7efc19617153': 32 entities, 33 relationships
+2026-10-08 12:52:14,793 | DEBUG | generate complete: response_len=8993
+2026-10-08 12:52:14,793 | DEBUG | _extract chunk='ce943452-57be-4c84-97cd-0345f0b97a15': 52 entities, 25 relationships
+2026-10-08 12:52:16,185 | DEBUG | generate complete: response_len=15283
+2026-10-08 12:52:16,185 | DEBUG | _extract chunk='2ee25ba4-6c2d-4534-98a1-14c342c97c06': 78 entities, 41 relationships
+2026-10-08 12:52:16,392 | DEBUG | generate complete: response_len=12308
+2026-10-08 12:52:16,394 | DEBUG | _extract chunk='48647356-35b9-4b9f-b488-3bfa93d29f5b': 63 entities, 39 relationships
+2026-10-08 12:52:16,397 | INFO | index_document complete: doc_id='finance_case_01_corporate_bankruptcy', new_entities=203, new_relationships=113, graph_nodes=654
+2026-10-08 12:52:16,397 | INFO | _detect_communities: running Louvain on 654 nodes
+2026-10-08 12:52:16,404 | INFO | _detect_communities: 290 communities found, 24 summaries reused, 8 to summarise
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=686
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=628
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=499
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=166
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=165
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=176
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=166
+2026-10-08 12:52:16,404 | DEBUG | generate: json_mode=False, prompt_len=434
+2026-10-08 12:52:17,229 | DEBUG | generate complete: response_len=594
+2026-10-08 12:52:17,245 | DEBUG | generate complete: response_len=582
+2026-10-08 12:52:17,245 | DEBUG | generate complete: response_len=874
+2026-10-08 12:52:17,261 | DEBUG | generate complete: response_len=482
+2026-10-08 12:52:17,261 | DEBUG | generate complete: response_len=617
+2026-10-08 12:52:17,279 | DEBUG | generate complete: response_len=393
+2026-10-08 12:52:17,332 | DEBUG | generate complete: response_len=576
+2026-10-08 12:52:17,799 | DEBUG | generate complete: response_len=552
+2026-10-08 12:52:17,799 | INFO | Indexed finance_case_01_corporate_bankruptcy.txt: 4 chunks, 6 summaries, 12.8s
+2026-10-08 12:52:17,799 | DEBUG | extract_text: file='data\\input\\sample_cases\\legal_case_01_contract_dispute_construction.txt', ext='.txt', content_type=''
+2026-10-08 12:52:17,799 | DEBUG | Plain-text extraction complete: 12656 chars from 'data\\input\\sample_cases\\legal_case_01_contract_dispute_construction.txt'
+2026-10-08 12:52:17,799 | DEBUG | chunk_text: doc_id='legal_case_01_contract_dispute_construction', words=1563, chunks=4
+2026-10-08 12:52:17,799 | INFO | RaptorRunner.build_tree: 4 chunks, max_levels=3
+2026-10-08 12:52:17,799 | DEBUG | embed_many: task_type=retrieval_document, texts=4
+2026-10-08 12:52:18,202 | DEBUG | embed_many complete: 4 vectors
+2026-10-08 12:52:18,202 | DEBUG | RaptorRunner: 4 leaf nodes created
+2026-10-08 12:52:18,202 | DEBUG | RaptorRunner: level=1, nodes=4, clusters=2
+2026-10-08 12:52:18,435 | DEBUG | generate: json_mode=False, prompt_len=1321
+2026-10-08 12:52:18,435 | DEBUG | generate: json_mode=False, prompt_len=1321
+2026-10-08 12:52:19,366 | DEBUG | generate complete: response_len=1080
+2026-10-08 12:52:19,966 | DEBUG | generate complete: response_len=2076
+2026-10-08 12:52:19,966 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:20,033 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:20,033 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:52:20,262 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:20,262 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:20,896 | DEBUG | generate complete: response_len=429
+2026-10-08 12:52:21,165 | DEBUG | generate complete: response_len=555
+2026-10-08 12:52:21,165 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:21,225 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:21,225 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:52:21,449 | DEBUG | generate: json_mode=False, prompt_len=554
+2026-10-08 12:52:21,449 | DEBUG | generate: json_mode=False, prompt_len=680
+2026-10-08 12:52:22,094 | DEBUG | generate complete: response_len=444
+2026-10-08 12:52:22,180 | DEBUG | generate complete: response_len=556
+2026-10-08 12:52:22,180 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:22,282 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:22,283 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 41, 'levels': {0: 17, 1: 8, 2: 8, 3: 8}}
+2026-10-08 12:52:22,283 | INFO | index_document: doc_id='legal_case_01_contract_dispute_construction', passages=10
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=4557
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=4326
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=4532
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=3121
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=1593
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=2589
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=942
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=1068
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=957
+2026-10-08 12:52:22,283 | DEBUG | generate: json_mode=True, prompt_len=1069
+2026-10-08 12:52:23,721 | DEBUG | generate complete: response_len=3259
+2026-10-08 12:52:23,721 | DEBUG | _extract chunk='6c19dee5-9a4e-4464-a15d-020a1027a49f': 14 entities, 11 relationships
+2026-10-08 12:52:23,867 | DEBUG | generate complete: response_len=3365
+2026-10-08 12:52:23,867 | DEBUG | _extract chunk='5557ef49-5e24-401e-8a57-53ba6493b629': 13 entities, 11 relationships
+2026-10-08 12:52:24,013 | DEBUG | generate complete: response_len=3391
+2026-10-08 12:52:24,013 | DEBUG | _extract chunk='9fb24bb9-2a56-4e44-aae5-ef8587e09630': 11 entities, 9 relationships
+2026-10-08 12:52:24,103 | DEBUG | generate complete: response_len=2859
+2026-10-08 12:52:24,103 | DEBUG | _extract chunk='12ef9ac6-8323-44d2-b0ef-a4ab4c520841': 13 entities, 9 relationships
+2026-10-08 12:52:24,139 | DEBUG | generate complete: response_len=4132
+2026-10-08 12:52:24,139 | DEBUG | _extract chunk='a0342d33-87d9-480c-b616-3fc6ab857f4d': 11 entities, 16 relationships
+2026-10-08 12:52:24,145 | DEBUG | generate complete: response_len=5757
+2026-10-08 12:52:24,145 | DEBUG | _extract chunk='65c35bc5-e18a-487b-8276-883c4132fb4a': 29 entities, 16 relationships
+2026-10-08 12:52:24,256 | DEBUG | generate complete: response_len=5152
+2026-10-08 12:52:24,256 | DEBUG | _extract chunk='d10f82a9-d6dd-486e-9eb0-6ec5096ef6f0': 19 entities, 18 relationships
+2026-10-08 12:52:24,652 | DEBUG | generate complete: response_len=4781
+2026-10-08 12:52:24,652 | DEBUG | _extract chunk='fc61aa1d-9902-4553-bb31-6ef07b9c7b42': 23 entities, 13 relationships
+2026-10-08 12:52:24,904 | DEBUG | generate complete: response_len=7201
+2026-10-08 12:52:24,904 | DEBUG | _extract chunk='5afcd2d9-a738-47c0-9314-1305b164edb5': 34 entities, 21 relationships
+2026-10-08 12:52:25,364 | DEBUG | generate complete: response_len=7897
+2026-10-08 12:52:25,365 | DEBUG | _extract chunk='2034d660-c29d-48d1-a782-0ec377c13e22': 28 entities, 27 relationships
+2026-10-08 12:52:25,367 | INFO | index_document complete: doc_id='legal_case_01_contract_dispute_construction', new_entities=134, new_relationships=90, graph_nodes=788
+2026-10-08 12:52:25,367 | INFO | _detect_communities: running Louvain on 788 nodes
+2026-10-08 12:52:25,382 | INFO | _detect_communities: 346 communities found, 29 summaries reused, 4 to summarise
+2026-10-08 12:52:25,382 | DEBUG | generate: json_mode=False, prompt_len=497
+2026-10-08 12:52:25,382 | DEBUG | generate: json_mode=False, prompt_len=458
+2026-10-08 12:52:25,382 | DEBUG | generate: json_mode=False, prompt_len=585
+2026-10-08 12:52:25,382 | DEBUG | generate: json_mode=False, prompt_len=300
+2026-10-08 12:52:26,094 | DEBUG | generate complete: response_len=466
+2026-10-08 12:52:26,136 | DEBUG | generate complete: response_len=666
+2026-10-08 12:52:26,142 | DEBUG | generate complete: response_len=475
+2026-10-08 12:52:26,159 | DEBUG | generate complete: response_len=598
+2026-10-08 12:52:26,159 | INFO | Indexed legal_case_01_contract_dispute_construction.txt: 4 chunks, 6 summaries, 8.4s
+2026-10-08 12:52:26,161 | DEBUG | extract_text: file='data\\input\\sample_cases\\legal_case_02_criminal_fraud.txt', ext='.txt', content_type=''
+2026-10-08 12:52:26,167 | DEBUG | Plain-text extraction complete: 14415 chars from 'data\\input\\sample_cases\\legal_case_02_criminal_fraud.txt'
+2026-10-08 12:52:26,167 | DEBUG | chunk_text: doc_id='legal_case_02_criminal_fraud', words=1722, chunks=5
+2026-10-08 12:52:26,167 | INFO | RaptorRunner.build_tree: 5 chunks, max_levels=3
+2026-10-08 12:52:26,167 | DEBUG | embed_many: task_type=retrieval_document, texts=5
+2026-10-08 12:52:26,595 | DEBUG | embed_many complete: 5 vectors
+2026-10-08 12:52:26,595 | DEBUG | RaptorRunner: 5 leaf nodes created
+2026-10-08 12:52:26,595 | DEBUG | RaptorRunner: level=1, nodes=5, clusters=2
+2026-10-08 12:52:26,813 | DEBUG | generate: json_mode=False, prompt_len=2535
+2026-10-08 12:52:26,815 | DEBUG | generate: json_mode=False, prompt_len=409
+2026-10-08 12:52:28,227 | DEBUG | generate complete: response_len=2432
+2026-10-08 12:52:28,534 | DEBUG | generate complete: response_len=3054
+2026-10-08 12:52:28,534 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:28,697 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:28,697 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:52:28,904 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:28,904 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:29,600 | DEBUG | generate complete: response_len=447
+2026-10-08 12:52:29,617 | DEBUG | generate complete: response_len=684
+2026-10-08 12:52:29,617 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:29,681 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:29,681 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:52:29,903 | DEBUG | generate: json_mode=False, prompt_len=572
+2026-10-08 12:52:29,904 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:30,482 | DEBUG | generate complete: response_len=360
+2026-10-08 12:52:30,556 | DEBUG | generate complete: response_len=646
+2026-10-08 12:52:30,556 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:30,667 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:30,668 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 52, 'levels': {0: 22, 1: 10, 2: 10, 3: 10}}
+2026-10-08 12:52:30,668 | INFO | index_document: doc_id='legal_case_02_criminal_fraud', passages=11
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=4678
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=4583
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=4655
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=4421
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=808
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=2945
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=3567
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=960
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=1197
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=873
+2026-10-08 12:52:30,668 | DEBUG | generate: json_mode=True, prompt_len=1159
+2026-10-08 12:52:31,926 | DEBUG | generate complete: response_len=2316
+2026-10-08 12:52:31,926 | DEBUG | _extract chunk='bd3e2fff-29f3-4c01-bd30-e934dd9396a4': 9 entities, 8 relationships
+2026-10-08 12:52:32,149 | DEBUG | generate complete: response_len=2715
+2026-10-08 12:52:32,149 | DEBUG | _extract chunk='4ddab7bc-172b-4105-8f81-6f5bb1c50da1': 12 entities, 6 relationships
+2026-10-08 12:52:32,180 | DEBUG | generate complete: response_len=3244
+2026-10-08 12:52:32,180 | DEBUG | _extract chunk='9ae26d03-c125-43fd-9e4e-5d0e321f1461': 12 entities, 10 relationships
+2026-10-08 12:52:32,556 | DEBUG | generate complete: response_len=4294
+2026-10-08 12:52:32,556 | DEBUG | _extract chunk='18f7dd92-5827-4d68-ba3d-4625004e609c': 19 entities, 13 relationships
+2026-10-08 12:52:32,683 | DEBUG | generate complete: response_len=3811
+2026-10-08 12:52:32,683 | DEBUG | _extract chunk='afe47bcb-8587-4f9c-9317-51e87f754854': 15 entities, 12 relationships
+2026-10-08 12:52:33,046 | DEBUG | generate complete: response_len=7734
+2026-10-08 12:52:33,046 | DEBUG | _extract chunk='debf693f-0aa0-44cf-a9ac-7b54753d8cef': 27 entities, 28 relationships
+2026-10-08 12:52:33,236 | DEBUG | generate complete: response_len=7674
+2026-10-08 12:52:33,236 | DEBUG | _extract chunk='90ce5963-64a0-49cf-b14e-2c62632727a2': 35 entities, 29 relationships
+2026-10-08 12:52:33,478 | DEBUG | generate complete: response_len=10642
+2026-10-08 12:52:33,478 | DEBUG | _extract chunk='0edb15e8-a604-4f07-abd5-efd4ecc5b16a': 44 entities, 32 relationships
+2026-10-08 12:52:33,923 | DEBUG | generate complete: response_len=8427
+2026-10-08 12:52:33,923 | DEBUG | _extract chunk='8cadefec-4f3d-4613-9498-2b91c03eb050': 35 entities, 30 relationships
+2026-10-08 12:52:33,939 | DEBUG | generate complete: response_len=8532
+2026-10-08 12:52:33,939 | DEBUG | _extract chunk='eca6d601-ae1f-459d-9e69-d24d8f7a08d1': 36 entities, 23 relationships
+2026-10-08 12:52:39,683 | DEBUG | generate complete: response_len=4191
+2026-10-08 12:52:39,683 | DEBUG | _extract chunk='dc0596ea-0724-407a-9b7e-ecf45ae8a4bd': 13 entities, 8 relationships
+2026-10-08 12:52:39,683 | INFO | index_document complete: doc_id='legal_case_02_criminal_fraud', new_entities=182, new_relationships=142, graph_nodes=970
+2026-10-08 12:52:39,683 | INFO | _detect_communities: running Louvain on 970 nodes
+2026-10-08 12:52:39,709 | INFO | _detect_communities: 425 communities found, 28 summaries reused, 10 to summarise
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=533
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=481
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=696
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=612
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=348
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=464
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=241
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=226
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=313
+2026-10-08 12:52:39,709 | DEBUG | generate: json_mode=False, prompt_len=478
+2026-10-08 12:52:40,454 | DEBUG | generate complete: response_len=572
+2026-10-08 12:52:40,507 | DEBUG | generate complete: response_len=676
+2026-10-08 12:52:40,523 | DEBUG | generate complete: response_len=580
+2026-10-08 12:52:40,570 | DEBUG | generate complete: response_len=710
+2026-10-08 12:52:40,570 | DEBUG | generate complete: response_len=655
+2026-10-08 12:52:40,603 | DEBUG | generate complete: response_len=791
+2026-10-08 12:52:40,646 | DEBUG | generate complete: response_len=620
+2026-10-08 12:52:41,193 | DEBUG | generate complete: response_len=742
+2026-10-08 12:52:41,261 | DEBUG | generate complete: response_len=731
+2026-10-08 12:52:42,289 | DEBUG | generate complete: response_len=595
+2026-10-08 12:52:42,289 | INFO | Indexed legal_case_02_criminal_fraud.txt: 5 chunks, 6 summaries, 16.1s
+2026-10-08 12:52:42,289 | DEBUG | extract_text: file='data\\input\\sample_cases\\legal_case_03_employment_discrimination.txt', ext='.txt', content_type=''
+2026-10-08 12:52:42,297 | DEBUG | Plain-text extraction complete: 13698 chars from 'data\\input\\sample_cases\\legal_case_03_employment_discrimination.txt'
+2026-10-08 12:52:42,297 | DEBUG | chunk_text: doc_id='legal_case_03_employment_discrimination', words=1723, chunks=5
+2026-10-08 12:52:42,297 | INFO | RaptorRunner.build_tree: 5 chunks, max_levels=3
+2026-10-08 12:52:42,297 | DEBUG | embed_many: task_type=retrieval_document, texts=5
+2026-10-08 12:52:42,777 | DEBUG | embed_many complete: 5 vectors
+2026-10-08 12:52:42,777 | DEBUG | RaptorRunner: 5 leaf nodes created
+2026-10-08 12:52:42,777 | DEBUG | RaptorRunner: level=1, nodes=5, clusters=2
+2026-10-08 12:52:43,009 | DEBUG | generate: json_mode=False, prompt_len=2535
+2026-10-08 12:52:43,009 | DEBUG | generate: json_mode=False, prompt_len=404
+2026-10-08 12:52:44,942 | DEBUG | generate complete: response_len=1969
+2026-10-08 12:52:45,069 | DEBUG | generate complete: response_len=2701
+2026-10-08 12:52:45,069 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:45,267 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:45,268 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:52:45,501 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:45,502 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:46,289 | DEBUG | generate complete: response_len=755
+2026-10-08 12:52:47,040 | DEBUG | generate complete: response_len=1353
+2026-10-08 12:52:47,043 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:47,150 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:47,150 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:52:47,363 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:47,363 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:48,149 | DEBUG | generate complete: response_len=906
+2026-10-08 12:52:48,570 | DEBUG | generate complete: response_len=611
+2026-10-08 12:52:48,570 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:48,786 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:48,786 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 63, 'levels': {0: 27, 1: 12, 2: 12, 3: 12}}
+2026-10-08 12:52:48,786 | INFO | index_document: doc_id='legal_case_03_employment_discrimination', passages=11
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=4452
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=4091
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=4411
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=4239
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=803
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=2482
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=3214
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=1268
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=1866
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=1124
+2026-10-08 12:52:48,786 | DEBUG | generate: json_mode=True, prompt_len=1419
+2026-10-08 12:52:50,303 | DEBUG | generate complete: response_len=3744
+2026-10-08 12:52:50,303 | DEBUG | _extract chunk='d14201a4-606e-4407-a73a-7d47f2a23ff7': 13 entities, 14 relationships
+2026-10-08 12:52:50,573 | DEBUG | generate complete: response_len=4857
+2026-10-08 12:52:50,573 | DEBUG | _extract chunk='b3d1ecb4-adb5-45b8-a765-27400338c8b1': 26 entities, 10 relationships
+2026-10-08 12:52:50,748 | DEBUG | generate complete: response_len=5029
+2026-10-08 12:52:50,748 | DEBUG | _extract chunk='4a95a3b0-bd59-4be0-90a9-3d2e9b08461f': 19 entities, 15 relationships
+2026-10-08 12:52:50,861 | DEBUG | generate complete: response_len=6245
+2026-10-08 12:52:50,861 | DEBUG | _extract chunk='21f31214-6db9-45cf-8bb5-772392c92381': 23 entities, 20 relationships
+2026-10-08 12:52:50,909 | DEBUG | generate complete: response_len=5927
+2026-10-08 12:52:50,909 | DEBUG | _extract chunk='02f89668-b167-454f-86e8-b4f3845ad3b5': 26 entities, 19 relationships
+2026-10-08 12:52:50,980 | DEBUG | generate complete: response_len=5276
+2026-10-08 12:52:50,980 | DEBUG | _extract chunk='9348084a-df6b-4f5e-b5ed-c05167f827c0': 12 entities, 11 relationships
+2026-10-08 12:52:51,039 | DEBUG | generate complete: response_len=4563
+2026-10-08 12:52:51,039 | DEBUG | _extract chunk='3df74949-f4cd-41ca-a916-38c4a568a959': 16 entities, 12 relationships
+2026-10-08 12:52:51,115 | DEBUG | generate complete: response_len=2722
+2026-10-08 12:52:51,115 | DEBUG | _extract chunk='3ec6cac3-caec-48d6-9ad3-1d12afe63783': 11 entities, 6 relationships
+2026-10-08 12:52:51,327 | DEBUG | generate complete: response_len=5579
+2026-10-08 12:52:51,327 | DEBUG | _extract chunk='e5590dfd-a21b-451d-88eb-6ce9f2ba74ae': 19 entities, 19 relationships
+2026-10-08 12:52:51,399 | DEBUG | generate complete: response_len=5891
+2026-10-08 12:52:51,399 | DEBUG | _extract chunk='d4420557-5e96-4e70-aee2-87f01be3e5a0': 27 entities, 16 relationships
+2026-10-08 12:52:51,798 | DEBUG | generate complete: response_len=4584
+2026-10-08 12:52:51,798 | DEBUG | _extract chunk='382282e4-eb74-48c6-85cf-64dc36fbe327': 17 entities, 14 relationships
+2026-10-08 12:52:51,798 | INFO | index_document complete: doc_id='legal_case_03_employment_discrimination', new_entities=142, new_relationships=106, graph_nodes=1112
+2026-10-08 12:52:51,798 | INFO | _detect_communities: running Louvain on 1112 nodes
+2026-10-08 12:52:51,829 | INFO | _detect_communities: 487 communities found, 32 summaries reused, 8 to summarise
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=564
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=463
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=469
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=482
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=563
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=546
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=435
+2026-10-08 12:52:51,829 | DEBUG | generate: json_mode=False, prompt_len=151
+2026-10-08 12:52:52,632 | DEBUG | generate complete: response_len=657
+2026-10-08 12:52:52,632 | DEBUG | generate complete: response_len=606
+2026-10-08 12:52:52,675 | DEBUG | generate complete: response_len=602
+2026-10-08 12:52:52,695 | DEBUG | generate complete: response_len=725
+2026-10-08 12:52:52,791 | DEBUG | generate complete: response_len=786
+2026-10-08 12:52:53,095 | DEBUG | generate complete: response_len=550
+2026-10-08 12:52:53,128 | DEBUG | generate complete: response_len=648
+2026-10-08 12:52:53,309 | DEBUG | generate complete: response_len=671
+2026-10-08 12:52:53,309 | INFO | Indexed legal_case_03_employment_discrimination.txt: 5 chunks, 6 summaries, 11.0s
+2026-10-08 12:52:53,309 | DEBUG | extract_text: file='data\\input\\sample_cases\\legal_case_04_intellectual_property.txt', ext='.txt', content_type=''
+2026-10-08 12:52:53,329 | DEBUG | Plain-text extraction complete: 14583 chars from 'data\\input\\sample_cases\\legal_case_04_intellectual_property.txt'
+2026-10-08 12:52:53,329 | DEBUG | chunk_text: doc_id='legal_case_04_intellectual_property', words=1730, chunks=5
+2026-10-08 12:52:53,329 | INFO | RaptorRunner.build_tree: 5 chunks, max_levels=3
+2026-10-08 12:52:53,329 | DEBUG | embed_many: task_type=retrieval_document, texts=5
+2026-10-08 12:52:53,793 | DEBUG | embed_many complete: 5 vectors
+2026-10-08 12:52:53,793 | DEBUG | RaptorRunner: 5 leaf nodes created
+2026-10-08 12:52:53,793 | DEBUG | RaptorRunner: level=1, nodes=5, clusters=2
+2026-10-08 12:52:54,028 | DEBUG | generate: json_mode=False, prompt_len=2535
+2026-10-08 12:52:54,028 | DEBUG | generate: json_mode=False, prompt_len=455
+2026-10-08 12:52:55,605 | DEBUG | generate complete: response_len=2732
+2026-10-08 12:52:55,839 | DEBUG | generate complete: response_len=3091
+2026-10-08 12:52:55,839 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:56,005 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:56,005 | DEBUG | RaptorRunner: level=2, nodes=2, clusters=2
+2026-10-08 12:52:56,210 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:56,210 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:56,879 | DEBUG | generate complete: response_len=590
+2026-10-08 12:52:57,560 | DEBUG | generate complete: response_len=635
+2026-10-08 12:52:57,560 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:57,664 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:57,664 | DEBUG | RaptorRunner: level=3, nodes=2, clusters=2
+2026-10-08 12:52:57,881 | DEBUG | generate: json_mode=False, prompt_len=715
+2026-10-08 12:52:57,881 | DEBUG | generate: json_mode=False, prompt_len=725
+2026-10-08 12:52:58,523 | DEBUG | generate complete: response_len=625
+2026-10-08 12:52:58,640 | DEBUG | generate complete: response_len=695
+2026-10-08 12:52:58,640 | DEBUG | embed_many: task_type=retrieval_document, texts=2
+2026-10-08 12:52:58,841 | DEBUG | embed_many complete: 2 vectors
+2026-10-08 12:52:58,842 | INFO | RaptorRunner.build_tree complete: {'total_nodes': 74, 'levels': {0: 32, 1: 14, 2: 14, 3: 14}}
+2026-10-08 12:52:58,842 | INFO | index_document: doc_id='legal_case_04_intellectual_property', passages=11
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=4903
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=4507
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=4609
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=4415
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=854
+2026-10-08 12:52:58,842 | DEBUG | generate: json_mode=True, prompt_len=3245
+2026-10-08 12:52:58,843 | DEBUG | generate: json_mode=True, prompt_len=3604
+2026-10-08 12:52:58,843 | DEBUG | generate: json_mode=True, prompt_len=1103
+2026-10-08 12:52:58,843 | DEBUG | generate: json_mode=True, prompt_len=1148
+2026-10-08 12:52:58,843 | DEBUG | generate: json_mode=True, prompt_len=1208
+2026-10-08 12:52:58,843 | DEBUG | generate: json_mode=True, prompt_len=1138
+2026-10-08 12:53:00,135 | DEBUG | generate complete: response_len=2171
+2026-10-08 12:53:00,135 | DEBUG | _extract chunk='256d3090-5f6c-461f-b6d1-88838e9fc701': 9 entities, 5 relationships
+2026-10-08 12:53:00,208 | DEBUG | generate complete: response_len=2841
+2026-10-08 12:53:00,208 | DEBUG | _extract chunk='f5feca48-2176-4380-a148-97dc75512082': 15 entities, 4 relationships
+2026-10-08 12:53:00,696 | DEBUG | generate complete: response_len=4198
+2026-10-08 12:53:00,696 | DEBUG | _extract chunk='7ceff80d-8aae-4dde-b559-47bdf17fcae1': 13 entities, 14 relationships
+2026-10-08 12:53:00,773 | DEBUG | generate complete: response_len=4781
+2026-10-08 12:53:00,773 | DEBUG | _extract chunk='8e2077b4-1920-408d-bfc2-57863ff19e02': 26 entities, 10 relationships
+2026-10-08 12:53:00,885 | DEBUG | generate complete: response_len=4128
+2026-10-08 12:53:00,885 | DEBUG | _extract chunk='34f04a09-42b1-4ec4-afb6-a919eb9f9d5e': 12 entities, 12 relationships
+2026-10-08 12:53:01,144 | DEBUG | generate complete: response_len=4104
+2026-10-08 12:53:01,144 | DEBUG | _extract chunk='c3f62d52-c7a7-4d4a-85b4-ebbef855d88e': 16 entities, 11 relationships
+2026-10-08 12:53:01,165 | DEBUG | generate complete: response_len=6114
+2026-10-08 12:53:01,165 | DEBUG | _extract chunk='e1a01fa7-2e7b-4397-a009-dcf4e3e51e8b': 26 entities, 18 relationships
+2026-10-08 12:53:01,221 | DEBUG | generate complete: response_len=6126
+2026-10-08 12:53:01,221 | DEBUG | _extract chunk='ca696b09-6f62-4ccc-a74c-01612012e6fa': 23 entities, 22 relationships
+2026-10-08 12:53:01,249 | DEBUG | generate complete: response_len=6483
+2026-10-08 12:53:01,249 | DEBUG | _extract chunk='7e2e1d11-1786-4b71-a583-543720f00c52': 63 entities, 31 relationships
+2026-10-08 12:53:01,857 | DEBUG | generate complete: response_len=6569
+2026-10-08 12:53:01,857 | DEBUG | _extract chunk='4f0cc167-f4a2-4e7c-bb56-8750ef2dfe11': 29 entities, 16 relationships
+2026-10-08 12:53:02,070 | DEBUG | generate complete: response_len=9266
+2026-10-08 12:53:02,072 | DEBUG | _extract chunk='ac62221c-fef2-4e21-a4b2-6d82fae00719': 42 entities, 28 relationships

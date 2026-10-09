@@ -5,10 +5,16 @@ LLM:        any OpenAI-compatible API through the `openai` package. Default: Ope
             Configure LLM_API_KEY, LLM_BASE_URL and LLM_MODEL in .env.
 Embeddings: Ollama (configure OLLAMA_BASE_URL and OLLAMA_EMBED_MODEL in .env)
             Run:  ollama pull nomic-embed-text && ollama serve
+
+Response cache (off by default): set_llm_cache(dir) stores every successful LLM response
+on disk, keyed by a hash of the request. Evaluation runs turn it on so that a crash, a
+re-run or a new query-time ablation never pays for the same call twice.
 """
 import asyncio
+import hashlib
 import json as _json
 import urllib.request
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
 
@@ -42,7 +48,9 @@ _EMBED_SEM     = asyncio.Semaphore(2)     # batch requests in flight; Ollama que
 _LLM_TIMEOUT   = 45.0          # per attempt
 _EMBED_TIMEOUT = 60.0          # per batch request
 _EMBED_BATCH_SIZE = 32
-_EMBED_MAX_CHARS  = 2048       # nomic-embed-text context is ~2K tokens
+# nomic-embed-text's context is 2,048 *tokens* (~4 chars each). The cut is in characters,
+# so 6,000 chars (~1,500 tokens) keeps whole chunks and summaries with room for the prefix.
+_EMBED_MAX_CHARS  = 6000
 
 # ── retries (rate limits and transient server errors) ─────────────────────────
 # Retrying happens here rather than inside the SDK so that every attempt gets its own
@@ -59,6 +67,51 @@ _RETRYABLE = (openai.RateLimitError, openai.InternalServerError, openai.APIConne
 # the whole output on hidden reasoning and return empty content, which fails JSON mode.
 # Low effort fixes that and uses fewer tokens.
 _REASONING_EFFORT = "low"
+
+# Output cap per call. For reasoning models the hidden reasoning counts against it too, so it
+# can't be small; it exists so one runaway generation can't spend a large part of the budget.
+_DEFAULT_MAX_TOKENS = 4096
+
+# ── response cache ────────────────────────────────────────────────────────────
+
+_cache_dir: Optional[Path] = None
+
+
+def set_llm_cache(directory: Optional[str]) -> None:
+    """Turn the on-disk response cache on (a directory path) or off (None)."""
+    global _cache_dir
+    _cache_dir = Path(directory) if directory else None
+    if _cache_dir is not None:
+        _cache_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(f"LLM response cache: {_cache_dir}")
+
+
+def _cache_key(prompt: str, json_mode: bool, temperature: float, max_tokens: Optional[int]) -> str:
+    request = _json.dumps(
+        {"model": LLM_MODEL, "effort": _REASONING_EFFORT, "prompt": prompt,
+         "json": json_mode, "temperature": temperature, "max_tokens": max_tokens},
+        sort_keys=True,
+    )
+    return hashlib.sha256(request.encode()).hexdigest()
+
+
+def _cache_path(key: str) -> Path:
+    return _cache_dir / key[:2] / f"{key}.json"   # type: ignore[operator]
+
+
+def _cache_read(key: str) -> Optional[str]:
+    try:
+        return _json.loads(_cache_path(key).read_text(encoding="utf-8"))["response"]
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+def _cache_write(key: str, response: str) -> None:
+    path = _cache_path(key)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(_json.dumps({"response": response}), encoding="utf-8")
+    tmp.replace(path)   # atomic, so a crash never leaves a half-written entry
 
 
 def _is_reasoning_model(model: str) -> bool:
@@ -112,17 +165,28 @@ async def generate(
     prompt: str,
     json_mode: bool = False,
     temperature: float = 0.1,
+    max_tokens: Optional[int] = _DEFAULT_MAX_TOKENS,
 ) -> str:
-    """Call the LLM. Returns the raw text response. Retries rate limits and transient errors."""
+    """Call the LLM. Returns the raw text response. Retries rate limits and transient errors.
+    With the cache on, a request seen before is answered from disk without an API call."""
     logger.debug(f"generate: json_mode={json_mode}, prompt_len={len(prompt)}")
+    key = _cache_key(prompt, json_mode, temperature, max_tokens) if _cache_dir else None
+    if key is not None:
+        cached = await asyncio.to_thread(_cache_read, key)
+        if cached is not None:
+            logger.debug("generate: cache hit")
+            return cached
     async with _LLM_SEM:
         for attempt in range(_LLM_MAX_RETRIES + 1):
             try:
                 result = await asyncio.wait_for(
-                    _chat_completion(prompt, json_mode, temperature),
+                    _chat_completion(prompt, json_mode, temperature, max_tokens),
                     timeout=_LLM_TIMEOUT,
                 )
                 logger.debug(f"generate complete: response_len={len(result)}")
+                # Empty responses are not cached: they are failures, and a retry may succeed.
+                if key is not None and result.strip():
+                    await asyncio.to_thread(_cache_write, key, result)
                 return result
             except _RETRYABLE as exc:
                 if attempt == _LLM_MAX_RETRIES:
@@ -155,7 +219,9 @@ def _retry_delay(exc: Exception, attempt: int) -> float:
     return min(max(delay, 0.5), _RETRY_MAX_DELAY)
 
 
-async def _chat_completion(prompt: str, json_mode: bool, temperature: float) -> str:
+async def _chat_completion(
+    prompt: str, json_mode: bool, temperature: float, max_tokens: Optional[int]
+) -> str:
     # Errors are logged once, by generate(), which knows whether it will retry.
     kwargs: Dict[str, Any] = dict(
         model=LLM_MODEL,
@@ -163,6 +229,8 @@ async def _chat_completion(prompt: str, json_mode: bool, temperature: float) -> 
         temperature=temperature,
         **_provider_options(),
     )
+    if max_tokens:
+        kwargs["max_tokens"] = max_tokens
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
     resp = await _get_llm_client().chat.completions.create(**kwargs)
@@ -172,7 +240,10 @@ async def _chat_completion(prompt: str, json_mode: bool, temperature: float) -> 
             message=f"LLM returned no choices: {getattr(resp, 'error', None)}",
             request=None,  # type: ignore[arg-type]
         )
-    return resp.choices[0].message.content or ""
+    choice = resp.choices[0]
+    if getattr(choice, "finish_reason", None) == "length":
+        logger.warning(f"LLM output hit max_tokens={max_tokens}; the response is cut off")
+    return choice.message.content or ""
 
 
 # ── Embeddings (Ollama) ───────────────────────────────────────────────────────
@@ -207,7 +278,11 @@ async def embed_many(texts: List[str], task_type: str = "retrieval_document") ->
     if not texts:
         return []
     logger.debug(f"embed_many: task_type={task_type}, texts={len(texts)}")
-    prepared = [_with_task_prefix(t, task_type)[:_EMBED_MAX_CHARS] for t in texts]
+    prefixed = [_with_task_prefix(t, task_type) for t in texts]
+    truncated = sum(1 for t in prefixed if len(t) > _EMBED_MAX_CHARS)
+    if truncated:
+        logger.warning(f"embed_many: {truncated}/{len(texts)} texts cut to {_EMBED_MAX_CHARS} chars")
+    prepared = [t[:_EMBED_MAX_CHARS] for t in prefixed]
     vectors: List[List[float]] = []
     for i in range(0, len(prepared), _EMBED_BATCH_SIZE):
         batch = prepared[i:i + _EMBED_BATCH_SIZE]

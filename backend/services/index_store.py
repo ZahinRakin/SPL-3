@@ -73,7 +73,8 @@ async def save_case_state(
         eid = uuid.UUID(e["id"])
         entity_rows.append({
             "id": eid, "case_id": case_id, "seq": seq,
-            "name": e["name"] or "", "normalized_key": (e["name"] or "").lower(),
+            # Same identity as graphrag_indexer.entity_key: one entity per (name, type).
+            "name": e["name"] or "", "normalized_key": f"{(e['name'] or '').lower()}|{e['type']}",
             "type": e["type"], "description": e["description"] or "",
             "community": node_community.get(e["id"], -1),
         })

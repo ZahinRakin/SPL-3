@@ -10,9 +10,12 @@ import uuid
 from collections import OrderedDict
 from dataclasses import dataclass, field
 
+from sqlalchemy import select
+
 from backend.core.config import settings
 from backend.core.database import session_scope
 from backend.core.logger import logger
+from backend.models import Document
 from backend.pipeline.graphrag_indexer import GraphRAGIndexer
 from backend.pipeline.hippo_retriever import HippoRetriever
 from backend.pipeline.query_engine import QueryEngine
@@ -71,10 +74,15 @@ class CaseIndexRegistry:
     async def _fill(self, case_id: uuid.UUID, bundle: CaseBundle) -> None:
         async with session_scope() as session:
             state = await load_case_state(session, case_id)
+            names = (await session.execute(
+                select(Document.id, Document.filename).where(Document.case_id == case_id)
+            )).all()
         # Rebuilding the graph can be slow for big cases; keep it off the event loop.
         await asyncio.to_thread(bundle.graphrag.load_state, state["graphrag"])
         bundle.raptor.load_state(state["raptor"])
         bundle.engine.load_state(state["engine"])
+        # Source labels in the answer prompt show file names instead of document UUIDs.
+        bundle.engine.doc_names = {str(doc_id): filename for doc_id, filename in names}
 
     def _evict_overflow(self) -> None:
         # Oldest first; never drop a bundle that is being indexed right now.

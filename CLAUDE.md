@@ -66,13 +66,15 @@ cd frontend; npm install; npm start                    # http://localhost:4200 (
 
 # evaluation
 python -m evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
+python -m evaluation.compare analyze --exp evaluation/experiments/2026-10-08_standard_vs_refined   # standard vs refined study
 ```
 
 ## Tests and verification
 
-**There is no automated test suite yet.** Adding pytest needs approval (rule 2). Until then,
-verify every change with the cheapest check that covers it, and say in your summary which
-checks you ran.
+`python -m pytest -q` runs the offline pipeline tests in `tests/` (LLM and embeddings stubbed,
+no Ollama, API key or database needed; ~2 s). Run it after any pipeline change and add a test for
+new pipeline behaviour. The API, auth and database have no automated tests, so also verify every
+change with the cheapest check that covers it, and say in your summary which checks you ran.
 
 | Changed | Minimum check |
 |---|---|
@@ -80,7 +82,7 @@ checks you ran.
 | API / schemas | Start uvicorn and hit the changed endpoint with `curl.exe` (log in first: `POST /api/auth/jwt/login`), or use `/docs` → Authorize |
 | Models / migrations | `alembic upgrade head`, `alembic check` (no drift), and `alembic downgrade -1` + `upgrade head` on a throwaway DB |
 | Access control | Check the route with a non-member (404), a too-low role (403) and an allowed role |
-| Pipeline logic | In a case, upload `data/input/sample_cases/dhaka.txt` (small), wait for `indexed`, run one query per method; restart uvicorn and confirm the graph/stats are unchanged |
+| Pipeline logic | `python -m pytest -q`, then in a case, upload `data/input/sample_cases/dhaka.txt` (small), wait for `indexed`, run one query per method; restart uvicorn and confirm the graph/stats are unchanged |
 | Frontend | `cd frontend; npx ng build --configuration development` (strict TS + strict templates) |
 | Eval | Run the eval on 1–2 QA pairs |
 

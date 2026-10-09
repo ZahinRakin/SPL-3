@@ -41,6 +41,7 @@ from backend.pipeline.graphrag_indexer import GraphRAGIndexer
 from backend.pipeline.raptor_runner import RaptorRunner
 from backend.pipeline.hippo_retriever import HippoRetriever
 from backend.pipeline.query_engine import QueryEngine, Method
+from backend.pipeline.vectors import set_strict_embeddings
 
 
 # ── metrics ───────────────────────────────────────────────────────────────────
@@ -167,4 +168,5 @@ if __name__ == "__main__":
                         help="standard (plain RAG) or refined (the cascade)")
     parser.add_argument("--docs_dir",  default=None,           help="Directory of documents to index before evaluating")
     parser.add_argument("--output",    default="eval_report.json", help="Output JSON report path")
+    set_strict_embeddings(True)   # a random-vector fallback would silently corrupt the results
     asyncio.run(_main(parser.parse_args()))

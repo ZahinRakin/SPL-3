@@ -1,0 +1,3004 @@
+[
+ {
+  "id": "FRAUD-F1",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "What position did Ronald J. Whitmore hold at Meridian Healthcare Systems?",
+  "reference": "He was Vice President of Finance at Meridian Healthcare Systems (2014-2022).",
+  "evidence": [
+   "a former Vice President of Finance at Meridian Healthcare Systems, Inc."
+  ],
+  "key_facts": [
+   "Vice President of Finance|VP Finance|VP of Finance"
+  ]
+ },
+ {
+  "id": "FRAUD-F2",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "How many hospitals and outpatient clinics does Meridian Healthcare Systems operate?",
+  "reference": "14 hospitals and 42 outpatient clinics across three states.",
+  "evidence": [
+   "operating 14 hospitals and 42 outpatient clinics across three states"
+  ],
+  "key_facts": [
+   "14",
+   "42"
+  ]
+ },
+ {
+  "id": "FRAUD-F3",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "How large was the SEC whistleblower award that Amanda Keyes received in the Meridian case?",
+  "reference": "$11.4 million, about 17% of the SEC penalty collected.",
+  "evidence": [
+   "Amanda Keyes received a whistleblower award from the SEC of $11.4 million"
+  ],
+  "key_facts": [
+   "11.4"
+  ]
+ },
+ {
+  "id": "FRAUD-F4",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "How many boxes of accounting source documents did Whitmore direct Claire Ashby to shred?",
+  "reference": "14 boxes.",
+  "evidence": [
+   "Directed Ashby to shred 14 boxes of accounting source documents"
+  ],
+  "key_facts": [
+   "14"
+  ]
+ },
+ {
+  "id": "FRAUD-F5",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "How far did Meridian's (MRHC) stock fall after the fraud was disclosed in March 2022?",
+  "reference": "It declined 73% in one week, from $42 to $11.40.",
+  "evidence": [
+   "MRHC stock declined 73% in one week (from $42 to $11.40)"
+  ],
+  "key_facts": [
+   "73"
+  ]
+ },
+ {
+  "id": "FRAUD-F6",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "fact",
+  "question": "What was the amount of the shareholder class action settlement in the Meridian Healthcare securities litigation?",
+  "reference": "$180 million, approved in January 2024.",
+  "evidence": [
+   "$180 million class action settlement approved (January 2024)"
+  ],
+  "key_facts": [
+   "180"
+  ]
+ },
+ {
+  "id": "FRAUD-R1",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "Through whose company were the auditor Gerald Fortner's undisclosed consulting fees paid, and how much was he paid?",
+  "reference": "Through Whitmore's personal consulting company; Fortner received $2.4 million.",
+  "evidence": [
+   "Fortner received $2.4 million in undisclosed \"consulting fees\" paid through Whitmore's personal consulting company"
+  ],
+  "key_facts": [
+   "Whitmore",
+   "2.4"
+  ]
+ },
+ {
+  "id": "FRAUD-R2",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "Which audit firm did Gerald Fortner work for, and what did the PCAOB do to that firm?",
+  "reference": "Callahan & Powell LLP. The PCAOB sanctioned it $8 million, permanently barred 3 partners and put the firm on enhanced oversight for 5 years.",
+  "evidence": [
+   "Gerald Fortner — External auditor at Callahan & Powell LLP",
+   "Callahan & Powell audit firm sanctioned $8 million by PCAOB; 3 partners permanently barred; firm placed on enhanced oversight for 5 years."
+  ],
+  "key_facts": [
+   "Callahan",
+   "8 million|$8"
+  ]
+ },
+ {
+  "id": "FRAUD-R3",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "Who was the whistleblower at Meridian, what was her job, and how did Whitmore react to her report?",
+  "reference": "Amanda Keyes, Meridian's Director of Revenue Cycle. Whitmore attempted to terminate her (later reversed after legal counsel intervened).",
+  "evidence": [
+   "Meridian's Director of Revenue Cycle, Amanda Keyes",
+   "Attempted to terminate Keyes (later reversed after legal counsel intervention)"
+  ],
+  "key_facts": [
+   "Amanda Keyes|Keyes",
+   "Director of Revenue Cycle",
+   "terminat|fire"
+  ]
+ },
+ {
+  "id": "FRAUD-R4",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "Which Meridian subsidiary was used in the circular related-party transactions, and how much intercompany revenue was recognised through it?",
+  "reference": "Meridian Supply Solutions, LLC; $97 million of intercompany revenue that should have been eliminated in consolidation.",
+  "evidence": [
+   "Meridian's wholly-owned subsidiary, Meridian Supply Solutions, LLC",
+   "recognizing $97 million in intercompany revenue"
+  ],
+  "key_facts": [
+   "Meridian Supply Solutions",
+   "97"
+  ]
+ },
+ {
+  "id": "FRAUD-R5",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "What evidence placed Whitmore and his auditor together on the day the audit working papers were backdated?",
+  "reference": "Cell phone records placed Whitmore and Fortner at the same location that day.",
+  "evidence": [
+   "Cell phone records placing Whitmore and Fortner at the same location on the day audit working papers were backdated"
+  ],
+  "key_facts": [
+   "cell phone|phone records",
+   "Fortner"
+  ]
+ },
+ {
+  "id": "FRAUD-R6",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "relational",
+  "question": "How much Meridian stock did Whitmore sell at inflated prices, and how does that relate to the asset forfeiture the judge ordered?",
+  "reference": "He sold $3.2 million of Meridian stock in 2020; the judge ordered forfeiture of $3,200,000 as the proceeds of those illegal stock sales.",
+  "evidence": [
+   "Whitmore sold $3.2 million in Meridian stock at inflated prices in 2020",
+   "Asset forfeiture: $3,200,000 (proceeds of illegal stock sales)"
+  ],
+  "key_facts": [
+   "3.2|3,200,000",
+   "forfeit"
+  ]
+ },
+ {
+  "id": "FRAUD-S1",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "summary",
+  "question": "What were the main mechanisms Whitmore used to inflate Meridian Healthcare's revenue?",
+  "reference": "Three: (a) bill-and-hold revenue recognition before delivery (~$95M recognised early); (b) fictitious CMS (Medicare/Medicaid) reimbursement claims recorded as revenue (~$148M); (c) circular related-party transactions with Meridian Supply Solutions ($97M intercompany revenue).",
+  "evidence": [
+   "\"Bill and Hold\" Revenue Recognition",
+   "Fictitious Government Reimbursement Claims",
+   "Related-Party Transaction Concealment"
+  ],
+  "key_facts": [
+   "bill and hold|bill-and-hold",
+   "reimbursement|CMS|Medicare",
+   "related-party|related party|Meridian Supply Solutions|intercompany"
+  ]
+ },
+ {
+  "id": "FRAUD-S2",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "summary",
+  "question": "How did Whitmore try to cover up the Meridian fraud once concerns were raised?",
+  "reference": "He tried to fire the whistleblower Amanda Keyes, had Ashby shred 14 boxes of accounting documents, coached accounting staff on what to tell auditors, and gave false information to SEC investigators; he and Fortner also altered audit working papers.",
+  "evidence": [
+   "Directed Ashby to shred 14 boxes of accounting source documents",
+   "Coached accounting staff on what to say if contacted by auditors",
+   "Provided false information directly to SEC investigators"
+  ],
+  "key_facts": [
+   "shred",
+   "coach",
+   "SEC"
+  ]
+ },
+ {
+  "id": "FRAUD-S3",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "summary",
+  "question": "What arguments did Whitmore's defense make at trial, and how did the prosecution answer them?",
+  "reference": "Defense: good-faith reliance on his accounting team, revenue recognition as judgment calls, Ashby's testimony self-serving, no personal benefit from the inflated stock, character witnesses. Prosecution: deleted spreadsheets with Whitmore's initials, emails directing fictitious entries, and his $3.2M stock sales contradicted these claims.",
+  "evidence": [
+   "Whitmore relied in good faith on his accounting team's representations",
+   "Forensic evidence (deleted spreadsheets bearing Whitmore's initials and dated revisions) directly contradicted good faith defense."
+  ],
+  "key_facts": [
+   "good faith",
+   "judgment",
+   "spreadsheet|email|stock"
+  ]
+ },
+ {
+  "id": "FRAUD-S4",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "summary",
+  "question": "What penalties did the court impose on Ronald Whitmore?",
+  "reference": "Prison (144 months / 12 years per the sentencing ruling; the overview says 14 years) plus 3 years supervised release, $87 million restitution, a $2.5 million SEC civil penalty, $3.2 million asset forfeiture, and a permanent bar from serving as an officer or director of a public company.",
+  "evidence": [
+   "Sentence: 144 months (12 years) federal prison, followed by 3 years supervised release",
+   "Restitution: $87,000,000 payable to identified victims"
+  ],
+  "key_facts": [
+   "87",
+   "restitution",
+   "bar"
+  ]
+ },
+ {
+  "id": "FRAUD-S5",
+  "doc": "legal_case_02_criminal_fraud.txt",
+  "type": "summary",
+  "question": "What were the consequences for Meridian Healthcare Systems as a company after the fraud came to light?",
+  "reference": "Stock fell 73% (about $2.1B market value lost), it restated 4 years of financials, entered restructuring in 2023, laid off 340 employees, paid a $45M SEC settlement with an independent compliance monitor for 3 years, and CEO Robert Fielding resigned.",
+  "evidence": [
+   "Market capitalization loss: approximately $2.1 billion",
+   "Meridian Healthcare Systems agreed to a $45 million SEC settlement without admitting wrongdoing",
+   "340 employees laid off due to financial crisis"
+  ],
+  "key_facts": [
+   "73|2.1 billion",
+   "340",
+   "45"
+  ]
+ },
+ {
+  "id": "BREACH-F1",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "Which ransomware group was the attack on Quantum Financial Services attributed to?",
+  "reference": "The LockBit 3.0 ransomware-as-a-service group.",
+  "evidence": [
+   "attributed to the LockBit 3.0 ransomware-as-a-service group"
+  ],
+  "key_facts": [
+   "LockBit"
+  ]
+ },
+ {
+  "id": "BREACH-F2",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "How many clients' records were exposed in the Quantum Financial Services breach?",
+  "reference": "About 184,000 current and former clients.",
+  "evidence": [
+   "approximately 184,000 current and former clients"
+  ],
+  "key_facts": [
+   "184,000|184000|184 000"
+  ]
+ },
+ {
+  "id": "BREACH-F3",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "How much ransom did the attackers demand from Quantum Financial Services?",
+  "reference": "150 Bitcoin, about $8.4 million, to be paid within 72 hours.",
+  "evidence": [
+   "Ransom demand: 150 Bitcoin (~$8.4 million at June 14 prices) within 72 hours"
+  ],
+  "key_facts": [
+   "8.4|150 Bitcoin"
+  ]
+ },
+ {
+  "id": "BREACH-F4",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "How much data did the attacker exfiltrate from Quantum, and with which tool?",
+  "reference": "About 2.3 TB, using the Rclone tool disguised as \"svchost32.exe\".",
+  "evidence": [
+   "Using the Rclone data exfiltration tool (installed under the name \"svchost32.exe\" to evade detection), the threat actor exfiltrated approximately 2.3 TB of data"
+  ],
+  "key_facts": [
+   "2.3",
+   "Rclone"
+  ]
+ },
+ {
+  "id": "BREACH-F5",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "How many of Quantum's file servers were encrypted by the ransomware?",
+  "reference": "47 of its 80 file servers.",
+  "evidence": [
+   "Encrypted files on 47 of 80 file servers"
+  ],
+  "key_facts": [
+   "47"
+  ]
+ },
+ {
+  "id": "BREACH-F6",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "fact",
+  "question": "How much did Quantum Financial Services recover from its cyber insurance after the ransomware incident?",
+  "reference": "$8,500,000 (incident response, legal and notification costs, with policy sublimits applied).",
+  "evidence": [
+   "Cyber Insurance Recovery: $8,500,000"
+  ],
+  "key_facts": [
+   "8.5|8,500,000"
+  ]
+ },
+ {
+  "id": "BREACH-R1",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "Who was the employee whose phishing click gave the attacker initial access to Quantum, and what did the attacker then use her credentials to access?",
+  "reference": "Emily Torres, an accounts payable (accounting) associate; her credentials were used to access Quantum's corporate VPN.",
+  "evidence": [
+   "a mid-level accounting associate (Emily Torres, accounts payable department)",
+   "Using Ms. Torres's credentials, the threat actor accessed the Quantum corporate VPN."
+  ],
+  "key_facts": [
+   "Emily Torres|Torres",
+   "VPN"
+  ]
+ },
+ {
+  "id": "BREACH-R2",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "Which vulnerability did the Quantum attacker exploit to escalate privileges, and how long had a patch for it been available?",
+  "reference": "PrintNightmare (CVE-2021-34527), unpatched on 3 servers; a patch had been available for about 2 years.",
+  "evidence": [
+   "exploiting CVE-2021-34527 (\"PrintNightmare\" vulnerability — unpatched in 3 Quantum servers)",
+   "patch available 2 years prior"
+  ],
+  "key_facts": [
+   "PrintNightmare|CVE-2021-34527",
+   "2 years|two years"
+  ]
+ },
+ {
+  "id": "BREACH-R3",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "How long was the gap between the initial phishing compromise at Quantum and the ransomware deployment, and what is that period called?",
+  "reference": "About 17 days (May 28 to June 13, 2023); it is called the dwell time.",
+  "evidence": [
+   "The 17-day gap between initial compromise and ransomware deployment represents the \"dwell time\""
+  ],
+  "key_facts": [
+   "17",
+   "dwell"
+  ]
+ },
+ {
+  "id": "BREACH-R4",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "Which incident response firm did Quantum call, and how quickly could it be engaged thanks to the retainer?",
+  "reference": "CyberShield Response Group (CSG); the pre-established retainer let it engage within 2 hours of discovery.",
+  "evidence": [
+   "Emergency call to incident response retainer firm: CyberShield Response Group (CSG)",
+   "The pre-established incident response retainer enabled engagement within 2 hours of breach discovery."
+  ],
+  "key_facts": [
+   "CyberShield",
+   "2 hours|two hours"
+  ]
+ },
+ {
+  "id": "BREACH-R5",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "What was the date of Quantum's last clean backup, and how much operational data was lost as a result?",
+  "reference": "June 9, 2023; about 4 days of operational data were lost.",
+  "evidence": [
+   "Restore from offline backups (last clean backup: June 9 — 4 days of operational data lost)"
+  ],
+  "key_facts": [
+   "June 9",
+   "4 days|four days"
+  ]
+ },
+ {
+  "id": "BREACH-R6",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "relational",
+  "question": "When did the SIEM generate an alert about the Quantum intrusion, and how long did it go unactioned?",
+  "reference": "An automated alert on an unusual login time was generated on Day 1 but was not actioned for 3 days.",
+  "evidence": [
+   "automated alert on unusual login time generated Day 1 but not actioned for 3 days"
+  ],
+  "key_facts": [
+   "unusual login",
+   "3 days|three days"
+  ]
+ },
+ {
+  "id": "BREACH-S1",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "summary",
+  "question": "Why did Quantum Financial Services decide not to pay the ransom?",
+  "reference": "No guarantee the data would not be released anyway; the FBI advised against paying (it emboldens attackers and risks sanctions); usable backups were available; and payment could violate OFAC sanctions regulations.",
+  "evidence": [
+   "Rationale: (1) No guarantee data would not be released even after payment; (2) FBI advised against payment"
+  ],
+  "key_facts": [
+   "guarantee",
+   "FBI",
+   "backup",
+   "OFAC|sanction"
+  ]
+ },
+ {
+  "id": "BREACH-S2",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "summary",
+  "question": "What were the root cause and contributing factors of the Quantum breach?",
+  "reference": "Primary cause: phishing leading to credential theft. Contributing: unpatched PrintNightmare, no MFA on the VPN, excessive user privileges, weak email security (spoofing not caught), SIEM alerts not reviewed in time, shadow copy deletion not monitored, and no network segmentation.",
+  "evidence": [
+   "Primary cause: Successful phishing leading to credential theft",
+   "Insufficient MFA enforcement (VPN accessed with single-factor credentials)"
+  ],
+  "key_facts": [
+   "phishing",
+   "MFA|multi-factor",
+   "patch|PrintNightmare",
+   "segmentation"
+  ]
+ },
+ {
+  "id": "BREACH-S3",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "summary",
+  "question": "What did the attacker do inside Quantum's network between gaining access and deploying the ransomware?",
+  "reference": "Reconnaissance with living-off-the-land Windows tools, privilege escalation via PrintNightmare, obtaining Domain Administrator credentials, network mapping, disabling antivirus, setting up persistence (web shell, scheduled task), and exfiltrating ~2.3 TB of data with Rclone.",
+  "evidence": [
+   "Obtained Domain Administrator credentials from the Active Directory",
+   "Disabled Windows Defender and third-party AV on targeted systems"
+  ],
+  "key_facts": [
+   "privilege|Domain Admin",
+   "exfiltrat",
+   "Defender|antivirus|AV"
+  ]
+ },
+ {
+  "id": "BREACH-S4",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "summary",
+  "question": "What security improvements did Quantum implement immediately after the breach?",
+  "reference": "MFA on all systems, emergency patching (critical CVEs within 72 hours), DMARC/DKIM/SPF and anti-phishing tools, privileged access management, network segmentation, 24/7 SOC monitoring via an MSSP, CrowdStrike Falcon EDR, and ransomware-aware backups.",
+  "evidence": [
+   "MFA enforced on ALL systems including VPN, email, and all internal applications",
+   "Endpoint detection and response (EDR): CrowdStrike Falcon deployed enterprise-wide"
+  ],
+  "key_facts": [
+   "MFA|multi-factor",
+   "segmentation",
+   "CrowdStrike|EDR"
+  ]
+ },
+ {
+  "id": "BREACH-S5",
+  "doc": "cybersecurity_case_01_data_breach.txt",
+  "type": "summary",
+  "question": "Which regulators and parties did Quantum notify after the breach?",
+  "reference": "The SEC (Form 8-K on June 20, 2023), regulators in 47 states, the 184,000 affected clients by letter within 45 days, FINRA (Rules 4370 and 3110), and the FBI Cyber Division; the SEC exam unit later began a follow-up review.",
+  "evidence": [
+   "Notifications sent to regulators in 47 states",
+   "Reported under FINRA Rule 4370"
+  ],
+  "key_facts": [
+   "8-K|SEC",
+   "47",
+   "FINRA"
+  ]
+ },
+ {
+  "id": "ENV-F1",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "Into which river did Meridian Chemical Manufacturing discharge chlorinated solvents and heavy metals?",
+  "reference": "The Millstone River.",
+  "evidence": [
+   "the unpermitted discharge of chlorinated solvents and heavy metals into the Millstone River"
+  ],
+  "key_facts": [
+   "Millstone River"
+  ]
+ },
+ {
+  "id": "ENV-F2",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "What was the total of the civil penalties in the Meridian Chemical consent decree?",
+  "reference": "$18.7 million: $12.5 million federal plus $6.2 million State of Ohio.",
+  "evidence": [
+   "Total civil penalties: $18,700,000"
+  ],
+  "key_facts": [
+   "18.7|18,700,000"
+  ]
+ },
+ {
+  "id": "ENV-F3",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "What was the TCE effluent limit in Meridian Chemical's NPDES permit, and what was the highest discharge measured?",
+  "reference": "The limit was 5 ppb; measured discharges reached up to 890 ppb.",
+  "evidence": [
+   "TCE effluent limits (maximum 5 ppb; measured discharges up to 890 ppb)"
+  ],
+  "key_facts": [
+   "5 ppb",
+   "890"
+  ]
+ },
+ {
+  "id": "ENV-F4",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "How much hazardous waste was found in unmarked containers at the Meridian Chemical facility?",
+  "reference": "About 4,200 gallons.",
+  "evidence": [
+   "Approximately 4,200 gallons of hazardous waste was found in unmarked, unlabeled containers"
+  ],
+  "key_facts": [
+   "4,200|4200"
+  ]
+ },
+ {
+  "id": "ENV-F5",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "In how many of the tested residential wells in Millstone Acres was TCE found?",
+  "reference": "In 34 of 78 tested wells (8 to 126 ppb).",
+  "evidence": [
+   "TCE in 34 of 78 tested wells"
+  ],
+  "key_facts": [
+   "34",
+   "78"
+  ]
+ },
+ {
+  "id": "ENV-F6",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "fact",
+  "question": "How large was the Millstone Acres residents' class action settlement against Meridian Chemical?",
+  "reference": "$42 million.",
+  "evidence": [
+   "$42 million class action settlement"
+  ],
+  "key_facts": [
+   "42"
+  ]
+ },
+ {
+  "id": "ENV-R1",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "relational",
+  "question": "Which two Meridian Chemical managers were indicted for falsifying discharge reports, and what sentence did each receive?",
+  "reference": "Operations Manager Edward Kowalski: 18 months federal prison and a $75,000 fine. Environmental Compliance Coordinator Sandra Voss: 12 months home confinement and a $25,000 fine (cooperation agreement).",
+  "evidence": [
+   "Operations Manager Edward Kowalski and Environmental Compliance Coordinator Sandra Voss",
+   "Kowalski: Pled guilty; 18 months federal prison + $75,000 fine",
+   "Voss: Pled guilty (cooperation agreement); 12 months home confinement + $25,000 fine"
+  ],
+  "key_facts": [
+   "Kowalski",
+   "Voss",
+   "18 months",
+   "12 months"
+  ]
+ },
+ {
+  "id": "ENV-R2",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "relational",
+  "question": "Which former property owner did Meridian Chemical bring a claim against, and how much did it eventually agree to contribute?",
+  "reference": "Ashford Industrial Properties, LLC (the pre-1990 owner), sued under CERCLA Section 113; it agreed to contribute $12 million to remediation.",
+  "evidence": [
+   "Ashford Industrial Properties, LLC (former property owner; alleged to have contributed to legacy contamination)",
+   "Ashford Industrial Properties agreed to contribute $12 million to remediation costs"
+  ],
+  "key_facts": [
+   "Ashford Industrial Properties|Ashford",
+   "12 million|$12"
+  ]
+ },
+ {
+  "id": "ENV-R3",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "relational",
+  "question": "What unpermitted discharge route did the investigators find at Meridian Chemical, and where did it lead?",
+  "reference": "A legacy drainage pipe installed before 1990, discharging to a seasonal drainage ditch that connected to the Millstone River, with no permit.",
+  "evidence": [
+   "a legacy drainage pipe installed prior to 1990 — discharging directly to a seasonal drainage ditch that connected to the Millstone River"
+  ],
+  "key_facts": [
+   "pipe",
+   "ditch",
+   "Millstone River"
+  ]
+ },
+ {
+  "id": "ENV-R4",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "relational",
+  "question": "Who represented the affected Millstone residents as intervening plaintiffs in the Meridian Chemical case?",
+  "reference": "The Millstone Community Action Group, represented pro bono by the Environmental Justice Legal Clinic.",
+  "evidence": [
+   "Millstone Community Action Group (representing affected residents)",
+   "Represented by: Environmental Justice Legal Clinic (pro bono)"
+  ],
+  "key_facts": [
+   "Millstone Community Action Group",
+   "Environmental Justice Legal Clinic"
+  ]
+ },
+ {
+  "id": "ENV-R5",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "relational",
+  "question": "How much must Meridian Chemical fund to connect Millstone Acres to municipal water, and by when?",
+  "reference": "$8.2 million for a water line extension, within 18 months.",
+  "evidence": [
+   "Meridian to fund $8.2 million water line extension within 18 months"
+  ],
+  "key_facts": [
+   "8.2",
+   "18 months"
+  ]
+ },
+ {
+  "id": "ENV-S1",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "Which environmental laws did Meridian Chemical violate, and how?",
+  "reference": "Clean Water Act (unpermitted discharge, 47 falsified DMRs / TCE exceedances), RCRA (hazardous waste stored beyond 90 days in unlabeled containers without secondary containment, no permits), and EPCRA (unreported TCE releases above 10 lb, underreported TRI).",
+  "evidence": [
+   "violations of the Clean Water Act (CWA), the Resource Conservation and Recovery Act (RCRA), and the Emergency Planning and Community Right-to-Know Act (EPCRA)"
+  ],
+  "key_facts": [
+   "Clean Water Act|CWA",
+   "RCRA",
+   "EPCRA"
+  ]
+ },
+ {
+  "id": "ENV-S2",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "What health and environmental effects were found in the Millstone Acres community near Meridian Chemical?",
+  "reference": "TCE in 34 of 78 wells, PCE in 19 wells, lead above action level in 8 wells; a non-Hodgkin lymphoma cluster (12 cases), neurological symptoms and children's skin conditions; the epidemiological study was inconclusive on causation.",
+  "evidence": [
+   "Cluster of non-Hodgkin lymphoma (12 cases in an 8-block area over 10 years; statistically above expected incidence)"
+  ],
+  "key_facts": [
+   "TCE",
+   "lymphoma",
+   "inconclusive"
+  ]
+ },
+ {
+  "id": "ENV-S3",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "What remediation work does the Meridian Chemical consent decree require at the facility?",
+  "reference": "Seal the unpermitted pipe; pump-and-treat groundwater system ($24M capital, 30-year operation); excavate 14,200 tons of soil ($11.5M); wastewater treatment upgrade ($6.8M); air emissions control ($3.2M); plus alternative water and a municipal water connection for residents.",
+  "evidence": [
+   "Install groundwater extraction and treatment system (pump-and-treat)",
+   "Soil excavation and removal: 14,200 tons of contaminated soil (cost: $11.5 million)"
+  ],
+  "key_facts": [
+   "pump-and-treat|pump and treat|groundwater extraction",
+   "soil",
+   "14,200"
+  ]
+ },
+ {
+  "id": "ENV-S4",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "What defenses did Meridian Chemical raise against the EPA and Ohio?",
+  "reference": "The drainage pipe was a legacy condition predating current ownership; DMR falsification was individual employee misconduct, not company policy; groundwater contamination partly came from upgradient/historical sources; and a hydrogeological expert challenged EPA's modelling. It also sued the prior owner for contribution.",
+  "evidence": [
+   "Argued secondary drainage pipe was a \"legacy\" condition predating current ownership",
+   "Contested the DMR falsification attributing it to individual employee misconduct, not company policy"
+  ],
+  "key_facts": [
+   "legacy",
+   "individual|employee misconduct",
+   "upgradient|historical"
+  ]
+ },
+ {
+  "id": "ENV-S5",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "What compliance and community measures beyond cleanup does the Meridian Chemical consent decree require?",
+  "reference": "An ISO 14001 environmental management system, an independent compliance auditor for 5 years, real-time discharge monitoring sent to regulators, enhanced DMR verification, a $5M community health clinic (SEP) for 10 years, and a community advisory group with quarterly reporting.",
+  "evidence": [
+   "ISO 14001-certified EMS implementation required",
+   "$5 million SEP to establish environmental health clinic in Millstone community"
+  ],
+  "key_facts": [
+   "ISO 14001",
+   "auditor",
+   "clinic"
+  ]
+ },
+ {
+  "id": "ENV-S6",
+  "doc": "environmental_case_01_pollution_liability.txt",
+  "type": "summary",
+  "question": "How was the Millstone Acres residents' $42 million class action settlement divided?",
+  "reference": "$15 million for a medical monitoring programme, $18 million for property value diminution (pro rata), and $9 million for individual injury claimants.",
+  "evidence": [
+   "Medical monitoring program ($15 million)",
+   "Property value diminution compensation ($18 million, pro rata)",
+   "Individual injury claimants: $9 million"
+  ],
+  "key_facts": [
+   "15",
+   "18",
+   "9"
+  ]
+ },
+ {
+  "id": "BANKR-F1",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "fact",
+  "question": "How much funded debt was Cascade Retail Group trying to restructure when it filed for Chapter 11?",
+  "reference": "$1.6 billion.",
+  "evidence": [
+   "seeking to restructure $1.6 billion in funded debt"
+  ],
+  "key_facts": [
+   "1.6"
+  ]
+ },
+ {
+  "id": "BANKR-F2",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "fact",
+  "question": "How many stores did Cascade Retail Group operate before its bankruptcy filing, and in how many states?",
+  "reference": "284 stores across 38 states.",
+  "evidence": [
+   "operating 284 stores across 38 states"
+  ],
+  "key_facts": [
+   "284",
+   "38"
+  ]
+ },
+ {
+  "id": "BANKR-F3",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "fact",
+  "question": "How large was the DIP financing facility approved for Cascade Retail Group?",
+  "reference": "$300 million (agent First National Bank; SOFR + 600 bps, 12-month term).",
+  "evidence": [
+   "$300 million DIP facility (Agent: First National Bank; Senior Lenders participating)"
+  ],
+  "key_facts": [
+   "300"
+  ]
+ },
+ {
+  "id": "BANKR-F4",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "fact",
+  "question": "Who became the new CEO of Cascade Retail Group after it emerged from bankruptcy?",
+  "reference": "Jennifer Hartley, a retail industry veteran.",
+  "evidence": [
+   "New CEO (Jennifer Hartley, retail industry veteran)"
+  ],
+  "key_facts": [
+   "Jennifer Hartley|Hartley"
+  ]
+ },
+ {
+  "id": "BANKR-F5",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "fact",
+  "question": "On what dates was Cascade Retail Group's plan confirmed and when did it emerge from bankruptcy?",
+  "reference": "Plan confirmed November 8, 2023; emerged January 15, 2024.",
+  "evidence": [
+   "Plan Confirmed — November 8, 2023; Emergence from Bankruptcy — January 15, 2024"
+  ],
+  "key_facts": [
+   "November 8, 2023",
+   "January 15, 2024"
+  ]
+ },
+ {
+  "id": "BANKR-R1",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "Which private equity firm owned Cascade Retail Group, what did it pay for it, and what did it recover in the bankruptcy?",
+  "reference": "Apollo Global Management (68% owner) acquired Cascade in 2019 for $2.4 billion using $1.3 billion of borrowed funds; its equity was cancelled with zero recovery.",
+  "evidence": [
+   "Apollo acquired Cascade in 2019 for $2.4 billion, using $1.3 billion in borrowed funds.",
+   "Treatment: CANCELLED AND EXTINGUISHED"
+  ],
+  "key_facts": [
+   "Apollo",
+   "2.4",
+   "zero|cancel|nothing"
+  ]
+ },
+ {
+  "id": "BANKR-R2",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "Who held Cascade Retail Group's second lien notes, and what recovery did that class receive under the plan?",
+  "reference": "Distressed-debt hedge funds, chiefly Centerpoint Capital and Vantage Point Asset Management; Class 3 received $50M cash, 25% of new equity and warrants for 8%, about 20-22 cents on the dollar.",
+  "evidence": [
+   "Holders: Primarily distressed debt hedge funds (Centerpoint Capital, Vantage Point Asset Management)",
+   "Recovery: Approximately 20-22 cents on the dollar"
+  ],
+  "key_facts": [
+   "Centerpoint|Vantage Point",
+   "20-22|20 to 22|25%"
+  ]
+ },
+ {
+  "id": "BANKR-R3",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "Which investment bank marketed Cascade Retail Group for a sale, and why was a standalone reorganization chosen instead?",
+  "reference": "Lazard; after 60 days of marketing no qualified bid exceeded the recovery value of a reorganization plan.",
+  "evidence": [
+   "After 60 days of marketing by investment bank Lazard, the process yielded no qualified bids exceeding recovery values of a reorganization plan."
+  ],
+  "key_facts": [
+   "Lazard",
+   "bid"
+  ]
+ },
+ {
+  "id": "BANKR-R4",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "Who were counsel and financial advisor to Cascade Retail Group's unsecured creditors committee, and what did the committee object to?",
+  "reference": "Akin Gump Strauss Hauer & Feld (counsel) and Ankura Consulting (financial advisor); the UCC objected that the Second Lien treatment was too generous relative to unsecured creditors.",
+  "evidence": [
+   "UCC retained Akin Gump Strauss Hauer & Feld as counsel and Ankura Consulting as financial advisor.",
+   "UCC: Objected to Second Lien treatment as too generous relative to unsecured creditors"
+  ],
+  "key_facts": [
+   "Akin Gump",
+   "Ankura",
+   "Second Lien"
+  ]
+ },
+ {
+  "id": "BANKR-R5",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "How large were the landlord lease rejection claims against Cascade Retail Group, and how did the statutory cap change them?",
+  "reference": "About $180 million; the Section 502(b)(6) cap (15% of remaining rent) reduced allowable claims to about $42 million.",
+  "evidence": [
+   "landlord rejection damage claims of approximately $180 million",
+   "reduced total to approximately $42 million in allowable claims"
+  ],
+  "key_facts": [
+   "180",
+   "42"
+  ]
+ },
+ {
+  "id": "BANKR-R6",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "relational",
+  "question": "How did Cascade Retail Group's funded debt after emergence compare with its debt before the bankruptcy?",
+  "reference": "$650 million after emergence ($500M exit term loan + $150M exit revolver) versus $1.62 billion pre-petition.",
+  "evidence": [
+   "Total Funded Debt: $650 million (vs. $1.62 billion pre-petition)"
+  ],
+  "key_facts": [
+   "650",
+   "1.62|1.6"
+  ]
+ },
+ {
+  "id": "BANKR-S1",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "What caused Cascade Retail Group's financial distress?",
+  "reference": "The leveraged-buyout debt from Apollo's 2019 acquisition; a failed $180M e-commerce initiative; over-buying inventory on COVID-era demand ($320M excess); inflation and supply-chain costs compressing margins (44% to 31%, EBITDA $280M to $48M); and expensive long-term store leases.",
+  "evidence": [
+   "Leveraged Buyout Debt Burden",
+   "Failed E-Commerce Initiative",
+   "Post-COVID Consumer Normalization"
+  ],
+  "key_facts": [
+   "leverage|LBO|buyout",
+   "e-commerce",
+   "inventory",
+   "lease"
+  ]
+ },
+ {
+  "id": "BANKR-S2",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "What did Cascade Retail Group decide about its 284 store leases during the bankruptcy?",
+  "reference": "198 stores retained (some with rent concessions), 62 underperforming stores closed with leases rejected, and 24 assumed with negotiated rent reductions; closing-store sales raised $48 million.",
+  "evidence": [
+   "198 stores: profitable or breakeven — RETAIN",
+   "62 stores: underperforming — CLOSE AND REJECT LEASE",
+   "24 stores: viable with rent reduction negotiated — ASSUME WITH MODIFICATION"
+  ],
+  "key_facts": [
+   "198",
+   "62",
+   "24"
+  ]
+ },
+ {
+  "id": "BANKR-S3",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "How were the different creditor classes treated in Cascade Retail Group's plan of reorganization?",
+  "reference": "DIP paid in full in cash; first lien got a $500M exit facility + 72% of new equity (~78-84 cents); second lien got $50M cash + 25% equity + warrants (~20-22 cents); general unsecured got 3% equity + rights offering (~3-5 cents); existing equity cancelled (zero).",
+  "evidence": [
+   "Treatment: $500M in new first lien exit facility (5-year term, SOFR + 400 bps) + 72% of new common equity",
+   "Recovery: Approximately 3-5 cents on the dollar"
+  ],
+  "key_facts": [
+   "72%|72 percent",
+   "25%|25 percent",
+   "3-5|3 to 5",
+   "cancel|zero"
+  ]
+ },
+ {
+  "id": "BANKR-S4",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "What first-day relief did the bankruptcy court grant Cascade Retail Group?",
+  "reference": "A $300M DIP financing facility, a $45M critical vendor programme, continuation of the Cascade Rewards loyalty programme, and retention bonuses for 340 key employees.",
+  "evidence": [
+   "Critical Vendor Program: $45 million authorized to pay pre-petition claims of critical vendors",
+   "Employee Retention Plan: Retention bonuses for 340 key management and operational employees"
+  ],
+  "key_facts": [
+   "DIP",
+   "critical vendor",
+   "retention"
+  ]
+ },
+ {
+  "id": "BANKR-S5",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "Who objected to Cascade Retail Group's plan of reorganization, and on what grounds?",
+  "reference": "Apollo (valuation too low, equity has value), several landlords (lease rejection damage caps), and the UCC (second lien treatment too generous); the judge overruled all objections.",
+  "evidence": [
+   "Apollo (equity holder): Challenged enterprise valuation as too low; argued equity has value",
+   "Judge overruled all objections; plan confirmed November 8, 2023"
+  ],
+  "key_facts": [
+   "Apollo",
+   "landlord",
+   "overrul"
+  ]
+ },
+ {
+  "id": "BANKR-S6",
+  "doc": "finance_case_01_corporate_bankruptcy.txt",
+  "type": "summary",
+  "question": "What lessons does the Cascade Retail Group case report draw from the bankruptcy?",
+  "reference": "LBO leverage is risky for cyclical, low-margin retail; over-buying inventory on COVID demand was a major error; the $180M e-commerce investment destroyed value without execution capability; Chapter 11 enabled financial, operational and lease restructuring together; pre-arranged DIP financing gave liquidity certainty.",
+  "evidence": [
+   "LBO Leverage Risk",
+   "Inventory Management Failure",
+   "DIP Financing: Pre-arranged DIP financing from existing lenders provided liquidity certainty"
+  ],
+  "key_facts": [
+   "leverage|LBO",
+   "inventory",
+   "DIP"
+  ]
+ },
+ {
+  "id": "CONSTR-F1",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "What was the contract price in the Hartwell–Pinnacle construction contract?",
+  "reference": "$12,850,000 (cost-plus with a guaranteed maximum price).",
+  "evidence": [
+   "Contract price: $12,850,000 (cost-plus with a guaranteed maximum price)"
+  ],
+  "key_facts": [
+   "12,850,000|12.85"
+  ]
+ },
+ {
+  "id": "CONSTR-F2",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "What liquidated damages rate did the Hartwell–Pinnacle contract set for delays?",
+  "reference": "$15,000 per day of delay beyond the contract completion date.",
+  "evidence": [
+   "Liquidated damages: $15,000 per day for delays beyond the contract date"
+  ],
+  "key_facts": [
+   "15,000"
+  ]
+ },
+ {
+  "id": "CONSTR-F3",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "How much was the August invoice that Pinnacle withheld from Hartwell?",
+  "reference": "$890,000.",
+  "evidence": [
+   "Pinnacle withheld payment on the August invoice ($890,000) without explanation"
+  ],
+  "key_facts": [
+   "890,000|890"
+  ]
+ },
+ {
+  "id": "CONSTR-F4",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "How much did Pinnacle agree to pay Hartwell in the settlement?",
+  "reference": "$2,950,000 (net settlement).",
+  "evidence": [
+   "Pinnacle to pay Hartwell $2,950,000 (net settlement)"
+  ],
+  "key_facts": [
+   "2,950,000|2.95"
+  ]
+ },
+ {
+  "id": "CONSTR-F5",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "Who mediated the Hartwell v. Pinnacle dispute, and when was the mediation held?",
+  "reference": "Hon. Richard Paulson (retired Superior Court judge), on February 28, 2024.",
+  "evidence": [
+   "After mediation conducted February 28, 2024 (Mediator: Hon. Richard Paulson, Ret.)"
+  ],
+  "key_facts": [
+   "Richard Paulson|Paulson",
+   "February 28, 2024"
+  ]
+ },
+ {
+  "id": "CONSTR-F6",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "fact",
+  "question": "On what date did Hartwell Construction suspend work on the Millbrook Corporate Campus project?",
+  "reference": "October 12, 2022.",
+  "evidence": [
+   "Hartwell suspended operations on October 12, 2022."
+  ],
+  "key_facts": [
+   "October 12"
+  ]
+ },
+ {
+  "id": "CONSTR-R1",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "relational",
+  "question": "Who at Pinnacle directed the verbal change requests to Hartwell, and what was the estimated value of those changes?",
+  "reference": "Pinnacle's project manager Derek Ashford; the changes were estimated at $2.1 million.",
+  "evidence": [
+   "Pinnacle's project manager, Mr. Derek Ashford, directed numerous verbal change requests without issuing formal Change Orders",
+   "Estimated value of changes: $2.1 million."
+  ],
+  "key_facts": [
+   "Derek Ashford|Ashford",
+   "2.1"
+  ]
+ },
+ {
+  "id": "CONSTR-R2",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "relational",
+  "question": "Which firm inspected the HVAC installation that Pinnacle complained about, and what did it find?",
+  "reference": "Thompson Engineering Associates (October 2022) found the HVAC installation within code specifications (no defects).",
+  "evidence": [
+   "Independent inspection report (Thompson Engineering Associates, October 2022) finding HVAC installation within code"
+  ],
+  "key_facts": [
+   "Thompson Engineering",
+   "within code|no defect|compliant"
+  ]
+ },
+ {
+  "id": "CONSTR-R3",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "relational",
+  "question": "Which contractor completed the Millbrook project after Hartwell, when did it finish, and what liquidated damages did Pinnacle claim as a result?",
+  "reference": "Second Chance Builders, LLC, finishing April 30, 2023 (4 months late); Pinnacle claimed $1.8 million (120 days × $15,000/day).",
+  "evidence": [
+   "Pinnacle engaged Second Chance Builders, LLC to complete the project. Completion was achieved on April 30, 2023",
+   "seeks liquidated damages of $1.8 million (120 days x $15,000/day)"
+  ],
+  "key_facts": [
+   "Second Chance Builders",
+   "April 30, 2023",
+   "1.8"
+  ]
+ },
+ {
+  "id": "CONSTR-R4",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "relational",
+  "question": "Which law firms and lead attorneys represented Hartwell and Pinnacle?",
+  "reference": "Hartwell: Morrison & Keane LLP (lead Sandra Morrison). Pinnacle: Greystone Legal Associates (lead Marcus T. Webb).",
+  "evidence": [
+   "Represented by: Morrison & Keane LLP (Lead Attorney: Sandra Morrison, Esq.)",
+   "Represented by: Greystone Legal Associates (Lead Attorney: Marcus T. Webb, Esq.)"
+  ],
+  "key_facts": [
+   "Morrison & Keane|Morrison and Keane",
+   "Greystone",
+   "Webb"
+  ]
+ },
+ {
+  "id": "CONSTR-R5",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "relational",
+  "question": "Which expert analysed the cause of the Millbrook project delay for Hartwell, and what did her report show?",
+  "reference": "Dr. Maria Castillo (construction scheduling expert, PE, CPM); her report showed the delay was caused by owner-initiated changes.",
+  "evidence": [
+   "Construction scheduling expert report (Dr. Maria Castillo, CPM) showing delay was caused by owner-initiated changes"
+  ],
+  "key_facts": [
+   "Maria Castillo|Castillo",
+   "owner"
+  ]
+ },
+ {
+  "id": "CONSTR-S1",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "What scope changes did Pinnacle direct verbally during the Millbrook Corporate Campus project?",
+  "reference": "A high-efficiency HVAC upgrade, a 4,200 sq ft expansion of Building C, premium instead of standard finishes in Building A, and an underground parking structure.",
+  "evidence": [
+   "Addition of high-efficiency HVAC system upgrade (not in original scope)",
+   "Expansion of Building C footprint by 4,200 sq ft",
+   "Addition of underground parking structure (major scope addition)"
+  ],
+  "key_facts": [
+   "HVAC",
+   "4,200",
+   "parking",
+   "finishes"
+  ]
+ },
+ {
+  "id": "CONSTR-S2",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "What made up the $4.7 million in damages that Hartwell sought for breach of contract?",
+  "reference": "$1.2M unpaid invoices + $2.1M unapproved change-order work + $900,000 anticipated profit + $500,000 demobilization and equipment standby costs.",
+  "evidence": [
+   "Damages sought: $1.2 million (unpaid invoices) + $2.1 million (unapproved change order work) + $900,000 (anticipated profit on remaining work) + $500,000 (demobilization costs and equipment standby)"
+  ],
+  "key_facts": [
+   "1.2",
+   "2.1",
+   "900,000",
+   "500,000"
+  ]
+ },
+ {
+  "id": "CONSTR-S3",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "What counterclaims did Pinnacle bring against Hartwell?",
+  "reference": "Breach/project abandonment ($1.8M liquidated damages + $500,000 substitute contractor premium), defective HVAC workmanship ($280,000 remediation; disputed by independent inspection), and breach of the project schedule through August 2022 crew reductions.",
+  "evidence": [
+   "Damages: $1.8 million (liquidated damages for 120-day delay) + $500,000 (premium cost to retain substitute contractor on emergency basis)",
+   "Pinnacle alleges the HVAC installation was defective and non-compliant with specifications, requiring $280,000 in remediation."
+  ],
+  "key_facts": [
+   "abandon",
+   "HVAC|workmanship",
+   "schedule|crew"
+  ]
+ },
+ {
+  "id": "CONSTR-S4",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "Why was Hartwell's suspension of work considered a proper exercise of its contractual rights rather than a breach?",
+  "reference": "AIA A201 Section 14.1 lets a contractor suspend work after 7 days' written notice once payment is 21 days overdue; Hartwell's October 4 notice (payment 28 days outstanding) and October 12 suspension followed that procedure exactly, so Pinnacle's termination lacked contractual basis.",
+  "evidence": [
+   "AIA A201 Section 14.1 explicitly grants the contractor the right to suspend work upon 7 days' written notice when payment is overdue by 21 days."
+  ],
+  "key_facts": [
+   "14.1",
+   "7 days|seven days",
+   "notice"
+  ]
+ },
+ {
+  "id": "CONSTR-S5",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "What were the terms of the settlement between Hartwell and Pinnacle?",
+  "reference": "Pinnacle pays Hartwell $2,950,000; Hartwell releases all claims; Pinnacle withdraws all counterclaims including liquidated damages; each side bears its own attorneys' fees; confidentiality; no admission of liability.",
+  "evidence": [
+   "Pinnacle withdraws all counterclaims including liquidated damages",
+   "No admission of liability by either party"
+  ],
+  "key_facts": [
+   "2,950,000|2.95",
+   "counterclaim",
+   "liability"
+  ]
+ },
+ {
+  "id": "CONSTR-S6",
+  "doc": "legal_case_01_contract_dispute_construction.txt",
+  "type": "summary",
+  "question": "What lessons about construction disputes does the Hartwell v. Pinnacle case report highlight?",
+  "reference": "Insist on signed change orders before extra work; contemporaneous documentation is critical; follow contractual suspension procedures exactly; withholding payment through manufactured defect claims is bad faith; analyse concurrent/owner-caused delay before claiming liquidated damages.",
+  "evidence": [
+   "Change Order Discipline",
+   "Documentation is Critical",
+   "Payment Withholding as Leverage"
+  ],
+  "key_facts": [
+   "change order",
+   "document",
+   "bad faith|leverage"
+  ]
+ },
+ {
+  "id": "EMPL-F1",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "fact",
+  "question": "What total verdict did the jury award Jennifer Caldwell against NovaTech Industries?",
+  "reference": "$2.85 million ($2,850,000).",
+  "evidence": [
+   "Total: $2,850,000"
+  ],
+  "key_facts": [
+   "2.85|2,850,000"
+  ]
+ },
+ {
+  "id": "EMPL-F2",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "fact",
+  "question": "How much did NovaTech offer Jennifer Caldwell to settle before trial?",
+  "reference": "$750,000, offered during JAMS mediation in January 2024; she declined.",
+  "evidence": [
+   "NovaTech offered $750,000 pre-trial during mediation (Mediator: JAMS, January 2024). Plaintiff declined."
+  ],
+  "key_facts": [
+   "750,000"
+  ]
+ },
+ {
+  "id": "EMPL-F3",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "fact",
+  "question": "On what date did Jennifer Caldwell resign from NovaTech?",
+  "reference": "June 30, 2022.",
+  "evidence": [
+   "Caldwell submitted her resignation on June 30, 2022"
+  ],
+  "key_facts": [
+   "June 30, 2022"
+  ]
+ },
+ {
+  "id": "EMPL-F4",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "fact",
+  "question": "What did Mark Holloway's February 2021 Slack message to Caldwell say?",
+  "reference": "\"You're too pretty to spend your day debugging code. You should be in marketing.\"",
+  "evidence": [
+   "You're too pretty to spend your day debugging code. You should be in marketing"
+  ],
+  "key_facts": [
+   "too pretty",
+   "marketing"
+  ]
+ },
+ {
+  "id": "EMPL-F5",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "fact",
+  "question": "How much more did male engineers at NovaTech earn than Jennifer Caldwell according to the pay equity analysis?",
+  "reference": "18-22% more, despite lower qualifications and shorter tenure.",
+  "evidence": [
+   "Male engineers with lower qualifications and shorter tenure earned 18-22% more than Caldwell"
+  ],
+  "key_facts": [
+   "18-22|18 to 22|18–22"
+  ]
+ },
+ {
+  "id": "EMPL-R1",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "Who got the Lead Software Architect position that Caldwell applied for, how did that person compare with her, and who made the decision?",
+  "reference": "Colin Brett, a male colleague with 3 years less experience and lower performance ratings; Mark Holloway made the final decision.",
+  "evidence": [
+   "The position was offered to Colin Brett, a male colleague with 3 years less experience and lower performance ratings than Caldwell. Holloway made the final hiring decision."
+  ],
+  "key_facts": [
+   "Colin Brett|Brett",
+   "Holloway",
+   "less experience|lower performance"
+  ]
+ },
+ {
+  "id": "EMPL-R2",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "What was the \"smoking gun\" email in the Caldwell case, who wrote it, and which defense did it undermine?",
+  "reference": "Holloway told HR \"we need someone who can work with the boys\"; it destroyed NovaTech's claim of a legitimate non-discriminatory reason for the promotion decision (McDonnell Douglas).",
+  "evidence": [
+   "Internal emails showed Holloway told HR \"we need someone who can work with the boys\"",
+   "The \"smoking gun\" email from Holloway destroyed the legitimate reason defense."
+  ],
+  "key_facts": [
+   "work with the boys",
+   "Holloway",
+   "legitimate"
+  ]
+ },
+ {
+  "id": "EMPL-R3",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "What did NovaTech's HR do after Caldwell's March 2021 complaint, and what happened to her performance rating afterwards?",
+  "reference": "HR investigated, gave Holloway only a written warning and called the matter \"resolved\"; afterwards her rating dropped from \"exceeds expectations\" to \"meets expectations\" without explanation.",
+  "evidence": [
+   "HR initiated an investigation and issued a written warning to Holloway. No other action was taken.",
+   "Caldwell's performance rating dropped from \"exceeds expectations\" to \"meets expectations\""
+  ],
+  "key_facts": [
+   "written warning",
+   "meets expectations"
+  ]
+ },
+ {
+  "id": "EMPL-R4",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "Which economist calculated Caldwell's economic damages, what figure did he reach, and how much did the jury award in lost wages?",
+  "reference": "Robert Klein, Ph.D., estimated $1.4 million in lost earnings and benefits; the jury awarded $1,150,000 in lost wages.",
+  "evidence": [
+   "Robert Klein, Ph.D. (Economist) — calculated economic damages: $1.4 million in lost earnings and benefits",
+   "Lost wages (economic damages): $1,150,000"
+  ],
+  "key_facts": [
+   "Robert Klein|Klein",
+   "1.4",
+   "1,150,000|1.15"
+  ]
+ },
+ {
+  "id": "EMPL-R5",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "Which law firms represented Caldwell and NovaTech, and who represented Mark Holloway?",
+  "reference": "Caldwell: Employment Rights Advocates, LLP (Deborah Santos, Anthony Park). NovaTech: Lawson Brady & Associates (Patricia Lawson). Holloway: separate counsel, Carl Meehan.",
+  "evidence": [
+   "Employment Rights Advocates, LLP (Lead: Deborah Santos, Esq.; Co: Anthony Park, Esq.)",
+   "Represented by: Lawson Brady & Associates (Lead: Patricia Lawson, Esq.)",
+   "Represented by: separate counsel, Carl Meehan, Esq."
+  ],
+  "key_facts": [
+   "Employment Rights Advocates",
+   "Lawson Brady",
+   "Meehan"
+  ]
+ },
+ {
+  "id": "EMPL-R6",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "relational",
+  "question": "How does NovaTech's total post-verdict exposure in the Caldwell case compare with the settlement it offered?",
+  "reference": "About $3.47 million (the $2.85M verdict plus ~$620,000 attorneys' fees) versus the $750,000 pre-trial offer.",
+  "evidence": [
+   "Post-verdict exposure is approximately $3.47 million (verdict + attorneys' fees)",
+   "estimated $620,000 in attorneys' fees sought"
+  ],
+  "key_facts": [
+   "3.47",
+   "750,000"
+  ]
+ },
+ {
+  "id": "EMPL-S1",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "What harassing conduct did Jennifer Caldwell experience from Mark Holloway?",
+  "reference": "Being called \"sweetheart\"/\"honey\", comments on her appearance at a team dinner, exclusion from male-only strategy lunches, being assigned administrative documentation tasks, the \"too pretty\" Slack message, and being interrupted with her ideas credited to male colleagues.",
+  "evidence": [
+   "Holloway referred to Caldwell as \"sweetheart\" and \"honey\" in team meetings",
+   "Caldwell was excluded from an informal \"strategy lunch\" held exclusively with male engineers on 6 occasions"
+  ],
+  "key_facts": [
+   "sweetheart",
+   "lunch",
+   "too pretty"
+  ]
+ },
+ {
+  "id": "EMPL-S2",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "How did NovaTech retaliate against Caldwell after her HR complaint and EEOC charge?",
+  "reference": "Her rating was lowered, she was removed as technical lead on a flagship project, denied conference registration, given formal write-ups for minor issues, passed over for a second promotion, moved to an open-plan area, given lower-complexity work, and alluded to in a team meeting as disrupting team dynamics.",
+  "evidence": [
+   "Caldwell was removed as technical lead on a flagship project without explanation",
+   "She was moved from a private office to an open-plan area while male seniors retained offices"
+  ],
+  "key_facts": [
+   "technical lead",
+   "conference",
+   "promotion",
+   "office"
+  ]
+ },
+ {
+  "id": "EMPL-S3",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "How was the jury's $2.85 million verdict for Caldwell broken down?",
+  "reference": "Hostile work environment $400,000; failure to promote $250,000; retaliation/constructive discharge $750,000; lost wages $1,150,000; punitive damages against NovaTech $300,000.",
+  "evidence": [
+   "Count 1 (Hostile Work Environment): GUILTY — $400,000 compensatory damages",
+   "Punitive damages (against NovaTech): $300,000"
+  ],
+  "key_facts": [
+   "400,000",
+   "250,000",
+   "750,000",
+   "300,000"
+  ]
+ },
+ {
+  "id": "EMPL-S4",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "What arguments did NovaTech's defense make in the Caldwell case?",
+  "reference": "Brett was objectively qualified and fairly selected; the rating change reflected real performance issues; Caldwell resigned voluntarily (no constructive discharge); Holloway's comments were joking, not gender-based; an imperfect investigation is not discrimination.",
+  "evidence": [
+   "Caldwell's resignation was voluntary, not constructive discharge",
+   "Holloway's comments were \"joking\" and not gender-based harassment"
+  ],
+  "key_facts": [
+   "qualified",
+   "voluntar",
+   "joking"
+  ]
+ },
+ {
+  "id": "EMPL-S5",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "What key evidence was produced in discovery in the Caldwell v. NovaTech case?",
+  "reference": "847 relevant Slack/Teams messages, performance reviews showing equal metrics but different framing, the \"work with the boys\" promotion email, salary data showing an 18-22% pay gap, and testimony from former engineers about the toxic culture.",
+  "evidence": [
+   "847 relevant messages extracted",
+   "Comparison of Caldwell's and male peers' reviews showed identical productivity metrics but different narrative framing"
+  ],
+  "key_facts": [
+   "847|Slack",
+   "work with the boys|smoking gun",
+   "18-22|salary|pay"
+  ]
+ },
+ {
+  "id": "EMPL-S6",
+  "doc": "legal_case_03_employment_discrimination.txt",
+  "type": "summary",
+  "question": "What claims did Jennifer Caldwell bring against NovaTech and Mark Holloway?",
+  "reference": "Under Title VII: sexual harassment / hostile work environment, sex discrimination by failure to promote, and retaliation (including constructive discharge); plus individual liability and punitive damages against Holloway personally.",
+  "evidence": [
+   "Count 1 — Sexual Harassment / Hostile Work Environment (Title VII)",
+   "Count 3 — Retaliation (Title VII Section 704(a))"
+  ],
+  "key_facts": [
+   "hostile work environment|harassment",
+   "promot",
+   "retaliation"
+  ]
+ },
+ {
+  "id": "IP-F1",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "What was the lump-sum payment in the Vertex Biosystems v. GenePath settlement?",
+  "reference": "$28 million.",
+  "evidence": [
+   "GenePath pays Vertex $28 million lump sum (patent infringement + trade secret claims)"
+  ],
+  "key_facts": [
+   "28"
+  ]
+ },
+ {
+  "id": "IP-F2",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "What is the name of the GenePath product accused of infringing Vertex's patents?",
+  "reference": "LipoEdit-7, a CRISPR-Cas9 delivery platform launched in March 2021.",
+  "evidence": [
+   "In March 2021, GenePath launched LipoEdit-7, a CRISPR-Cas9 delivery platform product."
+  ],
+  "key_facts": [
+   "LipoEdit-7|LipoEdit"
+  ]
+ },
+ {
+  "id": "IP-F3",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "What going-forward royalty rate did GenePath agree to pay Vertex?",
+  "reference": "4.5% of GenePath's net sales of products practising Vertex's licensed patents.",
+  "evidence": [
+   "Going-forward royalty: 4.5% on GenePath's net sales"
+  ],
+  "key_facts": [
+   "4.5"
+  ]
+ },
+ {
+  "id": "IP-F4",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "Which judge held the Markman claim construction hearing in Vertex v. GenePath, and when?",
+  "reference": "U.S. District Judge Alicia Thornton, on February 14, 2023.",
+  "evidence": [
+   "Date: February 14, 2023",
+   "Judge: U.S. District Judge Alicia Thornton"
+  ],
+  "key_facts": [
+   "Alicia Thornton|Thornton",
+   "February 14, 2023"
+  ]
+ },
+ {
+  "id": "IP-F5",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "What share of Vertex's asserted patent claims did the IPR proceedings invalidate?",
+  "reference": "About 40%.",
+  "evidence": [
+   "The IPR proceedings invalidated approximately 40% of the asserted claims."
+  ],
+  "key_facts": [
+   "40"
+  ]
+ },
+ {
+  "id": "IP-F6",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "fact",
+  "question": "What reasonable royalty did Vertex's damages expert calculate for GenePath's past infringement?",
+  "reference": "$45 million (Georgia-Pacific analysis); lost profits alternative $62 million.",
+  "evidence": [
+   "Reasonable royalty analysis using Georgia-Pacific factors: $45 million for past infringement"
+  ],
+  "key_facts": [
+   "45"
+  ]
+ },
+ {
+  "id": "IP-R1",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "relational",
+  "question": "What did cross-examination reveal about GenePath's lab notebooks, and why did that undermine its independent-development defense?",
+  "reference": "The notebooks did not contain the specific pH profile matching the accused product until Q3 2019, which was after Vertex's CDA disclosure in January 2019, so the development postdated the confidential disclosure.",
+  "evidence": [
+   "cross-examination revealed lab notebooks did not contain the specific pH profile matching the accused products until Q3 2019 (after the CDA disclosure)"
+  ],
+  "key_facts": [
+   "Q3 2019|2019",
+   "CDA|disclosure",
+   "pH"
+  ]
+ },
+ {
+  "id": "IP-R2",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "relational",
+  "question": "Which '773 patent claims did the PTAB invalidate, and on the basis of which prior art?",
+  "reference": "Claims 7-12, as obvious over the combination of the Alnylam 2016 publication and the MIT 2017 Nature Methods paper; claims 1-6 were upheld.",
+  "evidence": [
+   "Claims 7-12: INVALID as obvious in view of combination of Alnylam 2016 publication + MIT 2017 Nature Methods paper"
+  ],
+  "key_facts": [
+   "7-12|7 to 12|7–12",
+   "Alnylam",
+   "MIT"
+  ]
+ },
+ {
+  "id": "IP-R3",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "relational",
+  "question": "Which law firms and lead attorneys represented Vertex Biosystems and GenePath?",
+  "reference": "Vertex: Fenwick & Cole IP Litigation (Dr. Elena Marchetti). GenePath: Morrison & Foerster LLP (Raymond K. Chu).",
+  "evidence": [
+   "Represented by: Fenwick & Cole IP Litigation (Lead: Dr. Elena Marchetti, Esq., Ph.D. Biochemistry)",
+   "Represented by: Morrison & Foerster LLP (Lead: Raymond K. Chu, Esq.)"
+  ],
+  "key_facts": [
+   "Fenwick",
+   "Marchetti",
+   "Morrison & Foerster|Morrison and Foerster",
+   "Chu"
+  ]
+ },
+ {
+  "id": "IP-R4",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "relational",
+  "question": "Why did Vertex argue GenePath's infringement was willful, and what consequence can willfulness have?",
+  "reference": "GenePath knew of Vertex's patents (cited in the July 2021 cease-and-desist letter) and kept selling; willful infringement can trigger enhanced damages of up to 3x under 35 U.S.C. § 284.",
+  "evidence": [
+   "GenePath had actual knowledge of Vertex's patents (patent numbers cited in cease-and-desist letter) and continued sales",
+   "Willful infringement can trigger enhanced damages up to 3x under 35 U.S.C. Section 284."
+  ],
+  "key_facts": [
+   "cease-and-desist|cease and desist",
+   "3x|three times|treble"
+  ]
+ },
+ {
+  "id": "IP-R5",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "relational",
+  "question": "Who was Vertex's technical expert, and what did her side-by-side analysis conclude about LipoEdit-7?",
+  "reference": "Dr. Jennifer Yao (MIT); she concluded LipoEdit-7 falls within claims 1-6 of the '773 patent and claims 1-8 of the '562 patent, with pH-responsive behaviour identical to Vertex's mechanism.",
+  "evidence": [
+   "Plaintiff's Expert: Dr. Jennifer Yao, Ph.D. (MIT; lipid nanoparticle delivery systems)",
+   "Concluded: LipoEdit-7 falls within claims 1-6 of the '773 patent and claims 1-8 of the '562 patent"
+  ],
+  "key_facts": [
+   "Jennifer Yao|Yao",
+   "1-6",
+   "1-8"
+  ]
+ },
+ {
+  "id": "IP-S1",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "What claims did Vertex Biosystems bring against GenePath?",
+  "reference": "Patent infringement (literal, doctrine of equivalents, and willful) of the '773 and '562 patents; trade secret misappropriation under the Defend Trade Secrets Act; and breach of the 2019 Confidential Disclosure Agreement.",
+  "evidence": [
+   "Count 1 — Patent Infringement (35 U.S.C. Section 271):",
+   "Count 2 — Misappropriation of Trade Secrets (Defend Trade Secrets Act, 18 U.S.C. Section 1836):",
+   "Count 3 — Breach of Contract (CDA):"
+  ],
+  "key_facts": [
+   "infring",
+   "trade secret",
+   "CDA|Confidential Disclosure|breach of contract"
+  ]
+ },
+ {
+  "id": "IP-S2",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "On what grounds did GenePath challenge the validity of Vertex's patents?",
+  "reference": "Anticipation by prior art (Alnylam and MIT publications, 2016-2017), obviousness (combining known LNP formulations with known CRISPR components), and inequitable conduct (failure to disclose prior art), plus Inter Partes Review petitions at the PTAB.",
+  "evidence": [
+   "Anticipation by prior art (international publications from Alnylam Pharmaceuticals and MIT, 2016-2017)",
+   "Inequitable conduct (alleged failure to disclose material prior art during prosecution)"
+  ],
+  "key_facts": [
+   "anticipation|prior art",
+   "obvious",
+   "inequitable"
+  ]
+ },
+ {
+  "id": "IP-S3",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "What are the key innovations in Vertex's lipid nanoparticle patents?",
+  "reference": "Ionizable lipids that are neutral at physiological pH but positively charged in the acidic endosome (pH-responsive endosomal escape); proprietary lipid ratios and formulation methods improving delivery 3-5x over prior LNPs; and targeted organ delivery (liver/lung) by adjusting surface chemistry.",
+  "evidence": [
+   "Specific ionizable lipid compositions that are neutral at physiological pH but positively charged in the acidic endosomal environment",
+   "enhance delivery efficiency by 3-5x compared to prior art LNP formulations"
+  ],
+  "key_facts": [
+   "ionizable",
+   "3-5x|3-5",
+   "organ|liver|lung"
+  ]
+ },
+ {
+  "id": "IP-S4",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "What were the terms of the Vertex–GenePath settlement?",
+  "reference": "$28M lump sum; a cross-licence (GenePath gets a research licence to Vertex's LNP patents, Vertex gets a licence to GenePath's delivery patents worth ~$5M); 4.5% going-forward royalty; covenant not to sue on current GenePath products; both keep their patents; no admission; confidential.",
+  "evidence": [
+   "Cross-license agreement: GenePath receives license to Vertex's LNP patents for internal research",
+   "Covenant not to sue covering current GenePath product lines"
+  ],
+  "key_facts": [
+   "28",
+   "cross-licen|cross licen",
+   "4.5"
+  ]
+ },
+ {
+  "id": "IP-S5",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "How did the Markman claim construction rulings turn out in Vertex v. GenePath?",
+  "reference": "\"Ionizable lipid\" got Vertex's broader construction (a genus, not limited to examples); \"endosomal escape efficiency\" got a hybrid construction (measurable improvement, no numeric threshold); \"CRISPR-Cas9 ribonucleoprotein complex\" had its plain meaning. Overall the rulings substantially favoured Vertex.",
+  "evidence": [
+   "Ruling: Court adopted Vertex's broader construction",
+   "Markman Outcome: Claim constructions substantially favored Vertex, strengthening the infringement case."
+  ],
+  "key_facts": [
+   "ionizable lipid",
+   "hybrid",
+   "favor|favour"
+  ]
+ },
+ {
+  "id": "IP-S6",
+  "doc": "legal_case_04_intellectual_property.txt",
+  "type": "summary",
+  "question": "What lessons does the Vertex v. GenePath case report draw?",
+  "reference": "Use information firewalls under CDAs (GenePath's lack of one was critical); broad functional claim language helps claim construction; IPR invalidated ~40% of claims, so search prior art thoroughly; willfulness and enhanced damages create settlement pressure; combining patent and trade secret claims gives overlapping recovery theories.",
+  "evidence": [
+   "GenePath's failure to implement such a firewall was its critical vulnerability.",
+   "Combining patent infringement claims with trade secret misappropriation provided Vertex with overlapping theories of recovery"
+  ],
+  "key_facts": [
+   "firewall",
+   "IPR|prior art",
+   "trade secret"
+  ]
+ },
+ {
+  "id": "MI-F1",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "What was the door-to-balloon time for the 58-year-old STEMI patient Mr. D.H.?",
+  "reference": "28 minutes.",
+  "evidence": [
+   "Cardiac Catheterization (door-to-balloon time: 28 minutes)"
+  ],
+  "key_facts": [
+   "28"
+  ]
+ },
+ {
+  "id": "MI-F2",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "What was the troponin I level of the 58-year-old STEMI patient at admission?",
+  "reference": "8.4 ng/mL (normal < 0.04), markedly elevated.",
+  "evidence": [
+   "Troponin I: 8.4 ng/mL (normal <0.04) — markedly elevated"
+  ],
+  "key_facts": [
+   "8.4"
+  ]
+ },
+ {
+  "id": "MI-F3",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "Which coronary artery was occluded in the 58-year-old STEMI patient, and how severely?",
+  "reference": "The right coronary artery (RCA), 100% occluded at the mid-segment (the culprit lesion).",
+  "evidence": [
+   "Findings: RCA 100% occlusion at mid-segment (culprit)"
+  ],
+  "key_facts": [
+   "RCA|right coronary",
+   "100"
+  ]
+ },
+ {
+  "id": "MI-F4",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "What was the blood pressure of the 58-year-old STEMI patient on examination?",
+  "reference": "88/60 mmHg, meeting cardiogenic shock criteria.",
+  "evidence": [
+   "Blood Pressure: 88/60 mmHg (cardiogenic shock criteria)"
+  ],
+  "key_facts": [
+   "88/60"
+  ]
+ },
+ {
+  "id": "MI-F5",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "On which hospital day was the 58-year-old STEMI patient discharged?",
+  "reference": "Day 8, in stable condition.",
+  "evidence": [
+   "Day 8: Discharged in stable condition"
+  ],
+  "key_facts": [
+   "8"
+  ]
+ },
+ {
+  "id": "MI-F6",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "fact",
+  "question": "What was the smoking history of the 58-year-old STEMI patient Mr. D.H.?",
+  "reference": "A 30 pack-year history; he quit 5 years ago.",
+  "evidence": [
+   "Tobacco: 30 pack-year smoking history; quit 5 years ago"
+  ],
+  "key_facts": [
+   "30 pack",
+   "5 years|five years"
+  ]
+ },
+ {
+  "id": "MI-R1",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "relational",
+  "question": "How did the ejection fraction of the 58-year-old STEMI patient change after PCI?",
+  "reference": "It improved from 30% (severely reduced) at admission to 38% by days 3-4.",
+  "evidence": [
+   "Ejection fraction: 30% (severely reduced)",
+   "Echo EF improved to 38%"
+  ],
+  "key_facts": [
+   "30",
+   "38"
+  ]
+ },
+ {
+  "id": "MI-R2",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "relational",
+  "question": "Why was ticagrelor chosen over clopidogrel for the 58-year-old STEMI patient, and what dose was he discharged on?",
+  "reference": "Based on the PLATO trial showing superior outcomes in ACS; discharged on ticagrelor 90 mg twice daily for 12 months (after a 180 mg loading dose).",
+  "evidence": [
+   "The use of ticagrelor over clopidogrel was based on the PLATO trial data showing superior outcomes in ACS patients.",
+   "Ticagrelor 90 mg twice daily (12 months)"
+  ],
+  "key_facts": [
+   "PLATO",
+   "90 mg"
+  ]
+ },
+ {
+  "id": "MI-R3",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "relational",
+  "question": "Which ECG findings in the 58-year-old patient pointed to an inferior STEMI, and which artery's territory does that correspond to?",
+  "reference": "ST elevation of 3-4 mm in leads II, III and aVF with reciprocal ST depression in I and aVL; an inferior wall STEMI in the right coronary artery (RCA) territory.",
+  "evidence": [
+   "ST elevation 3-4 mm in leads II, III, aVF; reciprocal ST depression in I and aVL",
+   "Acute STEMI — Inferior wall (RCA territory)"
+  ],
+  "key_facts": [
+   "II, III|aVF",
+   "RCA|right coronary"
+  ]
+ },
+ {
+  "id": "MI-R4",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "relational",
+  "question": "How was the 58-year-old STEMI patient's atorvastatin dose changed between admission and discharge?",
+  "reference": "From 40 mg nightly (home medication for hyperlipidemia) to 80 mg nightly (high-intensity) at discharge.",
+  "evidence": [
+   "Hyperlipidemia (diagnosed 2019) — on Atorvastatin 40 mg nightly",
+   "Atorvastatin 80 mg nightly (high-intensity)"
+  ],
+  "key_facts": [
+   "40",
+   "80"
+  ]
+ },
+ {
+  "id": "MI-R5",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "relational",
+  "question": "What stent was placed in the 58-year-old STEMI patient, in which artery, and what flow was achieved?",
+  "reference": "A 3.5x28 mm drug-eluting stent in the RCA, achieving TIMI 3 flow.",
+  "evidence": [
+   "PCI: Drug-eluting stent 3.5x28 mm placed in RCA; TIMI 3 flow achieved"
+  ],
+  "key_facts": [
+   "drug-eluting|drug eluting",
+   "RCA",
+   "TIMI 3"
+  ]
+ },
+ {
+  "id": "MI-S1",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "summary",
+  "question": "What risk factors contributed to the 58-year-old patient's myocardial infarction?",
+  "reference": "Male sex, age over 50, type 2 diabetes, hypertension, hyperlipidemia, obesity, a 30 pack-year smoking history, sedentary lifestyle, and a strong family history (father died of MI at 62; brother had CABG).",
+  "evidence": [
+   "The patient's multiple risk factors — male sex, age >50, diabetes, hypertension, hyperlipidemia, smoking history, and strong family history"
+  ],
+  "key_facts": [
+   "diabetes",
+   "hypertension",
+   "smok",
+   "family"
+  ]
+ },
+ {
+  "id": "MI-S2",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "summary",
+  "question": "What emergency treatment did the 58-year-old STEMI patient receive?",
+  "reference": "Aspirin 325 mg chewed, ticagrelor 180 mg loading dose, IV heparin bolus and infusion, dopamine for shock, oxygen; then emergency catheterization with PCI and a drug-eluting stent in the RCA, and an intra-aortic balloon pump (IABP).",
+  "evidence": [
+   "Ticagrelor 180 mg loading dose",
+   "IABP inserted for hemodynamic support"
+  ],
+  "key_facts": [
+   "aspirin",
+   "heparin",
+   "PCI|stent",
+   "IABP|balloon pump"
+  ]
+ },
+ {
+  "id": "MI-S3",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "summary",
+  "question": "What were the diagnoses for the 58-year-old patient admitted with chest pain?",
+  "reference": "Acute inferior wall STEMI (RCA territory), cardiogenic shock (Killip class IV), acute kidney injury, and stress hyperglycemia.",
+  "evidence": [
+   "Cardiogenic Shock (Killip Class IV)",
+   "Acute Kidney Injury"
+  ],
+  "key_facts": [
+   "STEMI",
+   "cardiogenic shock",
+   "kidney"
+  ]
+ },
+ {
+  "id": "MI-S4",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "summary",
+  "question": "Describe the hospital course of the 58-year-old STEMI patient.",
+  "reference": "Days 1-2 in the CCU (stabilised, dopamine weaned, IABP removed); days 3-4 on the step-down floor (EF 38%, diuresis); days 5-7 cardiac rehab and medication optimisation; discharged stable on day 8 with a repeat echo planned in 6 weeks.",
+  "evidence": [
+   "Day 1-2: CCU — hemodynamics stabilized, dopamine weaned, IABP removed",
+   "Day 5-7: Cardiac rehab program started, oral medications optimized"
+  ],
+  "key_facts": [
+   "CCU",
+   "rehab",
+   "Day 8|day 8"
+  ]
+ },
+ {
+  "id": "MI-S5",
+  "doc": "medical_case_01_acute_myocardial_infarction.txt",
+  "type": "summary",
+  "question": "What medications was the 58-year-old STEMI patient discharged on?",
+  "reference": "Aspirin 81 mg daily, ticagrelor 90 mg twice daily (12 months), atorvastatin 80 mg nightly, lisinopril 5 mg daily, carvedilol 6.25 mg twice daily, furosemide 20 mg daily, and temporary insulin glargine 10 units at bedtime.",
+  "evidence": [
+   "Lisinopril 5 mg daily",
+   "Carvedilol 6.25 mg twice daily"
+  ],
+  "key_facts": [
+   "aspirin",
+   "ticagrelor",
+   "lisinopril",
+   "carvedilol"
+  ]
+ },
+ {
+  "id": "SEPSIS-F1",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "fact",
+  "question": "Which organism caused the pneumonia of the 72-year-old septic shock patient Mrs. E.K.?",
+  "reference": "Streptococcus pneumoniae (penicillin-susceptible), confirmed in blood and sputum cultures.",
+  "evidence": [
+   "Blood Cultures: 2/2 bottles positive for Streptococcus pneumoniae (bacteremia confirmed)"
+  ],
+  "key_facts": [
+   "Streptococcus pneumoniae|S. pneumoniae|pneumococc"
+  ]
+ },
+ {
+  "id": "SEPSIS-F2",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "fact",
+  "question": "What was the SOFA score of the 72-year-old patient with septic shock, and what mortality did it predict?",
+  "reference": "14, predicting mortality above 80%.",
+  "evidence": [
+   "SOFA Score: 14 (predicted mortality >80%)"
+  ],
+  "key_facts": [
+   "14",
+   "80"
+  ]
+ },
+ {
+  "id": "SEPSIS-F3",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "fact",
+  "question": "What was the lactate level of the 72-year-old septic shock patient?",
+  "reference": "5.8 mmol/L (severe hyperlactatemia).",
+  "evidence": [
+   "Lactate: 5.8 mmol/L (severe hyperlactatemia)"
+  ],
+  "key_facts": [
+   "5.8"
+  ]
+ },
+ {
+  "id": "SEPSIS-F4",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "fact",
+  "question": "On which ICU day was the 72-year-old septic shock patient extubated?",
+  "reference": "ICU day 13.",
+  "evidence": [
+   "ICU Day 13:",
+   "Patient successfully extubated."
+  ],
+  "key_facts": [
+   "13"
+  ]
+ },
+ {
+  "id": "SEPSIS-F5",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "fact",
+  "question": "Where was the 72-year-old septic shock patient discharged to, and on which day?",
+  "reference": "To a skilled nursing facility, on day 18.",
+  "evidence": [
+   "Discharged on Day 18 to skilled nursing facility for continued rehabilitation."
+  ],
+  "key_facts": [
+   "skilled nursing|SNF",
+   "18"
+  ]
+ },
+ {
+  "id": "SEPSIS-R1",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "What was the P/F ratio of the 72-year-old septic shock patient at admission, what ARDS severity did it indicate, and what did it improve to?",
+  "reference": "80 (PaO2 48 / FiO2 0.60), meeting severe ARDS criteria (P/F < 100); it improved to 180 by ICU days 4-7, when prone positioning was stopped.",
+  "evidence": [
+   "P/F ratio: 48/0.60 = 80 (severe ARDS criteria: P/F <100)",
+   "Prone positioning discontinued as P/F ratio improved to 180."
+  ],
+  "key_facts": [
+   "80",
+   "severe",
+   "180"
+  ]
+ },
+ {
+  "id": "SEPSIS-R2",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "Why was anticoagulation held in the 72-year-old septic shock patient, and when was her apixaban resumed?",
+  "reference": "Because of DIC and thrombocytopenia (DVT prophylaxis used pneumatic compression instead); apixaban was resumed in the step-down unit once platelets exceeded 100,000.",
+  "evidence": [
+   "anticoagulation held due to DIC/thrombocytopenia",
+   "Resumed oral apixaban after platelet count >100,000."
+  ],
+  "key_facts": [
+   "DIC|thrombocytopenia|platelet",
+   "100,000"
+  ]
+ },
+ {
+  "id": "SEPSIS-R3",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "Which antibiotics did the 72-year-old septic shock patient start on, and how was the regimen changed?",
+  "reference": "Ceftriaxone 2 g IV daily plus azithromycin 500 mg IV daily; on day 3, after sensitivities confirmed a fully susceptible S. pneumoniae, it was de-escalated to ceftriaxone alone.",
+  "evidence": [
+   "Ceftriaxone 2g IV every 24 hours",
+   "De-escalated to ceftriaxone monotherapy on Day 3 after culture sensitivity confirmed"
+  ],
+  "key_facts": [
+   "ceftriaxone",
+   "azithromycin",
+   "Day 3|day 3"
+  ]
+ },
+ {
+  "id": "SEPSIS-R4",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "How did the creatinine of the 72-year-old septic shock patient change over her stay compared with her baseline?",
+  "reference": "Baseline 1.6 mg/dL (CKD stage 3); 3.2 at admission; peak 4.8 (on CRRT); 2.4 by ICU days 8-12; 1.9 at discharge. She likely now has permanent CKD stage 4.",
+  "evidence": [
+   "Chronic Kidney Disease Stage 3 (baseline Cr 1.6 mg/dL)",
+   "Creatinine peaked at 4.8 mg/dL",
+   "Cr 1.9 mg/dL at discharge"
+  ],
+  "key_facts": [
+   "1.6",
+   "4.8",
+   "1.9"
+  ]
+ },
+ {
+  "id": "SEPSIS-R5",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "Which vasopressors were used for the 72-year-old patient's septic shock, and when was each stopped?",
+  "reference": "Norepinephrine (titrated to MAP > 65) and vasopressin 0.03 units/min for refractory shock; vasopressin stopped on day 5 and norepinephrine weaned off on day 8.",
+  "evidence": [
+   "Vasopressin successfully weaned and stopped Day 5.",
+   "Norepinephrine successfully weaned off Day 8."
+  ],
+  "key_facts": [
+   "norepinephrine",
+   "vasopressin",
+   "Day 5|day 5",
+   "Day 8|day 8"
+  ]
+ },
+ {
+  "id": "SEPSIS-R6",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "relational",
+  "question": "Why was hydrocortisone given to the 72-year-old septic shock patient, and what happened to it later?",
+  "reference": "200 mg/day continuous infusion for refractory vasopressor dependence (corticosteroids for refractory septic shock); it was tapered over 3 days during ICU days 4-7.",
+  "evidence": [
+   "Hydrocortisone 200 mg/day continuous infusion (refractory vasopressor dependence)",
+   "Hydrocortisone tapered over 3 days."
+  ],
+  "key_facts": [
+   "200 mg",
+   "refractory|vasopressor",
+   "taper"
+  ]
+ },
+ {
+  "id": "SEPSIS-S1",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "What were the diagnoses for the 72-year-old woman admitted with pneumonia?",
+  "reference": "Bilateral community-acquired S. pneumoniae pneumonia, septic shock (Sepsis-3), severe ARDS (P/F 80), acute-on-chronic kidney injury, evolving DIC, and type 2 respiratory failure.",
+  "evidence": [
+   "Septic Shock (Sepsis-3 criteria met)",
+   "Disseminated Intravascular Coagulation (DIC) — evolving"
+  ],
+  "key_facts": [
+   "septic shock",
+   "ARDS",
+   "kidney",
+   "DIC"
+  ]
+ },
+ {
+  "id": "SEPSIS-S2",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "How was the 72-year-old patient's respiratory failure managed?",
+  "reference": "Emergency intubation; lung-protective ventilation (VT 350 mL / 6 mL/kg, PEEP 12, FiO2 1.0); prone positioning within 2 hours for 16 h/day until P/F reached 180; spontaneous breathing trials from day 10; extubation on day 13 to high-flow nasal cannula.",
+  "evidence": [
+   "Ventilator settings: Lung-protective strategy — VT 350 mL (6 mL/kg IBW), PEEP 12, FiO2 1.0",
+   "Prone positioning initiated within 2 hours per ARDS protocol"
+  ],
+  "key_facts": [
+   "intubat",
+   "lung-protective|6 mL/kg",
+   "prone"
+  ]
+ },
+ {
+  "id": "SEPSIS-S3",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "What adjunctive therapies did the 72-year-old septic shock patient receive besides antibiotics and vasopressors?",
+  "reference": "Hydrocortisone infusion, insulin infusion (glucose 140-180), pneumatic compression for DVT prophylaxis, pantoprazole stress ulcer prophylaxis, enteral nutrition via NG tube, CRRT from day 2 (later intermittent hemodialysis), and FFP/cryoprecipitate for DIC.",
+  "evidence": [
+   "CRRT (Continuous Renal Replacement Therapy) initiated Day 2 for severe AKI with volume overload",
+   "Stress ulcer prophylaxis: pantoprazole 40 mg IV daily"
+  ],
+  "key_facts": [
+   "hydrocortisone",
+   "CRRT|dialysis",
+   "insulin",
+   "pantoprazole"
+  ]
+ },
+ {
+  "id": "SEPSIS-S4",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "Which comorbidities did the 72-year-old septic shock patient have, and why did they matter?",
+  "reference": "COPD (GOLD II), type 2 diabetes, hypertension, atrial fibrillation on apixaban, CKD stage 3, and stage II breast cancer in remission after chemotherapy; with her age they impaired her early immune response (immunocompromised state).",
+  "evidence": [
+   "COPD (GOLD Stage II)",
+   "The patient's immunocompromised state (post-chemotherapy), COPD, diabetes, and age all contributed to her inability to mount an effective early immune response."
+  ],
+  "key_facts": [
+   "COPD",
+   "diabetes",
+   "atrial fibrillation|AF",
+   "breast cancer|chemotherapy"
+  ]
+ },
+ {
+  "id": "SEPSIS-S5",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "What key management principles does the 72-year-old septic shock case demonstrate?",
+  "reference": "Early sepsis recognition with qSOFA/SOFA, the 1-hour Surviving Sepsis Campaign bundle, lung-protective (ARDSnet) ventilation, prone positioning for severe ARDS, early antibiotic de-escalation, and corticosteroids for refractory septic shock.",
+  "evidence": [
+   "Adherence to the 1-hour Surviving Sepsis Campaign bundle",
+   "Early antibiotic de-escalation once culture results available"
+  ],
+  "key_facts": [
+   "SOFA",
+   "Surviving Sepsis|bundle",
+   "prone",
+   "de-escalat"
+  ]
+ },
+ {
+  "id": "SEPSIS-S6",
+  "doc": "medical_case_02_septic_shock_pneumonia.txt",
+  "type": "summary",
+  "question": "What was the outcome and discharge plan for the 72-year-old septic shock patient?",
+  "reference": "She survived and went to a skilled nursing facility on day 18 with significant functional decline and likely permanent CKD stage 4; lisinopril was reduced, AF and diabetes medications adjusted; follow-up with primary care (1 week), nephrology (2 weeks) and pulmonology (4 weeks); PPSV23 and influenza vaccines given before discharge.",
+  "evidence": [
+   "Recommended follow-up: Pulmonology in 4 weeks, Nephrology in 2 weeks, Primary care in 1 week.",
+   "Vaccination: Pneumococcal vaccine (PPSV23) and updated influenza vaccine administered prior to discharge."
+  ],
+  "key_facts": [
+   "survived|skilled nursing|SNF",
+   "CKD stage 4|stage 4",
+   "vaccin"
+  ]
+ },
+ {
+  "id": "DKA-F1",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "fact",
+  "question": "What was the blood glucose of the 19-year-old DKA patient Miss A.T. on arrival?",
+  "reference": "487 mg/dL (26.9 mmol/L).",
+  "evidence": [
+   "Blood glucose: 487 mg/dL (26.9 mmol/L)"
+  ],
+  "key_facts": [
+   "487"
+  ]
+ },
+ {
+  "id": "DKA-F2",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "fact",
+  "question": "What was the arterial pH of the 19-year-old patient with diabetic ketoacidosis?",
+  "reference": "7.09 (severe acidosis).",
+  "evidence": [
+   "pH: 7.09 (severe acidosis)"
+  ],
+  "key_facts": [
+   "7.09"
+  ]
+ },
+ {
+  "id": "DKA-F3",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "fact",
+  "question": "What insulin infusion rate was used for the 19-year-old DKA patient?",
+  "reference": "A fixed-rate infusion of 0.1 units/kg/hr, i.e. 5.5 units/hr of regular insulin IV, with no bolus.",
+  "evidence": [
+   "Fixed-rate insulin infusion 0.1 units/kg/hr = 5.5 units/hr regular insulin IV"
+  ],
+  "key_facts": [
+   "0.1 units|5.5 units"
+  ]
+ },
+ {
+  "id": "DKA-F4",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "fact",
+  "question": "What continuous glucose monitor was prescribed to the 19-year-old newly diagnosed type 1 diabetes patient?",
+  "reference": "A Dexcom G7.",
+  "evidence": [
+   "Continuous glucose monitoring (CGM) introduced — Dexcom G7 prescribed"
+  ],
+  "key_facts": [
+   "Dexcom"
+  ]
+ },
+ {
+  "id": "DKA-F5",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "fact",
+  "question": "How much weight had the 19-year-old DKA patient lost before admission?",
+  "reference": "About 8 kg over 6 weeks (BMI from 21.5 to 17.8).",
+  "evidence": [
+   "significant weight loss (approximately 8 kg over 6 weeks)"
+  ],
+  "key_facts": [
+   "8 kg"
+  ]
+ },
+ {
+  "id": "DKA-R1",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "How did the HbA1c of the 19-year-old type 1 diabetes patient change between diagnosis and the 3-month follow-up?",
+  "reference": "From 13.8% at diagnosis to 7.2% at 3 months.",
+  "evidence": [
+   "Hemoglobin A1c: 13.8% (severely elevated",
+   "3-month follow-up HbA1c: 7.2% (significant improvement from 13.8%)"
+  ],
+  "key_facts": [
+   "13.8",
+   "7.2"
+  ]
+ },
+ {
+  "id": "DKA-R2",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "Why was potassium replacement initially held in the 19-year-old DKA patient, and when was it started?",
+  "reference": "Her initial K+ was 5.8 mEq/L, so replacement was held; as insulin drove potassium into cells it fell (3.9 at 4 h, 3.4 at 8 h), and KCl 20 mEq/hr was added once K+ was below 4.0.",
+  "evidence": [
+   "Initial K+ 5.8 mEq/L — held potassium replacement, continued monitoring",
+   "Potassium chloride 20 mEq/hr added to IV fluids when K+ <4.0"
+  ],
+  "key_facts": [
+   "5.8",
+   "4.0",
+   "insulin"
+  ]
+ },
+ {
+  "id": "DKA-R3",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "Which family history in the 19-year-old DKA patient prompted thyroid testing, and what did the testing find?",
+  "reference": "Her mother has Hashimoto's thyroiditis; testing showed TSH 4.8 and positive anti-TPO antibodies (1,240 IU/mL), i.e. concurrent autoimmune (Hashimoto's) thyroiditis, treated with levothyroxine 25 mcg.",
+  "evidence": [
+   "Mother: Hashimoto's thyroiditis",
+   "Anti-TPO antibodies: Positive (1,240 IU/mL) — concurrent autoimmune thyroiditis"
+  ],
+  "key_facts": [
+   "mother",
+   "Hashimoto",
+   "TPO"
+  ]
+ },
+ {
+  "id": "DKA-R4",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "What was the measured sodium of the 19-year-old DKA patient, what was it after correction, and why did it need correcting?",
+  "reference": "Measured 128 mEq/L, corrected to 134 mEq/L; the low value was a factitious (dilutional) hyponatremia caused by hyperglycemia.",
+  "evidence": [
+   "Sodium: 128 mEq/L (corrected Na = 128 + 1.6 x (487-100)/100 = 134 mEq/L)",
+   "Hyponatremia — factitious (dilutional from hyperglycemia)"
+  ],
+  "key_facts": [
+   "128",
+   "134",
+   "factitious|dilutional|hyperglycemia"
+  ]
+ },
+ {
+  "id": "DKA-R5",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "When did the 19-year-old patient's ketoacidosis resolve, and what values showed it?",
+  "reference": "At hour 14: pH 7.34, HCO3 19 mEq/L, blood ketones 0.4 mmol/L, glucose 189 mg/dL.",
+  "evidence": [
+   "Ketoacidosis resolved at hour 14:",
+   "pH: 7.34, HCO3: 19 mEq/L, Blood ketones: 0.4 mmol/L, Glucose: 189 mg/dL"
+  ],
+  "key_facts": [
+   "14",
+   "7.34"
+  ]
+ },
+ {
+  "id": "DKA-R6",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "relational",
+  "question": "Which tests confirmed that the 19-year-old patient's diabetes was type 1, and what did they show?",
+  "reference": "Positive autoantibodies (GAD65 at 2,840 IU/mL, IA-2, ZnT8) and a virtually undetectable C-peptide of 0.08 ng/mL, confirming autoimmune beta-cell destruction and absolute insulin deficiency.",
+  "evidence": [
+   "GAD65 antibodies: Positive (titer 2,840 IU/mL; normal <5)",
+   "C-Peptide: 0.08 ng/mL (virtually undetectable; confirms insulin deficiency/beta-cell destruction)"
+  ],
+  "key_facts": [
+   "GAD65",
+   "C-peptide|C-Peptide",
+   "0.08"
+  ]
+ },
+ {
+  "id": "DKA-S1",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "summary",
+  "question": "What symptoms did the 19-year-old DKA patient have before she was brought to hospital?",
+  "reference": "About 3 weeks of increased thirst and urination, ~8 kg weight loss over 6 weeks, polyphagia then anorexia, blurred vision, fatigue, 2 days of nausea and vomiting, 12 hours of abdominal pain, fruity breath, and finally being minimally responsive.",
+  "evidence": [
+   "complaining of increased thirst and urination for approximately 3 weeks",
+   "The roommate also reported a fruity odor from Miss A.T.'s breath."
+  ],
+  "key_facts": [
+   "thirst|polydipsia",
+   "urination|polyuria",
+   "weight",
+   "vomit"
+  ]
+ },
+ {
+  "id": "DKA-S2",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "summary",
+  "question": "Describe the DKA treatment protocol used for the 19-year-old patient.",
+  "reference": "Normal saline bolus then 500 mL/hr, switching to 0.45% saline and adding dextrose at glucose 250; fixed-rate IV insulin 0.1 U/kg/hr without bolus until pH > 7.30, HCO3 > 18, gap closed and ketones < 0.6; potassium held then replaced when K+ < 4.0; no bicarbonate; then transition to subcutaneous glargine and aspart with a 2-hour overlap.",
+  "evidence": [
+   "When glucose reached 250 mg/dL: added dextrose (D5W + 0.45% NaCl) to prevent hypoglycemia while continuing insulin",
+   "Bicarbonate: NOT administered (pH >6.9; current evidence does not support use)"
+  ],
+  "key_facts": [
+   "saline|fluid",
+   "insulin",
+   "potassium",
+   "bicarbonate"
+  ]
+ },
+ {
+  "id": "DKA-S3",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "summary",
+  "question": "What diabetes education did the 19-year-old newly diagnosed patient receive?",
+  "reference": "Type 1 pathophysiology; insulin types and pen injection technique; glucose monitoring targets; CGM (Dexcom G7); carbohydrate counting and insulin-to-carb ratio; sick day rules; DKA prevention (never stop insulin, check ketones); hypoglycemia treatment with a glucagon kit; a medical alert bracelet.",
+  "evidence": [
+   "Carbohydrate counting and insulin-to-carb ratio",
+   "Hypoglycemia recognition and treatment: glucagon kit prescribed"
+  ],
+  "key_facts": [
+   "carbohydrate",
+   "glucagon",
+   "sick day|ketone"
+  ]
+ },
+ {
+  "id": "DKA-S4",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "summary",
+  "question": "What key teaching points does the 19-year-old DKA case report make?",
+  "reference": "Correct factitious hyponatremia mathematically; replenish potassium aggressively because insulin drives K+ into cells and hypokalemia is a leading cause of DKA death; screen for other autoimmune disease (concurrent Hashimoto's found); comprehensive education at diagnosis reduces complications.",
+  "evidence": [
+   "Potassium must be replenished aggressively during DKA treatment",
+   "Autoimmune screening is important given the clustering of autoimmune conditions"
+  ],
+  "key_facts": [
+   "sodium|hyponatremia",
+   "potassium",
+   "autoimmune",
+   "education"
+  ]
+ },
+ {
+  "id": "DKA-S5",
+  "doc": "medical_case_03_type1_diabetes_dka.txt",
+  "type": "summary",
+  "question": "What was the discharge plan for the 19-year-old type 1 diabetes patient?",
+  "reference": "Discharged home on day 5 with insulin glargine 16 units at bedtime, insulin aspart at a 1:10 carb ratio plus correction, a glucose meter and CGM, a glucagon (GlucaGen) kit, and levothyroxine 25 mcg; follow-up with endocrinology in 1 week, primary care in 2 weeks, ophthalmology within 3 months, and nephrology at 5 years of disease.",
+  "evidence": [
+   "Insulin glargine 16 units SQ at bedtime",
+   "Levothyroxine 25 mcg daily for Hashimoto's thyroiditis",
+   "Endocrinology in 1 week (urgent)"
+  ],
+  "key_facts": [
+   "glargine",
+   "aspart",
+   "levothyroxine",
+   "endocrinology"
+  ]
+ },
+ {
+  "id": "STROKE-F1",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "What was the NIHSS score of the 67-year-old stroke patient Mr. G.F. on arrival?",
+  "reference": "18 (severe stroke).",
+  "evidence": [
+   "NIHSS Score: 18 (severe stroke)"
+  ],
+  "key_facts": [
+   "18"
+  ]
+ },
+ {
+  "id": "STROKE-F2",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "What was the door-to-needle time for IV tPA in the 67-year-old stroke patient?",
+  "reference": "22 minutes (AHA target < 60 minutes).",
+  "evidence": [
+   "IV tPA administration (door-to-needle): 22 minutes"
+  ],
+  "key_facts": [
+   "22"
+  ]
+ },
+ {
+  "id": "STROKE-F3",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "Which artery segment was occluded in the 67-year-old stroke patient?",
+  "reference": "The right M1 segment of the middle cerebral artery (complete occlusion).",
+  "evidence": [
+   "Complete occlusion of right M1 segment of middle cerebral artery"
+  ],
+  "key_facts": [
+   "M1",
+   "middle cerebral|MCA"
+  ]
+ },
+ {
+  "id": "STROKE-F4",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "What thrombectomy device was used for the 67-year-old stroke patient?",
+  "reference": "A Solitaire X 4 x 40 mm stent retriever (combined with ADAPT direct aspiration).",
+  "evidence": [
+   "Device: Solitaire X 4 x 40 mm stent retriever"
+  ],
+  "key_facts": [
+   "Solitaire"
+  ]
+ },
+ {
+  "id": "STROKE-F5",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "What was the ASPECTS score on the 67-year-old stroke patient's initial CT?",
+  "reference": "9/10, with only the M3 segment showing subtle early ischemic change.",
+  "evidence": [
+   "ASPECTS score: 9/10 (only 1 segment — M3 — shows subtle early ischemic changes)"
+  ],
+  "key_facts": [
+   "9/10|9 out of 10"
+  ]
+ },
+ {
+  "id": "STROKE-F6",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "fact",
+  "question": "What was the 67-year-old stroke patient's CHA2DS2-VASc score?",
+  "reference": "6.",
+  "evidence": [
+   "CHA2DS2-VASc score: 6"
+  ],
+  "key_facts": [
+   "6"
+  ]
+ },
+ {
+  "id": "STROKE-R1",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "relational",
+  "question": "How did the NIHSS score of the 67-year-old stroke patient change from arrival to day 10?",
+  "reference": "18 on arrival, 7 at 24 hours, 5 at 72 hours, and 3 on day 10.",
+  "evidence": [
+   "NIHSS at 24 hours: 7 (improved from 18; dramatic improvement)",
+   "NIHSS at 72 hours: 5 (continued improvement)",
+   "Day 10: NIHSS 3"
+  ],
+  "key_facts": [
+   "18",
+   "7",
+   "3"
+  ]
+ },
+ {
+  "id": "STROKE-R2",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "relational",
+  "question": "Why was the 67-year-old stroke patient not on anticoagulation before his stroke, and what earlier event had been a missed opportunity?",
+  "reference": "He had paroxysmal atrial fibrillation but declined anticoagulation over fall-risk concerns; his 2019 TIA (after which he stopped aspirin) was a missed opportunity for prevention with anticoagulation.",
+  "evidence": [
+   "Atrial Fibrillation (paroxysmal) — NOT on anticoagulation (patient declined due to fall risk concerns)",
+   "His prior TIA in 2019 represented a missed opportunity for stroke prevention through anticoagulation."
+  ],
+  "key_facts": [
+   "fall",
+   "TIA",
+   "2019"
+  ]
+ },
+ {
+  "id": "STROKE-R3",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "relational",
+  "question": "What did CT perfusion show about the 67-year-old stroke patient's brain tissue, and why did that favour intervention?",
+  "reference": "An ischemic core of 18 mL and a penumbra of 112 mL, a mismatch ratio of 6.2:1, meaning a large amount of salvageable tissue.",
+  "evidence": [
+   "Ischemic Core (rCBF <30%): 18 mL",
+   "Penumbra (Tmax >6 sec): 112 mL",
+   "Mismatch Ratio: 6.2:1 (excellent — large salvageable tissue)"
+  ],
+  "key_facts": [
+   "18 mL",
+   "112",
+   "6.2"
+  ]
+ },
+ {
+  "id": "STROKE-R4",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "relational",
+  "question": "How many thrombectomy passes were needed for the 67-year-old stroke patient, and what TICI result did each achieve?",
+  "reference": "Two passes: pass 1 gave partial recanalization (TICI 2a); pass 2 gave complete recanalization (TICI 3).",
+  "evidence": [
+   "Pass 1: Partial recanalization; TICI 2a",
+   "Pass 2: Complete recanalization achieved; TICI 3"
+  ],
+  "key_facts": [
+   "2a",
+   "TICI 3"
+  ]
+ },
+ {
+  "id": "STROKE-R5",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "relational",
+  "question": "When was apixaban started for the 67-year-old stroke patient, at what long-term dose, and why?",
+  "reference": "At 48 hours after the stroke (held for the first 24 hours), 5 mg twice daily long-term, because the stroke was cardioembolic from atrial fibrillation (high cardioembolic risk).",
+  "evidence": [
+   "Anticoagulation: Held first 24 hours; apixaban initiated at 48 hours (AF — high cardioembolic risk)",
+   "Apixaban 5 mg twice daily (long-term for AF stroke prevention)"
+  ],
+  "key_facts": [
+   "48 hours",
+   "5 mg",
+   "atrial fibrillation|AF"
+  ]
+ },
+ {
+  "id": "STROKE-S1",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "summary",
+  "question": "What time metrics were achieved in treating the 67-year-old stroke patient?",
+  "reference": "Onset to ED 24 min; door to CT 6 min; door to CTA 10 min; door to tPA decision 14 min; door-to-needle 22 min; CT to groin puncture 48 min; groin puncture to recanalization 34 min; door to recanalization 82 min, meeting both AHA targets.",
+  "evidence": [
+   "Door to recanalization: 82 minutes",
+   "BOTH MET"
+  ],
+  "key_facts": [
+   "22",
+   "82",
+   "34"
+  ]
+ },
+ {
+  "id": "STROKE-S2",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "summary",
+  "question": "Why did the 67-year-old stroke patient have such a good outcome despite a severe stroke?",
+  "reference": "Rapid recognition and 911 call by his wife; EMS pre-hospital stroke scale and pre-notification; an organised stroke code; excellent time metrics; favourable imaging (large penumbra, small core, ASPECTS 9); a successful 2-pass thrombectomy to TICI 3; and bridging IV tPA.",
+  "evidence": [
+   "Rapid symptom recognition and 911 activation by bystander",
+   "Favorable imaging profile (large penumbra, small core, ASPECTS 9/10)"
+  ],
+  "key_facts": [
+   "911|recognition",
+   "pre-notification|EMS",
+   "thrombectomy",
+   "tPA"
+  ]
+ },
+ {
+  "id": "STROKE-S3",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "summary",
+  "question": "What long-term secondary prevention plan was set for the 67-year-old stroke patient?",
+  "reference": "Apixaban 5 mg twice daily for AF, rosuvastatin 40 mg nightly, blood pressure target < 130/80, continued diabetes management, Mediterranean diet, exercise and weight management, and AF monitoring with an implantable loop recorder plus quarterly follow-up for a year.",
+  "evidence": [
+   "Rosuvastatin 40 mg nightly",
+   "Antihypertensives continued with target BP <130/80"
+  ],
+  "key_facts": [
+   "apixaban",
+   "rosuvastatin",
+   "130/80",
+   "loop recorder|ILR"
+  ]
+ },
+ {
+  "id": "STROKE-S4",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "summary",
+  "question": "Describe the 67-year-old stroke patient's recovery and rehabilitation.",
+  "reference": "NIHSS improved to 3 by day 10 with mRS 2 at hospital discharge; 12 days of inpatient rehabilitation (PT, OT, speech therapy, neuropsychology) from day 10 to 22; by day 22 he walked independently with near-normal speech and mRS 1, and he was mRS 1 at 90 days, back to normal activities.",
+  "evidence": [
+   "Inpatient rehabilitation: 12 days (Days 10-22 post-admission)",
+   "mRS at discharge from rehab: 1 (no significant disability)"
+  ],
+  "key_facts": [
+   "rehabilitation|rehab",
+   "mRS",
+   "independent"
+  ]
+ },
+ {
+  "id": "STROKE-S5",
+  "doc": "medical_case_04_stroke_management.txt",
+  "type": "summary",
+  "question": "What were the 67-year-old stroke patient's medical history and risk factors?",
+  "reference": "Paroxysmal atrial fibrillation without anticoagulation, hypertension, type 2 diabetes, hyperlipidemia, a prior TIA in 2019 (aspirin stopped), and moderate obesity (BMI 29.8).",
+  "evidence": [
+   "Prior TIA (2019) — full workup at that time, aspirin started but stopped by patient",
+   "Moderate obesity (BMI 29.8)"
+  ],
+  "key_facts": [
+   "atrial fibrillation|AF",
+   "hypertension",
+   "diabetes",
+   "TIA"
+  ]
+ },
+ {
+  "id": "ALL-F1",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "fact",
+  "question": "What was the white blood cell count of the 7-year-old boy diagnosed with leukemia?",
+  "reference": "87,400/uL (markedly elevated), with 78% lymphoblasts.",
+  "evidence": [
+   "WBC: 87,400/uL (markedly elevated; normal 5,000-15,000 for age)"
+  ],
+  "key_facts": [
+   "87,400|87400"
+  ]
+ },
+ {
+  "id": "ALL-F2",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "fact",
+  "question": "Which genetic translocation was found in the 7-year-old boy's B-ALL?",
+  "reference": "ETV6-RUNX1, t(12;21), detected by FISH and RT-PCR.",
+  "evidence": [
+   "ETV6-RUNX1 (t(12;21)): POSITIVE — detected by FISH and RT-PCR"
+  ],
+  "key_facts": [
+   "ETV6-RUNX1|ETV6"
+  ]
+ },
+ {
+  "id": "ALL-F3",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "fact",
+  "question": "Which treatment protocol was used for the 7-year-old boy with B-ALL?",
+  "reference": "The Children's Oncology Group COG AALL1231 protocol (high-risk B-ALL).",
+  "evidence": [
+   "TREATMENT: COG AALL1231 PROTOCOL (HIGH RISK B-ALL)"
+  ],
+  "key_facts": [
+   "AALL1231"
+  ]
+ },
+ {
+  "id": "ALL-F4",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "fact",
+  "question": "What percentage of the 7-year-old boy's bone marrow cells were blasts at diagnosis?",
+  "reference": "94%, in a hypercellular (> 95%) marrow.",
+  "evidence": [
+   "Blasts: 94% of marrow cells"
+  ],
+  "key_facts": [
+   "94"
+  ]
+ },
+ {
+  "id": "ALL-F5",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "fact",
+  "question": "What is the expected 5-year event-free survival for the 7-year-old boy with B-ALL?",
+  "reference": "Above 90% (overall survival above 95%).",
+  "evidence": [
+   "Expected 5-year event-free survival (EFS): >90%"
+  ],
+  "key_facts": [
+   "90"
+  ]
+ },
+ {
+  "id": "ALL-R1",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "Why was the 7-year-old boy first classified as NCI high risk, and why was he later reassigned to standard risk?",
+  "reference": "His WBC of 87,400 exceeded the 50,000 standard-risk threshold despite a favourable age; after induction his Day 29 MRD was negative (0.005%), so COG reassigned him to standard risk.",
+  "evidence": [
+   "NCI Risk: HIGH RISK (due to elevated WBC despite favorable age)",
+   "COG Risk Reassignment: STANDARD RISK (due to excellent MRD response despite initial high risk)"
+  ],
+  "key_facts": [
+   "WBC|white",
+   "MRD",
+   "standard risk"
+  ]
+ },
+ {
+  "id": "ALL-R2",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "What were the 7-year-old boy's Day 29 bone marrow results after induction?",
+  "reference": "0.8% blasts by morphology (complete remission) and MRD 0.005% by flow cytometry, which is MRD negative (threshold < 0.01%).",
+  "evidence": [
+   "Blasts: 0.8% by morphology (Complete Remission achieved)",
+   "Minimal Residual Disease (MRD) by flow cytometry: 0.005% (MRD NEGATIVE — threshold <0.01%)"
+  ],
+  "key_facts": [
+   "0.8",
+   "0.005",
+   "remission"
+  ]
+ },
+ {
+  "id": "ALL-R3",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "Why was rasburicase given to the 7-year-old boy with leukemia, and how well did it work?",
+  "reference": "For tumor lysis prophylaxis because his uric acid was elevated at 9.4 mg/dL; rasburicase lowered it to 0.6 mg/dL within 4 hours, and no significant tumor lysis syndrome developed.",
+  "evidence": [
+   "uric acid 9.4 mg/dL (elevated, tumor lysis risk)",
+   "Rasburicase 0.2 mg/kg IV (rapid uric acid reduction — converted uric acid from 9.4 to 0.6 mg/dL within 4 hours)"
+  ],
+  "key_facts": [
+   "uric acid",
+   "9.4",
+   "0.6"
+  ]
+ },
+ {
+  "id": "ALL-R4",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "What was the significance of the BCR-ABL1 and ETV6-RUNX1 results for the 7-year-old boy's prognosis?",
+  "reference": "BCR-ABL1 (Philadelphia chromosome) was negative, which is favourable since Ph+ ALL has a worse prognosis; ETV6-RUNX1 was positive, the most common pediatric ALL translocation, associated with a favourable prognosis.",
+  "evidence": [
+   "BCR-ABL1 (Ph chromosome): NEGATIVE (favorable — Ph+ ALL has worse prognosis)",
+   "the most common translocation in pediatric ALL; associated with FAVORABLE prognosis"
+  ],
+  "key_facts": [
+   "BCR-ABL1|Philadelphia|Ph",
+   "ETV6-RUNX1|ETV6",
+   "favorable|favourable|good"
+  ]
+ },
+ {
+  "id": "ALL-R5",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "What happened when the 7-year-old boy developed a fever on day 14 of induction?",
+  "reference": "He was admitted with neutropenic fever; blood cultures were negative and he was treated empirically with cefepime for 5 days.",
+  "evidence": [
+   "Neutropenic fever (Day 14): Admitted; blood cultures negative; treated empirically with cefepime x 5 days"
+  ],
+  "key_facts": [
+   "neutropenic",
+   "cefepime"
+  ]
+ },
+ {
+  "id": "ALL-R6",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "relational",
+  "question": "Which infection occurred in the 7-year-old boy during consolidation, and how was it treated?",
+  "reference": "A line-associated (PICC) infection; the line was removed and replaced and he was treated with vancomycin.",
+  "evidence": [
+   "Line-associated infection (PICC): Removed and replaced; treated with vancomycin"
+  ],
+  "key_facts": [
+   "PICC|line",
+   "vancomycin"
+  ]
+ },
+ {
+  "id": "ALL-S1",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "summary",
+  "question": "How did the 7-year-old boy with leukemia present?",
+  "reference": "Three weeks of fatigue, pallor, easy bruising, appetite loss and intermittent fevers, plus leg and knee bone pain mistaken for growing pains; on examination: pallor, bruises, palatal petechiae, cervical and axillary lymphadenopathy, hepatosplenomegaly, tibial tenderness and tachycardia.",
+  "evidence": [
+   "Chief Complaint: 3-week history of fatigue, pallor, easy bruising, and intermittent fever",
+   "He also complained of bone pain, predominantly in his legs and knees"
+  ],
+  "key_facts": [
+   "fatigue",
+   "bruis",
+   "bone pain|growing pains",
+   "lymphadenopathy|hepatomegaly|splenomegaly"
+  ]
+ },
+ {
+  "id": "ALL-S2",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "summary",
+  "question": "What drugs were used in the induction phase for the 7-year-old boy with B-ALL?",
+  "reference": "Vincristine, dexamethasone, PEG-asparaginase, doxorubicin, triple intrathecal chemotherapy (methotrexate/ARA-C/hydrocortisone), and prophylactic co-trimoxazole for Pneumocystis.",
+  "evidence": [
+   "Vincristine 1.5 mg/m2 IV (Days 1, 8, 15, 22) — max 2 mg",
+   "Doxorubicin 30 mg/m2 IV (Day 1)"
+  ],
+  "key_facts": [
+   "vincristine",
+   "dexamethasone",
+   "asparaginase",
+   "doxorubicin"
+  ]
+ },
+ {
+  "id": "ALL-S3",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "summary",
+  "question": "What toxicities did the 7-year-old boy experience during his leukemia treatment?",
+  "reference": "Induction: neutropenic fever, grade 2 nausea/vomiting, vincristine constipation, mild peripheral neuropathy, steroid-related mood changes. Consolidation: grade 2 methotrexate mucositis, transient raised LFTs, and a PICC line infection.",
+  "evidence": [
+   "Vincristine-related constipation: Managed with lactulose and bowel regimen",
+   "Methotrexate mucositis: Grade 2; managed with leucovorin rescue and oral care"
+  ],
+  "key_facts": [
+   "neutropenic",
+   "neuropathy|constipation",
+   "mucositis"
+  ]
+ },
+ {
+  "id": "ALL-S4",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "summary",
+  "question": "What key teaching points does the pediatric B-ALL case report make?",
+  "reference": "Pallor, bruising and lymphadenopathy should prompt a CBC; bone pain in children is a red flag, not growing pains; ETV6-RUNX1 has an excellent prognosis; Day 29 MRD is the gold standard for risk stratification; cranial radiation is largely eliminated; long-term survivorship monitoring for late effects is essential.",
+  "evidence": [
+   "Bone pain in children is a red flag symptom that should not be dismissed as \"growing pains.\"",
+   "MRD monitoring at Day 29 is now the gold standard for risk stratification"
+  ],
+  "key_facts": [
+   "bone pain|growing pains",
+   "MRD",
+   "ETV6-RUNX1|ETV6",
+   "radiation"
+  ]
+ },
+ {
+  "id": "ALL-S5",
+  "doc": "medical_case_05_pediatric_leukemia.txt",
+  "type": "summary",
+  "question": "What supportive care did the 7-year-old boy with leukemia receive?",
+  "reference": "An implanted port, tumor lysis prophylaxis (hydration, rasburicase, allopurinol), dietitian support, a child life specialist and pediatric psychologist, infection prevention (hand hygiene, neutropenic precautions, prophylactic antibiotics), procedural sedation and numbing cream, and a school IEP with homebound instruction.",
+  "evidence": [
+   "Central venous access: Implanted port placed under general anesthesia",
+   "School: Individualized Education Program (IEP) and homebound instruction during intensive therapy"
+  ],
+  "key_facts": [
+   "port",
+   "psycholog|child life",
+   "school|IEP"
+  ]
+ }
+]

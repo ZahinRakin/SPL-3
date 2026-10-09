@@ -1,0 +1,1602 @@
+{
+ "71441e0c34": {
+  "qid": "EMPL-R4",
+  "method": "standard"
+ },
+ "e92dfb20d5": {
+  "qid": "EMPL-S6",
+  "method": "refined"
+ },
+ "85c077b504": {
+  "qid": "DKA-S3",
+  "method": "standard"
+ },
+ "70bc568627": {
+  "qid": "MI-R1",
+  "method": "standard"
+ },
+ "2db51be894": {
+  "qid": "EMPL-S2",
+  "method": "refined"
+ },
+ "13546b971c": {
+  "qid": "SEPSIS-S5",
+  "method": "standard"
+ },
+ "1adc8dc776": {
+  "qid": "ALL-S1",
+  "method": "refined"
+ },
+ "d29034f5a1": {
+  "qid": "DKA-R5",
+  "method": "refined"
+ },
+ "a7c29444b0": {
+  "qid": "SEPSIS-S2",
+  "method": "refined"
+ },
+ "64fe18ad86": {
+  "qid": "CONSTR-R5",
+  "method": "standard"
+ },
+ "f9c61081c3": {
+  "qid": "MI-F3",
+  "method": "standard"
+ },
+ "5db307aa50": {
+  "qid": "CONSTR-S4",
+  "method": "standard"
+ },
+ "211c8c3716": {
+  "qid": "CONSTR-S1",
+  "method": "standard"
+ },
+ "996499a285": {
+  "qid": "BREACH-S1",
+  "method": "refined"
+ },
+ "de8e69181d": {
+  "qid": "IP-S5",
+  "method": "standard"
+ },
+ "106a8187ae": {
+  "qid": "ALL-S2",
+  "method": "standard"
+ },
+ "1a555717a8": {
+  "qid": "EMPL-R6",
+  "method": "refined"
+ },
+ "6e2c4137ec": {
+  "qid": "BANKR-R4",
+  "method": "standard"
+ },
+ "05b9f899fd": {
+  "qid": "CONSTR-S3",
+  "method": "refined"
+ },
+ "94040cbce2": {
+  "qid": "ALL-R3",
+  "method": "refined"
+ },
+ "aa988a8e48": {
+  "qid": "MI-F6",
+  "method": "refined"
+ },
+ "7038e6d405": {
+  "qid": "FRAUD-R4",
+  "method": "refined"
+ },
+ "07597aa216": {
+  "qid": "CONSTR-F6",
+  "method": "standard"
+ },
+ "051941860f": {
+  "qid": "DKA-S1",
+  "method": "refined"
+ },
+ "d836654640": {
+  "qid": "BREACH-F3",
+  "method": "refined"
+ },
+ "0690c9b04c": {
+  "qid": "IP-F1",
+  "method": "standard"
+ },
+ "084b03174e": {
+  "qid": "EMPL-R5",
+  "method": "refined"
+ },
+ "65cf611ba4": {
+  "qid": "BREACH-R5",
+  "method": "refined"
+ },
+ "c12890a645": {
+  "qid": "IP-F4",
+  "method": "refined"
+ },
+ "0b41ae965a": {
+  "qid": "ENV-R3",
+  "method": "standard"
+ },
+ "8ad5a86237": {
+  "qid": "BREACH-F1",
+  "method": "refined"
+ },
+ "5c2eb8b654": {
+  "qid": "BREACH-R2",
+  "method": "refined"
+ },
+ "ec1d1ebe48": {
+  "qid": "EMPL-S2",
+  "method": "standard"
+ },
+ "80d4525c5b": {
+  "qid": "MI-F6",
+  "method": "standard"
+ },
+ "1bfed24fe5": {
+  "qid": "FRAUD-F3",
+  "method": "standard"
+ },
+ "7a99f6406e": {
+  "qid": "IP-S1",
+  "method": "standard"
+ },
+ "996d9e79ab": {
+  "qid": "MI-S4",
+  "method": "standard"
+ },
+ "7e91221842": {
+  "qid": "MI-S5",
+  "method": "standard"
+ },
+ "f81a94791a": {
+  "qid": "BREACH-F2",
+  "method": "refined"
+ },
+ "1bba94f549": {
+  "qid": "FRAUD-S3",
+  "method": "standard"
+ },
+ "822fbe9f9e": {
+  "qid": "ALL-R5",
+  "method": "standard"
+ },
+ "c0fee65170": {
+  "qid": "STROKE-R3",
+  "method": "standard"
+ },
+ "bb7ea33a7b": {
+  "qid": "STROKE-R1",
+  "method": "standard"
+ },
+ "a93b78a1d4": {
+  "qid": "DKA-R4",
+  "method": "standard"
+ },
+ "c7eceefa62": {
+  "qid": "DKA-R3",
+  "method": "standard"
+ },
+ "090868efed": {
+  "qid": "STROKE-S3",
+  "method": "refined"
+ },
+ "03bf50a7c4": {
+  "qid": "BREACH-S4",
+  "method": "standard"
+ },
+ "bef43c6630": {
+  "qid": "SEPSIS-F2",
+  "method": "standard"
+ },
+ "a6950d1e9f": {
+  "qid": "SEPSIS-S1",
+  "method": "standard"
+ },
+ "9955de3784": {
+  "qid": "DKA-S2",
+  "method": "refined"
+ },
+ "69d0ef6feb": {
+  "qid": "ALL-R1",
+  "method": "refined"
+ },
+ "e7fc9a5345": {
+  "qid": "STROKE-S4",
+  "method": "standard"
+ },
+ "5028c7c98e": {
+  "qid": "CONSTR-R1",
+  "method": "refined"
+ },
+ "b58a37acb9": {
+  "qid": "EMPL-S6",
+  "method": "standard"
+ },
+ "8068835ffc": {
+  "qid": "BANKR-S5",
+  "method": "standard"
+ },
+ "4e8513880f": {
+  "qid": "ALL-F5",
+  "method": "refined"
+ },
+ "e419223621": {
+  "qid": "BREACH-F3",
+  "method": "standard"
+ },
+ "f5c8225373": {
+  "qid": "STROKE-S1",
+  "method": "standard"
+ },
+ "25d5e80041": {
+  "qid": "STROKE-R2",
+  "method": "standard"
+ },
+ "ae69498807": {
+  "qid": "ENV-F2",
+  "method": "standard"
+ },
+ "4345ad5b44": {
+  "qid": "EMPL-S3",
+  "method": "refined"
+ },
+ "feaeb52570": {
+  "qid": "CONSTR-F2",
+  "method": "standard"
+ },
+ "ef0d51b20b": {
+  "qid": "EMPL-F2",
+  "method": "standard"
+ },
+ "4ca16e1f61": {
+  "qid": "STROKE-S2",
+  "method": "standard"
+ },
+ "98def6c9b3": {
+  "qid": "BREACH-R4",
+  "method": "refined"
+ },
+ "a3e4e550d2": {
+  "qid": "ALL-S5",
+  "method": "refined"
+ },
+ "11aa594bfd": {
+  "qid": "BANKR-R6",
+  "method": "standard"
+ },
+ "ac9e5a5d72": {
+  "qid": "MI-R5",
+  "method": "refined"
+ },
+ "ab7231b214": {
+  "qid": "ENV-F2",
+  "method": "refined"
+ },
+ "113f8ea997": {
+  "qid": "ENV-F4",
+  "method": "refined"
+ },
+ "20aab47727": {
+  "qid": "CONSTR-R1",
+  "method": "standard"
+ },
+ "5917780448": {
+  "qid": "SEPSIS-F4",
+  "method": "refined"
+ },
+ "267b6c7465": {
+  "qid": "SEPSIS-F5",
+  "method": "standard"
+ },
+ "9820134f75": {
+  "qid": "BREACH-R1",
+  "method": "standard"
+ },
+ "fe5d9f57fd": {
+  "qid": "CONSTR-R4",
+  "method": "standard"
+ },
+ "ffb647a9cc": {
+  "qid": "CONSTR-F2",
+  "method": "refined"
+ },
+ "ee9c871af8": {
+  "qid": "EMPL-F2",
+  "method": "refined"
+ },
+ "ef6dd5c0d6": {
+  "qid": "STROKE-F2",
+  "method": "refined"
+ },
+ "2669f81304": {
+  "qid": "IP-S6",
+  "method": "refined"
+ },
+ "2efda808e5": {
+  "qid": "ENV-S5",
+  "method": "refined"
+ },
+ "17a62ed756": {
+  "qid": "CONSTR-S5",
+  "method": "standard"
+ },
+ "f1e0fd74d3": {
+  "qid": "BANKR-S6",
+  "method": "standard"
+ },
+ "035abee5a3": {
+  "qid": "MI-S2",
+  "method": "refined"
+ },
+ "4be321d6eb": {
+  "qid": "BANKR-R2",
+  "method": "refined"
+ },
+ "32e0f5273d": {
+  "qid": "BREACH-S5",
+  "method": "refined"
+ },
+ "851026dc96": {
+  "qid": "FRAUD-S2",
+  "method": "standard"
+ },
+ "3a9742df54": {
+  "qid": "CONSTR-R2",
+  "method": "standard"
+ },
+ "3ae976a351": {
+  "qid": "IP-F2",
+  "method": "standard"
+ },
+ "498e8edd15": {
+  "qid": "IP-R2",
+  "method": "refined"
+ },
+ "e08704631d": {
+  "qid": "ENV-S6",
+  "method": "refined"
+ },
+ "1fc370e753": {
+  "qid": "IP-F5",
+  "method": "standard"
+ },
+ "4a22591507": {
+  "qid": "BANKR-S2",
+  "method": "standard"
+ },
+ "486e66d036": {
+  "qid": "STROKE-S1",
+  "method": "refined"
+ },
+ "da2e5ba195": {
+  "qid": "DKA-S4",
+  "method": "standard"
+ },
+ "51116fa392": {
+  "qid": "FRAUD-S2",
+  "method": "refined"
+ },
+ "083bf2620e": {
+  "qid": "MI-R5",
+  "method": "standard"
+ },
+ "1fdad2dfd5": {
+  "qid": "FRAUD-S5",
+  "method": "standard"
+ },
+ "f2e6508221": {
+  "qid": "ALL-S5",
+  "method": "standard"
+ },
+ "bb302e75b2": {
+  "qid": "CONSTR-R2",
+  "method": "refined"
+ },
+ "cf16fcba6d": {
+  "qid": "BANKR-S1",
+  "method": "refined"
+ },
+ "868154b5fb": {
+  "qid": "MI-R3",
+  "method": "standard"
+ },
+ "469f214bcc": {
+  "qid": "MI-R4",
+  "method": "refined"
+ },
+ "18a0dcc373": {
+  "qid": "EMPL-R6",
+  "method": "standard"
+ },
+ "b7e8ad0353": {
+  "qid": "EMPL-S3",
+  "method": "standard"
+ },
+ "7c0c631fbe": {
+  "qid": "ALL-F5",
+  "method": "standard"
+ },
+ "8da2bfa3d6": {
+  "qid": "STROKE-F1",
+  "method": "standard"
+ },
+ "d3426697dd": {
+  "qid": "EMPL-F5",
+  "method": "refined"
+ },
+ "f462be9f5f": {
+  "qid": "CONSTR-S3",
+  "method": "standard"
+ },
+ "f78601ea6f": {
+  "qid": "ENV-F1",
+  "method": "refined"
+ },
+ "e89891eece": {
+  "qid": "BREACH-F1",
+  "method": "standard"
+ },
+ "781bbdd76b": {
+  "qid": "EMPL-F1",
+  "method": "standard"
+ },
+ "c1b33bcd16": {
+  "qid": "SEPSIS-F3",
+  "method": "standard"
+ },
+ "e41a0ca09c": {
+  "qid": "CONSTR-S4",
+  "method": "refined"
+ },
+ "623dc68918": {
+  "qid": "SEPSIS-R3",
+  "method": "refined"
+ },
+ "74ac4fbc6e": {
+  "qid": "EMPL-F3",
+  "method": "refined"
+ },
+ "29ea519ccc": {
+  "qid": "DKA-F5",
+  "method": "standard"
+ },
+ "984df9b5bb": {
+  "qid": "FRAUD-F5",
+  "method": "refined"
+ },
+ "e53fb38716": {
+  "qid": "EMPL-F1",
+  "method": "refined"
+ },
+ "2a0ac6f7be": {
+  "qid": "CONSTR-F5",
+  "method": "refined"
+ },
+ "a71061083d": {
+  "qid": "BREACH-F5",
+  "method": "standard"
+ },
+ "67915db353": {
+  "qid": "BREACH-S2",
+  "method": "standard"
+ },
+ "6a8adb7b7a": {
+  "qid": "IP-F6",
+  "method": "refined"
+ },
+ "0dde3c8c8b": {
+  "qid": "IP-F6",
+  "method": "standard"
+ },
+ "a5048de4ca": {
+  "qid": "DKA-S5",
+  "method": "refined"
+ },
+ "01db0bde69": {
+  "qid": "BREACH-R1",
+  "method": "refined"
+ },
+ "4845e519aa": {
+  "qid": "SEPSIS-S3",
+  "method": "refined"
+ },
+ "baf8ac8ba3": {
+  "qid": "MI-S5",
+  "method": "refined"
+ },
+ "cd9134e723": {
+  "qid": "MI-R2",
+  "method": "standard"
+ },
+ "41586ae33a": {
+  "qid": "ENV-S2",
+  "method": "standard"
+ },
+ "bb0c98b462": {
+  "qid": "BREACH-S1",
+  "method": "standard"
+ },
+ "93b991889d": {
+  "qid": "EMPL-S5",
+  "method": "standard"
+ },
+ "87dde700fd": {
+  "qid": "STROKE-F5",
+  "method": "standard"
+ },
+ "19eb7c3d62": {
+  "qid": "BANKR-R5",
+  "method": "refined"
+ },
+ "490cbf60e3": {
+  "qid": "FRAUD-R1",
+  "method": "standard"
+ },
+ "a3b5cc845b": {
+  "qid": "STROKE-F6",
+  "method": "refined"
+ },
+ "c385f18a89": {
+  "qid": "EMPL-F3",
+  "method": "standard"
+ },
+ "81ace5a671": {
+  "qid": "BANKR-R4",
+  "method": "refined"
+ },
+ "fe40a40103": {
+  "qid": "ENV-R1",
+  "method": "standard"
+ },
+ "0718a7f3ae": {
+  "qid": "DKA-R1",
+  "method": "refined"
+ },
+ "0647948b00": {
+  "qid": "FRAUD-R3",
+  "method": "standard"
+ },
+ "1c268661ea": {
+  "qid": "DKA-S2",
+  "method": "standard"
+ },
+ "082ef60c84": {
+  "qid": "MI-S1",
+  "method": "refined"
+ },
+ "659c02d637": {
+  "qid": "STROKE-R3",
+  "method": "refined"
+ },
+ "2608c1f5f5": {
+  "qid": "SEPSIS-F5",
+  "method": "refined"
+ },
+ "708aebfc9e": {
+  "qid": "BANKR-R3",
+  "method": "refined"
+ },
+ "2d0c6dc317": {
+  "qid": "FRAUD-S5",
+  "method": "refined"
+ },
+ "f7671b5542": {
+  "qid": "SEPSIS-R5",
+  "method": "refined"
+ },
+ "2d06734b17": {
+  "qid": "BANKR-S3",
+  "method": "standard"
+ },
+ "43b1a2eb4f": {
+  "qid": "EMPL-R5",
+  "method": "standard"
+ },
+ "4f472cb37d": {
+  "qid": "SEPSIS-R6",
+  "method": "refined"
+ },
+ "5eca6aa574": {
+  "qid": "CONSTR-S2",
+  "method": "standard"
+ },
+ "d335a64a12": {
+  "qid": "ENV-S5",
+  "method": "standard"
+ },
+ "4c57bad3d0": {
+  "qid": "FRAUD-S4",
+  "method": "refined"
+ },
+ "fb22231ef5": {
+  "qid": "EMPL-R2",
+  "method": "refined"
+ },
+ "43a6d46d39": {
+  "qid": "FRAUD-F3",
+  "method": "refined"
+ },
+ "df63340da9": {
+  "qid": "CONSTR-F4",
+  "method": "refined"
+ },
+ "f0357dd769": {
+  "qid": "DKA-R6",
+  "method": "standard"
+ },
+ "e704cd3a34": {
+  "qid": "IP-S2",
+  "method": "refined"
+ },
+ "375f471ee4": {
+  "qid": "ALL-R6",
+  "method": "refined"
+ },
+ "9c65a0789b": {
+  "qid": "STROKE-F3",
+  "method": "standard"
+ },
+ "857a954532": {
+  "qid": "FRAUD-R4",
+  "method": "standard"
+ },
+ "0ae6c54b55": {
+  "qid": "ALL-R3",
+  "method": "standard"
+ },
+ "b3d1d20d7e": {
+  "qid": "CONSTR-S1",
+  "method": "refined"
+ },
+ "55767151ce": {
+  "qid": "EMPL-R3",
+  "method": "standard"
+ },
+ "469f8e6636": {
+  "qid": "IP-S2",
+  "method": "standard"
+ },
+ "b9e9ece760": {
+  "qid": "BANKR-S1",
+  "method": "standard"
+ },
+ "0881d3c26a": {
+  "qid": "EMPL-S1",
+  "method": "standard"
+ },
+ "73775751f2": {
+  "qid": "FRAUD-R3",
+  "method": "refined"
+ },
+ "a571698f1e": {
+  "qid": "SEPSIS-S2",
+  "method": "standard"
+ },
+ "76debf5b0f": {
+  "qid": "EMPL-R3",
+  "method": "refined"
+ },
+ "ee76fec332": {
+  "qid": "FRAUD-F1",
+  "method": "standard"
+ },
+ "6e00755867": {
+  "qid": "ENV-R4",
+  "method": "standard"
+ },
+ "262dcd8697": {
+  "qid": "MI-F1",
+  "method": "standard"
+ },
+ "ab207f12aa": {
+  "qid": "SEPSIS-R1",
+  "method": "standard"
+ },
+ "948a9a03bc": {
+  "qid": "DKA-F5",
+  "method": "refined"
+ },
+ "35ff166263": {
+  "qid": "ENV-S6",
+  "method": "standard"
+ },
+ "13bf11f83b": {
+  "qid": "BREACH-R2",
+  "method": "standard"
+ },
+ "60ddfc641d": {
+  "qid": "ALL-F1",
+  "method": "refined"
+ },
+ "97cd80850c": {
+  "qid": "MI-S3",
+  "method": "standard"
+ },
+ "c0f779e6bb": {
+  "qid": "BREACH-S4",
+  "method": "refined"
+ },
+ "ebd4932ec9": {
+  "qid": "IP-S4",
+  "method": "standard"
+ },
+ "2428f119af": {
+  "qid": "BREACH-S5",
+  "method": "standard"
+ },
+ "4f8666c63a": {
+  "qid": "BANKR-S4",
+  "method": "standard"
+ },
+ "0b5f1af70f": {
+  "qid": "FRAUD-R1",
+  "method": "refined"
+ },
+ "5c001136c6": {
+  "qid": "EMPL-S4",
+  "method": "refined"
+ },
+ "b7eabeb6d5": {
+  "qid": "ALL-F2",
+  "method": "standard"
+ },
+ "a1f57759f4": {
+  "qid": "IP-F1",
+  "method": "refined"
+ },
+ "3c095f35f8": {
+  "qid": "ENV-S3",
+  "method": "refined"
+ },
+ "02d90c400b": {
+  "qid": "EMPL-S5",
+  "method": "refined"
+ },
+ "02c09efc1d": {
+  "qid": "ALL-F4",
+  "method": "refined"
+ },
+ "ab21dd8d95": {
+  "qid": "FRAUD-F6",
+  "method": "refined"
+ },
+ "73e2d08adb": {
+  "qid": "STROKE-F4",
+  "method": "refined"
+ },
+ "28f1349495": {
+  "qid": "STROKE-S3",
+  "method": "standard"
+ },
+ "8041aeb004": {
+  "qid": "SEPSIS-R5",
+  "method": "standard"
+ },
+ "1be7ac7080": {
+  "qid": "BANKR-S2",
+  "method": "refined"
+ },
+ "7a4ca705b7": {
+  "qid": "ENV-F5",
+  "method": "refined"
+ },
+ "122df0cbfb": {
+  "qid": "ENV-R5",
+  "method": "standard"
+ },
+ "d08d0cbd4c": {
+  "qid": "IP-R2",
+  "method": "standard"
+ },
+ "e37ce61839": {
+  "qid": "DKA-F2",
+  "method": "standard"
+ },
+ "ca72961a7a": {
+  "qid": "STROKE-F2",
+  "method": "standard"
+ },
+ "07d2329c9b": {
+  "qid": "ENV-F5",
+  "method": "standard"
+ },
+ "addd3def02": {
+  "qid": "DKA-F2",
+  "method": "refined"
+ },
+ "4240f7fd70": {
+  "qid": "STROKE-F3",
+  "method": "refined"
+ },
+ "5a0fcfa8be": {
+  "qid": "MI-F3",
+  "method": "refined"
+ },
+ "6e6ba9b362": {
+  "qid": "SEPSIS-R2",
+  "method": "refined"
+ },
+ "08a584624b": {
+  "qid": "MI-F2",
+  "method": "refined"
+ },
+ "a7e63409d6": {
+  "qid": "MI-F4",
+  "method": "standard"
+ },
+ "952e906405": {
+  "qid": "FRAUD-R6",
+  "method": "standard"
+ },
+ "d08982c493": {
+  "qid": "FRAUD-F4",
+  "method": "refined"
+ },
+ "19736d5a0e": {
+  "qid": "CONSTR-S6",
+  "method": "refined"
+ },
+ "7f56c6134d": {
+  "qid": "STROKE-R4",
+  "method": "refined"
+ },
+ "a0c7bdf258": {
+  "qid": "MI-S1",
+  "method": "standard"
+ },
+ "1440359136": {
+  "qid": "STROKE-F1",
+  "method": "refined"
+ },
+ "593c17bdc3": {
+  "qid": "ENV-F3",
+  "method": "refined"
+ },
+ "ae6e5d5a14": {
+  "qid": "STROKE-F4",
+  "method": "standard"
+ },
+ "b5ebf2f312": {
+  "qid": "SEPSIS-R4",
+  "method": "refined"
+ },
+ "7c5b280c28": {
+  "qid": "BREACH-F6",
+  "method": "refined"
+ },
+ "c84b37ac29": {
+  "qid": "STROKE-S4",
+  "method": "refined"
+ },
+ "2b8f1fe4af": {
+  "qid": "DKA-F1",
+  "method": "refined"
+ },
+ "d3ed95a7ae": {
+  "qid": "ALL-F4",
+  "method": "standard"
+ },
+ "0c00e07905": {
+  "qid": "SEPSIS-F4",
+  "method": "standard"
+ },
+ "b40488cb24": {
+  "qid": "ENV-R4",
+  "method": "refined"
+ },
+ "153b029286": {
+  "qid": "EMPL-R4",
+  "method": "refined"
+ },
+ "f1585917ee": {
+  "qid": "DKA-R6",
+  "method": "refined"
+ },
+ "34a3a0479a": {
+  "qid": "SEPSIS-R6",
+  "method": "standard"
+ },
+ "d74d273bf5": {
+  "qid": "ALL-S2",
+  "method": "refined"
+ },
+ "d6219857a0": {
+  "qid": "BANKR-S4",
+  "method": "refined"
+ },
+ "032bf3fcd6": {
+  "qid": "BANKR-F3",
+  "method": "refined"
+ },
+ "6d3372d488": {
+  "qid": "BREACH-F5",
+  "method": "refined"
+ },
+ "d3cad99af6": {
+  "qid": "STROKE-R2",
+  "method": "refined"
+ },
+ "afc5888a57": {
+  "qid": "CONSTR-R3",
+  "method": "refined"
+ },
+ "11c712fb83": {
+  "qid": "BREACH-S3",
+  "method": "refined"
+ },
+ "25df274761": {
+  "qid": "BREACH-R6",
+  "method": "refined"
+ },
+ "e05fb0da93": {
+  "qid": "DKA-S4",
+  "method": "refined"
+ },
+ "29f0b17d70": {
+  "qid": "IP-F4",
+  "method": "standard"
+ },
+ "87399d0215": {
+  "qid": "ALL-F1",
+  "method": "standard"
+ },
+ "171c1cd5dc": {
+  "qid": "ALL-R4",
+  "method": "standard"
+ },
+ "ca29640ccc": {
+  "qid": "ENV-S1",
+  "method": "refined"
+ },
+ "09ec205306": {
+  "qid": "FRAUD-F6",
+  "method": "standard"
+ },
+ "0db7107f29": {
+  "qid": "ENV-F3",
+  "method": "standard"
+ },
+ "4d9ada102e": {
+  "qid": "DKA-R4",
+  "method": "refined"
+ },
+ "36c1a16353": {
+  "qid": "DKA-S3",
+  "method": "refined"
+ },
+ "3f5ff04acd": {
+  "qid": "DKA-R2",
+  "method": "refined"
+ },
+ "447785ac8c": {
+  "qid": "SEPSIS-F1",
+  "method": "standard"
+ },
+ "a2b8e54289": {
+  "qid": "MI-F1",
+  "method": "refined"
+ },
+ "aa4b7f09ce": {
+  "qid": "SEPSIS-F1",
+  "method": "refined"
+ },
+ "6079fe7a61": {
+  "qid": "EMPL-R1",
+  "method": "standard"
+ },
+ "582d8ee0d6": {
+  "qid": "ENV-S4",
+  "method": "refined"
+ },
+ "97ca66b1f9": {
+  "qid": "CONSTR-R5",
+  "method": "refined"
+ },
+ "ea4277d146": {
+  "qid": "ALL-S4",
+  "method": "refined"
+ },
+ "6628afadb3": {
+  "qid": "BANKR-F4",
+  "method": "refined"
+ },
+ "18cd502b4c": {
+  "qid": "STROKE-R5",
+  "method": "standard"
+ },
+ "7ab65214d2": {
+  "qid": "BANKR-F5",
+  "method": "refined"
+ },
+ "74e2d6111c": {
+  "qid": "CONSTR-F1",
+  "method": "refined"
+ },
+ "df8780d858": {
+  "qid": "ALL-R5",
+  "method": "refined"
+ },
+ "960d4cd1fd": {
+  "qid": "IP-R1",
+  "method": "refined"
+ },
+ "8ac3d5408f": {
+  "qid": "BANKR-F5",
+  "method": "standard"
+ },
+ "54bc1f9408": {
+  "qid": "BANKR-F3",
+  "method": "standard"
+ },
+ "303ff13a57": {
+  "qid": "SEPSIS-S5",
+  "method": "refined"
+ },
+ "85829f5828": {
+  "qid": "BANKR-R1",
+  "method": "refined"
+ },
+ "a7ad1800c1": {
+  "qid": "ALL-R4",
+  "method": "refined"
+ },
+ "0a0885a488": {
+  "qid": "BANKR-F1",
+  "method": "refined"
+ },
+ "4aae2b77af": {
+  "qid": "IP-R5",
+  "method": "refined"
+ },
+ "ed67140f07": {
+  "qid": "FRAUD-F1",
+  "method": "refined"
+ },
+ "05a9c6be21": {
+  "qid": "FRAUD-F2",
+  "method": "standard"
+ },
+ "6d6dbc1ad6": {
+  "qid": "MI-F5",
+  "method": "standard"
+ },
+ "a83887a4d1": {
+  "qid": "DKA-R5",
+  "method": "standard"
+ },
+ "e2ab938116": {
+  "qid": "IP-F3",
+  "method": "refined"
+ },
+ "1de20c9ed6": {
+  "qid": "CONSTR-S2",
+  "method": "refined"
+ },
+ "c4a8f21a0f": {
+  "qid": "BREACH-R3",
+  "method": "refined"
+ },
+ "29f21ce0e0": {
+  "qid": "CONSTR-F6",
+  "method": "refined"
+ },
+ "6b7bc9457b": {
+  "qid": "BANKR-F2",
+  "method": "refined"
+ },
+ "05d66a5e31": {
+  "qid": "ENV-F6",
+  "method": "standard"
+ },
+ "12bc4e80d5": {
+  "qid": "CONSTR-R3",
+  "method": "standard"
+ },
+ "e50d7d88c2": {
+  "qid": "MI-F5",
+  "method": "refined"
+ },
+ "09874d9334": {
+  "qid": "FRAUD-F5",
+  "method": "standard"
+ },
+ "0f8fa64e84": {
+  "qid": "MI-S4",
+  "method": "refined"
+ },
+ "4b1fc1b614": {
+  "qid": "EMPL-S4",
+  "method": "standard"
+ },
+ "daa9ebf3d7": {
+  "qid": "IP-S3",
+  "method": "refined"
+ },
+ "6c48220858": {
+  "qid": "STROKE-S5",
+  "method": "refined"
+ },
+ "7f9e6c59af": {
+  "qid": "IP-S1",
+  "method": "refined"
+ },
+ "56f2585640": {
+  "qid": "STROKE-S5",
+  "method": "standard"
+ },
+ "a00e7dfcd8": {
+  "qid": "IP-F2",
+  "method": "refined"
+ },
+ "2159dc7144": {
+  "qid": "MI-R2",
+  "method": "refined"
+ },
+ "4508150fba": {
+  "qid": "BANKR-S3",
+  "method": "refined"
+ },
+ "089f882d4f": {
+  "qid": "ENV-F6",
+  "method": "refined"
+ },
+ "deedf6943c": {
+  "qid": "IP-R5",
+  "method": "standard"
+ },
+ "25188c5b89": {
+  "qid": "SEPSIS-R1",
+  "method": "refined"
+ },
+ "60892b94e2": {
+  "qid": "SEPSIS-S4",
+  "method": "standard"
+ },
+ "e16153a1ed": {
+  "qid": "IP-S3",
+  "method": "standard"
+ },
+ "f50887aa19": {
+  "qid": "BANKR-R2",
+  "method": "standard"
+ },
+ "1c92d8860c": {
+  "qid": "BREACH-R3",
+  "method": "standard"
+ },
+ "f2edd4eba9": {
+  "qid": "ENV-F4",
+  "method": "standard"
+ },
+ "2fb885a8cd": {
+  "qid": "BREACH-F2",
+  "method": "standard"
+ },
+ "bc61a7d7bd": {
+  "qid": "IP-R4",
+  "method": "standard"
+ },
+ "40f1c86604": {
+  "qid": "ALL-R1",
+  "method": "standard"
+ },
+ "059255b6a9": {
+  "qid": "SEPSIS-S6",
+  "method": "standard"
+ },
+ "b39212426a": {
+  "qid": "BREACH-F6",
+  "method": "standard"
+ },
+ "f2c5e6d0ce": {
+  "qid": "BANKR-S5",
+  "method": "refined"
+ },
+ "708038de37": {
+  "qid": "ALL-S1",
+  "method": "standard"
+ },
+ "8f9e61f061": {
+  "qid": "DKA-S1",
+  "method": "standard"
+ },
+ "84e53a5685": {
+  "qid": "SEPSIS-F3",
+  "method": "refined"
+ },
+ "42737df89d": {
+  "qid": "ENV-S4",
+  "method": "standard"
+ },
+ "42df56a113": {
+  "qid": "ALL-S4",
+  "method": "standard"
+ },
+ "7ac2aa1a89": {
+  "qid": "STROKE-S2",
+  "method": "refined"
+ },
+ "06849a8f00": {
+  "qid": "IP-R3",
+  "method": "standard"
+ },
+ "f877096854": {
+  "qid": "BANKR-F4",
+  "method": "standard"
+ },
+ "8a3b6d3d18": {
+  "qid": "SEPSIS-R2",
+  "method": "standard"
+ },
+ "46c0addde0": {
+  "qid": "IP-R1",
+  "method": "standard"
+ },
+ "415bcac87e": {
+  "qid": "ENV-R3",
+  "method": "refined"
+ },
+ "3ff74620ae": {
+  "qid": "FRAUD-R2",
+  "method": "refined"
+ },
+ "75e652ede4": {
+  "qid": "CONSTR-S5",
+  "method": "refined"
+ },
+ "508a205f7e": {
+  "qid": "FRAUD-S4",
+  "method": "standard"
+ },
+ "7a101920bf": {
+  "qid": "EMPL-F4",
+  "method": "refined"
+ },
+ "7c08aeb214": {
+  "qid": "MI-S2",
+  "method": "standard"
+ },
+ "daa1e947c5": {
+  "qid": "CONSTR-R4",
+  "method": "refined"
+ },
+ "6876141598": {
+  "qid": "SEPSIS-F2",
+  "method": "refined"
+ },
+ "f431de445b": {
+  "qid": "STROKE-F6",
+  "method": "standard"
+ },
+ "c494f76401": {
+  "qid": "SEPSIS-S3",
+  "method": "standard"
+ },
+ "168d9e4212": {
+  "qid": "FRAUD-R2",
+  "method": "standard"
+ },
+ "01798efa88": {
+  "qid": "IP-F3",
+  "method": "standard"
+ },
+ "e4eaeb9076": {
+  "qid": "ALL-R6",
+  "method": "standard"
+ },
+ "63fdf151bb": {
+  "qid": "DKA-F1",
+  "method": "standard"
+ },
+ "a872d95a9a": {
+  "qid": "BREACH-S2",
+  "method": "refined"
+ },
+ "b1a034bd14": {
+  "qid": "EMPL-F4",
+  "method": "standard"
+ },
+ "255cdac8e2": {
+  "qid": "ALL-S3",
+  "method": "standard"
+ },
+ "4dfe50e823": {
+  "qid": "DKA-F4",
+  "method": "standard"
+ },
+ "c2424ab15c": {
+  "qid": "FRAUD-S3",
+  "method": "refined"
+ },
+ "adfb0da454": {
+  "qid": "IP-S5",
+  "method": "refined"
+ },
+ "b7eb7026c7": {
+  "qid": "CONSTR-F3",
+  "method": "standard"
+ },
+ "25c555fd33": {
+  "qid": "IP-S6",
+  "method": "standard"
+ },
+ "ef66cd8c32": {
+  "qid": "DKA-R3",
+  "method": "refined"
+ },
+ "2cf1bdb0d9": {
+  "qid": "FRAUD-S1",
+  "method": "refined"
+ },
+ "688a7295be": {
+  "qid": "FRAUD-R5",
+  "method": "refined"
+ },
+ "0832f72d0d": {
+  "qid": "ENV-F1",
+  "method": "standard"
+ },
+ "1a76d6ea05": {
+  "qid": "DKA-R1",
+  "method": "standard"
+ },
+ "53491c36fa": {
+  "qid": "CONSTR-F4",
+  "method": "standard"
+ },
+ "f3fbe02c32": {
+  "qid": "SEPSIS-R3",
+  "method": "standard"
+ },
+ "3cf030c1b6": {
+  "qid": "ALL-F2",
+  "method": "refined"
+ },
+ "32f4c3d6b3": {
+  "qid": "MI-S3",
+  "method": "refined"
+ },
+ "d9dec0694f": {
+  "qid": "ALL-R2",
+  "method": "standard"
+ },
+ "e0f87cbd59": {
+  "qid": "ALL-F3",
+  "method": "standard"
+ },
+ "ee3e78e578": {
+  "qid": "SEPSIS-R4",
+  "method": "standard"
+ },
+ "9ee5fd4eae": {
+  "qid": "ENV-R1",
+  "method": "refined"
+ },
+ "5736e92451": {
+  "qid": "FRAUD-F2",
+  "method": "refined"
+ },
+ "e419e387bf": {
+  "qid": "BREACH-S3",
+  "method": "standard"
+ },
+ "cf444e80b8": {
+  "qid": "ENV-S3",
+  "method": "standard"
+ },
+ "d5498d2d05": {
+  "qid": "BREACH-R4",
+  "method": "standard"
+ },
+ "e96d4a9c7e": {
+  "qid": "IP-S4",
+  "method": "refined"
+ },
+ "83dceb758b": {
+  "qid": "FRAUD-F4",
+  "method": "standard"
+ },
+ "6a216adc6b": {
+  "qid": "SEPSIS-S1",
+  "method": "refined"
+ },
+ "e2753f2451": {
+  "qid": "ENV-S2",
+  "method": "refined"
+ },
+ "6e4c6fb558": {
+  "qid": "FRAUD-R5",
+  "method": "standard"
+ },
+ "013ec26ef2": {
+  "qid": "ALL-S3",
+  "method": "refined"
+ },
+ "71fd6a191a": {
+  "qid": "IP-F5",
+  "method": "refined"
+ },
+ "75b2329edb": {
+  "qid": "DKA-S5",
+  "method": "standard"
+ },
+ "60e7b0c7bc": {
+  "qid": "EMPL-S1",
+  "method": "refined"
+ },
+ "40ba92905b": {
+  "qid": "MI-R4",
+  "method": "standard"
+ },
+ "695a367202": {
+  "qid": "ENV-S1",
+  "method": "standard"
+ },
+ "b9f478815c": {
+  "qid": "SEPSIS-S6",
+  "method": "refined"
+ },
+ "2ea3fd8d2e": {
+  "qid": "MI-R1",
+  "method": "refined"
+ },
+ "bc6a1d9848": {
+  "qid": "BREACH-F4",
+  "method": "refined"
+ },
+ "731b8f8a41": {
+  "qid": "STROKE-R4",
+  "method": "standard"
+ },
+ "bf2758f0a2": {
+  "qid": "EMPL-R1",
+  "method": "refined"
+ },
+ "d8ae3b184e": {
+  "qid": "FRAUD-R6",
+  "method": "refined"
+ },
+ "c6a300aa63": {
+  "qid": "BANKR-F1",
+  "method": "standard"
+ },
+ "e1ea817c3e": {
+  "qid": "FRAUD-S1",
+  "method": "standard"
+ },
+ "8733e2a1be": {
+  "qid": "EMPL-F5",
+  "method": "standard"
+ },
+ "0e079c6ecf": {
+  "qid": "ENV-R2",
+  "method": "standard"
+ },
+ "cf938efcfd": {
+  "qid": "BANKR-R5",
+  "method": "standard"
+ },
+ "d4cd756d06": {
+  "qid": "BREACH-R6",
+  "method": "standard"
+ },
+ "544b0d7656": {
+  "qid": "STROKE-F5",
+  "method": "refined"
+ },
+ "2b33577765": {
+  "qid": "BREACH-R5",
+  "method": "standard"
+ },
+ "c310b015ef": {
+  "qid": "MI-F4",
+  "method": "refined"
+ },
+ "eed9e9037e": {
+  "qid": "IP-R3",
+  "method": "refined"
+ },
+ "55bea6d363": {
+  "qid": "DKA-R2",
+  "method": "standard"
+ },
+ "93f6ea709b": {
+  "qid": "BANKR-F2",
+  "method": "standard"
+ },
+ "a534eedc15": {
+  "qid": "STROKE-R1",
+  "method": "refined"
+ },
+ "f87bd4afa9": {
+  "qid": "MI-F2",
+  "method": "standard"
+ },
+ "828c9aabbd": {
+  "qid": "BANKR-R3",
+  "method": "standard"
+ },
+ "ced58d2f14": {
+  "qid": "ALL-R2",
+  "method": "refined"
+ },
+ "158a146f10": {
+  "qid": "CONSTR-F5",
+  "method": "standard"
+ },
+ "b8f674d142": {
+  "qid": "BREACH-F4",
+  "method": "standard"
+ },
+ "fb977ef5f0": {
+  "qid": "STROKE-R5",
+  "method": "refined"
+ },
+ "8824a14f5e": {
+  "qid": "ENV-R2",
+  "method": "refined"
+ },
+ "fceebe4360": {
+  "qid": "IP-R4",
+  "method": "refined"
+ },
+ "98693aa054": {
+  "qid": "EMPL-R2",
+  "method": "standard"
+ },
+ "0be144526f": {
+  "qid": "CONSTR-F1",
+  "method": "standard"
+ },
+ "5e73e684a3": {
+  "qid": "BANKR-S6",
+  "method": "refined"
+ },
+ "f974ea4313": {
+  "qid": "SEPSIS-S4",
+  "method": "refined"
+ },
+ "f84a20c3b9": {
+  "qid": "ALL-F3",
+  "method": "refined"
+ },
+ "756116a99f": {
+  "qid": "DKA-F3",
+  "method": "refined"
+ },
+ "e7d9f60d49": {
+  "qid": "BANKR-R1",
+  "method": "standard"
+ },
+ "e1b0aef80c": {
+  "qid": "DKA-F4",
+  "method": "refined"
+ },
+ "da97dcb551": {
+  "qid": "MI-R3",
+  "method": "refined"
+ },
+ "a3ed3ec9db": {
+  "qid": "BANKR-R6",
+  "method": "refined"
+ },
+ "31bbe2bd95": {
+  "qid": "CONSTR-F3",
+  "method": "refined"
+ },
+ "944a3004c1": {
+  "qid": "DKA-F3",
+  "method": "standard"
+ },
+ "bb59d9b780": {
+  "qid": "CONSTR-S6",
+  "method": "standard"
+ },
+ "2fe1b38875": {
+  "qid": "ENV-R5",
+  "method": "refined"
+ }
+}

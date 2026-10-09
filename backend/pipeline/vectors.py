@@ -10,6 +10,17 @@ from .llm_provider import embed, embed_many
 
 EMBED_DIM = 768   # nomic-embed-text
 
+# The random fallback keeps the live app usable when Ollama hiccups (D6), but in an
+# evaluation it would quietly turn retrieval into noise. The evaluation CLIs turn on strict
+# mode, so an embedding failure stops the run instead.
+_strict_embeddings = False
+
+
+def set_strict_embeddings(strict: bool) -> None:
+    """strict=True: embedding failures raise instead of falling back to random vectors."""
+    global _strict_embeddings
+    _strict_embeddings = strict
+
 
 # ── embedding with fallback ───────────────────────────────────────────────────
 
@@ -25,7 +36,10 @@ async def embed_or_fallback(text: str, owner: str, task_type: str = "retrieval_d
     try:
         return await embed(text, task_type=task_type)
     except Exception as exc:
-        logger.warning(f"{owner}: embedding failed, using random fallback: {exc}", exc_info=True)
+        if _strict_embeddings:
+            raise
+        logger.error(f"{owner}: embedding failed, using RANDOM fallback (retrieval degraded): {exc}",
+                     exc_info=True)
         return fallback_embedding(text)
 
 
@@ -36,8 +50,11 @@ async def embed_many_or_fallback(
     try:
         return await embed_many(texts, task_type=task_type)
     except Exception as exc:
-        logger.warning(
-            f"{owner}: batch embedding of {len(texts)} texts failed, using random fallbacks: {exc}",
+        if _strict_embeddings:
+            raise
+        logger.error(
+            f"{owner}: batch embedding of {len(texts)} texts failed, using RANDOM fallbacks "
+            f"(retrieval degraded): {exc}",
             exc_info=True,
         )
         return [fallback_embedding(t) for t in texts]

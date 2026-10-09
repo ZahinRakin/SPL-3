@@ -56,7 +56,7 @@ async def _set_doc(doc_id: uuid.UUID, **values) -> None:
 
 async def _run_indexing(
     case_id: uuid.UUID, doc_id: uuid.UUID, file_path: str, content_type: str,
-    user_id: Optional[uuid.UUID], registry: CaseIndexRegistry,
+    user_id: Optional[uuid.UUID], registry: CaseIndexRegistry, filename: str = "",
 ):
     bundle = await registry.get(case_id)
     async with bundle.lock:
@@ -80,6 +80,8 @@ async def _run_indexing(
                                exc_info=True)
             # A GraphRAG failure fails the document.
             result = await bundle.graphrag.index_document(str(doc_id), text, passages)
+            if filename:
+                bundle.engine.doc_names[str(doc_id)] = filename   # readable source labels
             logger.debug(
                 f"Cascade indexing completed for {doc_id}: {len(chunks)} chunks, "
                 f"{len(passages) - len(chunks)} summaries, {result}"
@@ -162,7 +164,8 @@ async def upload_document(
     await db.refresh(doc)
 
     background_tasks.add_task(
-        _run_indexing, case.id, doc_id, str(dest), file.content_type or "", access.user.id, registry
+        _run_indexing, case.id, doc_id, str(dest), file.content_type or "", access.user.id, registry,
+        doc.filename,
     )
     logger.debug(f"Document {doc_id} indexing task scheduled")
     return to_record(doc)

@@ -1,8 +1,9 @@
 # GraphRAG Investigations — Architecture & Spec
 
 > Status: **DRAFT — pending owner review.** Updated 2026-10-04 for the investigation-tool
-> extension (auth, cases, PostgreSQL), and 2026-10-08 for the cascade redesign (three parallel
-> retrievers → one RAPTOR → GraphRAG → HippoRAG pipeline, two query modes). The original plan is
+> extension (auth, cases, PostgreSQL), 2026-10-08 for the cascade redesign (three parallel
+> retrievers → one RAPTOR → GraphRAG → HippoRAG pipeline, two query modes), and 2026-10-09 for the
+> post-experiment accuracy fixes (RAPTOR tree, embedding limit, entity identity, hybrid ranking). The original plan is
 > in `docs/EXTENSION_PLAN.md`.
 > Sections marked **[OPEN]** are things the owner still needs to decide.
 > When code and this document disagree, fix one of them; don't leave the gap.
@@ -22,7 +23,8 @@ The project has to show:
    1. **RAPTOR — enrich**: a recursive summary tree built with GMM clustering. Its nodes (chunks
       and summaries) are the case's passages.
    2. **GraphRAG — structure**: one LLM-extracted knowledge graph over the chunks **and** the
-      RAPTOR summaries, with Louvain communities and community summaries.
+      RAPTOR summaries, with Louvain communities and community summaries (written from the
+      members' descriptions and relations; `refined` mode adds the most relevant ones to the context).
    3. **HippoRAG — rank**: Personalized PageRank over that graph, seeded from the question's
       entities, scores the passages; only the top-k reach the LLM.
 2. **Two query modes**: `standard` (plain RAG: the top-k most similar chunks, the baseline) and
@@ -87,7 +89,7 @@ All paths are relative to `graphrag-project/`.
 | `services/access.py` | Role ranks and "what is this user's role on workspace / case" | `models` | — |
 | `services/audit.py` | `record(session, action, …)` adds an `audit_events` row | `models` | commit (the caller's transaction does) |
 | `services/storage.py` | Evidence file paths `{UPLOAD_DIR}/{case_id}/{doc_id}_{safe_name}`, filename sanitising | `core` | — |
-| `services/case_index_registry.py` | One pipeline bundle per case, lazily loaded from Postgres, LRU-cached, with a per-case lock | `pipeline`, `services.index_store` | be bypassed. Routes get pipelines only through it |
+| `services/case_index_registry.py` | One pipeline bundle per case, lazily loaded from Postgres, LRU-cached, with a per-case lock; fills `QueryEngine.doc_names` from `documents` | `pipeline`, `services.index_store`, `models` | be bypassed. Routes get pipelines only through it |
 | `services/index_store.py` | Save/load a case's pipeline state to/from Postgres (snapshot replace) | `models`, `pipeline` (only `export_state`/`load_state`) | contain algorithm logic |
 | `pipeline/llm_provider.py` | **The only module that talks to the LLM or the embedding service.** It handles concurrency limits, timeouts, retries (rate limits / transient errors) and nomic task prefixes | `core` | be skipped. Every other module calls `generate()` / `embed()` |
 | `pipeline/vectors.py` | Shared vector helpers: `embed_or_fallback` (embedding with the D6 random fallback), `EmbeddingIndex` (cosine search as one NumPy operation), `EMBED_DIM` | `llm_provider` | — |
@@ -157,14 +159,19 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
    returned **immediately**.
 4. Background task `_run_indexing` gets the case's bundle from `CaseIndexRegistry` and holds
    the **case lock** (uploads to one case are indexed one at a time):
-   1. status `indexing`; `extract_text`; `chunk_text` → **500-word windows, 80-word overlap**,
+   1. status `indexing`; `extract_text`; `chunk_text` → **250-word windows, 40-word overlap**,
       chunk id = `"{doc_id}_c{idx}"`
    2. **The cascade** (decision D5), one stage after another:
       `raptor.build_tree(chunks)` → `passages = raptor.passages(doc_id)` (the doc's chunks + summaries,
       ids = RAPTOR node ids) → `graphrag.index_document(doc_id, text, passages)`. HippoRAG has no
       indexing step. A GraphRAG failure fails the document; a RAPTOR failure is logged and the graph
-      is built from the plain chunks (D6). Measured for a ~1,700-word document: **~19 s**
-      (5 chunks + 6 summaries → 216 entities). Louvain re-runs over the whole case graph; a community
+      is built from the plain chunks (D6). Measured 2026-10-09: a 764-word document took **~13 s**
+      (4 chunks + 1 summary → 182 entities). RAPTOR only summarises clusters of ≥ 2 nodes (≥ 3
+      chunks at level 1), from the children's full text, and stops at one root. Relationship
+      endpoints that don't exactly match an extracted entity are resolved (fuzzy, or a same-named
+      entity in the case) or created as `OTHER` entities; the per-document counts are logged.
+      Entities are identified by `(name, type)`, and likely aliases of the same type get a
+      `SAME_AS` edge instead of a merge. Louvain re-runs over the whole case graph; a community
       whose membership is unchanged **reuses its summary** (no LLM call), and summaries of
       communities that no longer exist are dropped, so LLM calls per upload don't grow with the case
    3. **one transaction**: `save_case_state` (replace the case's index
@@ -180,14 +187,21 @@ login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
    - `standard`: the top-k RAPTOR level-0 nodes (chunks) by cosine similarity. Plain RAG.
    - `refined`: `HippoRetriever.retrieve`. Seeds = entities named in the question
      (`graphrag.match_entities`, weight = share of the name's words found) + the entities of the 3
-     most similar passages (weak, spread over each passage's entities); every seed is divided by the
-     number of passages mentioning it (node specificity). `nx.pagerank(alpha=0.5, personalization=seeds)`
-     runs over the entity graph; each passage scores the sum of its entities' PageRank; the top-k
-     passages (chunks or summaries) plus a `[KNOWLEDGE GRAPH]` block describing the top PageRank
-     entities form the context. With no seeds, or too few linked passages, it fills with similarity
-     hits (D6).
+     most similar chunks (weak, spread over each chunk's entities); every seed is divided by the
+     number of chunks mentioning it (node specificity). `nx.pagerank(alpha=0.5, personalization=seeds)`
+     runs over the entity graph. Each chunk scores `cosine + 0.5 · (its entities' PageRank / the best
+     chunk's)`; RAPTOR summaries score `cosine − 0.03 · level` and take at most 2 of the top-k slots.
+     The top-k passages, a `[KNOWLEDGE GRAPH]` block describing the top PageRank entities and
+     `[COMMUNITY SUMMARY]` blocks form the context. Communities score `cosine(question, summary) +
+     0.5 · (their members' PageRank mass / the best community's)`; a specific question gets the top 2,
+     a broad one (keyword cues such as "overall", "themes", "across", "all documents", "key findings")
+     the top 6, with each document's best community first so one large document can't fill every slot.
+     Summary embeddings are computed at query time and cached in memory until the summaries change.
+     With no seeds the PageRank term is 0, so the ranking is plain similarity (D6).
 
-   Then `_ANSWER_PROMPT` with the last 3 turns of **this case's** history, `generate(json_mode=True)`.
+   In both modes every context block names its source document
+   (`[PASSAGE — source: <file name>]`; the registry loads the case's file names into
+   `QueryEngine.doc_names`, and the evaluation's doc ids are already file names). Then `_ANSWER_PROMPT` with the last 3 turns of **this case's** history, `generate(json_mode=True)`.
 3. The turn is stored in `chat_messages` (user, method, top_k, answer, reasoning, confidence,
    entities, sources, **latency_ms**) with an audit event, and the `QueryResponse` is returned.
 4. `GET /api/cases/{case_id}/chat` returns the stored history (oldest first);
@@ -307,7 +321,7 @@ unique email (`lower(email)`).
 | Identity | `users` (fastapi-users columns + `full_name`, `last_login_at`), `oauth_accounts`, `refresh_tokens` (hash only) |
 | Tenancy | `workspaces` (`personal`/`organization`), `workspace_members` (owner/admin/member) |
 | Investigation | `cases` (status, priority, reference code unique per workspace), `case_members` (lead/investigator/viewer), `documents` (stored path, sha256, status, `chunk_count`) |
-| Index (derived, per case) — shaped like the cascade | **`passages`** (stage 1: RAPTOR nodes; `level` 0 = chunk, > 0 = summary; `vector(768)`; the only text the LLM sees) · **`entities`**, **`relationships`**, **`communities`** (stage 2: the GraphRAG graph) · **`entity_mentions`** (`entity_id` → `passage_id`, FK to both, cascade: the links HippoRAG scores passages by). Stage 3 (HippoRAG) has no table |
+| Index (derived, per case) — shaped like the cascade | `entities.normalized_key` is `"<lower-case name>|<TYPE>"` (since 2026-10-09; one entity per name and type) · **`passages`** (stage 1: RAPTOR nodes; `level` 0 = chunk, > 0 = summary; `vector(768)`; the only text the LLM sees) · **`entities`**, **`relationships`**, **`communities`** (stage 2: the GraphRAG graph) · **`entity_mentions`** (`entity_id` → `passage_id`, FK to both, cascade: the links HippoRAG scores passages by). Stage 3 (HippoRAG) has no table |
 | Activity | `chat_messages` (chat history + query log; `method IN ('standard','refined')`), `audit_events` |
 
 Migrations of 2026-10-08: `3c9e2a7d41f0` dropped `hippo_nodes`, set the chat `method` check to
@@ -325,7 +339,7 @@ objects (graph edge weights and "first relation" are replayed from `relationship
 ```python
 # pipeline/llm_provider.py   — the only gateway to the models
 async def generate(prompt: str, json_mode: bool = False, temperature: float = 0.1) -> str
-async def embed(text: str, task_type: str = "retrieval_document") -> List[float]   # 768-d; input truncated to 2048 chars
+async def embed(text: str, task_type: str = "retrieval_document") -> List[float]   # 768-d; input truncated to 6000 chars (~1.5K of the model's 2K tokens), logged
     # task_type "retrieval_document" | "retrieval_query" → nomic prefixes "search_document: " / "search_query: "
 def active_api_key_set() -> bool
 def provider_info() -> dict
@@ -347,6 +361,7 @@ async def embed_many(texts: List[str], task_type: str = "retrieval_document") ->
 EMBED_DIM = 768
 async def embed_or_fallback(text: str, owner: str, task_type: str = "retrieval_document") -> List[float]
 async def embed_many_or_fallback(texts: List[str], owner: str, task_type: str = "retrieval_document") -> List[List[float]]
+def set_strict_embeddings(strict: bool) -> None   # True (the evaluation CLIs): failures raise instead of falling back
 class EmbeddingIndex:   # built lazily by RAPTOR, dropped whenever its nodes change
     def cosine(query, ids=None) -> Tuple[List[str], np.ndarray]
 
@@ -355,7 +370,7 @@ async def extract_text(file_path: str, content_type: str = "") -> str   # return
 
 # pipeline/graphrag_indexer.py
 Chunk = {"id": str, "text": str, "doc_id": str}
-class GraphRAGIndexer(chunk_size=500, overlap=80):
+class GraphRAGIndexer(chunk_size=250, overlap=40):
     def chunk_text(text: str, doc_id: str) -> List[Chunk]
     async def index_document(doc_id: str, text: str, chunks: Optional[List[Chunk]] = None) -> Dict
     def get_graph_data() -> Dict; def get_stats() -> Dict
@@ -373,7 +388,7 @@ class RaptorRunner(max_levels=3, target_cluster_size=5):
 
 # pipeline/hippo_retriever.py   — stateless; no export_state/load_state
 class HippoRetriever(graphrag, raptor, damping=0.5, seed_passages=3):
-    async def retrieve(question: str, query_embedding, top_k: int = 6) -> Dict   # {passages, entities}
+    async def retrieve(question: str, query_embedding, top_k: int = 6) -> Dict   # {passages, entities, communities: {cid: PageRank mass}}
 
 # pipeline/query_engine.py
 Method = Literal["standard", "refined"]
@@ -381,6 +396,7 @@ class QueryEngine(graphrag, raptor, hippo):
     async def query(question: str, method: Method = "refined", top_k: int = 6) -> Dict
     def get_suggestions() -> List[str]
     def export_state() -> Dict; def load_state(state) -> None   # history only
+    doc_names: Dict[str, str]                                    # doc id → file name for source labels (set by the registry)
 
 # services/case_index_registry.py
 class CaseIndexRegistry(max_cases=INDEX_CACHE_MAX_CASES):
@@ -396,6 +412,12 @@ They are kept only for signature compatibility.
 ```
 python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method standard|refined] [--output eval_report.json]
 # indexes --docs_dir with the same cascade as the API
+
+python -m evaluation.compare validate|run|analyze --exp <experiment folder> [--reuse-index]
+# Controlled Standard-vs-Refined experiment: pre-registered protocol, verbatim-checked QA set, one shared
+# index, blinded grading, Wilcoxon signed-rank + bootstrap CI + Holm. Every artefact is written into the
+# experiment folder (see evaluation/experiments/*/README.md). QueryEngine.query also returns `context`
+# for this (not part of the HTTP response).
 # qa_pairs format: [{"question": "...", "reference": "..."}]
 ```
 
@@ -411,7 +433,7 @@ python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method stan
 | LLM | **OpenRouter** `openai/gpt-oss-20b` via the `openai` package (`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL`) | Owner's choice (2026-10-06): $0.02/$0.10 per 1M tokens, no fixed per-minute cap on paid models, falls back across ~11 hosting providers. Any OpenAI-compatible API works by changing `.env`. A reasoning model, run at low effort |
 | Embeddings | **Ollama** `nomic-embed-text`, local, 768-d | Free and offline; fits in 4 GB VRAM |
 | Graph | NetworkX + `nx.community.louvain_communities(seed=42)` | Deterministic communities |
-| Clustering | scikit-learn `GaussianMixture(covariance_type="full", random_state=42)` | As in the RAPTOR paper (no UMAP) |
+| Clustering | scikit-learn `PCA` to ≤ 10 dims, then `GaussianMixture(covariance_type="diag", random_state=42)`, about 5 nodes per cluster | The RAPTOR paper reduces dimensions first (UMAP); PCA does that without a new dependency. Full covariance in 768-d on a handful of points was underdetermined |
 | PDF / DOCX | PyMuPDF with a PyPDF2 fallback; python-docx | |
 | Async model | Blocking calls in `asyncio.to_thread`; fan-out with `asyncio.gather(..., return_exceptions=True)` | |
 | Frontend | Angular 17 standalone components, signals, router with lazy pages, functional guards and interceptor, D3 v7 | Templates and styles inline in each `.ts` |
@@ -433,8 +455,9 @@ approved task.
    in the case's indexes and still appear in answers and the graph.
 3. **Snapshot replace on every index.** After each document, all of the case's index rows are
    deleted and re-inserted. Simple and consistent, but the cost grows with case size.
-4. **Silent embedding fallback.** If Ollama is down, `_embed` returns a **random** unit vector
-   (seeded by `hash(text)`), so retrieval quality silently collapses. Check the logs for `random fallback`.
+4. **Embedding fallback.** If Ollama is down, the live app gets a **random** unit vector
+   (seeded by `hash(text)`), so retrieval quality collapses. Since 2026-10-09 this is logged at
+   `ERROR` ("RANDOM fallback"), and the evaluation CLIs turn on strict mode, so a failure stops the run.
 5. **The API-key check only tests that `LLM_API_KEY` is non-empty**, not that it is valid or has
    credits. A bad key or empty balance shows up as failed extractions (401/402 in the log).
 6. **The frontend bypasses the dev proxy.** `ApiService.base` is hard-coded to
@@ -454,7 +477,10 @@ approved task.
 14. **No rate limiting, email verification or password reset**, and no CSRF token on cookie
     endpoints (mitigated by `SameSite=Lax` and `Path=/api/auth`; refresh only returns a token in the body).
 15. **The README is stale.** It says Gemini and `ng serve`.
-16. **No automated tests** exist yet.
+16. *(Gone 2026-10-09: `tests/` holds an offline pytest suite for the pipeline, with the LLM and
+    embeddings stubbed. The API, auth and database have no automated tests yet.)*
+17. **Broad questions are still answered mostly from the passages,** and those follow similarity,
+    so a larger document can dominate them. Community summaries cover every document, but passages don't.
 
 ## 9. Decisions already made
 
@@ -486,6 +512,6 @@ approved task.
 ## 10. Open questions for the owner
 
 - [ ] Should delete un-index (rebuild the case from its remaining documents)?
-- [ ] Which test framework (pytest + pytest-asyncio + httpx?) — needs dependency approval.
+- [x] Test framework: **pytest** (approved 2026-10-09), no pytest-asyncio (tests call `asyncio.run`).
 - [ ] Dark theme (current) vs the light palette in `color_theme.md`?
 - [ ] Should the frontend use relative `/api` and the proxy instead of the hard-coded host?

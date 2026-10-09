@@ -1,6 +1,6 @@
 # Protocol — MuSiQue (answerable), H1
 
-Status: **DRAFT** (becomes FROZEN when committed, before any test-set answer or test ranking exists).
+Status: **FROZEN 2026-10-09** (committed before any test-set ranking or answer was generated).
 Plan: `EVALUATION_PLAN.md` (repo root). Code under test: commit recorded in the freeze commit.
 
 ## Data (verified 2026-10-09)
@@ -26,12 +26,20 @@ S4 S2 + community summaries and graph facts · S5 full system. Definitions in
 
 Frozen settings:
 - Context budget **B = 4,000 characters** for every system (plan §4).
-- `ppr_weight` **w\* = {W_STAR}**, chosen on dev Recall@5 from {0.25, 0.5, 1, 2}
+- `ppr_weight` **w\* = 0.25**, chosen on dev Recall@5 from {0.25, 0.5, 1, 2}
   (`tuning/ppr_weight.json`; tie rule: closest to 1.0).
 - `max_summaries` **m\* = 2** (the app default). It has no effect here (no summaries exist). The
   plan picks m\* on QuALITY dev; QuALITY runs after this dataset.
 - Answer prompt: `SHORT_QA` / closed-book `SHORT_QA_CLOSED` in `evaluation/harness/prompts.py`
   (short-answer JSON); temperature 0; gpt-oss-20b, reasoning effort low; no chat history.
+
+## Dev observations recorded at freeze time (not results)
+
+Dev tuning (`tuning/ppr_weight.json`, 200 dev questions): Recall@5 S0 0.501, S1 0.404,
+S2 w=0.25 0.500, w=0.5 0.481, w=1 0.435, w=2 0.381. Adding graph rank did not help on dev and
+hurt more as its weight grew; w\* = 0.25 is the grid's best value. H1 is kept as pre-planned
+(two-sided), so a negative or null test result is reported as such.
+A cost probe answered 50 dev questions with S0 (`runs/dev/S0_costprobe.jsonl`; dev only).
 
 ## Hypothesis H1 (confirmatory)
 
@@ -58,4 +66,7 @@ plan without stopping ("execute it … you do it alone"). See `evaluation/RUN_LO
 
 ## Deviations
 
-(none yet)
+1. Plan §3.1 describes `idx` fields in the corpus; the release has none (see Data). Gold passages
+   are matched by exact (title, text) instead. No effect on the hypothesis.
+2. Budget (plan §7): the pilot showed indexing ≈ 2× the estimate, so 2Wiki, the official
+   HippoRAG 2 baseline and extra seeds are dropped (`budget_ledger.md`). No effect on H1.

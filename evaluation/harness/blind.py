@@ -191,6 +191,39 @@ def owner(dataset: str, name: str, n: int = 100) -> None:
 
 # ── grade integrity ───────────────────────────────────────────────────────────
 
+def validate(dataset: str, name: str, judge: str = "claude") -> List[str]:
+    """Every blinded batch has a grade file with one valid line per item, same ids, same order."""
+    jdir = bench(dataset) / "judging"
+    problems = []
+    is_facts = name == "facts"
+    for batch in sorted(jdir.glob(f"blinded_{name}_*.jsonl")):
+        num = batch.stem.rsplit("_", 1)[1]
+        grade_file = jdir / (f"facts_{judge}_{num}.jsonl" if is_facts else f"grades_{judge}_{name}_{num}.jsonl")
+        if not grade_file.exists():
+            problems.append(f"missing {grade_file.name}")
+            continue
+        items, grades = read_jsonl(batch), read_jsonl(grade_file)
+        id_key = "fid" if is_facts else "bid"
+        if [i[id_key] for i in items] != [g.get(id_key) for g in grades]:
+            problems.append(f"{grade_file.name}: ids differ from {batch.name} (count {len(grades)} vs {len(items)})")
+            continue
+        for item, g in zip(items, grades):
+            if is_facts:
+                ok = isinstance(g.get("facts"), list) and all(isinstance(f, str) and f.strip() for f in g["facts"])
+            elif "score" in g:
+                ok = g["score"] in (0, 0.5, 1)
+            elif "winner" in g:
+                ok = g["winner"] in ("A", "B", "tie")
+            elif "attributed" in g:
+                ok = (isinstance(g["attributed"], list) and len(g["attributed"]) == len(item["reference_facts"])
+                      and all(v in (0, 1) for v in g["attributed"]))
+            else:
+                ok = False
+            if not ok:
+                problems.append(f"{grade_file.name}: invalid grade for {g.get(id_key)}: {json.dumps(g)[:120]}")
+    return problems
+
+
 def hash_grades(dataset: str, pattern: str) -> str:
     """sha256 of every grade file matching pattern, written before the key is opened (rule 5)."""
     jdir = bench(dataset) / "judging"
@@ -203,7 +236,8 @@ def hash_grades(dataset: str, pattern: str) -> str:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["correctness", "pairwise", "facts", "coverage", "owner", "hash"])
+    ap.add_argument("mode", choices=["correctness", "pairwise", "facts", "coverage", "owner", "hash", "validate"])
+    ap.add_argument("--judge", default="claude")
     ap.add_argument("--dataset", required=True)
     ap.add_argument("--systems", default="")
     ap.add_argument("--sample", type=int, default=200)
@@ -225,5 +259,8 @@ if __name__ == "__main__":
         coverage(a.dataset, systems, types, name=a.name)
     elif a.mode == "owner":
         owner(a.dataset, a.name, a.n)
+    elif a.mode == "validate":
+        probs = validate(a.dataset, a.name, a.judge)
+        print("OK" if not probs else "\n".join(probs))
     else:
         print(hash_grades(a.dataset, a.pattern))

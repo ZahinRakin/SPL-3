@@ -37,4 +37,21 @@ every step.
 | # | Step | Estimate (USD) | Key usage before | Key usage after | Actual (USD) | Cumulative eval spend | Notes |
 |---|---|---|---|---|---|---|---|
 | 1 | MuSiQue pilot index (200 passages) | 0.04 | 0.4575 | 0.5113 | 0.0538 | 0.0538 | see above |
-| 2 | MuSiQue full index (11,656 passages) | 2.80 | | | | | estimate from pilot; cumulative after ≈ 2.85 ≤ 8.50 |
+| 1b | (pilot, late billing) | — | 0.5113 | 0.5261 | 0.0148 | 0.0686 | the pilot's charges kept arriving after the first reading; pilot total = **$0.0686** |
+| 2 | MuSiQue full index (11,656 passages) | 2.80 | 0.5261 | 3.9131 | **3.3870** | **3.4556** | 13,043 new LLM responses (11,654 extractions + 1,588 community summaries − 199 pilot hits); ≈ $0.00028 per extraction, 1.4× the pilot rate; 1,390 s |
+| 3 | MuSiQue dev answer-cost probe (S0, 50 dev questions) | 0.01 | | | | | measures the real per-answer cost before re-planning |
+
+Row 3 actual: **$0.0054** for 50 answers (S0, B = 4,000 chars) → **$0.000108 per answer**.
+Cumulative ≈ **$3.461**.
+
+### Re-plan after the MuSiQue index (measured rates: extraction $0.00028, answer @4k chars $0.000108)
+
+| Step | Estimate | Running total |
+|---|---|---|
+| MuSiQue test answers: C0, S0, S1, S2, S4 × 800 (S3 ≡ S2 and S5 ≡ S4 here: no summaries exist, so their prompts are identical and come from the cache at no cost) | $0.39 | $3.85 |
+| QuALITY index (≈ 990 chunks, ≈ 280 RAPTOR summaries) + dev tuning of m (S2 + S3×3 on 193 q) + test (7 × 722) | $1.22 | $5.07 |
+| MultiHop-RAG index (whole corpus, ≈ 5,300 chunks, ≈ 1,500 summaries) + test (7 × 400) | $2.40 | $7.47 |
+| GraphRAG-Bench Novel: **subsample** to what is left under $8.20 (a $0.30 margin below the $8.50 guard): ≈ 8 of 20 novels, levels 3–4 test questions | ≈ $0.7 | ≈ $8.2 |
+
+Decision: continue in plan order; the GraphRAG-Bench subsample size is fixed when it is reached,
+from the money actually left.

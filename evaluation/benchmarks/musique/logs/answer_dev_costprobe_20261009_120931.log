@@ -1,0 +1,205 @@
+2026-10-09 12:09:31,776 | INFO | [answer] start 2026-10-09 06:09:31 UTC argv=['--dataset', 'musique', '--split', 'dev', '--systems', 'S0', '--w', '1.0', '--m', '2', '--budget', '4000', '--limit', '50', '--tag', 'costprobe'] model='openai/gpt-oss-20b' provider_sort='throughput' cache=C:\Users\Zahin Abdullah Rakin\Desktop\SPL-3\graphrag-project\evaluation\llm_cache
+2026-10-09 12:09:36,544 | DEBUG | GraphRAGIndexer.load_state: entities=106867, relationships=124350, communities=1588
+2026-10-09 12:09:37,085 | DEBUG | RaptorRunner.load_state: nodes=11656
+2026-10-09 12:09:37,666 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:37,668 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3703, budget=4000
+2026-10-09 12:09:37,673 | DEBUG | generate: json_mode=True, prompt_len=4121
+2026-10-09 12:09:37,750 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:37,752 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3619, budget=4000
+2026-10-09 12:09:37,756 | DEBUG | generate: json_mode=True, prompt_len=4105
+2026-10-09 12:09:37,813 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:37,813 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3893, budget=4000
+2026-10-09 12:09:37,813 | DEBUG | generate: json_mode=True, prompt_len=4440
+2026-10-09 12:09:37,889 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:37,892 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3470, budget=4000
+2026-10-09 12:09:37,893 | DEBUG | generate: json_mode=True, prompt_len=3890
+2026-10-09 12:09:37,950 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:37,950 | DEBUG | _build_context: method='standard', passages=9, extras=0, context_len=3751, budget=4000
+2026-10-09 12:09:37,950 | DEBUG | generate: json_mode=True, prompt_len=4187
+2026-10-09 12:09:38,002 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,004 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3960, budget=4000
+2026-10-09 12:09:38,004 | DEBUG | generate: json_mode=True, prompt_len=4473
+2026-10-09 12:09:38,043 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,059 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3992, budget=4000
+2026-10-09 12:09:38,059 | DEBUG | generate: json_mode=True, prompt_len=4443
+2026-10-09 12:09:38,140 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,143 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3628, budget=4000
+2026-10-09 12:09:38,143 | DEBUG | generate: json_mode=True, prompt_len=4105
+2026-10-09 12:09:38,234 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,234 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3900, budget=4000
+2026-10-09 12:09:38,234 | DEBUG | generate: json_mode=True, prompt_len=4427
+2026-10-09 12:09:38,300 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,302 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3891, budget=4000
+2026-10-09 12:09:38,302 | DEBUG | generate: json_mode=True, prompt_len=4387
+2026-10-09 12:09:38,351 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,353 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3558, budget=4000
+2026-10-09 12:09:38,353 | DEBUG | generate: json_mode=True, prompt_len=4017
+2026-10-09 12:09:38,404 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,404 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3115, budget=4000
+2026-10-09 12:09:38,404 | DEBUG | generate: json_mode=True, prompt_len=3555
+2026-10-09 12:09:38,467 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,467 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3931, budget=4000
+2026-10-09 12:09:38,471 | DEBUG | generate: json_mode=True, prompt_len=4354
+2026-10-09 12:09:38,523 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,525 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3966, budget=4000
+2026-10-09 12:09:38,525 | DEBUG | generate: json_mode=True, prompt_len=4428
+2026-10-09 12:09:38,567 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,567 | DEBUG | _build_context: method='standard', passages=2, extras=0, context_len=2449, budget=4000
+2026-10-09 12:09:38,567 | DEBUG | generate: json_mode=True, prompt_len=2942
+2026-10-09 12:09:38,632 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:38,633 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=2620, budget=4000
+2026-10-09 12:09:38,640 | DEBUG | generate: json_mode=True, prompt_len=3084
+2026-10-09 12:09:38,640 | INFO | Initialising LLM client: openrouter.ai model='openai/gpt-oss-20b'
+2026-10-09 12:09:39,419 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:39,466 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,466 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3129, budget=4000
+2026-10-09 12:09:39,466 | DEBUG | generate: json_mode=True, prompt_len=3581
+2026-10-09 12:09:39,588 | DEBUG | generate complete: response_len=28
+2026-10-09 12:09:39,646 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,646 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3406, budget=4000
+2026-10-09 12:09:39,646 | DEBUG | generate: json_mode=True, prompt_len=3890
+2026-10-09 12:09:39,678 | DEBUG | generate complete: response_len=17
+2026-10-09 12:09:39,754 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,757 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3671, budget=4000
+2026-10-09 12:09:39,757 | DEBUG | generate: json_mode=True, prompt_len=4140
+2026-10-09 12:09:39,765 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:39,765 | DEBUG | generate complete: response_len=17
+2026-10-09 12:09:39,765 | DEBUG | generate complete: response_len=17
+2026-10-09 12:09:39,769 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:39,824 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,826 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3742, budget=4000
+2026-10-09 12:09:39,827 | DEBUG | generate: json_mode=True, prompt_len=4255
+2026-10-09 12:09:39,883 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,883 | DEBUG | _build_context: method='standard', passages=8, extras=0, context_len=3921, budget=4000
+2026-10-09 12:09:39,885 | DEBUG | generate: json_mode=True, prompt_len=4382
+2026-10-09 12:09:39,938 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,940 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3561, budget=4000
+2026-10-09 12:09:39,942 | DEBUG | generate: json_mode=True, prompt_len=4075
+2026-10-09 12:09:39,975 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:39,975 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=2934, budget=4000
+2026-10-09 12:09:39,991 | DEBUG | generate: json_mode=True, prompt_len=3403
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=43
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=26
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=21
+2026-10-09 12:09:40,014 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,077 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,078 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3681, budget=4000
+2026-10-09 12:09:40,079 | DEBUG | generate: json_mode=True, prompt_len=4231
+2026-10-09 12:09:40,130 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,130 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3968, budget=4000
+2026-10-09 12:09:40,130 | DEBUG | generate: json_mode=True, prompt_len=4504
+2026-10-09 12:09:40,189 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,189 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3164, budget=4000
+2026-10-09 12:09:40,189 | DEBUG | generate: json_mode=True, prompt_len=3728
+2026-10-09 12:09:40,250 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,252 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3380, budget=4000
+2026-10-09 12:09:40,252 | DEBUG | generate: json_mode=True, prompt_len=3865
+2026-10-09 12:09:40,322 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,324 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3513, budget=4000
+2026-10-09 12:09:40,326 | DEBUG | generate: json_mode=True, prompt_len=3972
+2026-10-09 12:09:40,383 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,385 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=2928, budget=4000
+2026-10-09 12:09:40,385 | DEBUG | generate: json_mode=True, prompt_len=3437
+2026-10-09 12:09:40,387 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,389 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,407 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,416 | DEBUG | generate complete: response_len=19
+2026-10-09 12:09:40,500 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,508 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3593, budget=4000
+2026-10-09 12:09:40,508 | DEBUG | generate: json_mode=True, prompt_len=4060
+2026-10-09 12:09:40,580 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,589 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3967, budget=4000
+2026-10-09 12:09:40,591 | DEBUG | generate: json_mode=True, prompt_len=4492
+2026-10-09 12:09:40,716 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,720 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3895, budget=4000
+2026-10-09 12:09:40,720 | DEBUG | generate: json_mode=True, prompt_len=4342
+2026-10-09 12:09:40,811 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,816 | DEBUG | _build_context: method='standard', passages=3, extras=0, context_len=3741, budget=4000
+2026-10-09 12:09:40,817 | DEBUG | generate: json_mode=True, prompt_len=4266
+2026-10-09 12:09:40,833 | DEBUG | generate complete: response_len=36
+2026-10-09 12:09:40,833 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:40,833 | DEBUG | generate complete: response_len=73
+2026-10-09 12:09:40,927 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,933 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3669, budget=4000
+2026-10-09 12:09:40,933 | DEBUG | generate: json_mode=True, prompt_len=4110
+2026-10-09 12:09:40,996 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:40,996 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3577, budget=4000
+2026-10-09 12:09:40,996 | DEBUG | generate: json_mode=True, prompt_len=4008
+2026-10-09 12:09:41,075 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,075 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3432, budget=4000
+2026-10-09 12:09:41,075 | DEBUG | generate: json_mode=True, prompt_len=3899
+2026-10-09 12:09:41,091 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,158 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,160 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3281, budget=4000
+2026-10-09 12:09:41,161 | DEBUG | generate: json_mode=True, prompt_len=3715
+2026-10-09 12:09:41,167 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,167 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,221 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,221 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3504, budget=4000
+2026-10-09 12:09:41,221 | DEBUG | generate: json_mode=True, prompt_len=3988
+2026-10-09 12:09:41,281 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,282 | DEBUG | _build_context: method='standard', passages=3, extras=0, context_len=3278, budget=4000
+2026-10-09 12:09:41,282 | DEBUG | generate: json_mode=True, prompt_len=3816
+2026-10-09 12:09:41,288 | DEBUG | generate complete: response_len=39
+2026-10-09 12:09:41,288 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,336 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,336 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3886, budget=4000
+2026-10-09 12:09:41,336 | DEBUG | generate: json_mode=True, prompt_len=4338
+2026-10-09 12:09:41,402 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,404 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3850, budget=4000
+2026-10-09 12:09:41,404 | DEBUG | generate: json_mode=True, prompt_len=4337
+2026-10-09 12:09:41,411 | DEBUG | generate complete: response_len=28
+2026-10-09 12:09:41,411 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,411 | DEBUG | generate complete: response_len=17
+2026-10-09 12:09:41,459 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,459 | DEBUG | _build_context: method='standard', passages=7, extras=0, context_len=3848, budget=4000
+2026-10-09 12:09:41,459 | DEBUG | generate: json_mode=True, prompt_len=4295
+2026-10-09 12:09:41,522 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,522 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3553, budget=4000
+2026-10-09 12:09:41,522 | DEBUG | generate: json_mode=True, prompt_len=4009
+2026-10-09 12:09:41,577 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,579 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3565, budget=4000
+2026-10-09 12:09:41,579 | DEBUG | generate: json_mode=True, prompt_len=4125
+2026-10-09 12:09:41,591 | DEBUG | generate complete: response_len=28
+2026-10-09 12:09:41,591 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,591 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,647 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,649 | DEBUG | _build_context: method='standard', passages=3, extras=0, context_len=3140, budget=4000
+2026-10-09 12:09:41,649 | DEBUG | generate: json_mode=True, prompt_len=3620
+2026-10-09 12:09:41,695 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,695 | DEBUG | _build_context: method='standard', passages=9, extras=0, context_len=3754, budget=4000
+2026-10-09 12:09:41,695 | DEBUG | generate: json_mode=True, prompt_len=4212
+2026-10-09 12:09:41,761 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,762 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3735, budget=4000
+2026-10-09 12:09:41,763 | DEBUG | generate: json_mode=True, prompt_len=4231
+2026-10-09 12:09:41,772 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,772 | DEBUG | generate complete: response_len=22
+2026-10-09 12:09:41,833 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,833 | DEBUG | _build_context: method='standard', passages=6, extras=0, context_len=3979, budget=4000
+2026-10-09 12:09:41,833 | DEBUG | generate: json_mode=True, prompt_len=4446
+2026-10-09 12:09:41,897 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,899 | DEBUG | _build_context: method='standard', passages=5, extras=0, context_len=3894, budget=4000
+2026-10-09 12:09:41,899 | DEBUG | generate: json_mode=True, prompt_len=4383
+2026-10-09 12:09:41,906 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,906 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:41,906 | DEBUG | generate complete: response_len=16
+2026-10-09 12:09:41,970 | DEBUG | RaptorRunner.retrieve: top_k=40, returned=40
+2026-10-09 12:09:41,970 | DEBUG | _build_context: method='standard', passages=4, extras=0, context_len=3819, budget=4000
+2026-10-09 12:09:41,970 | DEBUG | generate: json_mode=True, prompt_len=4298
+2026-10-09 12:09:41,983 | DEBUG | generate complete: response_len=23
+2026-10-09 12:09:41,983 | DEBUG | generate complete: response_len=17
+2026-10-09 12:09:41,983 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,216 | DEBUG | generate complete: response_len=15
+2026-10-09 12:09:42,238 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,253 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,345 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,377 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,434 | DEBUG | generate complete: response_len=28
+2026-10-09 12:09:42,528 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,632 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,669 | DEBUG | generate complete: response_len=37
+2026-10-09 12:09:42,762 | DEBUG | generate complete: response_len=62
+2026-10-09 12:09:42,865 | DEBUG | generate complete: response_len=22
+2026-10-09 12:09:42,865 | INFO | [answer musique/S0] {'answered': 50, 'skipped_done': 0, 'errors': 0, 'seconds': 10.6}

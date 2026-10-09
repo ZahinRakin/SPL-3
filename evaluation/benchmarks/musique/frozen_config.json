@@ -1,0 +1,20 @@
+{
+ "dataset": "musique",
+ "ppr_weight": 0.25,
+ "max_summaries": 2,
+ "budget": 4000,
+ "temperature": 0.0,
+ "systems": [
+  "C0",
+  "S0",
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "index": "full",
+ "prompt": "SHORT_QA / SHORT_QA_CLOSED",
+ "frozen_at": "2026-10-09",
+ "note": "m has no effect on MuSiQue (no RAPTOR summaries)"
+}

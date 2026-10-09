@@ -30,7 +30,7 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
 3. **Don't move off the decided stack** (ARCHITECTURE.md §7 and §9). In particular, all
    LLM and embedding calls go through `backend/pipeline/llm_provider.py`. Nothing else
    imports `openai` or calls Ollama.
-4. **Never read, print, log or commit `.env`**, or put API keys anywhere. Use `.env.example`
+4. **Never read, print, log or commit `.env`**, or put API keys anywhere. Use `backend/.env.example`
    for documenting config. Never log passwords, access/refresh tokens, OAuth codes or the
    database URL.
 5. **Don't touch** `../assets/`, `../diagrams/`, `../mid_presentation/`, the proposal `.md`
@@ -46,9 +46,12 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
 Run everything from `graphrag-project/` unless stated otherwise. The shell is Windows (PowerShell).
 
 Keep backend migrations, tests, evaluation, docs, requirements, and migration config
-under `backend/`. Root `pytest.ini` discovers `backend/tests/`. The owner approved
+under `backend/`. `backend/pytest.ini` discovers `backend/tests/` and adds the project
+root to the import path. Environment files live in `backend/`; settings load `backend/.env`
+independently of the working directory. The owner approved
 keeping `data/` and `.graph_rag/` at the root to preserve upload paths and the existing
-Windows environment. Keep project-wide documentation, environment files, and Git
+Windows environment. A backend-local `.graph_rag/` is also present; use the environment
+already selected for the command. Keep project-wide documentation and Git
 settings at the root; ask before adding another root directory.
 
 ```powershell
@@ -65,6 +68,7 @@ alembic -c backend/alembic.ini upgrade head
 
 # backend  (needs Postgres, `ollama serve`, and LLM_API_KEY, DATABASE_URL, JWT_SECRET_KEY in .env)
 uvicorn backend.app.main:app --reload --port 8000     # docs: http://localhost:8000/docs
+# Alternatively, from backend/: python -m uvicorn backend.app.main:app --app-dir .. --reload --port 8000
 curl http://localhost:8000/api/health
 
 # frontend
@@ -77,7 +81,8 @@ python -m backend.evaluation.compare analyze --exp backend/evaluation/experiment
 
 ## Tests and verification
 
-`python -m pytest -q` runs the offline pipeline tests in `backend/tests/` (LLM and embeddings stubbed,
+`python -m pytest -c backend/pytest.ini -q` from the root, or `python -m pytest -q` from
+`backend/`, runs the offline tests in `backend/tests/` (LLM and embeddings stubbed,
 no Ollama, API key or database needed; ~2 s). Run it after any pipeline change and add a test for
 new pipeline behaviour. The API, auth and database have no automated tests, so also verify every
 change with the cheapest check that covers it, and say in your summary which checks you ran.
@@ -88,7 +93,7 @@ change with the cheapest check that covers it, and say in your summary which che
 | API / schemas | Start uvicorn and hit the changed endpoint with `curl.exe` (log in first: `POST /api/auth/jwt/login`), or use `/docs` → Authorize |
 | Models / migrations | `alembic -c backend/alembic.ini upgrade head`, `alembic -c backend/alembic.ini check` (no drift), and `alembic -c backend/alembic.ini downgrade -1` + `upgrade head` on a throwaway DB |
 | Access control | Check the route with a non-member (404), a too-low role (403) and an allowed role |
-| Pipeline logic | `python -m pytest -q`, then in a case, upload `data/input/sample_cases/dhaka.txt` (small), wait for `indexed`, run one query per method; restart uvicorn and confirm the graph/stats are unchanged |
+| Pipeline logic | `python -m pytest -c backend/pytest.ini -q` from the root, then in a case, upload `data/input/sample_cases/dhaka.txt` (small), wait for `indexed`, run one query per method; restart uvicorn and confirm the graph/stats are unchanged |
 | Frontend | `cd frontend; npx ng build --configuration development` (strict TS + strict templates) |
 | Eval | Run the eval on 1–2 QA pairs |
 
@@ -169,6 +174,8 @@ If a check can't run (Ollama or the LLM API unreachable, no key or credits), say
 Every time the owner corrects the agent on something it might repeat, add one line here:
 the date, the rule, and the reason in a few words. Newest first. This list overrides the
 defaults above if they conflict.
+
+- 2026-10-09 — Environment files and pytest config live in `backend/`. Keep imports rooted at `backend.*`; use `--app-dir ..` when starting the server there, and preserve project-root-relative evidence paths.
 
 - 2026-10-06 — Generation moved from Groq to OpenRouter (`openai` package, `LLM_*` settings): Groq's paid tier was unavailable. Don't reintroduce the `groq` SDK.
 - 2026-10-04 — (seed) Generation uses Groq and embeddings use Ollama, even when someone says "Gemini". The code moved off Gemini.

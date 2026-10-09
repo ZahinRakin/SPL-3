@@ -15,7 +15,7 @@ from backend.pipeline.llm_provider import active_api_key_set, provider_info
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     if not settings.JWT_SECRET_KEY:
-        raise RuntimeError("JWT_SECRET_KEY is not set. Add it to .env (see .env.example).")
+        raise RuntimeError("JWT_SECRET_KEY is not set. Add it to backend/.env (see backend/.env.example).")
     async with engine.connect() as conn:
         await conn.execute(text("SELECT 1"))
     logger.info("Database connected")

@@ -75,13 +75,16 @@ All paths are relative to `graphrag-project/`.
 Backend tooling lives alongside the backend: migrations in `backend/migrations/`,
 tests in `backend/tests/`, evaluation code and artifacts in `backend/evaluation/`,
 and the extension plan in `backend/docs/`. Python dependencies and Alembic config
-are `backend/requirements.txt` and `backend/alembic.ini`. Root `pytest.ini` discovers
-the backend tests and keeps its cache under `backend/`.
+are `backend/requirements.txt` and `backend/alembic.ini`. `backend/pytest.ini` discovers
+the tests, adds the project root to the import path, and keeps its cache under `backend/`.
 
 By owner approval, `data/` stays at the root to preserve existing evidence paths,
 and `.graph_rag/` stays there to preserve the working Windows Python environment.
-Project-wide documentation, agent instructions, environment files, and Git settings
-also stay at the root. Run Python commands from the root; see README.md for commands.
+Project-wide documentation, agent instructions, and Git settings also stay at the root.
+Environment files live in `backend/`; settings load `backend/.env` using an absolute path.
+Relative upload paths and older database file paths resolve from the project root,
+regardless of the working directory. Server, migrations, and tests can run from `backend/`;
+the server uses `--app-dir ..` to retain `backend.*` imports. See README.md for commands.
 
 ### Backend (`backend/`)
 
@@ -92,7 +95,7 @@ also stay at the root. Run Python commands from the root; see README.md for comm
 | `api/*.py` | HTTP layer: validation, status codes, commits, background tasks | `schemas`, `core`, `models`, `services`, `app.dependencies`, `pipeline.document_processor` | call the LLM API or Ollama directly, or hold algorithm logic |
 | `schemas/*.py` | Pydantic request and response models (the **public API contract**) | `pydantic`, `fastapi_users.schemas` | import pipeline code |
 | `models/*.py` | SQLAlchemy ORM tables (§6.3) | `core.database` (Base) | import `pipeline` or `schemas` |
-| `core/config.py` | `Settings` loaded from `.env` (pydantic-settings) | — | — |
+| `core/config.py` | `Settings` loaded from `backend/.env` (pydantic-settings) | — | — |
 | `core/database.py` | Async engine, `SessionLocal`, `get_db()` (per request), `session_scope()` (background tasks), `Base` with a naming convention | `core.config` | contain queries |
 | `core/logger.py` | Shared `logger` | — | — |
 | `services/users.py` | fastapi-users wiring: `UserManager` (password rules, personal workspace on sign-up), JWT strategy, `RefreshCookieBackend`, Google OAuth client | `models`, `services.refresh_tokens`, `services.audit` | — |
@@ -113,7 +116,7 @@ also stay at the root. Run Python commands from the root; see README.md for comm
 
 ### Migrations (`backend/migrations/`)
 
-`backend/migrations/env.py` reads `DATABASE_URL` from `.env` through `core.config` (never from
+`backend/migrations/env.py` reads `DATABASE_URL` from `backend/.env` through `core.config` (never from
 `backend/alembic.ini`). Revisions live in `backend/migrations/versions/`. **Never edit an applied migration; add a new one.**
 
 ### Evaluation (`backend/evaluation/eval.py`)

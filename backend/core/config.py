@@ -1,8 +1,10 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict # type: ignore
 from pathlib import Path
 
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=_BACKEND_DIR / ".env", extra="ignore")
 
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
 

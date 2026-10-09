@@ -13,7 +13,7 @@ import backend.models  # noqa: F401  (registers every table on Base.metadata)
 
 config = context.config
 
-# The URL comes from .env (DATABASE_URL), never from alembic.ini.
+# The URL comes from backend/.env (DATABASE_URL), never from alembic.ini.
 # "%" must be doubled because alembic.ini values go through configparser interpolation.
 config.set_main_option("sqlalchemy.url", settings.DATABASE_URL.replace("%", "%%"))
 

@@ -57,7 +57,7 @@ GRADES = (0.0, 0.5, 1.0)
 MAX_ATTEMPTS = 3            # 1 try + 2 retries
 ALPHA = 0.05
 BOOTSTRAP_RESAMPLES = 10_000
-DOCS_DIR = Path("data/input/sample_cases")
+DOCS_DIR = Path(__file__).resolve().parents[2] / "data/input/sample_cases"
 _ERROR_PREFIXES = ("Error generating answer", "Error parsing LLM response")
 
 

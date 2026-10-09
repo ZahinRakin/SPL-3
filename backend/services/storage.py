@@ -8,11 +8,16 @@ from pathlib import Path
 from backend.core.config import settings
 from backend.core.logger import logger
 
-UPLOAD_DIR = Path(settings.UPLOAD_DIR) if settings.UPLOAD_DIR else Path("data/uploads")
+UPLOAD_DIR = settings.BASE_DIR / (settings.UPLOAD_DIR or "data/uploads")
 MAX_FILE_MB = int(settings.MAX_FILE_SIZE_MB) if settings.MAX_FILE_SIZE_MB else 50
 MAX_FILENAME_CHARS = 100
 
 _UNSAFE = re.compile(r"[^A-Za-z0-9._-]")
+
+
+def resolve_stored_path(path: str) -> Path:
+    """Keep existing root-relative evidence paths valid when launched from backend/."""
+    return settings.BASE_DIR / path
 
 
 def safe_filename(name: str) -> str:

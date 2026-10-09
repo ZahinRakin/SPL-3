@@ -20,7 +20,7 @@ from backend.schemas.documents import DocRecord
 from backend.services import audit
 from backend.services.case_index_registry import CaseIndexRegistry
 from backend.services.index_store import save_case_state
-from backend.services.storage import MAX_FILE_MB, document_path
+from backend.services.storage import MAX_FILE_MB, document_path, resolve_stored_path
 
 router = APIRouter(prefix="/cases/{case_id}/documents", tags=["documents"])
 
@@ -199,7 +199,7 @@ async def delete_document(
     # knowledge from the case's indexes.
     doc = await _get_doc(db, access.case.id, doc_id)
     logger.info(f"Deleting document {doc_id} from case {access.case.id}")
-    path = Path(doc.stored_path)
+    path = resolve_stored_path(doc.stored_path)
     audit.record(db, audit.DOCUMENT_DELETE, user_id=access.user.id, workspace_id=access.case.workspace_id,
                  case_id=access.case.id, target_type="document", target_id=doc_id,
                  details={"filename": doc.filename, "sha256": doc.sha256})

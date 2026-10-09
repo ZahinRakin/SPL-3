@@ -20,13 +20,13 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
      `index_passages`, `retrieve*`, `query`, `get_*`)
    - the eval CLI flags and the `qa_pairs` JSON format
    - the database schema: change it only through a **new** Alembic migration in
-     `alembic/versions/` (never edit an applied one), and update ARCHITECTURE.md §6.3
+     `backend/migrations/versions/` (never edit an applied one), and update ARCHITECTURE.md §6.3
 
    If a change truly needs one of these, stop and propose it with the reason. If it's
    approved, update the backend schema, `api.service.ts` and ARCHITECTURE.md §6 **together**.
 2. **No new dependencies without approval.** This covers pip, npm, and Ollama/LLM model or
    provider changes. Say what you'd add and why, and what the no-dependency alternative is.
-   `requirements.txt` and `frontend/package.json` must not change silently.
+   `backend/requirements.txt` and `frontend/package.json` must not change silently.
 3. **Don't move off the decided stack** (ARCHITECTURE.md §7 and §9). In particular, all
    LLM and embedding calls go through `backend/pipeline/llm_provider.py`. Nothing else
    imports `openai` or calls Ollama.
@@ -45,17 +45,23 @@ correct, readable and complete enough to demo and explain in a viva. Don't make 
 
 Run everything from `graphrag-project/` unless stated otherwise. The shell is Windows (PowerShell).
 
+Keep backend migrations, tests, evaluation, docs, requirements, and migration config
+under `backend/`. Root `pytest.ini` discovers `backend/tests/`. The owner approved
+keeping `data/` and `.graph_rag/` at the root to preserve upload paths and the existing
+Windows environment. Keep project-wide documentation, environment files, and Git
+settings at the root; ask before adding another root directory.
+
 ```powershell
 # one-time
 .\.graph_rag\Scripts\Activate.ps1          # Python 3.11 venv
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ollama pull nomic-embed-text
 # PostgreSQL 18 with pgvector; once per database, as postgres:  CREATE EXTENSION vector;
-alembic upgrade head                        # create/upgrade the schema (DATABASE_URL from .env)
+alembic -c backend/alembic.ini upgrade head                        # create/upgrade the schema (DATABASE_URL from .env)
 
 # after changing backend/models/*.py
-alembic revision --autogenerate -m "what changed"   # then READ the file and fix it by hand
-alembic upgrade head
+alembic -c backend/alembic.ini revision --autogenerate -m "what changed"   # then READ the file and fix it by hand
+alembic -c backend/alembic.ini upgrade head
 
 # backend  (needs Postgres, `ollama serve`, and LLM_API_KEY, DATABASE_URL, JWT_SECRET_KEY in .env)
 uvicorn backend.app.main:app --reload --port 8000     # docs: http://localhost:8000/docs
@@ -65,13 +71,13 @@ curl http://localhost:8000/api/health
 cd frontend; npm install; npm start                    # http://localhost:4200 (uses proxy.conf.json)
 
 # evaluation
-python -m evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
-python -m evaluation.compare analyze --exp evaluation/experiments/2026-10-08_standard_vs_refined   # standard vs refined study
+python -m backend.evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
+python -m backend.evaluation.compare analyze --exp backend/evaluation/experiments/2026-10-08_standard_vs_refined   # standard vs refined study
 ```
 
 ## Tests and verification
 
-`python -m pytest -q` runs the offline pipeline tests in `tests/` (LLM and embeddings stubbed,
+`python -m pytest -q` runs the offline pipeline tests in `backend/tests/` (LLM and embeddings stubbed,
 no Ollama, API key or database needed; ~2 s). Run it after any pipeline change and add a test for
 new pipeline behaviour. The API, auth and database have no automated tests, so also verify every
 change with the cheapest check that covers it, and say in your summary which checks you ran.
@@ -80,7 +86,7 @@ change with the cheapest check that covers it, and say in your summary which che
 |---|---|
 | Any backend Python | `python -c "import backend.app.main"` (catches import and syntax errors) |
 | API / schemas | Start uvicorn and hit the changed endpoint with `curl.exe` (log in first: `POST /api/auth/jwt/login`), or use `/docs` → Authorize |
-| Models / migrations | `alembic upgrade head`, `alembic check` (no drift), and `alembic downgrade -1` + `upgrade head` on a throwaway DB |
+| Models / migrations | `alembic -c backend/alembic.ini upgrade head`, `alembic -c backend/alembic.ini check` (no drift), and `alembic -c backend/alembic.ini downgrade -1` + `upgrade head` on a throwaway DB |
 | Access control | Check the route with a non-member (404), a too-low role (403) and an allowed role |
 | Pipeline logic | `python -m pytest -q`, then in a case, upload `data/input/sample_cases/dhaka.txt` (small), wait for `indexed`, run one query per method; restart uvicorn and confirm the graph/stats are unchanged |
 | Frontend | `cd frontend; npx ng build --configuration development` (strict TS + strict templates) |
@@ -96,7 +102,7 @@ If a check can't run (Ollama or the LLM API unreachable, no key or credits), say
 - Internal data uses `@dataclass` (see `Entity`, `Relationship`, `RaptorNode`). Anything that
   crosses HTTP is a Pydantic model in `backend/schemas/`.
 - Imports: absolute `backend.…` in `api/`, `app/`, `core/`, `models/`, `services/` and
-  `evaluation/`; relative `.module` inside `pipeline/`.
+  `backend/evaluation/`; relative `.module` inside `pipeline/`.
 - **Database:** routes take `db: AsyncSession = Depends(get_db)` and call `await db.commit()`
   themselves; background tasks open `session_scope()`. Every case-scoped query filters by
   `case_id`. Protected routes declare access with `Depends(require_case_role(...))` or

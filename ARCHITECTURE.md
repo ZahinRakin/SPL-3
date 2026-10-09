@@ -4,7 +4,7 @@
 > extension (auth, cases, PostgreSQL), 2026-10-08 for the cascade redesign (three parallel
 > retrievers → one RAPTOR → GraphRAG → HippoRAG pipeline, two query modes), and 2026-10-09 for the
 > post-experiment accuracy fixes (RAPTOR tree, embedding limit, entity identity, hybrid ranking). The original plan is
-> in `docs/EXTENSION_PLAN.md`.
+> in `backend/docs/EXTENSION_PLAN.md`.
 > Sections marked **[OPEN]** are things the owner still needs to decide.
 > When code and this document disagree, fix one of them; don't leave the gap.
 
@@ -72,6 +72,17 @@ These are deliberately out of scope. Don't build them unless the owner asks.
 
 All paths are relative to `graphrag-project/`.
 
+Backend tooling lives alongside the backend: migrations in `backend/migrations/`,
+tests in `backend/tests/`, evaluation code and artifacts in `backend/evaluation/`,
+and the extension plan in `backend/docs/`. Python dependencies and Alembic config
+are `backend/requirements.txt` and `backend/alembic.ini`. Root `pytest.ini` discovers
+the backend tests and keeps its cache under `backend/`.
+
+By owner approval, `data/` stays at the root to preserve existing evidence paths,
+and `.graph_rag/` stays there to preserve the working Windows Python environment.
+Project-wide documentation, agent instructions, environment files, and Git settings
+also stay at the root. Run Python commands from the root; see README.md for commands.
+
 ### Backend (`backend/`)
 
 | Module | Responsibility | May depend on | Must NOT |
@@ -100,12 +111,12 @@ All paths are relative to `graphrag-project/`.
 | `pipeline/query_engine.py` | Context assembly per mode (`standard` / `refined`), answer prompt, entity linking, chat history (in-memory, per case) | the three stages, `llm_provider` | mutate the indexes |
 | `middleware/`, `utils/` | Empty placeholders | — | — |
 
-### Migrations (`alembic/`)
+### Migrations (`backend/migrations/`)
 
-`alembic/env.py` reads `DATABASE_URL` from `.env` through `core.config` (never from
-`alembic.ini`). Revisions live in `alembic/versions/`. **Never edit an applied migration; add a new one.**
+`backend/migrations/env.py` reads `DATABASE_URL` from `.env` through `core.config` (never from
+`backend/alembic.ini`). Revisions live in `backend/migrations/versions/`. **Never edit an applied migration; add a new one.**
 
-### Evaluation (`evaluation/eval.py`)
+### Evaluation (`backend/evaluation/eval.py`)
 
 A standalone CLI. It builds its **own** in-memory pipeline instances, needs no database and no
 login, indexes `--docs_dir`, runs the QA pairs and writes a JSON report.
@@ -410,13 +421,13 @@ They are kept only for signature compatibility.
 ### 6.5 Evaluation CLI
 
 ```
-python -m evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method standard|refined] [--output eval_report.json]
+python -m backend.evaluation.eval --qa_pairs <file.json> [--docs_dir DIR] [--method standard|refined] [--output eval_report.json]
 # indexes --docs_dir with the same cascade as the API
 
-python -m evaluation.compare validate|run|analyze --exp <experiment folder> [--reuse-index]
+python -m backend.evaluation.compare validate|run|analyze --exp <experiment folder> [--reuse-index]
 # Controlled Standard-vs-Refined experiment: pre-registered protocol, verbatim-checked QA set, one shared
 # index, blinded grading, Wilcoxon signed-rank + bootstrap CI + Holm. Every artefact is written into the
-# experiment folder (see evaluation/experiments/*/README.md). QueryEngine.query also returns `context`
+# experiment folder (see backend/evaluation/experiments/*/README.md). QueryEngine.query also returns `context`
 # for this (not part of the HTTP response).
 # qa_pairs format: [{"question": "...", "reference": "..."}]
 ```
@@ -476,8 +487,8 @@ approved task.
     Only basic profile/email scopes are requested.
 14. **No rate limiting, email verification or password reset**, and no CSRF token on cookie
     endpoints (mitigated by `SameSite=Lax` and `Path=/api/auth`; refresh only returns a token in the body).
-15. **The README is stale.** It says Gemini and `ng serve`.
-16. *(Gone 2026-10-09: `tests/` holds an offline pytest suite for the pipeline, with the LLM and
+15. *(Gone 2026-10-09: README setup and commands now describe the current stack and layout.)*
+16. *(Gone 2026-10-09: `backend/tests/` holds an offline pytest suite for the pipeline, with the LLM and
     embeddings stubbed. The API, auth and database have no automated tests yet.)*
 17. **Broad questions are still answered mostly from the passages,** and those follow similarity,
     so a larger document can dominate them. Community summaries cover every document, but passages don't.

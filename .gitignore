@@ -3,15 +3,16 @@
 frontend/node_modules
 uploads
 documents
-*\__pycache__/
+__pycache__/
 *.pyc
 frontend/build
 frontend/dist
 frontend/.angular
 # evaluation: large or regenerable artefacts (hashes and manifests are committed instead)
-evaluation/llm_cache/
-evaluation/benchmarks/*/data/
-evaluation/benchmarks/*/index/
-.pytest_cache/
-evaluation/benchmarks/*/corpus.jsonl
-evaluation/benchmarks/*/query_emb/
+backend/evaluation/llm_cache/
+backend/evaluation/benchmarks/*/data/
+backend/evaluation/benchmarks/*/index/
+**/.pytest_cache/
+backend/evaluation/benchmarks/*/corpus.jsonl
+backend/evaluation/benchmarks/*/query_emb/
+backend/evaluation/llm_cache/**

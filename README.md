@@ -1,90 +1,108 @@
-## Paper Link
-
-- RAPTOR: https://arxiv.org/abs/2401.18059
-- GraphRAG: https://arxiv.org/abs/2404.16130
-- HippoRAG: https://arxiv.org/abs/2405.14831
-
----
-
 # GraphRAG Intelligence
 
-A document intelligence system combining **GraphRAG**, **RAPTOR**, and **HiPPO** retrieval over any uploaded documents. Powered by **Gemini 2.5 Flash** (free tier).
+An intelligence tool with workspaces, cases, evidence uploads, a knowledge graph,
+and document Q&A. The backend combines RAPTOR, GraphRAG, and HippoRAG in a cascade.
+Queries use either `standard` (plain RAG) or `refined` (the cascade) mode.
 
-## Architecture
+Generation uses an OpenAI-compatible API (OpenRouter by default); embeddings use
+Ollama locally. The frontend is Angular 17, and the backend is FastAPI with
+PostgreSQL and pgvector.
 
+## Project layout
+
+```text
+graphrag-project/
+|-- frontend/               Angular app, npm dependencies, and build configuration
+|   |-- src/app/            Pages, components, auth, services, and shared helpers
+|-- backend/
+|   |-- app/                FastAPI entry point and dependencies
+|   |-- api/                HTTP routes
+|   |-- core/               Settings, database sessions, and logging
+|   |-- models/             Database models
+|   |-- schemas/            Request and response schemas
+|   |-- services/           Auth, access, storage, and index persistence
+|   |-- pipeline/           Document processing and retrieval algorithms
+|   |-- migrations/         Alembic environment and migration revisions
+|   |-- tests/              Offline Python tests
+|   |-- evaluation/         Evaluation tools, benchmarks, results, and experiments
+|   |-- docs/               Backend extension plan
+|   |-- alembic.ini         Migration configuration
+|   |-- requirements.txt    Python dependencies
+|-- data/                   Sample inputs and existing uploaded evidence
+|-- .graph_rag/             Existing local Python environment (ignored by Git)
+|-- .env / .env.example     Local settings / settings template
+|-- pytest.ini             Test discovery from the project root
+|-- ARCHITECTURE.md         Project architecture, contracts, and decisions
+|-- CLAUDE.md               Repository working instructions
 ```
-Uploaded Docs → Document Processor → (chunks)
-                                      ├─ GraphRAG Indexer → Knowledge Graph (NetworkX + Louvain)
-                                      ├─ RAPTOR Runner    → Summary Tree (GMM clustering)
-                                      └─ HiPPO Retriever  → Passage Pyramid (mean pooling)
-                                                                   ↓
-                                           Query Engine  →  Gemini 2.5 Flash → Answer + Entities + Sources
-```
 
-## Stack
+`data/` and `.graph_rag/` remain at the root by owner approval: evidence paths are
+stored in PostgreSQL and local settings, and the existing Windows environment
+contains scripts tied to its location. Git metadata and settings remain at the root.
 
-| Layer     | Technology                       |
-|-----------|----------------------------------|
-| Backend   | FastAPI + uvicorn                |
-| LLM       | Gemini 2.5 Flash (google-generativeai) |
-| Graph     | NetworkX + Louvain community detection |
-| Embeddings| Google text-embedding-004        |
-| Frontend  | Angular 17 (standalone) + D3.js  |
+Run backend, migration, test, and evaluation commands from the project root so
+that `.env` and existing relative upload paths continue to resolve as before.
+The frontend runs from `frontend/`.
 
-## Setup
+## Setup and running
 
-### 1. Get a Gemini API key
+Use Python 3.11, Node.js/npm, PostgreSQL with pgvector, and Ollama.
+Copy `.env.example` to `.env` and configure `LLM_API_KEY`, `DATABASE_URL`, and
+`JWT_SECRET_KEY`. Optional Google OAuth settings are documented in the template.
+Never commit `.env`.
 
-Free at [https://aistudio.google.com](https://aistudio.google.com)
-
-### 2. Backend
-
-```bash
-cd graphrag-project
-cp .env.example .env
-# edit .env and set GEMINI_API_KEY=your-key
-download ollama from the website: https://ollama.com/download
-- open a terminal then run: 
+```powershell
+# From graphrag-project/, use the existing environment.
+.\.graph_rag\Scripts\Activate.ps1
+pip install -r backend/requirements.txt
 ollama pull nomic-embed-text
-
-pip install -r requirements.txt
-
+# Keep Ollama running; enable the vector extension in your PostgreSQL database.
+alembic -c backend/alembic.ini upgrade head
 uvicorn backend.app.main:app --reload --port 8000
 ```
 
-API docs available at http://localhost:8000/docs
+API documentation: http://localhost:8000/docs.
 
-### 3. Frontend
+In another terminal:
 
-```bash
-cd graphrag-project/frontend
+```powershell
+cd frontend
 npm install
-ng serve       # serves at http://localhost:4200
+npm start
 ```
 
-Requests to `/api/*` are proxied to the FastAPI backend automatically.
+Frontend: http://localhost:4200. The current API service connects to
+`http://localhost:8000/api` using the backend's CORS settings.
 
-## Usage
+## Verification
 
-1. Open http://localhost:4200
-2. Click **Upload Documents** and drop any PDF / DOCX / TXT / HTML files
-3. Wait for indexing to complete (status turns green in the sidebar)
-4. Switch to **Knowledge Graph** to explore entities and relationships
-5. Switch to **Ask Questions** and type a question — choose the retrieval method:
-   - **Hybrid** — uses all three (recommended)
-   - **GraphRAG** — knowledge graph community context
-   - **RAPTOR** — tree-based summarisation
-   - **HiPPO** — hierarchical passage pooling
+```powershell
+# From the project root; LLM and embedding calls are stubbed in these tests.
+.\.graph_rag\Scripts\python.exe -m pytest -q
+
+# From frontend/; validates TypeScript and Angular templates.
+npm run build -- --configuration development
+```
 
 ## Evaluation
 
-```bash
-# eval_data.json: [{"question": "...", "reference": "..."}]
-python -m evaluation.eval \
-  --qa_pairs eval_data.json \
-  --docs_dir ./sample_docs \
-  --method hybrid \
-  --output eval_report.json
+```powershell
+# QA format: [{"question": "...", "reference": "..."}]
+python -m backend.evaluation.eval --qa_pairs eval_data.json --docs_dir data/input/sample_cases --method refined --output eval_report.json
+python -m backend.evaluation.compare analyze --exp backend/evaluation/experiments/2026-10-08_standard_vs_refined
 ```
 
-Produces ROUGE, BLEU, entity recall, faithfulness, and latency metrics.
+The benchmark harness is available as `python -m backend.evaluation.harness.<tool>`.
+See [the evaluation report](backend/evaluation/REPORT.md) and
+[judging handoff](backend/evaluation/JUDGING_HANDOFF.md) for its results and workflow.
+Saved benchmark and experiment artifacts retain their original contents, including
+historical commands and paths recorded before the directory move.
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for module boundaries, interfaces, and known
+limitations, and [the extension plan](backend/docs/EXTENSION_PLAN.md) for the design history.
+
+## Research papers
+
+- [RAPTOR](https://arxiv.org/abs/2401.18059)
+- [GraphRAG](https://arxiv.org/abs/2404.16130)
+- [HippoRAG](https://arxiv.org/abs/2405.14831)
